@@ -50,8 +50,9 @@ def fold_template(phase, y, nbins=400):
     return np.interp(phase, cc, mm)
 
 
-def analyse_eb(lc, window=3.0):
-    """Full Track C analysis of one light curve dict (from s3io). Returns a result dict."""
+def analyse_eb(lc, window=3.0, return_arrays=False):
+    """Full Track C analysis of one light curve dict (from s3io). Returns a result dict
+    (and, with return_arrays, the binned time, flattened flux, EB template and residuals)."""
     t, f = lc["time"], lc["flux"]
     o = np.argsort(t)
     t, f = t[o], f[o]
@@ -125,4 +126,6 @@ def analyse_eb(lc, window=3.0):
     edges = [tr[a] for a, b in segs] + [tr[b - 1] for a, b in segs]
     ev, _ = find_dips(tr, rr, rr, 10 / 1440, snr_min=7.0, max_events=6, seg_edges=edges)
     out["extra_events"] = [{k: e[k] for k in ("t0", "dur_h", "depth", "snr", "edge_dist_d") if k in e} for e in ev]
+    if return_arrays:
+        return out, {"t": t, "y": y, "template": tmpl, "resid": resid, "eclipse_mask": ecl}
     return out

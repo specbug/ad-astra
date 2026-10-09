@@ -187,9 +187,9 @@ def main():
     for kind in ("signals", "signals_inverted"):
         d = df[df.kind == kind] if len(df) else df
         if len(d):
-            clean = d[d.hard_flags.fillna("") == ""]
+            clean = d[d["hard_flags"].fillna("") == ""]
             print(kind, "passing search:", len(d), " no hard flags:", len(clean),
-                  " no flags:", int((d.flags.fillna("") == "").sum()),
+                  " no flags:", int((d["flags"].fillna("") == "").sum()),
                   " max SDE no-hard:", round(clean.sde.max(), 2) if len(clean) else None)
 
 

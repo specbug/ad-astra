@@ -76,3 +76,66 @@ def flag_known(df, ra_col="ra", dec_col="dec"):
         df["toi_hf"] = None
     df["is_toi"] = df.toi_exofop.notna() | df.toi_hf.notna()
     return df
+
+
+def spoc_tces(tic, sectors=None):
+    """SPOC threshold-crossing events for a 2-min target, parsed from DV XML reports on the S3 bucket.
+
+    Every sector directory holding the star's 2-min data (and multi-sector runs filed under their last
+    sector) is listed; returns one dict per planetCandidate entry (period, epoch, depth, MES, EB flag).
+    """
+    import re
+    import s3io
+    from env import CATALOGS
+    if sectors is None:
+        m = pd.read_parquet(CATALOGS / "spoc_manifest.parquet", filters=[("tic", "==", int(tic))])
+        sectors = sorted(set(m.sector.astype(int)))
+        # multi-sector runs are filed under later sectors; also look at the standard multi-sector end sectors
+        sectors = sorted(set(sectors) | {13, 26, 36, 39, 41, 55, 60, 65, 69, 78, 83, 92, 96})
+    out = []
+    for s in sectors:
+        try:
+            keys = [k for k, _ in s3io.list_keys(f"tess/public/tid/s{s:04d}/{s3io.tic_dir(tic)}/") if k.endswith("_dvr.xml")]
+        except Exception:
+            continue
+        for k in keys:
+            x = s3io.fetch(k).decode(errors="ignore")
+            run = re.search(r"-(s\d{4}-s\d{4})-", k)
+            for m in re.finditer(r"<dv:planetCandidate ([^>]*)>", x):
+                a = dict(re.findall(r'(\w+)="([^"]*)"', m.group(1)))
+                out.append({"run": run.group(1) if run else str(s), "planet": int(a.get("planetNumber", 0)),
+                            "period": float(a.get("orbitalPeriodInDays", "nan")), "epoch_tjd": float(a.get("epochTjd", "nan")),
+                            "mes": float(a.get("maxMultipleEventSigma", "nan")),
+                            "n_tr": int(a.get("observedTransitCount", 0)),
+                            "suspected_eb": a.get("suspectedEclipsingBinary") == "true"})
+            # fitted depth per planet (all-transits fit)
+            for m in re.finditer(r'planetNumber="(\d+)" transitModelName[^>]*>.*?name="transitDepthPpm" uncertainty="[^"]*" value="([^"]+)"', x, re.S):
+                for o in out:
+                    if o["run"] == (run.group(1) if run else str(s)) and o["planet"] == int(m.group(1)) and "depth_ppm" not in o:
+                        o["depth_ppm"] = float(m.group(2))
+    return out
+
+
+def nearby_tois(ra, dec, radius_arcsec=150.0, period=None, ptol=0.01):
+    """TOIs (ExoFOP Feb 2026 + NASA Oct 2026 snapshot) within radius; optionally only those whose period
+    matches `period` or a small multiple/fraction of it (a signal often gets assigned to a neighbour)."""
+    out = []
+    e = exofop_toi()
+    s = sep_arcsec(ra, dec, e.RA.values, e.Dec.values)
+    for (_, r), sp in zip(e[s < radius_arcsec].iterrows(), s[s < radius_arcsec]):
+        out.append({"source": "ExoFOP", "toi": r["TOI"], "tic": int(r["tic"]), "sep": float(sp), "period": r["period"],
+                    "depth_ppm": r["depth_ppm"], "disp": f"{r['tfop']}/{r['tess_disp']}"})
+    h = hf_toi()
+    if h is not None:
+        s = sep_arcsec(ra, dec, h.ra_deg.values, h.dec_deg.values)
+        for (_, r), sp in zip(h[s < radius_arcsec].iterrows(), s[s < radius_arcsec]):
+            out.append({"source": "NASA-Oct2026", "toi": r["toi_prefix"], "tic": None, "sep": float(sp),
+                        "period": r.get("period_days"), "depth_ppm": r.get("transit_depth_ppm"), "disp": r.get("disposition")})
+    if period is not None:
+        def match(p):
+            if p is None or not np.isfinite(p) or p <= 0:
+                return False
+            r_ = period / p
+            return any(abs(r_ - k) < ptol * k for k in (1, 2, 3, 0.5, 1 / 3))
+        out = [o for o in out if match(o["period"])]
+    return out
