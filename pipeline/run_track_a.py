@@ -37,8 +37,12 @@ def one(row, outdir):
     if os.path.exists(out):
         return tic, "cached", 0.0
     t0 = time.time()
-    man = manifests()
-    sec = {p: man[p].get(tic, []) for p in ("spoc", "tspoc", "qlp")}
+    if "sec_qlp" in row:
+        sec = {p: [int(float(x)) for x in str(row.get(f"sec_{p}") or "").split(";") if x not in ("", "nan")]
+               for p in ("spoc", "tspoc", "qlp")}
+    else:
+        man = manifests()
+        sec = {p: man[p].get(tic, []) for p in ("spoc", "tspoc", "qlp")}
     res = {"tic": tic, "sectors": sec}
     try:
         lcs = load_star(tic, sec)
@@ -52,8 +56,9 @@ def one(row, outdir):
             res.update({"status": "ok", "n_points": int(lc["time"].size), "bad_sectors": lc["bad_sectors"],
                         "noise_1h": lc["noise_1h"], "rho": rho,
                         "products": sorted({l["meta"]["product"] for l in lcs}),
-                        "signals": bls_search(lc, rho, max_signals=3),
-                        "signals_inverted": bls_search(lc, rho, max_signals=2, invert=True)})
+                        "signals": bls_search(lc, rho, max_signals=2)})
+            if tic % 2 == 0:  # flipped-light-curve false-alarm baseline on half of the stars
+                res["signals_inverted"] = bls_search(lc, rho, max_signals=1, invert=True)
     except Exception as e:
         res["status"] = f"error: {type(e).__name__}: {str(e)[:200]}"
     res["runtime_s"] = round(time.time() - t0, 1)
@@ -70,12 +75,13 @@ def _star(args):
 def main():
     targets, outdir = sys.argv[1], sys.argv[2]
     n_proc = int(sys.argv[3]) if len(sys.argv) > 3 else os.cpu_count()
-    df = pd.read_csv(targets)
+    df = pd.read_csv(targets, dtype={"sec_spoc": str, "sec_tspoc": str, "sec_qlp": str})
     start = int(sys.argv[4]) if len(sys.argv) > 4 else 0
     stop = int(sys.argv[5]) if len(sys.argv) > 5 else len(df)
     df = df.iloc[start:stop]
     os.makedirs(os.path.join(outdir, "stars"), exist_ok=True)
-    manifests()  # load once in the parent so forked workers share it
+    if "sec_qlp" not in df:
+        manifests()  # load once in the parent so forked workers share it
     t0 = time.time()
     with mp.get_context("fork").Pool(n_proc) as pool:
         for i, (tic, status, dt) in enumerate(pool.imap_unordered(_star, [(r, outdir) for r in df.to_dict("records")])):

@@ -15,7 +15,8 @@ DETREND_WINDOW = 0.75   # days; the reference project's injection tests favoured
 BIN_MIN = 30.0
 PERIOD_MIN, PERIOD_MAX = 0.5, 30.0
 MIN_TRANSITS = 3
-OVERSAMPLE = 3
+OVERSAMPLE = 2   # period grid: transit drifts < D/2 (grazing) over the baseline
+BLS_PHASE_OVERSAMPLE = 3
 
 
 def load_star(tic, sectors_by_product):
@@ -130,7 +131,7 @@ def bls_search(lc, rho_sun, max_signals=3, invert=False):
         if (~mask).sum() < 200:
             break
         bls = BoxLeastSquares(t[~mask], y[~mask], dy[~mask])
-        res = bls.power(periods, durations, objective="snr")
+        res = bls.power(periods, durations, objective="snr", oversample=BLS_PHASE_OVERSAMPLE)
         s = sde(np.asarray(res.power), periods)
         k = int(np.nanargmax(s))
         P, t0, dur = float(res.period[k]), float(res.transit_time[k]), float(res.duration[k])
