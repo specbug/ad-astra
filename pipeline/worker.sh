@@ -21,11 +21,10 @@ if [ ! -x "$PY" ]; then
 fi
 
 cd "$REPO/pipeline"
-if [ ! -f "$ADASTRA_WORK/catalogs/tic_master.parquet" ]; then
-  log "building TIC master table from S3"
-  $PY build_tic.py 8 >> "$ADASTRA_WORK/tic.log" 2>&1
-  $PY -c "import build_manifest as b; b.master()" >> "$ADASTRA_WORK/tic.log" 2>&1
-  log "TIC master ready"
+if [ ! -f "$ADASTRA_WORK/catalogs/tic_v2/_SUCCESS" ]; then
+  log "building TIC extract from S3 in the background (run_sector waits for it before reducing)"
+  ( $PY build_tic.py 8 >> "$ADASTRA_WORK/tic.log" 2>&1 || $PY build_tic.py 4 >> "$ADASTRA_WORK/tic.log" 2>&1
+    echo "$(date -u +%FT%TZ) TIC extract finished: $(tail -1 "$ADASTRA_WORK/tic.log")" >> "$LOG" ) &
 fi
 
 push_results() {

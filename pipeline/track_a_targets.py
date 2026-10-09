@@ -21,7 +21,10 @@ def noise_1h(tmag):
 
 
 def main():
-    tic = pd.read_parquet(CATALOGS / "tic_master.parquet")
+    import pyarrow.compute as pc
+    import ticdb
+    tic = ticdb.query(columns=["ra", "dec", "Tmag", "Teff", "logg", "rad", "mass", "d", "contratio", "objType",
+                               "disposition"], expr=(pc.field("d") < 150) & (pc.field("Tmag") < 13.5))
     s = tic[(tic.objType == "STAR") & (tic.d < 150) & (tic.Tmag < 13.5) & (tic.Teff.between(2700, 5400))
             & (tic.rad < 1.0) & (tic.logg > 4.2) & (tic.contratio.fillna(0) < 0.2)
             & ~tic.disposition.isin(["DUPLICATE", "ARTIFACT", "SPLIT"])].copy()

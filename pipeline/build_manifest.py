@@ -26,7 +26,9 @@ def master():
     df = df.rename(columns={"ID": "tic"})
     df["tic"] = df["tic"].astype("int64")
     df = df.drop_duplicates("tic")
-    df.to_parquet(out, index=False)
+    df.to_parquet(str(out) + ".tmp", index=False)
+    import os
+    os.replace(str(out) + ".tmp", out)  # atomic: run_sector polls for this file
     return df
 
 
@@ -52,9 +54,10 @@ def manifest(product, sectors, ids):
 
 
 if __name__ == "__main__":
-    tm = master()
-    print("tic_master rows:", len(tm))
-    q = manifest("qlp", range(1, 99), tm["tic"].values)
+    import ticdb
+    ids = ticdb.query(columns=[])["tic"].values
+    print("TIC extract rows:", len(ids))
+    q = manifest("qlp", range(1, 99), ids)
     print("qlp manifest rows:", len(q), "stars:", q.tic.nunique())
-    t = manifest("tspoc", range(1, 82), tm["tic"].values)
+    t = manifest("tspoc", range(1, 82), ids)
     print("tspoc manifest rows:", len(t), "stars:", t.tic.nunique())

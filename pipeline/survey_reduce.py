@@ -148,8 +148,8 @@ def reduce_dirs(dirs):
     st = pd.concat(st, ignore_index=True)
     ccd_hot, sc_hot = hot_bins(ev, st)
     ev = flag_systematics(ev, ccd_hot, sc_hot)
-    coords = pd.read_parquet(CATALOGS / "tic_master.parquet", columns=["tic", "ra", "dec"])
-    coords = coords[coords.tic.isin(ev.tic.unique())]
+    import ticdb
+    coords = ticdb.query(ev.tic.unique(), ["ra", "dec"])
     ev = flag_blends(ev, coords)
     ev = quality_flags(ev)
     return ev, st, ccd_hot, sc_hot

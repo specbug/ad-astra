@@ -1,58 +1,39 @@
-# Worker brief: survey sectors for the ad-astra TESS search
+# Worker brief: survey TESS sectors for the ad-astra search
 
-You are one of several cloud sessions running the same survey pipeline on different TESS sectors.
-A coordinating session wrote this pipeline, validated it, and assigned you a list of sectors. Your job
-is mechanical: run the pipeline on your sectors and push the compact results. Do not change the
-pipeline code. If something is broken, record it (see "Failures") and move on; the coordinator will
-read your notes.
+You are one of several cloud sessions running the same, already-validated survey pipeline on different
+TESS sectors. A coordinating session wrote and tested the pipeline and assigned you a list of sectors.
+Your job is operational: run it, keep it running, and report. Do not edit pipeline code. If something
+breaks, record what happened (see Failures) and continue with the next sector.
 
-## What the pipeline does (context only)
-`pipeline/run_sector.py S` reads every QLP full-frame light curve of sector S, for stars in
-`results/samples/survey_sample.parquet`, straight from the public MAST S3 bucket (stpubdata). It
-flattens each light curve, catalogues every significant dip, flags dips shared by many stars
-(spacecraft systematics), blends and artefacts, then writes candidate tables for three science tracks
-to `results/survey/sNNNN/`. About 10% of light curves are also searched upside-down to measure the
-false-alarm rate. Only S3 is needed; the other astronomy archives are blocked in this environment.
+## What it does (context)
+`pipeline/worker.sh S1 S2 ...` sets up a Python venv, builds a local extract of the TESS Input Catalog
+from the public MAST S3 bucket (in the background), then for each sector runs `pipeline/run_sector.py`:
+it reads every QLP full-frame light curve of that sector for the ~2 million stars in
+`results/samples/survey_sample.parquet` straight from S3, flattens them, catalogues every significant
+dip, flags spacecraft systematics/blends/artefacts, and writes small candidate tables for three science
+tracks to `results/survey/sNNNN/`, which it commits and pushes to branch
+`claude/gifted-albattani-szay6x` (rebasing on other workers' pushes). Only S3 access is needed.
 
-## Setup (once)
-```bash
-cd <repo root>                 # the checked-out ad-astra repository
-git checkout claude/gifted-albattani-szay6x && git pull origin claude/gifted-albattani-szay6x
-python3 -m venv /home/user/venv
-/home/user/venv/bin/pip install -q -r requirements.txt
-export ADASTRA_WORK=/home/user/work
-cd pipeline
-nohup /home/user/venv/bin/python build_tic.py 8 > /home/user/work_tic.log 2>&1 &   # ~15-25 min, needed by the reduce step
-```
-`run_sector.py` waits for the TIC table by itself only if you start it after `build_tic.py` finished.
-So: start `build_tic.py`, wait for its log to print `DONE` (use a Monitor or a background
-`until grep -q DONE ...; do sleep 20; done` command — never foreground sleep loops), then run
-`/home/user/venv/bin/python build_manifest.py` is NOT needed; only `tic_master.parquet` is. Build it with:
-```bash
-/home/user/venv/bin/python -c "import build_manifest as b; b.master()"
-```
+## Steps
+1. Make sure you are on the branch and up to date:
+   `git fetch origin claude/gifted-albattani-szay6x && git checkout claude/gifted-albattani-szay6x && git pull --rebase origin claude/gifted-albattani-szay6x`
+2. Launch the worker in the background (it runs for hours):
+   `nohup bash pipeline/worker.sh <your sectors, space separated> > /home/user/worker_stdout.log 2>&1 &`
+3. Watch progress with a Monitor on `/home/user/work/worker.log` (each line is an event: start/done/pushed/FAILED
+   per sector, then `ALL DONE`). Never use foreground sleep loops. Re-arm the monitor when it expires.
+   Typical sector: 20-60 minutes.
+4. If the worker process dies before `ALL DONE` (check with `pgrep -f worker.sh`), relaunch the same
+   command; finished sectors are skipped automatically.
 
-## Run your sectors
-For each sector S in your list, in order:
-```bash
-cd <repo root>/pipeline
-ADASTRA_WORK=/home/user/work nohup /home/user/venv/bin/python run_sector.py S 4 > /home/user/work/run_S.log 2>&1
-```
-Run it in the background and wait for it with a Monitor/until-loop on the log (look for the final JSON
-summary line or a Traceback). One sector takes roughly 0.5-2 hours. Then commit and push its results:
-```bash
-cd <repo root>
-git add results/survey/sNNNN
-git commit -m "Survey results for sector S" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
-for i in 1 2 3 4 5; do git pull --rebase -q origin claude/gifted-albattani-szay6x && git push -q origin claude/gifted-albattani-szay6x && break; sleep $((i*5)); done
-```
-Only ever add files under `results/survey/`. Never modify, revert or delete other files; never force-push;
-never open a pull request.
+## Rules
+- Only files under `results/survey/` are committed (the script does this). Never edit, revert or delete
+  other files, never force-push, never open a pull request, never change branches.
+- If a push keeps failing, leave the results committed locally and say so in your final report.
 
 ## Failures
-If a sector fails, read the log, retry it once. If it fails again, write the last 40 lines of the log to
-`results/survey/sNNNN/FAILED.txt`, commit and push that file, and continue with the next sector.
-Disk: delete `/home/user/work/survey/sNNNN` if a failed run left it behind.
+The script retries a failed sector once, then commits `results/survey/sNNNN/FAILED.txt` with the log tail.
+If many sectors fail the same way, stop and report the error instead of burning through the list.
 
-## When done
-Reply with a short table: sector, number of light curves, n_trackb, n_trackc, n_trackd, runtime, status.
+## Final report
+When `ALL DONE` appears, reply with a table: sector, light curves, n_trackb, n_trackc, n_trackd, runtime
+(from each `results/survey/sNNNN/summary.json`), and any failures.

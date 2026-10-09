@@ -72,13 +72,33 @@ def track_c_targets(ev, min_events=3, min_snr=10):
     return g[g.n >= min_events]
 
 
+def _periodic(times, tol=0.06):
+    """True if dip times fit one period P (or P with a secondary at any fixed phase): EB-like."""
+    t = np.sort(np.asarray(times))
+    if t.size < 3:
+        return False
+    d = np.diff(t)
+    for P in (d.min(), d.min() * 2, np.median(d)):
+        if P <= 0:
+            continue
+        ph = ((t - t[0]) / P) % 1.0
+        ph = np.minimum(ph, 1 - ph) * P
+        # allow one extra phase cluster (secondary eclipse)
+        off = ph[ph > tol]
+        if off.size == 0 or np.ptp(((t[ph > tol] - t[0]) % P)) < 2 * tol:
+            return True
+    return False
+
+
 def track_d(ev, min_snr=10):
-    """Deep, non-repeating or oddly shaped dips around dwarfs."""
+    """Deep non-periodic or oddly shaped dips around dwarfs (exocomet-like, dipper-like, long and deep)."""
     c = ev[ev.clean & (ev.snr >= min_snr) & ~ev.invert].copy()
     c["asym"] = (c.depth_first - c.depth_second) / c.depth.where(c.depth > 0)
     c["dwarf"] = (c.rad.fillna(1) < 2.0) & (c.logg.fillna(4.4) > 3.6)
+    per = c.groupby(["tic", "sector"]).t0.apply(lambda x: _periodic(x.values)).rename("periodic")
+    c = c.join(per, on=["tic", "sector"])
     long_deep = (c.dur_h >= 13) & (c.depth >= 0.01)
-    asym = c.asym.abs() > 0.6
-    multi = c.n_clean.between(2, 8)
-    c["d_reason"] = np.select([long_deep, asym, multi], ["long_deep", "asymmetric", "multi"], "")
+    asym = (c.asym.abs() > 0.6) & (c.local_snr >= 10)
+    multi = c.n_clean.between(2, 8) & ~c.periodic & (c.depth >= 0.005)
+    c["d_reason"] = np.select([long_deep, asym, multi], ["long_deep", "asymmetric", "aperiodic_multi"], "")
     return c[(c.d_reason != "") & c.dwarf]

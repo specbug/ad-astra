@@ -28,9 +28,13 @@ def do(p):
             err = e; time.sleep(5)
     print("FAILED", key, repr(err)[:200], flush=True); return -1
 
-t0 = time.time(); tot = 0; done = 0
+t0 = time.time(); tot = 0; done = 0; failed = 0
 with cf.ThreadPoolExecutor(int(sys.argv[1]) if len(sys.argv) > 1 else 6) as ex:
     for r in ex.map(do, parts):
-        done += 1; tot += max(r, 0)
+        done += 1; tot += max(r, 0); failed += (r < 0)
         if done % 25 == 0: print(f"{done}/{len(parts)} partitions, {tot} rows kept, {time.time()-t0:.0f}s", flush=True)
-print("DONE", done, tot, f"{time.time()-t0:.0f}s", flush=True)
+print("DONE", done, tot, f"{time.time()-t0:.0f}s", "failed", failed, flush=True)
+if failed == 0:
+    open(os.path.join(OUT, "_SUCCESS"), "w").write("ok\n")
+else:
+    sys.exit(1)
