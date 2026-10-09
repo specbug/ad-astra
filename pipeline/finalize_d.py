@@ -45,7 +45,7 @@ def one(r):
         out.update({k: res[k] for k in ("n_sectors", "n_deeper", "n_similar")})
         times = [float(r["t0"])] + [e["t0"] for e in res["similar"]]
         eph = ephemeris(times, float(r["fit_t14_h"])) if len(times) >= 3 else None
-        out["periodic"] = bool(eph is not None and eph[1] < 30)
+        out["periodic_all"] = bool(eph is not None and eph[1] < 30)
         out["similar"] = json.dumps(res["similar"][:8])
     except Exception as e:
         out["error"] = repr(e)[:200]
@@ -59,7 +59,7 @@ def main():
     with cf.ThreadPoolExecutor(n_proc) as ex:
         rows = list(ex.map(one, d.to_dict("records")))
     f = d.merge(pd.DataFrame(rows), on=["tic", "sector", "t0"], how="left")
-    keep = (f.d_kind == "asymmetric") | ~f.periodic.fillna(False).astype(bool)
+    keep = (f.d_kind == "asymmetric") | ~f.periodic_all.fillna(False).astype(bool)
     f["verdict"] = np.where(keep & (f.n_deeper.fillna(0) == 0), "anomaly candidate",
                             np.where(f.n_deeper.fillna(0) > 0, "EB (deeper dips)", "periodic (EB/planet)"))
     f.to_csv(OUT / "trackd_final.csv", index=False, float_format="%.6g")
