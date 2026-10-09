@@ -72,3 +72,35 @@ def alias_table(t_events, depth, dur_h, flat, p_min=None, n_max=None, cover_frac
                      "max_reject_sigma": None if worst is None else float(worst[0]),
                      "worst_time": None if worst is None else float(worst[1])})
     return rows
+
+
+def single_period_constraints(t0, depth, dur_h, flat, pmin=5.0, pmax=3000.0, cover_frac=0.5, exclude_sigma=3.0):
+    """Periods allowed for a single transit at t0, given every other observed data point.
+
+    For each trial period P the predicted transits t0 + k*P (k != 0) that land in data with enough
+    coverage are tested; P is excluded if any of them shows no dip (depth rejected at > exclude_sigma).
+    Returns the period grid and a boolean 'allowed' mask, plus the minimum period not excluded.
+    """
+    t, y, e = flat
+    D = dur_h / 24.0
+    grid = np.exp(np.arange(np.log(pmin), np.log(pmax), D / 4 / pmax * 0 + 0.0005))
+    allowed = np.ones(grid.size, bool)
+    expected = D / (30 / 1440)
+    for i, P in enumerate(grid):
+        kmin = int(np.floor((t.min() - t0) / P)) - 1
+        kmax = int(np.ceil((t.max() - t0) / P)) + 1
+        for k in range(kmin, kmax + 1):
+            if k == 0:
+                continue
+            tc = t0 + k * P
+            lo, hi = np.searchsorted(t, [tc - D / 2, tc + D / 2])
+            n = hi - lo
+            if n < cover_frac * expected:
+                continue
+            m = 1 - np.mean(y[lo:hi])
+            err = np.median(e[lo:hi]) / np.sqrt(n)
+            if (depth - m) / err > exclude_sigma:
+                allowed[i] = False
+                break
+    pmin_allowed = float(grid[allowed][0]) if allowed.any() else None
+    return grid, allowed, pmin_allowed

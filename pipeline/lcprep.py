@@ -109,6 +109,8 @@ def detrend_fast(t, f, window, knot_step=1.0 / 48, gap=0.5):
     About 10x faster than evaluating at every cadence; for windows >= 0.5 d and a 30-min knot step the
     trend differs from wotan's by well under the white noise. Segments are handled independently.
     """
+    t = np.ascontiguousarray(t, dtype=np.float64)  # FITS columns are big-endian; numba needs native
+    f = np.ascontiguousarray(f, dtype=np.float64)
     trend = np.full(t.size, np.nan)
     for a, b in segments(t, gap):
         ts, fs = t[a:b], f[a:b]
