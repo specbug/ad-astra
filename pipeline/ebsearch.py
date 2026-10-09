@@ -22,12 +22,11 @@ def eb_period(t, y, pmin=0.2, pmax=None, durations_h=(1, 2, 3, 5, 8)):
     dur = dur[dur < 0.3 * pmin * 3]  # keep durations shorter than the shortest period scale
     if dur.size == 0:
         dur = np.array([0.03])
-    # frequency grid: phase drift over the baseline < 1/4 of the shortest duration
-    df = 0.25 * dur.min() / base ** 2
-    freqs = np.arange(1 / pmax, 1 / pmin, df)
-    if freqs.size > 300000:
-        freqs = np.linspace(1 / pmax, 1 / pmin, 300000)
-    periods = np.sort(1 / freqs)
+    # frequency grid: accumulated phase drift over the baseline below 1/3 of the shortest duration,
+    # i.e. df <= dur/(3*base*P): a geometric grid in frequency
+    q = dur.min() / (3 * base)
+    nf = int(np.ceil(np.log(pmax / pmin) / q)) + 1
+    periods = pmin * np.exp(np.linspace(0, np.log(pmax / pmin), min(nf, 200000)))
     res = bls.power(periods, dur, objective="likelihood")
     k = int(np.argmax(res.power))
     return float(res.period[k]), float(res.transit_time[k]), float(res.duration[k]), float(res.depth[k])
@@ -95,21 +94,32 @@ def analyse_eb(lc, window=3.0):
     tr, rr = t[~ecl], resid[~ecl]
     if tr.size < 200:
         return out
-    # second periodic signal in residuals
-    try:
-        P2, t02, dur2, dep2 = eb_period(tr, rr)
-        bls = BoxLeastSquares(tr, rr)
-        st = bls.compute_stats(P2, dur2, t02)
-        intr = np.abs(((tr - t02 + 0.5 * P2) % P2) - 0.5 * P2) < dur2 / 2
-        n_in = int(intr.sum())
-        snr2 = dep2 / (robust_std(rr) / np.sqrt(max(n_in, 1)))
-        ratio = P2 / P
-        near_harm = min(abs(ratio * m - round(ratio * m)) for m in (1, 2, 3, 4)) < 0.01
-        out.update({"P2": P2, "t0_2": t02, "dur2_h": dur2 * 24, "depth2": dep2, "snr2": float(snr2),
-                    "n_tr2": int(np.sum(st["per_transit_count"] > 0)), "P2_harmonic": bool(near_harm),
-                    "depth2_odd": float(st["depth_odd"][0]), "depth2_even": float(st["depth_even"][0])})
-    except Exception:
-        pass
+    # further periodic signals in the residuals (2+2 quadruples, sextuples): find, record, mask, repeat
+    keep = np.ones(tr.size, bool)
+    for j in (2, 3):
+        if keep.sum() < 200:
+            break
+        try:
+            tt, yy = tr[keep], rr[keep]
+            Pj, t0j, durj, depj = eb_period(tt, yy)
+            bls = BoxLeastSquares(tt, yy)
+            st = bls.compute_stats(Pj, durj, t0j)
+            intr = np.abs(((tt - t0j + 0.5 * Pj) % Pj) - 0.5 * Pj) < durj / 2
+            snrj = depj / (robust_std(yy) / np.sqrt(max(int(intr.sum()), 1)))
+            ratio = Pj / P
+            near_harm = min(abs(ratio * m - round(ratio * m)) for m in (1, 2, 3, 4)) < 0.01
+            out.update({f"P{j}": Pj, f"t0_{j}": t0j, f"dur{j}_h": durj * 24, f"depth{j}": depj,
+                        f"snr{j}": float(snrj), f"n_tr{j}": int(np.sum(st["per_transit_count"] > 0)),
+                        f"P{j}_harmonic": bool(near_harm),
+                        f"depth{j}_odd": float(st["depth_odd"][0]), f"depth{j}_even": float(st["depth_even"][0])})
+            # mask this signal's dips (and their phase-0.5 counterparts) before the next pass
+            ph = np.abs(((tr - t0j + 0.5 * Pj) % Pj) - 0.5 * Pj)
+            ph2 = np.abs(((tr - t0j) % Pj) - 0.5 * Pj)
+            keep &= (ph > 0.75 * durj) & (ph2 > 0.75 * durj)
+            if snrj < 8:
+                break
+        except Exception:
+            break
     # isolated extra dips in residuals
     segs = segments(tr, 0.5)
     edges = [tr[a] for a, b in segs] + [tr[b - 1] for a, b in segs]
