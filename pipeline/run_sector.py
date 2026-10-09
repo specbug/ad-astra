@@ -54,7 +54,14 @@ def sample_ids():
     return pd.read_parquet(env.REPO / "results" / "samples" / "survey_sample.parquet", columns=["tic"]).tic.values
 
 
+PRODUCT = os.environ.get("PRODUCT", "qlp")
+
+
 def build_jobs(sector, ids):
+    if PRODUCT == "spoc":  # every 2-minute target of the sector (they were pre-selected; keep them all)
+        m = pd.read_parquet(CATALOGS / "spoc_manifest.parquet", columns=["tic", "sector"])
+        tic = m[m.sector == sector].tic.astype("int64")
+        return pd.DataFrame({"product": "spoc", "tic": tic.values, "sector": sector})
     df = s3io.read_target_list("qlp", sector)
     tic = pd.to_numeric(df.tic, errors="coerce").dropna().astype("int64")
     tic = tic[tic.isin(pd.Index(ids))]
@@ -82,11 +89,11 @@ def ebs(rows):
 def main():
     sector = int(sys.argv[1])
     n_proc = int(sys.argv[2]) if len(sys.argv) > 2 else os.cpu_count()
-    out = RESULTS / "survey" / f"s{sector:04d}"
+    out = RESULTS / "survey" / (f"s{sector:04d}" + ("" if PRODUCT == "qlp" else f"_{PRODUCT}"))
     if (out / "summary.json").exists():
         print("already done", sector)
         return
-    work = SURVEY / f"s{sector:04d}"
+    work = SURVEY / (f"s{sector:04d}" + ("" if PRODUCT == "qlp" else f"_{PRODUCT}"))
     work.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     jobs = build_jobs(sector, sample_ids())
