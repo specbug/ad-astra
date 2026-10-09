@@ -109,6 +109,13 @@ def analyse_eb(lc, window=3.0, return_arrays=False):
             snrj = depj / (robust_std(yy) / np.sqrt(max(int(intr.sum()), 1)))
             ratio = Pj / P
             near_harm = min(abs(ratio * m - round(ratio * m)) for m in (1, 2, 3, 4)) < 0.01
+            # eclipse-likeness: box depth relative to the peak-to-trough of a sinusoid fitted at Pj
+            # (narrow eclipses: >> 1; pulsation / rotation / ellipsoidal residuals: ~1)
+            phj = 2 * np.pi * ((tt - t0j) / Pj)
+            A = np.vstack([np.ones_like(phj), np.sin(phj), np.cos(phj)]).T
+            cf_, *_ = np.linalg.lstsq(A, yy, rcond=None)
+            sine_p2p = 2 * np.hypot(cf_[1], cf_[2])
+            out[f"P{j}_box_over_sine"] = float(depj / sine_p2p) if sine_p2p > 0 else np.nan
             out.update({f"P{j}": Pj, f"t0_{j}": t0j, f"dur{j}_h": durj * 24, f"depth{j}": depj,
                         f"snr{j}": float(snrj), f"n_tr{j}": int(np.sum(st["per_transit_count"] > 0)),
                         f"P{j}_harmonic": bool(near_harm),
