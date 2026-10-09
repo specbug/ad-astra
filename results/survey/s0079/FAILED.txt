@@ -1,0 +1,40 @@
+chunk 181 (500 lcs, 2s); total 91000/97693 in 116s = 782.6 lc/s
+chunk 182 (500 lcs, 2s); total 91500/97693 in 117s = 784.4 lc/s
+chunk 183 (500 lcs, 2s); total 92000/97693 in 117s = 784.9 lc/s
+chunk 184 (500 lcs, 2s); total 92500/97693 in 118s = 785.0 lc/s
+chunk 186 (500 lcs, 2s); total 93000/97693 in 119s = 780.9 lc/s
+chunk 185 (500 lcs, 3s); total 93500/97693 in 119s = 784.3 lc/s
+chunk 187 (500 lcs, 2s); total 94000/97693 in 120s = 785.3 lc/s
+chunk 188 (500 lcs, 3s); total 94500/97693 in 120s = 784.7 lc/s
+chunk 189 (500 lcs, 2s); total 95000/97693 in 122s = 781.7 lc/s
+chunk 190 (500 lcs, 3s); total 95500/97693 in 122s = 783.5 lc/s
+chunk 191 (500 lcs, 2s); total 96000/97693 in 122s = 785.6 lc/s
+chunk 192 (500 lcs, 2s); total 96500/97693 in 123s = 785.1 lc/s
+chunk 195 (193 lcs, 1s); total 96693/97693 in 123s = 783.3 lc/s
+chunk 193 (500 lcs, 2s); total 97193/97693 in 124s = 784.6 lc/s
+chunk 194 (500 lcs, 2s); total 97693/97693 in 124s = 785.8 lc/s
+DONE
+Traceback (most recent call last):
+  File "/home/user/ad-astra/pipeline/run_sector.py", line 160, in <module>
+    main()
+    ~~~~^^
+  File "/home/user/ad-astra/pipeline/run_sector.py", line 113, in main
+    ev, st, ccd_hot, sc_hot = survey_reduce.reduce_dirs([str(work)])
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/user/ad-astra/pipeline/survey_reduce.py", line 146, in reduce_dirs
+    ev, st = zip(*[load(d) for d in dirs])
+                   ~~~~^^^
+  File "/home/user/ad-astra/pipeline/survey_reduce.py", line 30, in load
+    ev = pd.concat([e for e in evs if len(e)], ignore_index=True)
+  File "/home/user/venv/lib/python3.13/site-packages/pandas/core/reshape/concat.py", line 382, in concat
+    op = _Concatenator(
+        objs,
+    ...<8 lines>...
+        sort=sort,
+    )
+  File "/home/user/venv/lib/python3.13/site-packages/pandas/core/reshape/concat.py", line 445, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/user/venv/lib/python3.13/site-packages/pandas/core/reshape/concat.py", line 507, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
