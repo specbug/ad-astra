@@ -100,6 +100,19 @@ def track_c():
     e["harmonic_any"] = harm
     e["near_P1"] = np.abs(np.log(r)) < np.log(1.5)  # residual of an imperfect EB template, usually
     strong = e[(e.snr2 >= 15) & ~e.harmonic_any & (e.n_tr2 >= 2)].copy()
+    # eclipse-likeness (box depth / sinusoid peak-to-trough) is missing from older worker outputs:
+    # recompute it for the strong second signals by re-running the EB analysis
+    if "P2_box_over_sine" not in strong or strong.P2_box_over_sine.isna().any():
+        import concurrent.futures as cf
+        from run_sector import _eb_one
+        need = strong[strong.get("P2_box_over_sine", pd.Series(np.nan, index=strong.index)).isna()]
+        rows = [{"product": r["product"], "tic": r.tic, "sector": r.sector} for _, r in need.iterrows()]
+        with cf.ProcessPoolExecutor(4) as ex:
+            res = list(ex.map(_eb_one, rows, chunksize=2))
+        bos = {(x["tic"], x["sector"]): (x.get("P2_box_over_sine"), x.get("P2"), x.get("snr2")) for x in res if x}
+        strong["P2_box_over_sine"] = [bos.get((r.tic, r.sector), (np.nan,))[0] if np.isnan(r.get("P2_box_over_sine", np.nan))
+                                      else r.P2_box_over_sine for _, r in strong.iterrows()]
+    strong = strong[strong.P2_box_over_sine > 3]
     rows = []
     for tic, g in strong.groupby("tic"):
         g = g.sort_values("sector")
@@ -110,7 +123,8 @@ def track_c():
                      "P1": g.P1.median(), "depth1": g.depth1.median(), "P2": g.P2.iloc[np.argmax(g.snr2.values)],
                      "depth2": g.depth2.median(), "snr2_max": g.snr2.max(), "P2_recurs": rec,
                      "near_P1": bool(g.near_P1.all()), "P3": g.P3.iloc[np.argmax(g.snr2.values)] if "P3" in g else np.nan,
-                     "snr3": g.snr3.max() if "snr3" in g else np.nan})
+                     "snr3": g.snr3.max() if "snr3" in g else np.nan,
+                     "box_over_sine": g.P2_box_over_sine.median()})
     cand = pd.DataFrame(rows)
     if len(cand):
         st = ticdb.query(cand.tic.values, ["ra", "dec", "Tmag", "Teff", "rad", "d"])
