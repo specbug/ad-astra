@@ -486,6 +486,91 @@ def section_hip71639(fit, ex):
 </section>"""
 
 
+def section_hip56966(fit, ex):
+    if "HIP56966" not in fit or "HIP56966" not in ex:
+        return ""
+    f = fit["HIP56966"]
+    e = ex["HIP56966"]
+    rs, rs_err = 1.069, 0.05
+    rp = f["rp_rs"][0] * rs * R_EARTH_PER_RSUN
+    rp_err = rp * math.hypot(max(f["rp_rs"][1], f["rp_rs"][2]) / f["rp_rs"][0], rs_err / rs)
+    depth = -min(min(p["my"]) for p in f["plot"])
+    labels = [f"Sector {s} · {btjd_to_utc(p['tc']).strftime('%b %Y')}" for s, p in zip((10, 99, 100), f["plot"])]
+    svg = svg_lightcurves(f["plot"], labels, id_="lc-hip56966", panel_w=330, xr=10, xstep=4)
+    nxt = "".join(f"<li><span class='num'>{btjd_to_utc(r['btjd']).strftime('%-d %b %Y, %H:%M')} UTC</span>"
+                  f"<span class='muted'>{esc(r['note'])}</span></li>" for r in e["next"])
+    checks = check_rows([
+        ("pass", "Four transits, one period.",
+         f"Dips in sectors 10, 64, 99 and 100 (710, 651, 694 and 799 ppm, each ±60) fall on one ephemeris with "
+         f"4 minutes rms: 74 and 51 cycles separate the earlier ones from the sector-99 transit. Every shorter alias "
+         f"predicts transits inside the data that are missing, ruled out at more than {e['alias_min_sigma']:.0f}σ. "
+         f"The only other predicted transit since 2019 fell in the mid-sector gap of sector 37."),
+        ("pass", "No secondary eclipse.",
+         "Half an orbit after each transit the light curves are flat to about 150 ppm, as for a planet and unlike most "
+         "eclipsing binaries."),
+        ("pass", "The signal is on this star.",
+         "A source test on the 2-minute pixels of three transits: the difference image is fitted as the star's "
+         "image placed at each candidate position. The target fits best. Every Gaia source within 150″ bright "
+         "enough to cause the dip with a 50% eclipse fits worse by Δχ² ≥ 25 summed over the three; the nearest "
+         "plausible one (G = 13.9, 37″ away, which would need 10%-deep eclipses) by Δχ² = 79."),
+        ("pass", "No sign of a stellar companion.",
+         "Gaia DR3: RUWE 0.81, no non-single-star solution, radial velocity stable to 0.18 km/s over 12 epochs."),
+        ("warn", "Slightly short transit.",
+         f"A circular orbit at this period gives a {pm(f['t14_h'], 1)}-hour transit if the planet crosses at impact "
+         f"parameter ≈ {e['b_circ']:.2f}; the shape prefers {pm(f['b'], 2)}. Consistent within 1σ, or a modest "
+         f"eccentricity."),
+        ("info", "Not yet ruled out:", "an eclipsing companion within about 2″, which imaging and radial velocities "
+         "would exclude."),
+    ])
+    return f"""
+<section id="hip56966" class="cand">
+  <div class="cand-head">
+    <p class="kicker">Candidate 3 · Track B, found during vetting · SPOC 2-minute data</p>
+    <h2>HIP 56966: a sub-Neptune every 19.8 days</h2>
+    <div class="chips">{chip("Not a TOI", "new")}{chip("No SPOC TCE", "new")}</div>
+    <p class="lede col">A Sun-like G0 star (V = 8.8), 73 parsecs away in Centaurus, dims by {depth:.0f} ppm for
+    2.8 hours every {f['period_d'][0]:.4f} days. A planet about {rp:.1f} times the size of Earth would do this.
+    SPOC never saw two of its transits in one search, so it raised no alert.</p>
+  </div>
+  <div class="cand-grid">
+    <div>
+      <figure class="plate" style="margin:0">
+        <div class="scroll-x">{svg}</div>
+        <figcaption>TESS 2-minute photometry around the transits in sectors 10, 99 and 100 (20-minute bins), with
+        one model fitted to all three. The sector-64 transit, seen only in full-frame images, agrees in depth.</figcaption>
+      </figure>
+      <div class="col" style="display:grid;gap:12px">
+        <h3>Vetting</h3>
+        {checks}
+      </div>
+    </div>
+    <div>
+      <dl class="spec">
+        <dt>Star</dt><dd>HIP 56966 · TIC 266376971</dd>
+        <dt>Position</dt><dd>11h40m40.7s −58°06′16″</dd>
+        <dt>Brightness</dt><dd>V 8.84 · T 8.28</dd>
+        <dt>Host</dt><dd>G0 · 5970 K · 1.07 {RSUN} · 1.09 {MSUN}</dd>
+        <dt>Distance</dt><dd>72.6 pc</dd>
+        <dt>Period</dt><dd>{f['period_d'][0]:.5f} ± {max(f['period_d'][1:]):.5f} d</dd>
+        <dt>Mid-transit</dt><dd>BTJD {f['tref_btjd'][0]:.4f} ± {max(f['tref_btjd'][1:]):.4f}</dd>
+        <dt>Depth</dt><dd>{depth:.0f} ppm</dd>
+        <dt>Duration</dt><dd>{pm(f['t14_h'], 2)} h</dd>
+        <dt>Rp / R★</dt><dd>{pm(f['rp_rs'], 4)}</dd>
+        <dt>Radius</dt><dd>{rp:.1f} ± {rp_err:.1f} {RE}</dd>
+        <dt>Orbit</dt><dd>{e['a_au']:.3f} AU · {e['s_earth']:.0f}× Earth's insolation</dd>
+        <dt>T<sub>eq</sub></dt><dd>≈ {e['teq']:.0f} K</dd>
+        <dt>RV signal</dt><dd>≈ {e['k_ms']:.1f} m/s for {e['mass_assumed']:.0f} M<sub>⊕</sub></dd>
+        <dt>Transits</dt><dd>S10 · S64 · S99 · S100</dd>
+      </dl>
+      <div class="plate">
+        <p class="label">Next transits seen from Chile</p>
+        <ul class="nexts">{nxt}</ul>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+
 def section_hd11506(fit, ex):
     f = fit["HD11506"]
     e = ex["HD11506"]
@@ -583,7 +668,7 @@ def trackb_shortlist(tb):
     if "is_toi" in x:
         x = x[~x.is_toi.astype(bool)]
     longp = (x.verdict == "single") | x.period_guess.isna() | (x.period_guess >= 15)
-    return x[(x.rp_rearth <= 16) & (x.n_spoc_tce.fillna(0) < 5) & longp & ~x.tic.isin([128703021, 266680498])]
+    return x[(x.rp_rearth <= 16) & (x.n_spoc_tce.fillna(0) < 5) & longp & ~x.tic.isin([128703021, 266680498, 266376971])]
 
 
 def verdict_chip(v):
@@ -905,6 +990,12 @@ def build():
     f71 = fit["HIP71639"]
     rp71 = f71["rp_rs"][0] * 1.596 * R_EARTH_PER_RSUN
     rp115 = fit["HD11506"]["rp_rs"][0] * 1.35 * R_EARTH_PER_RSUN
+    f56 = ""
+    if "HIP56966" in fit:
+        rp56 = fit["HIP56966"]["rp_rs"][0] * 1.069 * R_EARTH_PER_RSUN
+        f56 = (f'<li>{chip("Not a TOI", "new")}<div><strong>HIP 56966: a {rp56:.1f} {RE} planet candidate every '
+               f'{fit["HIP56966"]["period_d"][0]:.3f} days around a V = 8.8 Sun-like star.</strong> Four transits across '
+               f'seven years, found while vetting the survey\'s single-transit list; SPOC never saw two in one search.</div></li>')
     tbf = trackb_shortlist(tb) if tb is not None else None
     n_tb = len(tbf) if tbf is not None else 0
     n_bright = int((tbf.Tmag < 10).sum()) if tbf is not None else 0
@@ -919,8 +1010,8 @@ def build():
   <p class="kicker">Amateur search of NASA TESS data · interim report · {today}</p>
   <h1>Ad Astra</h1>
   <p class="dek">A blind search of {int(sv.n_real.sum()) / 1e6:.1f} million TESS light curves for transits and
-  eclipses that no catalogue lists yet. Two bright, nearby stars show planet-sized transits that are not TESS
-  Objects of Interest.</p>
+  eclipses that no catalogue lists yet. Three bright, nearby stars show transits of Neptune-sized planets that
+  are not TESS Objects of Interest.</p>
   <div class="strip">
     <div><span class="label">Sectors searched</span><span class="v">{n_q + n_s} of 107</span></div>
     <div><span class="label">Light curves</span><span class="v">{int(sv.n_real.sum()):,}</span></div>
@@ -928,7 +1019,7 @@ def build():
   </div>
 </header>
 <nav class="toc" aria-label="Sections"><a href="#findings">Findings</a><a href="#hip71639">HIP 71639</a>
-<a href="#hd11506">HD 11506</a><a href="#trackb">Transit candidates</a><a href="#trackc">Multiple stars</a>
+<a href="#hd11506">HD 11506</a><a href="#hip56966">HIP 56966</a><a href="#trackb">Transit candidates</a><a href="#trackc">Multiple stars</a>
 <a href="#trackd">Anomalies</a><a href="#calibration">Calibration</a><a href="#methods">Method</a><a href="#next">Next steps</a></nav>
 
 <section id="findings">
@@ -942,6 +1033,7 @@ def build():
     <li>{chip("Not a TOI", "new")}<div><strong>HD 11506: a {rp115:.1f} {RE} transiting candidate in a known
     three-planet system.</strong> Two matching transits, 2,149 days apart, around a star whose three giant planets
     were found by radial velocities. The period is 25.9 days or longer.</div></li>
+    {f56}
     <li>{chip(f"{n_tb} stars", "known")}<div><strong>More long-period transit candidates.</strong> Single and
     paired transits on stars with no TOI that survive every automatic cut, {n_bright} of them on stars brighter
     than T = 10. Each still needs the pixel and period work done for the two above. Seven others found this way
@@ -955,6 +1047,7 @@ def build():
 </section>
 {section_hip71639(fit, ex)}
 {section_hd11506(fit, ex)}
+{section_hip56966(fit, ex)}
 {section_trackb(tb, singles)}
 <section id="plates" style="padding-top:8px">
   <h3>Selected dossiers</h3>

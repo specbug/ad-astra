@@ -5,11 +5,10 @@
   "teq": 917.5296100238753,
   "mass_assumed": 15.934071781658544,
   "k_ms": 3.081751257729202,
-  "s102_offset_min": -3.1307576573453844,
-  "alias_min_sigma": 38.8,
   "rho_tic": 0.3025564740993002,
   "rho_verdict": "consistent",
   "rho_z": 0.6071425493539532,
+  "b_circ": 0.434002023793965,
   "next": [
    {
     "epoch": 120,
@@ -354,8 +353,100 @@
     "night_frac": 0.0,
     "sun_sep": 74.59168010629578,
     "note": "daytime or too low"
+   },
+   {
+    "epoch": 144,
+    "btjd": 5041.1917070951495,
+    "utc": "2028-09-26 16:36",
+    "sigma_min": 1.8854675310013085,
+    "night_frac": 0.0,
+    "sun_sep": 55.123628526132606,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 145,
+    "btjd": 5065.076059988278,
+    "utc": "2028-10-20 13:49",
+    "sigma_min": 1.9026478139603007,
+    "night_frac": 0.0,
+    "sun_sep": 38.10664073916719,
+    "note": "too close to the Sun"
+   },
+   {
+    "epoch": 146,
+    "btjd": 5088.960412881406,
+    "utc": "2028-11-13 11:02",
+    "sigma_min": 1.9198464306310268,
+    "night_frac": 0.0,
+    "sun_sep": 29.47390030833229,
+    "note": "too close to the Sun"
+   },
+   {
+    "epoch": 147,
+    "btjd": 5112.844765774536,
+    "utc": "2028-12-07 08:16",
+    "sigma_min": 1.937062892674505,
+    "night_frac": 0.0,
+    "sun_sep": 36.53060573834638,
+    "note": "too close to the Sun"
+   },
+   {
+    "epoch": 148,
+    "btjd": 5136.729118667665,
+    "utc": "2028-12-31 05:29",
+    "sigma_min": 1.9542967284620294,
+    "night_frac": 0.12,
+    "sun_sep": 53.55314459709628,
+    "note": "12% of the transit at night"
+   },
+   {
+    "epoch": 149,
+    "btjd": 5160.613471560793,
+    "utc": "2029-01-24 02:43",
+    "sigma_min": 1.9715474823877062,
+    "night_frac": 0.04,
+    "sun_sep": 73.79864802825975,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 150,
+    "btjd": 5184.497824453923,
+    "utc": "2029-02-16 23:56",
+    "sigma_min": 1.9888147142135333,
+    "night_frac": 0.0,
+    "sun_sep": 94.80415393970817,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 151,
+    "btjd": 5208.382177347052,
+    "utc": "2029-03-12 21:10",
+    "sigma_min": 2.0060979984453047,
+    "night_frac": 0.0,
+    "sun_sep": 115.38408066107326,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 152,
+    "btjd": 5232.26653024018,
+    "utc": "2029-04-05 18:23",
+    "sigma_min": 2.0233969237377276,
+    "night_frac": 0.0,
+    "sun_sep": 134.18219297317904,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 153,
+    "btjd": 5256.15088313331,
+    "utc": "2029-04-29 15:37",
+    "sigma_min": 2.040711092327227,
+    "night_frac": 0.0,
+    "sun_sep": 147.8702919922273,
+    "note": "daytime or too low"
    }
-  ]
+  ],
+  "s102_offset_min": -3.1307576573453844,
+  "alias_min_sigma": 38.8
  },
  "HD11506": {
   "dt": 2149.388967292934,
@@ -4652,5 +4743,453 @@
    }
   ],
   "depth_diff_sigma": 2.5013248588687427
+ },
+ "HIP56966": {
+  "a_au": 0.1475392936179875,
+  "s_earth": 59.95962008888954,
+  "teq": 774.5054810866311,
+  "mass_assumed": 9.693809814535882,
+  "k_ms": 2.1622672368311977,
+  "rho_tic": 0.8922640233573635,
+  "rho_verdict": "consistent",
+  "rho_z": 1.103243376617109,
+  "b_circ": 0.8681701843812489,
+  "next": [
+   {
+    "epoch": 143,
+    "btjd": 4421.9147391674305,
+    "utc": "2027-01-16 09:57",
+    "sigma_min": 2.511243181980602,
+    "night_frac": 0.2,
+    "sun_sep": 87.72603761658105,
+    "note": "20% of the transit at night"
+   },
+   {
+    "epoch": 144,
+    "btjd": 4441.740895456307,
+    "utc": "2027-02-05 05:46",
+    "sigma_min": 2.5335576705409664,
+    "night_frac": 1.0,
+    "sun_sep": 99.81692424633104,
+    "note": "full transit at night"
+   },
+   {
+    "epoch": 145,
+    "btjd": 4461.567051745184,
+    "utc": "2027-02-25 01:36",
+    "sigma_min": 2.556867537046122,
+    "night_frac": 0.76,
+    "sun_sep": 111.02468508333652,
+    "note": "76% of the transit at night"
+   },
+   {
+    "epoch": 150,
+    "btjd": 4560.697833189565,
+    "utc": "2027-06-04 04:44",
+    "sigma_min": 2.6874024594714845,
+    "night_frac": 0.56,
+    "sun_sep": 115.97027429741907,
+    "note": "56% of the transit at night"
+   },
+   {
+    "epoch": 151,
+    "btjd": 4580.523989478442,
+    "utc": "2027-06-24 00:34",
+    "sigma_min": 2.7161183696590405,
+    "night_frac": 1.0,
+    "sun_sep": 106.19660956178772,
+    "note": "full transit at night"
+   },
+   {
+    "epoch": 161,
+    "btjd": 4778.785552367206,
+    "utc": "2028-01-08 06:51",
+    "sigma_min": 3.0436233585041013,
+    "night_frac": 1.0,
+    "sun_sep": 82.59766735659724,
+    "note": "full transit at night"
+   },
+   {
+    "epoch": 162,
+    "btjd": 4798.611708656083,
+    "utc": "2028-01-28 02:40",
+    "sigma_min": 3.079893660451994,
+    "night_frac": 0.48,
+    "sun_sep": 94.74954642340393,
+    "note": "48% of the transit at night"
+   },
+   {
+    "epoch": 167,
+    "btjd": 4897.742490100464,
+    "utc": "2028-05-06 05:49",
+    "sigma_min": 3.2691786021800335,
+    "night_frac": 0.84,
+    "sun_sep": 125.43425042186114,
+    "note": "84% of the transit at night"
+   }
+  ],
+  "all_next": [
+   {
+    "epoch": 139,
+    "btjd": 4342.610114011925,
+    "utc": "2026-10-29 02:38",
+    "sigma_min": 2.4324686075459856,
+    "night_frac": 0.0,
+    "sun_sep": 53.04354713270434,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 140,
+    "btjd": 4362.436270300802,
+    "utc": "2026-11-17 22:28",
+    "sigma_min": 2.450537849756233,
+    "night_frac": 0.0,
+    "sun_sep": 57.0321257988594,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 141,
+    "btjd": 4382.262426589678,
+    "utc": "2026-12-07 18:17",
+    "sigma_min": 2.4697070596752013,
+    "night_frac": 0.0,
+    "sun_sep": 65.10736576750719,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 142,
+    "btjd": 4402.088582878555,
+    "utc": "2026-12-27 14:07",
+    "sigma_min": 2.4899508326996296,
+    "night_frac": 0.0,
+    "sun_sep": 75.786284916978,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 143,
+    "btjd": 4421.9147391674305,
+    "utc": "2027-01-16 09:57",
+    "sigma_min": 2.511243181980602,
+    "night_frac": 0.2,
+    "sun_sep": 87.72603761658105,
+    "note": "20% of the transit at night"
+   },
+   {
+    "epoch": 144,
+    "btjd": 4441.740895456307,
+    "utc": "2027-02-05 05:46",
+    "sigma_min": 2.5335576705409664,
+    "night_frac": 1.0,
+    "sun_sep": 99.81692424633104,
+    "note": "full transit at night"
+   },
+   {
+    "epoch": 145,
+    "btjd": 4461.567051745184,
+    "utc": "2027-02-25 01:36",
+    "sigma_min": 2.556867537046122,
+    "night_frac": 0.76,
+    "sun_sep": 111.02468508333652,
+    "note": "76% of the transit at night"
+   },
+   {
+    "epoch": 146,
+    "btjd": 4481.39320803406,
+    "utc": "2027-03-16 21:26",
+    "sigma_min": 2.581145814396014,
+    "night_frac": 0.0,
+    "sun_sep": 120.17372626863718,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 147,
+    "btjd": 4501.219364322937,
+    "utc": "2027-04-05 17:15",
+    "sigma_min": 2.6063654405087275,
+    "night_frac": 0.0,
+    "sun_sep": 125.88692125832162,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 148,
+    "btjd": 4521.045520611813,
+    "utc": "2027-04-25 13:05",
+    "sigma_min": 2.632499360857068,
+    "night_frac": 0.0,
+    "sun_sep": 127.00029299278717,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 149,
+    "btjd": 4540.87167690069,
+    "utc": "2027-05-15 08:55",
+    "sigma_min": 2.6595206224953234,
+    "night_frac": 0.0,
+    "sun_sep": 123.35961547727476,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 150,
+    "btjd": 4560.697833189565,
+    "utc": "2027-06-04 04:44",
+    "sigma_min": 2.6874024594714845,
+    "night_frac": 0.56,
+    "sun_sep": 115.97027429741907,
+    "note": "56% of the transit at night"
+   },
+   {
+    "epoch": 151,
+    "btjd": 4580.523989478442,
+    "utc": "2027-06-24 00:34",
+    "sigma_min": 2.7161183696590405,
+    "night_frac": 1.0,
+    "sun_sep": 106.19660956178772,
+    "note": "full transit at night"
+   },
+   {
+    "epoch": 152,
+    "btjd": 4600.350145767318,
+    "utc": "2027-07-13 20:24",
+    "sigma_min": 2.745642183161457,
+    "night_frac": 0.0,
+    "sun_sep": 95.170459677275,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 153,
+    "btjd": 4620.176302056195,
+    "utc": "2027-08-02 16:13",
+    "sigma_min": 2.7759481225416236,
+    "night_frac": 0.0,
+    "sun_sep": 83.76120525833204,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 154,
+    "btjd": 4640.002458345071,
+    "utc": "2027-08-22 12:03",
+    "sigma_min": 2.8070108552087123,
+    "night_frac": 0.0,
+    "sun_sep": 72.74780156065961,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 155,
+    "btjd": 4659.828614633948,
+    "utc": "2027-09-11 07:53",
+    "sigma_min": 2.8388055383571373,
+    "night_frac": 0.0,
+    "sun_sep": 63.05219780438268,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 156,
+    "btjd": 4679.654770922823,
+    "utc": "2027-10-01 03:42",
+    "sigma_min": 2.871307856898175,
+    "night_frac": 0.0,
+    "sun_sep": 55.93039158701014,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 157,
+    "btjd": 4699.4809272117,
+    "utc": "2027-10-20 23:32",
+    "sigma_min": 2.9044940548559666,
+    "night_frac": 0.0,
+    "sun_sep": 52.85357658228806,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 158,
+    "btjd": 4719.3070835005765,
+    "utc": "2027-11-09 19:22",
+    "sigma_min": 2.938340960717892,
+    "night_frac": 0.0,
+    "sun_sep": 54.7684096017105,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 159,
+    "btjd": 4739.133239789453,
+    "utc": "2027-11-29 15:11",
+    "sigma_min": 2.972826007236526,
+    "night_frac": 0.0,
+    "sun_sep": 61.28670286487086,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 160,
+    "btjd": 4758.9593960783295,
+    "utc": "2027-12-19 11:01",
+    "sigma_min": 3.0079272461782733,
+    "night_frac": 0.0,
+    "sun_sep": 71.04421412550866,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 161,
+    "btjd": 4778.785552367206,
+    "utc": "2028-01-08 06:51",
+    "sigma_min": 3.0436233585041013,
+    "night_frac": 1.0,
+    "sun_sep": 82.59766735659724,
+    "note": "full transit at night"
+   },
+   {
+    "epoch": 162,
+    "btjd": 4798.611708656083,
+    "utc": "2028-01-28 02:40",
+    "sigma_min": 3.079893660451994,
+    "night_frac": 0.48,
+    "sun_sep": 94.74954642340393,
+    "note": "48% of the transit at night"
+   },
+   {
+    "epoch": 163,
+    "btjd": 4818.437864944959,
+    "utc": "2028-02-16 22:30",
+    "sigma_min": 3.1167181059703513,
+    "night_frac": 0.0,
+    "sun_sep": 106.46172021018631,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 164,
+    "btjd": 4838.264021233835,
+    "utc": "2028-03-07 18:20",
+    "sigma_min": 3.154077285927672,
+    "night_frac": 0.0,
+    "sun_sep": 116.64087110921679,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 165,
+    "btjd": 4858.090177522711,
+    "utc": "2028-03-27 14:09",
+    "sigma_min": 3.191952424497701,
+    "night_frac": 0.0,
+    "sun_sep": 123.97800250356016,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 166,
+    "btjd": 4877.916333811588,
+    "utc": "2028-04-16 09:59",
+    "sigma_min": 3.2303253730915498,
+    "night_frac": 0.0,
+    "sun_sep": 127.131527336716,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 167,
+    "btjd": 4897.742490100464,
+    "utc": "2028-05-06 05:49",
+    "sigma_min": 3.2691786021800335,
+    "night_frac": 0.84,
+    "sun_sep": 125.43425042186114,
+    "note": "84% of the transit at night"
+   },
+   {
+    "epoch": 168,
+    "btjd": 4917.568646389341,
+    "utc": "2028-05-26 01:38",
+    "sigma_min": 3.3084951913211182,
+    "night_frac": 1.0,
+    "sun_sep": 119.4643970267473,
+    "note": "full transit at night"
+   },
+   {
+    "epoch": 169,
+    "btjd": 4937.394802678217,
+    "utc": "2028-06-14 21:28",
+    "sigma_min": 3.348258817679505,
+    "night_frac": 0.04,
+    "sun_sep": 110.54289490598453,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 170,
+    "btjd": 4957.220958967093,
+    "utc": "2028-07-04 17:18",
+    "sigma_min": 3.388453743298346,
+    "night_frac": 0.0,
+    "sun_sep": 99.92827563227385,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 171,
+    "btjd": 4977.047115255969,
+    "utc": "2028-07-24 13:07",
+    "sigma_min": 3.429064801357219,
+    "night_frac": 0.0,
+    "sun_sep": 88.58614995763648,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 172,
+    "btjd": 4996.873271544846,
+    "utc": "2028-08-13 08:57",
+    "sigma_min": 3.4700773816259343,
+    "night_frac": 0.0,
+    "sun_sep": 77.30636172663995,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 173,
+    "btjd": 5016.699427833722,
+    "utc": "2028-09-02 04:47",
+    "sigma_min": 3.5114774153007446,
+    "night_frac": 0.0,
+    "sun_sep": 66.92080196216821,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 174,
+    "btjd": 5036.525584122599,
+    "utc": "2028-09-22 00:36",
+    "sigma_min": 3.553251359388036,
+    "night_frac": 0.0,
+    "sun_sep": 58.53399997031749,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 175,
+    "btjd": 5056.3517404114755,
+    "utc": "2028-10-11 20:26",
+    "sigma_min": 3.595386180780736,
+    "night_frac": 0.0,
+    "sun_sep": 53.57565528819926,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 176,
+    "btjd": 5076.177896700352,
+    "utc": "2028-10-31 16:16",
+    "sigma_min": 3.637869340154436,
+    "night_frac": 0.0,
+    "sun_sep": 53.34180920404978,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 177,
+    "btjd": 5096.0040529892285,
+    "utc": "2028-11-20 12:05",
+    "sigma_min": 3.6806887757935587,
+    "night_frac": 0.0,
+    "sun_sep": 58.04679091301903,
+    "note": "daytime or too low"
+   },
+   {
+    "epoch": 178,
+    "btjd": 5115.830209278104,
+    "utc": "2028-12-10 07:55",
+    "sigma_min": 3.723832887442738,
+    "night_frac": 0.76,
+    "sun_sep": 66.62171516934205,
+    "note": "76% of the transit at night"
+   }
+  ],
+  "alias_min_sigma": 16.4
  }
 }

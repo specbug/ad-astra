@@ -38,41 +38,56 @@ def observability(tc_btjd, t14_h, ra, dec, site):
     return float(ok.mean()), sun_sep
 
 
-def hip71639(fit):
-    f = fit["HIP71639"]
+def periodic(fit, key, M, R, Teff, ra, dec, dv_check=None, now=4323.0, n_show=8):
+    """Orbit, insolation, RV amplitude and upcoming transits seen at night from La Silla."""
+    from report import btjd_to_utc
+    f = fit[key]
     P, Pe = f["period_d"][0], max(f["period_d"][1:])
     T, Te = f["tref_btjd"][0], max(f["tref_btjd"][1:])
     ref = f["ref_epoch"]
-    M, R, Teff = 1.23, 1.596, 6281.0
     a_au = (M * (P / 365.25) ** 2) ** (1 / 3)
     L = R ** 2 * (Teff / 5772.0) ** 4
     teq = Teff * math.sqrt(R / AU_RSUN / (2 * a_au))
     rp = f["rp_rs"][0] * R * 109.08
     mass = (rp / 0.808) ** (1 / 0.589)  # Chen & Kipping (2017) Neptunian branch
     k = 28.43 * (mass / 317.83) * M ** (-2 / 3) * (P / 365.25) ** (-1 / 3)
-    # S102 transit vs the SPOC DV ephemeris (s0001-s0065: epoch 1601.84413, period 740.41580 = 31 P)
-    p_dv = 740.4157984815635 / 31
-    s102_pred = 1601.8441280984866 + 106 * p_dv
-    s102_obs = T + (106 - ref) * P
     nxt = []
-    now = 4323.0  # 2026-10-10
     n0 = int(math.ceil((now - T) / P)) + ref
-    for n in range(n0, n0 + 30):
+    for n in range(n0, n0 + 40):
         tc = T + (n - ref) * P
         sig = math.hypot(Te, (n - ref) * Pe) * 1440
-        frac, sun_sep = observability(tc, f["t14_h"][0], 219.795192626349, -46.5844751296518, (-29.2563, -70.7380, 2400))
-        from report import btjd_to_utc
+        frac, sun_sep = observability(tc, f["t14_h"][0], ra, dec, (-29.2563, -70.7380, 2400))
         note = ("full transit at night" if frac > 0.95 else f"{frac:.0%} of the transit at night" if frac > 0.05
                 else "daytime or too low" if sun_sep > 50 else "too close to the Sun")
         nxt.append({"epoch": n, "btjd": tc, "utc": btjd_to_utc(tc).strftime("%Y-%m-%d %H:%M"), "sigma_min": sig,
                     "night_frac": frac, "sun_sep": sun_sep, "note": note})
-    keep = [x for x in nxt if x["night_frac"] > 0.05][:8]
     rho_tic = M / R ** 3
     r = f["rho_solar"]
     z = (r[0] - rho_tic) / (r[2] if r[0] > rho_tic else r[1])
-    return {"a_au": a_au, "s_earth": L / a_au ** 2, "teq": teq, "mass_assumed": mass, "k_ms": k,
-            "s102_offset_min": (s102_obs - s102_pred) * 1440, "alias_min_sigma": 38.8, "rho_tic": rho_tic,
-            "rho_verdict": "consistent" if abs(z) < 2 else "in tension", "rho_z": z, "next": keep, "all_next": nxt}
+    aR = a_over_rs(P, rho_tic)
+    kk = f["rp_rs"][0]
+    x = math.pi * (f["t14_h"][0] / 24) * aR / P
+    out = {"a_au": a_au, "s_earth": L / a_au ** 2, "teq": teq, "mass_assumed": mass, "k_ms": k, "rho_tic": rho_tic,
+           "rho_verdict": "consistent" if abs(z) < 2 else "in tension", "rho_z": z,
+           "b_circ": math.sqrt(max((1 + kk) ** 2 - x ** 2, 0.0)),
+           "next": [x for x in nxt if x["night_frac"] > 0.05][:n_show], "all_next": nxt}
+    if dv_check:
+        out.update(dv_check(f, T, P, ref))
+    return out
+
+
+def hip71639(fit):
+    def dv(f, T, P, ref):
+        # S102 transit vs the SPOC DV ephemeris (s0001-s0065: epoch 1601.84413, period 740.41580 = 31 P)
+        p_dv = 740.4157984815635 / 31
+        return {"s102_offset_min": (T + (106 - ref) * P - (1601.8441280984866 + 106 * p_dv)) * 1440,
+                "alias_min_sigma": 38.8}
+    return periodic(fit, "HIP71639", 1.23, 1.596, 6281.0, 219.795192626349, -46.5844751296518, dv)
+
+
+def hip56966(fit):
+    return periodic(fit, "HIP56966", 1.09, 1.069, 5967.0, 175.169514349685, -58.1043454687562,
+                    lambda f, T, P, ref: {"alias_min_sigma": 16.4})
 
 
 def hd11506(fit):
@@ -104,11 +119,16 @@ def hd11506(fit):
 def main():
     fit = json.load(open(RESULTS / "report" / "transit_fits.json"))
     ex = {"HIP71639": hip71639(fit), "HD11506": hd11506(fit)}
+    if "HIP56966" in fit:
+        ex["HIP56966"] = hip56966(fit)
     json.dump(ex, open(RESULTS / "report" / "extras.json", "w"), indent=1, default=float)
-    h = ex["HIP71639"]
-    print({k: v for k, v in h.items() if k not in ("next", "all_next")})
-    for x in h["all_next"][:30]:
-        print(x["epoch"], x["utc"], f"{x['night_frac']:.2f}", f"{x['sun_sep']:.0f}")
+    for key in ("HIP71639", "HIP56966"):
+        h = ex.get(key)
+        if not h:
+            continue
+        print(key, {k: v for k, v in h.items() if k not in ("next", "all_next")})
+        for x in h["next"]:
+            print("   ", x["epoch"], x["utc"], f"{x['night_frac']:.2f}", f"{x['sun_sep']:.0f}")
     al = ex["HD11506"]["aliases"]
     ok = [a for a in al if a["status"] == "allowed"]
     print("HD 11506 aliases:", len(al), "allowed:", len(ok), "shortest:", ok[-1]["P"] if ok else None)
