@@ -24,9 +24,12 @@ push() {
     git commit -q -m "Track A search results ($1)" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01HPQdHQVehmk4raGYZB42gv" >> "$LOG" 2>&1
     for i in 1 2 3 4 5 6; do
-      if git pull -q --rebase origin "$BRANCH" >> "$LOG" 2>&1 && git push -q origin "$BRANCH" >> "$LOG" 2>&1; then
+      # -X ours: if another worker already pushed the same star file (overlapping ranges after a restart), keep
+      # the upstream copy (both are the same search) instead of stopping in a conflicted rebase
+      if git pull -q --rebase -X ours origin "$BRANCH" >> "$LOG" 2>&1 && git push -q origin "$BRANCH" >> "$LOG" 2>&1; then
         log "pushed ($1)"; break
       fi
+      git rebase --abort >> "$LOG" 2>&1 || true
       sleep $((i * 7))
     done
   fi
