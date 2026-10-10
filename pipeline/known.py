@@ -69,9 +69,14 @@ def flag_known(df, ra_col="ra", dec_col="dec"):
             ra, dec = np.radians(ra), np.radians(dec)
             return np.c_[np.cos(dec) * np.cos(ra), np.cos(dec) * np.sin(ra), np.sin(dec)]
         tree = cKDTree(xyz(h.ra_deg.values, h.dec_deg.values))
-        d, i = tree.query(xyz(df[ra_col].values, df[dec_col].values), k=1)
+        pos = xyz(df[ra_col].fillna(0).values, df[dec_col].fillna(0).values)
+        d, i = tree.query(pos, k=1)
         sep = 2 * np.degrees(np.arcsin(np.clip(d / 2, 0, 1))) * 3600
+        sep = np.where(df[ra_col].notna() & df[dec_col].notna(), sep, np.inf)
         df["toi_hf"] = np.where(sep < 10, h.toi_prefix.values[np.clip(i, 0, len(h) - 1)].astype(str), None)
+        if "tic" in h:  # the complete snapshot also carries TIC IDs (column 'toi_id' in the source)
+            by_tic = h.groupby("tic").toi_prefix.first().astype(str)
+            df["toi_hf"] = df["toi_hf"].where(df["toi_hf"].notna(), df.tic.map(by_tic))
     else:
         df["toi_hf"] = None
     df["is_toi"] = df.toi_exofop.notna() | df.toi_hf.notna()
