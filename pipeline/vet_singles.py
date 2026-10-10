@@ -80,8 +80,8 @@ def one(r):
 
 def main():
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 6
-    tb = pd.read_csv(OUT / "trackb_final.csv")
-    tb = tb[tb.verdict.isin(["single", "repeating"])]
+    import report
+    tb = report.trackb_shortlist(pd.read_csv(OUT / "trackb_final.csv"))
     res = {}
     with cf.ThreadPoolExecutor(n) as ex:
         for r in ex.map(one, tb.to_dict("records")):
