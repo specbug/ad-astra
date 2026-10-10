@@ -144,17 +144,17 @@ footer { padding-block: 40px 0; border-top: 1px solid var(--line); margin-top: 4
 <header class="mast">
   <p class="kicker">Amateur search of NASA TESS data · interim report · 10 October 2026</p>
   <h1>Ad Astra</h1>
-  <p class="dek">A blind search of 2.8 million TESS light curves for transits and
+  <p class="dek">A blind search of 3.2 million TESS light curves for transits and
   eclipses that no catalogue lists yet. Three bright, nearby stars show transits of Neptune-sized planets that
   are not TESS Objects of Interest.</p>
   <div class="strip">
-    <div><span class="label">Sectors searched</span><span class="v">36 of 107</span></div>
-    <div><span class="label">Light curves</span><span class="v">2,842,167</span></div>
+    <div><span class="label">Sectors searched</span><span class="v">40 of 107</span></div>
+    <div><span class="label">Light curves</span><span class="v">3,239,033</span></div>
     <div><span class="label">Red-dwarf deep search</span><span class="v">1,650 of 4,936</span></div>
   </div>
 </header>
 <nav class="toc" aria-label="Sections"><a href="#findings">Findings</a><a href="#hip71639">HIP 71639</a>
-<a href="#hd11506">HD 11506</a><a href="#hip56966">HIP 56966</a><a href="#trackb">Transit candidates</a><a href="#trackc">Multiple stars</a>
+<a href="#hd11506">HD 11506</a><a href="#hip56966">HIP 56966</a><a href="#bright">Bright candidates</a><a href="#trackb">All transit candidates</a><a href="#trackc">Multiple stars</a>
 <a href="#trackd">Anomalies</a><a href="#calibration">Calibration</a><a href="#methods">Method</a><a href="#next">Next steps</a></nav>
 
 <section id="findings">
@@ -342,6 +342,21 @@ footer { padding-block: 40px 0; border-top: 1px solid var(--line); margin-top: 4
   </div>
 </section>
 
+<section id="bright">
+  <p class="kicker">Track B · deep vetting</p>
+  <h2>The brightest remaining candidates, checked one by one</h2>
+  <div class="col" style="display:grid;gap:12px">
+  <p>Every shortlisted star brighter than T = 10.5 went through the same checks as the headline candidates:
+  Gaia binarity, TOI and SPOC lookups, the depth of each dip in every sector, the period aliases, and a
+  pixel-level source test against every Gaia star within 150″ that could fake the dip with an eclipse of at
+  most 50%. 7 of 13 survive as candidates; HIP 56966 above came out of this list.</p>
+  </div>
+  <div class="tablewrap"><table class="data"><thead><tr><th class="l">Star</th><th class="r">T</th><th class="r">Rp (R<sub>⊕</sub>)</th><th class="l">Transits</th><th class="l">Period</th><th class="l">Pixels</th><th class="r">RUWE</th><th class="r">TCE</th><th class="l">Literature</th><th class="l">Verdict</th></tr></thead><tbody><tr><td class="l"><span class='m'>TIC 266376971</span> · HIP 56966</td><td class="r">8.3</td><td class="r">3.3</td><td class="l">4 <span class='muted'>(S10, 64, 99, 100)</span></td><td class="l">19.826 d</td><td class="l">on target (next best Δχ² +233)</td><td class="r">0.81</td><td class="r">0</td><td class="l">not checked</td><td class="l"><span class="chip chip-new">candidate</span></td></tr><tr><td class="l"><span class='m'>TIC 457134361</span> · HIP 45983</td><td class="r">8.5</td><td class="r">15.9</td><td class="l">1 <span class='muted'>(S21)</span></td><td class="l">≥ 18 d</td><td class="l">on target (next best Δχ² +575)</td><td class="r">0.99</td><td class="r">0</td><td class="l">not checked</td><td class="l"><span class="chip chip-new">candidate</span><div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:22rem'>One 11.6-hour, 1%-deep transit; at least 17.6 days, and long for a Sun-like star, so likely hundreds of days.</div></td></tr><tr><td class="l"><span class='m'>TIC 221567884</span></td><td class="r">9.1</td><td class="r">8.7</td><td class="l">8 <span class='muted'>(S12, 39, 39, 66, 93, 102, 102, 103)</span></td><td class="l">–</td><td class="l">on target (next best Δχ² +22925)</td><td class="r">0.88</td><td class="r">2</td><td class="l">not checked</td><td class="l"><span class="chip chip-new">candidate</span><div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:22rem'>Dips of several depths and no single period; two TOIs lie within 10′. Probably a blend.</div></td></tr><tr><td class="l"><span class='m'>TIC 162305348</span></td><td class="r">9.1</td><td class="r">7.8</td><td class="l">4 <span class='muted'>(S37, 63, 90, 100)</span></td><td class="l">35.383 d</td><td class="l">on target (next best Δχ² +2088)</td><td class="r">1.11</td><td class="r">0</td><td class="l">not checked</td><td class="l"><span class="chip chip-new">candidate</span><div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:22rem'>Short (1.9 h) for a 35-day orbit around an F star: a grazing crossing, so the companion may be larger than it looks.</div></td></tr><tr><td class="l"><span class='m'>TIC 215718896</span></td><td class="r">10.3</td><td class="r">11.1</td><td class="l">1 <span class='muted'>(S14)</span></td><td class="l">≥ 29 d</td><td class="l">on target (next best Δχ² +336)</td><td class="r">0.94</td><td class="r">0</td><td class="l">not checked</td><td class="l"><span class="chip chip-new">candidate</span></td></tr><tr><td class="l"><span class='m'>TIC 212180785</span></td><td class="r">10.4</td><td class="r">14.2</td><td class="l">2 <span class='muted'>(S12, 93)</span></td><td class="l">2201 d / n, 12 of 12 allowed</td><td class="l">on target (next best Δχ² +141)</td><td class="r">–</td><td class="r">0</td><td class="l">not checked</td><td class="l"><span class="chip chip-new">candidate</span></td></tr><tr><td class="l"><span class='m'>TIC 70803960</span></td><td class="r">10.4</td><td class="r">12.6</td><td class="l">1 <span class='muted'>(S91)</span></td><td class="l">≥ 10 d</td><td class="l">on target (next best Δχ² +254)</td><td class="r">1.15</td><td class="r">0</td><td class="l">not checked</td><td class="l"><span class="chip chip-new">candidate</span></td></tr><tr><td class="l"><span class='m'>TIC 4011632</span></td><td class="r">9.3</td><td class="r">12.7</td><td class="l">1 <span class='muted'>(S98)</span></td><td class="l">≥ 19 d</td><td class="l">no neighbour bright enough</td><td class="r">5.69</td><td class="r">0</td><td class="l">not checked</td><td class="l"><span class="chip chip-eb">binary host</span><div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:22rem'>Gaia reports an astrometric binary (RUWE 5.7) with a variable radial velocity: the dip may belong to the companion.</div></td></tr><tr><td class="l"><span class='m'>TIC 165157220</span></td><td class="r">9.5</td><td class="r">8.4</td><td class="l">2 <span class='muted'>(S20, 72)</span></td><td class="l">1425 d / n, 11 of 12 allowed</td><td class="l">favours G14.1 at 57&quot; (Δχ² -1334)</td><td class="r">0.93</td><td class="r">0</td><td class="l">not checked</td><td class="l"><span class="chip chip-eb">off-target</span></td></tr><tr><td class="l"><span class='m'>TIC 216236531</span></td><td class="r">9.6</td><td class="r">16.0</td><td class="l">2 <span class='muted'>(S14, 81)</span></td><td class="l">1831 d / n, 10 of 12 allowed</td><td class="l">favours G13.6 at 12&quot; (Δχ² -49)</td><td class="r">0.84</td><td class="r">0</td><td class="l">not checked</td><td class="l"><span class="chip chip-eb">off-target</span></td></tr><tr><td class="l"><span class='m'>TIC 141432199</span> · HIP 32850</td><td class="r">9.9</td><td class="r">7.6</td><td class="l">2 <span class='muted'>(S20, 73)</span></td><td class="l">1448 d / n, 4 of 12 allowed</td><td class="l">favours G14.9 at 48&quot; (Δχ² -5309)</td><td class="r">1.09</td><td class="r">0</td><td class="l">not checked</td><td class="l"><span class="chip chip-eb">off-target</span></td></tr><tr><td class="l"><span class='m'>TIC 389724536</span></td><td class="r">10.0</td><td class="r">12.6</td><td class="l">3 <span class='muted'>(S28, 68, 105)</span></td><td class="l">none fits</td><td class="l">on target (next best Δχ² +3502)</td><td class="r">0.82</td><td class="r">0</td><td class="l">not checked</td><td class="l"><span class="chip chip-known">no consistent period</span></td></tr><tr><td class="l"><span class='m'>TIC 146320921</span></td><td class="r">10.5</td><td class="r">10.2</td><td class="l">3 <span class='muted'>(S106, 107, 107)</span></td><td class="l">15.789 d</td><td class="l">favours G13.8 at 9&quot; (Δχ² -296)</td><td class="r">1.16</td><td class="r">1</td><td class="l">not checked</td><td class="l"><span class="chip chip-eb">off-target</span></td></tr></tbody></table></div>
+  <p class="muted" style="font-size:var(--step--1)">Pixels: Δχ² of the best alternative source relative to the
+  target, summed over transits (2-minute pixels where available, full-frame cutouts otherwise). Positive means
+  the target fits better. RUWE above 1.4 hints at an unresolved binary.</p>
+</section>
+
 <section id="trackb">
   <p class="kicker">Track B · single and duo transits</p>
   <h2>Other transit candidates</h2>
@@ -393,8 +408,10 @@ footer { padding-block: 40px 0; border-top: 1px solid var(--line); margin-top: 4
   <p>This track keeps dips that no planet makes: strongly asymmetric ones, and ones that last longer than
   15 hours. 67 dips passed the anomaly cuts and the all-sector check. Looked at by eye, they fall into familiar groups: the known dipper HD 100546 (recovered), eclipses
   of a nearby binary leaking into a full-frame aperture, fast-rotating M dwarfs whose spots the detrending
-  could not follow, and very short-period binaries sampled into stroboscopic patterns. None is yet a convincing
-  new object, so none is claimed here.</p>
+  could not follow, very short-period binaries sampled into stroboscopic patterns, and long-period eclipsing
+  binaries caught in one or two deep eclipses (TIC 304213412: 18-hour, 17%-deep eclipses repeating over six years;
+  TIC 320329350: a 32%-deep, 17-hour eclipse). None is yet a convincing new kind of object, so none is claimed
+  here.</p>
   </div>
 </section>
 
@@ -415,7 +432,7 @@ footer { padding-block: 40px 0; border-top: 1px solid var(--line); margin-top: 4
   <div class="two">
     <div>
       <h3>From 2.8 million light curves to a handful</h3>
-      <div class="tablewrap"><table><tbody><tr><td>Light curves searched</td><td class='r m'>2,842,167</td><td class='muted'>27 full-frame (QLP) sectors and 9 two-minute sectors</td></tr><tr><td>Dips at 6σ or more</td><td class='r m'>4,280,210</td><td class='muted'>box filter, 10 durations from 0.75 to 18 h, red-noise-aware threshold</td></tr><tr><td>Clean dips</td><td class='r m'>269,428</td><td class='muted'>after removing spacecraft and CCD systematics, blends, edges, gaps and background artefacts</td></tr><tr><td>Single-transit candidates (Track B)</td><td class='r m'>31,227</td><td class='muted'>≤ 2 clean dips per sector, dwarf host, planet-sized</td></tr><tr><td>Planet-shaped after re-fitting</td><td class='r m'>719</td><td class='muted'>of 4,718 re-fitted: flat-bottomed, symmetric, unique, in raw flux</td></tr></tbody></table></div>
+      <div class="tablewrap"><table><tbody><tr><td>Light curves searched</td><td class='r m'>3,239,033</td><td class='muted'>31 full-frame (QLP) sectors and 9 two-minute sectors</td></tr><tr><td>Dips at 6σ or more</td><td class='r m'>4,599,176</td><td class='muted'>box filter, 10 durations from 0.75 to 18 h, red-noise-aware threshold</td></tr><tr><td>Clean dips</td><td class='r m'>311,570</td><td class='muted'>after removing spacecraft and CCD systematics, blends, edges, gaps and background artefacts</td></tr><tr><td>Single-transit candidates (Track B)</td><td class='r m'>36,178</td><td class='muted'>≤ 2 clean dips per sector, dwarf host, planet-sized</td></tr><tr><td>Planet-shaped after re-fitting</td><td class='r m'>719</td><td class='muted'>of 4,718 re-fitted: flat-bottomed, symmetric, unique, in raw flux</td></tr></tbody></table></div>
     </div>
     <div>
       <h3>False alarms, measured</h3>

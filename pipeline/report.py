@@ -867,8 +867,10 @@ def section_anomalies(td):
   <p>This track keeps dips that no planet makes: strongly asymmetric ones, and ones that last longer than
   15 hours. {rows}Looked at by eye, they fall into familiar groups: the known dipper HD 100546 (recovered), eclipses
   of a nearby binary leaking into a full-frame aperture, fast-rotating M dwarfs whose spots the detrending
-  could not follow, and very short-period binaries sampled into stroboscopic patterns. None is yet a convincing
-  new object, so none is claimed here.</p>
+  could not follow, very short-period binaries sampled into stroboscopic patterns, and long-period eclipsing
+  binaries caught in one or two deep eclipses (TIC 304213412: 18-hour, 17%-deep eclipses repeating over six years;
+  TIC 320329350: a 32%-deep, 17-hour eclipse). None is yet a convincing new kind of object, so none is claimed
+  here.</p>
   </div>
 </section>"""
 
@@ -980,6 +982,9 @@ def build():
     tc = pd.read_csv(CAND / "trackc_candidates.csv") if (CAND / "trackc_candidates.csv").exists() else None
     td = pd.read_csv(CAND / "trackd_final.csv") if (CAND / "trackd_final.csv").exists() else None
     singles = json.load(open(CAND / "trackb_singles.json")) if (CAND / "trackb_singles.json").exists() else {}
+    dv = json.load(open(CAND / "deep_vet.json")) if (CAND / "deep_vet.json").exists() else {}
+    litp = RESULTS / "candidates" / "literature_checks.json"
+    lit = json.load(open(litp)) if litp.exists() else None
     ta_dir = RESULTS / "track_a"
     ta_n = len(glob.glob(str(ta_dir / "stars" / "*.json")))
     ta_total = len(pd.read_csv(ta_dir / "targets_search.csv"))
@@ -1019,7 +1024,7 @@ def build():
   </div>
 </header>
 <nav class="toc" aria-label="Sections"><a href="#findings">Findings</a><a href="#hip71639">HIP 71639</a>
-<a href="#hd11506">HD 11506</a><a href="#hip56966">HIP 56966</a><a href="#trackb">Transit candidates</a><a href="#trackc">Multiple stars</a>
+<a href="#hd11506">HD 11506</a><a href="#hip56966">HIP 56966</a><a href="#bright">Bright candidates</a><a href="#trackb">All transit candidates</a><a href="#trackc">Multiple stars</a>
 <a href="#trackd">Anomalies</a><a href="#calibration">Calibration</a><a href="#methods">Method</a><a href="#next">Next steps</a></nav>
 
 <section id="findings">
@@ -1048,6 +1053,7 @@ def build():
 {section_hip71639(fit, ex)}
 {section_hd11506(fit, ex)}
 {section_hip56966(fit, ex)}
+{section_deepvet(dv, lit, tb)}
 {section_trackb(tb, singles)}
 <section id="plates" style="padding-top:8px">
   <h3>Selected dossiers</h3>
@@ -1074,6 +1080,103 @@ def build():
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "index.html").write_text(body)
     print("wrote", OUT / "index.html", len(body) // 1024, "KB")
+
+
+
+# ----------------------------------------------------------------------------------- deep-vetted list
+
+NOTES = {
+    162305348: "Short (1.9 h) for a 35-day orbit around an F star: a grazing crossing, so the companion may be larger than it looks.",
+    457134361: "One 11.6-hour, 1%-deep transit; at least 17.6 days, and long for a Sun-like star, so likely hundreds of days.",
+    4011632: "Gaia reports an astrometric binary (RUWE 5.7) with a variable radial velocity: the dip may belong to the companion.",
+    221567884: "Dips of several depths and no single period; two TOIs lie within 10′. Probably a blend.",
+}
+
+
+def deep_verdict(r):
+    g = r.get("gaia") or {}
+    comb = (r.get("pixels") or {}).get("combined", {})
+    worst = min(comb.items(), key=lambda kv: kv[1]["dchi2"]) if comb else None
+    if worst and worst[1]["dchi2"] < -9:
+        return "off-target", worst[0]
+    if g.get("ruwe", 0) > 1.4 or g.get("nss", 0) > 0:
+        return "binary host", None
+    p = r.get("period") or {}
+    if "aliases" in p and not any(a["status"] == "allowed" for a in p["aliases"]):
+        return "no consistent period", None
+    if worst and worst[1]["dchi2"] < 9:
+        return "ambiguous pixels", worst[0]
+    return "candidate", None
+
+
+def section_deepvet(dv, lit, tb):
+    if not dv:
+        return ""
+    litm = {int(x["tic"]): x for x in (lit or [])}
+    rows = []
+    for k, r in dv.items():
+        if "error" in r:
+            continue
+        tic = int(k)
+        st = r["star"]
+        b = tb[tb.tic == tic]
+        rp = float(b.rp_rearth.iloc[0]) if len(b) else float("nan")
+        ev = [e for e in r["events"] if e["sector"] is not None]
+        p = r.get("period") or {}
+        if "aliases" in p:
+            ok = [a["P"] for a in p["aliases"] if a["status"] == "allowed"]
+            per = (f"{ok[0]:.3f} d" if len(ok) == 1 else
+                   f"{p['P_longest']:.0f} d / n, {len(ok)} of {len(p['aliases'])} allowed" if ok else "none fits")
+        elif p.get("single"):
+            per = f"≥ {p['p_min_allowed']:.0f} d" if p.get("p_min_allowed") else "–"
+        else:
+            per = "–"
+        comb = (r.get("pixels") or {}).get("combined", {})
+        if not comb:
+            pix = "no neighbour bright enough"
+        else:
+            w = min(comb.items(), key=lambda kv: kv[1]["dchi2"])
+            pix = (f"on target (next best Δχ² +{w[1]['dchi2']:.0f})" if w[1]["dchi2"] >= 9 else
+                   f"favours {w[0]} (Δχ² {w[1]['dchi2']:.0f})" if w[1]["dchi2"] <= -9 else
+                   f"inconclusive ({w[0]}, Δχ² {w[1]['dchi2']:+.0f})")
+        g = r.get("gaia") or {}
+        verdict, _ = deep_verdict(r)
+        lt = litm.get(tic, {}).get("status", "not checked")
+        rows.append({"tic": tic, "hip": st.get("HIP"), "tmag": st.get("Tmag"), "rp": rp, "n_ev": len(ev),
+                     "sectors": ", ".join(str(e["sector"]) for e in ev), "per": per, "pix": pix,
+                     "ruwe": g.get("ruwe"), "nss": g.get("nss"), "tce": len((r.get("known") or {}).get("tces", [])),
+                     "toi": len((r.get("known") or {}).get("toi", [])), "lit": lt, "verdict": verdict,
+                     "note": NOTES.get(tic, "")})
+    df = pd.DataFrame(rows).sort_values(["verdict", "tmag"], key=lambda s: s.map({"candidate": 0}).fillna(1) if s.name == "verdict" else s)
+    kinds = {"candidate": "new", "off-target": "eb", "binary host": "eb", "no consistent period": "known",
+             "ambiguous pixels": "known"}
+
+    def star(r):
+        h = f" · HIP {int(r.hip)}" if r.hip == r.hip and r.hip else ""
+        return f"<span class='m'>TIC {r.tic}</span>{h}"
+    cols = [("Star", star, "l"), ("T", lambda r: fmt(r.tmag, 1), "r"), (f"Rp ({RE})", lambda r: fmt(r.rp, 1), "r"),
+            ("Transits", lambda r: f"{r.n_ev} <span class='muted'>(S{esc(r.sectors)})</span>", "l"),
+            ("Period", lambda r: esc(r.per), "l"), ("Pixels", lambda r: esc(r.pix), "l"),
+            ("RUWE", lambda r: fmt(r.ruwe, 2), "r"), ("TCE", lambda r: str(r.tce), "r"),
+            ("Literature", lambda r: esc(r.lit), "l"),
+            ("Verdict", lambda r: chip(r.verdict, kinds.get(r.verdict, "known")) +
+             (f"<div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:22rem'>{esc(r.note)}</div>" if r.note else ""), "l")]
+    n_c = int((df.verdict == "candidate").sum())
+    return f"""
+<section id="bright">
+  <p class="kicker">Track B · deep vetting</p>
+  <h2>The brightest remaining candidates, checked one by one</h2>
+  <div class="col" style="display:grid;gap:12px">
+  <p>Every shortlisted star brighter than T = 10.5 went through the same checks as the headline candidates:
+  Gaia binarity, TOI and SPOC lookups, the depth of each dip in every sector, the period aliases, and a
+  pixel-level source test against every Gaia star within 150″ that could fake the dip with an eclipse of at
+  most 50%. {n_c} of {len(df)} survive as candidates; HIP 56966 above came out of this list.</p>
+  </div>
+  {table(df, cols)}
+  <p class="muted" style="font-size:var(--step--1)">Pixels: Δχ² of the best alternative source relative to the
+  target, summed over transits (2-minute pixels where available, full-frame cutouts otherwise). Positive means
+  the target fits better. RUWE above 1.4 hints at an unresolved binary.</p>
+</section>"""
 
 
 if __name__ == "__main__":
