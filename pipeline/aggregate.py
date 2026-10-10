@@ -48,11 +48,16 @@ def track_b(n_proc=None):
     todo = sel.merge(done[key], on=key, how="left", indicator=True)
     todo = todo[todo._merge == "left_only"].drop(columns="_merge")
     print(f"Track B: {len(ev)} events, {len(sel)} planet-sized dwarf events (snr>=8), {len(todo)} new to vet")
-    if len(todo):
-        res = stage2.classify_shape(stage2.run(todo, n_proc))
+    # vet in chunks and save after each, so an interrupted run keeps its progress; stage 2 is mostly waiting
+    # on S3, so it runs with more processes than cores
+    OUT.mkdir(parents=True, exist_ok=True)
+    chunk = 3000
+    for i0 in range(0, len(todo), chunk):
+        part = todo.iloc[i0:i0 + chunk]
+        res = stage2.classify_shape(stage2.run(part, n_proc or 12))
         done = pd.concat([done, res], ignore_index=True) if len(done) else res
-        OUT.mkdir(parents=True, exist_ok=True)
         done.to_parquet(cache, index=False)
+        print(f"  stage 2: {min(i0 + chunk, len(todo))}/{len(todo)} vetted", flush=True)
     done = stage2.classify_shape(done)
     n_lc = {}
     for f in glob.glob(str(RESULTS / "survey" / "s*" / "summary.json")):
@@ -164,10 +169,21 @@ def track_d(n_proc=None):
         return None
     d["invert"] = False
     sel = d[d.d_reason.isin(["long_deep", "asymmetric"]) | (d.d_reason == "aperiodic_multi")]
-    res = stage2.run(sel, n_proc)
+    cache = OUT / "trackd_stage2.parquet"
+    key = ["tic", "sector", "t0"]
+    done = pd.read_parquet(cache) if cache.exists() else pd.DataFrame(columns=key)
+    todo = sel.merge(done[key].drop_duplicates(), on=key, how="left", indicator=True)
+    todo = todo[todo._merge == "left_only"].drop(columns="_merge")
+    print(f"Track D: {len(d)} events, {len(sel)} selected, {len(todo)} new to vet", flush=True)
     OUT.mkdir(parents=True, exist_ok=True)
-    res.to_parquet(OUT / "trackd_stage2.parquet", index=False)
-    print(f"Track D: {len(d)} events, vetted {len(res)}; by reason {res.d_reason.value_counts().to_dict()}")
+    chunk = 3000
+    for i0 in range(0, len(todo), chunk):
+        res = stage2.run(todo.iloc[i0:i0 + chunk], n_proc or 12)
+        done = pd.concat([done, res], ignore_index=True) if len(done) else res
+        done.to_parquet(cache, index=False)
+        print(f"  stage 2: {min(i0 + chunk, len(todo))}/{len(todo)} vetted", flush=True)
+    res = done.merge(sel[key], on=key, how="inner")
+    print(f"Track D: vetted {len(res)}; by reason {res.d_reason.value_counts().to_dict()}")
     return res
 
 
