@@ -1,0 +1,209 @@
+[
+  {
+    "tic": 309658221,
+    "status": "known in this role",
+    "summary": "Published as a detached eclipsing binary with a delta Scuti pulsating primary and P = 7.5952 d (Lee, Kristiansen & Hong 2019, arXiv 1904.07362), matching our 7.5954 d, and treated there as a binary rather than a triple/quadruple; the paper reports pulsation frequencies of 9.94-13.01 per day, and our second period of 0.2012 d equals twice the period of the 9.94 per day signal (2/9.94 = 0.2012 d), so it may be that pulsation rather than a second eclipsing binary.",
+    "sources": [
+      {"title": "The Pulsating Eclipsing Binary TIC 309658221 in a 7.59 Day Orbit (arXiv PDF)", "url": "https://arxiv.org/pdf/1904.07362"},
+      {"title": "The Pulsating Eclipsing Binary TIC 309658221 in a 7.59 Day Orbit (arXiv abstract)", "url": "https://export.arxiv.org/abs/1904.07362"},
+      {"title": "The Pulsating Eclipsing Binary TIC 309658221 in a 7.59 Day Orbit (ar5iv HTML)", "url": "https://ar5iv.labs.arxiv.org/html/1904.07362"}
+    ]
+  },
+  {
+    "tic": 220422456,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 220422456 (alone and with 'eclipsing') and Gaia DR3 4774643369765924480 returned no page naming this star, only unrelated TIC objects and generic Gaia DR3 pages.",
+    "sources": []
+  },
+  {
+    "tic": 168789840,
+    "status": "known in this role",
+    "summary": "Known sextuply eclipsing sextuple system (TYC 7037-89-1; Powell et al. 2021, AJ 161, 162) whose published eclipsing-binary periods of 1.570 d and 8.217 d (plus a third binary at 1.306 d) match our 1.5699 d and 8.2183 d.",
+    "sources": [
+      {"title": "TIC 168789840: A Sextuply-Eclipsing Sextuple Star System (arXiv 2101.03433)", "url": "https://arxiv.org/pdf/2101.03433"},
+      {"title": "TIC 168789840 (Wikipedia)", "url": "https://en.wikipedia.org/wiki/TIC_168789840"},
+      {"title": "TIC 168789840: A sextuply eclipsing sextuple star system (Princeton)", "url": "https://collaborate.princeton.edu/en/publications/tic-168789840-a-sextuply-eclipsing-sextuple-star-system/"},
+      {"title": "TIC 168789840: A Sextuply Eclipsing Sextuple Star System (IAC)", "url": "https://iac.edu.es/en/science-and-technology/publications/tic-168789840-sextuply-eclipsing-sextuple-star-system"},
+      {"title": "Powell et al. 2021, AJ 161, 162 (IPAC publication page)", "url": "https://www.ipac.caltech.edu/publication/2021AJ....161..162P"},
+      {"title": "Characterizing TESS-Identified Quadruple and Higher Order Eclipsing Binaries: I. Speckle Imaging with DSSI and HRCam (re-measures this system)", "url": "https://arxiv.org/pdf/2511.07554"}
+    ]
+  },
+  {
+    "tic": 325640451,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 325640451 and Gaia DR3 5131828896098483584 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 434452777,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 434452777 (alone and with 'eclipsing') and Gaia DR3 5676629103705618560 returned no page naming this star; results were unrelated objects with similar numbers (e.g. TIC 434398831), which do not count.",
+    "sources": []
+  },
+  {
+    "tic": 389724536,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 389724536 (alone and with 'eclipsing') and Gaia DR3 6571077831468174720 returned no page naming this star; a triply-eclipsing-triples paper (arXiv 2403.12041) ranked first both times but its snippets did not show this TIC, so it is not counted.",
+    "sources": []
+  },
+  {
+    "tic": 165157220,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 165157220 and Gaia DR3 890615933308426752 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 457134361,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 457134361, HIP 45983 and Gaia DR3 1019003329101872896 returned no page naming this star; the HIP search only returned similar-numbered stars such as HIP 45839, which do not count.",
+    "sources": []
+  },
+  {
+    "tic": 141432199,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 141432199, HIP 32850 and Gaia DR3 1115109407103728512 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 146320921,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 146320921 and Gaia DR3 2976063211124239488 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 4011632,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 4011632 and Gaia DR3 3215186477400958720 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 307653223,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 307653223 (alone and with 'planet') and Gaia DR3 966672004459584128 returned no page naming this star; a cool-dwarf planet-host paper (arXiv 2402.13223) ranked high but its snippets did not show this TIC, so it is not counted.",
+    "sources": []
+  },
+  {
+    "tic": 141809360,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 141809360 (alone and with 'eclipsing') and Gaia DR3 5265050015595013504 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 70803960,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 70803960 and Gaia DR3 6253844468882760832 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 320329350,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 320329350 and Gaia DR3 6640678734276663680 returned no page naming this star; the similar-numbered TIC 320687387 (an eclipsing M-dwarf system) is a different star.",
+    "sources": []
+  },
+  {
+    "tic": 304213412,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 304213412 and Gaia DR3 5246931167778728064 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 342671370,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 342671370 (alone and with 'eclipsing') and Gaia DR3 5315608656915618816 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 162305348,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 162305348 (alone and with 'brown dwarf') and Gaia DR3 5376650759348839552 returned no page naming this star; the TESS brown-dwarf candidate table in arXiv 2510.05852 ranked high, but the part of it that was visible does not list this TIC.",
+    "sources": []
+  },
+  {
+    "tic": 257776944,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 257776944 (alone and with 'eclipsing') and Gaia DR3 5798003887367982848 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 423333739,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 423333739 (alone and with 'eclipsing') and Gaia DR3 5827122597432758912 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 311838200,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 311838200 (alone and with 'eclipsing') and Gaia DR3 5855840775959088128 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 443410592,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 443410592 (alone and with 'eclipsing') and Gaia DR3 5869403561150024832 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 285655079,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 285655079 (alone and with 'eclipsing') and Gaia DR3 5882657654103107072 returned no page naming this star; the similar-numbered quadruple TIC 285853156 is a different star.",
+    "sources": []
+  },
+  {
+    "tic": 250119205,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 250119205 (alone and with 'eclipsing') and Gaia DR3 5894766751792531328 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 221567884,
+    "status": "known in this role",
+    "summary": "Published as a special-interest transit candidate in arXiv 2502.07542 (a transformer-based search of TESS full-frame images): first flagged in Sector 12, with two transits of different depths (a possible multi-planet system), further transits in Sectors 39 and 66 and a possible mutual-transit event in Sector 66, but no TOI number or confirmation appeared in the search results.",
+    "sources": [
+      {"title": "Exoplanet Transit Candidate Identification in TESS Full-Frame Images via a Transformer-Based Algorithm (arXiv 2502.07542)", "url": "https://arxiv.org/pdf/2502.07542"}
+    ]
+  },
+  {
+    "tic": 212180785,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 212180785 and Gaia DR3 5938217011797346304 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 214716930,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 214716930 (alone and with 'eclipsing') and Gaia DR3 5981555804445480064 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 450918869,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 450918869 (alone and with 'eclipsing') and Gaia DR3 6054685357918304512 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 215718896,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 215718896 and Gaia DR3 2022063288682835200 returned no page naming this star.",
+    "sources": []
+  },
+  {
+    "tic": 216236531,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 216236531 (alone and with 'brown dwarf') and Gaia DR3 2031656012253648640 returned no page naming this star; the TESS brown-dwarf study arXiv 2510.05852 ranked first, but its table was cut off in the snippets and the visible rows do not include this TIC.",
+    "sources": []
+  },
+  {
+    "tic": 321471064,
+    "status": "known in this role",
+    "summary": "Listed in the Multiple Star Catalog (MSC) as quadruple system WDS 11421-6216 under the identifiers TIC 321471064 and 2MASS J11420664-6216021 (grade 3, hierarchy confirmed, some periods unknown), but the snippets did not show whether the catalogued periods are our 0.3421 d and 1.5573 d.",
+    "sources": [
+      {"title": "Quadruple System WDS 11421-6216 (Multiple Star Catalog)", "url": "https://astro.ulb.ac.be/msc/system/11421-6216/"}
+    ]
+  },
+  {
+    "tic": 266376971,
+    "status": "no mentions found",
+    "summary": "Searches for TIC 266376971, HIP 56966 and Gaia DR3 5342456978547165824 returned no page naming this star; the HIP search only returned the similar-numbered solar twin HIP 56948, a different star.",
+    "sources": []
+  }
+]

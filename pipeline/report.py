@@ -738,9 +738,17 @@ def section_plates(items):
     return f'<div class="plates">{"".join(cards)}</div>'
 
 
-def section_trackc(tc):
+TRACKC_NOTES = {
+    168789840: "Known sextuple (Powell et al. 2021); recovered blind.",
+    309658221: "Published pulsating eclipsing binary (Lee et al. 2019); our second period is twice its δ Scuti pulsation period, so it is not an eclipse.",
+    321471064: "Listed as a quadruple in the Multiple Star Catalog (WDS 11421-6216).",
+}
+
+
+def section_trackc(tc, lit=None):
     if tc is None or not len(tc):
         return ""
+    litm = {int(x["tic"]): x["status"] for x in (lit or [])}
     x = tc[(tc.P2_recurs >= 2)].copy()
     x["known"] = x.is_toi.astype(bool)
     x = x.sort_values(["P2_recurs", "snr2_max"], ascending=False).head(30)
@@ -750,7 +758,12 @@ def section_trackc(tc):
             ("P<sub>2</sub> (d)", lambda r: fmt(r.P2, 4), "r"), ("Depth 2", lambda r: f"{r.depth2 * 100:.2f}%", "r"),
             ("Recurs", lambda r: f"{int(r.P2_recurs)} sectors", "r"),
             ("Eclipse-like", lambda r: fmt(r.box_over_sine, 1), "r"),
-            ("TOI", lambda r: chip("TOI", "known") if r.known else "", "l")]
+            ("Known?", lambda r: (chip("TOI", "known") if r.known else
+                                 chip("published", "known") if litm.get(int(r.tic)) == "known in this role" else
+                                 "<span class='muted'>no mention found</span>" if int(r.tic) in litm else
+                                 "<span class='muted'>not checked</span>") +
+             (f"<div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:20rem'>{esc(TRACKC_NOTES[int(r.tic)])}</div>"
+              if int(r.tic) in TRACKC_NOTES else ""), "l")]
     n_all = len(tc)
     return f"""
 <section id="trackc">
@@ -765,8 +778,10 @@ def section_trackc(tc):
   <p>Two caveats apply to every row. Most such pairs are two unrelated binaries blended in the same TESS pixels,
   which only a pixel-level analysis per eclipse set can tell apart; and the published catalogues of TESS quadruples
   and triples (Kostov et al. 2022, 2024 and others) could not be downloaded from this environment, so novelty is
-  not yet checked against them. The known sextuple TIC 168789840 appears in the list as a check: all three of its
-  eclipse periods were recovered blind.</p>
+  not yet checked against them. Web searches for the top sixteen found three already published: the sextuple
+  TIC 168789840 (all three of its eclipse periods recovered blind), a catalogued quadruple, and a pulsating binary
+  whose pulsation, folded at twice its period, passed our eclipse-shape test. That test compares the signal with a
+  single sine wave and will be extended to harmonics.</p>
   </div>
   {table(x, cols)}
 </section>"""
@@ -1061,7 +1076,7 @@ def build():
   difference image with Gaia neighbours (top right), and every TESS sector of the star. Select one to enlarge.</p>
   {plates}
 </section>
-{section_trackc(tc)}
+{section_trackc(tc, lit)}
 {section_anomalies(td)}
 {section_tracka(ta_n, ta_total, triage)}
 {section_calibration(sv, s2, comp)}
@@ -1102,7 +1117,8 @@ def deep_verdict(r):
     if g.get("ruwe", 0) > 1.4 or g.get("nss", 0) > 0:
         return "binary host", None
     p = r.get("period") or {}
-    if "aliases" in p and not any(a["status"] == "allowed" for a in p["aliases"]):
+    n_ev = len([e for e in r.get("events", []) if e.get("sector") is not None])
+    if ("aliases" in p and not any(a["status"] == "allowed" for a in p["aliases"])) or (n_ev >= 2 and not p):
         return "no consistent period", None
     if worst and worst[1]["dchi2"] < 9:
         return "ambiguous pixels", worst[0]
@@ -1142,6 +1158,8 @@ def section_deepvet(dv, lit, tb):
         g = r.get("gaia") or {}
         verdict, _ = deep_verdict(r)
         lt = litm.get(tic, {}).get("status", "not checked")
+        if verdict == "candidate" and lt == "known in this role":
+            verdict = "published"
         rows.append({"tic": tic, "hip": st.get("HIP"), "tmag": st.get("Tmag"), "rp": rp, "n_ev": len(ev),
                      "sectors": ", ".join(str(e["sector"]) for e in ev), "per": per, "pix": pix,
                      "ruwe": g.get("ruwe"), "nss": g.get("nss"), "tce": len((r.get("known") or {}).get("tces", [])),
@@ -1149,7 +1167,7 @@ def section_deepvet(dv, lit, tb):
                      "note": NOTES.get(tic, "")})
     df = pd.DataFrame(rows).sort_values(["verdict", "tmag"], key=lambda s: s.map({"candidate": 0}).fillna(1) if s.name == "verdict" else s)
     kinds = {"candidate": "new", "off-target": "eb", "binary host": "eb", "no consistent period": "known",
-             "ambiguous pixels": "known"}
+             "ambiguous pixels": "known", "published": "known"}
 
     def star(r):
         h = f" · HIP {int(r.hip)}" if r.hip == r.hip and r.hip else ""
