@@ -111,6 +111,9 @@ def main():
             break
         time.sleep(30)
     ev, st, ccd_hot, sc_hot = survey_reduce.reduce_dirs([str(work)])
+    ok_frac = float((st.status == "ok").mean()) if len(st) else 0.0
+    if ok_frac < 0.5:  # e.g. a product re-released under a new file name: fail loudly, never write empty results
+        raise RuntimeError(f"only {ok_frac:.1%} of light curves loaded: {st.status.value_counts().to_dict()}")
     tic = ticdb.stars(ev.tic.unique())
     ev = classify.lc_context(ev)
     ev = classify.attach_star(ev, tic)

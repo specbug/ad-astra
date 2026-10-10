@@ -21,7 +21,8 @@ push() {
   cd "$REPO"
   git add results/track_a/stars >> "$LOG" 2>&1
   if ! git diff --cached --quiet; then
-    git commit -q -m "Track A search results ($1)" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" >> "$LOG" 2>&1
+    git commit -q -m "Track A search results ($1)" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01HPQdHQVehmk4raGYZB42gv" >> "$LOG" 2>&1
     for i in 1 2 3 4 5 6; do
       if git pull -q --rebase origin "$BRANCH" >> "$LOG" 2>&1 && git push -q origin "$BRANCH" >> "$LOG" 2>&1; then
         log "pushed ($1)"; break

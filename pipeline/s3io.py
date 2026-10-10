@@ -93,9 +93,13 @@ def tic_dir(tic):
     return f"{s[0:4]}/{s[4:8]}/{s[8:12]}/{s[12:16]}"
 
 
+QLP_VERSION = {s: "v02" for s in range(74, 80)}  # QLP re-released sectors 74-79 as v02 (checked Oct 2026)
+
+
 def qlp_key(tic, sector):
+    v = QLP_VERSION.get(int(sector), "v01")
     return (f"mast/hlsp/qlp/s{sector:04d}/{tic_dir(tic)}/"
-            f"hlsp_qlp_tess_ffi_s{sector:04d}-{int(tic):016d}_tess_v01_llc.fits")
+            f"hlsp_qlp_tess_ffi_s{sector:04d}-{int(tic):016d}_tess_{v}_llc.fits")
 
 
 def tspoc_key(tic, sector):

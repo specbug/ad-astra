@@ -31,7 +31,8 @@ push_results() {
   local s4="$1"
   cd "$REPO"
   git add "results/survey/$s4" >> "$LOG" 2>&1
-  git commit -q -m "Survey results for sector ${s4#s}" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" >> "$LOG" 2>&1
+  git commit -q -m "Survey results for sector ${s4#s}" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01HPQdHQVehmk4raGYZB42gv" >> "$LOG" 2>&1
   for i in 1 2 3 4 5 6; do
     if git pull -q --rebase origin "$BRANCH" >> "$LOG" 2>&1 && git push -q origin "$BRANCH" >> "$LOG" 2>&1; then
       log "pushed $s4"; break
