@@ -100,19 +100,39 @@ def track_c():
     e["harmonic_any"] = harm
     e["near_P1"] = np.abs(np.log(r)) < np.log(1.5)  # residual of an imperfect EB template, usually
     strong = e[(e.snr2 >= 15) & ~e.harmonic_any & (e.n_tr2 >= 2)].copy()
-    # eclipse-likeness (box depth / sinusoid peak-to-trough) is missing from older worker outputs:
-    # recompute it for the strong second signals by re-running the EB analysis
-    if "P2_box_over_sine" not in strong or strong.P2_box_over_sine.isna().any():
+    # eclipse-likeness: box depth over the peak-to-trough of a 3-harmonic Fourier fit at P2 (ebsearch.box_over_fourier).
+    # Worker outputs before Oct 10 only carry the single-sine version, which a pulsation at P2/2 can fool;
+    # recompute it for the strong second signals by re-running the EB analysis on those light curves.
+    if "P2_box_over_fourier3" not in strong:
+        strong["P2_box_over_fourier3"] = np.nan
+    cache_p = OUT / "trackc_fourier_cache.parquet"
+    cache = pd.read_parquet(cache_p) if cache_p.exists() else pd.DataFrame(columns=["tic", "sector", "P2", "f3", "sine"])
+    for _, c in cache.iterrows():
+        m = (strong.tic == c.tic) & (strong.sector == c.sector) & (np.abs(strong.P2 / c.P2 - 1) < 0.01) & strong.P2_box_over_fourier3.isna()
+        strong.loc[m, "P2_box_over_fourier3"] = c.f3
+        strong.loc[m, "P2_box_over_sine"] = c.sine
+    need = strong[strong.P2_box_over_fourier3.isna()]
+    if len(need):
         import concurrent.futures as cf
         from run_sector import _eb_one
-        need = strong[strong.get("P2_box_over_sine", pd.Series(np.nan, index=strong.index)).isna()]
         rows = [{"product": r["product"], "tic": r.tic, "sector": r.sector} for _, r in need.iterrows()]
         with cf.ProcessPoolExecutor(4) as ex:
             res = list(ex.map(_eb_one, rows, chunksize=2))
-        bos = {(x["tic"], x["sector"]): (x.get("P2_box_over_sine"), x.get("P2"), x.get("snr2")) for x in res if x}
-        strong["P2_box_over_sine"] = [bos.get((r.tic, r.sector), (np.nan,))[0] if np.isnan(r.get("P2_box_over_sine", np.nan))
-                                      else r.P2_box_over_sine for _, r in strong.iterrows()]
-    strong = strong[strong.P2_box_over_sine > 3]
+        new = {(x["tic"], x["sector"]): x for x in res if x and "error" not in x}
+        for i, r in need.iterrows():
+            x = new.get((r.tic, r.sector))
+            if x is None:
+                continue
+            # keep the value only if the re-run found the same second period
+            if x.get("P2") and abs(x["P2"] / r.P2 - 1) < 0.01:
+                strong.loc[i, "P2_box_over_fourier3"] = x.get("P2_box_over_fourier3", np.nan)
+                strong.loc[i, "P2_box_over_sine"] = x.get("P2_box_over_sine", np.nan)
+            cache.loc[len(cache)] = {"tic": int(r.tic), "sector": int(r.sector), "P2": float(r.P2),
+                                     "f3": float(x.get("P2_box_over_fourier3", np.nan)) if x.get("P2") and abs(x["P2"] / r.P2 - 1) < 0.01 else np.nan,
+                                     "sine": float(x.get("P2_box_over_sine", np.nan))}
+        OUT.mkdir(parents=True, exist_ok=True)
+        cache.to_parquet(cache_p, index=False)
+    strong = strong[strong.P2_box_over_fourier3 > 1.0]
     rows = []
     for tic, g in strong.groupby("tic"):
         g = g.sort_values("sector")
@@ -124,7 +144,7 @@ def track_c():
                      "depth2": g.depth2.median(), "snr2_max": g.snr2.max(), "P2_recurs": rec,
                      "near_P1": bool(g.near_P1.all()), "P3": g.P3.iloc[np.argmax(g.snr2.values)] if "P3" in g else np.nan,
                      "snr3": g.snr3.max() if "snr3" in g else np.nan,
-                     "box_over_sine": g.P2_box_over_sine.median()})
+                     "box_over_sine": g.P2_box_over_sine.median(), "box_over_fourier3": g.P2_box_over_fourier3.median()})
     cand = pd.DataFrame(rows)
     if len(cand):
         st = ticdb.query(cand.tic.values, ["ra", "dec", "Tmag", "Teff", "rad", "d"])

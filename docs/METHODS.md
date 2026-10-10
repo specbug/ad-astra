@@ -105,3 +105,56 @@ Half of the stars are also searched flipped. Red flags follow the reference proj
 (paraschopra/tess-planet-candidates): odd/even, secondary eclipse, duration vs stellar density,
 single-event dominance, edges, per-sector consistency, broad depression, depth, variability repeat,
 common period across stars; plus empirical (red) noise from 40 off-transit box placements.
+
+## 6. Deep vetting of individual candidates (`vet_deep.py`)
+Run on every Track B shortlist star brighter than T = 10.5 (the shortlist: not a TOI, Rp ≤ 16 R⊕, single or
+repeating on periods ≥ 15 d, flagged in fewer than five SPOC searches):
+- **Star:** TIC parameters; Gaia DR3 RUWE, non-single-star flag and radial-velocity scatter of the target.
+- **Known:** TOIs by TIC ID or within 10′ (ExoFOP February 2026 and NASA 5 October 2026 tables), SPOC TCEs.
+- **Events:** the depth of every listed dip in its sector's best light curve (SPOC 2-min > TESS-SPOC > QLP).
+- **Period:** for two or more events, the longest period consistent with all of them and every alias P/n
+  (n ≤ 12) tested against all sectors: a predicted transit inside the data that is not there at > 5σ excludes
+  that alias. For one event, the shortest period the other sectors allow (`duo.single_period_constraints`).
+- **Pixels (source test):** for each transit, the difference image (out-of-transit minus in-transit, with a
+  linear baseline per pixel) is fitted as a scaled copy of the out-of-transit image shifted to each candidate
+  source position: the target and every Gaia star within 150″ bright enough to produce the dip with an eclipse of
+  at most 50%. The χ² difference (alternative − target), summed over transits, is reported; positive favours the
+  target. 2-minute target pixel files are used where they exist, otherwise 15 × 15 full-frame cutouts.
+  Full-frame cutouts give much larger |Δχ²| than 2-minute pixels (more cadences, and residual pointing structure
+  in the difference image); only the sign and the 2-minute values are read as evidence.
+
+Verdicts: *off-target* if any source beats the target by Δχ² > 9; *binary host* if RUWE > 1.4 or Gaia has a
+non-single-star solution; *no consistent period* if no alias fits all events; *published* if the literature
+check (below) finds the star in this role; otherwise *candidate*.
+
+## 7. Transit fits (`transit_fit.py`)
+SPOC 2-minute PDCSAP windows (±0.6–1 d) are normalised by a quadratic fitted outside the transit and fitted
+jointly with `batman` (quadratic limb darkening fixed to TESS-band values for the star's Teff) and `emcee`
+(40 walkers, 3000 steps, first third discarded). Periodic candidates are parameterised by reference mid-time,
+period, Rp/R★, impact parameter and log stellar density, so the fitted density can be compared with the TIC
+value; duos by Rp/R★, b, T14 and one mid-time per transit.
+
+## 8. Literature checks
+TOI tables (above), SPOC DV reports, and web searches of the TIC, HIP and Gaia DR3 identifiers (one identifier
+per query; a result counts only if the page names the same star). ExoFOP community TOIs, SIMBAD, VizieR and
+arXiv listings could not be queried from the compute environment, so "no mention found" is weaker than "not
+catalogued".
+
+## 9. Track C eclipse-shape test, revised (10 October)
+The first version compared the box depth with the peak-to-trough of a single sine wave at the second period.
+A pulsation at half that period has no power at the period itself, so it passed (the published pulsating
+binary TIC 309658221 did). The test now fits a three-harmonic Fourier series at the period
+(`ebsearch.box_over_fourier`): smooth signals, including pulsations at P/2 and P/3, give a ratio of about 0.5;
+box-shaped eclipses with duty cycles of 3–10% give 1.2–3.3. Second signals need a ratio above 1.0.
+
+## 10. Calibration results (interim)
+- **Flipped light curves (false alarms by construction):** planet-shaped dips longer than 2 h on stars hotter
+  than 4000 K: none in 11,843 flipped two-minute light curves; 0.97 per 1000 flipped full-frame light curves,
+  concentrated in QLP sectors 20–22, 90 and 91 (up to 3.3 per 1000), against 0.33 per 1000 real full-frame light
+  curves. Because only 10% of light curves are flipped, the CCD-wide systematics veto is ten times weaker for
+  them, so these rates are upper bounds.
+- **Blind recovery of known TOIs** (period > 15 d, depth > 1.5 ppt, predicted transits in surveyed full-frame
+  sectors): 14% of 1.5–3 ppt transits, about 40% of deeper ones, listed as single-transit candidates. Losses:
+  data gaps, ephemeris drift since discovery, and deliberately strict cuts.
+- **Independent recoveries:** seven Track B "new" stars matched TOIs created in 2026 (TOI-7701 to 7850), after
+  the February TOI list the survey was first compared with.

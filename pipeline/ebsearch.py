@@ -50,6 +50,27 @@ def fold_template(phase, y, nbins=400):
     return np.interp(phase, cc, mm)
 
 
+def box_over_fourier(t, y, P, t0, depth, n_harm=3):
+    """Box depth over the peak-to-trough of a Fourier series with n_harm harmonics fitted at period P.
+
+    A narrow eclipse spreads its power over many harmonics, so a few harmonics recover only part of its depth
+    (ratio ~2-4 for duty cycles of 3-10%). Smooth variability (pulsation, spots, ellipsoidal variation), including a
+    pulsation at P/2 or P/3 folded at P, is captured by the low harmonics (ratio <~1). A single sine wave at P misses
+    the P/2 case entirely, which is why this replaced it.
+    """
+    ph = 2 * np.pi * ((t - t0) / P)
+    cols = [np.ones_like(ph)]
+    for k in range(1, n_harm + 1):
+        cols += [np.sin(k * ph), np.cos(k * ph)]
+    A = np.vstack(cols).T
+    cf, *_ = np.linalg.lstsq(A, y, rcond=None)
+    g = 2 * np.pi * np.linspace(0, 1, 512, endpoint=False)
+    G = np.vstack([np.ones_like(g)] + sum([[np.sin(k * g), np.cos(k * g)] for k in range(1, n_harm + 1)], [])).T
+    m = G @ cf
+    p2p = float(m.max() - m.min())
+    return float(depth / p2p) if p2p > 0 else np.nan
+
+
 def analyse_eb(lc, window=3.0, return_arrays=False):
     """Full Track C analysis of one light curve dict (from s3io). Returns a result dict
     (and, with return_arrays, the binned time, flattened flux, EB template and residuals)."""
@@ -116,6 +137,7 @@ def analyse_eb(lc, window=3.0, return_arrays=False):
             cf_, *_ = np.linalg.lstsq(A, yy, rcond=None)
             sine_p2p = 2 * np.hypot(cf_[1], cf_[2])
             out[f"P{j}_box_over_sine"] = float(depj / sine_p2p) if sine_p2p > 0 else np.nan
+            out[f"P{j}_box_over_fourier3"] = box_over_fourier(tt, yy, Pj, t0j, depj)
             out.update({f"P{j}": Pj, f"t0_{j}": t0j, f"dur{j}_h": durj * 24, f"depth{j}": depj,
                         f"snr{j}": float(snrj), f"n_tr{j}": int(np.sum(st["per_transit_count"] > 0)),
                         f"P{j}_harmonic": bool(near_harm),
