@@ -893,8 +893,12 @@ def section_anomalies(td):
 def section_tracka(ta_n, ta_total, triage):
     sig = ""
     if triage is not None and len(triage):
-        clean = triage[(triage.kind == "signals") & (triage.hard_flags.fillna("") == "")] if "hard_flags" in triage else triage
-        sig = f" Among {triage.tic.nunique()} stars triaged so far, the strongest flag-free signal has SDE {clean.sde.max():.1f}, below the {triage[triage.kind == 'flipped'].sde.max() if (triage.kind == 'flipped').any() else float('nan'):.1f} reached by the same search on flipped light curves."
+        clean = triage[(triage.kind == "signals") & (triage.hard_flags.fillna("") == "")]
+        flip = triage[(triage.kind == "signals_inverted") & (triage.hard_flags.fillna("") == "")]
+        if len(clean):
+            sig = (f" Of {triage.tic.nunique():,} stars with a signal passing the search thresholds, {clean.tic.nunique()} have one "
+                   f"with no red flag; the strongest has SDE {clean.sde.max():.1f}, against {flip.sde.max():.1f} for the strongest "
+                   f"flag-free signal in the same stars' flipped light curves." if len(flip) else "")
     return f"""
 <section id="tracka">
   <p class="kicker">Track A · small planets</p>
