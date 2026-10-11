@@ -99,7 +99,8 @@ def main():
     recs = todo.to_dict("records")
     chunk = 150
     for i0 in range(0, len(recs), chunk):
-        with cf.ThreadPoolExecutor(n_proc) as ex:
+        # processes, not threads: the per-star work (numba dip search, pandas) holds the GIL
+        with cf.ProcessPoolExecutor(n_proc) as ex:
             rows = list(ex.map(one, recs[i0:i0 + chunk]))
         new = c.merge(pd.DataFrame(rows), on="tic", how="inner") if rows else pd.DataFrame()
         allr = pd.concat([allr, new], ignore_index=True) if len(allr) else new
