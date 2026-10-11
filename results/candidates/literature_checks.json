@@ -318,5 +318,716 @@
     "url": "https://en.wikipedia.org/wiki/HD_11506"
    }
   ]
+ },
+ {
+  "tic": 4672985,
+  "status": "known in this role",
+  "summary": "Searched 'TIC 4672985' and 'Gaia DR3 5172202413314737152'. The NASA Exoplanet Archive, TEPCat, NASA's exoplanet catalogue and Jones et al. 2024 (arXiv:2401.09657) name TIC 4672985 as the host of a confirmed transiting substellar companion, TIC 4672985 b (P = 69.048 d, about 12.7 MJup and 1.03 RJup), while the Gaia ID search found nothing specific (web search, 11 Oct 2026)",
+  "sources": [
+   {
+    "title": "TIC 4672985 Overview (NASA Exoplanet Archive)",
+    "url": "https://exoplanetarchive.ipac.caltech.edu/overview/TIC%204672985"
+   },
+   {
+    "title": "TIC 4672985 (TEPCat)",
+    "url": "https://www.astro.keele.ac.uk/jkt/tepcat/planets/TIC_4672985.html"
+   },
+   {
+    "title": "TIC 4672985 b (NASA Exoplanet Catalog)",
+    "url": "https://science.nasa.gov/exoplanet-catalog/tic-4672985-b"
+   },
+   {
+    "title": "A long-period transiting substellar companion in the super-Jupiters to brown dwarfs mass regime and a prototypical warm-Jupiter detected by TESS (arXiv:2401.09657)",
+    "url": "https://arxiv.org/abs/2401.09657v1"
+   }
+  ]
+ },
+ {
+  "tic": 21725734,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 21725734' and 'Gaia DR3 4804986042402888064'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 33743172,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 33743172' and 'Gaia DR3 2943011513636935296'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 49381710,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 49381710' and 'Gaia DR3 2933357767191765504'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 60479865,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 60479865' and 'Gaia DR3 2938196374265514624'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 77670980,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 77670980' and 'Gaia DR3 4876081490749868672'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 127236148,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 127236148' and 'Gaia DR3 3396792057047671680'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 147813662,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 147813662' and 'Gaia DR3 6238492469059785088'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 159730525,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 159730525' and 'Gaia DR3 6583420566747746176'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 173329532,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 173329532' and 'Gaia DR3 5586566083351122816'; no result named either identifier. A TESS Sector 83 two-minute target list (tess.mit.edu) appeared among the results but the identifier was not shown on it, and a confirming search could not be run because the search budget ran out (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 192561660,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 192561660' and 'Gaia DR3 5473801888789356160'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 203892745,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 203892745' and 'Gaia DR3 4152023298294075136'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 216737675,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 216737675', 'Gaia DR3 2021783806547604480' and 'HIP 96920'; no result named any of these identifiers, and the HIP search returned only similarly numbered stars such as HD 66920 and HD 76920 (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 234442708,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 234442708' and 'Gaia DR3 3162219257079843456'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 238196979,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 238196979', 'Gaia DR3 4641637024405934208' and 'TIC 238196979 eclipsing'; no result named any of these, including the eclipsing-triple and doubly-eclipsing candidate tables that came up (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 264194780,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 264194780' and 'Gaia DR3 2297806128970473088'; no result named either identifier, and the Planet Hunters TESS II paper came up but was not shown to list this star (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 274945051,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 274945051' and 'Gaia DR3 1222646248506181248'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 289086207,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 289086207' and 'Gaia DR3 2095789838239418496'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 309264964,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 309264964', 'Gaia DR3 3451535882000187392' and 'TIC 309264964 eclipsing'; no result named any of these, including the eclipsing-triple and doubly-eclipsing candidate tables that came up (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 341179881,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 341179881' and 'Gaia DR3 6450421647388389888'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 356516513,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 356516513' and 'Gaia DR3 2163248759261144064'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 365043219,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 365043219' and 'Gaia DR3 2168248238636129792'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 367500073,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 367500073' and 'Gaia DR3 885037900365687040'; no result named either identifier (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 389836747,
+  "status": "known in this role",
+  "summary": "Searched 'TIC 389836747', 'Gaia DR3 510748306734957568' and 'TIC 389836747 eclipsing'. The eclipsing search found an A&A (Aug 2022) table of doubly eclipsing candidates that lists TIC 389836747 (= WISE J013310.8+613507) as an EA+EA system with periods of about 2.567 d and 2.730 d; that WISE position falls in the same sky pixel as the star's Gaia DR3 ID, but a confirming search on the WISE name could not be run because the search budget ran out (web search, 11 Oct 2026)",
+  "sources": [
+   {
+    "title": "A&A 2022 (aa43723-22), Table 2: doubly eclipsing candidates",
+    "url": "https://www.aanda.org/articles/aa/full_html/2022/08/aa43723-22/T2.html"
+   }
+  ]
+ },
+ {
+  "tic": 419246494,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 419246494', 'Gaia DR3 430569582378146048' and 'TIC 419246494 eclipsing'; no result named any of these, and the TESS multiply-eclipsing candidates paper (arXiv:2205.03934) came up but was not shown to list this star (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 447447071,
+  "status": "no mentions found",
+  "summary": "Searches for TIC 447447071 and Gaia DR3 5816060101684929024 returned no page naming this star (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 457872192,
+  "status": "no mentions found",
+  "summary": "Search for TIC 457872192 with 'eclipsing' returned no page naming this star. Large tables of TESS multiply eclipsing candidates (e.g. arXiv 2205.03934, A&A 2022 aa43723-22) ranked high, but the visible parts do not list it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 468905412,
+  "status": "no mentions found",
+  "summary": "Searches for TIC 468905412 and Gaia DR3 1106906157010144512 returned no page naming this star (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 12007147,
+  "status": "no mentions found",
+  "summary": "Searched TIC 12007147 and Gaia DR3 5438157233647026560 as quoted exact-match queries (no HIP given); no result named either identifier, only other TIC objects, unrelated patents and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 22442522,
+  "status": "no mentions found",
+  "summary": "Searched TIC 22442522 and Gaia DR3 3513088187893841536 as quoted exact-match queries; no result named either identifier, only other TIC objects (e.g. TIC 24750448, TIC 244207973) and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 41743658,
+  "status": "no mentions found",
+  "summary": "Searched TIC 41743658 and Gaia DR3 1375793374846632704 as quoted exact-match queries; no result named either identifier, only other TIC systems (e.g. TIC 160113658, TIC 168789840) and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 52546430,
+  "status": "no mentions found",
+  "summary": "Searched TIC 52546430, Gaia DR3 5583971403407931776 and TIC 52546430 plus 'eclipsing'; no result named either identifier, only other eclipsing or quadruple systems (e.g. TIC 454140642) and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 64558861,
+  "status": "no mentions found",
+  "summary": "Searched TIC 64558861, Gaia DR3 2006848521618462592 and TIC 64558861 plus 'eclipsing'; no result named either identifier, only other systems such as TIC 168789840 and TIC 65612701 and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 89247735,
+  "status": "no mentions found",
+  "summary": "Searched TIC 89247735 and Gaia DR3 6708071581514074368 as quoted exact-match queries; no result named either identifier, only TIC catalogue descriptions, other TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 140924300,
+  "status": "no mentions found",
+  "summary": "Searched TIC 140924300 and Gaia DR3 5521856937844733312 as quoted exact-match queries; no result named either identifier, only other TIC systems (e.g. TIC 172900988, TIC 366240660) and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 148742754,
+  "status": "no mentions found",
+  "summary": "Searched TIC 148742754 and Gaia DR3 5588931270304220288 as quoted exact-match queries; no result named either identifier, only other TIC planets and systems (e.g. TIC 147027702, TIC 88785435) and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 162896022,
+  "status": "no mentions found",
+  "summary": "Searched TIC 162896022 and Gaia DR3 5375445866404501248 as quoted exact-match queries; no result named either identifier, only the similar-numbered TIC 308396022, other TIC systems and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 176518126,
+  "status": "no mentions found",
+  "summary": "Searched TIC 176518126 and Gaia DR3 3218351455980372352 as quoted exact-match queries; no result named either identifier (a returned stellar-parameter table listed neighbouring IDs such as TIC 176379354, not this one) (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 192687318,
+  "status": "no mentions found",
+  "summary": "Searched TIC 192687318 and Gaia DR3 434630147530884864 as quoted exact-match queries; no result named either identifier, only other TIC objects (e.g. TIC 320687387) and Gaia DR3 papers listing other source IDs (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 206385646,
+  "status": "no mentions found",
+  "summary": "Searched TIC 206385646 and Gaia DR3 4832762180020925440 as quoted exact-match queries; no result named either identifier, only other TIC systems (e.g. TIC 320687387, TIC 285853156) and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 219018744,
+  "status": "no mentions found",
+  "summary": "Searched TIC 219018744 and Gaia DR3 1621257833919119232 as quoted exact-match queries; no result named either identifier, only the similar-numbered quadruple TIC 219006972, other TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 234523941,
+  "status": "no mentions found",
+  "summary": "Searched TIC 234523941 and Gaia DR3 4709449683221943424 as quoted exact-match queries; no result named either identifier, only other TIC objects (e.g. TIC 237913194, TIC 125421413) and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 253917513,
+  "status": "no mentions found",
+  "summary": "Searched TIC 253917513 and Gaia DR3 6730661288425305856 as quoted exact-match queries; no result named either identifier, only other TIC planets (e.g. TIC 237913194) and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 265340681,
+  "status": "no mentions found",
+  "summary": "Searched TIC 265340681 and Gaia DR3 582076855835676160 as quoted exact-match queries; no result named either identifier (a TESS brown-dwarf paper and the SHERLOCK candidate paper came up, but their snippets listed other TIC IDs) (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 279178582,
+  "status": "no mentions found",
+  "summary": "Searched TIC 279178582, Gaia DR3 2163795113474178432 and TIC 279178582 plus 'eclipsing'; no result named either identifier, only other TIC systems (e.g. TIC 279401253, TIC 278956474) and general Gaia DR3 pages (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 293954660,
+  "status": "known in this role",
+  "summary": "Listed in an MNRAS table of doubly eclipsing candidates (academic.oup.com view-large 225349534) with periods 2.814 d and 4.904 d and the note 'Confirmed blend', i.e. the two binaries are separate stars. Our periods are 2.8138 d and 9.8056 d (twice 4.903 d), so it is the same pair (web search, 11 Oct 2026).",
+  "sources": [
+   {
+    "title": "academic.oup.com table (view-large 225349534), lists TIC 293954660 as 'Confirmed blend'",
+    "url": "https://academic.oup.com/view-large/225349534"
+   }
+  ]
+ },
+ {
+  "tic": 309334280,
+  "status": "no mentions found",
+  "summary": "Searches for TIC 309334280, Gaia DR3 3443821674062259328 and TIC 309334280 with 'eclipsing' returned no page naming this star (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 345050437,
+  "status": "no mentions found",
+  "summary": "Search for TIC 345050437 with 'eclipsing' returned no page naming this star. Large tables of TESS multiply eclipsing candidates (e.g. arXiv 2205.03934, A&A 2022 aa43723-22) ranked high, but the visible parts do not list it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 357786383,
+  "status": "no mentions found",
+  "summary": "Search for TIC 357786383 returned no page naming this star; similar-numbered TICs in the results are different stars (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 365156316,
+  "status": "no mentions found",
+  "summary": "Search for TIC 365156316 returned no page naming this star; similar-numbered TICs in the results are different stars (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 370622419,
+  "status": "no mentions found",
+  "summary": "Search for TIC 370622419 with 'eclipsing' returned no page naming this star. Large tables of TESS multiply eclipsing candidates (e.g. arXiv 2205.03934, A&A 2022 aa43723-22) ranked high, but the visible parts do not list it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 395976939,
+  "status": "no mentions found",
+  "summary": "Searches for TIC 395976939 and Gaia DR3 1829740185051875200 returned no page naming this star (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 429663381,
+  "status": "no mentions found",
+  "summary": "Search for TIC 429663381 with 'eclipsing' returned no page naming this star. Large tables of TESS multiply eclipsing candidates (e.g. arXiv 2205.03934, A&A 2022 aa43723-22) ranked high, but the visible parts do not list it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 448471716,
+  "status": "no mentions found",
+  "summary": "Search for TIC 448471716 returned no page naming this star; similar-numbered TICs in the results are different stars (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 458859477,
+  "status": "no mentions found",
+  "summary": "Search for TIC 458859477 with 'eclipsing' returned no page naming this star. Large tables of TESS multiply eclipsing candidates (e.g. arXiv 2205.03934, A&A 2022 aa43723-22) ranked high, but the visible parts do not list it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 13093071,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 13093071' and 'Gaia DR3 2958881069899924736'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 22642772,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 22642772' and 'Gaia DR3 5590096168510977536'; no result names either identifier, only other TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 44024153,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 44024153' and 'Gaia DR3 1891206630236943872'; no result names either identifier (a TOI-4153 hit is an unrelated object that only shares digits) (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 54002406,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 54002406' and 'Gaia DR3 2456895192244278144'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 65910228,
+  "status": "known in this role",
+  "summary": "Searched 'TIC 65910228' and 'Gaia DR3 5606317297918628992'; the TIC search finds this star published as TIC-65910228 b / NGTS-38 b, a confirmed 180.5-day transiting warm super-Jupiter first detected as a single transit in TESS Sector 33 (arXiv 2602.12977, plus an independent preprint, arXiv 2602.13125, Feb 2026), while the Gaia ID search found nothing (web search, 11 Oct 2026)",
+  "sources": [
+   {
+    "title": "TIC-65910228 b / NGTS-38 b, a 180 day transiting warm super-Jupiter",
+    "url": "https://arxiv.org/pdf/2602.12977"
+   },
+   {
+    "title": "TIC-65910228 b / NGTS-38 b, a 180 day transiting warm super-Jupiter (University of Birmingham research portal)",
+    "url": "https://research.birmingham.ac.uk/en/publications/tic-65910228-bngts-38-b-a-180-day-transiting-warm-super-jupiter/"
+   },
+   {
+    "title": "arXiv 2602.13125 (independent A&A preprint on TIC65910228b)",
+    "url": "https://arxiv.org/pdf/2602.13125v1"
+   }
+  ]
+ },
+ {
+  "tic": 102923633,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 102923633' and 'Gaia DR3 1093967001092272640'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 144540899,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 144540899' and 'Gaia DR3 2888236180802097664'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 148821223,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 148821223' and 'Gaia DR3 1375563748715690368'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 165638196,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 165638196' and 'Gaia DR3 1600488536010655872'; no result names either identifier (near-miss numbers such as TIC 165722603 and TIC 165297570 are different stars) (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 177994853,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 177994853' and 'Gaia DR3 239581698204302848'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 192831602,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 192831602' and 'Gaia DR3 4809169065671083264'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 207783865,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 207783865' and 'Gaia DR3 6064975786002098816'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 219413978,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 219413978' and 'Gaia DR3 4773415245341279488'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 235173044,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 235173044' and 'Gaia DR3 3350871430654630272'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 257352273,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 257352273' and 'Gaia DR3 1840215026152295936'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 265527315,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 265527315' and 'Gaia DR3 6403090390528128640'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 279401253,
+  "status": "known in this role",
+  "summary": "Searched 'TIC 279401253' and 'Gaia DR3 5110565749968529024'; the TIC search finds a published, confirmed system: TIC 279401253 b, a TESS-discovered transiting super-Jupiter on a ~76.8-day orbit with an RV-detected outer companion c in 2:1 resonance (Bozhilov et al. 2023, arXiv 2302.10838; also in TEPCat and the NASA Exoplanet Archive), while the Gaia ID search found nothing (web search, 11 Oct 2026)",
+  "sources": [
+   {
+    "title": "A 2:1 Mean-Motion Resonance Super-Jovian pair revealed by TESS, FEROS, and HARPS",
+    "url": "https://arxiv.org/pdf/2302.10838"
+   },
+   {
+    "title": "TIC 279401253 (TEPCat)",
+    "url": "https://www.astro.keele.ac.uk/jkt/tepcat/planets/TIC_279401253.html"
+   },
+   {
+    "title": "TIC 279401253 Overview (NASA Exoplanet Archive)",
+    "url": "https://vmexoweb2.ipac.caltech.edu/overview/TIC%20279401253"
+   },
+   {
+    "title": "TIC 279401253 (Celestia)",
+    "url": "https://celestia.mobi/resources/item/EF0E825F-FEEB-4AA1-B5D9-00BB4321E53D"
+   }
+  ]
+ },
+ {
+  "tic": 302599822,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 302599822', 'Gaia DR3 5224120905706388608' and 'TIC 302599822' eclipsing; no result names either identifier, and no eclipsing-binary or multiple-star page lists it (the nearest hit, TIC 309658221, is a different star) (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 313339542,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 313339542' and 'Gaia DR3 1074927754665668864'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 346000671,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 346000671', 'Gaia DR3 1998225872246234112' and 'TIC 346000671' eclipsing; no result names either identifier, and no eclipsing-binary or multiple-star page lists it (the nearest hit, TIC 334900671, is a different star) (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 358050122,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 358050122' and 'Gaia DR3 4725524302701978240'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 365864904,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 365864904' and 'Gaia DR3 2167971333502998272'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 373674579,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 373674579' and 'Gaia DR3 3972526577623362560'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 418134886,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 418134886', 'Gaia DR3 432159716707294464' and 'TIC 418134886' eclipsing; no result names either identifier, and no eclipsing-binary or quadruple catalogue page lists it (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 429893047,
+  "status": "no mentions found",
+  "summary": "Searched 'TIC 429893047' and 'Gaia DR3 1867622071469738624'; no result names either identifier, only unrelated TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 453449079,
+  "status": "no mentions found",
+  "summary": "Searches for TIC 453449079 and Gaia DR3 2967900471160987264 returned no page naming this star (similar numbers such as TIC 452049244 are different stars) (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 468324489,
+  "status": "no mentions found",
+  "summary": "NOT CHECKED: neither planned query ('TIC 468324489', 'Gaia DR3 2721227717525252096') could run because the shared web-search budget was used up, so this status is a placeholder, not a result, and the star must be re-searched before any novelty claim (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 19186895,
+  "status": "no mentions found",
+  "summary": "Searched TIC 19186895 and Gaia DR3 5728044294645800960. No result names either identifier; the hits were about other TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 28938342,
+  "status": "no mentions found",
+  "summary": "Searched TIC 28938342 and Gaia DR3 2090409068856807680. No result names either identifier; the hits were about other TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 48450535,
+  "status": "no mentions found",
+  "summary": "Searched TIC 48450535, Gaia DR3 2131599454489850880 and TIC 48450535 with eclipsing. No result names either identifier; the eclipsing query returned TESS multiple-star papers (e.g. a speckle study of quadruple EBs) whose listed TIC IDs do not include this one (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 56862096,
+  "status": "no mentions found",
+  "summary": "Searched TIC 56862096 and Gaia DR3 818898225801209728. No result names either identifier; the hits were about other TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 71631629,
+  "status": "no mentions found",
+  "summary": "Searched TIC 71631629 and Gaia DR3 2998982801586015744. No result names either identifier; the nearest hit was a WDS triple-system page for a different number (TIC 71612483) (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 103629155,
+  "status": "no mentions found",
+  "summary": "Searched TIC 103629155 and Gaia DR3 6183776750369468544. No result names either identifier; the hits were about other TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 144818726,
+  "status": "no mentions found",
+  "summary": "Searched TIC 144818726 and Gaia DR3 5329080079547582336. No result names either identifier; a landing page for the T16 planet hunt (10,000 TESS Cycle 1 candidates) appeared among the hits but does not show this TIC, and a confirming query could not be run because the search budget ran out (web search, 11 Oct 2026); a follow-up search for the TIC alone (or with 'Planet Hunters TESS') also found no page naming it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 157264264,
+  "status": "no mentions found",
+  "summary": "Searched TIC 157264264 and Gaia DR3 1566410070757153024. No result names either identifier; the hits were about other TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 165795955,
+  "status": "no mentions found",
+  "summary": "Searched TIC 165795955 and Gaia DR3 902193722029043968. No result names either identifier; the closest hit was a different star, TIC 165459595 (V1109 Cen) (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 188043856,
+  "status": "no mentions found",
+  "summary": "Searched TIC 188043856 and Gaia DR3 5455592086448314496. No result names either identifier; the hits were about other TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 193980106,
+  "status": "no mentions found",
+  "summary": "Searched TIC 193980106 and Gaia DR3 2083119719080106496. No result names either identifier; the Planet Hunters TESS II paper (arXiv 2011.13944) appeared among the hits but does not show this TIC, and a confirming query could not be run because the search budget ran out (web search, 11 Oct 2026); a follow-up search for the TIC alone (or with 'Planet Hunters TESS') also found no page naming it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 212375563,
+  "status": "no mentions found",
+  "summary": "Searched TIC 212375563 and Gaia DR3 5142431452365814912. No result names either identifier; the hits were about other TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 233429340,
+  "status": "no mentions found",
+  "summary": "Searched TIC 233429340, Gaia DR3 2236269628558885760 and TIC 233429340 with eclipsing. No result names either identifier; the eclipsing query returned TESS eclipsing-binary and triple-star papers whose listed TIC IDs do not include this one (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 237077016,
+  "status": "no mentions found",
+  "summary": "Searched TIC 237077016 and Gaia DR3 2242975068937862912. No result names either identifier; the hits were about other TIC/TOI objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 262590678,
+  "status": "no mentions found",
+  "summary": "Searched TIC 262590678 and Gaia DR3 2662372371919204224. No result names either identifier; a Gaia DR3 compact-object binary paper (arXiv 2207.05434) appeared for the Gaia query but does not show this source ID, and a confirming query could not be run because the search budget ran out (web search, 11 Oct 2026); a follow-up search for the TIC alone (or with 'Planet Hunters TESS') also found no page naming it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 268963812,
+  "status": "no mentions found",
+  "summary": "Searched TIC 268963812, Gaia DR3 5488725113438708480 and TIC 268963812 with eclipsing. No result names either identifier; the eclipsing query returned triple-star and TESS eclipsing-binary catalogue papers that do not show it (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 279571968,
+  "status": "no mentions found",
+  "summary": "Searched TIC 279571968 and Gaia DR3 5480584393767667584. No result names either identifier; the hits were about other TIC objects and general Gaia DR3 pages (web search, 11 Oct 2026)",
+  "sources": []
+ },
+ {
+  "tic": 306255021,
+  "status": "no mentions found",
+  "summary": "Search for TIC 306255021 with 'eclipsing' returned no page naming this star. Large tables of TESS multiply eclipsing candidates (e.g. arXiv 2205.03934, A&A 2022 aa43723-22) ranked high, but the visible parts do not list it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 336882813,
+  "status": "no mentions found",
+  "summary": "Search for TIC 336882813 with 'eclipsing' returned no page naming this star. Large tables of TESS multiply eclipsing candidates (e.g. arXiv 2205.03934, A&A 2022 aa43723-22) ranked high, but the visible parts do not list it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 347301717,
+  "status": "no mentions found",
+  "summary": "Search for TIC 347301717 with 'eclipsing' returned no page naming this star. Large tables of TESS multiply eclipsing candidates (e.g. arXiv 2205.03934, A&A 2022 aa43723-22) ranked high, but the visible parts do not list it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 362818328,
+  "status": "no mentions found",
+  "summary": "Search for TIC 362818328 with 'eclipsing' returned no page naming this star. Large tables of TESS multiply eclipsing candidates (e.g. arXiv 2205.03934, A&A 2022 aa43723-22) ranked high, but the visible parts do not list it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 366299304,
+  "status": "no mentions found",
+  "summary": "Search for TIC 366299304 returned no page naming this star; similar-numbered TICs in the results are different stars (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 373876456,
+  "status": "no mentions found",
+  "summary": "Search for TIC 373876456 returned no page naming this star; similar-numbered TICs in the results are different stars (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 418184706,
+  "status": "no mentions found",
+  "summary": "Search for TIC 418184706 returned no page naming this star; similar-numbered TICs in the results are different stars (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 435263480,
+  "status": "no mentions found",
+  "summary": "Search for TIC 435263480 with 'eclipsing' returned no page naming this star. Large tables of TESS multiply eclipsing candidates (e.g. arXiv 2205.03934, A&A 2022 aa43723-22) ranked high, but the visible parts do not list it (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 456769317,
+  "status": "no mentions found",
+  "summary": "Search for TIC 456769317 returned no page naming this star; similar-numbered TICs in the results are different stars (web search, 11 Oct 2026).",
+  "sources": []
+ },
+ {
+  "tic": 468517297,
+  "status": "no mentions found",
+  "summary": "Search for TIC 468517297 returned no page naming this star; similar-numbered TICs in the results are different stars (web search, 11 Oct 2026).",
+  "sources": []
  }
 ]

@@ -32,6 +32,54 @@ def hf_toi():
     return _cache["hf"]
 
 
+def confirmed_planets():
+    """NASA Exoplanet Archive confirmed planets (ps table, default_flag=1) of 5 Oct 2026, copied page by page from
+    the juliensimon/nasa-exoplanets Hugging Face mirror into catalogs/hf_ps/; None if absent."""
+    if "ps" not in _cache:
+        pages = sorted((CATALOGS / "hf_ps").glob("page_*.csv"))
+        _cache["ps"] = (pd.concat([pd.read_csv(f) for f in pages]).drop_duplicates("row").sort_values("row")
+                        .reset_index(drop=True) if pages else None)
+    return _cache["ps"]
+
+
+def flag_confirmed(df, ra_col="ra", dec_col="dec", radius_arcsec=10.0):
+    """Add known_planet / known_planet_P / known_planet_sep columns: confirmed planets whose host lies within
+    radius_arcsec of the star, or whose host is named 'TIC <tic>'. Positions are compared as catalogued (the TIC
+    at epoch 2000, the archive mostly at the Gaia epoch), so fast-moving stars rely on the name match."""
+    ps = confirmed_planets()
+    df = df.copy()
+    df["known_planet"] = None
+    df["known_planet_P"] = None
+    df["known_planet_sep"] = np.nan
+    if ps is None:
+        return df
+    from scipy.spatial import cKDTree
+
+    def xyz(ra, dec):
+        ra, dec = np.radians(ra), np.radians(dec)
+        return np.c_[np.cos(dec) * np.cos(ra), np.cos(dec) * np.sin(ra), np.sin(dec)]
+    tree = cKDTree(xyz(ps.ra.values, ps.dec.values))
+    ok = df[ra_col].notna() & df[dec_col].notna()
+    chord = 2 * np.sin(np.radians(radius_arcsec / 3600) / 2)
+    pos = xyz(df[ra_col].fillna(0).values, df[dec_col].fillna(0).values)
+    host_tic = ps.hostname.astype(str).str.extract(r"^TIC[ -]?(\d+)", expand=False)
+    by_name = {}
+    for j, t in host_tic.dropna().items():
+        by_name.setdefault(int(t), []).append(j)
+    for i, (p, good, tic) in enumerate(zip(pos, ok.values, df.tic.values)):
+        hits = set(tree.query_ball_point(p, chord)) if good else set()
+        idx = sorted(hits | set(by_name.get(int(tic), [])))
+        if not idx:
+            continue
+        rows = ps.loc[idx]
+        df.iat[i, df.columns.get_loc("known_planet")] = "; ".join(rows.pl_name.astype(str))
+        df.iat[i, df.columns.get_loc("known_planet_P")] = "; ".join(f"{v:.4g}" for v in rows.pl_orbper.fillna(np.nan))
+        if good:
+            df.iat[i, df.columns.get_loc("known_planet_sep")] = float(sep_arcsec(df[ra_col].values[i], df[dec_col].values[i],
+                                                                                rows.ra.values, rows.dec.values).min())
+    return df
+
+
 def sep_arcsec(ra1, dec1, ra2, dec2):
     ra1, dec1, ra2, dec2 = map(np.radians, (ra1, dec1, ra2, dec2))
     c = np.sin(dec1) * np.sin(dec2) + np.cos(dec1) * np.cos(dec2) * np.cos(ra1 - ra2)

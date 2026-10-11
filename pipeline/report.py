@@ -753,17 +753,11 @@ def section_plates(items):
 
 
 TRACKC_NOTES = {
-    162305348: "Short (1.9 h) for a 35-day orbit around an F star: a grazing crossing, so the companion may be larger than it looks.",
-    457134361: "One 11.6-hour, 1%-deep transit; at least 17.6 days, and long for a Sun-like star, so likely hundreds of days.",
-    4011632: "Gaia reports an astrometric binary (RUWE 5.7) with a variable radial velocity: the dip may belong to the companion.",
-    221567884: "Dips of several depths and no single period; two TOIs lie within 10′. Probably a blend.",
-    459801869: "Two transits 20.4 days apart in sector 23 and every shorter alias excluded: a warm giant on an F star, seen only in full-frame data.",
-    137966491: "Three transits on a 28.843-day period. SPOC flagged single sectors with inconsistent periods (11.7 and 18.6 days); never a TOI.",
-    441010857: "Three transits on a 24.054-day period; the 1.7-hour duration means a grazing crossing.",
-    318707987: "One 2.9 Earth-radius transit on a bright K dwarf. An unrelated 0.96-day SPOC detection (354 ppm) on the same star was never made a TOI.",
-    430746529: "One 16-hour transit of a bright A star (HIP 109818): a giant on an orbit of at least 65 days.",
-    402710280: "Two 4.2 Earth-radius transits on a K dwarf; six periods of 1454/n days remain.",
-    64038538: "Two 4.4 Earth-radius transits on a K dwarf; six periods of 1116/n days remain.",
+    168789840: "Known sextuple (Powell et al. 2021); recovered blind.",
+    309658221: "Published pulsating eclipsing binary (Lee et al. 2019); our second period is twice its δ Scuti pulsation period, so it is not an eclipse.",
+    321471064: "Listed as a quadruple in the Multiple Star Catalog (WDS 11421-6216).",
+    293954660: "Published as a doubly eclipsing pair (2.814 and 4.904 d; our second period is twice the latter) and found there to be a blend of two separate binaries.",
+    389836747: "Published as a doubly eclipsing candidate (EA+EA, 2.567 and 2.730 d) in an A&A table of TESS multiply eclipsing systems (2022).",
 }
 
 
@@ -1142,6 +1136,13 @@ NOTES = {
     457134361: "One 11.6-hour, 1%-deep transit; at least 17.6 days, and long for a Sun-like star, so likely hundreds of days.",
     4011632: "Gaia reports an astrometric binary (RUWE 5.7) with a variable radial velocity: the dip may belong to the companion.",
     221567884: "Dips of several depths and no single period; two TOIs lie within 10′. Probably a blend.",
+    459801869: "Two transits 20.4 days apart in sector 23 and every shorter alias excluded: a warm giant on an F star, seen only in full-frame data.",
+    137966491: "Three transits on a 28.843-day period. SPOC flagged single sectors with inconsistent periods (11.7 and 18.6 days); never a TOI.",
+    441010857: "Three transits on a 24.054-day period; the 1.7-hour duration means a grazing crossing.",
+    318707987: "One 2.9 Earth-radius transit on a bright K dwarf. An unrelated 0.96-day SPOC detection (354 ppm) on the same star was never made a TOI.",
+    430746529: "One 16-hour transit of a bright A star (HIP 109818): a giant on an orbit of at least 65 days.",
+    402710280: "Two 4.2 Earth-radius transits on a K dwarf; six periods of 1454/n days remain.",
+    64038538: "Two 4.4 Earth-radius transits on a K dwarf; six periods of 1116/n days remain.",
 }
 
 
