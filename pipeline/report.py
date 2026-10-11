@@ -1227,13 +1227,20 @@ def section_deepvet(dv, lit, tb):
         g = r.get("gaia") or {}
         verdict, _ = deep_verdict(r)
         lt = litm.get(tic, {}).get("status", "not checked")
-        if verdict == "candidate" and lt == "known in this role":
+        kp = b.known_planet.iloc[0] if len(b) and "known_planet" in b else None
+        kp = kp if isinstance(kp, str) and kp else None
+        if kp:
+            lt = "confirmed planet"
+        if verdict == "candidate" and lt in ("known in this role", "confirmed planet"):
             verdict = "published"
+        note = NOTES.get(tic, "")
+        if kp:
+            note = f"NASA lists {kp}. " + note
         rows.append({"tic": tic, "hip": st.get("HIP"), "tmag": st.get("Tmag"), "rp": rp, "n_ev": len(ev),
                      "sectors": ", ".join(str(e["sector"]) for e in ev), "per": per, "pix": pix,
                      "ruwe": g.get("ruwe"), "nss": g.get("nss"), "tce": len((r.get("known") or {}).get("tces", [])),
                      "toi": len((r.get("known") or {}).get("toi", [])), "lit": lt, "verdict": verdict,
-                     "note": NOTES.get(tic, "")})
+                     "note": note})
     df = pd.DataFrame(rows).sort_values(["verdict", "tmag"], key=lambda s: s.map({"candidate": 0}).fillna(1) if s.name == "verdict" else s)
     kinds = {"candidate": "new", "off-target": "eb", "binary host": "eb", "no consistent period": "known",
              "ambiguous pixels": "known", "published": "known"}
