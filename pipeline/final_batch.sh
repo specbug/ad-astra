@@ -5,13 +5,17 @@ set -u
 cd "$(dirname "${BASH_SOURCE[0]}")"
 PY=/home/user/venv/bin/python
 LOG=/home/user/work/logs/final_batch.log
-step() { echo "== $(date -u +%T) $1" | tee -a "$LOG"; shift; "$@" >> "$LOG" 2>&1 || echo "   FAILED: $*" | tee -a "$LOG"; }
+# FROM="<step name>" skips the steps before it (to resume after an interruption)
+FROM="${FROM:-}"
+step() {
+  if [ -n "$FROM" ]; then if [ "$1" = "$FROM" ]; then FROM=""; else echo "-- skip $1" >> "$LOG"; return; fi; fi
+  echo "== $(date -u +%T) $1" | tee -a "$LOG"; shift; "$@" >> "$LOG" 2>&1 || echo "   FAILED: $*" | tee -a "$LOG"; }
 
 cd .. && git pull -q --rebase origin claude/gifted-albattani-szay6x; cd pipeline
 step "Track B stage 2"   $PY -c "import aggregate; aggregate.track_b()"
 step "Track C"           $PY -c "import aggregate; aggregate.track_c()"
 step "Track D stage 2"   $PY -c "import aggregate; aggregate.track_d()"
-step "finalize B"        $PY finalize_b.py 6
+step "finalize B"        $PY finalize_b.py 12
 step "finalize D"        $PY finalize_d.py 6
 step "known TOIs"        $PY -c "
 import env, known, pandas as pd

@@ -94,17 +94,22 @@ def main():
     done = pd.read_csv(OUT / "trackb_final.csv") if (OUT / "trackb_final.csv").exists() else pd.DataFrame(columns=["tic"])
     todo = c[~c.tic.isin(done.tic)]
     print(f"{len(c)} non-TOI planet-like stars; {len(todo)} to finalize")
-    rows = []
-    with cf.ThreadPoolExecutor(n_proc) as ex:
-        for r in ex.map(one, todo.to_dict("records")):
-            rows.append(r)
-    new = c.merge(pd.DataFrame(rows), on="tic", how="inner") if rows else pd.DataFrame()
-    allr = pd.concat([done, new], ignore_index=True) if len(done) else new
+    # work in chunks and write after each one, so an interrupted run resumes where it stopped
+    allr = done
+    recs = todo.to_dict("records")
+    chunk = 150
+    for i0 in range(0, len(recs), chunk):
+        with cf.ThreadPoolExecutor(n_proc) as ex:
+            rows = list(ex.map(one, recs[i0:i0 + chunk]))
+        new = c.merge(pd.DataFrame(rows), on="tic", how="inner") if rows else pd.DataFrame()
+        allr = pd.concat([allr, new], ignore_index=True) if len(allr) else new
+        if len(allr):
+            allr["verdict"] = np.select(
+                [allr.n_deeper > 0, allr.n_nearby_toi_match.fillna(0) > 0, allr.n_similar.fillna(0) >= 1],
+                ["EB (deeper eclipses)", "TOI on neighbour", "repeating"], "single")
+            allr.to_csv(OUT / "trackb_final.csv", index=False, float_format="%.6g")
+        print(f"  finalized {min(i0 + chunk, len(recs))}/{len(recs)}", flush=True)
     if len(allr):
-        allr["verdict"] = np.select(
-            [allr.n_deeper > 0, allr.n_nearby_toi_match.fillna(0) > 0, allr.n_similar.fillna(0) >= 1],
-            ["EB (deeper eclipses)", "TOI on neighbour", "repeating"], "single")
-        allr.to_csv(OUT / "trackb_final.csv", index=False, float_format="%.6g")
         print(allr.verdict.value_counts().to_dict())
     return allr
 
