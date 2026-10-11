@@ -140,6 +140,14 @@ per query; a result counts only if the page names the same star). ExoFOP communi
 arXiv listings could not be queried from the compute environment, so "no mention found" is weaker than "not
 catalogued".
 
+On 11 October the web searches were extended to every star the report names (the headline candidates had
+only been checked against the TOI tables and SPOC). That found HIP 71639 (TIC 128703021) in the Planet Hunters
+TESS candidate list: a single sector-11 transit, published without a period by Eisner et al. (2021, MNRAS 501,
+4669) and sent to ExoFOP as a community TOI. The report now credits that detection; the new contribution is the
+23.884-day period from four transits. Each entry in `results/candidates/literature_checks.json` has one of three
+statuses: "known in this role" (named as the same kind of object), "mentioned elsewhere" (named in another
+role, e.g. as a radial-velocity planet host) and "no mentions found".
+
 ## 9. Track C eclipse-shape test, revised (10 October)
 The first version compared the box depth with the peak-to-trough of a single sine wave at the second period.
 A pulsation at half that period has no power at the period itself, so it passed (the published pulsating

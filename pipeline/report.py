@@ -419,15 +419,16 @@ def section_hip71639(fit, ex):
          "images as good quality: the star saturates the detector and bleeds along columns, which breaks "
          "centroiding. The pixel test above does not rely on centroids."),
         ("info", "Not yet ruled out:",
-         "a background eclipsing binary within about 2″ of the star (too close for Gaia next to a G = 5.9 star) "
-         "or a bound companion. High-resolution imaging and radial velocities would settle it."),
+         "an eclipsing companion closer to the star than Gaia can separate from a G = 5.9 star. Eisner et al. "
+         "(2021) report Gemini speckle imaging with no nearby companion and spectra consistent with a planet; "
+         "those radial velocities, phased on the 23.88-day period, would also bound the planet's mass."),
     ])
     return f"""
 <section id="hip71639" class="cand">
   <div class="cand-head">
     <p class="kicker">Candidate 1 · Track B (long-period transits) · SPOC 2-minute data</p>
     <h2>HIP 71639: a warm Neptune every 23.9 days</h2>
-    <div class="chips">{chip("Not a TOI", "new")}{chip("SPOC TCE with a 31× wrong period", "tce")}</div>
+    <div class="chips">{chip("Not a TOI", "new")}{chip("Planet Hunters single-transit candidate", "known")}{chip("SPOC TCE with a 31× wrong period", "tce")}</div>
     <p class="lede col">An F star at the edge of naked-eye visibility (V ≈ 6.1), 34 parsecs away in Lupus, dims by
     {depth:.0f} parts per million for 7.2 hours every {f['period_d'][0]:.4f} days. A planet about {rp:.1f} times
     the size of Earth would do this.</p>
@@ -441,16 +442,23 @@ def section_hip71639(fit, ex):
         Hover a point for its value.</figcaption>
       </figure>
       <div class="col" style="display:grid;gap:12px">
-        <h3>How it was missed</h3>
-        <p>NASA's SPOC pipeline did detect this signal. Its multi-sector searches of sectors 1–39 and then 1–65
+        <h3>Who saw it before</h3>
+        <p>Volunteers of the citizen-science project Planet Hunters TESS spotted the sector-11 transit. Eisner et
+        al. (2021, <a href="https://arxiv.org/abs/2011.13944">MNRAS 501, 4669</a>) list the star as a single-transit
+        planet candidate, and the project lists it among the community TOIs it sent to ExoFOP. The paper reports
+        43 MINERVA-Australis and 2 LCO/NRES spectra consistent with a planet and Gemini speckle imaging showing no
+        nearby companion; the ground-based data were left for a later paper. With one transit there was no
+        period, and web searches on 11 October 2026 found no paper giving one.</p>
+        <p>NASA's SPOC pipeline also detected the signal. Its multi-sector searches of sectors 1–39 and then 1–65
         found the transits in sectors 11, 38 and 65 and reported a threshold-crossing event (multiple-event
         statistic 26.6). One transit fell in each sector, two years apart, so the pipeline took the gap between
         them as the period: <span class="num">740.42 d</span>. At that period the transit is far too short for the
         star (its fit implied a stellar density of 8.6 ± 6.5 {RHOSUN}), and the centroid test was flagged. In the
         TOI lists available to us it never became a TOI.</p>
-        <p>The fourth transit, which this survey found in sector 102 (April 2026), arrives
+        <p>What this survey adds is the period. The fourth transit, found in sector 102 (April 2026), arrives
         {abs(e['s102_offset_min']):.0f} minutes from where 106 cycles of a {f['period_d'][0]:.3f}-day period put
-        it. 740.42 days is exactly 31 of those cycles.</p>
+        it. 740.42 days is exactly 31 of those cycles. ExoFOP itself, where the candidate's follow-up notes live,
+        could not be read from this environment, so a period recorded only there would have been missed.</p>
       </div>
       <div class="col" style="display:grid;gap:12px">
         <h3>Vetting</h3>
@@ -459,7 +467,7 @@ def section_hip71639(fit, ex):
     </div>
     <div>
       <dl class="spec">
-        <dt>Star</dt><dd>HIP 71639 · TIC 128703021</dd>
+        <dt>Star</dt><dd>HIP 71639 · HD 128582 · TIC 128703021</dd>
         <dt>Position</dt><dd>14h39m10.8s −46°35′04″</dd>
         <dt>Brightness</dt><dd>T 5.59 · G 5.94</dd>
         <dt>Host</dt><dd>F7 · 6280 K · 1.60 {RSUN} · 1.23 {MSUN}</dd>
@@ -681,9 +689,10 @@ def verdict_chip(v):
     return chip(t, k)
 
 
-def section_trackb(tb, singles):
+def section_trackb(tb, singles, lit=None):
     if tb is None or not len(tb):
         return ""
+    litm = {int(x["tic"]): x["status"] for x in (lit or [])}
     show = trackb_shortlist(tb).sort_values("snr_max", ascending=False)
     n_eb = int((tb.verdict == "EB (deeper eclipses)").sum())
     n_nb = int((tb.verdict == "TOI on neighbour").sum())
@@ -691,7 +700,10 @@ def section_trackb(tb, singles):
     rest = tb[tb.verdict.isin(["single", "repeating"]) & ~tb.tic.isin(show.tic) & ~tb.is_toi.astype(bool)]
 
     def tcell(r):
-        return f"<span class='m'>TIC {int(r.tic)}</span>"
+        st = litm.get(int(r.tic))
+        mark = (" " + chip("published", "known") if st == "known in this role" else
+                " <span class='muted'>(named elsewhere)</span>" if st == "mentioned elsewhere" else "")
+        return f"<span class='m'>TIC {int(r.tic)}</span>{mark}"
 
     def p_cell(r):
         s = singles.get(str(int(r.tic))) if singles else None
@@ -719,7 +731,8 @@ def section_trackb(tb, singles):
   are left out here because they are larger than 16 Earth radii, repeat on periods shorter than 15 days, or were
   flagged in five or more SPOC searches without becoming TOIs (most likely rejected as binaries). The {len(show)}
   below remain. Most are giant-sized and could be brown dwarfs or small stars; all need the pixel and period work
-  done for the two headline candidates.</p>
+  done for the two headline candidates. Each was also searched on the web by TIC and Gaia number; "published"
+  marks a star that a public page already names as a candidate.</p>
   </div>
   {table(show.head(60), cols)}
   <p class="muted" style="font-size:var(--step--1)">Rp assumes the catalogue stellar radius and corrects for
@@ -769,6 +782,7 @@ def section_trackc(tc, lit=None):
             ("Eclipse-like", lambda r: fmt(r.box_over_sine, 1), "r"),
             ("Known?", lambda r: (chip("TOI", "known") if r.known else
                                  chip("published", "known") if litm.get(int(r.tic)) == "known in this role" else
+                                 "<span class='muted'>named, other role</span>" if litm.get(int(r.tic)) == "mentioned elsewhere" else
                                  "<span class='muted'>no mention found</span>" if int(r.tic) in litm else
                                  "<span class='muted'>not checked</span>") +
              (f"<div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:20rem'>{esc(TRACKC_NOTES[int(r.tic)])}</div>"
@@ -961,7 +975,7 @@ def section_caveats():
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Unresolved companions.</strong>
         A faint eclipsing binary within an arcsecond or two of the target mimics a planet. Gaia excludes wider ones; high-resolution imaging and radial velocities exclude the rest.</div></li>
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Lists we could not reach.</strong>
-        ExoFOP's community TOIs, SIMBAD, VizieR and arXiv were blocked from the compute environment. Known-object checks used the NASA TOI table of 5 October 2026, ExoFOP's TOI list of February 2026, SPOC's own detections, and web search.</div></li>
+        ExoFOP (with its community TOIs and follow-up notes), SIMBAD, VizieR and arXiv were blocked from the compute environment. Known-object checks used the NASA TOI table of 5 October 2026, ExoFOP's TOI list of February 2026, SPOC's own detections, and web searches by TIC, Gaia and HIP number, which is how HIP 71639 turned up as a Planet Hunters TESS candidate. Any candidate here could still be a community TOI that no indexed page names.</div></li>
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Candidates, not discoveries.</strong>
         Every object here is a candidate until follow-up observations rule out the impostors above; the search is complete
         for TESS sectors 1–107, and the vetting is deepest for stars brighter than T = 10.5.</div></li>
@@ -969,8 +983,10 @@ def section_caveats():
     </div>
     <div>
       <h3>Turning a candidate into a planet</h3>
-      <p><strong>Report it.</strong> ExoFOP accepts community TOIs (CTOIs) from registered users; a short Research
-      Note of the AAS is the usual citable record for an amateur find.</p>
+      <p><strong>Report it.</strong> For HIP 71639, send the period to the Planet Hunters TESS team, whose
+      unpublished radial velocities may already constrain the planet, and file it on ExoFOP next to their community
+      TOI. For the others, ExoFOP accepts community TOIs (CTOIs) from registered users; a short Research Note of the
+      AAS is the usual citable record for an amateur find.</p>
       <p><strong>Rule out impostors.</strong> Speckle or adaptive-optics imaging (both stars are bright enough for
       any facility) and a few high-precision radial velocities.</p>
       <p><strong>Weigh it.</strong> HIP 71639's expected signal is about 3 m/s, well within reach of HARPS or
@@ -1049,7 +1065,8 @@ def build():
   <h1>Ad Astra</h1>
   <p class="dek">A blind search of {int(sv.n_real.sum()) / 1e6:.1f} million TESS light curves for transits and
   eclipses that no catalogue lists yet. Three bright, nearby stars show transits of Neptune-sized planets that
-  are not TESS Objects of Interest.</p>
+  are not TESS Objects of Interest; for one of them, a citizen-science single-transit candidate since 2021, the
+  search supplies the missing period.</p>
   <div class="strip">
     <div><span class="label">Sectors searched</span><span class="v">{n_q + n_s} of 107</span></div>
     <div><span class="label">Light curves</span><span class="v">{int(sv.n_real.sum()):,}</span></div>
@@ -1064,10 +1081,11 @@ def build():
   <p class="kicker">Summary</p>
   <h2>What the search found</h2>
   <ul class="findings">
-    <li>{chip("Not a TOI", "new")}<div><strong>HIP 71639: a {rp71:.1f} {RE} planet candidate every
-    {f71['period_d'][0]:.3f} days around a V = 6 F star.</strong> NASA's pipeline saw three of its transits by 2023
-    but filed them as one transit every 740 days, a period the transit's short duration does not fit. A fourth
-    transit in April 2026 pins the true period: 740 days is exactly 31 orbits.</div></li>
+    <li>{chip("New period", "new")}<div><strong>HIP 71639: a {rp71:.1f} {RE} planet candidate every
+    {f71['period_d'][0]:.3f} days around a V = 6 F star.</strong> Planet Hunters TESS volunteers flagged one of its
+    transits (a single-transit candidate since 2021, with no period). NASA's pipeline saw three by 2023 but filed
+    them as one transit every 740 days, a period the transit's short duration does not fit. A fourth transit in
+    April 2026 pins the true period: 740 days is exactly 31 orbits.</div></li>
     <li>{chip("Not a TOI", "new")}<div><strong>HD 11506: a {rp115:.1f} {RE} transiting candidate in a known
     three-planet system.</strong> Two matching transits, 2,149 days apart, around a star whose three giant planets
     were found by radial velocities. The period is 25.9 days or longer.</div></li>
@@ -1088,7 +1106,7 @@ def build():
 {section_hd11506(fit, ex)}
 {section_hip56966(fit, ex)}
 {section_deepvet(dv, lit, tb)}
-{section_trackb(tb, singles)}
+{section_trackb(tb, singles, lit)}
 <section id="plates" style="padding-top:8px">
   <h3>Selected dossiers</h3>
   <p class="muted col" style="font-size:var(--step--1)">Automatic dossiers: the dip with its fit (top left), the

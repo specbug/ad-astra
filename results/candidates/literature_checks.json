@@ -236,7 +236,7 @@
  {
   "tic": 266376971,
   "status": "no mentions found",
-  "summary": "Searches for TIC 266376971, HIP 56966 and Gaia DR3 5342456978547165824 returned no page naming this star; the HIP search only returned the similar-numbered solar twin HIP 56948, a different star.",
+  "summary": "Searches for TIC 266376971, HIP 56966 and Gaia DR3 5342456978547165824 returned no page naming this star; the HIP search only returned the similar-numbered solar twin HIP 56948, a different star. A repeat search for HIP 56966 or TIC 266376971 with 'planet' found nothing either (web search, 11 Oct 2026).",
   "sources": []
  },
  {
@@ -280,5 +280,43 @@
   "status": "no mentions found",
   "summary": "Web search for \"TIC 64038538\" (11 Oct 2026) returned no page naming this star.",
   "sources": []
+ },
+ {
+  "tic": 128703021,
+  "status": "known in this role",
+  "summary": "Listed by Planet Hunters TESS as a single-transit planet candidate from sector 11 (Eisner et al. 2021, MNRAS 501, 4669; arXiv 2011.13944), with 43 MINERVA-Australis and 2 LCO/NRES spectra reported as consistent with a planet and Gemini speckle imaging showing no nearby companions; the project's results page lists it among its community TOIs. No page found gives a period. Searched TIC 128703021, HIP 71639 and HD 128582 (web search, 11 Oct 2026).",
+  "sources": [
+   {
+    "title": "Planet Hunters TESS II: findings from the first two years of TESS",
+    "url": "https://arxiv.org/abs/2011.13944"
+   },
+   {
+    "title": "Planet Hunters TESS: Results",
+    "url": "https://www.zooniverse.org/projects/nora-dot-eisner/planet-hunters-tess/about/results"
+   }
+  ]
+ },
+ {
+  "tic": 266680498,
+  "status": "mentioned elsewhere",
+  "summary": "Known host of three radial-velocity giant planets (HD 11506 b, c and d; d confirmed in 2022 and revised to a ~73-year orbit in 2024); no page reports a transit or a TESS detection. Searched HD 11506 with TESS/transit, TIC 266680498 and HD 11506 d (web search, 11 Oct 2026).",
+  "sources": [
+   {
+    "title": "HD 11506 - Wikidata",
+    "url": "https://www.wikidata.org/wiki/Q1325892"
+   },
+   {
+    "title": "Newly-discovered planets orbiting HD 5319, HD 11506, HD 75784 and HD 10442 from the N2K Consortium",
+    "url": "https://arxiv.org/abs/1411.5374"
+   },
+   {
+    "title": "Bayesian analysis of the radial velocities of HD 11506 reveals another planetary companion",
+    "url": "https://arxiv.org/abs/0902.2997"
+   },
+   {
+    "title": "HD 11506 - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/HD_11506"
+   }
+  ]
  }
 ]
