@@ -689,6 +689,11 @@ def verdict_chip(v):
     return chip(t, k)
 
 
+# Track B stars that web searches found already confirmed (names as published); the NASA confirmed-planet
+# cross-match (known.flag_confirmed) adds the rest.
+CONFIRMED_LIT = {65910228: "NGTS-38 b", 279401253: "TIC 279401253 b", 4672985: "TIC 4672985 b"}
+
+
 def section_trackb(tb, singles, lit=None):
     if tb is None or not len(tb):
         return ""
@@ -698,11 +703,37 @@ def section_trackb(tb, singles, lit=None):
     n_nb = int((tb.verdict == "TOI on neighbour").sum())
     n_toi = int(tb.is_toi.sum()) if "is_toi" in tb else 0
     rest = tb[tb.verdict.isin(["single", "repeating"]) & ~tb.tic.isin(show.tic) & ~tb.is_toi.astype(bool)]
+    kp_all = (show.known_planet.fillna("").astype(str) != "") if "known_planet" in show else pd.Series(False, index=show.index)
+    lit_known = show.tic.map(lambda t: litm.get(int(t)) == "known in this role")
+    conf_mask = kp_all | show.tic.isin(CONFIRMED_LIT)
+    conf, cand = show[conf_mask], show[lit_known & ~conf_mask]
+
+    def conf_name(r):
+        kp = r.get("known_planet")
+        return kp.split("; ")[0] if isinstance(kp, str) and kp else CONFIRMED_LIT.get(int(r.tic), f"TIC {int(r.tic)}")
+    ps_txt = (f", and all {len(show)} were matched by position against NASA's confirmed-planet table of 5 October 2026"
+              if "known_planet" in show else "")
+    pub_txt = ""
+    if len(conf):
+        pub_txt += (f" {len(conf)} are confirmed planets or brown dwarfs that never became TOIs "
+                    f"({esc(', '.join(sorted(conf_name(r) for _, r in conf.iterrows())))}), so the TOI filter could not "
+                    "catch them; that the blind search found them is a useful check of its reach.")
+    if len(cand):
+        pub_txt += (f" {len(cand)} {'was' if len(cand) == 1 else 'were'} already published as "
+                    f"{'a candidate' if len(cand) == 1 else 'candidates'} "
+                    f"({esc(', '.join(f'TIC {int(t)}' for t in cand.tic))}).")
+    if pub_txt:
+        pub_txt += " All are marked \"published\" where they appear in the table."
+    def published(r):
+        kp = r.get("known_planet")
+        return (kp if isinstance(kp, str) and kp else None), litm.get(int(r.tic))
 
     def tcell(r):
-        st = litm.get(int(r.tic))
-        mark = (" " + chip("published", "known") if st == "known in this role" else
+        kp, st = published(r)
+        mark = (" " + chip("published", "known") if kp or st == "known in this role" else
                 " <span class='muted'>(named elsewhere)</span>" if st == "mentioned elsewhere" else "")
+        if kp:
+            mark += f"<div class='muted' style='font-size:0.78rem;margin-top:2px'>{esc(kp)}</div>"
         return f"<span class='m'>TIC {int(r.tic)}</span>{mark}"
 
     def p_cell(r):
@@ -729,10 +760,10 @@ def section_trackb(tb, singles, lit=None):
   stars, {n_eb} turned out to be eclipsing binaries (deeper eclipses elsewhere in their data), {n_nb} carry
   a TOI on a neighbouring star with the same period, and {n_toi} became TOIs during 2026. Of the rest, {len(rest)}
   are left out here because they are larger than 16 Earth radii, repeat on periods shorter than 15 days, or were
-  flagged in five or more SPOC searches without becoming TOIs (most likely rejected as binaries). The {len(show)}
-  below remain. Most are giant-sized and could be brown dwarfs or small stars; all need the pixel and period work
-  done for the two headline candidates. Each was also searched on the web by TIC and Gaia number; "published"
-  marks a star that a public page already names as a candidate.</p>
+  flagged in five or more SPOC searches without becoming TOIs (most likely rejected as binaries).
+  {len(show)} remain; the 60 with the strongest dips are listed below. Most are giant-sized and could be brown dwarfs or small stars; all need the pixel and period work
+  done for the two headline candidates. The 60 listed were also searched on the web by TIC and Gaia number{ps_txt};
+  "published" marks a star already known in that role.{pub_txt}</p>
   </div>
   {table(show.head(60), cols)}
   <p class="muted" style="font-size:var(--step--1)">Rp assumes the catalogue stellar radius and corrects for
@@ -969,7 +1000,7 @@ def section_caveats():
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Unresolved companions.</strong>
         A faint eclipsing binary within an arcsecond or two of the target mimics a planet. Gaia excludes wider ones; high-resolution imaging and radial velocities exclude the rest.</div></li>
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Lists we could not reach.</strong>
-        ExoFOP (with its community TOIs and follow-up notes), SIMBAD, VizieR and arXiv were blocked from the compute environment. Known-object checks used the NASA TOI table of 5 October 2026, ExoFOP's TOI list of February 2026, SPOC's own detections, and web searches by TIC, Gaia and HIP number, which is how HIP 71639 turned up as a Planet Hunters TESS candidate. Any candidate here could still be a community TOI that no indexed page names.</div></li>
+        ExoFOP (with its community TOIs and follow-up notes), SIMBAD, VizieR and arXiv were blocked from the compute environment. Known-object checks used the NASA TOI table of 5 October 2026, ExoFOP's TOI list of February 2026, SPOC's own detections, and web searches by TIC, Gaia and HIP number, which is how HIP 71639 turned up as a Planet Hunters TESS candidate. Of the 150 stars this report names, 10 turned out to be published already in the same role, and are marked. Large candidate lists published as tables (the T16 hunt's 10,000 candidates from TESS's first year, the TESS Triple-9 catalogues, the eclipsing-quadruple lists) could not be matched row by row, and any candidate here could still be a community TOI that no indexed page names.</div></li>
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Candidates, not discoveries.</strong>
         Every object here is a candidate until follow-up observations rule out the impostors above; the search is complete
         for TESS sectors 1–107, and the vetting is deepest for stars brighter than T = 10.5.</div></li>

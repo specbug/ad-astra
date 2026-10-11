@@ -148,6 +148,23 @@ TESS candidate list: a single sector-11 transit, published without a period by E
 statuses: "known in this role" (named as the same kind of object), "mentioned elsewhere" (named in another
 role, e.g. as a radial-velocity planet host) and "no mentions found".
 
+Of the 150 stars the report names, 10 are known in their role: HIP 71639 (above); three Track B transit
+candidates that are confirmed planets or brown dwarfs found from TESS transits by ground-based follow-up and
+never made TOIs (NGTS-38 b = TIC 65910228 b, 180.5 d; TIC 279401253 b, 76.8 d; TIC 4672985 b, 69.0 d); one
+published machine-learning candidate (TIC 221567884); and five Track C stars (the sextuple TIC 168789840, the
+pulsating binary TIC 309658221, the catalogued quadruple TIC 321471064, the doubly eclipsing TIC 389836747, and
+TIC 293954660, a published doubly eclipsing pair that turned out to be a blend). Gaia DR3 identifiers never
+produced a hit; TIC numbers did. Snippets of large candidate tables (TESS multiply eclipsing lists, the T16
+hunt's 10,000 Cycle 1 candidates) do not show every row, so those lists remain unchecked row by row.
+
+The search budget is 200 web searches per turn, shared by all subagents. The first parallel sweep hit it
+part-way, and the remainder was searched in a later turn.
+
+Confirmed planets: `known.flag_confirmed` matches candidates within 10″, or by a "TIC <id>" host name, against
+the NASA Exoplanet Archive confirmed-planet table (ps, default_flag = 1) of 5 October 2026. That table is copied
+from the `juliensimon/nasa-exoplanets` Hugging Face mirror into `catalogs/hf_ps/` page by page through the
+Hugging Face connector, the only route to it from the compute environment.
+
 ## 9. Track C eclipse-shape test, revised (10 October)
 The first version compared the box depth with the peak-to-trough of a single sine wave at the second period.
 A pulsation at half that period has no power at the period itself, so it passed (the published pulsating
