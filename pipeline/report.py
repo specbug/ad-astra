@@ -299,6 +299,7 @@ dl.spec dt { color: var(--muted); font-family: var(--font-display); font-size: 0
   letter-spacing: 0.06em; padding-top: 2px; }
 dl.spec dd { margin: 0; font-family: var(--font-mono); font-size: 0.86rem; font-variant-numeric: tabular-nums; }
 dl.spec dd sup, dl.spec dd sub, td sup, td sub { font-size: 0.7em; }
+sub, sup { font-size: 0.62em; line-height: 0; }
 .plate { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 14px 10px;
   display: grid; gap: 8px; position: relative; }
 .plate figcaption { font-size: var(--step--1); color: var(--muted); line-height: 1.5; }
@@ -817,8 +818,9 @@ def section_calibration(sv, s2, comp):
             nrows += (f"<tr><td>{name}</td><td class='r m'>{b['n_real_lc']:,}</td><td class='r m'>{b['real']}</td>"
                       f"<td class='r m'>{rr:.2f}</td><td class='r m'>{b['n_flip_lc']:,}</td><td class='r m'>{b['flip']}</td>"
                       f"<td class='r m'>{fr:.2f}</td></tr>")
-        bad = [x for x in s2["by_sector"] if x["flip"] / max(x["n_flip_lc"], 1) > 1e-3]
-        bad_txt = ", ".join(str(x["sector"]) for x in bad)
+        rates = [(1e3 * x["flip"] / x["n_flip_lc"], x["sector"]) for x in s2["by_sector"] if x["n_flip_lc"] > 0]
+        med_rate = float(np.median([r for r, _ in rates])) if rates else float("nan")
+        max_rate, max_sec = max(rates) if rates else (float("nan"), "–")
     crow = ""
     if comp:
         crow = "".join(f"<tr><td>{r['bin']}</td><td class='r m'>{r['n']}</td><td class='r m'>{r['found']:.0%}</td></tr>"
@@ -829,7 +831,7 @@ def section_calibration(sv, s2, comp):
   <h2>How much to trust a dip</h2>
   <div class="two">
     <div>
-      <h3>From 2.8 million light curves to a handful</h3>
+      <h3>From {sv.n_real.sum() / 1e6:.1f} million light curves to a handful</h3>
       <div class="tablewrap"><table><tbody>{frows}</tbody></table></div>
     </div>
     <div>
@@ -841,11 +843,12 @@ def section_calibration(sv, s2, comp):
       <th class="r">/1000</th><th class="r">Flipped LCs</th><th class="r">Found</th><th class="r">/1000</th></tr></thead>
       <tbody>{nrows}</tbody></table></div>
       <p>In two-minute data the flipped light curves produced nothing, so planet-shaped dips there are essentially
-      all astrophysical (transits or eclipses). In full-frame data the flipped rate is high in a few sectors
-      ({bad_txt if s2 else ''}), where scattered light adds upward bumps that turn into dips when flipped. It is an
-      upper bound: systematics are vetoed when they hit many stars at once, and flipping only 10% of light curves
-      makes that veto ten times weaker for the flipped set. Single full-frame dips from those sectors are treated
-      with suspicion; both headline candidates are in two-minute data.</p>
+      all astrophysical (transits or eclipses). In full-frame data the flipped rate varies by sector (median
+      {med_rate:.1f}, highest {max_rate:.1f} per 1000 in sector {max_sec}), driven by scattered light, which adds
+      upward bumps that turn into dips when flipped. It is an upper bound: systematics are vetoed when they hit many
+      stars at once, and flipping only 10% of light curves makes that veto ten times weaker for the flipped set. A
+      single full-frame dip therefore needs the pixel and period checks before it counts; all three headline
+      candidates are in two-minute data.</p>
     </div>
   </div>
   <div class="two">
@@ -959,8 +962,9 @@ def section_caveats():
         A faint eclipsing binary within an arcsecond or two of the target mimics a planet. Gaia excludes wider ones; high-resolution imaging and radial velocities exclude the rest.</div></li>
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Lists we could not reach.</strong>
         ExoFOP's community TOIs, SIMBAD, VizieR and arXiv were blocked from the compute environment. Known-object checks used the NASA TOI table of 5 October 2026, ExoFOP's TOI list of February 2026, SPOC's own detections, and web search.</div></li>
-        <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>An interim report.</strong>
-        The survey is still running through the remaining sectors; numbers above will change.</div></li>
+        <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Candidates, not discoveries.</strong>
+        Every object here is a candidate until follow-up observations rule out the impostors above; the search is complete
+        for TESS sectors 1–107, and the vetting is deepest for stars brighter than T = 10.5.</div></li>
       </ul>
     </div>
     <div>
@@ -1041,7 +1045,7 @@ def build():
 <style>{CSS}</style>
 <div class="wrap">
 <header class="mast">
-  <p class="kicker">Amateur search of NASA TESS data · interim report · {today}</p>
+  <p class="kicker">Amateur search of NASA TESS data · survey report · {today}</p>
   <h1>Ad Astra</h1>
   <p class="dek">A blind search of {int(sv.n_real.sum()) / 1e6:.1f} million TESS light curves for transits and
   eclipses that no catalogue lists yet. Three bright, nearby stars show transits of Neptune-sized planets that
@@ -1058,7 +1062,7 @@ def build():
 
 <section id="findings">
   <p class="kicker">Summary</p>
-  <h2>What the search has found so far</h2>
+  <h2>What the search found</h2>
   <ul class="findings">
     <li>{chip("Not a TOI", "new")}<div><strong>HIP 71639: a {rp71:.1f} {RE} planet candidate every
     {f71['period_d'][0]:.3f} days around a V = 6 F star.</strong> NASA's pipeline saw three of its transits by 2023
