@@ -739,9 +739,17 @@ def section_plates(items):
 
 
 TRACKC_NOTES = {
-    168789840: "Known sextuple (Powell et al. 2021); recovered blind.",
-    309658221: "Published pulsating eclipsing binary (Lee et al. 2019); our second period is twice its δ Scuti pulsation period, so it is not an eclipse.",
-    321471064: "Listed as a quadruple in the Multiple Star Catalog (WDS 11421-6216).",
+    162305348: "Short (1.9 h) for a 35-day orbit around an F star: a grazing crossing, so the companion may be larger than it looks.",
+    457134361: "One 11.6-hour, 1%-deep transit; at least 17.6 days, and long for a Sun-like star, so likely hundreds of days.",
+    4011632: "Gaia reports an astrometric binary (RUWE 5.7) with a variable radial velocity: the dip may belong to the companion.",
+    221567884: "Dips of several depths and no single period; two TOIs lie within 10′. Probably a blend.",
+    459801869: "Two transits 20.4 days apart in sector 23 and every shorter alias excluded: a warm giant on an F star, seen only in full-frame data.",
+    137966491: "Three transits on a 28.843-day period. SPOC flagged single sectors with inconsistent periods (11.7 and 18.6 days); never a TOI.",
+    441010857: "Three transits on a 24.054-day period; the 1.7-hour duration means a grazing crossing.",
+    318707987: "One 2.9 Earth-radius transit on a bright K dwarf. An unrelated 0.96-day SPOC detection (354 ppm) on the same star was never made a TOI.",
+    430746529: "One 16-hour transit of a bright A star (HIP 109818): a giant on an orbit of at least 65 days.",
+    402710280: "Two 4.2 Earth-radius transits on a K dwarf; six periods of 1454/n days remain.",
+    64038538: "Two 4.4 Earth-radius transits on a K dwarf; six periods of 1116/n days remain.",
 }
 
 
@@ -1020,6 +1028,8 @@ def build():
         f56 = (f'<li>{chip("Not a TOI", "new")}<div><strong>HIP 56966: a {rp56:.1f} {RE} planet candidate every '
                f'{fit["HIP56966"]["period_d"][0]:.3f} days around a V = 8.8 Sun-like star.</strong> Four transits across '
                f'seven years, found while vetting the survey\'s single-transit list; SPOC never saw two in one search.</div></li>')
+    n_dv = sum(1 for r in dv.values() if "error" not in r and deep_verdict(r)[0] == "candidate")
+    n_dv_all = sum(1 for r in dv.values() if "error" not in r)
     tbf = trackb_shortlist(tb) if tb is not None else None
     n_tb = len(tbf) if tbf is not None else 0
     n_bright = int((tbf.Tmag < 10).sum()) if tbf is not None else 0
@@ -1058,10 +1068,11 @@ def build():
     three-planet system.</strong> Two matching transits, 2,149 days apart, around a star whose three giant planets
     were found by radial velocities. The period is 25.9 days or longer.</div></li>
     {f56}
-    <li>{chip(f"{n_tb} stars", "known")}<div><strong>More long-period transit candidates.</strong> Single and
-    paired transits on stars with no TOI that survive every automatic cut, {n_bright} of them on stars brighter
-    than T = 10. Each still needs the pixel and period work done for the two above. Seven others found this way
-    turned out to be TOIs created this year, which is reassuring.</div></li>
+    <li>{chip(f"{n_dv} bright", "new")}<div><strong>{n_dv} more candidates on bright stars survive one-by-one
+    vetting.</strong> Of {n_dv_all} shortlisted stars brighter than T = 10.5, these pass the pixel source test, the
+    period-alias test and Gaia's binarity checks. They include warm giants on 20.4- and 28.8-day orbits
+    (HIP 63987, TIC 137966491) and a single 2.9 R<sub>⊕</sub> transit of the bright K dwarf HIP 2736. The full
+    shortlist holds {n_tb} single and paired transits with no TOI.</div></li>
     <li>{chip(f"{n_tc} stars", "known")}<div><strong>Possible triple and quadruple stars.</strong> Eclipsing
     binaries with a second, independent set of eclipses that recurs across sectors. Most will be blends of two
     binaries; the catalogues to check novelty against were out of reach.</div></li>
@@ -1184,6 +1195,9 @@ def section_deepvet(dv, lit, tb):
             ("Verdict", lambda r: chip(r.verdict, kinds.get(r.verdict, "known")) +
              (f"<div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:22rem'>{esc(r.note)}</div>" if r.note else ""), "l")]
     n_c = int((df.verdict == "candidate").sum())
+    counts = df.verdict.value_counts().to_dict()
+    rejected = ", ".join(f"{v} {k}" for k, v in counts.items() if k != "candidate")
+    df = df[df.verdict.isin(["candidate", "published"])].sort_values("rp")
     return f"""
 <section id="bright">
   <p class="kicker">Track B · deep vetting</p>
@@ -1192,7 +1206,8 @@ def section_deepvet(dv, lit, tb):
   <p>Every shortlisted star brighter than T = 10.5 went through the same checks as the headline candidates:
   Gaia binarity, TOI and SPOC lookups, the depth of each dip in every sector, the period aliases, and a
   pixel-level source test against every Gaia star within 150″ that could fake the dip with an eclipse of at
-  most 50%. {n_c} of {len(df)} survive as candidates; HIP 56966 above came out of this list.</p>
+  most 50%. {n_c} of {sum(counts.values())} survive and are listed below, smallest first ({rejected}).
+  HIP 56966 above came out of this list.</p>
   </div>
   {table(df, cols)}
   <p class="muted" style="font-size:var(--step--1)">Pixels: Δχ² of the best alternative source relative to the
