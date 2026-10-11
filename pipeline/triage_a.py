@@ -147,7 +147,12 @@ def triage_star(args):
             if lc is None:
                 sec = rec["sectors"]
                 lc = prepare_star(load_star(rec["tic"], sec))
-            d = diagnostics(lc, s, rec["rho"], flipped=(kind == "signals_inverted"))
+            try:
+                d = diagnostics(lc, s, rec["rho"], flipped=(kind == "signals_inverted"))
+            except ValueError as ex:  # e.g. no in-transit points left after quality cuts
+                bad = f"diagnostics_failed:{str(ex)[:40]}"
+                out.append({"tic": rec["tic"], "kind": kind, **s, "flags": bad, "hard_flags": bad})
+                continue
             row = {"tic": rec["tic"], "kind": kind, **s, **d}
             # variability: same period found again after masking
             row["variability_repeat"] = any(same_period(s["period"], o["period"]) for o in sigs[i + 1:])
