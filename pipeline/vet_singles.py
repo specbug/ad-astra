@@ -83,7 +83,7 @@ def main():
     import report
     tb = report.trackb_shortlist(pd.read_csv(OUT / "trackb_final.csv"))
     res = {}
-    with cf.ThreadPoolExecutor(n) as ex:
+    with cf.ProcessPoolExecutor(n) as ex:  # processes: the work holds the GIL
         for r in ex.map(one, tb.to_dict("records")):
             res[str(r["tic"])] = r
             print(r["tic"], {k: (round(v, 2) if isinstance(v, float) else v) for k, v in r.items()

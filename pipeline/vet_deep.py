@@ -241,6 +241,13 @@ def vet(tic, times, dur_h=None, depth=None):
     return out
 
 
+def _vet_safe(tic, times, dur, dep):
+    try:
+        return vet(tic, times, dur, dep)
+    except Exception as ex:
+        return {"tic": tic, "error": repr(ex)[:300]}
+
+
 def main():
     res = json.load(open(OUT)) if OUT.exists() else {}
     if sys.argv[1] == "--shortlist":
@@ -256,22 +263,22 @@ def main():
         for a in sys.argv[1:]:
             tic, ts = a.split(":")
             jobs.append((int(tic), [float(x) for x in ts.split(";")], None, None))
-    for tic, times, dur, dep in jobs:
-        if str(tic) in res and "error" not in res[str(tic)]:
-            continue
-        try:
-            r = vet(tic, times, dur, dep)
-        except Exception as ex:
-            r = {"tic": tic, "error": repr(ex)[:300]}
-        res[str(tic)] = r
-        json.dump(res, open(OUT, "w"), indent=1, default=float)
-        p = r.get("period") or {}
-        comb = (r.get("pixels") or {}).get("combined", {})
-        worst = min(comb.values(), key=lambda c: c["dchi2"])["dchi2"] if comb else None
-        allowed = [a["P"] for a in p.get("aliases", []) if a["status"] == "allowed"] if "aliases" in p else None
-        print(tic, "| gaia", r.get("gaia", {}).get("ruwe"), "| TOI", len(r.get("known", {}).get("toi", [])),
-              "| TCE", len(r.get("known", {}).get("tces", [])), "| allowed P", allowed[:4] if allowed else p.get("p_min_allowed"),
-              "| min dchi2 over sources", worst, "| err", r.get("error"), flush=True)
+    jobs = [j for j in jobs if not (str(j[0]) in res and "error" not in res[str(j[0])])]
+    import concurrent.futures as cf
+    with cf.ProcessPoolExecutor(6) as pool:  # stars are independent; results are written as they arrive
+        futs = [pool.submit(_vet_safe, *j) for j in jobs]
+        for fu in cf.as_completed(futs):
+            r = fu.result()
+            tic = r["tic"]
+            res[str(tic)] = r
+            json.dump(res, open(OUT, "w"), indent=1, default=float)
+            p = r.get("period") or {}
+            comb = (r.get("pixels") or {}).get("combined", {})
+            worst = min(comb.values(), key=lambda c: c["dchi2"])["dchi2"] if comb else None
+            allowed = [a["P"] for a in p.get("aliases", []) if a["status"] == "allowed"] if "aliases" in p else None
+            print(tic, "| gaia", (r.get("gaia") or {}).get("ruwe"), "| TOI", len((r.get("known") or {}).get("toi", [])),
+                  "| TCE", len((r.get("known") or {}).get("tces", [])), "| allowed P", allowed[:4] if allowed else p.get("p_min_allowed"),
+                  "| min dchi2 over sources", worst, "| err", r.get("error"), flush=True)
 
 
 if __name__ == "__main__":
