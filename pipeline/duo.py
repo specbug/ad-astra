@@ -26,11 +26,12 @@ def flatten_sectors(lcs, window=2.5):
     return t[o], y[o], e[o]
 
 
-def alias_table(t_events, depth, dur_h, flat, p_min=None, n_max=None, cover_frac=0.5, exclude_sigma=3.0):
+def alias_table(t_events, depth, dur_h, flat, p_min=None, n_max=None, cover_frac=0.5, exclude_sigma=3.0, tol=None):
     """Return a list of dicts, one per alias n, with status 'allowed' or 'excluded'.
 
     t_events: times of the observed transits (days); depth: fractional depth; dur_h: duration (hours)
     flat: (t, y, err) from flatten_sectors
+    tol: how far (days) an observed event may sit from the alias grid; default half the duration
     """
     t_ev = np.sort(np.asarray(t_events, float))
     dt = t_ev[-1] - t_ev[0]
@@ -47,7 +48,7 @@ def alias_table(t_events, depth, dur_h, flat, p_min=None, n_max=None, cover_frac
             break
         # every observed event must sit on the alias grid (multi-event case)
         k = np.round((t_ev - t_ev[0]) / P)
-        if np.any(np.abs(t_ev - t_ev[0] - k * P) > 0.5 * D):
+        if np.any(np.abs(t_ev - t_ev[0] - k * P) > (tol if tol is not None else 0.5 * D)):
             rows.append({"n": n, "P": P, "status": "inconsistent"})
             continue
         kmin = int(np.floor((t.min() - t_ev[0]) / P)) - 1

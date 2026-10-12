@@ -48,6 +48,10 @@ def main():
         key = f"{o['tic']}|{o['id']}"
         if key in res:
             continue
+        # only planet-like dips (<= 1%) whose transits the pixel test puts on the star (or cannot separate from it)
+        v = (pv.get(key) or {}).get("verdict", "")
+        if float(o.get("depth_ref_ppm") or 0) > 10000 or not (v == "on target" or v.startswith("target or")):
+            continue
         st = ticdb.query([int(o["tic"])], ["Teff", "rho", "rad", "mass", "Tmag"]).iloc[0]
         teff = float(st.Teff) if st.Teff == st.Teff else 5500.0
         rho = float(st.rho) if st.rho == st.rho else None

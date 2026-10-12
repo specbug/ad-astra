@@ -912,11 +912,13 @@ MISSED = [("TIC 245076932 b", "21.6 d: all nine transits found, then rejected as
 
 
 def period_hunt_summary():
-    """Counts and the table of new periods from the period hunt and its review (period_hunt*.json, period_review.json)."""
+    """Counts and the table of new periods from the period hunt and its review (period_hunt*.json, period_review.json,
+    with the relaxed alias test of period_recheck.json where it ran)."""
     rv = _json("period_review.json")
     if not rv:
         return None
     rv = rv if isinstance(rv, list) else list(rv.values())
+    rc = _json("period_recheck.json")
     hunt = []
     for name in ("period_hunt.json", "period_hunt_ffi.json"):
         x = _json(name)
@@ -932,21 +934,33 @@ def period_hunt_summary():
     n_rec = sum(1 for r in targets if r.get("recovered"))
     n_ffi = sum(1 for r in targets if r.get("ffi_sectors"))
     rv = [o for o in rv if not str(o.get("id", "")).startswith("single") and "error" not in o]
+    for o in rv:   # relaxed alias test where it ran
+        x = rc.get(f"{o['tic']}|{o['id']}")
+        if x and "aliases" in x:
+            o["aliases_strict"], o["aliases"], o["n_aliases"] = o.get("aliases"), x["aliases"], x["n_aliases"]
     cred = [o for o in rv if o.get("n_credible", 0) >= 1]
-    def known_P(o):
-        ps = []
-        for txt in (o.get("nasa") or "", o.get("exofop_periods") or ""):
-            ps += [float(v) for v in re.findall(r"P=([0-9.]+)", txt)]
-        return ps
+
+    def any_record(o):
+        return bool(re.findall(r"P=([0-9.]+)", (o.get("nasa") or "") + (o.get("exofop_periods") or "")))
+
+    def same_candidate_periods(o):
+        """Periods posted to ExoFOP for this very candidate (same TIC and planet number)."""
+        m = re.search(r"\.(\d\d)$", str(o["id"]))
+        if not m:
+            return []
+        suf = m.group(1)
+        return [float(p) for name, p in re.findall(r"(\S+) P=([0-9.]+)", o.get("exofop_periods") or "")
+                if name.endswith("." + suf) and (str(o["tic"]) in name or "TOI" in name.upper())]
+
     def agrees(o, ps):
-        al = o.get("aliases") or []
-        return any(abs(a / p - 1) < 2e-3 for a in al for p in ps)
-    on_rec = [o for o in cred if known_P(o)]
-    n_agree = sum(1 for o in on_rec if agrees(o, known_P(o)))
-    new = [o for o in cred if not known_P(o) and o.get("n_aliases") and o["n_aliases"] <= 3]
+        return any(abs(a / p - 1) < 2e-3 for a in (o.get("aliases") or []) for p in ps)
+    val = [o for o in cred if same_candidate_periods(o)]
+    n_agree = sum(1 for o in val if agrees(o, same_candidate_periods(o)))
+    new = [o for o in cred if not any_record(o) and o.get("n_aliases") and o["n_aliases"] <= 3]
     return {"n_targets": n_t, "n_data": n_data, "n_rec": n_rec, "n_ffi": n_ffi, "n_review": len(rv), "n_cred": len(cred),
-            "n_onrec": len(on_rec), "n_agree": n_agree, "new": new,
-            "n_unique": sum(1 for o in cred if o.get("n_aliases") == 1)}
+            "n_onrec": len(val), "n_agree": n_agree, "new": new,
+            "n_unique": sum(1 for o in cred if o.get("n_aliases") == 1 and not any_record(o)),
+            "relaxed": bool(rc)}
 
 
 def section_periodhunt(summary_only=False):
@@ -956,27 +970,35 @@ def section_periodhunt(summary_only=False):
     if summary_only:
         return (f'<li>{chip(f"{len(S["new"])} periods", "new")}<div><strong>Periods for TOIs and community TOIs that '
                 f'have none.</strong> All {S["n_targets"]} were searched in every TESS sector, including our own light curves '
-                f'of sectors 99–108; {S["n_cred"]} gained transits that pass the checks. Where a period was already on '
-                f'record, the hunt agrees in {S["n_agree"]} of {S["n_onrec"]} cases; {len(S["new"])} periods, narrowed to '
-                f'three or fewer choices, are on no list (TOI-2493.01 is the best of them).</div></li>')
+                f'of sectors 99–108; {S["n_cred"]} gained transits that pass the checks. Where someone had already posted a '
+                f'period for the same candidate, the hunt agrees in {S["n_agree"]} of {S["n_onrec"]} cases; {len(S["new"])} '
+                f'periods, narrowed to three or fewer choices, are on no list (TOI-2493.01 is the best of them).</div></li>')
     pv = _json("period_vet.json")
+    pdp = _json("period_deep.json")
     rows = []
     for o in S["new"]:
         t = int(o["tic"])
+        key = f"{t}|{o['id']}"
         ev = [e for e in o.get("events", []) if e.get("ok")]
-        v = pv.get(f"{t}|{o['id']}", {})
+        v = pv.get(key, {})
+        fits = (pdp.get(key) or {}).get("fits") or []
+        dens = "; ".join(f"{f['P']:.3f} d: ρ {f['rho_solar'][0]:.2f} vs {f['rho_tic']:.2f} ({abs(f['rho_z']):.1f}σ)"
+                         for f in fits if "rho_z" in f)
         rows.append(dict(id=o["id"], tic=t, disp=o.get("disp", ""), depth=o.get("depth_ref_ppm"), dur=o.get("dur_h"),
-                         n=1 + len(ev), sectors=", ".join(str(e["sector"]) for e in ev), al=o.get("aliases") or [],
-                         pmin=o.get("p_min_circular"), pix=cv_text(v) if v else "not tested",
-                         verdict=v.get("verdict", "")))
+                         n=1 + len(ev), sectors=", ".join(sorted({str(e["sector"]) for e in ev}, key=int)),
+                         al=o.get("aliases") or [], pmin=o.get("p_min_circular"),
+                         pix=cv_text(v) if v else "not tested", verdict=v.get("verdict", ""), dens=dens or "–"))
     df = pd.DataFrame(rows)
+    n_deep = int((df.depth > 10000).sum()) if len(df) else 0
     if len(df):
-        df = df.sort_values("n", ascending=False)
+        df = df[df.depth <= 10000]
+        rank = df.verdict.map(lambda v: 0 if v == "on target" else 1 if str(v).startswith("target or") else 3 if str(v).startswith("on G") else 2)
+        df = df.assign(rank=rank).sort_values(["rank", "n"], ascending=[True, False])
     cols = [("TOI / CTOI", lambda r: f"<span class='m'>{esc(r.id)}</span><div class='muted' style='font-size:0.78rem'>TIC {r.tic}</div>", "l"),
             ("Depth", lambda r: f"{r.depth:.0f} ppm" if r.depth == r.depth else "–", "r"),
             ("Transits", lambda r: f"{r.n} <span class='muted'>(new: S{esc(r.sectors)})</span>", "l"),
             ("Periods allowed (d)", lambda r: esc(", ".join(f"{a:.3f}" for a in r.al[:3])), "l"),
-            ("Shortest circular", lambda r: f"{r.pmin:.0f} d" if r.pmin == r.pmin and r.pmin else "–", "r"),
+            ("Star density from the transit", lambda r: f"<span class='muted' style='font-size:0.8rem'>{esc(r.dens)}</span>", "l"),
             ("Pixels", lambda r: f"<span class='muted' style='font-size:0.8rem'>{esc(r.pix)}</span>", "l")]
     return f"""
 <section id="periodhunt">
@@ -991,17 +1013,22 @@ def section_periodhunt(summary_only=False):
   local baseline and kept only if it is significant there, fully covered, away from sector edges and gaps, free of
   background jumps, present in the uncorrected (SAP) flux, and of the right depth. The periods that put all kept
   transits on one ephemeris without predicting transits the data do not show are listed.</p>
-  <p>{S['n_cred']} targets gained at least one such transit, and {S['n_unique']} are left with a single possible
-  period. As a test: where a period is already on record (a confirmed planet in NASA's archive, or one posted to
-  ExoFOP), it is among the hunt's allowed periods in {S['n_agree']} of {S['n_onrec']} cases. The table lists the
-  periods that are on no list, narrowed to three or fewer, with the pixel test of their transits. TOI-2493.01,
-  above, is the strongest; the others are automated results that deserve the same one-by-one check before anyone
-  relies on them.</p>
+  <p>{S['n_cred']} targets gained at least one such transit, and {S['n_unique']} of those not on record are left
+  with a single possible period. As a test: where someone has already posted a period for the same candidate to
+  ExoFOP, it is among the hunt's allowed periods in {S['n_agree']} of {S['n_onrec']} cases. {len(S['new'])} periods
+  are on no list and narrowed to three or fewer; {n_deep} of them belong to dips deeper than 1%, mostly eclipsing
+  binaries posted as community candidates, and are left out of the table (they are in
+  <span class='m'>period_review.csv</span>). The table lists the rest, those on the star first, with the pixel test
+  and, at each allowed period, the stellar density the transit shape implies against the catalogue value (a
+  planet on that star at that period should match). TOI-2493.01, above, was checked one by one; the others are
+  automated results. One caution: most of these stars have full-frame light curves that TESS's own pipelines search,
+  and a strong periodic signal that never became a TOI may have been seen and rejected there, which is never
+  published.</p>
   </div>
   {table(df, cols) if len(df) else ""}
-  <p class="muted" style="font-size:var(--step--1)">Shortest circular: the shortest period at which a central
-  transit across the catalogued star would last as long as the one observed; periods far below it need an
-  eccentric orbit or a different star.</p>
+  <p class="muted" style="font-size:var(--step--1)">Star density: from a joint transit fit at each allowed
+  period (solar units), against the TIC value; a large mismatch needs an eccentric orbit, a different star, or a
+  wrong period.</p>
 </section>"""
 
 
@@ -1132,21 +1159,31 @@ def eclipse_source(pix, ztf, j):
         txt, who = "offset, no catalogued star", None
     if z:
         zz = z[0].replace('"', "″")
-        txt += f" · ZTF sees it on {zz}" if who == "target" else " · ZTF ✓" if who and z[0] == who else f" · ZTF: {zz}"
+        txt += (f" · ZTF sees it on {zz}" if who == "target" else " · ZTF ✓" if who and same_star(z[0], who)
+                else f" · ZTF: {zz}")
     return txt, who
+
+
+def same_star(a, b):
+    """'G14.8 at 18"' and 'G14.8 at 19"' name the same Gaia star (separations are rounded differently)."""
+    ma, mb = (re.match(r'G([\d.]+) at (\d+)', x) for x in (a, b))
+    return bool(ma and mb and abs(float(ma.group(1)) - float(mb.group(1))) < 0.15 and abs(int(ma.group(2)) - int(mb.group(2))) <= 2)
 
 
 def trackc_calibration():
     """How the centroid test does on Kostov et al. (2022) quadruples, whose authors traced both eclipse sets to one star."""
     k = _json("eb_pixels_kostov.json")
-    n = {"both": 0, "neighbour": 0, "other": 0}
+    n = {"both": 0, "neighbour": 0, "other": 0, "untested": 0}
     for o in k.values():
         v = o.get("centroid_verdict")
+        sets = [(o.get("centroid") or {}).get(j, {}).get("verdict", "") for j in ("1", "2")]
         if v == "both sets on target":
             n["both"] += 1
         elif v == "a set on a neighbour":
             n["neighbour"] += 1
-        elif o.get("centroid"):
+        elif not o.get("centroid") or any(x in ("", "no usable centroids") for x in sets):
+            n["untested"] += 1
+        else:
             n["other"] += 1
     return n
 
@@ -1205,10 +1242,10 @@ def section_trackc(tc, lit=None):
     n_ztf = sum(1 for _, r in df.iterrows() for sv in (r.s1, r.s2) if "ZTF ✓" in sv)
     cal = trackc_calibration()
     n_cal = sum(cal.values())
-    cal_txt = (f"On {n_cal} of Kostov et al.'s (2022) quadruple candidates, whose authors traced both eclipse "
-               f"sets to one star with their own pixel analysis, the test puts both sets on the target for "
-               f"{cal['both']}, a set on a neighbour for {cal['neighbour']}, and is unresolved for {cal['other']}. "
-               if n_cal else "")
+    cal_txt = (f"On {n_cal - cal['untested']} of Kostov et al.'s (2022) quadruple candidates (the other "
+               f"{cal['untested']} lacked usable eclipses), whose authors traced both eclipse sets to one star with "
+               f"their own pixel analysis, the test puts both sets on the target for {cal['both']}, a set on a "
+               f"neighbour for {cal['neighbour']}, and leaves {cal['other']} unresolved. " if n_cal else "")
     n_all = len(tc)
     return f"""
 <section id="trackc">
@@ -1453,6 +1490,12 @@ def section_caveats(lit=None):
     named = exofop_check.named_stars()
     n_lit = len(named)
     n_known = sum(1 for t in named if prior.prior(t)["kind"] is not None)
+    cal = pd.Series([(o.get("verdict") or "") for o in _json("centroid_calib.json").values()])
+    cal_n, cal_on, cal_off = len(cal), int(cal.str.startswith("on target").sum()), int(cal.str.startswith("on G").sum())
+    kq = trackc_calibration()
+    kq_n, kq_on = sum(kq.values()) - kq["untested"], kq["both"]
+    import glob as _g
+    n_ffi = len({p.split("/")[-1].split("_")[0] for p in _g.glob(str(CATALOGS.parent / "cache" / "ffi_lc" / "*.npz"))})
     return f"""
 <section id="next">
   <p class="kicker">Limits and next steps</p>
@@ -1469,22 +1512,41 @@ def section_caveats(lit=None):
         published quadruple and multiply eclipsing lists), in NASA's confirmed-planet table, including the transit
         times of planets on stars up to 2′ away, and in the literature (web search, and ADS full text by every
         identifier). Of the {n_lit} stars, {n_known} turned out to be on record in some form, most of them as
-        community candidates on ExoFOP; each table says what was found. Not matched row by row: candidate tables
-        published only inside papers, such as the T16 hunt's 10,000 candidates from TESS's first year.</div></li>
+        community candidates on ExoFOP; each table says what was found. On 12 October the stars were also checked in
+        ESA's Gaia DR3 (orbits, eclipsing-binary models, unresolved companions), and the multiple-star candidates in
+        ZTF's light curves. TIC 402710280 and TOI-2493 were re-read live on ExoFOP and searched on the web (no ADS key
+        was available that day). Not matched row by row: candidate tables published only inside papers, such as the
+        T16 hunt's 10,000 candidates from TESS's first year.</div></li>
+        <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>How far to trust the pixel test.</strong>
+        Run blind on {cal_n} confirmed TESS planets, it puts {cal_on} on their star and
+        {"none" if not cal_off else cal_off} on a neighbour; on {kq_n} published quadruple stars it puts both eclipse
+        sets on the target for {kq_on} and calls {"none" if not kq["neighbour"] else kq["neighbour"]} a blend. Its
+        verdicts that a dip belongs to a neighbour are the ones to trust; "unresolved" means it could not tell.
+        Stars brighter than T ≈ 6.8 saturate the detector and cannot be tested this way.</div></li>
+        <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Automated periods.</strong>
+        The period hunt's new periods, apart from TOI-2493.01, are automated. Its alias test can exclude a true
+        period when a short, weak transit is mis-timed (one case found: a period posted by another ExoFOP user fits
+        all four transits, but the hunt's 1-hour box placed one 52 minutes off); the tolerance was widened and
+        re-run, but every such period needs a look by eye before anyone relies on it.</div></li>
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Candidates, not discoveries.</strong>
-        Every object here is a candidate until follow-up observations rule out the impostors above; the search is complete
-        for TESS sectors 1–107, and the vetting is deepest for stars brighter than T = 10.5.</div></li>
+        Every object here is a candidate until follow-up observations rule out the impostors above. The search covers
+        TESS sectors 1–107, with our own light curves of sectors 99–108 for {n_ffi} stars, and the vetting is deepest
+        for stars brighter than T = 10.5.</div></li>
       </ul>
     </div>
     <div>
       <h3>Turning a candidate into a planet</h3>
-      <p><strong>Report it.</strong> HIP 56966 and HD 11506 already have community TOIs on ExoFOP, so the new
-      period and the second transit belong there, as an update to the existing entries, the way another user
-      posted HIP 71639's period in May. The bright single transits with nothing on record would be new community
-      TOIs. A short Research Note of the AAS is the usual citable record for an amateur find.</p>
+      <p><strong>Report it.</strong> TIC 402710280 would be a new community TOI, and TOI-2493.01's period an update
+      to its TOI; the values are ready in <a href="{REPO}/results/candidates/exofop_ready.md">exofop_ready.md</a>.
+      HIP 56966 and HD 11506 already have community TOIs on ExoFOP, so the new period and the second transit belong
+      there, the way another user posted HIP 71639's period in May. A short Research Note of the AAS is the usual
+      citable record for an amateur find.</p>
+      <p><strong>Test the predictions.</strong> TESS should catch TOI-2493.01 again on 15 November 2026 (sector 110);
+      TIC 402710280 transits on 2 November and 8 December 2026, and TESS returns to it in sectors 113–114. A missing
+      transit at the predicted time would kill the period.</p>
       <p><strong>Rule out impostors.</strong> HIP 71639 and HIP 56966 already have Gemini speckle imaging on ExoFOP
-      showing no close companion. HD 11506 has none yet; it and the new single transits need speckle or adaptive-optics
-      imaging and a few high-precision radial velocities.</p>
+      showing no close companion. TIC 402710280, TOI-2493 and HD 11506 have none yet; they need speckle or
+      adaptive-optics imaging and a few high-precision radial velocities (about 2–3 m/s for TIC 402710280).</p>
       <p><strong>Weigh it.</strong> HIP 71639's expected signal is about 3 m/s, well within reach of HARPS or
       ESPRESSO for a V = 6 star. A transit from CHEOPS, or the full 7-hour transit on 20 April or 14 May 2027 from
       Chile, would confirm the period.</p>

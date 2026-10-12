@@ -201,12 +201,20 @@ def main():
             res += json.load(open(p))
         elif ck.exists():   # a run still in progress: its checkpoint
             res += [json.loads(line) for line in open(ck) if line.strip()]
-    # the FFI pass supersedes the first pass for the same target
-    best = {}
+    # the FFI pass supersedes the first pass for the same target, but keeps the first pass's dips too: the hunt
+    # keeps at most 12 candidate dips per star, and artefacts in the new sectors can push real ones out
+    best, extra = {}, {}
     for r in res:
         key = (r["tic"], r["id"])
+        extra.setdefault(key, []).extend(r.get("others", []))
         if key not in best or r.get("ffi_sectors"):
             best[key] = r
+    for key, r in best.items():
+        merged = []
+        for o in sorted(extra[key], key=lambda o: -o["snr"]):
+            if all(abs(o["t"] - m["t"]) > 0.1 for m in merged):
+                merged.append(o)
+        r["others"] = merged
     todo = [r for r in best.values() if r.get("status") == "new events" and r.get("recovered")]
     print(len(best), "targets;", len(todo), "with new events and the catalogued event re-found", flush=True)
     nasa = pd.read_csv(CATALOGS / "nasa_pscomppars_transiting_20261012.csv", low_memory=False)
