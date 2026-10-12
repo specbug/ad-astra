@@ -218,13 +218,28 @@ def main():
     d, known = targets()
     if limit:
         d = d.head(limit)
-    print(len(d), "targets", flush=True)
-    res = []
-    with cf.ProcessPoolExecutor(n) as ex:
-        for i, r in enumerate(ex.map(_run, [(row, known) for row in d.to_dict("records")], chunksize=2)):
-            res.append(r)
+    # checkpoint: one JSON line per finished target, so an interrupted run resumes where it stopped
+    ck = CATALOGS.parent / "period_hunt.jsonl"
+    done = {}
+    if ck.exists():
+        for line in open(ck):
+            try:
+                r = json.loads(line)
+                done[(r["tic"], r["id"])] = r
+            except Exception:
+                pass
+    todo = [row for row in d.to_dict("records") if (int(row["tic"]), row["id"]) not in done]
+    print(len(d), "targets,", len(done), "already done", flush=True)
+    with cf.ProcessPoolExecutor(n) as ex, open(ck, "a") as fh:
+        futs = [ex.submit(hunt, row, known) for row in todo]
+        for i, fu in enumerate(cf.as_completed(futs)):
+            r = fu.result()
+            fh.write(json.dumps(r, default=float) + "\n")
+            fh.flush()
+            done[(r["tic"], r["id"])] = r
             if i % 50 == 0:
                 print(i, r.get("tic"), r.get("status"), r.get("n_others"), flush=True)
+    res = list(done.values())
     json.dump(res, open(C / "period_hunt.json", "w"), indent=1, default=float)
     flat = pd.DataFrame([{k: v for k, v in r.items() if k not in ("others",)} for r in res])
     flat.to_csv(C / "period_hunt.csv", index=False)
