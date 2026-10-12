@@ -691,7 +691,15 @@ def verdict_chip(v):
 
 # Track B stars that web searches found already confirmed (names as published); the NASA confirmed-planet
 # cross-match (known.flag_confirmed) adds the rest.
-CONFIRMED_LIT = {65910228: "NGTS-38 b", 279401253: "TIC 279401253 b", 4672985: "TIC 4672985 b"}
+CONFIRMED_LIT = {65910228: "NGTS-38 b", 279401253: "TIC 279401253 b", 4672985: "TIC 4672985 b",
+                 137966491: "HD 278555 b", 318707987: "HD 3167 c", 221567884: "HD 148797 b, c",
+                 453147896: "NGTS-39 b", 65612701: "TIC 65612701 b"}
+# Confirmed planets without TOIs that Track B found blind (checked against the published periods), and one it lost.
+RECOVERED = [("NGTS-38 b", "180.5 d, one transit"), ("TIC 279401253 b", "76.8 d, one transit"),
+             ("TIC 4672985 b", "69.0 d, one transit"), ("NGTS-39 b", "58.2 d"),
+             ("HD 148797 b and c", "42.1 and 68.2 d"), ("HD 3167 c", "29.85 d, one transit"),
+             ("HD 278555 b", "28.84 d, period recovered"), ("TIC 65612701 b", "10.22 d, period recovered")]
+MISSED = [("TIC 245076932 b", "21.6 d: all nine transits found, then rejected as an eclipsing binary")]
 
 
 def section_trackb(tb, singles, lit=None):
@@ -913,6 +921,12 @@ def section_calibration(sv, s2, comp):
         The Herbig Be star's irregular dimming was flagged by the anomaly track.</div></li>
         <li class="check check-pass"><span class="ci" aria-hidden="true">✓</span><div><strong>WASP-18, WASP-126.</strong>
         Recovered by the periodic search, with centroid offsets of 0.04 pixel in the difference images.</div></li>
+        <li class="check check-pass"><span class="ci" aria-hidden="true">✓</span><div><strong>Confirmed planets that never became TOIs.</strong>
+        Found blind by the single-transit track and identified only afterwards, by position, in NASA's confirmed-planet table:
+        {"; ".join(f"{n} ({d})" for n, d in RECOVERED)}.</div></li>
+        <li class="check check-warn"><span class="ci" aria-hidden="true">!</span><div><strong>One lost.</strong>
+        {"; ".join(f"{n}, {d}" for n, d in MISSED)}. The deeper dips that triggered the veto elsewhere in its data
+        were not checked by eye; the veto may be throwing out other planets too.</div></li>
       </ul>
     </div>
   </div>
@@ -988,8 +1002,10 @@ def section_methods():
 </section>"""
 
 
-def section_caveats():
-    return """
+def section_caveats(lit=None):
+    n_lit = len(lit or [])
+    n_known = sum(1 for x in (lit or []) if x["status"] == "known in this role")
+    return f"""
 <section id="next">
   <p class="kicker">Limits and next steps</p>
   <h2>What would make these discoveries</h2>
@@ -1000,7 +1016,7 @@ def section_caveats():
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Unresolved companions.</strong>
         A faint eclipsing binary within an arcsecond or two of the target mimics a planet. Gaia excludes wider ones; high-resolution imaging and radial velocities exclude the rest.</div></li>
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Lists we could not reach.</strong>
-        ExoFOP (with its community TOIs and follow-up notes), SIMBAD, VizieR and arXiv were blocked from the compute environment. Known-object checks used the NASA TOI table of 5 October 2026, ExoFOP's TOI list of February 2026, SPOC's own detections, and web searches by TIC, Gaia and HIP number, which is how HIP 71639 turned up as a Planet Hunters TESS candidate. Of the 150 stars this report names, 10 turned out to be published already in the same role, and are marked. Large candidate lists published as tables (the T16 hunt's 10,000 candidates from TESS's first year, the TESS Triple-9 catalogues, the eclipsing-quadruple lists) could not be matched row by row, and any candidate here could still be a community TOI that no indexed page names.</div></li>
+        ExoFOP (with its community TOIs and follow-up notes), SIMBAD, VizieR and arXiv were blocked from the compute environment. Known-object checks used the NASA TOI table of 5 October 2026, ExoFOP's TOI list of February 2026, SPOC's own detections, and web searches by TIC, Gaia and HIP number, which is how HIP 71639 turned up as a Planet Hunters TESS candidate. Of the {n_lit} stars this report names, {n_known} turned out to be published already in the same role, and are marked; a position match against NASA's confirmed-planet table caught several that web searches missed because the literature uses another name (HD 3167 for HIP 2736, HD 278555, HD 148797). Large candidate lists published as tables (the T16 hunt's 10,000 candidates from TESS's first year, the TESS Triple-9 catalogues, the eclipsing-quadruple lists) could not be matched row by row, and any candidate here could still be a community TOI that no indexed page names.</div></li>
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>Candidates, not discoveries.</strong>
         Every object here is a candidate until follow-up observations rule out the impostors above; the search is complete
         for TESS sectors 1–107, and the vetting is deepest for stars brighter than T = 10.5.</div></li>
@@ -1073,7 +1089,10 @@ def build():
         f56 = (f'<li>{chip("Not a TOI", "new")}<div><strong>HIP 56966: a {rp56:.1f} {RE} planet candidate every '
                f'{fit["HIP56966"]["period_d"][0]:.3f} days around a V = 8.8 Sun-like star.</strong> Four transits across '
                f'seven years, found while vetting the survey\'s single-transit list; SPOC never saw two in one search.</div></li>')
-    n_dv = sum(1 for r in dv.values() if "error" not in r and deep_verdict(r)[0] == "candidate")
+    known_tics = {int(x["tic"]) for x in (lit or []) if x["status"] == "known in this role"}
+    if tb is not None and "known_planet" in tb:
+        known_tics |= set(tb.tic[tb.known_planet.fillna("").astype(str) != ""].astype(int))
+    n_dv = sum(1 for k, r in dv.items() if "error" not in r and deep_verdict(r)[0] == "candidate" and int(k) not in known_tics)
     n_dv_all = sum(1 for r in dv.values() if "error" not in r)
     tbf = trackb_shortlist(tb) if tb is not None else None
     n_tb = len(tbf) if tbf is not None else 0
@@ -1117,8 +1136,10 @@ def build():
     {f56}
     <li>{chip(f"{n_dv} bright", "new")}<div><strong>{n_dv} more candidates on bright stars survive one-by-one
     vetting.</strong> Of {n_dv_all} shortlisted stars brighter than T = 10.5, these pass the pixel source test, the
-    period-alias test and Gaia's binarity checks. They include warm giants on 20.4- and 28.8-day orbits
-    (HIP 63987, TIC 137966491) and a single 2.9 R<sub>⊕</sub> transit of the bright K dwarf HIP 2736. The full
+    period-alias test and Gaia's binarity checks, and no catalogue we could reach lists them. They include a warm
+    giant on a 20.4-day orbit (HIP 63987), a grazing companion every 24.05 days (TIC 441010857) and a single
+    16-hour transit of the A star HIP 109818. Two stars an earlier version of this report counted here are known
+    planetary systems that never became TOIs, HD 3167 (HIP 2736) and HD 278555 (TIC 137966491). The full
     shortlist holds {n_tb} single and paired transits with no TOI.</div></li>
     <li>{chip(f"{n_tc} stars", "known")}<div><strong>Possible triple and quadruple stars.</strong> Eclipsing
     binaries with a second, independent set of eclipses that recurs across sectors. Most will be blends of two
@@ -1143,7 +1164,7 @@ def build():
 {section_tracka(ta_n, ta_total, triage)}
 {section_calibration(sv, s2, comp)}
 {section_methods()}
-{section_caveats()}
+{section_caveats(lit)}
 <footer>
   <p>Data: TESS mission (NASA), served by MAST from its public Amazon S3 bucket; light curves from the MIT Quick-Look
   Pipeline (QLP), TESS-SPOC and SPOC; TESS Input Catalog v8.2; Gaia DR3 (ESA). TOI tables: ExoFOP (February 2026)
@@ -1166,11 +1187,11 @@ NOTES = {
     162305348: "Short (1.9 h) for a 35-day orbit around an F star: a grazing crossing, so the companion may be larger than it looks.",
     457134361: "One 11.6-hour, 1%-deep transit; at least 17.6 days, and long for a Sun-like star, so likely hundreds of days.",
     4011632: "Gaia reports an astrometric binary (RUWE 5.7) with a variable radial velocity: the dip may belong to the companion.",
-    221567884: "Dips of several depths and no single period; two TOIs lie within 10′. Probably a blend.",
+    221567884: "HD 148797, with two confirmed transiting planets (42.1 and 68.2 d): the dips of two depths are the two planets.",
     459801869: "Two transits 20.4 days apart in sector 23 and every shorter alias excluded: a warm giant on an F star, seen only in full-frame data.",
-    137966491: "Three transits on a 28.843-day period. SPOC flagged single sectors with inconsistent periods (11.7 and 18.6 days); never a TOI.",
+    137966491: "HD 278555 b, a confirmed 28.84-day planet that never became a TOI; the survey found its period blind.",
     441010857: "Three transits on a 24.054-day period; the 1.7-hour duration means a grazing crossing.",
-    318707987: "One 2.9 Earth-radius transit on a bright K dwarf. An unrelated 0.96-day SPOC detection (354 ppm) on the same star was never made a TOI.",
+    318707987: "HD 3167 (= HIP 2736), a known K2 system: the single transit is HD 3167 c (29.85 d), and the 0.96-day SPOC detection is HD 3167 b.",
     430746529: "One 16-hour transit of a bright A star (HIP 109818): a giant on an orbit of at least 65 days.",
     402710280: "Two 4.2 Earth-radius transits on a K dwarf; six periods of 1454/n days remain.",
     64038538: "Two 4.4 Earth-radius transits on a K dwarf; six periods of 1116/n days remain.",

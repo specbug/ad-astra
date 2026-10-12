@@ -184,8 +184,12 @@
  {
   "tic": 221567884,
   "status": "known in this role",
-  "summary": "Published as a special-interest transit candidate in arXiv 2502.07542 (a transformer-based search of TESS full-frame images): first flagged in Sector 12, with two transits of different depths (a possible multi-planet system), further transits in Sectors 39 and 66 and a possible mutual-transit event in Sector 66, but no TOI number or confirmation appeared in the search results.",
+  "summary": "HD 148797, with two confirmed transiting planets (42.1 and 68.15 d); also published earlier as a multi-planet candidate in arXiv 2502.07542 (NASA Exoplanet Archive confirmed-planet table of 5 Oct 2026, position match; 12 Oct 2026).",
   "sources": [
+   {
+    "title": "HD 148797 overview, NASA Exoplanet Archive",
+    "url": "https://exoplanetarchive.ipac.caltech.edu/overview/HD%20148797"
+   },
    {
     "title": "Exoplanet Transit Candidate Identification in TESS Full-Frame Images via a Transformer-Based Algorithm (arXiv 2502.07542)",
     "url": "https://arxiv.org/pdf/2502.07542"
@@ -247,9 +251,14 @@
  },
  {
   "tic": 137966491,
-  "status": "no mentions found",
-  "summary": "Web search for \"TIC 137966491\" (11 Oct 2026) returned no page naming this star.",
-  "sources": []
+  "status": "known in this role",
+  "summary": "HD 278555 b: a confirmed transiting planet with P = 28.84 d at this position (0.35″); the survey's 28.8425-day period matches. Web search by TIC number missed it because pages use the HD name (NASA Exoplanet Archive confirmed-planet table of 5 Oct 2026, position match; 12 Oct 2026).",
+  "sources": [
+   {
+    "title": "HD 278555 overview, NASA Exoplanet Archive",
+    "url": "https://exoplanetarchive.ipac.caltech.edu/overview/HD%20278555"
+   }
+  ]
  },
  {
   "tic": 441010857,
@@ -259,9 +268,14 @@
  },
  {
   "tic": 318707987,
-  "status": "no mentions found",
-  "summary": "Web search for \"HIP 2736\" (11 Oct 2026) returned no page naming this star.",
-  "sources": []
+  "status": "known in this role",
+  "summary": "HIP 2736 is HD 3167, a known K2 system (HD 3167 b 0.96 d, c 29.85 d, e 91.9 d). The single 2.9 R⊕ transit is HD 3167 c and the 0.96-day SPOC detection is HD 3167 b. Web search by HIP and TIC number missed it because pages use the HD name (NASA Exoplanet Archive confirmed-planet table of 5 Oct 2026, position match; 12 Oct 2026).",
+  "sources": [
+   {
+    "title": "HD 3167 overview, NASA Exoplanet Archive",
+    "url": "https://exoplanetarchive.ipac.caltech.edu/overview/HD%203167"
+   }
+  ]
  },
  {
   "tic": 430746529,
@@ -1029,5 +1043,38 @@
   "status": "no mentions found",
   "summary": "Search for TIC 468517297 returned no page naming this star; similar-numbered TICs in the results are different stars (web search, 11 Oct 2026).",
   "sources": []
+ },
+ {
+  "tic": 453147896,
+  "status": "known in this role",
+  "summary": "NGTS-39 b, a confirmed 58.2-day transiting planet at this position (NASA Exoplanet Archive confirmed-planet table of 5 Oct 2026, position match; 12 Oct 2026).",
+  "sources": [
+   {
+    "title": "NGTS-39 overview, NASA Exoplanet Archive",
+    "url": "https://exoplanetarchive.ipac.caltech.edu/overview/NGTS-39"
+   }
+  ]
+ },
+ {
+  "tic": 65612701,
+  "status": "known in this role",
+  "summary": "TIC 65612701 b, a confirmed 10.22-day transiting planet; the survey's 10.2248-day period matches (NASA Exoplanet Archive confirmed-planet table of 5 Oct 2026, position match; 12 Oct 2026).",
+  "sources": [
+   {
+    "title": "TIC 65612701 overview, NASA Exoplanet Archive",
+    "url": "https://exoplanetarchive.ipac.caltech.edu/overview/TIC%2065612701"
+   }
+  ]
+ },
+ {
+  "tic": 245076932,
+  "status": "known in this role",
+  "summary": "TIC 245076932 b, a confirmed 21.61-day transiting planet; all nine dips the survey found fold on that period, but its verdict was 'EB (deeper eclipses)' (NASA Exoplanet Archive confirmed-planet table of 5 Oct 2026, position match; 12 Oct 2026).",
+  "sources": [
+   {
+    "title": "TIC 245076932 overview, NASA Exoplanet Archive",
+    "url": "https://exoplanetarchive.ipac.caltech.edu/overview/TIC%20245076932"
+   }
+  ]
  }
 ]

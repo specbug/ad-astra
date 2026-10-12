@@ -163,7 +163,24 @@ part-way, and the remainder was searched in a later turn.
 Confirmed planets: `known.flag_confirmed` matches candidates within 10″, or by a "TIC <id>" host name, against
 the NASA Exoplanet Archive confirmed-planet table (ps, default_flag = 1) of 5 October 2026. That table is copied
 from the `juliensimon/nasa-exoplanets` Hugging Face mirror into `catalogs/hf_ps/` page by page through the
-Hugging Face connector, the only route to it from the compute environment.
+Hugging Face connector, the only route to it from the compute environment. `match_confirmed.py` adds the
+match to every Track B, C and D table and writes `results/candidates/confirmed_matches.csv`.
+
+This found what the web searches could not, because the literature uses other names. Eight confirmed systems
+without TOIs were among Track B's candidates, each found blind, with the published period where the survey had
+one:
+- NGTS-38 b, 180.5 d, one transit
+- TIC 279401253 b, 76.8 d, one transit
+- TIC 4672985 b, 69.0 d, one transit
+- NGTS-39 b, 58.2 d
+- HD 148797 b and c, 42.1 and 68.2 d
+- HD 3167 c, 29.85 d (HIP 2736, one transit; the 0.96-day SPOC detection is HD 3167 b)
+- HD 278555 b, 28.84 d
+- TIC 65612701 b, 10.22 d
+
+Two of them, HD 3167 and HD 278555, had been presented as new bright candidates; the report now marks them
+"published". One confirmed planet was lost: all nine transits of TIC 245076932 b (21.6 d) were found, then
+vetoed as an eclipsing binary because deeper dips elsewhere in its data had not been checked.
 
 ## 9. Track C eclipse-shape test, revised (10 October)
 The first version compared the box depth with the peak-to-trough of a single sine wave at the second period.
