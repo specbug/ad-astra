@@ -2,6 +2,8 @@
 
 This review checks five exploratory leads against published TESS rotation work. It is not an exhaustive literature clearance. The ADS topic search was truncated (145 papers, newest 100 returned); absence from that list cannot establish novelty.
 
+**Subsequent access update:** the previously blocked default TARS aggregate catalogue has now been downloaded and fully scanned. See the [aggregate review](tars-aggregate-review.md) for actual matches and publisher-checksum verification. The failed requests below describe the earlier runtime and remain preserved. The full parent measurement table is still unchecked.
+
 The authoritative CDS ReadMe for Claytor et al. (2024), `J/ApJ/962/47`, identifies table 5 as 7,245 detected rotation periods and table 6 as 35,664 rotation nondetections. Exact TIC queries for 201308024, 355767420, 281593180, 149392671, and 150104580 returned no detected-period rows. TIC 149392671 appears in **table 6, the nondetection sample**, with photometric range 2,142 ppm and CDPP 210 ppm. The other four have no row in either table. A nondetection does not establish constant flux, or invalidate the nearby known RR Lyrae contamination found in our analysis.
 
 Initial strict parsing rejected VizieR metadata units `(10-6)` and `log(Sun)`. These were reviewed against the ReadMe: the former describes ppm and the latter solar logarithmic abundances. The local parser accepts only these specific additional unit warnings and generated XML-ID warnings; the shared catalogue parser was not changed. Original failed parsing records and raw bytes remain preserved in `data/rotation-prior-review`.

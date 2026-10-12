@@ -1,0 +1,2467 @@
+{
+  "created_utc": "2026-10-12T17:50:50.039510+00:00",
+  "scope": "New and SHA256-modified allowlisted research files relative to the combined two-pilot checkpoint",
+  "baseline_inventory": {
+    "filename": "ad-astra-research-20261012-inventory.json",
+    "sha256": "b8593aada4318ef7efd905e61d4964062d2a8697d533a0430c57eae64daeb12e",
+    "file_count": 3911
+  },
+  "required_base_archives": [
+    {
+      "filename": "ad-astra-research-20261012-core.tar.gz",
+      "sha256": "afb83644374882f9ebdfd26c5b86080160d8c5be032a3edc8296de3968d59ff3",
+      "size_bytes": 25377675
+    },
+    {
+      "filename": "ad-astra-research-20261012-figures.tar.gz",
+      "sha256": "d741a1a0ce03cf5d4a8403c07494e35960b864f28f29bba42ed1f07238574cf1",
+      "size_bytes": 39164078
+    }
+  ],
+  "preserved_checkpoint_sha256": {
+    "checkpoints/ad-astra-qlp-pilot-20261012-RESTORE-ERRATUM.md": "3b5b478bd9ac762018318383987cbe3dc22b89ecb1e06e8433829813cc0ebf6b",
+    "checkpoints/README.md": "8f059ab53e752f89d02dd771f113613dc0deef5543374be6d4cc311a6af179a1",
+    "checkpoints/ad-astra-research-20261012-inventory.json": "b8593aada4318ef7efd905e61d4964062d2a8697d533a0430c57eae64daeb12e",
+    "checkpoints/ad-astra-qlp-pilot-20261012-core.tar.gz": "7016822234f55b07d1a62307fc8c274bbacee4d8118104a95f83b2a55c469d43",
+    "checkpoints/ad-astra-qlp-pilot-20261012-figures.tar.gz": "b99c45614b91f4bc1fe1f54cac26fad6f5df41b0a609f15c950fac3cf2224f69",
+    "checkpoints/credential-scan-summary.json": "76148c7cbe4aff09dec3bcdb6ac20948ac2ae68fab4c94de9da8259647147030",
+    "checkpoints/ad-astra-qlp-pilot-20261012-SHA256SUMS.txt": "fff51087e9d9ffb18d55ce8394a58579eeb42ba9ada43a263637ce3ec5fd6d2d",
+    "checkpoints/ad-astra-research-20261012-core.tar.gz": "afb83644374882f9ebdfd26c5b86080160d8c5be032a3edc8296de3968d59ff3",
+    "checkpoints/ad-astra-research-20261012-figures.tar.gz": "d741a1a0ce03cf5d4a8403c07494e35960b864f28f29bba42ed1f07238574cf1",
+    "checkpoints/ad-astra-qlp-pilot-20261012-RESTORE-ERRATUM.sha256": "a3ae3ef157bdf979c875792a54b94fc0440d1fe195d79c76ab2816b58c47c13a",
+    "checkpoints/ad-astra-qlp-pilot-20261012-inventory.json": "ae1b4e51e78db4669423975baba623053299a8fbf010494a12bc9a97dc88395a",
+    "checkpoints/ad-astra-research-20261012-SHA256SUMS.txt": "c2ea7c68a781a49d0ab47d7efec5d26e8ce2ad7a500e920e59c5fbd8aaf0033a"
+  },
+  "archive": {
+    "filename": "ad-astra-round3-20261012.tar.gz",
+    "sha256": "8aa2da9fbb4f5f87ea3d4a0153b4124b08424bf65f63a2d71e9648621fc131bf",
+    "size_bytes": 187331194
+  },
+  "chunks": [
+    {
+      "order": 1,
+      "filename": "ad-astra-round3-20261012.tar.gz.001",
+      "size_bytes": 50331648,
+      "sha256": "4de5b6ba5503f8209791f6a668fc66195ec8ccda897d0d88979bb72482c43144"
+    },
+    {
+      "order": 2,
+      "filename": "ad-astra-round3-20261012.tar.gz.002",
+      "size_bytes": 50331648,
+      "sha256": "48cea7b9a5222080ec5ac9261c7f69b02ab23fd0744b347996baef633a17768e"
+    },
+    {
+      "order": 3,
+      "filename": "ad-astra-round3-20261012.tar.gz.003",
+      "size_bytes": 50331648,
+      "sha256": "72ab67e8326452b5e3dbf13ca1139bb58127e3aa65b0431a4fcef52048a495c1"
+    },
+    {
+      "order": 4,
+      "filename": "ad-astra-round3-20261012.tar.gz.004",
+      "size_bytes": 36336250,
+      "sha256": "677204187764b2f124b3b2e242730225e0dca55357a50433c3380ac54bbc758b"
+    }
+  ],
+  "chunk_limit_bytes": 50331648,
+  "verified_members": 319,
+  "files": [
+    {
+      "archive_path": "ad-astra/README.md",
+      "source_path": "/workspace/ad-astra/README.md",
+      "size_bytes": 4075,
+      "sha256": "2ca8430c951d26d1102e6ebe40237ec36d2dba54f58a11210838025f863b2426",
+      "change": "modified"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/108443718/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/108443718/complete.json",
+      "size_bytes": 85,
+      "sha256": "613b18186ce016289261a13cae2674402deabece3a1c20cee721a631c1d128a9",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/108443718/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/108443718/request-001.json",
+      "size_bytes": 135,
+      "sha256": "421e0e286190a8b6298e08827646af6c48b8969ef409ed49fe99cee080427f56",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/108443718/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/108443718/response-001.json",
+      "size_bytes": 1662,
+      "sha256": "6a8aef5c747a5faf0707f26e4b4121c297b89968ee232a90c4cbae3066a5d8b8",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/108443718/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/108443718/response-001.json.provenance.json",
+      "size_bytes": 466,
+      "sha256": "a868b1ca657e18d998337998b7025b4778964ec97aa83dd1630bc3e7f3651f0f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/113356807/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/113356807/complete.json",
+      "size_bytes": 85,
+      "sha256": "914e797d7b5996c0cc7d3a62a185e7eedfa9244762895189d82136b127142a31",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/113356807/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/113356807/request-001.json",
+      "size_bytes": 135,
+      "sha256": "f13aaa7bd27386ffb351f493b80d691a75f87c8c736c9d6c443784b2f860cb8b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/113356807/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/113356807/response-001.json",
+      "size_bytes": 1662,
+      "sha256": "f9e754e0f94bd6108e5c5319611da9249635bc0a9edd0b5cb62dcbcdae85c376",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/113356807/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/113356807/response-001.json.provenance.json",
+      "size_bytes": 466,
+      "sha256": "00725cac3e849194b13d929cfb1346f4d1d34dbe0053b284bb900f4c9c7b444a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/240539509/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/240539509/complete.json",
+      "size_bytes": 85,
+      "sha256": "29b1e9d14b9c1d63124abfa49fbb8dc357ff7a9546c445d6a20ceff79cb1addf",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/240539509/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/240539509/request-001.json",
+      "size_bytes": 135,
+      "sha256": "69fa3169dd46054addfc4d9540bb3da629d2f13b01b12f6b827b58200a30fcc8",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/240539509/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/240539509/response-001.json",
+      "size_bytes": 1639,
+      "sha256": "08796d694d74d4e62829af5f12d3cf39d7a751ec40d1ae95fdc5aa3e55e1409b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/240539509/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/240539509/response-001.json.provenance.json",
+      "size_bytes": 466,
+      "sha256": "bf7513304549043369bed38f0e265b59a8a9571e2713573543ca2c0020552355",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/289631680/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/289631680/complete.json",
+      "size_bytes": 85,
+      "sha256": "aa7a4fe26d4bac630d8e3151749da34168ef22dc6f2d1f40a1568a086dec38ee",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/289631680/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/289631680/request-001.json",
+      "size_bytes": 135,
+      "sha256": "50dd060676464ae27af0833c48d171f704de7c11555a27b0f4972f621b4743ab",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/289631680/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/289631680/response-001.json",
+      "size_bytes": 1639,
+      "sha256": "ae011b42c7d6f068f39ac13ca687c5ab6c344b95918f0578eab4c5f984d976e6",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/289631680/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/289631680/response-001.json.provenance.json",
+      "size_bytes": 466,
+      "sha256": "2fe56c9ad07e8a7792a7a7db87ece0812bf000529ce3d53121d454bd04d73101",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/392361890/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/392361890/complete.json",
+      "size_bytes": 85,
+      "sha256": "0c9f6e668fa477bb5bbf6ffc2ad428e9178241f9e31b34a2d529da4ff87eebd9",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/392361890/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/392361890/request-001.json",
+      "size_bytes": 135,
+      "sha256": "05487076036f85d31fc9a1e699e0bb61e09f685b24ad8fe8cda0d98d496d3343",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/392361890/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/392361890/response-001.json",
+      "size_bytes": 2216,
+      "sha256": "fc13988c553a639f77069976cd821263a4632099a378b4fe8639752c513e8bbe",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/392361890/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/392361890/response-001.json.provenance.json",
+      "size_bytes": 466,
+      "sha256": "020100939b1a45089f3ec00598c78c01417b50dd711ac65d67cd97b0e5f83820",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/393039075/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/393039075/complete.json",
+      "size_bytes": 85,
+      "sha256": "048fce1f6f96e05bd38f8dd5ea4f25813fd19969b0dd95fe31d82b0f0c1b5744",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/393039075/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/393039075/request-001.json",
+      "size_bytes": 135,
+      "sha256": "e4f1f02a5fa28a61582a33c7780f2ad137981947aeaa39b2082049aecd9399fb",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/393039075/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/393039075/response-001.json",
+      "size_bytes": 2216,
+      "sha256": "02f4c8a05cebb098a7668d4c62012889db98d4fcf91fcd2301ef89932457ea01",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/393039075/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/393039075/response-001.json.provenance.json",
+      "size_bytes": 466,
+      "sha256": "666153ccc3a4713b36bdad3aaa5154afecf7db2fa3f3d93a0eb8bfcf4510aaf2",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59001803/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59001803/complete.json",
+      "size_bytes": 85,
+      "sha256": "09a6330216947769d9d4c5b061310b0fe3b23572c9ff627286c68877e4e6aff0",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59001803/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59001803/request-001.json",
+      "size_bytes": 134,
+      "sha256": "9b13da563904f149e0c0969455a41fb2f9738f73ddc8b73245e2b8765ed38c67",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59001803/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59001803/response-001.json",
+      "size_bytes": 2241,
+      "sha256": "0862818c93cb5fa601f5bd5ff8c7af62f0cdabb1a25346bb04429ad21af1a939",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59001803/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59001803/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "e6ff0942d6a521e54c29ba2feb50d7d4a4d323964497bda74af5b2967031bd96",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59399623/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59399623/complete.json",
+      "size_bytes": 85,
+      "sha256": "4d0b754bf7435e9d3c1a9052ba8fda738d01d5dcaeffece7176c6c047c2eddb2",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59399623/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59399623/request-001.json",
+      "size_bytes": 134,
+      "sha256": "0191eb6407e47e25fd8fdd8654a7531eefd97b982eca35a4519244bab16edd7e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59399623/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59399623/response-001.json",
+      "size_bytes": 2241,
+      "sha256": "f18b460924f9036b39e29f9c89187c6f3b58f5d0eb289a31d3216652018b6ae1",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59399623/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59399623/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "ea72c2c6d0ecc8497071849be62c1b9a76e81188660bd35d89ea7aedaf92d1f3",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59754431/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59754431/complete.json",
+      "size_bytes": 85,
+      "sha256": "79e76dea0a1ee3b72bed086c75036fc3fe8c8539e86d3d652f938df5264c6005",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59754431/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59754431/request-001.json",
+      "size_bytes": 134,
+      "sha256": "8f4371e9f6ca23176e9d2b5a2d5ef323f7c5791737311f6bcff84e09155aec6b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59754431/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59754431/response-001.json",
+      "size_bytes": 2314,
+      "sha256": "28176131ece443ca5d4450a941741ebefa0c3bcbd17a8a1d85443d35c91bfaa1",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59754431/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59754431/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "87da55f76ad884c84bb26797f625d98b4361a6b40eee1893c023f681006a73c4",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59913885/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59913885/complete.json",
+      "size_bytes": 85,
+      "sha256": "1bea136a60a17edeeba32578c8bc9d6e048fd9a8be4393e128d8ea50674aaacc",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59913885/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59913885/request-001.json",
+      "size_bytes": 134,
+      "sha256": "12d93435a0cadc34350121dc825c398035dd61121ae472af41a54243d1dff152",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59913885/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59913885/response-001.json",
+      "size_bytes": 2314,
+      "sha256": "972620811e6ccbc0b4cd2f085a6082224b87ed2a643b5c9d9308e5c239eda6c2",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/59913885/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/59913885/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "c2328d761cf58e548a763b0a74a1f703208d484a15d1b09c516adfecf667fb6d",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/60843726/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/60843726/complete.json",
+      "size_bytes": 85,
+      "sha256": "ce5a23b7e2fd4874cb83f641559c11d838a054b20d4dd13b895ce10cd071636b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/60843726/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/60843726/request-001.json",
+      "size_bytes": 134,
+      "sha256": "cd0ed304c31a5f3c08748fc6e9a94dc30b7dba82e49e7536336b7b241ff166e9",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/60843726/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/60843726/response-001.json",
+      "size_bytes": 2240,
+      "sha256": "b1ce43158d483a9ff00948216e9883b2407fcdd48eb3d1f83f6d1259802ca377",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/60843726/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/60843726/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "bed84d4520abe43cde7ca46a14e4959394ec09b7242f16a96144c64bea880f2e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/60879525/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/60879525/complete.json",
+      "size_bytes": 85,
+      "sha256": "ce564e1ea94cbf86323458b6360218aba999a35572fa6fb23fee875ed50d98f4",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/60879525/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/60879525/request-001.json",
+      "size_bytes": 134,
+      "sha256": "8d0fe1838b3ae3eda09b81f15499338eb32aa14cd2269a1db380a3ded4a6f72c",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/60879525/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/60879525/response-001.json",
+      "size_bytes": 2240,
+      "sha256": "18e9e5be800572c2a0ae6a6f8f06c8b8d3ae5def182a3b3b776325e288b4641f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/60879525/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/60879525/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "ace99d2b688cc27bc89bd3827db9ac7355d2f22dd637c363576ddfc608906fef",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/79390009/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/79390009/complete.json",
+      "size_bytes": 85,
+      "sha256": "ca0e5d6a5ce9f3d78c30ebb335c00907687849375b909c9f06d9e2d3f9b5034e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/79390009/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/79390009/request-001.json",
+      "size_bytes": 134,
+      "sha256": "c9b3d3b981e697631b17f1644ff98371b0bf583ef0c9ebd2494cebbc1a76b170",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/79390009/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/79390009/response-001.json",
+      "size_bytes": 1670,
+      "sha256": "68c4603e710b201321a9c6641ed1d18023ad928da7acc7f7cb6bfb2e597b8d43",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/79390009/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/79390009/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "774044b6770f39d3c33bdc4f5547e34da573ef9b3703e37561b39db0804b34ec",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/79415595/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/79415595/complete.json",
+      "size_bytes": 85,
+      "sha256": "3dc20cedb221971f60fcf87f788e0a3f4a1632649f6c4a99f197b9d80943b624",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/79415595/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/79415595/request-001.json",
+      "size_bytes": 134,
+      "sha256": "f14c70666baa7ab7feb4fbb3e916fa82fec83985055e99ebb44d092d00fa8625",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/79415595/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/79415595/response-001.json",
+      "size_bytes": 1670,
+      "sha256": "61966ab5c79d7d3feef9d799d6a2835b285ddf43df8f8bd4f30b1cf45142d324",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/79415595/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/79415595/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "fd8a21c1722dc9e57b66bf3e8069785fe85a0895b04dc43425bb02425286d4bc",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/80166667/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/80166667/complete.json",
+      "size_bytes": 85,
+      "sha256": "1ac8b74cb9256ac31eff365a976b0b08faa52a397a6587bb96bf4b3e1fd23fe9",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/80166667/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/80166667/request-001.json",
+      "size_bytes": 134,
+      "sha256": "b4c938c694576aac5e87f07ae1332d3abfa9bb67eee10bc4c72ae295dd2e9b2f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/80166667/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/80166667/response-001.json",
+      "size_bytes": 2403,
+      "sha256": "84261525f38cc3a2b2643a571cf637a3490185c36560c0e8cfa22084d0692318",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/80166667/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/80166667/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "5c16a2a60cc1401fb88b11e82f1b6548dd8beeb8e64f0d1b1ed043a2b502efba",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/81427590/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/81427590/complete.json",
+      "size_bytes": 85,
+      "sha256": "1d5d929f8729c536c0779c6ac3e6b33719592cd07c1d03d02448f76603146e77",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/81427590/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/81427590/request-001.json",
+      "size_bytes": 134,
+      "sha256": "5c47757b6f885e95131c692f5f32f3950c7f4058c243fc5a17bbc44915900eb3",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/81427590/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/81427590/response-001.json",
+      "size_bytes": 2403,
+      "sha256": "3b2fcff82e48c5aaa109e701803ddfb979a27b93f964d948210307437cc5ad98",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/81427590/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/81427590/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "faaa3369d1f56f7745d91677a658573def84d19a87bcc391b90dec03d5287260",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/84323143/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/84323143/complete.json",
+      "size_bytes": 85,
+      "sha256": "a17d073c2af378c8c6c5831421a6df45dba7b246df3b2d8bcfe65b0c414cb77c",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/84323143/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/84323143/request-001.json",
+      "size_bytes": 134,
+      "sha256": "fde46f7c220f17f3cf052b8ff59496ee6e847410f65af29c83c00b3e33afa861",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/84323143/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/84323143/response-001.json",
+      "size_bytes": 1661,
+      "sha256": "6dd5b06499ae35ad2372a97bdfe35f0648d887f8645b037bad5ea1dbc714aa26",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/84323143/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/84323143/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "474813326a6d8013ff14124428d47578806f89fe34e0f66f53f53683968a2289",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/87081996/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/87081996/complete.json",
+      "size_bytes": 85,
+      "sha256": "6e7d6d2d68a34a9ac541b1f5d6be6a4dfc8dd2d87402d64d4c20a94d0ee05ad3",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/87081996/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/87081996/request-001.json",
+      "size_bytes": 134,
+      "sha256": "0fc92d4a7f55ad74a962b7dcb09d7984f84c4f7528c830aad9265a1bb859d6aa",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/87081996/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/87081996/response-001.json",
+      "size_bytes": 1661,
+      "sha256": "08d757515dc6cb0617517a94fe1dbdae9369dcc153b67ff02e07bc8018930265",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-products/87081996/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-products/87081996/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "020e71de2f457850f0a4a5d9bae89daba8f09766ab62e0e606197f92e90bf4ec",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-provider-id/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-provider-id/complete.json",
+      "size_bytes": 86,
+      "sha256": "2545c6e172782b8e113f51f1bd2652b5f96fc1119f210d0c3c27be403f05ad7f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-provider-id/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-provider-id/request-001.json",
+      "size_bytes": 400,
+      "sha256": "0e29c7d2574fcc08d1c5873ec9fe45b935f4a6525ae7416ca791b40b82d39e86",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-provider-id/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-provider-id/response-001.json",
+      "size_bytes": 19360,
+      "sha256": "95dea1b55ad29f082ecebe4018258a80a0eeec26897e04a0e11171323298cee5",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/all-provider-id/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/all-provider-id/response-001.json.provenance.json",
+      "size_bytes": 690,
+      "sha256": "a94fb85d68777c98119c6dea28f94d3f54aab7a97632cf9cc8ea1f8c1d3d035e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/cone/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/cone/request-001.json",
+      "size_bytes": 371,
+      "sha256": "2fd444d6c1b64980dc9535e3be7b621585d7db7c32337aee1fa08310a0c3a92b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/cone/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/cone/response-001.json",
+      "size_bytes": 110,
+      "sha256": "f4b43744dc5ba9b4af312b8a670902e00e0c63b012ccc66b50fcbc6631d4edf1",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/cone/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/cone/response-001.json.provenance.json",
+      "size_bytes": 686,
+      "sha256": "d41ab94b78bb347f1661c221e68d7d8bae0d998ec0d7ce7d67c7d0d8debf7677",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/observation-summary.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/observation-summary.json",
+      "size_bytes": 2272,
+      "sha256": "d32f2e515fdd06aca78edd5010e67e19180fe99141877d9c002a9f2faf8acc5b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/observations/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/observations/complete.json",
+      "size_bytes": 85,
+      "sha256": "b1fb80de6449abf0c9a7c2f136d28127cc8a9d514f7a9bd771d770114b1fd2c0",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/observations/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/observations/request-001.json",
+      "size_bytes": 503,
+      "sha256": "ff627fbbdb29988860cb7e430a532729a3f48ddecc200558f8f45fa457028632",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/observations/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/observations/response-001.json",
+      "size_bytes": 3311,
+      "sha256": "ef5fbad36d42d916b475ce4c21d85689301a627d823c7db6776fa2d655e37bee",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/observations/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/observations/response-001.json.provenance.json",
+      "size_bytes": 774,
+      "sha256": "0dcb3264f888c18e6edb9ea6a3a1cb7b34a78e9ae056048d783058cddb8c41dc",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/products/60843726/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/products/60843726/complete.json",
+      "size_bytes": 85,
+      "sha256": "0b77eeb458f3f345e123a302e605ef5e8edbf1427d6dfd5cb89d2977aeae7a28",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/products/60843726/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/products/60843726/request-001.json",
+      "size_bytes": 134,
+      "sha256": "cd0ed304c31a5f3c08748fc6e9a94dc30b7dba82e49e7536336b7b241ff166e9",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/products/60843726/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/products/60843726/response-001.json",
+      "size_bytes": 2240,
+      "sha256": "b1ce43158d483a9ff00948216e9883b2407fcdd48eb3d1f83f6d1259802ca377",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/products/60843726/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/products/60843726/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "b3f5b73da33c4e944f9e0a7e280ec3186053917ea9f471c97d4ea519e984e228",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/products/60879525/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/products/60879525/complete.json",
+      "size_bytes": 85,
+      "sha256": "944545aea85e9422d037bab6f0512e8800d6e38c66d7e8d2089b7177570969fa",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/products/60879525/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/products/60879525/request-001.json",
+      "size_bytes": 134,
+      "sha256": "8d0fe1838b3ae3eda09b81f15499338eb32aa14cd2269a1db380a3ded4a6f72c",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/products/60879525/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/products/60879525/response-001.json",
+      "size_bytes": 2240,
+      "sha256": "18e9e5be800572c2a0ae6a6f8f06c8b8d3ae5def182a3b3b776325e288b4641f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/products/60879525/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/products/60879525/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "632956cde69cd4c200d14a897d22d5f65691e3b22d28b0c8942992574c2c0b5a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308023/products-summary.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308023/products-summary.json",
+      "size_bytes": 3117,
+      "sha256": "fe8ec27d52815c73eaed79b586847ca61c5086748747622d51155992cdf2572f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/108443670/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/108443670/complete.json",
+      "size_bytes": 85,
+      "sha256": "0be49aad26aa288106dee064151b05be960a667cecfbe0f0959da699855f943d",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/108443670/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/108443670/request-001.json",
+      "size_bytes": 135,
+      "sha256": "4b4afaf20328a2d847d8b9b4bd62e5359918af34d112e31788ecfe2465b7b080",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/108443670/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/108443670/response-001.json",
+      "size_bytes": 1662,
+      "sha256": "9cabd2e0dc6502cfd5720b55f79cb1bee6896b13b7981ecf6f485adfe2471e5e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/108443670/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/108443670/response-001.json.provenance.json",
+      "size_bytes": 466,
+      "sha256": "0e82eecd982babbcaef0a0d6ffb90d8b191334137d8942d89fb8e9d5553ea510",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/113356767/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/113356767/complete.json",
+      "size_bytes": 85,
+      "sha256": "4b2c3a336ee9af5483094d9e0ab7cccae7bfaa4a286f12d797bf94cf5f052b1f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/113356767/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/113356767/request-001.json",
+      "size_bytes": 135,
+      "sha256": "032b357a83a8a2abf59430ce2697d63cef01e1220e4a0ad117216baf78852486",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/113356767/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/113356767/response-001.json",
+      "size_bytes": 1662,
+      "sha256": "151d3d1e2725c28fc0db99854131fe72f293fd32c1c25a6d8772611880c40000",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/113356767/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/113356767/response-001.json.provenance.json",
+      "size_bytes": 466,
+      "sha256": "902ba87f68946d341f12463d3537c86c604760d90d2bf99e6b193af9f77bc55c",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/240539499/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/240539499/complete.json",
+      "size_bytes": 85,
+      "sha256": "481029ae60263db38b911dc66136dbc2d4a9f67c3a43d60365bef4f865ffa063",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/240539499/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/240539499/request-001.json",
+      "size_bytes": 135,
+      "sha256": "eae0e686a57ce38c7cfd78f790dde0c99a4fb520463587c5b3adb3976dfc6636",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/240539499/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/240539499/response-001.json",
+      "size_bytes": 1639,
+      "sha256": "35840b34b22cd86e0c0d1f98e89782fafd6ff5ebb222540b2aad61302339c919",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/240539499/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/240539499/response-001.json.provenance.json",
+      "size_bytes": 466,
+      "sha256": "8db09c10b20fcd8173f32b51c6863aa1ab7db5ae6c4a458046734c0550f595bb",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/289631674/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/289631674/complete.json",
+      "size_bytes": 85,
+      "sha256": "5f55432cf36f8a0c758129f17e405e7710deae88ae37bd3b48fd053f6e1b6767",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/289631674/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/289631674/request-001.json",
+      "size_bytes": 135,
+      "sha256": "4690f57a6cb4c81c42efb7e9702676f13c167c2b4b5d40a6765c5d3fe000491f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/289631674/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/289631674/response-001.json",
+      "size_bytes": 1639,
+      "sha256": "15373f040d9606561f361aa227ba417e045b1e177feb16de4eea17e0e1ad02c4",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/289631674/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/289631674/response-001.json.provenance.json",
+      "size_bytes": 466,
+      "sha256": "ea70790f1d8be448125530d3ff60fa9d74056254236e239d0f3990c0e935cc63",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/59002631/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/59002631/complete.json",
+      "size_bytes": 85,
+      "sha256": "b05c214159b929b88575971772a360b0046e44994887ec2bf28f7d140a8deda5",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/59002631/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/59002631/request-001.json",
+      "size_bytes": 134,
+      "sha256": "64aaa1a2ae3d9a91486d72ceba293006876539f1aba35e0e8014c99a5fb945ab",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/59002631/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/59002631/response-001.json",
+      "size_bytes": 2241,
+      "sha256": "495ce5e723ea26394be2e1467a940e4b0fc049e10bc1a67b3f3581c8377a1cb5",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/59002631/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/59002631/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "a064ebf43c4a477131c990a5dd9343c94fde7808810ddfdd044e2f44939074c7",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/59400497/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/59400497/complete.json",
+      "size_bytes": 85,
+      "sha256": "6d7445d7f5c669b85b33c3088074bf55fa847ce51ad7e517ed510b35378883a2",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/59400497/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/59400497/request-001.json",
+      "size_bytes": 134,
+      "sha256": "a982512f0f877b0392f55db245c750b9ed7a4b15500cc17c142fe8e4d07ad16c",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/59400497/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/59400497/response-001.json",
+      "size_bytes": 2241,
+      "sha256": "ba847f7f2fe70029d7f616833b0c3263ca6e07fcb3131647a2cfadb85fbd2f3f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/59400497/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/59400497/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "87eb3e70776dfe4dbc4443928be28edd4c86fdc4c9a7664d16238d500c9d8a8b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/79390056/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/79390056/complete.json",
+      "size_bytes": 85,
+      "sha256": "108dc89700118dfd62fcdfe84e7ce2c49f286af52b99d9b7c83529c4d5e59102",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/79390056/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/79390056/request-001.json",
+      "size_bytes": 134,
+      "sha256": "9db444214fc3041b645dc25aa1fd0bce24405730decdad6bbc9ff8e4ca6fef0f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/79390056/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/79390056/response-001.json",
+      "size_bytes": 1670,
+      "sha256": "ef94579ff4277072d1b659fe91bd8e84f598c05244b6830509abb897d9211915",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/79390056/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/79390056/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "06bf5d96bd68a4ed0e745484fef314ee4d7f7aeef412c9caf4dccb9abcb3956a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/79415633/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/79415633/complete.json",
+      "size_bytes": 85,
+      "sha256": "fc8c72d848574209ff6682d832243659f5870dfd6a5de93d24db9e4656b0c640",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/79415633/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/79415633/request-001.json",
+      "size_bytes": 134,
+      "sha256": "b6b4f6bd4bf4617e08143f2b9650a288cf1de624c44b50f9bf0abd7eee8bd2cf",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/79415633/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/79415633/response-001.json",
+      "size_bytes": 1670,
+      "sha256": "c0bfa33ae1a1b390086a17002c242a8d916e94b658af122d3b3ab4340b0e011a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/79415633/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/79415633/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "d640a6bafa284c6f9c3032464761e4202734af5d3c77ca186f64eecc7e3cf6ec",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/80169466/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/80169466/complete.json",
+      "size_bytes": 85,
+      "sha256": "c4cdb97e1b15040b47520031a88fd102f197d840738a3c1c88ed3abbc5db0751",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/80169466/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/80169466/request-001.json",
+      "size_bytes": 134,
+      "sha256": "3a55a0b25bbc3ff0284905557c76457b242662c47a00642bf215777b058322ff",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/80169466/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/80169466/response-001.json",
+      "size_bytes": 2403,
+      "sha256": "10681d2af82bbe0b15765feed1e8cd65a2d5c590fe3e625d6a92ace507432090",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/80169466/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/80169466/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "14259721ef30c0fa9e9efe8bf0fced2135fc1925e2a739dd24e11ac4c4e965a6",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/81429000/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/81429000/complete.json",
+      "size_bytes": 85,
+      "sha256": "827f8f6f227a86fdf16bbd10c5764bc256c9c1bea0287dfc0766dafe0ac772ac",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/81429000/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/81429000/request-001.json",
+      "size_bytes": 134,
+      "sha256": "e315105b576b6062db661e50922700c69a4646a7b52fe4d9d2560af78a03d936",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/81429000/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/81429000/response-001.json",
+      "size_bytes": 2403,
+      "sha256": "7a9495bf545ba5ff4ed08d63b091711c870e7cdf3e4e6f9d67d34a6811b73c3a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/81429000/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/81429000/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "ca0a84c90f56c23a510debaaf6d9dc0cbc6a0ff7f6b8d1c6b39fff862c32f067",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/84323389/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/84323389/complete.json",
+      "size_bytes": 85,
+      "sha256": "fb472850d887a33ec79f90bf9c7154147f2902a872467d77537e9632d7b6fc60",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/84323389/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/84323389/request-001.json",
+      "size_bytes": 134,
+      "sha256": "7e499c68327ce7e481db176aaa0d6a403e2c3bed01422025eb86ed931df0b5da",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/84323389/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/84323389/response-001.json",
+      "size_bytes": 1661,
+      "sha256": "d34d5101ca7ed9bb265706113107fa8d0042be89626c9567c24bea7082d78b8a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/84323389/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/84323389/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "8ba47704474f024ea7b1eee57091905d623c7a46a6c45bdc5f3a005326b932c8",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/87082197/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/87082197/complete.json",
+      "size_bytes": 85,
+      "sha256": "4c84f44a23b527be880deb5b66280fb7d1f1b081b42bd3492ef61ce3114d7e25",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/87082197/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/87082197/request-001.json",
+      "size_bytes": 134,
+      "sha256": "40c4cc2369aca41047e8d9c78784bf617eb73ab4f3fee1b9c4daf59350656f34",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/87082197/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/87082197/response-001.json",
+      "size_bytes": 1661,
+      "sha256": "cc27f4aa3e39be1fb7f6ca3f0ec0c52cac9694b2f7637e1d15dee65e08e36478",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-products/87082197/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-products/87082197/response-001.json.provenance.json",
+      "size_bytes": 465,
+      "sha256": "53c8feb69e9e258e39022020b6c4e0457e8b98ed9d6d4d3b9902f5533efdf669",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-provider-id/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-provider-id/complete.json",
+      "size_bytes": 86,
+      "sha256": "4d276a4a13e4abe6bdd5a05da8026ae75213a5bec0c369f853ef93f625ac0bab",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-provider-id/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-provider-id/request-001.json",
+      "size_bytes": 400,
+      "sha256": "df37a0e6602bfa149db94693f82f3713d986a160f2d2b4ca2028f539d0cab2ed",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-provider-id/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-provider-id/response-001.json",
+      "size_bytes": 13415,
+      "sha256": "b065a764168daf0edee03b4231452f55f0dfa9ff2c5e7adb3d9e87f5986dd84e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/all-provider-id/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/all-provider-id/response-001.json.provenance.json",
+      "size_bytes": 690,
+      "sha256": "2b307796b6663f972cba40860017d9a87da534dfacc870716aab3677761047ab",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/cone/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/cone/request-001.json",
+      "size_bytes": 371,
+      "sha256": "8f9573353d4b16546e75d6fc533407d66aebb102648d15aebeb5ad25f884f9dc",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/cone/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/cone/response-001.json",
+      "size_bytes": 110,
+      "sha256": "f4b43744dc5ba9b4af312b8a670902e00e0c63b012ccc66b50fcbc6631d4edf1",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/cone/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/cone/response-001.json.provenance.json",
+      "size_bytes": 686,
+      "sha256": "cdb5033b9fd09452e9e20b5c450c719a5a7b5e2f9be9815747d605c9b12aacdc",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/observation-summary.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/observation-summary.json",
+      "size_bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/observations/complete.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/observations/complete.json",
+      "size_bytes": 85,
+      "sha256": "8a5d812f4f03c07a65198a3bbfa5408d7e8524e9cca2785a839124773cdd3ce9",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/observations/request-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/observations/request-001.json",
+      "size_bytes": 503,
+      "sha256": "ce979a579f71fc1cfffdddda68d89768b50f4ec58e773f745214cb63a5773736",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/observations/response-001.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/observations/response-001.json",
+      "size_bytes": 1481,
+      "sha256": "0a0cc9ce2b44c1e3b78da75446514a8566ceafed21f7fe9eaaf934df1a9546ab",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/observations/response-001.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/observations/response-001.json.provenance.json",
+      "size_bytes": 774,
+      "sha256": "b2c5ea3b857f22345da4a9a245aec197da54ab7b50404a7008cb8eedaa0d0a5b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/201308024/products-summary.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/201308024/products-summary.json",
+      "size_bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/audit-inventory.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/audit-inventory.json",
+      "size_bytes": 31720,
+      "sha256": "4a14d007839e84bc95ed4424a0e96b111739bd7100d8372226fc411bbea008bc",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/declaration.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/declaration.json",
+      "size_bytes": 372,
+      "sha256": "5dcb9a62fe85e80e0c4f1f0b9e1894851170e1f620557a2997a30887df02bc68",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/results.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/results.json",
+      "size_bytes": 6908,
+      "sha256": "75cb9c21596c021e81b76c3af28da427fcab98e0537b852b6e497b7714c68562",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/supplement-declaration.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/supplement-declaration.json",
+      "size_bytes": 400,
+      "sha256": "529b0841018f4685aaf981370e44fb52b2d8c2f63903aab8793885970f2348b3",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/alternate-tess-201308024/supplement-results.json",
+      "source_path": "/workspace/ad-astra/data/alternate-tess-201308024/supplement-results.json",
+      "size_bytes": 86051,
+      "sha256": "c798802539d3fa7c2c929d30a598a233d4353afb078858f0861147a19995b710",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/declaration.json",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/declaration.json",
+      "size_bytes": 357,
+      "sha256": "e2b6e5b6613f21ea02d7d355b6e28b78727029f0a1eb0956e612fea7315c1955",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/galah-gaia.provenance.json",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/galah-gaia.provenance.json",
+      "size_bytes": 329,
+      "sha256": "c5af68a163cdd9c9accb678db1e042a9be380965c8567301e6206e1601632650",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/galah-gaia.xml",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/galah-gaia.xml",
+      "size_bytes": 33711,
+      "sha256": "65c8e439f45bdc58b1025aa8a12c65c1460f5378ebc7dd9d528c96b65637d58f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/galah-sb2-ReadMe.provenance.json",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/galah-sb2-ReadMe.provenance.json",
+      "size_bytes": 246,
+      "sha256": "4c682305a8775b7369d2479ff9d8454dd6be2004e0011d1a80b6634aec9f33f0",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/galah-sb2-ReadMe.txt",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/galah-sb2-ReadMe.txt",
+      "size_bytes": 20362,
+      "sha256": "d74e301abe1d91baca6a05b5a6c337369841239dd2d885dfab7ed64f177e7aa6",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/galah-spectrum.provenance.json",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/galah-spectrum.provenance.json",
+      "size_bytes": 325,
+      "sha256": "94a603babf9b90b02eabf4e248915852670bb29e068f7b0f075ed0447cbfe769",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/galah-spectrum.xml",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/galah-spectrum.xml",
+      "size_bytes": 33707,
+      "sha256": "2b619c12f439a39e8dc1ff9538cfa38101bfb91b4681c1b6cec0c60ed132e926",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/parse-amendment.json",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/parse-amendment.json",
+      "size_bytes": 742,
+      "sha256": "fbea7697cca6481e6b34f4b964cd8d6585930f69cd1b6a1887c0bd0e046bab43",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/query-declaration.json",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/query-declaration.json",
+      "size_bytes": 796,
+      "sha256": "74ac9adc87de7746c05a68e7f7063095b42b8d9feea826197e4c55a6af5b4869",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/reparsed-results.json",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/reparsed-results.json",
+      "size_bytes": 3957,
+      "sha256": "02f8348bd8ec0e64d3fb299dd8cba8b2facfdad0ac8e7812f8e78a4eac0b4f65",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/results.json",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/results.json",
+      "size_bytes": 1105,
+      "sha256": "19f617afc13b140ac58ac205b8e87421fb1a16b7713e0f821773d716b154596a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/sb9-ReadMe.provenance.json",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/sb9-ReadMe.provenance.json",
+      "size_bytes": 236,
+      "sha256": "a34b83faab170214a9f9772a9d50a22a129a571ac090dd0a3a1c984a45b5b012",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/sb9-ReadMe.txt",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/sb9-ReadMe.txt",
+      "size_bytes": 9142,
+      "sha256": "20bdf835df8b86bc643e346f167df3d5cdd0fe010ef584e346fb3cd793ea07dc",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/sb9-position.provenance.json",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/sb9-position.provenance.json",
+      "size_bytes": 329,
+      "sha256": "1148fdf056181e86964a8411932311151db35dcde85334fb7550445e8cea95e9",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/binary-prior-201308024/sb9-position.xml",
+      "source_path": "/workspace/ad-astra/data/binary-prior-201308024/sb9-position.xml",
+      "size_bytes": 6352,
+      "sha256": "5d84cde32c950ea0b50b5fbc5c5ecdef6c6bf7a1f1e7e8a4e45bb71aa16dfc9d",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/asas-home.html",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/asas-home.html",
+      "size_bytes": 15021,
+      "sha256": "3740e2fa470a0e6782ceb69f43f4ef19509d4d384a9152cff1a3f85cf9d9619f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/asas-home.html.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/asas-home.html.provenance.json",
+      "size_bytes": 224,
+      "sha256": "beb3a67485a82a91b2feece43b63ffa575f466e44b7080e873a8aef4c7f69f2d",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/asas-photometry-cone.html",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/asas-photometry-cone.html",
+      "size_bytes": 13039,
+      "sha256": "99f26e6035b7da630ab64a4cd46cc968a66f3dd4ba8951fc2177648143e9e279",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/asas-photometry-cone.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/asas-photometry-cone.provenance.json",
+      "size_bytes": 235,
+      "sha256": "f073c50c8b3c09945b4163f3895578b591d151c3db7fc5e507058584be421a0f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/asas-photometry-home.html",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/asas-photometry-home.html",
+      "size_bytes": 10176,
+      "sha256": "962801595a5dc0b302ac8298bf80faf6c6c368de1d746cd0f260f5e0cc6b0f10",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/asas-photometry-home.html.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/asas-photometry-home.html.provenance.json",
+      "size_bytes": 209,
+      "sha256": "513b5560bce069d4185c2ceb71b8e1a613552fd93356c7e348475675c6d8e3ac",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/availability-summary.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/availability-summary.json",
+      "size_bytes": 3991,
+      "sha256": "b710b87e93b88d85d4fc761fb6495d56fb2baf59692579dcd776b60ea5413da7",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/bright-exact-cone.html",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/bright-exact-cone.html",
+      "size_bytes": 12832,
+      "sha256": "1d1d912a62a029c983748cf5939bbe3588e991f57b843960acaff8b4fef8bbb3",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/bright-exact-cone.html.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/bright-exact-cone.html.provenance.json",
+      "size_bytes": 257,
+      "sha256": "7a5228780c578fc2599599db01f0936bc0648a0da33c796a112506b3df2b263c",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/bright-neighbor.csv",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/bright-neighbor.csv",
+      "size_bytes": 10795,
+      "sha256": "330f68aec836b1683db58f6175078947d71aa9d736bd769addb0334ace7c247d",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/bright-neighbor.csv.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/bright-neighbor.csv.provenance.json",
+      "size_bytes": 250,
+      "sha256": "e4670af40ceb976259522dc0078a39df3fe70ebf65771f6cb2c0628d4abdb27b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/bright-neighbor.html",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/bright-neighbor.html",
+      "size_bytes": 119775,
+      "sha256": "c23d0eba147b8efa2d46e9564b71a1450245149eec09c77b33ced81e3d25057b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/bright-neighbor.html.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/bright-neighbor.html.provenance.json",
+      "size_bytes": 247,
+      "sha256": "6a651dadc4de02468a567d84ddfb71f9ca807db9ce8bbaa6b88b177ce739176a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/bright-neighbor.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/bright-neighbor.json",
+      "size_bytes": 9601,
+      "sha256": "17ee2a9db3e75a1fdf957c6556b77bd4813d118e4be9f3545a160c2b30cf27d8",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/bright-neighbor.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/bright-neighbor.json.provenance.json",
+      "size_bytes": 250,
+      "sha256": "409837e3ab91645029ca60a935d54e59633f4301e4ca8b36cb1cf47d27fc9ff7",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/field-control-AP37233363.csv",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/field-control-AP37233363.csv",
+      "size_bytes": 11343,
+      "sha256": "cf25c313e83051792d058071b26e1b9ffdc8ac4b4722a4ff9180a5d7c765e585",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/field-control-AP37233363.csv.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/field-control-AP37233363.csv.provenance.json",
+      "size_bytes": 250,
+      "sha256": "32a9fa8968746a044d6acecb2d1ed5fd2fdc8e1c30a4bd1f70a520b4ebf462e5",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/field-control-AP37233363.html",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/field-control-AP37233363.html",
+      "size_bytes": 120226,
+      "sha256": "d6c1c7cb10d8ad527cbbc52f0d3ec9002550f2ae548a2698a9506f5a46548e58",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/field-control-AP37233363.html.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/field-control-AP37233363.html.provenance.json",
+      "size_bytes": 247,
+      "sha256": "130e9fd2c808e2b1ae3bd368e67f1e02733bc9c2f2d890ea536195a68169a97a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/field-control-AP37233363.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/field-control-AP37233363.json",
+      "size_bytes": 9777,
+      "sha256": "8530bdc44cde35f23dd3bfad12b468598138d08e020befde3165958c325fba54",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/field-control-AP37233363.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/field-control-AP37233363.json.provenance.json",
+      "size_bytes": 250,
+      "sha256": "dd2cf3dee94dfce4a41ae893d283a7be649ea22507058ff5ad480d9b67071da9",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/modern-api-schema-recheck.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/modern-api-schema-recheck.json",
+      "size_bytes": 307,
+      "sha256": "42d0448d2f34e030b71b61832906e8a3f0add035fbfa4757de6c025cf120e5c1",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/modern-api-schema-response.txt",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/modern-api-schema-response.txt",
+      "size_bytes": 16,
+      "sha256": "301ab39b129a9f65a8f8d7bfee350718cd0268497182e59c7ce9c036adf0a213",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/modern-api-schema-response.txt.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/modern-api-schema-response.txt.provenance.json",
+      "size_bytes": 221,
+      "sha256": "d3d10ef2fecb6f60ad19426e89bb13c3db9fa4c8bd9ad2657fac40ea122346d3",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/official-client.py",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/official-client.py",
+      "size_bytes": 30167,
+      "sha256": "8f00bb5930c60219f1cf45c1975c1d0c9567b976923aeaf39a0f4692cee9b33b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/official-client.py.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/official-client.py.provenance.json",
+      "size_bytes": 302,
+      "sha256": "cd7a5d0a87869d8ccc9b5bef0fc4cccd68ff707eb05495b8c8ca4f136de43ba1",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/official-utils.py",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/official-utils.py",
+      "size_bytes": 288,
+      "sha256": "63bdc180ba847272d9a8ddcef3b537a69f789830ffcc6b958e7b2a8472a1a005",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/official-utils.py.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/official-utils.py.provenance.json",
+      "size_bytes": 301,
+      "sha256": "c26307bce6e2004cdab54b926292037c0504796607f55b070aaffc1ad3d9e349",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/ogle-home.html",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/ogle-home.html",
+      "size_bytes": 2329,
+      "sha256": "39623b6f708f8938def7de044d136dee290f69782a32bb2435ee0853106bb393",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/ogle-home.html.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/ogle-home.html.provenance.json",
+      "size_bytes": 202,
+      "sha256": "018a89a5b610262898a79d28df21c6a8c82d24a0be5c5f39f715ceb1e02ed93f",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/ogle-ocvs.html",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/ogle-ocvs.html",
+      "size_bytes": 196,
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/ogle-ocvs.html.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/ogle-ocvs.html.provenance.json",
+      "size_bytes": 212,
+      "sha256": "2247d76d6c2a55878ef62fbfc602d6fe788bff62232c14b4e38384f0e073a774",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/skypatrol-readme.md",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/skypatrol-readme.md",
+      "size_bytes": 29901,
+      "sha256": "bc7dab96946e270434a4f394a51a10bd080b64c81c7b007926922e4a4a659fe6",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/skypatrol-readme.md.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/skypatrol-readme.md.provenance.json",
+      "size_bytes": 312,
+      "sha256": "d07a92ca921837f2bcbac6897acc938a2e0ebde87fc9a11055ceae6a1c9f832b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/target-tight-cone.html",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/target-tight-cone.html",
+      "size_bytes": 12826,
+      "sha256": "afddb09250bfb0f6e00768c0a27657e9d80e450ef8c9494454d1cdec711feb53",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/target-tight-cone.html.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/target-tight-cone.html.provenance.json",
+      "size_bytes": 255,
+      "sha256": "998fc16b5476c47e40ac00a5e449e36ca085180a64599385869dfa5afce17dd4",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/target.csv",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/target.csv",
+      "size_bytes": 10755,
+      "sha256": "ddc379c0b482b7db11af32f950e285990e90fddf80c9970413f00155911f91b9",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/target.csv.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/target.csv.provenance.json",
+      "size_bytes": 250,
+      "sha256": "16fa854e516e5e0d9c2413ccf250494fce41d8ba3f7b44bd7f9b8760c354fafb",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/target.html",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/target.html",
+      "size_bytes": 119733,
+      "sha256": "b75bdc7f195dad38de1967169ed06f0544c0960c801c1af4152244316c331d6e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/target.html.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/target.html.provenance.json",
+      "size_bytes": 247,
+      "sha256": "77d84d440d8206d320bf88426172a81a1cfa18e9b94787225ba3f7fcbf25aa19",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/target.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/target.json",
+      "size_bytes": 9587,
+      "sha256": "90b0d0ea1d067999df1e94fc320d379d0c527e895950ec020fb17c77bbaaae8b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/ground-validation-201308024/target.json.provenance.json",
+      "source_path": "/workspace/ad-astra/data/ground-validation-201308024/target.json.provenance.json",
+      "size_bytes": 250,
+      "sha256": "1bccef222d4eefd9f30075eb141239bed823f86fe7bd14ada2b644d5dbd3d3bf",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/native-spoc-201308023/cache/1af77ed55f185bf4bad15429d0bd74ed52634660dc7418f14570a8eaaa0b2e72.fits",
+      "source_path": "/workspace/ad-astra/data/native-spoc-201308023/cache/1af77ed55f185bf4bad15429d0bd74ed52634660dc7418f14570a8eaaa0b2e72.fits",
+      "size_bytes": 2039040,
+      "sha256": "2386eb636a274130fd9735f6d042e7b5cf627f81ee52f199f163a18f6f8c9657",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/native-spoc-201308023/cache/1af77ed55f185bf4bad15429d0bd74ed52634660dc7418f14570a8eaaa0b2e72.json",
+      "source_path": "/workspace/ad-astra/data/native-spoc-201308023/cache/1af77ed55f185bf4bad15429d0bd74ed52634660dc7418f14570a8eaaa0b2e72.json",
+      "size_bytes": 893,
+      "sha256": "51d143d6979a129f4d907e1fb8a96f38751cfb6a0d594dbe3b552310c562e8e2",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/native-spoc-201308023/cache/32525b3c1dcd8b9ea9b3bb2efbdce00a6ad8659e18f320d7e470836d6a68b3d4.fits",
+      "source_path": "/workspace/ad-astra/data/native-spoc-201308023/cache/32525b3c1dcd8b9ea9b3bb2efbdce00a6ad8659e18f320d7e470836d6a68b3d4.fits",
+      "size_bytes": 49184640,
+      "sha256": "f2c590daf6073b8dd8d893017ae5ba47d48612a003d585b179676764328a34e6",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/native-spoc-201308023/cache/32525b3c1dcd8b9ea9b3bb2efbdce00a6ad8659e18f320d7e470836d6a68b3d4.json",
+      "source_path": "/workspace/ad-astra/data/native-spoc-201308023/cache/32525b3c1dcd8b9ea9b3bb2efbdce00a6ad8659e18f320d7e470836d6a68b3d4.json",
+      "size_bytes": 989,
+      "sha256": "7b4afcb77fd8f513ed2de5871fbcd82bad8fd8cb4ca3e766324262373ecf432e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/native-spoc-201308023/cache/afb084e717ef75cf330de2b9ed09fba5f0a3f0bb24f4062be0bfca13d31ace0a.fits",
+      "source_path": "/workspace/ad-astra/data/native-spoc-201308023/cache/afb084e717ef75cf330de2b9ed09fba5f0a3f0bb24f4062be0bfca13d31ace0a.fits",
+      "size_bytes": 48355200,
+      "sha256": "3b5d0153a348b1871aba095b5c1fe5364fa22592d9d2a0ea52250be8f4e5416c",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/native-spoc-201308023/cache/afb084e717ef75cf330de2b9ed09fba5f0a3f0bb24f4062be0bfca13d31ace0a.json",
+      "source_path": "/workspace/ad-astra/data/native-spoc-201308023/cache/afb084e717ef75cf330de2b9ed09fba5f0a3f0bb24f4062be0bfca13d31ace0a.json",
+      "size_bytes": 989,
+      "sha256": "3e5c4129b1f2441d5060cce326ff5476f4109874a28c9b6a5b1a8e5b916ac986",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/native-spoc-201308023/cache/e5666e59cb027c0afa386c8fa74770d251c3d0b422cbc66ccfa7feaa596a6ba0.fits",
+      "source_path": "/workspace/ad-astra/data/native-spoc-201308023/cache/e5666e59cb027c0afa386c8fa74770d251c3d0b422cbc66ccfa7feaa596a6ba0.fits",
+      "size_bytes": 2004480,
+      "sha256": "fa3a6e5446bb203d0b0e98bdb44dd3a1be66d2c0eb7a263cafe6b8b1d75f66bd",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/native-spoc-201308023/cache/e5666e59cb027c0afa386c8fa74770d251c3d0b422cbc66ccfa7feaa596a6ba0.json",
+      "source_path": "/workspace/ad-astra/data/native-spoc-201308023/cache/e5666e59cb027c0afa386c8fa74770d251c3d0b422cbc66ccfa7feaa596a6ba0.json",
+      "size_bytes": 893,
+      "sha256": "043a70373f62db2e1b2735fb983fb4f2b448602e94e751d0592157ff1201ad5d",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tars-aggregate-review/HOW_TO_USE.md",
+      "source_path": "/workspace/ad-astra/data/tars-aggregate-review/HOW_TO_USE.md",
+      "size_bytes": 14845,
+      "sha256": "948896d5ed012b34bc3d8341287eaa5c12c7976f799c90776b04ea468df678d8",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tars-aggregate-review/HOW_TO_USE.provenance.json",
+      "source_path": "/workspace/ad-astra/data/tars-aggregate-review/HOW_TO_USE.provenance.json",
+      "size_bytes": 310,
+      "sha256": "523201d581ad32ad9b0e8dfe484caf7481277023670c89d7473839ab15d17501",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tars-aggregate-review/catalogue.provenance.json",
+      "source_path": "/workspace/ad-astra/data/tars-aggregate-review/catalogue.provenance.json",
+      "size_bytes": 339,
+      "sha256": "0228f62916c94d1eb22f1a5b844ab817070bdf7a57d2a462fb74d97add506594",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tars-aggregate-review/gaia-identity-results.json",
+      "source_path": "/workspace/ad-astra/data/tars-aggregate-review/gaia-identity-results.json",
+      "size_bytes": 366,
+      "sha256": "0066dec07fdb1749f6f0ed92def1f236aabc59a7fa1c61b03e6c84b30fbfd838",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tars-aggregate-review/query.log",
+      "source_path": "/workspace/ad-astra/data/tars-aggregate-review/query.log",
+      "size_bytes": 3577,
+      "sha256": "c37090e8bbcdb13b74fb9a26fcf2e79625c79854577cb4f42f6e5ed3b3277424",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tars-aggregate-review/record.json",
+      "source_path": "/workspace/ad-astra/data/tars-aggregate-review/record.json",
+      "size_bytes": 12093,
+      "sha256": "ac3adaf2101fedf1d39e067e7bc370a1a8a8c815a37b3e1be2a9f78f3f77cef1",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tars-aggregate-review/record.provenance.json",
+      "source_path": "/workspace/ad-astra/data/tars-aggregate-review/record.provenance.json",
+      "size_bytes": 197,
+      "sha256": "07e5717616e3c7e17984ba69e67f42462dd6fa02676e6ac0689078bf84465802",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tars-aggregate-review/results.json",
+      "source_path": "/workspace/ad-astra/data/tars-aggregate-review/results.json",
+      "size_bytes": 2888,
+      "sha256": "0368690f7b3eb77d181424a60c987a1f5ec010ea458730ef04bfeedba8c608da",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tars-aggregate-review/tars_table_2.csv.zip",
+      "source_path": "/workspace/ad-astra/data/tars-aggregate-review/tars_table_2.csv.zip",
+      "size_bytes": 136182994,
+      "sha256": "5f774c42d440516c3a679d288fe60f4877d6cd695019e93127bbe704b38d4df6",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/cache/3ca00301d70a36a58b5000851a3e256185ef1b37b0250624ea14dd12404191c0.fits",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/cache/3ca00301d70a36a58b5000851a3e256185ef1b37b0250624ea14dd12404191c0.fits",
+      "size_bytes": 57600,
+      "sha256": "988a0198dd9563a8c4fb40a5343de770c5aa5f4b092948852d73a16daf9a8945",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/cache/3ca00301d70a36a58b5000851a3e256185ef1b37b0250624ea14dd12404191c0.json",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/cache/3ca00301d70a36a58b5000851a3e256185ef1b37b0250624ea14dd12404191c0.json",
+      "size_bytes": 910,
+      "sha256": "59f8d3fda3711f51c7591c32bfc19496b7ba34d8bc002ef289591a47770e0081",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/cache/d44102c2509a74221a8febde83e1cfa98563a36c645c7b6ab0c555cfdb070392.fits",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/cache/d44102c2509a74221a8febde83e1cfa98563a36c645c7b6ab0c555cfdb070392.fits",
+      "size_bytes": 54720,
+      "sha256": "5e9d060b72a7e0f86b1ca93b1b82b009409f19daa8aa874163cb6bd19c15b556",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/cache/d44102c2509a74221a8febde83e1cfa98563a36c645c7b6ab0c555cfdb070392.json",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/cache/d44102c2509a74221a8febde83e1cfa98563a36c645c7b6ab0c555cfdb070392.json",
+      "size_bytes": 910,
+      "sha256": "17c8a34d2cdc8a62ba8d92dc6e5ee2c51d37742c2cb87822b1f938a063dcfa1e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/declaration.json",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/declaration.json",
+      "size_bytes": 3131,
+      "sha256": "a9eddc99011af6efe305af4c8956c0694a5282ed6f7b8c77c63b2159722a8b4a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-ffi.py",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-ffi.py",
+      "size_bytes": 17918,
+      "sha256": "72aced0881e21036e2282c7d0bd8448a9407e4e94d8426b589c35fe1ad9a5ba4",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-ffi.py.provenance.json",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-ffi.py.provenance.json",
+      "size_bytes": 235,
+      "sha256": "704e00259b90f6192ed889ddd25acab0197a3f53abebebeb0875b7da9225dba2",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-lc-plot.py",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-lc-plot.py",
+      "size_bytes": 136246,
+      "sha256": "fb5c2cc379aed32c4318010a371079e4dbfdf8942a56de38941d4324265babb2",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-lc-plot.py.provenance.json",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-lc-plot.py.provenance.json",
+      "size_bytes": 256,
+      "sha256": "b970c51aaa3375c35523e0c06085109f6af9cdc57d78397ebaa983dcf79904b1",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-page.html",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-page.html",
+      "size_bytes": 118104,
+      "sha256": "d5256ee399d95781b7a22c02a06a60663eaa9e8a621638686f6c7cf02eb7389c",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-page.html.provenance.json",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-page.html.provenance.json",
+      "size_bytes": 203,
+      "sha256": "844e9a10bd59bd959387637d887ebb160bcfdb599ca556e309ff9ac540d7f1f1",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-readme.txt",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-readme.txt",
+      "size_bytes": 1933,
+      "sha256": "16058aab41e3587b560f91be3ca5f8b27caee79e823a5f7e09c8105e152713de",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-readme.txt.provenance.json",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-readme.txt.provenance.json",
+      "size_bytes": 229,
+      "sha256": "45bcc5366c27845800f9171b7e35132b70ce39f1d26c6f66771fa36497c434e7",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-source_output.py",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-source_output.py",
+      "size_bytes": 3171,
+      "sha256": "cdd0ac8038dcd8c07dfdb3d6942a0a3198d1dd230166fa2b33ab4881b710ec0b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-source_output.py.provenance.json",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-source_output.py.provenance.json",
+      "size_bytes": 245,
+      "sha256": "b9e24fae0e24c03c6928a6ba79e40576b2ad8f905f9809b93f5b258d87511943",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-target_lightcurve.py",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-target_lightcurve.py",
+      "size_bytes": 24821,
+      "sha256": "eeef8fcdc307ccf6ce18946ec2303887b47fdc11acbcc46909b5487acdf6263b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/data/tglc-201308024/official-target_lightcurve.py.provenance.json",
+      "source_path": "/workspace/ad-astra/data/tglc-201308024/official-target_lightcurve.py.provenance.json",
+      "size_bytes": 249,
+      "sha256": "ba15e39bdc36de7023817d17e4c12db0a35871d2d99f19d731d43b1a81cb2c6d",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/docs/alternate-tess-201308024.md",
+      "source_path": "/workspace/ad-astra/docs/alternate-tess-201308024.md",
+      "size_bytes": 2777,
+      "sha256": "b87ba9b033403be37c2028921a6a3a96de4f6e159546b522dbdba56e297dfad3",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/docs/binary-prior-201308024.md",
+      "source_path": "/workspace/ad-astra/docs/binary-prior-201308024.md",
+      "size_bytes": 1733,
+      "sha256": "7c7a36d51434903a8346e3759deff4383916d8b629f5d953a712a802cc34d4fc",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/docs/ground-validation-201308024.md",
+      "source_path": "/workspace/ad-astra/docs/ground-validation-201308024.md",
+      "size_bytes": 7434,
+      "sha256": "fef8040728f4d10de09591b7e8a370af8921cfe7304529baa3b32414f82cc2cc",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/docs/incremental-checkpoint.md",
+      "source_path": "/workspace/ad-astra/docs/incremental-checkpoint.md",
+      "size_bytes": 4543,
+      "sha256": "79010d9a3c83488cba4a32c2996a79df04b8f03af62916b05043ff726f84ba50",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/docs/native-spoc-201308023.md",
+      "source_path": "/workspace/ad-astra/docs/native-spoc-201308023.md",
+      "size_bytes": 5968,
+      "sha256": "838ac013fc75020ff0e9c07ae15362c04551b860fe111a11595f41a688be5b27",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/docs/research-progress.md",
+      "source_path": "/workspace/ad-astra/docs/research-progress.md",
+      "size_bytes": 15406,
+      "sha256": "d6d755abfc86f9729bc41c89e04d5dec500bffe662e590815f08101e30d0c9b7",
+      "change": "modified"
+    },
+    {
+      "archive_path": "ad-astra/docs/rotation-prior-review.md",
+      "source_path": "/workspace/ad-astra/docs/rotation-prior-review.md",
+      "size_bytes": 4389,
+      "sha256": "dee6313c10191de61f83ec18e153c9f97cb26233b667d41fb0ce3d232f985cf3",
+      "change": "modified"
+    },
+    {
+      "archive_path": "ad-astra/docs/sap-field-frequency-201308024.md",
+      "source_path": "/workspace/ad-astra/docs/sap-field-frequency-201308024.md",
+      "size_bytes": 1460,
+      "sha256": "ee366735fca3b6663b462d16299d2e982c1547ef5ba6d45b6d8177840a2afcdd",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/docs/tars-aggregate-review.md",
+      "source_path": "/workspace/ad-astra/docs/tars-aggregate-review.md",
+      "size_bytes": 3206,
+      "sha256": "6614b9c7203236cb9d12618a43a4e31116ffeb6dba78fd5c593bfdd333a4bca8",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/docs/tglc-201308024.md",
+      "source_path": "/workspace/ad-astra/docs/tglc-201308024.md",
+      "size_bytes": 5372,
+      "sha256": "54fc8e694920305acb33b1833175ed3ac1b361418cb2edbdf93dfe7aadeef62a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024/bright-neighbor.png",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024/bright-neighbor.png",
+      "size_bytes": 140333,
+      "sha256": "b0a17e054042a9064a03fc372375b1e5641eab47e492577163b37e0dedbdc92d",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024/declaration.json",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024/declaration.json",
+      "size_bytes": 1289,
+      "sha256": "1092490bcb521b4b19844fe68345ed35c1c1d25bfcc980b10341c1b537562d8b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024/failure.json",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024/failure.json",
+      "size_bytes": 258,
+      "sha256": "c8a2c6be4554977a3710d9f3cfdfce53cd5272a70c26457ab8feb6f3f262ce22",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024/field-control-AP37233363.png",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024/field-control-AP37233363.png",
+      "size_bytes": 73405,
+      "sha256": "5d6bd197ca26fb7f73c1b737d80e558a6eac9c10e28a3bd451ae6e42c584933e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024/source-failed.py",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024/source-failed.py",
+      "size_bytes": 5623,
+      "sha256": "5808f9afa9fbda1ae6c071f2adfa0444688cd1eab92a788d204a647b8f4305e8",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024/target.png",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024/target.png",
+      "size_bytes": 190494,
+      "sha256": "b540bbd6445bdcfc9eded9adc965550cd5e00fec1968aa38e77973451e555149",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024-v2/bright-neighbor.png",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024-v2/bright-neighbor.png",
+      "size_bytes": 140333,
+      "sha256": "b0a17e054042a9064a03fc372375b1e5641eab47e492577163b37e0dedbdc92d",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024-v2/declaration.json",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024-v2/declaration.json",
+      "size_bytes": 1289,
+      "sha256": "89242da446250dbd4a4a9a31266815c7cb18b2c3f1c6d78c247f6c9bf9fefc1a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024-v2/field-control-AP37233363.png",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024-v2/field-control-AP37233363.png",
+      "size_bytes": 73405,
+      "sha256": "5d6bd197ca26fb7f73c1b737d80e558a6eac9c10e28a3bd451ae6e42c584933e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024-v2/numerical-verification.json",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024-v2/numerical-verification.json",
+      "size_bytes": 478,
+      "sha256": "0160c0caf78b0c7c0c0e5ffce1baf1b66bf3e8963262f93fb95ff9be43c473ed",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024-v2/results.json",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024-v2/results.json",
+      "size_bytes": 10831,
+      "sha256": "9d8c90a8f8a540e78b605689431c5aaeae2c4c63e417a2a771fefdd81f5a2b78",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/ground-validation-201308024-v2/target.png",
+      "source_path": "/workspace/ad-astra/runs/ground-validation-201308024-v2/target.png",
+      "size_bytes": 190494,
+      "sha256": "b540bbd6445bdcfc9eded9adc965550cd5e00fec1968aa38e77973451e555149",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023/declaration.json",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023/declaration.json",
+      "size_bytes": 1085,
+      "sha256": "125ea8f8d9dfda52de6c7f09b371043c6d3f09738ba904395ac504cf8cf2c460",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023/retrieval.json",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023/retrieval.json",
+      "size_bytes": 778,
+      "sha256": "d9ceca1b1917a9b73cecdd052669cdfd54a7649927e424d77ca76be76e479ef6",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023/source.py",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023/source.py",
+      "size_bytes": 4371,
+      "sha256": "4e2f77e54ab5ff3a389b10b796c51796a07eba89b1cba376089e63484ebb5f61",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-analysis/declaration.json",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-analysis/declaration.json",
+      "size_bytes": 1121,
+      "sha256": "e70431395599657688331ca44f7eb5c1682e288fbd99235b4f06386a91f58e78",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-analysis/results.json",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-analysis/results.json",
+      "size_bytes": 28738,
+      "sha256": "d2cfb7a6948462da818fdeced3fb882c5ddd36762b9c88294ea697d7708f4448",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-analysis/s1-LC-fixed-periods.png",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-analysis/s1-LC-fixed-periods.png",
+      "size_bytes": 816098,
+      "sha256": "2570d12cd71519b3c9fc6fab161dc3658457903bd3f87095305426b31b4098b9",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-analysis/s1-TP-fixed-periods.png",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-analysis/s1-TP-fixed-periods.png",
+      "size_bytes": 841793,
+      "sha256": "21aa684417ceca984a32706a8c6a59672aaafac2122e4f1a395201877ececcd9",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-analysis/s1-apertures.json",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-analysis/s1-apertures.json",
+      "size_bytes": 1961,
+      "sha256": "98ca567d6e8f3ac01de6619f726d790064758333ea62ea944368db11f5f7758c",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-analysis/s2-LC-fixed-periods.png",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-analysis/s2-LC-fixed-periods.png",
+      "size_bytes": 918637,
+      "sha256": "146acd67beaf2f116e89d9ae3dd816ed925fed1efa52948ecef8c1ebfc68c210",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-analysis/s2-TP-fixed-periods.png",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-analysis/s2-TP-fixed-periods.png",
+      "size_bytes": 1017654,
+      "sha256": "b19e907ef664f6b8f744d9bb9e061e95d76a9968164869be87afd0e001876004",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-analysis/s2-apertures.json",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-analysis/s2-apertures.json",
+      "size_bytes": 1963,
+      "sha256": "e0a75c0af5818ae7b83853d0d35338a4198dc0411fd50f95f25ed6bae9e302f1",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-analysis/source.py",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-analysis/source.py",
+      "size_bytes": 7051,
+      "sha256": "96ca40459ba1d4742b307c856538da619fe4987d7f9107cadb6368e95b337274",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-sensitivity/declaration.json",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-sensitivity/declaration.json",
+      "size_bytes": 1296,
+      "sha256": "5b404e62f2c2b60fe87c96d4e53a214ddb2f8f27e3ff8a3339a14ed801166c50",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-sensitivity/results.json",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-sensitivity/results.json",
+      "size_bytes": 93385,
+      "sha256": "86f8d0d7b130de3ad77bb2e78d2e66dc7e11043c38fb737c931d24532592070b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-sensitivity/source.py",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-sensitivity/source.py",
+      "size_bytes": 6417,
+      "sha256": "7f76f51b9040fcfbb13d8a73d22e8472293677e7f8c270997fedb363a00d7f74",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-sensitivity/verification.json",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-sensitivity/verification.json",
+      "size_bytes": 547,
+      "sha256": "8c659b901d785d325ec5318ad2295a778f49803cc54a55ecb4f0cb7c22a6512a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-v2/declaration.json",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-v2/declaration.json",
+      "size_bytes": 1085,
+      "sha256": "4ab07e0ad870da5c5d12fccec0c1e87b1c72191e963011ee4dcddb177a87e6cf",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-v2/retrieval.json",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-v2/retrieval.json",
+      "size_bytes": 12596,
+      "sha256": "42f682cc65aaf6bff9da070e7e0413ef6ef81c7eb015ca199964e46d24b7d985",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/native-spoc-201308023-v2/source.py",
+      "source_path": "/workspace/ad-astra/runs/native-spoc-201308023-v2/source.py",
+      "size_bytes": 4547,
+      "sha256": "09bb21b7d03b5f558b7a13991f16959c8a87ac9942632d3e1cbb1d89a0d53f3e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/round3-final-verification.txt",
+      "source_path": "/workspace/ad-astra/runs/round3-final-verification.txt",
+      "size_bytes": 179,
+      "sha256": "c5e12793c87f2f9ed636470901f8d1f4cdac490f91ce04138086706228fde618",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/round3-upload-audit.json",
+      "source_path": "/workspace/ad-astra/runs/round3-upload-audit.json",
+      "size_bytes": 436,
+      "sha256": "d38ecc84922acf3419dd847dbf0f5de46ceb3c6f20ea6a21d92902776a0b2f0e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/round3-verification.json",
+      "source_path": "/workspace/ad-astra/runs/round3-verification.json",
+      "size_bytes": 285,
+      "sha256": "52794c9f8dc9566f0eb6e40d04717bd32b1f4de849aa3a64b5d2a2ff9b77f482",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/sap-field-frequency-201308024/declaration.json",
+      "source_path": "/workspace/ad-astra/runs/sap-field-frequency-201308024/declaration.json",
+      "size_bytes": 805,
+      "sha256": "4ae6f4ad6ed1842e4cefb22be44f11d10b1b4b91fc056d0aa5645f691a44bd44",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/sap-field-frequency-201308024/results.json",
+      "source_path": "/workspace/ad-astra/runs/sap-field-frequency-201308024/results.json",
+      "size_bytes": 55025,
+      "sha256": "54a5445d02c27414f98a8e07ed8c640b96eeba5411475e54e2ebcf8bcb415ee0",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/tglc-201308024/declaration.json",
+      "source_path": "/workspace/ad-astra/runs/tglc-201308024/declaration.json",
+      "size_bytes": 931,
+      "sha256": "8701189cb59d1ece92c3efcef2e01aaf7a462add016afb2515e4aae77109ae27",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/tglc-201308024/final-integrity-audit.json",
+      "source_path": "/workspace/ad-astra/runs/tglc-201308024/final-integrity-audit.json",
+      "size_bytes": 688,
+      "sha256": "06c2715d5c9d2ec56294b152cd442d61490cd8c7b8b215c97292b34998c07b99",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/tglc-201308024/partial-results.json",
+      "source_path": "/workspace/ad-astra/runs/tglc-201308024/partial-results.json",
+      "size_bytes": 27219,
+      "sha256": "653d83c7e9ebc86ded69bf340ef9cf89068a587728d30d8a6053a6eef7f89668",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/tglc-201308024/results.json",
+      "source_path": "/workspace/ad-astra/runs/tglc-201308024/results.json",
+      "size_bytes": 29904,
+      "sha256": "71b509339ce16d2462efc128bc2e0dc9148b0eda6f79c5c9f268e27ca8359832",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/tglc-201308024/sector-1.png",
+      "source_path": "/workspace/ad-astra/runs/tglc-201308024/sector-1.png",
+      "size_bytes": 418803,
+      "sha256": "744df44218d316fedd5488ad8127c6d50eaa5befc421d7c2f7c9ae9ceea91e1b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/runs/tglc-201308024/sector-2.png",
+      "source_path": "/workspace/ad-astra/runs/tglc-201308024/sector-2.png",
+      "size_bytes": 480338,
+      "sha256": "a5d84b0ee204c3d7c67069943d949ebf0147d8e572a4ecc6f6b8705a9cad3665",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/analyze_native_spoc_201308023.py",
+      "source_path": "/workspace/ad-astra/scripts/analyze_native_spoc_201308023.py",
+      "size_bytes": 7051,
+      "sha256": "96ca40459ba1d4742b307c856538da619fe4987d7f9107cadb6368e95b337274",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/check_alternate_tess_cones.py",
+      "source_path": "/workspace/ad-astra/scripts/check_alternate_tess_cones.py",
+      "size_bytes": 2060,
+      "sha256": "ebfbadfe42656299df62cdd6453d2546b9b093236b5f8a76a612b44624f4e5c3",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/check_alternate_tess_products.py",
+      "source_path": "/workspace/ad-astra/scripts/check_alternate_tess_products.py",
+      "size_bytes": 2208,
+      "sha256": "30b06f0be906c6c74d3d0f08bfff709d93f7329a7e85d566faea7ae2a7068f07",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/create_incremental_checkpoint.py",
+      "source_path": "/workspace/ad-astra/scripts/create_incremental_checkpoint.py",
+      "size_bytes": 7041,
+      "sha256": "bd98a397b7db4c83954b8401facf761d5642ca41a448d7cd9f63d18d102d63d7",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/ground_fixed_periods_201308024.py",
+      "source_path": "/workspace/ad-astra/scripts/ground_fixed_periods_201308024.py",
+      "size_bytes": 5631,
+      "sha256": "1bf9bd456af8e30186e6c4b5d574f9262edd4e09284af0b14ed636cda81e6f6c",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/native_spoc_201308023.py",
+      "source_path": "/workspace/ad-astra/scripts/native_spoc_201308023.py",
+      "size_bytes": 4547,
+      "sha256": "09bb21b7d03b5f558b7a13991f16959c8a87ac9942632d3e1cbb1d89a0d53f3e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/native_spoc_sensitivity.py",
+      "source_path": "/workspace/ad-astra/scripts/native_spoc_sensitivity.py",
+      "size_bytes": 6417,
+      "sha256": "7f76f51b9040fcfbb13d8a73d22e8472293677e7f8c270997fedb363a00d7f74",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/parse_sap_sb2_catalogs.py",
+      "source_path": "/workspace/ad-astra/scripts/parse_sap_sb2_catalogs.py",
+      "size_bytes": 2512,
+      "sha256": "13bec4e8a5b64fb7963518989f2807829495d313c9b23599f5a0cd8cd1827652",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/review_sap_binary_catalogs.py",
+      "source_path": "/workspace/ad-astra/scripts/review_sap_binary_catalogs.py",
+      "size_bytes": 2540,
+      "sha256": "13800dc59924003fc3c0b36a151a6eb696046a6e69d4fd2a05d64ab457d2b8d4",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/review_tars_aggregate.py",
+      "source_path": "/workspace/ad-astra/scripts/review_tars_aggregate.py",
+      "size_bytes": 2983,
+      "sha256": "211a4614cb4e9483a54f3ccdb747b0b053d2366a88b3a0d6722244965e97fb6e",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/sap_field_frequency_201308024.py",
+      "source_path": "/workspace/ad-astra/scripts/sap_field_frequency_201308024.py",
+      "size_bytes": 2027,
+      "sha256": "95e63d40482fc7f4d4f38571dff9ea846e88bccf98505850f94f80de60cf399a",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/scripts/tglc_201308024.py",
+      "source_path": "/workspace/ad-astra/scripts/tglc_201308024.py",
+      "size_bytes": 3391,
+      "sha256": "01c66d0c8b3b8161151a8623fb9bb5e9628ae65b517afab649bc55d18bfbfb44",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/src/adastra/tglc.py",
+      "source_path": "/workspace/ad-astra/src/adastra/tglc.py",
+      "size_bytes": 3563,
+      "sha256": "669d6054f683c5f038fcca48bb996064276d3f357c1c9ad27046dc03ea45cf88",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/tests/test_incremental_checkpoint.py",
+      "source_path": "/workspace/ad-astra/tests/test_incremental_checkpoint.py",
+      "size_bytes": 1327,
+      "sha256": "40de9935f6d9d6ff49fc30a9fbf2dc3b0968b8a7eb01b7980e14e7c818f5cefa",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/tests/test_native_spoc_time.py",
+      "source_path": "/workspace/ad-astra/tests/test_native_spoc_time.py",
+      "size_bytes": 1708,
+      "sha256": "3a180e01edbf5a5487b3d001650fed922efb0f4ec2d8b33f4926f4ae7192177b",
+      "change": "new"
+    },
+    {
+      "archive_path": "ad-astra/tests/test_tglc.py",
+      "source_path": "/workspace/ad-astra/tests/test_tglc.py",
+      "size_bytes": 1762,
+      "sha256": "fb5233d8b4d13b4d41e3d8a1575239c2aae9425f0892a3900f8287365e669d18",
+      "change": "new"
+    }
+  ],
+  "baseline_paths_absent_now": [],
+  "restore_semantics": "Extract both base archives, then concatenate chunks in recorded order, verify archive SHA256, and extract overlay. Absent baseline paths are recorded, not deleted automatically.",
+  "pilot_integrity_audit": {
+    "audited_utc": "2026-10-12T17:50:40.829633+00:00",
+    "pilots": {
+      "qlp-pilot": {
+        "audited_utc": "2026-10-12T17:50:40.760461+00:00",
+        "checks": {
+          "status": "complete",
+          "target_count": 24,
+          "completed_targets": 24,
+          "successful_targets": 24,
+          "failed_targets": 0,
+          "input_curves_completed": 48,
+          "input_curves_failed": 0,
+          "sign_controls_completed": 48,
+          "original_sources_unchanged": true,
+          "all_requested_targets_accounted_for": true
+        },
+        "science_input_sha256_verified": 48,
+        "sign_controls_verified": 48,
+        "current_and_snapshotted_source_sha256_verified": {
+          "scripts/qlp_survey.py": "a58eb8855f55b3853a357b759c404e79dcc52deca6cfbaf5d39f14018a2fdb82",
+          "src/adastra/archive.py": "cd2b09976c3f4f83166a76415d41af4ec661335c00032f8b83ddaff7ca559098",
+          "src/adastra/qlp.py": "ed6151cd0ed8629777aae01005d9465904b04dee8b872ae5743b892965aa2bd3",
+          "src/adastra/screen.py": "5ca727cefe9477ddfa0c1c2188d57f018d94ad8903da9f73a5b8b3765903b3bd"
+        },
+        "named_protected_uris_cached": 0,
+        "limitation": "Cached QLP light curves checked; only previously recorded sector-1/2 pixel data are included. No tests rerun."
+      },
+      "qlp-overlapfield-pilot": {
+        "audited_utc": "2026-10-12T17:50:40.786391+00:00",
+        "checks": {
+          "status": "complete",
+          "target_count": 24,
+          "completed_targets": 24,
+          "successful_targets": 24,
+          "failed_targets": 0,
+          "input_curves_completed": 48,
+          "input_curves_failed": 0,
+          "sign_controls_completed": 48,
+          "original_sources_unchanged": true,
+          "all_requested_targets_accounted_for": true
+        },
+        "science_input_sha256_verified": 48,
+        "sign_controls_verified": 48,
+        "current_and_snapshotted_source_sha256_verified": {
+          "scripts/qlp_survey.py": "a58eb8855f55b3853a357b759c404e79dcc52deca6cfbaf5d39f14018a2fdb82",
+          "src/adastra/archive.py": "cd2b09976c3f4f83166a76415d41af4ec661335c00032f8b83ddaff7ca559098",
+          "src/adastra/qlp.py": "ed6151cd0ed8629777aae01005d9465904b04dee8b872ae5743b892965aa2bd3",
+          "src/adastra/screen.py": "5ca727cefe9477ddfa0c1c2188d57f018d94ad8903da9f73a5b8b3765903b3bd"
+        },
+        "named_protected_uris_cached": 0,
+        "limitation": "Cached QLP light curves checked; only previously recorded sector-1/2 pixel data are included. No tests rerun."
+      }
+    },
+    "distinct_targets": 48,
+    "distinct_science_inputs": 96,
+    "sign_controls_verified": 96,
+    "science_input_sha256": {
+      "data/cache/dbb281511ca338d3e438c3b35eb5c6490b3eb58cc0b211e64bc9694d892e2e8c.fits": "9ce99ed07478373015b52cc74016771f25dd02b46e38824a62c39b0d36706068",
+      "data/cache/528c0836674510436f8a501fe8b8065c57ae1fb5fb6b95732de0c7779a0aa03e.fits": "8cc364cbff97578e38b2a1354b5955a8f4b1c3621f4938a2ceb96f4c75b6de1a",
+      "data/cache/29327eb6f9098935be8bf42cca8c82ae1d090f4b926b7c73083f6ee03c3de9ab.fits": "3594a04df4d3166495eb0ffb27f8ad2050ab3a38a329e6e80afcad4eaff6e052",
+      "data/cache/8c757377775c0fa17966d8b34cb225e0440bf4adbf5f66f06dd45e2002f3a395.fits": "fa1033becd4186e7dd7423d8562aaff239cff3dc10890c7ba1bd1d2856941d6e",
+      "data/cache/0bd62b983a1f19f81ae7a6411b55ab4bb5a0c448811b753b7a056888bf5e4c13.fits": "3d3182cf4f4612c1d271c758c31cafe12152afbd36bdf7df0ef371c74f253e25",
+      "data/cache/38abc46355f54efb49ca2bd194e297efd39fa43a4b4f09a5b393ab1e30be798d.fits": "34fbf17182f9f61681378f7a1e3956a54b4d91d67bb6c37897dc653ce0dd51c4",
+      "data/cache/ec7905690d9c0bd2d21de1f763a108313e99fa2970c19253e3a6e6c937014c34.fits": "22ae47b921e466ad241a411f559f9bb85337bdee04624a51c738e7b3bbcdfec1",
+      "data/cache/e850157a48078c46dc44e62142d82ec8ba8b984b496c2ba1ea71105667f68dfd.fits": "655bca91648cd5c60cce9fc9a6340bf7634357363c72a3c84d1cbe12310519ec",
+      "data/cache/420c82573b78105d47e5af016490bed9913cfdbab3483e1ba3a90d09e88cfe13.fits": "ad2ab19252eaa0ee75f993afbe39cfd1035a13166efb1001c68b0922f91d5600",
+      "data/cache/327fa2544e8821cf480b006c1637de00a5dacdd374e5eb9aea40e346e831bb8b.fits": "de21d1233929b7614becd2cae9a5696d9f466af771ee6f5b523dd4267de4ae0b",
+      "data/cache/39c9ea2a0ad20e9d18a36324d1bb665e925ebbf038c6b38e68126c648f9292c5.fits": "4f854fdeb431e9cb30f108820fe69253523bc12ed2153ac0176fb816a0bd25ce",
+      "data/cache/e10f1fba93c371d9616f1d47124d9793ceb60fb2d2f364350463bb761ed052db.fits": "0fb3b2f28959fafe44a163bff4c4190fc7c871ce42423a59ccb8050fc58e1192",
+      "data/cache/625bb42ebe84c1bfeb1b4bac5b458ca3fcf4cd6914c38ee1fecdcccff243033a.fits": "ae6d4909a05b8cfa8e1c5bab150e47e800331088b1724fa695be2d7e277eb917",
+      "data/cache/fd479bf640aa0897358a85b135b01fb8e3dd733c2f95b783494d715c7c6f7882.fits": "77356c51d1cdb9f9a1bf469e8e9963d0edff898b182d159ce7096500655d8760",
+      "data/cache/8fd4bd1194be6ee47620b3fbc6fe17120121d8fe521f44a8e31ea6050d467390.fits": "73d5c24948df69a643008564df162509bdb82dfed0d952f6e75eb4a51ccc4ecf",
+      "data/cache/df77db9ddb27ef4cdb31afb08c978813d097395cfb27483be51a9895aaa2b22e.fits": "cf63c1a71e8b533cd3d19fd326f1f57110448b31706627dca35f6f791f8814c8",
+      "data/cache/da058f3da21caa128e1bc5aa639b362e6d96a8976dd34e10c190a014a233e34f.fits": "95f052ff272c4df89381d34fc2ccbdf9b9e658d22ad7f712dd4837db2b6a5517",
+      "data/cache/1478914ed6ae4321c2e907be8e5d79658cf67fe5b4f7605f1285e408d9ea31dc.fits": "03abf4a1d1b84c9a56e4971dae12a358619c0c9f9c657c16aa51b58dcdefe14d",
+      "data/cache/e715fac97d3553213a1e49fb853261a411bd249ec6286f33eb37c71de7151d70.fits": "fa9a218bc6847fdad7994ccab811c5bc2a05890b6da0fe9b232baa53348159fc",
+      "data/cache/f60aefbb85a92dae91182a04466f1d919084d2a7d7dc32ddd6dd36e31cb86203.fits": "754d1175f0f538fe757d8c93649fd1e1f4097e7449a9601c56a6cc97af15a5b3",
+      "data/cache/78d33132bce739271573907d523e218ae86de19a63809e931f1873285195b934.fits": "1431e3a1df52e16d3a67a518b748a0a8d7d78d37301974041985ac1cd1ac22c4",
+      "data/cache/3a3ecd540d9fff9a4e8f19903b68d021b21d4f0cd7f6b36cffcc9384287b577f.fits": "2a6aa26f4dd0b994c8708311bc8ebab8cbf9ea841359a8b25bb20dede406b3e7",
+      "data/cache/3defe4ff9548d1d3efdd6e74fb18e9fdce55a97f8fd71827e067e3172a012d7c.fits": "19e918aabfaef0dc98b4afd843b84aa2491c2765c4f6f6bee0b3cb5ed74a555d",
+      "data/cache/ccadfc2f735fd4aa771fd37cb4270544fd7d85f63364e9b34e656cd6043d90e7.fits": "19780f33ea9d2dbe1d8d5664fea65d3b8cbb64e4877d5df68e9b2721f7ec59e2",
+      "data/cache/e85e21cba8a55fffc188c648bce9983ca5e549fcd72859a934d986191c7662be.fits": "1f6c22edb5686fc025cb183394a1a1fa669fe307bef7012df95c08bcc28d42fb",
+      "data/cache/41e2640f063ca340f8a021fab4de77a71da6bd31b343d856b2237015f1b0f245.fits": "5f1d9466ebf76497befaef36628e6186dbd85b7edec526121620435aa44642bd",
+      "data/cache/9a9dd8f8ecae72efcab261bea20b9a68c78897a34537528b28b77933544cb270.fits": "44790858c8d101a51e1dbdb57ab85f9d777b0cf94d03a13daec27ae872d6c20f",
+      "data/cache/3169fcc30f0a4d388c6fb84f01149e3d3a12697653966d57606688c555776a5f.fits": "6831bb1564cb8114034305a8f3554ddab293fd85aaf642b3ea7d7ea0e4ccf097",
+      "data/cache/744b445f8547dad0629844f22394ee4d48b6f80187afb8158590e6c7e6273015.fits": "70ab635184b600da739f16ca72471d51b13eb2f236e5f9813fa101e2e1f78265",
+      "data/cache/717077f631af85622e4f9e03021d9d8b49d1da12b740e686d2a12891906b454f.fits": "2cd5dacb98af29f06011712ae2f87d6f88c723f4c5c4e0a85699e76d9b13a8f3",
+      "data/cache/2fc99f1ea9a2cad99d70c220dbc2960f799d822ca87ede81fdd6ec8dfcc9a235.fits": "326745c96a493b8d2b66af84fede73f8b464f956f88dd5b71ae6f6c1a45bb908",
+      "data/cache/86c8f7a4ae8b1fba52927c1d2af33b8c183f9d9f0de6f689066e7a8cfcb517d4.fits": "8ee8ee6664b0423d98e40b440f7720f8094471e4de12f7bf57ef42601da8a6eb",
+      "data/cache/8b013382892ddc183a9924497ebe3092dec12701688e3c9796a568fc174aa99a.fits": "a6e71b5eb517a22a7de87da1c157c335b03bd76a75c2308945916f2e89acb8e6",
+      "data/cache/f347769fe864c6ffec10b73f4fd55f8b41d5a966baa650d5413936b928a17923.fits": "2c1fed8cfe526cc29fd0bee816f8f972a4ac09a963422b3f85ca694226666f56",
+      "data/cache/31765448afbd265d2533cbcad3826a14144bd7107c52e91ad9ea972779f4fa78.fits": "66b9a63d4c0866fa6eb4bb7f200419589cb7a1f454459be4fa816e258acb9d97",
+      "data/cache/9a2889c6d5ecdf4d07f2fae0dc1500858a9a957182c747d638f09aeca69ed0ea.fits": "4dcad1a8aec92c4ec53074bf07a639133ec432d720cde06228c7565881b0f9d1",
+      "data/cache/ed177d77b842daf24be2cbf108292d52fe1c59e82acabbfbc27e8f7aad405041.fits": "ee9d84980bb4840912eb7e7083d8ea71ae4bce816d7a8b8941e1636af08c6de7",
+      "data/cache/4735b146a173227487ea4f0683db97e5ae9f8d51e1d59dd972996add1dcdc9e0.fits": "d5230686a8ece39b632638aee07b636e9ab9f46fbb96452eb7ece2ceb9747a22",
+      "data/cache/77da8ead6daf34c1dd0b4c3e5862751816f3af17796091c61dd3bbd299d0b79b.fits": "41d719f6c58d4dea37bf6226a8280380d86a3e66e225f8073c6fdb63548dac5e",
+      "data/cache/f91ca3a6af68ef213cdc02c5596be9328db37f1c94112545495972800e921dac.fits": "776d5f997f989b4f0b60f10d97e5577385dfcc2fdfade8e07729ac0adfdebad1",
+      "data/cache/d9ab0b5db56c684bfb70f2e6153e6dd0a8bd1d689aa306d29342ec81fbd7ed55.fits": "8d292b56e5519063506619ebcaf93e4a701086341bcfc440e056e6790047e7a0",
+      "data/cache/aff4a3bb85745ef4065bfe3dee5a833c7100cf011be5bfc9e2100248e55ef142.fits": "3323b694abf355c5cae17e93389249de46c84c4adb130f00252ee7a1dc309916",
+      "data/cache/051d6867331ed098d3ed1f1da147447d06a4e3bf024ccdd034f8ab24afc10574.fits": "ca5a28674b012777463d95cd0ae64a9ead9800e0994da462ea731f95700bab30",
+      "data/cache/1d962f50706290fee42f093732848f3f38ec76d768ea7fceec4f53e1c82b406e.fits": "7836da0aa69e5cd38fb4d6edffbc684c4dd8638aba9cc1312c1e7d57a6820e30",
+      "data/cache/1ce4009c5e091c93cec0bd011ea0768493e72a869928ab180cdb13441bcc69ec.fits": "3e65f0091099e7801fc88f99e9e3cdafb2bafa2392b9b96865254f56fa10602a",
+      "data/cache/1a3e989fb483078031cf78743075259c8859e90b63b0bcdda1a0774000292b84.fits": "7eeabb27b7da7e9bf10845439a2299592776434b756b9df12486e66e8edca137",
+      "data/cache/fa4c7437d39d006f57ad5ea3f73ab4751fd6621672b1f7d08b1f6a49594fe919.fits": "49ef14dff04a91ac003b1f2c4956b3579a62f12acc975c52442d7acc5a37d7d9",
+      "data/cache/8bd3dea9f1873d71329aa77062d1bb8019c1a76975b2ac1a89b93f0586a5baf4.fits": "a1e10492add1837e3362406a9fa1652bb31b3fe9f2c607e20e21c64b19a501af",
+      "data/cache/637bf1860747cd944487a153ad8de0ac124cb493625465fbfe0e5be67afe9db9.fits": "be3d5ce3d94149ee46a9c3eeeaed3a26860b6292c98b580dbfd9819767bafb56",
+      "data/cache/e1fefce8e900b2a52dae698986858fa884554ef9cec90cbe7fc155103be19673.fits": "191d7c67bdc8483f705054aaaabffaccd145ffc26dcba26b897653c6e0e78478",
+      "data/cache/9fdb9258c688fa90ea196fbadb6a1fc0c96d6f9c7cced2e6646f1aa498827895.fits": "0f1fe4b058e0b6fee8ee37cc6fe1a07efba8299581fd9c93b808118e9b5168af",
+      "data/cache/a11d02af33fba4043dd9ef8c448ed492878a244fecc85eee73fae71a77d19270.fits": "7a4b9fce557d10ef4dc2385f27ba7328ca46a2573ea95c8e1314ec005f23be5f",
+      "data/cache/dbafae826f36f1dfa9dd84a2a1ed18bfade5ebe9f3131ee87905958dbe2a8089.fits": "6587b5a337ca247ceb0c828a7a6c35f777367e9ff4ecf7ffea1ab94853031725",
+      "data/cache/8075707b1415c5f2e1c1b49fde417be4bcfae8f0096b2e42a65d6b94893476f6.fits": "aa8d9027028ac02a891f8b2442382e5f673c7c6f9ad42a0f6acaad7f5cf6b412",
+      "data/cache/41c1ae04a7225200155aad67d4c3e0d96746f7b96a2aea4d995dceb5e15ad5df.fits": "2b79a9d0f2bc061e9e34a87940c4427ad201de7e5e81824ad2f9ee8705dbbd2f",
+      "data/cache/b08495b0291dd629125dd6894541751021c26ba1ebc2b95ce9efc5ba46b089ce.fits": "77fc45cb606c2dea936f5249c748505317cdeeda5424e06b3e89e4240e54f7e5",
+      "data/cache/ebfb603c37b53fbaedd2af625b7cecbe7279c2a33a082a40f82cbafebb413820.fits": "1fc78b0a9c8e6bf3dcb586a4a8b9c5e01785a82bfb14a91dc5f638f02e7603fc",
+      "data/cache/a441067aaa7bba1e22b217422b38dc056d2070975d922c6c6a69478465f956d7.fits": "b83faa67bdfb12003b8a0eb73c065a8b424d317d1990fb552943638c9db9718e",
+      "data/cache/2f6f3e244adf0f5d88767cdf2c6e8063a0026f5477ee781738fdb593949156c9.fits": "4da6e30b6fdd90a031a66e09b01b1ddd3a305052c001ddf36584e9491ac34d34",
+      "data/cache/cb2263650d2dbfe03e9f2a88bafa59d85695d2276b08ae9d2afaff427832443c.fits": "b89d6ce7bcdd183f3d79e69a3765dddeb7eb4537e95bb114263434c8fee46e0f",
+      "data/cache/e53167cf1c3bcf1b1f1aebb5126b625dce45ded37a5bed786895d4398415e0ae.fits": "86eb144edea245a5f5dadeb327e8f872cc40279406667f5fd666b64ee92cf73a",
+      "data/cache/c5fb26abfff2b545dad110cfdabf497aab8c4b2725d5674c4976e1a56151ee90.fits": "6418cf2c728a772853f429c1ca38d9adca0620e2dcceb4ecb6a4ef61a798f4fa",
+      "data/cache/ec5c5c5baba3df55f284efd1a8e1425042e0e1a38501e29dc82716a70ce3667c.fits": "0046ed11169880950b93a8ce36c419aa3bebc37cadbbf572bcceb4153ffd683c",
+      "data/cache/ee6a32283867f01d3a746338f00ddf18cdcadb593fc3242b517f729fe2fc8384.fits": "8b66c818a369b3433183fd7ac12536d3e79d884ef17c059d9b287ae52ca048fd",
+      "data/cache/f754839be8372a929e16b850834fb1bdcb2d5d761286d3a458490f381814d48a.fits": "3bb2900cfa6b5e8988bacbe5f6148fa494737e026f3e042cafec0a1465b6614d",
+      "data/cache/3bed825bc1291b91aa06b4ab1ff26f39e26ca796e460a3e26944d33bcd6641f7.fits": "c1881f063cbe708b40a3946c397069801620bb412512994fff71ae86ac8f3c26",
+      "data/cache/1c38babfe693eae161d4c8bad3cc7a8982838971aa13846f667e932f97e2053a.fits": "6aa6c0563243a5ad93d5e825971477551d5fbaf5daa9d5d6fd08a95da17d978f",
+      "data/cache/09b8cd36cdf322ec2afc73608420789817edb69129cc2472d8bf3e99a7fe4751.fits": "7c66e5efacd9451cbaed969646f7d87b2332a8386b7b93f9cd7a6b57db9bb8e2",
+      "data/cache/94a681be0913f4b3c792bb328cf60e6a6fccfe7fdf9a0a2d9b14cbc068044562.fits": "f70c84f0ac6e5615719355002178dbf10003ce538ca197246f57b33d53e98fcc",
+      "data/cache/75377dfd960205ee1ab8b8753a66942d08d87ba1f45f59934c10e6adf8893f12.fits": "a497779e93fdc3a722283f22b7b5d45aabf5d11b6ed019598cbd6dd5e1fbf04a",
+      "data/cache/daf8681a3edfdd0c68d4f272a274d999e3583b4cdc5a52b6529c257f21af0b36.fits": "d4515b9b3932c86d0c8f41e0ff4224e17e5dd6feb420a43d21f9a732735b4bd6",
+      "data/cache/74cc9d90988e3f1713bf0e5642391480f59d2dea1ba67d6fd34745c15af57eb5.fits": "94e84a8b5a2ed5d0cc6785bb66e1abd92ee83b9ae31300d08ceddffc0b24f24a",
+      "data/cache/31df6cc0490e7f5eb109e4ff9355d404c62ad4f059aa2e6069266be69ac29360.fits": "d814895b77aa39abdb2aa58da2c2a7a72e8cf0198cfe47acbdd060b7f310f790",
+      "data/cache/ed2221797291b28405fa7ffd3bb282698d475d27ec32dcd3327444b208c21656.fits": "6c135075cd7d95f587b554cd07dc3b11150b2245365b20efa53ed3927722cd62",
+      "data/cache/490823b177ba9f5da42fec74f43f232fa8e3dab78fac95072440239be457981c.fits": "3e2617061f895dd9742c3e5b4cb96942b55ec14f2c9d8e7b18d70c1770d80e4d",
+      "data/cache/72be5c9b76a07065df499f9d6517edb26ce345f32fbb81fae55108e36caf4229.fits": "563d8051d7ef961a40a0eb1c296e02864be294b8255d073c10545c69f6980832",
+      "data/cache/e7cae955fa2f3756fd891b0cb1fcc4efe5490eefa75b3b69797a2ad01eb7becc.fits": "89acc8355e648998d26a45a1d8c67e5b65a76ed4913c8869fbac4aa4b6723398",
+      "data/cache/f109684a0a3b307529a73b42722126aab3a8c13810b20ddbac181482b943614d.fits": "3f767b43c818665c84b263acfdc1af58ab7a47383dd1d2730f6fcc6f4b6a4272",
+      "data/cache/7932d18b62ba38b5ac20e35429917c6c8ecbdbef1216c6a463824567582aefe8.fits": "9d7c47df7fd8f980f5a1ce7bc5606dfda7358740c364ba7b7abd42a3b0a3f6b6",
+      "data/cache/5060e62d11ca677b1ebf6c444141392203d352602a22a56e6a32431921481818.fits": "fe02380ba929b73a761b985f3dbf3deb76a789f4df09c18b7662fece02980907",
+      "data/cache/3a84e03d65391400db1f60541a2bf3c7996760bd868b3c8324d4e2e29d5582be.fits": "0ce9ba282238d03df8996d131b9846a90bb1c07f9ded2114428c68dae513b595",
+      "data/cache/a219d1a6011603b053b1c3a66904424a16454477aee197ed439dfc1826871659.fits": "222a76e08bfe0a8152c2ab60443c6959de6bcdf0291727e78e7dc41abb90686b",
+      "data/cache/722409334e67f6326cee4e3cbf09784f4a929967bfa42f32f896c5b806e39929.fits": "22fe409bc7b694919885ec137a3ef59f32ddd20569f8f8bb66014e5068e34883",
+      "data/cache/8b74737f2cdd9e48609f59d4c57f696b5cd933debf8662f564b0199d5606b3ed.fits": "cacc68c0cb66a1437b56b8400119e00dcfe7d15bc23819aa5808c89bb9a72d84",
+      "data/cache/effe777ae6f4f2deb5fce215882cd60aad8a6bb6de15b6818e69988deac51e07.fits": "f47c99c5d2cf54fa56606413d1fc4b62c3d11b1ef58e9efaf2236f0ed7b5f01b",
+      "data/cache/d0391903e042ff0ac8a84d991e78cd94c22107a183a60c13a4f0ab403c4b0f50.fits": "dfde105c9c7e79e059da4cc1401c8a65567896afdf10cb50cffa53a448b9d750",
+      "data/cache/256f6349e94f58000215bbf46fc3cf6624f52a1d73ffd4a1a048904e188fa62e.fits": "71da7cb9d197352b1af66cd65b8bec16b94bacc371f7c024da885bbd4622d00b",
+      "data/cache/dd5fca78a7a0ebafbbb7ebece6dddb86663568cc3b46f7c48c4da0f15de8afa4.fits": "ec594121e90614cb28bc2a60e2c303090dd1443accff360c70009dfdebfd5a45",
+      "data/cache/0b9cb5a45f35c71d264a193ea899833dfe3f1fd44fc28ece6ebc8bcc4fb9c4c2.fits": "df2d73c2f3fc2991518b9401af9b6912873854c930349cef069e72061299f4f5",
+      "data/cache/5282885b471eeb9fb6e14f4e9af4c7f81028a2b1f9a8b5871da3d5d00015b0ca.fits": "2332844ba98b201a20807cee2eaef546f849eadb9e30cabdf1b0563e1627ce42",
+      "data/cache/832cb0f2e8bbb4f2d246080ac7161ecc72217cdfa325b421aae0347d346e61d9.fits": "36a719c9c20c4503756b7ad68bed627654e0a7a05a682d692438610f9bb404c4",
+      "data/cache/cddec39e61d3341511320ef87bf9d9f0820761739a0e7410450d3da01663bec6.fits": "40a6a2fda84e22db66b78338b01715a7316f780ae256eb24352b6dc4b1cadc3e",
+      "data/cache/3ad38e9264249f0c47da11439fcd334224cd3c7da2a784f035f0d480d4d90915.fits": "d9521be48dfdfbca758b8d0acfe8af748ba33e909c27bedcb00a287c1f9738d2",
+      "data/cache/494646dd926eb72b55c69c9b9bf7811514e55a3a18c7b4de9c336e5e33923083.fits": "25810a7ce6d362587861c591800c0fd684f79c6159276a55fa3fb799c7c056d2",
+      "data/cache/da46a829a86b453ed45c76c6ac681a675cbc9f9413b406e5e573d5ad375bbeff.fits": "1defe54e15a57295e0a5d9cf836d2132141cfe75cccde9ffc4d2352df44e9660",
+      "data/cache/460b1333c77a704631ed96deabbd12cfe20d98bcdb9f35451d1af2e9c14f73f8.fits": "369e9efaa2412c0356785f243406efe546f25ae5201ab372227719f772f318ba"
+    },
+    "named_protected_uris_cached": 0
+  },
+  "verification": "Every member size/SHA256 and included source checked; concatenated chunks match full archive size/SHA256; preexisting checkpoints unchanged.",
+  "limitations": [
+    "No secrets, virtual environment or Git history included. Cache scientific artifacts remain eligible.",
+    "SHA256 verifies byte identity, not scientific novelty."
+  ]
+}
