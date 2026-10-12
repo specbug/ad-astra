@@ -1,0 +1,129 @@
+"""What is already on record for a star, from every check run on 11-12 October 2026.
+
+Sources (all in results/candidates/):
+  exofop_status.csv            ExoFOP target pages: TOIs, community TOIs (CTOIs), user-uploaded periods
+  confirmed_matches.csv        NASA confirmed-planet table, position match (via match_confirmed.py)
+  neighbour_planet_transits.csv  dips that fall on transits of known planets within 2'
+  simbad_named.csv             SIMBAD object types and names
+  vizier_named.csv             TESS and Gaia eclipsing-binary catalogues, VSX, published quadruple lists
+  ads_mentions.json            ADS full-text search by every identifier (when present)
+
+prior(tic) returns {"kind": ..., "notes": [...]}, kind being the strongest reason the star is not new:
+"blend" (a known planet on a neighbour), "confirmed", "ctoi" (or TOI, or a period posted by someone else),
+"multiple" (a published triple/quadruple), "binary" (catalogued eclipsing or spectroscopic binary), or None.
+"""
+import json
+
+import pandas as pd
+
+from env import RESULTS
+
+C = RESULTS / "candidates"
+_d = {}
+
+
+def _load():
+    if _d:
+        return _d
+
+    def csv(name):
+        p = C / name
+        return pd.read_csv(p) if p.exists() else pd.DataFrame()
+    _d["exofop"] = csv("exofop_status.csv").set_index("tic") if (C / "exofop_status.csv").exists() else pd.DataFrame()
+    _d["confirmed"] = csv("confirmed_matches.csv")
+    _d["neighbour"] = csv("neighbour_planet_transits.csv")
+    _d["simbad"] = csv("simbad_named.csv").set_index("tic") if (C / "simbad_named.csv").exists() else pd.DataFrame()
+    _d["vizier"] = csv("vizier_named.csv")
+    _d["ctoi_all"] = csv("exofop_ctoi_matches.csv")  # ExoFOP CTOI table of 12 Oct 2026, every candidate star
+    p = C / "ads_mentions.json"
+    _d["ads"] = json.load(open(p)) if p.exists() else {}
+    return _d
+
+
+MULTIPLE_CATS = ("Kostov+2022 quadruple candidates", "Zasche+2022 multiply eclipsing", "Zasche+2022 doubly eclipsing",
+                 "Zasche+2025 doubly eclipsing quadruples", "Borkovits+2025 triply eclipsing")
+EB_CATS = ("TESS EBs (Prsa+2022)", "Gaia DR3 eclipsing binaries")
+# confirmed planets on the star that cannot be the survey's signal
+NOT_THE_SIGNAL = {266680498: "radial-velocity planets; none fits the transits"}
+
+
+def prior(tic):
+    d = _load()
+    tic = int(tic)
+    notes, kinds = [], []
+    nb = d["neighbour"]
+    if len(nb):
+        own = nb[(nb.tic == tic)]
+        far = own[own.sep_arcsec > 10]
+        if len(far):
+            r = far.iloc[0]
+            notes.append(f"dip falls on a transit of {r.planet}, {r.sep_arcsec:.0f}″ away")
+            kinds.append("blend")
+    cm = d["confirmed"]
+    if len(cm) and tic in set(cm.tic):
+        names = str(cm[cm.tic == tic].known_planet.iloc[0])
+        if tic in NOT_THE_SIGNAL:
+            notes.append(f"NASA lists {names} ({NOT_THE_SIGNAL[tic]})")
+        else:
+            notes.append("NASA lists " + names)
+            kinds.append("confirmed")
+    ex = d["exofop"]
+    if len(ex) and tic in ex.index:
+        e = ex.loc[tic]
+        if isinstance(e.get("tois"), str) and e.tois:
+            notes.append(e.tois)
+            kinds.append("ctoi")
+        if isinstance(e.get("ctois"), str) and e.ctois:
+            who, _, when = str(e.ctoi_users).partition(" ")
+            notes.append(f"CTOI since {when[:7]} ({who})")
+            kinds.append("ctoi")
+        if pd.notna(e.get("period")) and e.get("period_user") not in ("Exoplanet Archive", "exoplanetarchive", "TESS project"):
+            pn = str(e.get("period_note") or "")
+            pn = f" ('{pn.strip()}')" if 0 < len(pn) <= 70 and e.period_user not in str(e.ctoi_users) else ""
+            notes.append(f"period {e.period:.4f} d posted by {e.period_user}, {str(e.period_date)[:10]}{pn}")
+            kinds.append("ctoi")
+    elif len(d["ctoi_all"]) and tic in set(d["ctoi_all"].tic):
+        r = d["ctoi_all"][d["ctoi_all"].tic == tic].iloc[0]
+        notes.append(f"CTOI since {str(r['CTOI lastmod'])[:7]} ({r.User})")
+        kinds.append("ctoi")
+    vz = d["vizier"]
+    if len(vz):
+        v = vz[vz.tic == tic]
+        for cat in sorted(set(v.catalog)):
+            if cat in MULTIPLE_CATS:
+                notes.append(cat.replace("+", " et al. ").replace(" candidates", " candidate"))
+                kinds.append("multiple")
+            elif cat in EB_CATS:
+                close = v.loc[v.catalog == cat, "info"].str.extract(r'"_r": ([0-9.]+)', expand=False).astype(float).min()
+                name = cat.split(" (")[0].replace("TESS EBs", "TESS eclipsing-binary catalogue")
+                if close <= 3:
+                    notes.append(name)
+                    kinds.append("binary")
+                else:
+                    notes.append(f"{name}: an eclipsing binary {close:.0f}″ away")
+    sb = d["simbad"]
+    if len(sb) and tic in sb.index and float(sb.loc[tic].sep) > 3:
+        ot = str(sb.loc[tic].otypes)
+        if "EB*" in ot or "SB*" in ot:
+            notes.append(f"SIMBAD: a binary ({sb.loc[tic].main_id.strip()}) {float(sb.loc[tic].sep):.0f}″ away")
+    elif len(sb) and tic in sb.index:
+        ot = str(sb.loc[tic].otypes)
+        if "EB*" in ot:
+            notes.append("eclipsing binary in SIMBAD")
+            kinds.append("binary")
+        elif "SB*" in ot:
+            notes.append("spectroscopic binary in SIMBAD")
+            kinds.append("binary")
+        elif "**" in ot:
+            notes.append("double star in SIMBAD")
+    a = d["ads"].get(str(tic))
+    if a and a.get("n"):
+        notes.append(f"named in {a['n']} paper{'s' if a['n'] != 1 else ''} (ADS)")
+    order = ("blend", "confirmed", "ctoi", "multiple", "binary")
+    kind = next((k for k in order if k in kinds), None)
+    return {"kind": kind, "notes": notes}
+
+
+def summary(tic):
+    p = prior(tic)
+    return "; ".join(p["notes"]) if p["notes"] else "nothing on record"

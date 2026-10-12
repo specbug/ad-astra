@@ -41,6 +41,8 @@ def search(q, token, rows=200):
                 time.sleep(10 * (attempt + 1))
                 continue
             raise
+        except urllib.error.URLError:  # connection resets
+            time.sleep(10 * (attempt + 1))
     raise RuntimeError("ADS kept failing for: " + q[:80])
 
 

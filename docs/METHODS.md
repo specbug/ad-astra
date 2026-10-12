@@ -184,6 +184,42 @@ them "published". Two more Track B matches are circumbinary planets around eclip
 already rejected as binaries (Kepler-16, BEBOP-3). HD 11506 matches its three known radial-velocity planets. One confirmed planet was lost: all nine transits of TIC 245076932 b (21.6 d) were found, then
 vetoed as an eclipsing binary because deeper dips elsewhere in its data had not been checked.
 
+## 8b. Direct catalogue checks (12 October)
+Once the environment's network allowed them, every star the report names (136) was checked directly:
+- **ExoFOP** (`exofop_check.py`): the TOI and CTOI tables of 12 October 2026, and each star's target page
+  (TOIs, CTOIs, every user-uploaded set of planet parameters with its period, author and date, imaging,
+  spectra). The CTOI table was also matched against every Track B, C and D star
+  (`exofop_ctoi_matches.csv`: 325 stars).
+- **SIMBAD** (TAP, 10″ cone, nearest object): main identifier, object types, identifiers and the number of
+  references (`simbad_named.csv`). Binary flags count only within 3″; farther ones are reported as a
+  neighbouring binary.
+- **VizieR** (10″): the TESS eclipsing-binary catalogue (Prša et al. 2022), Gaia DR3 eclipsing binaries, VSX,
+  Kostov et al. 2022 quadruple candidates, Zasche et al. 2022 multiply eclipsing and doubly eclipsing systems,
+  Zasche et al. 2025, Borkovits et al. 2025 (`vizier_named.csv`).
+- **NASA Exoplanet Archive**: confirmed transiting planets within 2′ of each Track B star whose predicted
+  transits coincide with the survey's dips (`neighbour_planet_transits.csv`). This catches blends from a
+  neighbour's planet.
+- **ADS** (`ads_check.py`, run in a worker session holding the API key): full-text search by every identifier
+  of each named star (`ads_mentions.json`).
+
+`prior.py` gathers all of this into one label per star (blend, confirmed, community candidate, published
+multiple, catalogued binary, or nothing on record), and the report uses that label everywhere.
+
+What it changed:
+- **HIP 71639.** Another ExoFOP user posted its 23.8843518-day period on 15 May 2026, from the same four
+  transits. The survey's period agrees within 0.1σ, so it is an independent confirmation, not a new period.
+- **HIP 56966.** A single-transit CTOI since March 2025 (Salinas et al.), with no period. The other three
+  transits and the 19.826-day period appear nowhere else.
+- **HD 11506.** The sector-30 transit has been a CTOI since August 2024 (TESS Single Transit Planet Candidate
+  working group), listed at 7,210 ± 3,331 ppm and 26.9 ± 7.4 h; the 2-minute data give 668 ppm and 3.2 h. The
+  second transit (August 2026) appears nowhere else.
+- **Bright deep-vetted list.** Of the 45 stars that pass, 17 are on record and one dip (TIC 457134361 =
+  HD 80607) is a transit of HD 80606 b on the neighbouring star, 21″ away. 27 have nothing on record.
+- **Track B shortlist.** 86 of 743 are on record, mostly single-transit CTOIs (TESS Single Transit Planet
+  Candidate working group; Salinas et al. 2025).
+- **Track C table.** 7 of 30 are published multiples or a known blend. 9 are catalogued binaries on the star
+  itself and 3 have one 5–6″ away. 11 have nothing on record.
+
 ## 9. Track C eclipse-shape test, revised (10 October)
 The first version compared the box depth with the peak-to-trough of a single sine wave at the second period.
 A pulsation at half that period has no power at the period itself, so it passed (the published pulsating
