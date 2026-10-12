@@ -1,0 +1,4275 @@
+{
+ "4011632": {
+  "ids": [
+   "2MASS J05192144-0121468",
+   "BD-01 857",
+   "Gaia DR3 3215186477401449472",
+   "HD 290241",
+   "TIC 4011632",
+   "TYC 4752-253-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "4672985": {
+  "ids": [
+   "TIC 4672985"
+  ],
+  "n": 3,
+  "per_id": {
+   "TIC 4672985": 2,
+   "TIC4672985": 2
+  },
+  "papers": [
+   {
+    "bibcode": "2026SciA...12f2618M",
+    "year": "2026",
+    "title": "Uncovering the rapidly evolving orbits of the dynamic TOI-201 system",
+    "pub": "Science Advances",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260213125R",
+    "year": "2026",
+    "title": "TIC65910228b: A single-transit discovery of a massive long-period warm Jupiter with TESS",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2024A&A...683A.192J",
+    "year": "2024",
+    "title": "A long-period transiting substellar companion in the super-Jupiters to brown dwarfs mass regime and a prototypical warm-Jupiter detected by TESS",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   }
+  ]
+ },
+ "12007147": {
+  "ids": [
+   "TIC 12007147"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "13093071": {
+  "ids": [
+   "2MASS J05044619-2651334",
+   "Gaia DR3 2958881069899924736",
+   "TIC 13093071"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "19186895": {
+  "ids": [
+   "2MASS J08145642-1135171",
+   "BD-11 2287",
+   "Gaia DR3 5728044294645800960",
+   "TIC 19186895",
+   "TYC 5434-1206-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "21725734": {
+  "ids": [
+   "2MASS J05522024-4001040",
+   "Gaia DR3 4804986042402888064",
+   "TIC 21725734",
+   "TYC 7602-1610-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "22442522": {
+  "ids": [
+   "TIC 22442522"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "22642772": {
+  "ids": [
+   "2MASS J07133587-3658093",
+   "CD-36 3442",
+   "CPD-36 1180",
+   "Gaia DR3 5590096168510977536",
+   "HD 55986",
+   "TIC 22642772",
+   "TYC 7115-2417-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "28938342": {
+  "ids": [
+   "TIC 28938342"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "33743172": {
+  "ids": [
+   "2MASS J06124955-1734399",
+   "Gaia DR3 2943011513636935296",
+   "TIC 33743172",
+   "TYC 5937-1875-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "41743658": {
+  "ids": [
+   "2MASS J15324743+3755187",
+   "Gaia DR3 1375793374846632704",
+   "TIC 41743658",
+   "TYC 3052-1941-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "44024153": {
+  "ids": [
+   "2MASS J22562576+3434146",
+   "Gaia DR3 1891206630237304448",
+   "TIC 44024153",
+   "TYC 2757-357-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "48450535": {
+  "ids": [
+   "2MASS J18590286+4836355",
+   "Gaia DR3 2131599454489850880",
+   "TIC 48450535",
+   "TYC 3545-371-1"
+  ],
+  "n": 1,
+  "per_id": {
+   "2MASS J18590286+4836355": 0,
+   "Gaia DR3 2131599454489850880": 0,
+   "TIC 48450535": 0,
+   "TIC48450535": 0,
+   "TYC 3545-371-1": 1,
+   "TYC3545-371-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2023MNRAS.521.3405J",
+    "year": "2023",
+    "title": "Revising the properties of low mass eclipsing binary stars using TESS light curves",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ]
+ },
+ "49381710": {
+  "ids": [
+   "TIC 49381710"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "52546430": {
+  "ids": [
+   "2MASS J06434029-3222292",
+   "Gaia DR3 5583971403407931776",
+   "TIC 52546430",
+   "TYC 7091-431-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "54002406": {
+  "ids": [
+   "2MASS J01334933-1323541",
+   "Gaia DR3 2456895192244278144",
+   "TIC 54002406"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "56862096": {
+  "ids": [
+   "2MASS J09141771+4507158",
+   "Gaia DR3 818898225801209728",
+   "TIC 56862096"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "60479865": {
+  "ids": [
+   "2MASS J06250119-2107009",
+   "Gaia DR3 2938196374265514624",
+   "TIC 60479865",
+   "TYC 5959-1797-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "64038538": {
+  "ids": [
+   "2MASS J20355862+3722406",
+   "Gaia DR3 2062997075745478528",
+   "TIC 64038538",
+   "TYC 2698-139-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "64558861": {
+  "ids": [
+   "2MASS J22334703+5623207",
+   "Gaia DR3 2006848521618462592",
+   "TIC 64558861",
+   "TYC 3991-1876-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "65612701": {
+  "ids": [
+   "2MASS J20415379+3620203",
+   "BD+35 4222",
+   "Gaia DR3 1870619889930018304",
+   "TIC 65612701",
+   "TYC 2698-791-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "65910228": {
+  "ids": [
+   "2MASS J07145152-2925498",
+   "Gaia DR3 5606317297918628992",
+   "TIC 65910228",
+   "TYC 6536-3043-1"
+  ],
+  "n": 2,
+  "per_id": {
+   "2MASS J07145152-2925498": 0,
+   "Gaia DR3 5606317297918628992": 0,
+   "TIC 65910228": 1,
+   "TIC65910228": 2,
+   "TYC 6536-3043-1": 0,
+   "TYC6536-3043-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2026MNRAS.549g1061R",
+    "year": "2026",
+    "title": "TIC-65910228 b / NGTS-38 b, a 180 d transiting warm super-Jupiter",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260213125R",
+    "year": "2026",
+    "title": "TIC65910228b: A single-transit discovery of a massive long-period warm Jupiter with TESS",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   }
+  ]
+ },
+ "70803960": {
+  "ids": [
+   "BD-19 4173c",
+   "EPIC 249624646 c",
+   "K2-290c",
+   "TIC 70803960"
+  ],
+  "n": 3,
+  "per_id": {
+   "BD-19 4173c": 0,
+   "EPIC 249624646 c": 0,
+   "K2-290c": 3,
+   "TIC 70803960": 0,
+   "TIC70803960": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2022ApJ...925L...5B",
+    "year": "2022",
+    "title": "The Chaotic History of the Retrograde Multi-planet System in K2-290A Driven by Distant Stars",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021arXiv210809325D",
+    "year": "2021",
+    "title": "From Warm Planets to Perpendicular Hot Planets",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2019MNRAS.484.3522H",
+    "year": "2019",
+    "title": "K2-290: a warm Jupiter and a mini-Neptune in a triple-star system",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ]
+ },
+ "71631629": {
+  "ids": [
+   "2MASS J06025796-1109177",
+   "BD-11 1364",
+   "Gaia DR3 2998982801586015744",
+   "HD 41179",
+   "TIC 71631629",
+   "TYC 5353-3-1"
+  ],
+  "n": 1,
+  "per_id": {
+   "2MASS J06025796-1109177": 0,
+   "BD-11 1364": 0,
+   "Gaia DR3 2998982801586015744": 0,
+   "HD 41179": 1,
+   "HD41179": 1,
+   "TIC 71631629": 0,
+   "TIC71631629": 0,
+   "TYC 5353-3-1": 0,
+   "TYC5353-3-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "1988ApJ...328..709T",
+    "year": "1988",
+    "title": "High Spectral Resolution Observations of HD 44179 at 3.2--3.7 Microns",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   }
+  ]
+ },
+ "77670980": {
+  "ids": [
+   "2MASS J05044713-3002495",
+   "Gaia DR3 4876081490749868672",
+   "TIC 77670980",
+   "TYC 7047-1392-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "89247735": {
+  "ids": [
+   "2MASS J18205368-4533401",
+   "Gaia DR3 6708071581514074368",
+   "TIC 89247735"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "102923633": {
+  "ids": [
+   "2MASS J08424362+6733265",
+   "Gaia DR3 1093967001092272640",
+   "TIC 102923633",
+   "TYC 4375-695-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "103629155": {
+  "ids": [
+   "2MASS J12541119-3130461",
+   "Gaia DR3 6183776750369468544",
+   "TIC 103629155",
+   "TYC 7249-62-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "127236148": {
+  "ids": [
+   "2MASS J05404131+1733226",
+   "Gaia DR3 3396792057048977920",
+   "TIC 127236148",
+   "TYC 1302-800-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "128703021": {
+  "ids": [
+   "2MASS J14391085-4635039",
+   "CD-46 9469",
+   "CPD-46 6899",
+   "Gaia DR3 6098070987224611840",
+   "HD 128582",
+   "HIP 71639",
+   "TIC 128703021",
+   "TYC 8279-3080-1"
+  ],
+  "n": 1,
+  "per_id": {
+   "2MASS J14391085-4635039": 0,
+   "CD-46 9469": 0,
+   "CPD-46 6899": 0,
+   "Gaia DR3 6098070987224611840": 0,
+   "HD 128582": 0,
+   "HD128582": 0,
+   "HIP 71639": 0,
+   "HIP71639": 0,
+   "TIC 128703021": 1,
+   "TIC128703021": 0,
+   "TYC 8279-3080-1": 0,
+   "TYC8279-3080-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2021MNRAS.501.4669E",
+    "year": "2021",
+    "title": "Planet Hunters TESS II: findings from the first two years of TESS",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ]
+ },
+ "128703032": {
+  "ids": [
+   "2MASS J14390322-4635207",
+   "Gaia DR3 6098069574176422016",
+   "TIC 128703032",
+   "TYC 8279-2609-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "137966491": {
+  "ids": [
+   "2MASS J03212830+3254500",
+   "Gaia DR3 125179437479116544",
+   "HD 278555",
+   "TIC 137966491",
+   "TYC 2345-1684-1"
+  ],
+  "n": 1,
+  "per_id": {
+   "2MASS J03212830+3254500": 1,
+   "Gaia DR3 125179437479116544": 1,
+   "HD 278555": 1,
+   "HD278555": 1,
+   "TIC 137966491": 1,
+   "TIC137966491": 0,
+   "TYC 2345-1684-1": 0,
+   "TYC2345-1684-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2026AJ....172..158B",
+    "year": "2026",
+    "title": "Confirmation of the Low-eccentricity Warm Jupiter HD 278555 b with NEID",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   }
+  ]
+ },
+ "140924300": {
+  "ids": [
+   "2MASS J08350560-4608284",
+   "Gaia DR3 5521856937844733312",
+   "TIC 140924300",
+   "TYC 8150-2009-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "144540899": {
+  "ids": [
+   "2MASS J05395824-3602400",
+   "CD-36 2378",
+   "CPD-36 771",
+   "Gaia DR3 2888236180802097664",
+   "TIC 144540899",
+   "TYC 7068-577-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "144818726": {
+  "ids": [
+   "2MASS J08450430-4812038",
+   "Gaia DR3 5329080079547582336",
+   "TIC 144818726",
+   "TYC 8155-1988-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "147813662": {
+  "ids": [
+   "Gaia DR3 6238492469059785088",
+   "TIC 147813662"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "148742754": {
+  "ids": [
+   "2MASS J07393959-3313469",
+   "Gaia DR3 5588931270304220288",
+   "TIC 148742754",
+   "TYC 7110-3113-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "148821223": {
+  "ids": [
+   "2MASS J15365400+3748075",
+   "Gaia DR3 1375563748715690368",
+   "TIC 148821223",
+   "TYC 3053-2213-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "157264264": {
+  "ids": [
+   "2MASS J13114103+5647059",
+   "Gaia DR3 1566410070757153024",
+   "TIC 157264264",
+   "TYC 3846-1140-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "159730525": {
+  "ids": [
+   "2MASS J21143061-3918506",
+   "Gaia DR3 6583420566747746176",
+   "TIC 159730525",
+   "TYC 7966-866-1"
+  ],
+  "n": 1,
+  "per_id": {
+   "2MASS J21143061-3918506": 1,
+   "Gaia DR3 6583420566747746176": 1,
+   "TIC 159730525": 1,
+   "TIC159730525": 0,
+   "TYC 7966-866-1": 0,
+   "TYC7966-866-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2024MNRAS.530.2565D",
+    "year": "2024",
+    "title": "The EBLM Project XII. An eccentric, long-period eclipsing binary with a companion near the hydrogen-burning limit",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ]
+ },
+ "162305348": {
+  "ids": [
+   "2MASS J11163782-4411397",
+   "CD-43 6925",
+   "CPD-43 5297",
+   "Gaia DR3 5376650759348839552",
+   "TIC 162305348",
+   "TYC 7738-531-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "162896022": {
+  "ids": [
+   "2MASS J11254351-4609169",
+   "Gaia DR3 5375445866404501248",
+   "TIC 162896022",
+   "TYC 8213-305-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "165638196": {
+  "ids": [
+   "Gaia DR3 1600488536010655872",
+   "TIC 165638196",
+   "TYC 3868-207-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "165795955": {
+  "ids": [
+   "2MASS J08074086+3257219",
+   "Gaia DR3 902193722029043968",
+   "TIC 165795955",
+   "TYC 2473-593-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "168789840": {
+  "ids": [
+   "Gaia DR3 4882954370431549696",
+   "TIC 168789840"
+  ],
+  "n": 21,
+  "per_id": {
+   "Gaia DR3 4882954370431549696": 0,
+   "TIC 168789840": 19,
+   "TIC168789840": 2
+  },
+  "papers": [
+   {
+    "bibcode": "2025arXiv251210817P",
+    "year": "2025",
+    "title": "Extrapolation of Periodic Functions Using Binary Encoding of Continuous Numerical Values",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025ApJ...994..133M",
+    "year": "2025",
+    "title": "Characterizing TESS-identified Quadruple- and Higher-order Eclipsing Binaries. I. Speckle Imaging with DSSI and HRCam",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025Univ...11..319B",
+    "year": "2025",
+    "title": "Selected Results on Variable Stars Observed by TESS",
+    "pub": "Universe",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025CoSka..55c.243T",
+    "year": "2025",
+    "title": "Populations of hierarchical stellar systems",
+    "pub": "Contributions of the Astronomical Observatory Skalnate Pleso",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025CoSka..55c.255Z",
+    "year": "2025",
+    "title": "Doubly eclipsing systems: Divide et impera",
+    "pub": "Contributions of the Astronomical Observatory Skalnate Pleso",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024BAAVC.201...33L",
+    "year": "2024",
+    "title": "Eclipsing Binary News",
+    "pub": "British Astronomical Association Variable Star Section Circular",
+    "doctype": "circular"
+   },
+   {
+    "bibcode": "2024A&A...689A.164K",
+    "year": "2024",
+    "title": "KIC 4150611: A quadruply eclipsing heptuple star system with a g-mode period-spacing pattern: Eclipse modelling of the triple and spectroscopic analysis",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023MNRAS.524.4296P",
+    "year": "2023",
+    "title": "A Hunting Expedition For High-Order Hierarchies",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023MNRAS.520.3127Z",
+    "year": "2023",
+    "title": "V994 Herculis: a unique triply eclipsing sextuple star system",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022ApJ...938..133P",
+    "year": "2022",
+    "title": "TIC 114936199: A Quadruple Star System with a 12 Day Outer-orbit Eclipse",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022AcA....72..103Z",
+    "year": "2022",
+    "title": "TIC 452991707 and TIC 452991693 as a Candidate Sextuple System with Three Eclipsing Binaries",
+    "pub": "Acta Astronomica",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022SPIE12180E..16Z",
+    "year": "2022",
+    "title": "Science goals of the Earth 2.0 space mission",
+    "pub": "Space Telescopes and Instrumentation 2022: Optical, Infrared, and Millimeter Wave",
+    "doctype": "inproceedings"
+   },
+   {
+    "bibcode": "2022ApJS..259...66K",
+    "year": "2022",
+    "title": "Ninety-seven Eclipsing Quadruple Star Candidates Discovered in TESS Full-frame Images",
+    "pub": "The Astrophysical Journal Supplement Series",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022A&A...659A...8Z",
+    "year": "2022",
+    "title": "The first study of four doubly eclipsing systems",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021MNRAS.508.6111L",
+    "year": "2021",
+    "title": "Orbital parameters of the hierarchical triplet system CN Lyn",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021ApJ...920..137J",
+    "year": "2021",
+    "title": "Say Hello to Algol's New Companion Candidates",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021Univ....7..369S",
+    "year": "2021",
+    "title": "Space-Based Photometry of Binary Stars: From Voyager to TESS",
+    "pub": "Universe",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021Univ....7..352T",
+    "year": "2021",
+    "title": "Architecture of Hierarchical Stellar Systems and Their Formation",
+    "pub": "Universe",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021AJ....162...41T",
+    "year": "2021",
+    "title": "Speckle Interferometry at SOAR in 2020",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021PhyW...34c..10C",
+    "year": "2021",
+    "title": "Sextuply-eclipsing star system discovered",
+    "pub": "Physics World",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021AJ....161..162P",
+    "year": "2021",
+    "title": "TIC 168789840: A Sextuply Eclipsing Sextuple Star System",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   }
+  ]
+ },
+ "173329532": {
+  "ids": [
+   "2MASS J07270760-3645428",
+   "Gaia DR3 5586566083351122816",
+   "TIC 173329532",
+   "TYC 7116-860-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "176518126": {
+  "ids": [
+   "2MASS J05484396-0029420",
+   "Gaia DR3 3218351455980372352",
+   "HD 290893",
+   "TIC 176518126",
+   "TYC 4768-488-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "177994853": {
+  "ids": [
+   "TIC 177994853"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "188043856": {
+  "ids": [
+   "2MASS J10432082-2927339",
+   "Gaia DR3 5455592086448314496",
+   "TIC 188043856"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "192561660": {
+  "ids": [
+   "2MASS J10195944-2311402",
+   "Gaia DR3 5473801888789356160",
+   "TIC 192561660",
+   "TYC 6619-44-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "192687318": {
+  "ids": [
+   "2MASS J03114016+4538247",
+   "Gaia DR3 434630147530884864",
+   "TIC 192687318",
+   "TYC 3311-1047-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "192831602": {
+  "ids": [
+   "2MASS J05314869-3809543",
+   "Gaia DR3 4809169065671083264",
+   "TIC 192831602",
+   "TYC 7596-1102-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "193980106": {
+  "ids": [
+   "2MASS J20273793+4643547",
+   "Gaia DR3 2083119714778755840",
+   "TIC 193980106",
+   "TYC 3573-1102-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "203892745": {
+  "ids": [
+   "BD-10 4587",
+   "Gaia DR3 4152023298294075136",
+   "HD 164601",
+   "TIC 203892745",
+   "TYC 5679-1027-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "206385646": {
+  "ids": [
+   "2MASS J03372969-4916410",
+   "Gaia DR3 4832762180020925440",
+   "TIC 206385646",
+   "TYC 8063-1272-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "207783865": {
+  "ids": [
+   "2MASS J13481459-5425142",
+   "Gaia DR3 6064975786002098816",
+   "TIC 207783865",
+   "TYC 8668-926-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "212180785": {
+  "ids": [
+   "2MASS J17025697-4946273",
+   "Gaia DR3 5938217011797346304",
+   "TIC 212180785",
+   "TYC 8335-2628-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "212375563": {
+  "ids": [
+   "2MASS J01461749-1636360",
+   "Gaia DR3 5142431452365814912",
+   "TIC 212375563"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "215718896": {
+  "ids": [
+   "2MASS J19402933+2644509",
+   "Gaia DR3 2022063288682835200",
+   "TIC 215718896",
+   "TYC 2147-2779-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "216737675": {
+  "ids": [
+   "2MASS J19420510+2554077",
+   "BD+25 3925",
+   "Gaia DR3 2021783806547604480",
+   "HD 338734",
+   "HIP 96920",
+   "TIC 216737675",
+   "TYC 2143-388-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "219018744": {
+  "ids": [
+   "2MASS J14561593+6554123",
+   "Gaia DR3 1621257833919119232",
+   "TIC 219018744",
+   "TYC 4186-439-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "219413978": {
+  "ids": [
+   "2MASS J05172079-5002069",
+   "Gaia DR3 4773415245341279488",
+   "TIC 219413978",
+   "TYC 8093-529-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "220422456": {
+  "ids": [
+   "2MASS J04483594-5706346",
+   "Gaia DR3 4774643369765924480",
+   "TIC 220422456",
+   "TYC 8513-345-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "233429340": {
+  "ids": [
+   "2MASS J20095439+5855350",
+   "Gaia DR3 2236269628558885760",
+   "TIC 233429340"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "234442708": {
+  "ids": [
+   "2MASS J07344343+1145283",
+   "BD+12 1599",
+   "Gaia DR3 3162219257079843456",
+   "TIC 234442708",
+   "TYC 773-566-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "234523941": {
+  "ids": [
+   "2MASS J01020051-6325259",
+   "CPD-64 105",
+   "Gaia DR3 4709449683223090560",
+   "TIC 234523941",
+   "TYC 8845-611-1"
+  ],
+  "n": 1,
+  "per_id": {
+   "2MASS J01020051-6325259": 0,
+   "CPD-64 105": 1,
+   "Gaia DR3 4709449683223090560": 0,
+   "TIC 234523941": 0,
+   "TIC234523941": 0,
+   "TYC 8845-611-1": 0,
+   "TYC8845-611-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "1967ApJS...14..125H",
+    "year": "1967",
+    "title": "Observations of Southern Planetary Nebulae",
+    "pub": "The Astrophysical Journal Supplement Series",
+    "doctype": "article"
+   }
+  ]
+ },
+ "235173044": {
+  "ids": [
+   "TIC 235173044"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "237077016": {
+  "ids": [
+   "2MASS J20284408+6149305",
+   "BD+61 2018",
+   "Gaia DR3 2242975068937862912",
+   "TIC 237077016",
+   "TYC 4233-535-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "238196979": {
+  "ids": [
+   "2MASS J03480802-7253250",
+   "Gaia DR3 4641637024405934208",
+   "TIC 238196979"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "245076932": {
+  "ids": [
+   "2MASS J13121527-5112519",
+   "CD-50 7578",
+   "Gaia DR3 6080787214190400384",
+   "TIC 245076932",
+   "TYC 8259-1806-1"
+  ],
+  "n": 3,
+  "per_id": {
+   "2MASS J13121527-5112519": 0,
+   "CD-50 7578": 0,
+   "Gaia DR3 6080787214190400384": 0,
+   "TIC 245076932": 3,
+   "TIC245076932": 0,
+   "TYC 8259-1806-1": 0,
+   "TYC8259-1806-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2026MNRAS.548ag512L",
+    "year": "2026",
+    "title": "Automatic search for transiting planets in TESS\u2500SPOC FFIs with RAVEN: over 100 newly validated planets and over 2000 vetted candidates",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026A&A...708A.189G",
+    "year": "2026",
+    "title": "PLATOSpec first results: Three new transiting warm Jupiters from the WINE survey, TIC 147027702, TIC 245076932, and TIC 87422071",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026yCat..37080189G",
+    "year": "2026",
+    "title": "VizieR Online Data Catalog: Three new transiting warm Jupiters RV curves (Gajdos+, 2026)",
+    "pub": "VizieR Online Data Catalog",
+    "doctype": "dataset"
+   }
+  ]
+ },
+ "253917513": {
+  "ids": [
+   "2MASS J18560317-3806401",
+   "CD-38 13209",
+   "CPD-38 7637",
+   "Gaia DR3 6730661288425305856",
+   "TIC 253917513",
+   "TYC 7916-418-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "257352273": {
+  "ids": [
+   "2MASS J21094368+2346139",
+   "Gaia DR3 1840215026152295936",
+   "TIC 257352273",
+   "TYC 2173-1353-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "262590678": {
+  "ids": [
+   "2MASS J23131259+0439022",
+   "Gaia DR3 2662372371919204224",
+   "TIC 262590678",
+   "TYC 580-278-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "264194780": {
+  "ids": [
+   "TIC 264194780"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "265340681": {
+  "ids": [
+   "2MASS J08535335+0542438",
+   "BD+06 2055",
+   "Gaia DR3 582076855835676160",
+   "TIC 265340681",
+   "TYC 225-1029-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "265527315": {
+  "ids": [
+   "2MASS J21282553-6406106",
+   "Gaia DR3 6403090390528128640",
+   "TIC 265527315"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "266376971": {
+  "ids": [
+   "2MASS J11404068-5806156",
+   "CD-57 4068",
+   "CPD-57 4910",
+   "Gaia DR3 5342456978547165824",
+   "HD 101544",
+   "HIP 56966",
+   "TIC 266376971",
+   "TYC 8638-592-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "266680498": {
+  "ids": [
+   "2MASS J01525053-1930251",
+   "BD-20 358",
+   "CPD-20 219",
+   "Gaia DR3 5137855525488932864",
+   "HD 11506",
+   "HIP 8770",
+   "TIC 266680498",
+   "TYC 5858-2028-1"
+  ],
+  "n": 38,
+  "per_id": {
+   "2MASS J01525053-1930251": 0,
+   "BD-20 358": 0,
+   "CPD-20 219": 0,
+   "Gaia DR3 5137855525488932864": 0,
+   "HD 11506": 37,
+   "HD11506": 37,
+   "HIP 8770": 3,
+   "HIP8770": 0,
+   "TIC 266680498": 0,
+   "TIC266680498": 0,
+   "TYC 5858-2028-1": 1,
+   "TYC5858-2028-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2026arXiv260909077R",
+    "year": "2026",
+    "title": "The Discovery of K2-232c: Divergent Formation Histories for Hot and Warm Jupiters Based on Outer Companion Eccentricity",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026A&A...713A..78R",
+    "year": "2026",
+    "title": "The GAPS programme with HARPS-N at TNG: LXXVII. Occurrence rates of small close-in planets in the presence of cold Jupiters",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260901790H",
+    "year": "2026",
+    "title": "Precise Stellar Age Constraints and Habitable Zone Evolution in Exoplanet Systems",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025ApJS..280...61A",
+    "year": "2025",
+    "title": "Orbits and Masses for 156 Companions from Combined Astrometry and Radial Velocities, and a Validation of Gaia Non-single-star Solutions",
+    "pub": "The Astrophysical Journal Supplement Series",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025ApJS..280...76M",
+    "year": "2025",
+    "title": "Exploring Warm Jupiter Migration Pathways with Eccentricities. I. Catalog of Uniform Keplerian Fits to Radial Velocities of 200 Warm Jupiters",
+    "pub": "The Astrophysical Journal Supplement Series",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025MNRAS.542.1233R",
+    "year": "2025",
+    "title": "The GAPS programme at TNG LXVIII. Characterization of the outer substellar companion around HD 72659 with a multitechnique approach<SUP></SUP>",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025PhDT........53G",
+    "year": "2025",
+    "title": "Multiplicity of stellar systems in the solar neighbourhood, wide binaries, and planet-hosting stars",
+    "pub": "Ph.D. Thesis",
+    "doctype": "phdthesis"
+   },
+   {
+    "bibcode": "2025AJ....169..149H",
+    "year": "2025",
+    "title": "Architecture Classification for Extrasolar Planetary Systems",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024A&A...689A.235R",
+    "year": "2024",
+    "title": "The GAPS Programme at TNG: LVIII. Two multi-planet systems with long-period substellar companions around metal-rich stars",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024eas..conf..635R",
+    "year": "2024",
+    "title": "Three new substellar companions from synergies between Gaia's astrometry and RVs",
+    "pub": "EAS2024, European Astronomical Society Annual Meeting",
+    "doctype": "inproceedings"
+   },
+   {
+    "bibcode": "2024yCat..36890235R",
+    "year": "2024",
+    "title": "VizieR Online Data Catalog: HD 75898 and HD 11506 radial velocities (Ruggieri+, 2024)",
+    "pub": "VizieR Online Data Catalog",
+    "doctype": "dataset"
+   },
+   {
+    "bibcode": "2024AnApS..18..749H",
+    "year": "2024",
+    "title": "A continuous multiple hypothesis testing framework for optimal exoplanet detection",
+    "pub": "Annals of Applied Statistics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023AnRSA..10..623H",
+    "year": "2023",
+    "title": "Statistical Methods for Exoplanet Detection with Radial Velocities",
+    "pub": "Annual Review of Statistics and Its Application",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022LPICo2687.3046H",
+    "year": "2022",
+    "title": "A Catalog of Habitable Zone Exoplanets",
+    "pub": "Exoplanets in Our Backyard 2",
+    "doctype": "inproceedings"
+   },
+   {
+    "bibcode": "2022ApJS..262...21F",
+    "year": "2022",
+    "title": "3D Selection of 167 Substellar Companions to Nearby Stars",
+    "pub": "The Astrophysical Journal Supplement Series",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022arXiv220407515G",
+    "year": "2022",
+    "title": "A possible solution for the faint young Sun paradox: Clues from the exoplanetary data",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2019ApJ...887....3P",
+    "year": "2019",
+    "title": "A Statistical Approach to Planetesimal Condensate Composition beyond the Snowline Based on the Carbon-to-oxygen Ratio",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2019A&A...626A..74V",
+    "year": "2019",
+    "title": "The 3D secular dynamics of radial-velocity-detected planetary systems",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2018MNRAS.481.4680A",
+    "year": "2018",
+    "title": "Prospecting for exo-Earths in multiple planet systems with a gas giant",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2018AJ....156..213M",
+    "year": "2018",
+    "title": "Radial Velocities from the N2K Project: Six New Cold Gas Giant Planets Orbiting HD 55696, HD 98736, HD 148164, HD 203473, and HD 211810",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2018nap..book25187N",
+    "year": "2018",
+    "title": "Exoplanet Science Strategy",
+    "pub": "National Academies of Sciences",
+    "doctype": "inbook"
+   },
+   {
+    "bibcode": "2018haex.bookE..12C",
+    "year": "2018",
+    "title": "Planets in Mean-Motion Resonances and the System Around HD45364",
+    "pub": "Handbook of Exoplanets",
+    "doctype": "inbook"
+   },
+   {
+    "bibcode": "2017arXiv170705277F",
+    "year": "2017",
+    "title": "A catalogue of close encounter pairs",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2017AJ....153..136S",
+    "year": "2017",
+    "title": "Accurate Empirical Radii and Masses of Planets and Their Host Stars with Gaia Parallaxes",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2015ApJ...799...89G",
+    "year": "2015",
+    "title": "Newly Discovered Planets Orbiting HD 5319, HD 11506, HD 75784 and HD 10442 from the N2K Consortium",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2013CeMDA.117..149L",
+    "year": "2013",
+    "title": "On the extension of the Laplace-Lagrange secular theory to order two in the masses for extrasolar systems",
+    "pub": "Celestial Mechanics and Dynamical Astronomy",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2013DDA....4410005S",
+    "year": "2013",
+    "title": "Secular Evolution of Extrasolar Planetary Systems: An Extension of the Laplace-Lagrange Secular Theory",
+    "pub": "AAS/Division of Dynamical Astronomy Meeting #44",
+    "doctype": "abstract"
+   },
+   {
+    "bibcode": "2012MNRAS.423.2800H",
+    "year": "2012",
+    "title": "A uniformly derived catalogue of exoplanets from radial velocities",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2012arXiv1207.6212C",
+    "year": "2012",
+    "title": "Precise Radial Velocities of 2046 Nearby FGKM Stars and 131 Standards",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2011PASA...28..177Z",
+    "year": "2011",
+    "title": "Quantization of Planetary Systems and its Dependency on Stellar Rotation",
+    "pub": "Publications of the Astronomical Society of Australia",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2011MNRAS.415.3462F",
+    "year": "2011",
+    "title": "Detecting extrasolar planets from stellar radial velocities using Bayesian evidence",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2010MNRAS.408.1606W",
+    "year": "2010",
+    "title": "Estimating the masses of extra-solar planets",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2010BASBr..29...26L",
+    "year": "2010",
+    "title": "Naming the Extrasolar Planets",
+    "pub": "Bulletin of the Astronomical Society of Brazil",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2010OLEB...40..589K",
+    "year": "2010",
+    "title": "Application of Bayesian Statistics to Exoplanetary Data",
+    "pub": "Origins of Life and Evolution of the Biosphere",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2010OLEB...40R.595G",
+    "year": "2010",
+    "title": "On the Detectability of Biomarkers in Extrasolar Super-Earth Atmospheres",
+    "pub": "Origins of Life and Evolution of the Biosphere",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2009ApJ...703..671S",
+    "year": "2009",
+    "title": "A Substellar Companion in a 1.3 yr Nearly Circular Orbit of HD 16760",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2009A&A...496L..13T",
+    "year": "2009",
+    "title": "Bayesian analysis of the radial velocities of HD 11506 reveals another planetary companion",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2007ApJ...669.1336F",
+    "year": "2007",
+    "title": "Five Intermediate-Period Planets from the N2K Sample",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   }
+  ]
+ },
+ "268963812": {
+  "ids": [
+   "2MASS J07523485-5318485",
+   "Gaia DR3 5488725113438708480",
+   "TIC 268963812"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "274945051": {
+  "ids": [
+   "2MASS J15342693+2639071",
+   "Gaia DR3 1222646248506181248",
+   "TIC 274945051",
+   "TYC 2029-16-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "279178582": {
+  "ids": [
+   "2MASS J20552283+4636522",
+   "Gaia DR3 2163795113474178432",
+   "TIC 279178582",
+   "TYC 3575-849-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "279401253": {
+  "ids": [
+   "2MASS J03503769-1501339",
+   "Gaia DR3 5110565749968529024",
+   "TIC 279401253",
+   "TYC 5881-551-1"
+  ],
+  "n": 9,
+  "per_id": {
+   "2MASS J03503769-1501339": 0,
+   "Gaia DR3 5110565749968529024": 0,
+   "TIC 279401253": 9,
+   "TIC279401253": 1,
+   "TYC 5881-551-1": 0,
+   "TYC5881-551-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2026ApJ..1008L..32W",
+    "year": "2026",
+    "title": "Warm Sub-Saturns Orbiting Single Stars are Spin-Orbit Aligned",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025ApJ...994...43C",
+    "year": "2025",
+    "title": "Revising the Giant Planet Mass\u2500Metallicity Relation: Deciphering the Formation Sequence of Giant Planets",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025PhRvD.112b3038A",
+    "year": "2025",
+    "title": "Numerical approach to second-order canonical perturbation theory in the planetary 3-body problem: Application to exoplanets",
+    "pub": "Physical Review D",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025AJ....169..298E",
+    "year": "2025",
+    "title": "TOI-6695: A Pair of Near-resonant Massive Planets Observed with TESS from the WINE Survey",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025ApJ...978L..22V",
+    "year": "2025",
+    "title": "TOI-4504: Exceptionally Large Transit Timing Variations Induced by Two Resonant Warm Gas Giants in a Three-planet System",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023A&A...675A.115K",
+    "year": "2023",
+    "title": "TOI-1130: A photodynamical analysis of a hot Jupiter in resonance with an inner low-mass planet",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023ApJ...946L..36B",
+    "year": "2023",
+    "title": "A 2:1 Mean-motion Resonance Super-Jovian Pair Revealed by TESS, FEROS, and HARPS",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023AJ....165..179T",
+    "year": "2023",
+    "title": "TOI-2525 b and c: A Pair of Massive Warm Giant Planets with Strong Transit Timing Variations Revealed by TESS",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2018haex.bookE...7A",
+    "year": "2018",
+    "title": "Transit-Timing and Duration Variations for the Discovery and Characterization of Exoplanets",
+    "pub": "Handbook of Exoplanets",
+    "doctype": "inbook"
+   }
+  ]
+ },
+ "279571968": {
+  "ids": [
+   "2MASS J07050489-5833292",
+   "Gaia DR3 5480584393767667584",
+   "TIC 279571968",
+   "TYC 8549-1087-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "289086207": {
+  "ids": [
+   "2MASS J18290540+3639111",
+   "Gaia DR3 2095789838239418496",
+   "TIC 289086207",
+   "TYC 2636-877-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "293954660": {
+  "ids": [
+   "2MASS J20024273+5320526",
+   "BD+52 2612",
+   "TIC 293954660",
+   "TYC 3936-588-1"
+  ],
+  "n": 1,
+  "per_id": {
+   "2MASS J20024273+5320526": 0,
+   "BD+52 2612": 0,
+   "TIC 293954660": 1,
+   "TIC293954660": 0,
+   "TYC 3936-588-1": 0,
+   "TYC3936-588-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2025A&A...693A..32N",
+    "year": "2025",
+    "title": "The GAPS Programme at TNG: LXV. Precise density measurement of TOI-1430 b, a young planet with an evaporating atmosphere",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   }
+  ]
+ },
+ "302599822": {
+  "ids": [
+   "2MASS J08582392-6708412",
+   "Gaia DR3 5224120905706388608",
+   "TIC 302599822",
+   "TYC 8939-1054-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "304213412": {
+  "ids": [
+   "2MASS J09265710-6754005",
+   "Gaia DR3 5246931167778728064",
+   "TIC 304213412",
+   "TYC 9196-2827-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "306255021": {
+  "ids": [
+   "TIC 306255021",
+   "TOI-3091.01"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "309264964": {
+  "ids": [
+   "TIC 309264964"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "309334280": {
+  "ids": [
+   "2MASS J05575306+3016521",
+   "Gaia DR3 3443821674062259328",
+   "TIC 309334280",
+   "TYC 2406-149-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "311838200": {
+  "ids": [
+   "2MASS J12072688-7029217",
+   "Gaia DR3 5855840775977123456",
+   "TIC 311838200",
+   "TYC 9231-1222-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "313339542": {
+  "ids": [
+   "2MASS J11563446+7239023",
+   "Gaia DR3 1074927754665668864",
+   "TIC 313339542",
+   "TYC 4399-533-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "318707987": {
+  "ids": [
+   "2MASS J00345752+0422531",
+   "BD+03 68",
+   "EPIC 220383386",
+   "Gaia DR3 2554032474712538880",
+   "HD 3167",
+   "HIP 2736",
+   "K2-96",
+   "TIC 318707987",
+   "TYC 13-894-1"
+  ],
+  "n": 393,
+  "per_id": {
+   "2MASS J00345752+0422531": 0,
+   "BD+03 68": 1,
+   "EPIC 220383386": 7,
+   "Gaia DR3 2554032474712538880": 0,
+   "HD 3167": 164,
+   "HD3167": 164,
+   "HIP 2736": 0,
+   "HIP2736": 1,
+   "K2-96": 231,
+   "TIC 318707987": 0,
+   "TIC318707987": 0,
+   "TYC 13-894-1": 0,
+   "TYC13-894-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2026NatSR..16..411F",
+    "year": "2026",
+    "title": "A key amino acid site associated with rhodopsin mammal evolution to diurnal vision",
+    "pub": "Scientific Reports",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026NatCo..17..585Z",
+    "year": "2026",
+    "title": "Structural insights into the coordinated regulation of the SLAH family in Arabidopsis thaliana",
+    "pub": "Nature Communications",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv261003156Y",
+    "year": "2026",
+    "title": "Data-Free Weak-Form Staggered Neural Operators for Magneto-Mechanical Coupling in Finite-Strain Elastomers",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026ApJ..1009...97S",
+    "year": "2026",
+    "title": "Intense but Harmless: Exo-Space Weather around an M Dwarf with a Single-hemisphere Dynamo",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260931966Z",
+    "year": "2026",
+    "title": "The First Hubble Detection of a Secondary Eclipse from a Rocky Exoplanet: the 5.4-hour planet TOI-2431 b",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026arXiv260935607C",
+    "year": "2026",
+    "title": "JWST NIRSpec G395H Transmission Spectra of Two Similar Sub-Neptunes in the TOI-125 System",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026IJHE..27157285P",
+    "year": "2026",
+    "title": "Hydrogen in soil gas in Southern Moravia (Czech Republic): Origin and implications for exploration",
+    "pub": "International Journal of Hydrogen Energy",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260903029S",
+    "year": "2026",
+    "title": "JWST MIRI reveals a potential atmosphere on the ultra-hot rocky planet TOI-431b",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026arXiv260920155S",
+    "year": "2026",
+    "title": "Thermal Evolution of Lava Planets Across System Ages: Predictions for Hell of a Survey",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026ApJ..1008L...4N",
+    "year": "2026",
+    "title": "An Evolving Cosmic Shoreline and Sandbar Bounding the Rocky Airless Valley",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260909893D",
+    "year": "2026",
+    "title": "JWST-SUPER I: New insights into irradiated warm Neptunes atmospheres from MIRI observations of HD 106315 c",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026arXiv260926874C",
+    "year": "2026",
+    "title": "Revealing the Shiny Nature of Lava Worlds: Small Planet Phase Curves with TESS",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026arXiv260903144P",
+    "year": "2026",
+    "title": "Evolutionary pathways toward survival of a thick CO2- or SO2-rich atmosphere on the lava world TOI-561 b",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026ApJ..1008L..32W",
+    "year": "2026",
+    "title": "Warm Sub-Saturns Orbiting Single Stars are Spin-Orbit Aligned",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260919277W",
+    "year": "2026",
+    "title": "Does HD 3167 Have Planets with Perpendicular Orbits?",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026JIAgr..25.3387S",
+    "year": "2026",
+    "title": "Brucella effector protein BspF manipulates the host cell autophagy by acetylating SNAP29",
+    "pub": "Journal of Integrative Agriculture",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260825035J",
+    "year": "2026",
+    "title": "Kepler-50: Two Planets in Close Resonance Perturbed by a Non-transiting Planet",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026arXiv260800683Y",
+    "year": "2026",
+    "title": "ESCAPE: a small explorer mission to study the stellar drivers of exoplanet evolution",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026ApJ..1005..136D",
+    "year": "2026",
+    "title": "Peas and USPs: Can Stellar Spindown and Peas in a Pod Replicate Ultra-short-period Planet Characteristics?",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260719632H",
+    "year": "2026",
+    "title": "Dynamically Selected Mass-Radius Relationship for Low Mass Exoplanets",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026ApJ..1005L..77C",
+    "year": "2026",
+    "title": "Evidence for an Atmosphere on the Ultra-short-period Super-Earth HD 3167 b",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260715204P",
+    "year": "2026",
+    "title": "Sulfur photochemistry observationally traces mantle redox states of rocky planets",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026arXiv260711956L",
+    "year": "2026",
+    "title": "Exact and Certified Data Shapley for Weighted Nearest Neighbor Regression",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026AJ....172...57E",
+    "year": "2026",
+    "title": "POSEIDON I: The Dynamical Origins of Transiting Neptunes",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026MolEc..3533766M",
+    "year": "2026",
+    "title": "Widespread Variation in Retinochrome Spectral Absorbance Across Scallop Phylogeny",
+    "pub": "Molecular Ecology",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026ApJ..1003..190H",
+    "year": "2026",
+    "title": "Coupled Orbital and Interior Structure Evolution of Lava Planets",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026ApJS..284...57S",
+    "year": "2026",
+    "title": "JWST Exoplanetary Worlds and Elemental Survey (JEWELS). II. Condensation Temperature Trends and Galactic Chemical Evolution in JWST Planet-hosting Stars",
+    "pub": "The Astrophysical Journal Supplement Series",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260616205Z",
+    "year": "2026",
+    "title": "Integrability and transformations in the bilinear method: An introduction",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026ApJ..1002L..42C",
+    "year": "2026",
+    "title": "Sub-Neptunes Show a Stronger Correlation with Cold Jupiters than Super-Earths Especially in Metal-rich Systems",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026ApJ..1003L..16Y",
+    "year": "2026",
+    "title": "Sub-Neptunes as Soot Factories: Deep Atmosphere Hydrocarbon Formation and Quenching as the Origin of Sub-Neptune Aerosol Trends",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026PhRvB.113o5102D",
+    "year": "2026",
+    "title": "Observation of room-temperature charge density wave correlations via coherent phonon spectroscopy in the Sn-doped kagome superconductor <inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>CsV</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:msub><mml:mi>Sb</mml:mi><mml:mn>5</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>",
+    "pub": "Physical Review B",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260411779P",
+    "year": "2026",
+    "title": "Origin and characterization of super-Earths and sub-Neptunes",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026arXiv260323713H",
+    "year": "2026",
+    "title": "The KPF-SLOPE Survey - Small, Compact Multi-Planet Systems Appear Spin-Orbit Aligned",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026arXiv260324682K",
+    "year": "2026",
+    "title": "GJ 523b is a Massive, 170 Myr-old Mega-Earth, Likely on a Polar Orbit",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026Sci...392l2348W",
+    "year": "2026",
+    "title": "Gas-depleted planet formation occurred in the four-planet system around the red dwarf LHS 1903",
+    "pub": "Science",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026NatCo..17.1964H",
+    "year": "2026",
+    "title": "Cryo-EM structures of bacteriophage T4 portal-neck assembly intermediates reveal a viral genome retention mechanism",
+    "pub": "Nature Communications",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260223162C",
+    "year": "2026",
+    "title": "Existence and characterization of attractors for a nonlocal reaction-diffusion equation having an energy functional",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026arXiv260216470B",
+    "year": "2026",
+    "title": "High Energy Nuclear Optics of polarized nucleons and nuclei: research at complex Nuclotron M- NICA",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2026Sci...392..271W",
+    "year": "2026",
+    "title": "Gas-depleted planet formation occurred in the four-planet system around the red dwarf LHS 1903",
+    "pub": "Science",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026ApJ...996L...7W",
+    "year": "2026",
+    "title": "Unified Kraft Break at ~6500 K: A Newly Identified Single-star Obliquity Transition Matches the Classical Rotation Break",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026A&A...705A..82F",
+    "year": "2026",
+    "title": "Excitation of planetary inclinations via dynamical bifurcations driven by misaligned disks",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026NatCo..17..951D",
+    "year": "2026",
+    "title": "Structural basis of CSN-mediated SCF deneddylation",
+    "pub": "Nature Communications",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026SMaS...35a5044M",
+    "year": "2026",
+    "title": "Enhancing the linear sensing range of elastic fabric wearable strain sensors with Kirigami patterns",
+    "pub": "Smart Material Structures",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2026arXiv260100412L",
+    "year": "2026",
+    "title": "The Persistent Thermal Anomalies in Rocky Worlds",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025AJ....170..342Y",
+    "year": "2025",
+    "title": "Toward a 2D H I Map of the Local Interstellar Medium",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025A&A...704A.108C",
+    "year": "2025",
+    "title": "Refractory element abundances in rocky planets and their host stars: Revisiting the compositional link",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025CSF...20117432S",
+    "year": "2025",
+    "title": "Examining the classification of orbits within the context of the axisymmetric restricted five-body problem",
+    "pub": "Chaos Solitons and Fractals",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025NatSR..1539337Z",
+    "year": "2025",
+    "title": "Advanced glycated end-products modified transferrin mediates oxidative stress and ferroptosis in podocytes via advanced glycation end-product receptor in vitro",
+    "pub": "Scientific Reports",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025ApJ...993L..56P",
+    "year": "2025",
+    "title": "Induction Heating in Super-Earths: A Thermochemical Perspective",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025AdvSc..1204948F",
+    "year": "2025",
+    "title": "SIRT6 Lysine-Demyristoylates ATF2 to Ameliorate Vascular Injury via PRKCD/VE-Cadherin Pathway Regulating Vascular Endothelial Barrier",
+    "pub": "Advanced Science",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025arXiv251000656T",
+    "year": "2025",
+    "title": "The Euler characteristic of $\\ell$-adic local systems on $\\mathcal{A}_n$",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025arXiv251008493K",
+    "year": "2025",
+    "title": "Optimal Distillation of Qubit Clocks",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025arXiv251011895A",
+    "year": "2025",
+    "title": "High-Probability Bounds For Heterogeneous Local Differential Privacy",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025NatAs...9.1511B",
+    "year": "2025",
+    "title": "The role of interior dynamics and differentiation on the surface and in the atmosphere of lava planets",
+    "pub": "Nature Astronomy",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025A&A...701A.173G",
+    "year": "2025",
+    "title": "The star HIP 41378 potentially misaligned with its cohort of long-period planets",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025arXiv250917604F",
+    "year": "2025",
+    "title": "Equivariant $H\\underline{\\mathbb{F}}_p$-modules are wild",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025A&A...701A.184K",
+    "year": "2025",
+    "title": "The SPACE Program: I. The featureless spectrum of HD 86226 c challenges sub-Neptune atmosphere trends",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025AJ....170..175Z",
+    "year": "2025",
+    "title": "TOI-880 is an Aligned, Coplanar, Multiplanet System",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025AJ....170..182P",
+    "year": "2025",
+    "title": "An Aligned Sub-Neptune Revealed with MAROON-X and a Tendency Toward Alignment for Small Planets",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025arXiv250821682I",
+    "year": "2025",
+    "title": "Hilbert Forest in the SISAP 2025 Indexing Challenge",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025ApJ...989L...5F",
+    "year": "2025",
+    "title": "Bifurcated Evolutionary Pathways in Multiplanet Systems Driven by Misaligned Protoplanetary Disks",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025arXiv250811763G",
+    "year": "2025",
+    "title": "Phase transition on randomly horizontally stretched square lattice",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025arXiv250806471.",
+    "year": "2025",
+    "title": "GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025arXiv250813183A",
+    "year": "2025",
+    "title": "Topological Regularization of 1 Loop and 2 Loop Gravitational Corrections in the Higgs Fermion Sector",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025AJ....170..108H",
+    "year": "2025",
+    "title": "HD 35843: A Sun-like Star Hosting a Long-period Sub-Neptune and Inner Super-Earth",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025EcoEv..1571784P",
+    "year": "2025",
+    "title": "Comparative Analysis of Convergent Jellyfish Eyes Reveals Extensive Differences in Expression of Vision-Related Genes",
+    "pub": "Ecology and Evolution",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025ARep...69..574M",
+    "year": "2025",
+    "title": "Characteristics of Super-Earths and Mini-Neptunes",
+    "pub": "Astronomy Reports",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025AJ....170...51T",
+    "year": "2025",
+    "title": "Stellar Obliquity of the Ultra-short-period Planet System HD 93963",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025ApJ...988L..18B",
+    "year": "2025",
+    "title": "JWST Coronagraphic Images of 14 Her c: A Cold Giant Planet in a Dynamically Hot Multiplanet System",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025PhDT........53G",
+    "year": "2025",
+    "title": "Multiplicity of stellar systems in the solar neighbourhood, wide binaries, and planet-hosting stars",
+    "pub": "Ph.D. Thesis",
+    "doctype": "phdthesis"
+   },
+   {
+    "bibcode": "2025AJ....169..286M",
+    "year": "2025",
+    "title": "HST Transmission Spectra of the Hot Neptune HD 219666 b: Detection of Water and the Challenge of Constraining Both Water and Methane",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025ApJS..278...52H",
+    "year": "2025",
+    "title": "Planet Masses, Radii, and Orbits from NASA's K2 Mission",
+    "pub": "The Astrophysical Journal Supplement Series",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025arXiv250516164Q",
+    "year": "2025",
+    "title": "Can LLMs Simulate Human Behavioral Variability? A Case Study in the Phonemic Fluency Task",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2025A&A...697A..31P",
+    "year": "2025",
+    "title": "Exploring the atmosphere of GJ 1132 b with CRIRES+",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025AJ....169..239M",
+    "year": "2025",
+    "title": "Low 4.5 \u03bcm Dayside Emission Disfavors a Dark Bare-rock Scenario for the Hot Super-Earth TOI-431 b",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025CBI...41011436F",
+    "year": "2025",
+    "title": "Protosappanin B activates the Wnt pathway to protect against glucocorticoid-induced osteoblast inhibition and enhance bone formation",
+    "pub": "Chemico-Biological Interactions",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025ChEnJ.50559172F",
+    "year": "2025",
+    "title": "Covalent bond concentration and pyrolysis free radical reaction of kerogens in oil shale with different densities from the same mining area",
+    "pub": "Chemical Engineering Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025JQSRT.33109264N",
+    "year": "2025",
+    "title": "Line-shape parameters and their temperature dependence for self-broadened CO<SUB>2</SUB> lines in the 296 K- 1250 K range by requantized classical molecular dynamics simulations",
+    "pub": "Journal of Quantitative Spectroscopy and Radiative Transfer",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025psss.confE..17P",
+    "year": "2025",
+    "title": "Tightest Constraints to Date on the Cloudy Atmosphere of GJ 436 B with Carmenes",
+    "pub": "Proceedings of the VIII Iberian Congress on Planetary Sciences and Solar System Exploration",
+    "doctype": "inproceedings"
+   },
+   {
+    "bibcode": "2025A&A...693A...4O",
+    "year": "2025",
+    "title": "Homogeneous planet masses: I. Reanalysis of archival HARPS radial velocities",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025MNRAS.536.2046Y",
+    "year": "2025",
+    "title": "A possible misaligned orbit for the young planet AU Mic c",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024NatSR..1431539A",
+    "year": "2024",
+    "title": "Anatomy and transcriptomics of the common jingle shell (Bivalvia, Anomiidae) support a sensory function for bivalve tentacles",
+    "pub": "Scientific Reports",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024arXiv241205545X",
+    "year": "2024",
+    "title": "Convergence analysis of wide shallow neural operators within the framework of Neural Tangent Kernel",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2024ApJ...976..202P",
+    "year": "2024",
+    "title": "Puffy Venuses: The Mass\u2500Radius Impact of Carbon-rich Atmospheres on Lava Worlds",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024EneBu.32314850L",
+    "year": "2024",
+    "title": "Thermal performance analysis of lightweight phase change envelopes",
+    "pub": "Energy and Buildings",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024NatSR..1429431C",
+    "year": "2024",
+    "title": "The arms race of ray-finned fish against the derepression of LTR retroelements",
+    "pub": "Scientific Reports",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024AJ....168..196L",
+    "year": "2024",
+    "title": "The HD 191939 Exoplanet System is Well Aligned and Flat",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024ApJ...973L..43F",
+    "year": "2024",
+    "title": "Sculpting of Exoplanetary Systems Driven by a Misaligned Disk and Stellar Oblateness: Origin of Perpendicular Orbits in HD 3167",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024AJ....168..185E",
+    "year": "2024",
+    "title": "HATS-38 b and WASP-139 b Join a Growing Group of Hot Neptunes on Polar Orbits",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024ApJ...974..304L",
+    "year": "2024",
+    "title": "Polar Neptunes Are Stable to Tides",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024A&A...690A.379K",
+    "year": "2024",
+    "title": "Obliquities of exoplanet host stars: Nineteen new and updated measurements, and trends in the sample of 205 measurements",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024A&A...688A..45M",
+    "year": "2024",
+    "title": "ExoplANETS-A: A virtual observatory database for host stars and planetary systems. The effect of XUV on planet atmospheres",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024SPIE13092E..14Q",
+    "year": "2024",
+    "title": "The Pandora SmallSat: multiwavelength characterization of exoplanets and their host stars",
+    "pub": "Space Telescopes and Instrumentation 2024: Optical, Infrared, and Millimeter Wave",
+    "doctype": "inproceedings"
+   },
+   {
+    "bibcode": "2024ApJ...970...53L",
+    "year": "2024",
+    "title": "Stellar Characterization and a Chromospheric Activity Analysis of a K2 Sample of Planet-hosting Stars",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024Drone...8..246H",
+    "year": "2024",
+    "title": "Rotor Speed Prediction Model of Multi-Rotor Unmanned Aerial Spraying System and Its Matching with the Overall Load",
+    "pub": "Drones",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024arXiv240611353C",
+    "year": "2024",
+    "title": "$\\texttt{MoE-RBench}$: Towards Building Reliable Language Models with Sparse Mixture-of-Experts",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2024A&A...686A.282R",
+    "year": "2024",
+    "title": "Precise characterisation of HD 15337 with CHEOPS: A laboratory for planet formation and evolution",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024ApJS..272...35Z",
+    "year": "2024",
+    "title": "Comparison of Machine-learning and Bayesian Inferences for the Interior of Rocky Exoplanets with Large Compositional Diversity",
+    "pub": "The Astrophysical Journal Supplement Series",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024arXiv240500891C",
+    "year": "2024",
+    "title": "An interacting particle consensus method for constrained global optimization",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2024MNRAS.530.2166B",
+    "year": "2024",
+    "title": "Cool Gaseous Exoplanets: surveying the new frontier with Twinkle",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024arXiv240406958S",
+    "year": "2024",
+    "title": "Star-planet interaction and its impact on the stellar rotation",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2024Sust...16.2078H",
+    "year": "2024",
+    "title": "A Neopragmatic Perspective on the Processual Nature of Landscape\u2014Coastal Land Loss in Louisiana in the Context of Scientific Findings, Social Patterns of Interpretation, and Individual Experience",
+    "pub": "Sustainability",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024JMolE..92...61S",
+    "year": "2024",
+    "title": "Scaling up Functional Analyses of the G Protein-Coupled Receptor Rhodopsin",
+    "pub": "Journal of Molecular Evolution",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024PhDT.........3M",
+    "year": "2024",
+    "title": "Exoplanets Prediction in Multi-Planetary Systems and Determining the Correlation Between the Parameters of Planets and Host Stars Using Artificial Intelligence",
+    "pub": "Ph.D. Thesis",
+    "doctype": "phdthesis"
+   },
+   {
+    "bibcode": "2024arXiv240213931K",
+    "year": "2024",
+    "title": "Planetary atmospheres Through Time: Effects of Mass Loss and Thermal Evolution",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2024MNRAS.527.7203Z",
+    "year": "2024",
+    "title": "Sweeping secular resonances and giant planet inclinations in transition discs",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023ApJ...959L...5L",
+    "year": "2023",
+    "title": "TOI-1670 c, a 40 day Orbital Period Warm Jupiter in a Compact System, Is Well Aligned",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023NatSR..1321343S",
+    "year": "2023",
+    "title": "Protective effects of niacin following high fat rich diet: an in-vivo and in-silico study",
+    "pub": "Scientific Reports",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023AJ....166..232W",
+    "year": "2023",
+    "title": "Validating AU Microscopii d with Transit Timing Variations",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023AJ....166..266R",
+    "year": "2023",
+    "title": "Evidence for Low-level Dynamical Excitation in Near-resonant Exoplanet Systems",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023nap..book27358N",
+    "year": "2023",
+    "title": "Environmental effects on materials and equipment Abstracts Vol. 2, No. 3: March 1962, Section A",
+    "pub": "National Research Council. 1962. Environmental effects on materials and equipment Abstracts Vol. 2",
+    "doctype": "inbook"
+   },
+   {
+    "bibcode": "2023JPhD...56SLT03W",
+    "year": "2023",
+    "title": "Two magnetic entropy peaks during one-step martensitic transformation in a Ni<SUB>42</SUB>Co<SUB>8</SUB>Mn<SUB>37.5</SUB>In<SUB>12.5</SUB> alloy",
+    "pub": "Journal of Physics D Applied Physics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023ApJS..269....1Z",
+    "year": "2023",
+    "title": "Machine-learning Inferences of the Interior Structure of Rocky Exoplanets from Bulk Observational Constraints",
+    "pub": "The Astrophysical Journal Supplement Series",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023JSAES.12904525D",
+    "year": "2023",
+    "title": "Trace elements, C-O isotopes and U-Pb geochronology of the Minas Supergroup in the Segredo deposit, Quadril\u00e1tero Ferr\u00edfero, Brazil",
+    "pub": "Journal of South American Earth Sciences",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023Plant.258...68T",
+    "year": "2023",
+    "title": "AUX1, PIN3, and TAA1 collectively maintain fertility in Arabidopsis",
+    "pub": "Planta",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023ApJ...954...29P",
+    "year": "2023",
+    "title": "Rocky Planet or Water World? Observability of Low-density Lava World Atmospheres",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023A&A...677A..33B",
+    "year": "2023",
+    "title": "Cold Jupiters and improved masses in 38 Kepler and K2 small planet systems from 3661 HARPS-N radial velocities. No excess of cold Jupiters in small planet systems",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023FrEEv..1190549C",
+    "year": "2023",
+    "title": "Taxonomic distribution of opsin families inferred from UniProt Reference Proteomes and a suite of opsin-specific hidden Markov models",
+    "pub": "Frontiers in Ecology and Evolution",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023NatCo..14.3391B",
+    "year": "2023",
+    "title": "Substrate binding-induced conformational transitions in the omega-3 fatty acid transporter MFSD2A",
+    "pub": "Nature Communications",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023A&A...672A.134S",
+    "year": "2023",
+    "title": "Hot Exoplanet Atmospheres Resolved with Transit Spectroscopy (HEARTS): VIII. Nondetection of sodium in the atmosphere of the aligned planet KELT-10b",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023NatCo..14.1504W",
+    "year": "2023",
+    "title": "Insights into membrane association of the SMP domain of extended synaptotagmin",
+    "pub": "Nature Communications",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023Natur.615..939G",
+    "year": "2023",
+    "title": "Ultrafast structural changes direct the first molecular events of vision",
+    "pub": "Nature",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023arXiv230306214R",
+    "year": "2023",
+    "title": "A Catalog of Exoplanets with Equilibrium Temperature less than 600 K",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2023arXiv230210348H",
+    "year": "2023",
+    "title": "Binding-and-folding recognition of an intrinsically disordered protein using online learning molecular dynamics",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2023arXiv230200999S",
+    "year": "2023",
+    "title": "High-Probability Bounds for Stochastic Optimization and Variational Inequalities: the Case of Unbounded Variance",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2023NatAs...7..198Z",
+    "year": "2023",
+    "title": "Measured spin-orbit alignment of ultra-short-period super-Earth 55 Cancri e",
+    "pub": "Nature Astronomy",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023AJ....165...47E",
+    "year": "2023",
+    "title": "TOI-1075 b: A Dense, Massive, Ultra-short-period Hot Super-Earth Straddling the Radius Gap",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023ApJ...944L..41F",
+    "year": "2023",
+    "title": "NEID Reveals That the Young Warm Neptune TOI-2076 b Has a Low Obliquity",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023NatCo..14..128A",
+    "year": "2023",
+    "title": "Thermodynamic architecture and conformational plasticity of GPCRs",
+    "pub": "Nature Communications",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023Nanop..12..489L",
+    "year": "2023",
+    "title": "Scalable fabrication of self-assembled GeSn vertical nanowires for nanophotonic applications",
+    "pub": "Nanophotonics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023FrCh...1075648B",
+    "year": "2023",
+    "title": "Graphs of protein-water hydrogen bond networks to dissect structural movies of ion-transfer microbial rhodopsins",
+    "pub": "Frontiers in Chemistry",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023A&A...669A..63B",
+    "year": "2023",
+    "title": "DREAM: I. Orbital architecture orrery",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023AJ....165...10E",
+    "year": "2023",
+    "title": "TOI 560: Two Transiting Planets Orbiting a K Dwarf Validated with iSHELL, PFS, and HIRES RVs",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023arXiv230107641A",
+    "year": "2023",
+    "title": "A Primer on Unimodular Gravity",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2022A&A...668A..31B",
+    "year": "2022",
+    "title": "A CHEOPS-enhanced view of the HD 3167 system",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022A&A...668A.172G",
+    "year": "2022",
+    "title": "Rossiter-McLaughlin detection of the 9-month period transiting exoplanet HIP41378 d",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022A&A...667A...1S",
+    "year": "2022",
+    "title": "The HD 93963 A transiting system: A 1.04 d super-Earth and a 3.65 d sub-Neptune discovered by TESS and CHEOPS",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022icin.conf...51L",
+    "year": "2022",
+    "title": "Polyester staple fiber cluster matching localization algorithm based on master-slave dual cameras",
+    "pub": "2022 7th International Conference on Information and Network Technologies (ICINT)",
+    "doctype": "inproceedings"
+   },
+   {
+    "bibcode": "2022A&A...666A.155C",
+    "year": "2022",
+    "title": "TOI-1468: A system of two transiting planets, a super-Earth and a mini-Neptune, on opposite sides of the radius valley",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022PhRvM...6i5003J",
+    "year": "2022",
+    "title": "Carrier properties of Bi(111) grown on mica and Si(111)",
+    "pub": "Physical Review Materials",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022EPSC...16..954B",
+    "year": "2022",
+    "title": "A CHEOPS-enhanced view of the HD3167 system",
+    "pub": "European Planetary Science Congress",
+    "doctype": "abstract"
+   },
+   {
+    "bibcode": "2022arXiv220806313L",
+    "year": "2022",
+    "title": "Voxels Intersecting along Orthogonal Levels Attention U-Net for Intracerebral Haemorrhage Segmentation in Head CT",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2022arXiv220810187H",
+    "year": "2022",
+    "title": "Energy Transport and its Function in Heptahelical Transmembrane Proteins",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2022yCat..36680031B",
+    "year": "2022",
+    "title": "VizieR Online Data Catalog: A CHEOPS-enhanced view of the HD3167 system (Bourrier+, 2022)",
+    "pub": "VizieR Online Data Catalog",
+    "doctype": "dataset"
+   },
+   {
+    "bibcode": "2022Diver..14..653H",
+    "year": "2022",
+    "title": "Characterization and Comparison of Eye Development and Phototransduction Genes in Deep- and Shallow-Water Shrimp Alvinocaris longirostris and Palaemon carinicauda",
+    "pub": "Diversity",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022PASP..134h2001A",
+    "year": "2022",
+    "title": "Stellar Obliquities in Exoplanetary Systems",
+    "pub": "Publications of the Astronomical Society of the Pacific",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022SPIE12185E..1XB",
+    "year": "2022",
+    "title": "An adaptive optics upgrade for the Automated Planet Finder telescope using an adaptive secondary mirror",
+    "pub": "Adaptive Optics Systems VIII",
+    "doctype": "inproceedings"
+   },
+   {
+    "bibcode": "2022MeasT..65..227K",
+    "year": "2022",
+    "title": "Get 166-2020 State Primary Standard for the Frequency Deviation Unit",
+    "pub": "Measurement Techniques",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022NatCo..13.3912C",
+    "year": "2022",
+    "title": "Genomic insights into the secondary aquatic transition of penguins",
+    "pub": "Nature Communications",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022A&A...663A.134A",
+    "year": "2022",
+    "title": "Photodynamical analysis of the nearly resonant planetary system WASP-148. Accurate transit-timing variations and mutual orbital inclination",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022AJ....164...27W",
+    "year": "2022",
+    "title": "Transit Timing Variations for AU Microscopii b and c",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022AJ....163..247J",
+    "year": "2022",
+    "title": "An Aligned Orbit for the Young Planet V1298 Tau b",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022MolEc..31.2882R",
+    "year": "2022",
+    "title": "Molecular evolution and depth-related adaptations of rhodopsin in the adaptive radiation of cichlid fishes in Lake Tanganyika",
+    "pub": "Molecular Ecology",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022A&A...661A.126Z",
+    "year": "2022",
+    "title": "Observability of evaporating lava worlds",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022NatAs...6..736S",
+    "year": "2022",
+    "title": "A low-eccentricity migration pathway for a 13-h-period Earth analogue in a four-planet system",
+    "pub": "Nature Astronomy",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022SSRv..218...15L",
+    "year": "2022",
+    "title": "The Exosphere as a Boundary: Origin and Evolution of Airless Bodies in the Inner Solar System and Beyond Including Planets with Silicate Atmospheres",
+    "pub": "Space Science Reviews",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022arXiv220201554M",
+    "year": "2022",
+    "title": "Newton Type Methods for solving a Hasegawa-Mima Plasma Model",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2022MNRAS.510.3039K",
+    "year": "2022",
+    "title": "Atmospheric mass loss and stellar wind effects in young and old systems - II. Is TOI-942 the past of TOI-421 system?",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022ApJ...926L...8W",
+    "year": "2022",
+    "title": "The Aligned Orbit of WASP-148b, the Only Known Hot Jupiter with a nearby Warm Jupiter Companion, from NEID and HIRES",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022AJ....163...99G",
+    "year": "2022",
+    "title": "Validation of 13 Hot and Potentially Terrestrial TESS Planets",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022NatSR..12..816S",
+    "year": "2022",
+    "title": "Rational design of a helical peptide inhibitor targeting c-Myb-KIX interaction",
+    "pub": "Scientific Reports",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022ApJ...925L...5B",
+    "year": "2022",
+    "title": "The Chaotic History of the Retrograde Multi-planet System in K2-290A Driven by Distant Stars",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021NatAs...5.1205M",
+    "year": "2021",
+    "title": "On perpendicular paths",
+    "pub": "Nature Astronomy",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021arXiv211215475R",
+    "year": "2021",
+    "title": "Shift-Equivariant Similarity-Preserving Hypervector Representations of Sequences",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2021A&A...656A.157B",
+    "year": "2021",
+    "title": "Constraining stellar rotation and planetary atmospheric evolution of a dozen systems hosting sub-Neptunes and super-Earths",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021AJ....162..215S",
+    "year": "2021",
+    "title": "TESS-Keck Survey. V. Twin Sub-Neptunes Transiting the Nearby G Star HD 63935",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021A&A...654A.152B",
+    "year": "2021",
+    "title": "The Rossiter-McLaughlin effect revolutions: an ultra-short period planet and a warm mini-Neptune on perpendicular orbits",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021MNRAS.507.2782O",
+    "year": "2021",
+    "title": "TOI-431/HIP 26013: a super-Earth and a sub-Neptune transiting a bright, early K dwarf, with a third RV planet",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021Sci...374..330A",
+    "year": "2021",
+    "title": "A compositional link between rocky exoplanets and their host stars",
+    "pub": "Science",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021EPSC...15..194G",
+    "year": "2021",
+    "title": "HST WFC3 G141 data analysis: exploring the transition from Super-Earth to Sub-Neptune",
+    "pub": "European Planetary Science Congress",
+    "doctype": "abstract"
+   },
+   {
+    "bibcode": "2021MS&E.1163a2034S",
+    "year": "2021",
+    "title": "Performance Evaluation of Vertical Axis Wind Turbine on Highways",
+    "pub": "Materials Science and Engineering Conference Series",
+    "doctype": "inproceedings"
+   },
+   {
+    "bibcode": "2021PSJ.....2..152A",
+    "year": "2021",
+    "title": "Ultra-short-period Planets in K2. III. Neighbors are Common with 13 New Multiplanet Systems and 10 Newly Validated Planets in Campaigns 0-8 and 10",
+    "pub": "The Planetary Science Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021tsc2.confE.121S",
+    "year": "2021",
+    "title": "The Occurrence-weighted Median Planets Discovered by Transit Surveys Orbiting Solar-type Stars and Their Implications for Planet Formation and Evolution",
+    "pub": "Posters from the TESS Science Conference II (TSC2)",
+    "doctype": "inproceedings"
+   },
+   {
+    "bibcode": "2021JBIS...74..238M",
+    "year": "2021",
+    "title": "Of Aliens And Exoplanets: Why The Search For Life, Probably, Requires The Search For Water",
+    "pub": "Journal of the British Interplanetary Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021AJ....161..284M",
+    "year": "2021",
+    "title": "ARES. V. No Evidence For Molecular Absorption in the HST WFC3 Spectrum of GJ 1132 b",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021arXiv210510386O",
+    "year": "2021",
+    "title": "Analysis of Boolean Functions",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2021PNAS..11817418H",
+    "year": "2021",
+    "title": "A backward-spinning star with two coplanar planets",
+    "pub": "Proceedings of the National Academy of Science",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021JPhCS1751a2052W",
+    "year": "2021",
+    "title": "Antidiabetic Potency of Jeruju (Acanthus ilicifolius L.) Ethanol Extract and Taurine on Histopathological Response of Mice Kidney (Mus musculus L.) Induced by Alloxan",
+    "pub": "Journal of Physics Conference Series",
+    "doctype": "inproceedings"
+   },
+   {
+    "bibcode": "2021cosp...43E.498G",
+    "year": "2021",
+    "title": "Characterising the atmospheres of the two warm Neptune-like planets HD 106315 c and HD 3167 c with the HST/WFC3 Camera",
+    "pub": "43rd COSPAR Scientific Assembly. Held 28 January - 4 February",
+    "doctype": "abstract"
+   },
+   {
+    "bibcode": "2021cosp...43E.532D",
+    "year": "2021",
+    "title": "The French Participation to the ESA/ARIEL mission",
+    "pub": "43rd COSPAR Scientific Assembly. Held 28 January - 4 February",
+    "doctype": "abstract"
+   },
+   {
+    "bibcode": "2021AAS...23743702G",
+    "year": "2021",
+    "title": "Characterizing the atmospheres of the two warm Neptune-liked planets HD 106315 c and HD 3167 c with the HST/WFC3 Camera",
+    "pub": "American Astronomical Society Meeting Abstracts #237",
+    "doctype": "abstract"
+   },
+   {
+    "bibcode": "2021arXiv210110588M",
+    "year": "2021",
+    "title": "Generalization error of random features and kernel methods: hypercontractivity and kernel matrix concentration",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2021AJ....161...18M",
+    "year": "2021",
+    "title": "Transmission Spectroscopy for the Warm Sub-Neptune HD 3167c: Evidence for Molecular Absorption and a Possible High-metallicity Atmosphere",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021AJ....161...19G",
+    "year": "2021",
+    "title": "ARES IV: Probing the Atmospheres of the Two Warm Small Planets HD 106315c and HD 3167c with the HST/WFC3 Camera",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020JPPB..21212024B",
+    "year": "2020",
+    "title": "The regulation of skin pigmentation in response to environmental light by pineal Type II opsins and skin melanophore melatonin receptors",
+    "pub": "Journal of Photochemistry and Photobiology B: Biology",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020AJ....160..224M",
+    "year": "2020",
+    "title": "Revisiting the Architecture of the KOI-89 System",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020Water..12.3041G",
+    "year": "2020",
+    "title": "Buckley\u2500Leverett Theory for Two-Phase Immiscible Fluids Flow Model with Explicit Phase-Coupling Terms",
+    "pub": "Water",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020arXiv201013272M",
+    "year": "2020",
+    "title": "Variance-Reduced Off-Policy TDC Learning: Non-Asymptotic Convergence Analysis",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2020SSRv..216..121D",
+    "year": "2020",
+    "title": "Future Missions Related to the Determination of the Elemental and Isotopic Composition of Earth, Moon and the Terrestrial Planets",
+    "pub": "Space Science Reviews",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020ApJ...902L...5P",
+    "year": "2020",
+    "title": "A Disk-driven Resonance as the Origin of High Inclinations of Close-in Planets",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020A&A...642A.173N",
+    "year": "2020",
+    "title": "The CARMENES search for exoplanets around M dwarfs. Two planets on opposite sides of the radius gap transiting the nearby M dwarf LTT 3780",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020JAP...128k4102C",
+    "year": "2020",
+    "title": "Extrinsic contributions to the dielectric and pyroelectric properties of Pb<SUB>0.99</SUB>[(Zr<SUB>0.52</SUB>Ti<SUB>0.48</SUB>)<SUB>0.98</SUB>Nb<SUB>0.02</SUB>]O<SUB>3</SUB> thin films on Si and Ni substrates",
+    "pub": "Journal of Applied Physics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020EPSC...14..852K",
+    "year": "2020",
+    "title": "Interior heating by stellar magnetic fields as a driver of volcanic activity on massive rocky planets",
+    "pub": "European Planetary Science Congress",
+    "doctype": "abstract"
+   },
+   {
+    "bibcode": "2020AJ....160..113B",
+    "year": "2020",
+    "title": "HD 191939: Three Sub-Neptunes Transiting a Sun-like Star Only 54 pc Away",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020PASP..132h4402Q",
+    "year": "2020",
+    "title": "Forecasting Rates of Volcanic Activity on Terrestrial Exoplanets and Implications for Cryovolcanic Activity on Extrasolar Ocean Worlds",
+    "pub": "Publications of the Astronomical Society of the Pacific",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020Tectp.78628459R",
+    "year": "2020",
+    "title": "Post-Eocene coupled oroclines in the Talesh (NW Iran): Paleomagnetic constraints",
+    "pub": "Tectonophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020PNAS..11718264K",
+    "year": "2020",
+    "title": "Exoplanet secondary atmosphere loss and revival",
+    "pub": "Proceedings of the National Academy of Science",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020A&A...638A..52M",
+    "year": "2020",
+    "title": "Planetary evolution with atmospheric photoevaporation. I. Analytical derivation and numerical study of the evaporation valley and transition from super-Earths to sub-Neptunes",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020NatCo..11.2319D",
+    "year": "2020",
+    "title": "Btk SH2-kinase interface is critical for allosteric kinase activation and its targeting inhibits B-cell neoplasms",
+    "pub": "Nature Communications",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020ExA....49...97P",
+    "year": "2020",
+    "title": "Principal component analysis to correct data systematics. Case study: K2 light curves",
+    "pub": "Experimental Astronomy",
+    "doctype": "article"
+   }
+  ]
+ },
+ "320329350": {
+  "ids": [
+   "TIC 320329350"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "321471064": {
+  "ids": [
+   "2MASS J11420664-6216021",
+   "Gaia DR3 5333374492778342400",
+   "TIC 321471064"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "336882813": {
+  "ids": [
+   "2MASS J06093375+1437442",
+   "Gaia DR3 3345256224768675584",
+   "TIC 336882813",
+   "TYC 742-525-1"
+  ],
+  "n": 1,
+  "per_id": {
+   "2MASS J06093375+1437442": 0,
+   "Gaia DR3 3345256224768675584": 0,
+   "TIC 336882813": 1,
+   "TIC336882813": 0,
+   "TYC 742-525-1": 0,
+   "TYC742-525-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2025ApJ...994..133M",
+    "year": "2025",
+    "title": "Characterizing TESS-identified Quadruple- and Higher-order Eclipsing Binaries. I. Speckle Imaging with DSSI and HRCam",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   }
+  ]
+ },
+ "341179881": {
+  "ids": [
+   "2MASS J20543871-6409343",
+   "Gaia DR3 6450421647388389888",
+   "TIC 341179881"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "345050437": {
+  "ids": [
+   "2MASS J23412380+5931094",
+   "Gaia DR3 2011135311287080704",
+   "TIC 345050437",
+   "TYC 4012-825-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "346000671": {
+  "ids": [
+   "2MASS J23472520+5721383",
+   "Gaia DR3 1998225872245119616",
+   "TIC 346000671",
+   "TYC 4009-1428-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "347301717": {
+  "ids": [
+   "2MASS J00054729+5721303",
+   "Gaia DR3 422549224861744256",
+   "TIC 347301717",
+   "TYC 3660-1483-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "356516513": {
+  "ids": [
+   "2MASS J20504285+4517510",
+   "Gaia DR3 2163248759261144064",
+   "TIC 356516513",
+   "TYC 3575-1834-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "357786383": {
+  "ids": [
+   "Gaia DR3 1973277407957844096",
+   "TIC 357786383"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "358050122": {
+  "ids": [
+   "2MASS J02332106-6043250",
+   "Gaia DR3 4725524302701978240",
+   "TIC 358050122"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "362818328": {
+  "ids": [
+   "2MASS J09424580-5257290",
+   "CD-52 3307",
+   "CPD-52 2730",
+   "Gaia DR3 5309319278628209152",
+   "HD 84328",
+   "TIC 362818328",
+   "TYC 8585-430-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "365043219": {
+  "ids": [
+   "2MASS J20461326+4939452",
+   "Gaia DR3 2168248238636129792",
+   "TIC 365043219",
+   "TYC 3582-230-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "365156316": {
+  "ids": [
+   "TIC 365156316"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "365864904": {
+  "ids": [
+   "2MASS J20491796+4900020",
+   "Gaia DR3 2167971333502998272",
+   "TIC 365864904",
+   "TYC 3583-157-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "366299304": {
+  "ids": [
+   "TIC 366299304"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "367500073": {
+  "ids": [
+   "2MASS J07175012+2752198",
+   "Gaia DR3 885037900365687040",
+   "TIC 367500073",
+   "TYC 1917-971-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "370622419": {
+  "ids": [
+   "2MASS J09361646-6607181",
+   "Gaia DR3 5247502394130429824",
+   "TIC 370622419",
+   "TYC 8953-1200-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "373674579": {
+  "ids": [
+   "2MASS J11360548+1559546",
+   "Gaia DR3 3972526577623362560",
+   "TIC 373674579"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "373876456": {
+  "ids": [
+   "2MASS J23020520+3835086",
+   "Gaia DR3 1928287522445595136",
+   "TIC 373876456",
+   "TYC 3216-1924-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "389836747": {
+  "ids": [
+   "2MASS J01331089+6135070",
+   "Gaia DR3 510748306738071680",
+   "TIC 389836747",
+   "TYC 4031-1021-1"
+  ],
+  "n": 1,
+  "per_id": {
+   "2MASS J01331089+6135070": 0,
+   "Gaia DR3 510748306738071680": 0,
+   "TIC 389836747": 1,
+   "TIC389836747": 0,
+   "TYC 4031-1021-1": 0,
+   "TYC4031-1021-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2025ApJ...994..133M",
+    "year": "2025",
+    "title": "Characterizing TESS-identified Quadruple- and Higher-order Eclipsing Binaries. I. Speckle Imaging with DSSI and HRCam",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   }
+  ]
+ },
+ "395976939": {
+  "ids": [
+   "2MASS J20130501+2140058",
+   "BD+21 4101",
+   "Gaia DR3 1829740185051875200",
+   "HD 346058",
+   "TIC 395976939",
+   "TYC 1630-3147-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "402710280": {
+  "ids": [
+   "2MASS J16340568-6332588",
+   "Gaia DR3 5828441289812582400",
+   "TIC 402710280",
+   "TYC 9041-3677-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "418134886": {
+  "ids": [
+   "2MASS J00004876+6504026",
+   "Gaia DR3 432159716707294464",
+   "TIC 418134886",
+   "TYC 4022-613-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "418184706": {
+  "ids": [
+   "2MASS J09480834+0750321",
+   "Gaia DR3 3853909137209770368",
+   "TIC 418184706",
+   "TYC 828-1612-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "419246494": {
+  "ids": [
+   "2MASS J00261877+6235011",
+   "Gaia DR3 430569582378146048",
+   "TIC 419246494",
+   "TYC 4019-1214-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "423785115": {
+  "ids": [
+   "2MASS J04434074-2639008",
+   "Gaia DR3 4893207488161006464",
+   "TIC 423785115",
+   "TYC 6468-912-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "429663381": {
+  "ids": [
+   "TIC 429663381"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "429893047": {
+  "ids": [
+   "2MASS J21152678+3522251",
+   "Gaia DR3 1867622071469738624",
+   "TIC 429893047",
+   "TYC 2710-1376-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "430746529": {
+  "ids": [
+   "2MASS J22143547+4849143",
+   "BD+48 3655",
+   "Gaia DR3 1975858270988578560",
+   "HD 211228",
+   "HIP 109818",
+   "TIC 430746529",
+   "TYC 3614-1082-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "434452777": {
+  "ids": [
+   "2MASS J09185771-2033256",
+   "BD-19 2675",
+   "CPD-20 4395",
+   "Gaia DR3 5676629108002652416",
+   "TIC 434452777",
+   "TYC 6036-559-1"
+  ],
+  "n": 1,
+  "per_id": {
+   "2MASS J09185771-2033256": 0,
+   "BD-19 2675": 0,
+   "CPD-20 4395": 0,
+   "Gaia DR3 5676629108002652416": 0,
+   "TIC 434452777": 1,
+   "TIC434452777": 0,
+   "TYC 6036-559-1": 0,
+   "TYC6036-559-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2025ApJ...994..133M",
+    "year": "2025",
+    "title": "Characterizing TESS-identified Quadruple- and Higher-order Eclipsing Binaries. I. Speckle Imaging with DSSI and HRCam",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   }
+  ]
+ },
+ "435263480": {
+  "ids": [
+   "2MASS J23070985+6028549",
+   "Gaia DR3 2014048359965186048",
+   "TIC 435263480",
+   "TYC 4278-170-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "441010857": {
+  "ids": [
+   "2MASS J14020494-3444208",
+   "CD-34 9313",
+   "CPD-34 5930",
+   "Gaia DR3 6122183689530591488",
+   "TIC 441010857",
+   "TYC 7288-1274-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "447447071": {
+  "ids": [
+   "2MASS J16500173-6453066",
+   "Gaia DR3 5816060101684929024",
+   "TIC 447447071",
+   "TYC 9046-2129-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "448471716": {
+  "ids": [
+   "TIC 448471716"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "453449079": {
+  "ids": [
+   "TIC 453449079"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "456769317": {
+  "ids": [
+   "2MASS J07320033-1754280",
+   "Gaia DR3 3026687921929629696",
+   "TIC 456769317",
+   "TYC 5983-259-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "457134361": {
+  "ids": [
+   "2MASS J09223972+5036139",
+   "BD+51 1500A",
+   "Gaia DR3 1019003329101872896",
+   "HD 80607",
+   "HIP 45983",
+   "TIC 457134361",
+   "TYC 3431-1050-1"
+  ],
+  "n": 62,
+  "per_id": {
+   "2MASS J09223972+5036139": 0,
+   "BD+51 1500A": 0,
+   "Gaia DR3 1019003329101872896": 0,
+   "HD 80607": 62,
+   "HD80607": 57,
+   "HIP 45983": 2,
+   "HIP45983": 0,
+   "TIC 457134361": 0,
+   "TIC457134361": 0,
+   "TYC 3431-1050-1": 0,
+   "TYC3431-1050-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2026AJ....172..225B",
+    "year": "2026",
+    "title": "Eclipse Timing of the Eccentric Planet HD 80606 b with JWST: Constraints on a Second Planet and Other Dynamical Effects",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2025PhDT........53G",
+    "year": "2025",
+    "title": "Multiplicity of stellar systems in the solar neighbourhood, wide binaries, and planet-hosting stars",
+    "pub": "Ph.D. Thesis",
+    "doctype": "phdthesis"
+   },
+   {
+    "bibcode": "2025ApJ...986..117Y",
+    "year": "2025",
+    "title": "A Third Star in the HAT-P-7 System and a New Dynamical Pathway to Misaligned Hot Jupiters",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024Natur.632...50G",
+    "year": "2024",
+    "title": "A hot-Jupiter progenitor on a super-eccentric retrograde orbit",
+    "pub": "Nature",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023RAA....23h5002C",
+    "year": "2023",
+    "title": "A Catalog of Collected Debris Disks: Properties, Classifications and Correlations between Disks and Stars/Planets",
+    "pub": "Research in Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023AJ....165..252K",
+    "year": "2023",
+    "title": "Revised Properties and Dynamical History for the HD 17156 System",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2023MNRAS.520.3867T",
+    "year": "2023",
+    "title": "The climate and compositional variation of the highly eccentric planet HD 80606 b - the rise and fall of carbon monoxide and elemental sulfur",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022AJ....164..178P",
+    "year": "2022",
+    "title": "Utilizing a Global Network of Telescopes to Update the Ephemeris for the Highly Eccentric Planet HD 80606 b and to Ensure the Efficient Scheduling of JWST",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022FrASS...901873S",
+    "year": "2022",
+    "title": "Doppler-Shifted Alkali D Absorption as Indirect Evidence for Exomoons",
+    "pub": "Frontiers in Astronomy and Space Sciences",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021ApJ...920...94E",
+    "year": "2021",
+    "title": "The Consistency of Chemical Clocks among Coeval Stars",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021AJ....162..154D",
+    "year": "2021",
+    "title": "Giant Outer Transiting Exoplanet Mass (GOT 'EM) Survey. II. Discovery of a Failed Hot Jupiter on a 2.7 Yr, Highly Eccentric Orbit",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020A&A...635A..23F",
+    "year": "2020",
+    "title": "Expected performances of the Characterising Exoplanet Satellite (CHEOPS). II. The CHEOPS simulator",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2019A&A...628A..80B",
+    "year": "2019",
+    "title": "Detecting the general relativistic orbital precession of the exoplanet HD 80606b",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2019A&A...628A.126M",
+    "year": "2019",
+    "title": "Revisiting the 16 Cygni planet host at unprecedented precision and exploring automated tools for precise abundances",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2019MNRAS.485..522P",
+    "year": "2019",
+    "title": "Revisiting the dynamics of planets in binaries: evolutionary time-scales and the effect of early stellar evolution",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2018A&A...620A..54S",
+    "year": "2018",
+    "title": "Using non-solar-scaled opacities to derive stellar parameters. Toward high-precision parameters and abundances",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2018A&A...618A.132K",
+    "year": "2018",
+    "title": "Revisiting the pre-main-sequence evolution of stars. II. Consequences of planet formation on stellar surface composition",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2018AJ....156...91M",
+    "year": "2018",
+    "title": "Robust Transiting Exoplanet Radii in the Presence of Starspots from Ingress and Egress Durations",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2018A&A...615A.172M",
+    "year": "2018",
+    "title": "The chemical composition of \u03b1 Centauri AB revisited",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2018A&A...614A.138L",
+    "year": "2018",
+    "title": "Detailed chemical compositions of the wide binary HD 80606/80607: revised stellar properties and constraints on planet formation",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2018ApJ...854..138O",
+    "year": "2018",
+    "title": "Kronos and Krios: Evidence for Accretion of a Massive, Rocky Planetary System in a Comoving Pair of Solar-type Stars",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2016arXiv161104064M",
+    "year": "2016",
+    "title": "Planet signatures in the chemical composition of Sun-like stars",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2016MNRAS.462.1563M",
+    "year": "2016",
+    "title": "Behaviour of elements from lithium to europium in stars with and without planets",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2016A&A...592A.143F",
+    "year": "2016",
+    "title": "Is the activity level of HD 80606 influenced by its eccentric planet?",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2016ApJ...820L..33D",
+    "year": "2016",
+    "title": "Direct Measure of Radiative and Dynamical Properties of an Exoplanet Atmosphere",
+    "pub": "The Astrophysical Journal Letters",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2016ApJ...818...54M",
+    "year": "2016",
+    "title": "Detailed Abundances of Planet-hosting Wide Binaries. II. HD80606+HD80607",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2015A&A...582A..17S",
+    "year": "2015",
+    "title": "HD 80606: searching for the chemical signature of planet formation",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2015yCat..35820017S",
+    "year": "2015",
+    "title": "VizieR Online Data Catalog: Keck+HIRES spectra of HD 80606 and HD 80607 (Saffe+, 2015)",
+    "pub": "VizieR Online Data Catalog",
+    "doctype": "dataset"
+   },
+   {
+    "bibcode": "2015A&A...579A..55B",
+    "year": "2015",
+    "title": "SOPHIE velocimetry of Kepler transit candidates. XVI. Tomographic measurement of the low obliquity of KOI-12b, a warm Jupiter transiting a fast rotator",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2014ApJ...795...12W",
+    "year": "2014",
+    "title": "Toward the Detection of Exoplanet Transits with Polarimetry",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2014A&A...571A..37S",
+    "year": "2014",
+    "title": "SOPHIE velocimetry of Kepler transit candidates. XII. KOI-1257 b: a highly eccentric three-month period transiting exoplanet",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2014AAS...22341102W",
+    "year": "2014",
+    "title": "Observation of a Transit Ingress of HD 80606b in Polarized Light",
+    "pub": "American Astronomical Society Meeting Abstracts #223",
+    "doctype": "abstract"
+   },
+   {
+    "bibcode": "2013PASP..125.1021S",
+    "year": "2013",
+    "title": "Precision of a Low-Cost InGaAs Detector for Near Infrared Photometry",
+    "pub": "Publications of the Astronomical Society of the Pacific",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2013arXiv1305.5197T",
+    "year": "2013",
+    "title": "Iron abundance correlations and an occurrence distribution discrepancy from ongoing planet migration",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2013ApJ...762...55R",
+    "year": "2013",
+    "title": "MOST Space Telescope Photometry of the 2010 January Transit of Extrasolar Planet HD80606b",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2012Natur.491..418B",
+    "year": "2012",
+    "title": "A primordial origin for misalignments between stellar spin axes and planetary orbits",
+    "pub": "Nature",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2012yCat..74192233C",
+    "year": "2012",
+    "title": "VizieR Online Data Catalog: HD 80606 transits (Colon+, 2012)",
+    "pub": "VizieR Online Data Catalog",
+    "doctype": "dataset"
+   },
+   {
+    "bibcode": "2012ApJ...750..106S",
+    "year": "2012",
+    "title": "Super-eccentric Migrating Jupiters",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2012MNRAS.419.2233C",
+    "year": "2012",
+    "title": "Probing potassium in the atmosphere of HD 80606b with tunable filter transit spectrophotometry from the Gran Telescopio Canarias",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2011PASJ...63L..67N",
+    "year": "2011",
+    "title": "XO-2b: a Prograde Planet with Negligible Eccentricity and an Additional Radial Velocity Variation",
+    "pub": "Publications of the Astronomical Society of Japan",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2011A&A...533A...7B",
+    "year": "2011",
+    "title": "Formation and evolution of planetary systems in presence of highly inclined stellar perturbers",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2011A&A...528A..53B",
+    "year": "2011",
+    "title": "Transit timing variations in eccentric hierarchical triple exoplanetary systems. I. Perturbations on the time scale of the orbital period of the perturber",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2011A&A...527A.140R",
+    "year": "2011",
+    "title": "Mass constraints on substellar companion candidates from the re-reduced Hipparcos intermediate astrometric data: nine confirmed planets and two confirmed brown dwarfs",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2010ApJ...721.1861A",
+    "year": "2010",
+    "title": "The Climate of HD 189733b from Fourteen Transits and Eclipses Measured by Spitzer",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2010ApJ...722..880S",
+    "year": "2010",
+    "title": "Ground-based Multisite Observations of Two Transits of HD 80606b",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2010PASP..122.1020A",
+    "year": "2010",
+    "title": "Observing Exoplanets with SOFIA",
+    "pub": "Publications of the Astronomical Society of the Pacific",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2010MNRAS.406.1146H",
+    "year": "2010",
+    "title": "An ingress and a complete transit of HD80606 b",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2010A&A...516A..95H",
+    "year": "2010",
+    "title": "Observation of the full 12-hour-long transit of the exoplanet HD 80606b. Warm-Spitzer photometry and SOPHIE spectroscopy",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2009ApJ...703.2091W",
+    "year": "2009",
+    "title": "The Transit Ingress and the Tilted Orbit of the Extraordinarily Eccentric Exoplanet HD 80606b",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2009ApJ...701..514M",
+    "year": "2009",
+    "title": "Detection of Thermal Emission of XO-2b: Evidence for a Weak Temperature Inversion",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2009A&A...502..695P",
+    "year": "2009",
+    "title": "Spin-orbit misalignment in the HD 80606\u2002planetary system",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2009ApJ...698..558G",
+    "year": "2009",
+    "title": "Photometric Detection of a Transit of HD 80606b",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2009arXiv0906.4904G",
+    "year": "2009",
+    "title": "Spin-orbit misalignement for the transiting planet HD 80606b",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2009MNRAS.396L..16F",
+    "year": "2009",
+    "title": "Detection of a transit by the planetary companion of HD 80606",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2009Natur.457..562L",
+    "year": "2009",
+    "title": "Rapid heating of the atmosphere of an extrasolar planet",
+    "pub": "Nature",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2008ApJ...674.1106L",
+    "year": "2008",
+    "title": "Hydrodynamic Simulations of Unevenly Irradiated Jovian Planets",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2006ApJ...646..523R",
+    "year": "2006",
+    "title": "Two Suns in The Sky: Stellar Multiplicity in Exoplanet Systems",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2005MSAIS...8..197P",
+    "year": "2005",
+    "title": "SYNTHE spectral calculations matched to high-resolution UV/optical observations .",
+    "pub": "Memorie della Societa Astronomica Italiana Supplementi",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2003ApJ...589..605W",
+    "year": "2003",
+    "title": "Planet Migration and Binary Companions: The Case of HD 80606b",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2003ASPC..294..213W",
+    "year": "2003",
+    "title": "Tidal Circularization and Kozai Migration",
+    "pub": "Scientific Frontiers in Research on Extrasolar Planets",
+    "doctype": "inproceedings"
+   },
+   {
+    "bibcode": "2001yCat..33759027N",
+    "year": "2001",
+    "title": "VizieR Online Data Catalog: HD 80606b, a planet on an extremely elongated orbit (Naef+ 2001)",
+    "pub": "VizieR Online Data Catalog",
+    "doctype": "dataset"
+   },
+   {
+    "bibcode": "2001A&A...375L..27N",
+    "year": "2001",
+    "title": "HD 80606 b, a planet on an extremely elongated orbit",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   }
+  ]
+ },
+ "457872192": {
+  "ids": [
+   "2MASS J10343628-5432559",
+   "CD-53 3592",
+   "CPD-53 3956",
+   "Gaia DR3 5353965360590055424",
+   "HD 299224",
+   "TIC 457872192",
+   "TYC 8605-1265-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "458859477": {
+  "ids": [
+   "2MASS J10451287-5944192",
+   "CPD-59 2636",
+   "Gaia DR3 5350357862947802880",
+   "TIC 458859477",
+   "TYC 8626-2018-1"
+  ],
+  "n": 13,
+  "per_id": {
+   "2MASS J10451287-5944192": 0,
+   "CPD-59 2636": 13,
+   "Gaia DR3 5350357862947802880": 0,
+   "TIC 458859477": 0,
+   "TIC458859477": 0,
+   "TYC 8626-2018-1": 0,
+   "TYC8626-2018-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "2023A&A...671A..20B",
+    "year": "2023",
+    "title": "Gaia-ESO survey: Massive stars in the Carina Nebula. I. A new census of OB stars",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022A&A...660A..11G",
+    "year": "2022",
+    "title": "Gaia EDR3 distances of the young stellar clusters in the extended Carina Nebula complex",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022A&A...657A.131M",
+    "year": "2022",
+    "title": "The Villafranca catalog of Galactic OB groups. II. From Gaia DR2 to EDR3 and ten new systems with O stars",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021ApJ...914...18S",
+    "year": "2021",
+    "title": "Gaia EDR3 Parallax Distances to the Great Carina Nebula and Its Star Clusters (Trumpler 14, 15, 16)",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2021arXiv210307922S",
+    "year": "2021",
+    "title": "Gaia-EDR3 Parallax Distances to the Great Carina Nebula and its Star Clusters (Trumpler 14, 15, 16)",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2014ApJS..211...10S",
+    "year": "2014",
+    "title": "The Galactic O-Star Spectroscopic Survey (GOSSS). II. Bright Southern Stars",
+    "pub": "The Astrophysical Journal Supplement Series",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2009AJ....137.3358M",
+    "year": "2009",
+    "title": "The High Angular Resolution Multiplicity of Massive Stars",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2008A&A...477..593A",
+    "year": "2008",
+    "title": "XMM-Newton X-ray study of early type stars in the Carina OB1 association",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2005MNRAS.356..974N",
+    "year": "2005",
+    "title": "The nearest star of spectral type O3: a component of the multiple system HD 150136",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2003ApJ...589..509E",
+    "year": "2003",
+    "title": "Chandra Observations of Associates of \u03b7 Carinae. I. Luminosities",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2002MNRAS.336.1099A",
+    "year": "2002",
+    "title": "Optical spectroscopy of X-Mega targets - IV. CPD - 59\u00b02636: a new O-type multiple system in the Carina Nebula",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "1989ApJ...341..427C",
+    "year": "1989",
+    "title": "The Einstein X-Ray Observatory Catalog of O-Type Stars",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "1982ApJS...48..145W",
+    "year": "1982",
+    "title": "An atlas of interstellar CA II and NA I profiles in the Carina nebula.",
+    "pub": "The Astrophysical Journal Supplement Series",
+    "doctype": "article"
+   }
+  ]
+ },
+ "459801869": {
+  "ids": [
+   "2MASS J13064558+3859204",
+   "BD+39 2602",
+   "Gaia DR3 1523924838380956544",
+   "HD 113969",
+   "HIP 63987",
+   "TIC 459801869",
+   "TYC 3022-649-1"
+  ],
+  "n": 1,
+  "per_id": {
+   "2MASS J13064558+3859204": 0,
+   "BD+39 2602": 0,
+   "Gaia DR3 1523924838380956544": 0,
+   "HD 113969": 1,
+   "HD113969": 1,
+   "HIP 63987": 0,
+   "HIP63987": 0,
+   "TIC 459801869": 0,
+   "TIC459801869": 0,
+   "TYC 3022-649-1": 0,
+   "TYC3022-649-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "1988MNRAS.230..273A",
+    "year": "1988",
+    "title": "Kinematics and properties of F stars near the North Galactic Pole - II. The isothermal disc.",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ]
+ },
+ "468324489": {
+  "ids": [
+   "2MASS J22143319+0758000",
+   "Gaia DR3 2721227717525252096",
+   "TIC 468324489"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "468517297": {
+  "ids": [
+   "2MASS J21443477+4130411",
+   "Gaia DR3 1954551969020161792",
+   "TIC 468517297",
+   "TYC 3192-1588-1"
+  ],
+  "n": 0,
+  "per_id": {},
+  "papers": []
+ },
+ "468905412": {
+  "ids": [
+   "2MASS J06221356+6851530",
+   "BD+68 439",
+   "Gaia DR3 1106906157010144512",
+   "HD 43475",
+   "TIC 468905412",
+   "TYC 4345-571-1"
+  ],
+  "n": 2,
+  "per_id": {
+   "2MASS J06221356+6851530": 0,
+   "BD+68 439": 2,
+   "Gaia DR3 1106906157010144512": 0,
+   "HD 43475": 0,
+   "HD43475": 0,
+   "TIC 468905412": 0,
+   "TIC468905412": 0,
+   "TYC 4345-571-1": 0,
+   "TYC4345-571-1": 0
+  },
+  "papers": [
+   {
+    "bibcode": "1933PUSNO..13....1M",
+    "year": "1933",
+    "title": "Results of observations with the nine-inch transit circle 1913 - 1926. Cat. of 9989 standard and intermediary stars +90 to -36 degr. declination; 582 miscellaneous stars; RA and decl. of the 2438 standard stars for 1925.",
+    "pub": "Publications of the U.S. Naval Observatory Second Series",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "1933PUSNO..13..161M",
+    "year": "1933",
+    "title": "Catalogue of 9,989 standard and intermediary stars.",
+    "pub": "Publications of the U.S. Naval Observatory Second Series",
+    "doctype": "article"
+   }
+  ]
+ }
+}
