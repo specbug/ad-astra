@@ -12,7 +12,9 @@ For each star:
     the data allow (duo.single_period_constraints).
 Results: results/candidates/period_hunt.csv (one row per target) and period_hunt.json (details).
 
-  python period_hunt.py [n_proc] [limit]
+  python period_hunt.py [n_proc] [limit]          (public light curves: SPOC 2-min, TESS-SPOC, QLP)
+  python period_hunt.py --ffi [n_proc] [limit]    (second pass: stars with our own sector 99-108 FFI light curves)
+  python period_hunt.py --singles [n_proc]        (the survey's bright single transits, kelt_targets.json)
 """
 import json
 import math
@@ -141,7 +143,7 @@ def best_period(ref, events, depth, dur, flat):
     return None
 
 
-def hunt(row, known):
+def hunt(row, known, use_ffi=False):
     from dossier import all_sectors, best_lcs
     from duo import alias_table, flatten_sectors, single_period_constraints
     tic = int(row["tic"])
@@ -152,6 +154,15 @@ def hunt(row, known):
         depth = float(row["depth_ppm"]) * 1e-6 if row["depth_ppm"] == row["depth_ppm"] and row["depth_ppm"] > 0 else None
         secs = all_sectors(tic)
         lcs = best_lcs(tic, secs)
+        if use_ffi:
+            # our own light curves of sectors 99-108 (ffi_new.py), where no public FFI light curve exists
+            import ticdb
+            from ffi_new import new_lcs
+            st = ticdb.query([tic], ["ra", "dec"]).iloc[0]
+            have = {lc["meta"]["sector"] for lc in lcs}
+            ffi = [lc for lc in new_lcs(tic, float(st.ra), float(st.dec), build_missing=False) if lc["meta"]["sector"] not in have]
+            out["ffi_sectors"] = [lc["meta"]["sector"] for lc in ffi]
+            lcs = sorted(lcs + ffi, key=lambda lc: lc["meta"]["sector"])
         out["sectors"] = [lc["meta"]["sector"] for lc in lcs]
         flat = flatten_sectors(lcs, window=max(2.5, 4 * dur / 24))
         if flat is None:
@@ -213,13 +224,28 @@ def _run(args):
 
 
 def main():
-    n = int(sys.argv[1]) if len(sys.argv) > 1 else 8
-    limit = int(sys.argv[2]) if len(sys.argv) > 2 else None
+    use_ffi = "--ffi" in sys.argv
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    n = int(args[0]) if len(args) > 0 else 8
+    limit = int(args[1]) if len(args) > 1 else None
     d, known = targets()
+    singles = "--singles" in sys.argv
+    if singles:
+        # the survey's own bright single transits (not TOIs/CTOIs), with our sector 99-108 light curves
+        tg = json.load(open(C / "kelt_targets.json"))
+        d = pd.DataFrame([{"tic": int(x["tic"]), "id": f"single {x['tic']}", "epoch": x["t0_bjd"] - BJD0,
+                           "depth_ppm": x["depth"] * 1e6, "dur_h": x["dur_h"], "disp": "survey single"} for x in tg])
+        use_ffi = True
+    elif use_ffi:
+        # second pass: only stars with our own light curves of sectors 99-108
+        from ffi_new import CACHE as FFI_CACHE
+        with_ffi = {int(p.name.split("_")[0]) for p in FFI_CACHE.glob("*_s*.npz")}
+        d = d[d.tic.astype(int).isin(with_ffi)]
     if limit:
         d = d.head(limit)
     # checkpoint: one JSON line per finished target, so an interrupted run resumes where it stopped
-    ck = CATALOGS.parent / "period_hunt.jsonl"
+    stem = "period_hunt_singles" if singles else "period_hunt_ffi" if use_ffi else "period_hunt"
+    ck = CATALOGS.parent / f"{stem}.jsonl"
     done = {}
     if ck.exists():
         for line in open(ck):
@@ -231,7 +257,7 @@ def main():
     todo = [row for row in d.to_dict("records") if (int(row["tic"]), row["id"]) not in done]
     print(len(d), "targets,", len(done), "already done", flush=True)
     with cf.ProcessPoolExecutor(n) as ex, open(ck, "a") as fh:
-        futs = [ex.submit(hunt, row, known) for row in todo]
+        futs = [ex.submit(hunt, row, known, use_ffi) for row in todo]
         for i, fu in enumerate(cf.as_completed(futs)):
             r = fu.result()
             fh.write(json.dumps(r, default=float) + "\n")
@@ -240,9 +266,9 @@ def main():
             if i % 50 == 0:
                 print(i, r.get("tic"), r.get("status"), r.get("n_others"), flush=True)
     res = list(done.values())
-    json.dump(res, open(C / "period_hunt.json", "w"), indent=1, default=float)
+    json.dump(res, open(C / f"{stem}.json", "w"), indent=1, default=float)
     flat = pd.DataFrame([{k: v for k, v in r.items() if k not in ("others",)} for r in res])
-    flat.to_csv(C / "period_hunt.csv", index=False)
+    flat.to_csv(C / f"{stem}.csv", index=False)
     print(flat.status.value_counts().to_string())
 
 

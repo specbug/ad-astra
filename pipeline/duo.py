@@ -38,6 +38,8 @@ def alias_table(t_events, depth, dur_h, flat, p_min=None, n_max=None, cover_frac
     t, y, e = flat
     p_min = p_min or max(2 * D, 1.0)
     n_max = n_max or int(dt / p_min)
+    cy = np.concatenate([[0.0], np.cumsum(y)])
+    ce = np.concatenate([[0.0], np.cumsum(e)])
     rows = []
     for n in range(1, max(n_max, 1) + 1):
         P = dt / n
@@ -50,23 +52,23 @@ def alias_table(t_events, depth, dur_h, flat, p_min=None, n_max=None, cover_frac
             continue
         kmin = int(np.floor((t.min() - t_ev[0]) / P)) - 1
         kmax = int(np.ceil((t.max() - t_ev[0]) / P)) + 1
+        # all predicted transits at once (vectorised; same test as one transit at a time)
+        tc = t_ev[0] + np.arange(kmin, kmax + 1) * P
+        tc = tc[np.min(np.abs(t_ev[None, :] - tc[:, None]), axis=1) >= 0.5 * D]   # not an observed event
+        lo = np.searchsorted(t, tc - D / 2, side="right")
+        hi = np.searchsorted(t, tc + D / 2, side="left")
+        cnt = hi - lo
+        expected = D / (30 / 1440)
+        ok = cnt >= max(cover_frac * expected, 1)
         worst = None
-        n_cov = 0
-        for kk in range(kmin, kmax + 1):
-            tc = t_ev[0] + kk * P
-            if np.min(np.abs(t_ev - tc)) < 0.5 * D:
-                continue  # an observed event
-            inb = np.abs(t - tc) < D / 2
-            expected = D / (30 / 1440)
-            if inb.sum() < cover_frac * expected:
-                continue
-            n_cov += 1
-            m = 1 - np.mean(y[inb])
-            err = np.median(e[inb]) / np.sqrt(inb.sum())
+        n_cov = int(ok.sum())
+        if n_cov:
+            m = 1 - (cy[hi[ok]] - cy[lo[ok]]) / cnt[ok]
+            err = (ce[hi[ok]] - ce[lo[ok]]) / cnt[ok] / np.sqrt(cnt[ok])
             # significance with which the data reject a dip of the full depth here
             z = (depth - m) / err
-            if worst is None or z > worst[0]:
-                worst = (z, tc, m, err)
+            i = int(np.argmax(z))
+            worst = (float(z[i]), float(tc[ok][i]), float(m[i]), float(err[i]))
         status = "excluded" if (worst is not None and worst[0] > exclude_sigma) else "allowed"
         rows.append({"n": n, "P": P, "status": status, "n_covered": n_cov,
                      "max_reject_sigma": None if worst is None else float(worst[0]),
@@ -86,21 +88,22 @@ def single_period_constraints(t0, depth, dur_h, flat, pmin=5.0, pmax=3000.0, cov
     grid = np.exp(np.arange(np.log(pmin), np.log(pmax), D / 4 / pmax * 0 + 0.0005))
     allowed = np.ones(grid.size, bool)
     expected = D / (30 / 1440)
+    cy = np.concatenate([[0.0], np.cumsum(y)])
+    ce = np.concatenate([[0.0], np.cumsum(e)])
     for i, P in enumerate(grid):
         kmin = int(np.floor((t.min() - t0) / P)) - 1
         kmax = int(np.ceil((t.max() - t0) / P)) + 1
-        for k in range(kmin, kmax + 1):
-            if k == 0:
-                continue
-            tc = t0 + k * P
-            lo, hi = np.searchsorted(t, [tc - D / 2, tc + D / 2])
-            n = hi - lo
-            if n < cover_frac * expected:
-                continue
-            m = 1 - np.mean(y[lo:hi])
-            err = np.median(e[lo:hi]) / np.sqrt(n)
-            if (depth - m) / err > exclude_sigma:
-                allowed[i] = False
-                break
+        k = np.arange(kmin, kmax + 1)
+        tc = t0 + k[k != 0] * P
+        lo = np.searchsorted(t, tc - D / 2)
+        hi = np.searchsorted(t, tc + D / 2)
+        n = hi - lo
+        ok = (n >= cover_frac * expected) & (n > 0)
+        if not ok.any():
+            continue
+        m = 1 - (cy[hi[ok]] - cy[lo[ok]]) / n[ok]
+        err = (ce[hi[ok]] - ce[lo[ok]]) / n[ok] / np.sqrt(n[ok])
+        if np.any((depth - m) / err > exclude_sigma):
+            allowed[i] = False
     pmin_allowed = float(grid[allowed][0]) if allowed.any() else None
     return grid, allowed, pmin_allowed

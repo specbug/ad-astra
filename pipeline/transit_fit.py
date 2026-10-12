@@ -201,3 +201,79 @@ def plot_data(data, tcs, P, rp, aR, inc, u, bin_min=20.0):
                        "e": np.round(eb, 1).tolist(), "mx": np.round(tm, 3).tolist(),
                        "my": np.round((mm - 1) * 1e6, 1).tolist(), "sigma_ppm_2min": float(sig * 1e6)})
     return panels
+
+
+def windows_from_lcs(lcs, tcs, win, t14_h):
+    """Like load_windows, for light-curve dicts of any product (s3io.parse_lc / ffi_new format); each window
+    carries its cadence for the model's exposure-time integration."""
+    out = []
+    for tc in tcs:
+        lc = next((l for l in lcs if l["time"].min() - 0.1 <= tc <= l["time"].max() + 0.1), None)
+        if lc is None:
+            continue
+        t, f = lc["time"], lc["flux"]
+        ok = np.isfinite(t) & np.isfinite(f) & (np.abs(t - tc) < win)
+        t, f = t[ok], f[ok]
+        oot = np.abs(t - tc) > 0.75 * t14_h / 24
+        c = np.polyfit(t[oot] - tc, f[oot], 2)
+        f = f / np.polyval(c, t - tc)
+        sig = 1.4826 * np.median(np.abs(np.diff(f[oot] - 1))) / np.sqrt(2)
+        out.append((t, f, sig, float(np.median(np.diff(t)) * 86400), tc))
+    return out
+
+
+def fit_periodic_windows(data, epochs, P0, teff, nwalk=40, nstep=4000, seed=1, rho_prior=None):
+    """fit_periodic for windows from windows_from_lcs (mixed cadences). rho_prior = (mean, sigma) in solar
+    units is NOT applied by default: the fitted stellar density is compared with the catalogue one afterwards."""
+    u = tess_ld(teff)
+    epochs = np.asarray(epochs)
+    ref = int(np.round(np.median(epochs)))
+    tcs0 = np.array([w[4] for w in data])
+    if len(epochs) >= 2:
+        P0 = float(np.polyfit(epochs, tcs0, 1)[0])
+    tc_ref0 = float(np.mean(tcs0 - (epochs - ref) * P0))
+
+    def unpack(th):
+        tref, P, rp, b, lrho = th
+        aR = ((10 ** lrho) * RHO_SUN * G * (P * 86400) ** 2 / (3 * np.pi)) ** (1 / 3)
+        return tref, P, rp, b, aR
+
+    def lnp(th):
+        tref, P, rp, b, lrho = th
+        if not (0.002 < rp < 0.5 and 0 <= b < 1 + rp and -3 < lrho < 2 and abs(P - P0) < 0.05):
+            return -np.inf
+        _, _, _, _, aR = unpack(th)
+        if aR <= 1 + rp or b >= aR:
+            return -np.inf
+        inc = np.degrees(np.arccos(b / aR))
+        ll = 0.0
+        for (t, f, sig, exp_s, _), ep in zip(data, epochs):
+            m = _model(t, tref + (ep - ref) * P, P, rp, aR, inc, u, exp_s=exp_s)
+            ll += -0.5 * np.sum(((f - m) / sig) ** 2)
+        if rho_prior:
+            ll += -0.5 * ((10 ** lrho - rho_prior[0]) / rho_prior[1]) ** 2
+        return ll
+
+    x0 = np.array([tc_ref0, P0, 0.04, 0.4, np.log10(1.0)])
+    res = minimize(lambda p: -lnp(p), x0, method="Nelder-Mead", options={"maxiter": 40000, "xatol": 1e-8, "fatol": 1e-4})
+    rng = np.random.default_rng(seed)
+    scale = np.array([5e-4, 5e-6, 5e-4, 0.02, 0.02])
+    pos = res.x + scale * rng.normal(size=(nwalk, 5))
+    pos[:, 3] = np.abs(pos[:, 3])
+    sampler = emcee.EnsembleSampler(nwalk, 5, lnp)
+    sampler.run_mcmc(pos, nstep, progress=False)
+    ch = sampler.get_chain(discard=nstep // 3, thin=5, flat=True)
+    tref, P, rp, b, lrho = ch.T
+    aR = unpack(ch.T)[4]
+    t14 = t14_hours(P, aR, rp, b)
+    out = {"ref_epoch": ref, "u": u, "n_points": int(sum(len(w[0]) for w in data)),
+           "chi2_min": float(-2 * lnp(np.median(ch, axis=0))), "n_windows": len(data)}
+    for name, v in (("tref_btjd", tref), ("period_d", P), ("rp_rs", rp), ("b", b), ("log10_rho", lrho),
+                    ("rho_solar", 10 ** lrho), ("a_rs", aR), ("t14_h", t14), ("depth_ppm", rp ** 2 * 1e6)):
+        q = np.percentile(v, [16, 50, 84])
+        out[name] = [float(q[1]), float(q[2] - q[1]), float(q[1] - q[0])]
+    med = np.median(ch, axis=0)
+    out["plot"] = plot_data([(w[0], w[1], w[2]) for w in data], [med[0] + (ep - ref) * med[1] for ep in epochs], med[1],
+                            med[2], unpack(med)[4], np.degrees(np.arccos(med[3] / unpack(med)[4])), u)
+    out["chain_summary"] = {"acceptance": float(np.mean(sampler.acceptance_fraction))}
+    return out, ch

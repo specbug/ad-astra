@@ -7,6 +7,7 @@ Sources (all in results/candidates/):
   simbad_named.csv             SIMBAD object types and names
   vizier_named.csv             TESS and Gaia eclipsing-binary catalogues, VSX, published quadruple lists
   ads_mentions.json            ADS full-text search by every identifier (when present)
+  gaia_checks.csv              ESA Gaia DR3: orbits (NSS), eclipsing-binary model, RUWE, resolved doubles, RV scatter
 
 prior(tic) returns {"kind": ..., "notes": [...]}, kind being the strongest reason the star is not new:
 "blend" (a known planet on a neighbour), "confirmed", "multiple" (a published triple/quadruple), "binary"
@@ -37,6 +38,7 @@ def _load():
     _d["ctoi_all"] = csv("exofop_ctoi_matches.csv")  # ExoFOP CTOI table of 12 Oct 2026, every candidate star
     p = C / "ads_mentions.json"
     _d["ads"] = json.load(open(p)) if p.exists() else {}
+    _d["gaia"] = csv("gaia_checks.csv").set_index("tic") if (C / "gaia_checks.csv").exists() else pd.DataFrame()
     return _d
 
 
@@ -116,6 +118,26 @@ def prior(tic):
             kinds.append("binary")
         elif "**" in ot:
             notes.append("double star in SIMBAD")
+    gd = d["gaia"]
+    if len(gd) and tic in gd.index and gd.loc[tic].get("gaia_match") == "ok":
+        g = gd.loc[tic]
+        orbit = g.get("nss_orbits")
+        if isinstance(orbit, str) and orbit:
+            notes.append("Gaia DR3 orbit: " + orbit.replace("Orbital", "astrometric").replace("SB2C", "SB2"))
+            if any(k in orbit for k in ("SB1", "SB2", "Eclipsing")):
+                kinds.append("binary")
+        if pd.notna(g.get("veb_period")):
+            if any(n.startswith("Gaia DR3 eclipsing binaries") for n in notes):
+                notes = [n + f" (P = {g.veb_period:.4f} d)" if n == "Gaia DR3 eclipsing binaries" else n for n in notes]
+            else:
+                notes.append(f"Gaia DR3 eclipsing binary, P = {g.veb_period:.4f} d")
+                kinds.append("binary")
+        if pd.notna(g.get("ruwe")) and g.ruwe > 1.4:
+            notes.append(f"Gaia RUWE {g.ruwe:.1f}")
+        if pd.notna(g.get("ipd_frac_multi_peak")) and g.ipd_frac_multi_peak > 10:
+            notes.append(f"a second star within ~1″ in {g.ipd_frac_multi_peak:.0f}% of Gaia scans")
+        if bool(g.get("rv_variable")) and not (isinstance(orbit, str) and orbit):
+            notes.append("Gaia RV variable")
     a = d["ads"].get(str(tic))
     if a and a.get("n"):
         if a["n"] <= 2:  # show what the papers are, since a stray mention in an old catalogue means little
