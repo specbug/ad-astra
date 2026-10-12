@@ -9,8 +9,8 @@ Sources (all in results/candidates/):
   ads_mentions.json            ADS full-text search by every identifier (when present)
 
 prior(tic) returns {"kind": ..., "notes": [...]}, kind being the strongest reason the star is not new:
-"blend" (a known planet on a neighbour), "confirmed", "ctoi" (or TOI, or a period posted by someone else),
-"multiple" (a published triple/quadruple), "binary" (catalogued eclipsing or spectroscopic binary), or None.
+"blend" (a known planet on a neighbour), "confirmed", "multiple" (a published triple/quadruple), "binary"
+(catalogued eclipsing or spectroscopic binary), "ctoi" (or TOI, or a period posted by someone else), or None.
 """
 import json
 
@@ -118,8 +118,11 @@ def prior(tic):
             notes.append("double star in SIMBAD")
     a = d["ads"].get(str(tic))
     if a and a.get("n"):
-        notes.append(f"named in {a['n']} paper{'s' if a['n'] != 1 else ''} (ADS)")
-    order = ("blend", "confirmed", "ctoi", "multiple", "binary")
+        if a["n"] <= 2:  # show what the papers are, since a stray mention in an old catalogue means little
+            notes.append("ADS: " + "; ".join(f"{p['year']}, \u201c{p['title'][:60]}\u2026\u201d" for p in a["papers"][:2]))
+        else:
+            notes.append(f"named in {a['n']} papers (ADS)")
+    order = ("blend", "confirmed", "multiple", "binary", "ctoi")  # a catalogued binary says more than a CTOI does
     kind = next((k for k in order if k in kinds), None)
     return {"kind": kind, "notes": notes}
 

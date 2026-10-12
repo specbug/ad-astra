@@ -219,6 +219,12 @@ What it changed:
   Candidate working group; Salinas et al. 2025).
 - **Track C table.** 7 of 30 are published multiples or a known blend. 9 are catalogued binaries on the star
   itself and 3 have one 5–6″ away. 11 have nothing on record.
+- **ADS.** 22 of the 136 stars are named in papers, all of them already known in other ways (confirmed planets,
+  the HD 80606 system, HD 11506's radial-velocity planets, published quadruple candidates and eclipsing binaries)
+  or named only incidentally (a 1933 position catalogue, a 1988 paper on another star). No paper names HIP 56966
+  under any of its eight identifiers. None of HD 11506's 38 papers reports a transit; a targeted search for
+  HD 11506 with "transit" or "TESS" returns only radial-velocity and statistics papers. HIP 71639 appears only in
+  Planet Hunters TESS II.
 
 ## 9. Track C eclipse-shape test, revised (10 October)
 The first version compared the box depth with the peak-to-trough of a single sine wave at the second period.
