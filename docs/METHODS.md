@@ -329,3 +329,39 @@ Beyond §6 and §11.3: every transit the period predicts inside the data is meas
 mixed cadences integrated over their exposure) with free stellar density, compared with the TIC density by a
 second fit with a density prior; and, for any neighbour the centroids cannot exclude, a shape test: the transits
 are fitted as a diluted eclipse with a large true radius ratio (k = 0.3–0.9) and compared with the planet fit.
+
+## 12. Catalogue corrections and the literature (12 October)
+
+### 12.1 Posted periods the hunt does not reproduce (`posted_check.py`, `posted_cases.py`)
+Where a period has been posted to ExoFOP for the same candidate (same TIC and planet number, from the ExoFOP
+planet-parameter uploads) and none of the hunt's allowed periods is within 0.2% of it, every transit that the
+posted period predicts is measured (`period_review.measure`: box depth against a local quadratic baseline, with a
+red-noise error), with the ephemeris through the candidate's catalogued transit and the period refined within
+0.3% (the posted values are rounded, and the error grows over hundreds of cycles). The hunt's own best periods and
+half and double the posted one are measured the same way. A predicted transit is *missing* when the data cover it
+(coverage ≥ 50%) and show less than a third of the catalogued depth at more than 3σ below it; it is *seen* when its
+SNR ≥ 3 and its depth is more than 0.4× the catalogued depth. Odd and even transits are compared, and phase 0.5 is
+measured for an eclipsing-binary secondary. For the cases where the posted value fails, the competing ephemerides
+(the TOI's listed one, the community TOI's own transits) are measured transit by transit, drawn, and tested at the
+pixel level (`centroid_vet.vet`, up to four sectors).
+
+### 12.2 Promoted community TOIs (`promoted_check.py`)
+For every community TOI that ExoFOP marks as promoted to a TOI, the offset of its transit from that TOI's listed
+ephemeris is computed from the two tables (12 October 2026), in hours and in units of the ephemeris error at that
+epoch (period error × cycles, in quadrature with the epoch error). Those more than one transit duration and 5σ off
+are checked against the light curves: is there a dip at the community TOI's epoch; does it match another TOI on
+the same star (a label swap); are the transits that the TOI's ephemeris predicts present; and, if not, which period
+within 0.5% of the TOI's, through the community TOI's transit, fits.
+
+### 12.3 Fits of the corrected ephemerides (`corrections_fit.py`)
+Joint transit fits (§7) of the corrected ephemerides. For a community TOI known only from transits separated by
+a gap Δ, the period is Δ/n; for a fixed transit shape a/R★ grows in proportion to the assumed period, so the
+stellar density a fit implies does too (ρ = 3π(a/R★)³/(GP²) ∝ P). One fit at a reference alias therefore gives the
+implied density at every alias, and the aliases whose density matches the TIC value (within 2σ) are the likeliest
+periods for a circular orbit.
+
+### 12.4 Literature check of the new periods (`ads_periods.py`)
+For each star behind a new period: all identifiers of the nearest SIMBAD object within 3″ of the TIC position
+(HD, HIP, TYC, 2MASS, Gaia DR2/DR3, BD/CD/CPD, UCAC4, WISE, TOI, and others), plus the TIC and TOI/CTOI names, in
+one NASA ADS full-text query; for stars with papers, a second query adds the period itself (the alias to one and
+two decimals). Matches are read by eye: identifiers like "CD-73 14" also match unrelated text.

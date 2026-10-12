@@ -7,8 +7,8 @@ repository's results (12 October 2026).*
 We report TIC 402710280.01, a transiting sub-Neptune candidate on a 36.3397-day orbit around a
 nearby K dwarf (TIC 402710280 = TYC 9041-03677-1; T = 9.24, G = 9.78, 66.8 pc). Five transits were found in TESS
 data from 2021 to 2026, two of them only in our own photometry of the sector 100 and 102 full-frame images, for
-which no public light curves exist yet. The star is not a TOI or community TOI, and we found no prior mention of
-it in the literature.
+which no public light curves exist yet. The star is not a TOI or community TOI, and a NASA ADS full-text search
+by all its identifiers (TIC, TYC, 2MASS, Gaia DR3) finds no paper that mentions it (12 October 2026).
 
 ## Data and detection
 A blind single-transit search of public TESS light curves found two transits, in sector 39 (TESS-SPOC, BTJD

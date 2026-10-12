@@ -168,6 +168,61 @@ def svg_lightcurves(panels, labels, ylim=None, height=210, panel_w=250, id_="lc"
     return "".join(parts)
 
 
+def svg_strip(strips, marks, id_, height=230, panel_w=380, label=None):
+    """Binned light curve over a few days per panel (ppm vs BTJD), with vertical markers at transit times:
+    kind "ctoi" (the community TOI's transits), "toi" (the TOI's) or "listed" (a transit the catalogue predicts)."""
+    n = len(strips)
+    padl, padr, padt, padb = 50, 12, 24, 36
+    W, H = n * panel_w, height
+    ally = np.concatenate([np.asarray(st["y"]) for st in strips])
+    lo, hi = np.percentile(ally, [0.5, 99.5])
+    pad = 0.15 * (hi - lo)
+    y0, y1 = lo - pad, hi + pad
+    rng = y1 - y0
+    step = 500 if rng < 4000 else 1000 if rng < 9000 else 2500 if rng < 22000 else 5000
+    if rng < 1600:
+        step = 250
+    yt = np.arange(np.ceil(y0 / step) * step, y1 + 1, step)
+    parts = [f'<svg class="lc" data-unit="d" id="{id_}" viewBox="0 0 {W} {H}" role="img" '
+             f'aria-label="{esc(label or "Binned TESS light curve with transit times marked")}">']
+    for i, st in enumerate(strips):
+        x0 = i * panel_w + padl
+        pw = panel_w - padl - padr
+        ph = H - padt - padb
+        a, b = st["lo"], st["hi"]
+
+        def X(v):
+            return x0 + (v - a) / (b - a) * pw
+
+        def Y(v):
+            return padt + (y1 - min(max(v, y0), y1)) / (y1 - y0) * ph
+        parts.append(f'<g class="panel" data-i="{i}">')
+        parts.append(f'<text class="ptitle" x="{x0}" y="{padt - 8}">Sector {st["sector"]} · '
+                     f'{btjd_to_utc(a).strftime("%b %Y")}</text>')
+        for v in yt:
+            parts.append(f'<line class="grid" x1="{x0}" x2="{x0 + pw}" y1="{Y(v):.1f}" y2="{Y(v):.1f}"/>')
+            if i == 0:
+                parts.append(f'<text class="tick" x="{x0 - 6}" y="{Y(v) + 4:.1f}" text-anchor="end">{int(v)}</text>')
+        span = b - a
+        xs = 1 if span <= 6 else 2 if span <= 12 else 5 if span <= 30 else 10
+        for v in np.arange(np.ceil(a / xs) * xs, b + 1e-9, xs):
+            parts.append(f'<text class="tick" x="{X(v):.1f}" y="{H - padb + 16}" text-anchor="middle">{v:.0f}</text>')
+        parts.append(f'<line class="axis" x1="{x0}" x2="{x0 + pw}" y1="{padt + ph}" y2="{padt + ph}"/>')
+        for t, lab, kind in marks:
+            if a <= t <= b:
+                parts.append(f'<line class="mk-{kind}" x1="{X(t):.1f}" x2="{X(t):.1f}" y1="{padt}" y2="{padt + ph}">'
+                             f'<title>{esc(lab or kind)} · BTJD {t:.2f}</title></line>')
+        for xv, yv, ev in zip(st["x"], st["y"], st["e"]):
+            parts.append(f'<circle class="pt" cx="{X(xv):.1f}" cy="{Y(yv):.1f}" r="2.1" '
+                         f'data-x="{xv:.3f}" data-y="{yv:.0f}" data-e="{ev:.0f}"/>')
+        parts.append("</g>")
+    parts.append(f'<text class="axlabel" x="{W / 2}" y="{H - 4}" text-anchor="middle">BTJD (BJD − 2457000)</text>')
+    parts.append(f'<text class="axlabel" transform="translate(11,{padt + (H - padt - padb) / 2}) rotate(-90)" '
+                 f'text-anchor="middle">flux − 1 (ppm)</text>')
+    parts.append("</svg>")
+    return "".join(parts)
+
+
 # ------------------------------------------------------------------------------------------ helpers
 
 def chip(text, kind):
@@ -316,6 +371,12 @@ svg.lc .err { stroke: var(--data); stroke-opacity: 0.35; stroke-width: 1; }
 svg.lc .pt { fill: var(--data); stroke: var(--surface); stroke-width: 1; }
 svg.lc .pt.hot { fill: var(--accent); }
 svg.lc .model { fill: none; stroke: var(--mark); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+svg.lc .mk-ctoi { stroke: var(--mark); stroke-width: 2; opacity: 0.85; }
+svg.lc .mk-toi { stroke: var(--blue); stroke-width: 2; opacity: 0.85; }
+svg.lc .mk-listed { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.key { display: inline-block; width: 18px; height: 0; border-top: 2px solid; vertical-align: middle; margin-right: 4px; }
+.key-ctoi { border-color: var(--mark); } .key-toi { border-color: var(--blue); }
+.key-listed { border-top: 2px dashed var(--muted); }
 .tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font: 12px var(--font-mono);
   padding: 5px 8px; border-radius: 6px; white-space: nowrap; transform: translate(-50%, -130%); }
 .tip b { font-weight: 600; }
@@ -374,7 +435,8 @@ JS = r"""
       const pr = plate.getBoundingClientRect();
       tip.textContent = '';
       const b = document.createElement('b'); b.textContent = `${best.dataset.y} ± ${best.dataset.e} ppm`;
-      tip.append(b, document.createTextNode(`  at ${(+best.dataset.x).toFixed(1)} h`));
+      tip.append(b, document.createTextNode(svg.dataset.unit === 'd' ? `  at BTJD ${(+best.dataset.x).toFixed(2)}`
+                                                                      : `  at ${(+best.dataset.x).toFixed(1)} h`));
       tip.style.left = `${best.cx.baseVal.value / sx + r.left - pr.left}px`;
       tip.style.top = `${best.cy.baseVal.value / sy + r.top - pr.top}px`;
       tip.hidden = false;
@@ -975,6 +1037,8 @@ def section_periodhunt(summary_only=False):
                 f'periods, narrowed to three or fewer choices, are on no list (TOI-2493.01 is the best of them).</div></li>')
     pv = _json("period_vet.json")
     pdp = _json("period_deep.json")
+    pkk = [POSTED_VERDICTS.get(k, ("?",))[0] for k in _json("posted_check.json")]
+    n_wrong, n_strict, n_multi = pkk.count("posted"), pkk.count("hunt"), pkk.count("system")
     rows = []
     for o in S["new"]:
         t = int(o["tic"])
@@ -982,13 +1046,25 @@ def section_periodhunt(summary_only=False):
         ev = [e for e in o.get("events", []) if e.get("ok")]
         v = pv.get(key, {})
         fits = (pdp.get(key) or {}).get("fits") or []
+        def conv(f):   # a fit whose chain settled: transit time to 0.05 d, depth to 50%, reduced chi2 < 3
+            return ("tref_btjd" in f and max(f["tref_btjd"][1:]) < 0.05 and max(f["depth_ppm"][1:]) < 0.5 * f["depth_ppm"][0]
+                    and f["chi2_min"] / max(f["n_points"], 1) < 3)
         dens = "; ".join(f"{f['P']:.3f} d: ρ {f['rho_solar'][0]:.2f} vs {f['rho_tic']:.2f} ({abs(f['rho_z']):.1f}σ)"
-                         for f in fits if "rho_z" in f)
+                         for f in fits if "rho_z" in f and conv(f))
+        if fits and not dens:
+            dens = "fit did not converge" if any("tref_btjd" in f for f in fits) else ""
+        grazing = any(conv(f) and f["b"][0] > 1 for f in fits)
+        if grazing:
+            dens = (dens + "; " if dens else "") + "grazing (b > 1): likely an eclipsing binary"
         rows.append(dict(id=o["id"], tic=t, disp=o.get("disp", ""), depth=o.get("depth_ref_ppm"), dur=o.get("dur_h"),
                          n=1 + len(ev), sectors=", ".join(sorted({str(e["sector"]) for e in ev}, key=int)),
                          al=o.get("aliases") or [], pmin=o.get("p_min_circular"),
                          pix=cv_text(v) if v else "not tested", verdict=v.get("verdict", ""), dens=dens or "–"))
     df = pd.DataFrame(rows)
+    if len(df):   # planet size from the box depth and the TIC radius (dilution by neighbours not included)
+        import ticdb
+        rad = ticdb.query([int(x) for x in df.tic.unique()], ["rad"]).set_index("tic")["rad"]
+        df["rp"] = [math.sqrt(max(d, 0) * 1e-6) * float(rad.get(t, np.nan)) * R_EARTH_PER_RSUN for d, t in zip(df.depth, df.tic)]
     n_deep = int((df.depth > 10000).sum()) if len(df) else 0
     if len(df):
         df = df[df.depth <= 10000]
@@ -996,6 +1072,7 @@ def section_periodhunt(summary_only=False):
         df = df.assign(rank=rank).sort_values(["rank", "n"], ascending=[True, False])
     cols = [("TOI / CTOI", lambda r: f"<span class='m'>{esc(r.id)}</span><div class='muted' style='font-size:0.78rem'>TIC {r.tic}</div>", "l"),
             ("Depth", lambda r: f"{r.depth:.0f} ppm" if r.depth == r.depth else "–", "r"),
+            ("Size", lambda r: f"{r.rp:.1f} {RE}" if r.rp == r.rp else "–", "r"),
             ("Transits", lambda r: f"{r.n} <span class='muted'>(new: S{esc(r.sectors)})</span>", "l"),
             ("Periods allowed (d)", lambda r: esc(", ".join(f"{a:.3f}" for a in r.al[:3])), "l"),
             ("Star density from the transit", lambda r: f"<span class='muted' style='font-size:0.8rem'>{esc(r.dens)}</span>", "l"),
@@ -1015,7 +1092,12 @@ def section_periodhunt(summary_only=False):
   transits on one ephemeris without predicting transits the data do not show are listed.</p>
   <p>{S['n_cred']} targets gained at least one such transit, and {S['n_unique']} of those not on record are left
   with a single possible period. As a test: where someone has already posted a period for the same candidate to
-  ExoFOP, it is among the hunt's allowed periods in {S['n_agree']} of {S['n_onrec']} cases. {len(S['new'])} periods
+  ExoFOP, it is among the hunt's allowed periods in {S['n_agree']} of {S['n_onrec']} cases; of the other
+  {S['n_onrec'] - S['n_agree']}, {n_wrong} turn out to be errors in the posted value (see
+  <a href="#corrections">Corrections</a>), {n_strict} are periods the hunt's alias test wrongly excluded, and
+  {n_multi} are bookkeeping in confirmed multi-planet systems. No paper in NASA's ADS gives any of the new periods
+  (full-text search by every SIMBAD identifier of each star, with the period itself), except for one eclipsing
+  binary deeper than 1%. {len(S['new'])} periods
   are on no list and narrowed to three or fewer; {n_deep} of them belong to dips deeper than 1%, mostly eclipsing
   binaries posted as community candidates, and are left out of the table (they are in
   <span class='m'>period_review.csv</span>). The table lists the rest, those on the star first, with the pixel test
@@ -1029,6 +1111,266 @@ def section_periodhunt(summary_only=False):
   <p class="muted" style="font-size:var(--step--1)">Star density: from a joint transit fit at each allowed
   period (solar units), against the TIC value; a large mismatch needs an eccentric orbit, a different star, or a
   wrong period.</p>
+</section>"""
+
+
+# Verdicts on the eleven candidates where a period posted to ExoFOP for the same candidate is not among the
+# period hunt's allowed periods (posted_check.py measures every transit each period predicts).
+POSTED_VERDICTS = {
+    "349488688|TOI-2319.01": ("system", "Multi-planet bookkeeping: the hunt's transits are HD 152843 c (19.50 d); the posted 11.62 d is planet b."),
+    "118798035|CTOI 118798035.01": ("system", "Three confirmed planets (TOI-7510 b, c, d); the hunt's dips mix them."),
+    "118798035|CTOI 118798035.02": ("system", "Three confirmed planets (TOI-7510 b, c, d); the hunt's dips mix them."),
+    "209006017|CTOI 209006017.01": ("hunt", "Posted period right: all 8 transits it predicts are there; the hunt's alias test was too strict."),
+    "242241304|CTOI 242241304.01": ("hunt", "Posted period consistent with the data; the hunt's alias test was too strict."),
+    "243417115|CTOI 243417115.01": ("hunt", "Posted period right (4 of 4 predicted transits); a weak transit mis-timed by the hunt."),
+    "438225366|CTOI 438225366.01": ("posted", "The posted period is twice the true one."),
+    "386131764|CTOI 386131764.01": ("posted", "TOI-2633.01's listed ephemeris misses the transits."),
+    "156716001|CTOI 156716001.01": ("posted", "Not the TOI it was merged into (TOI-7602.01)."),
+    "369532319|CTOI 369532319.01": ("posted", "Not the TOI it was merged into (TOI-5967.01)."),
+    "67711670|CTOI 67711670.01": ("posted", "Not the TOI it was merged into (TOI-6033.01)."),
+}
+
+EXOFOP = "https://exofop.ipac.caltech.edu/tess/target.php?id="
+
+
+def _fit_panels(f, keep=None, labels=None):
+    pl = f.get("plot") or []
+    idx = keep if keep is not None else range(len(pl))
+    return [pl[i] for i in idx], [labels[i] for i in idx] if labels else None
+
+
+def promoted_summary():
+    """Classify the promoted community TOIs that are off their TOI's ephemeris (promoted_check.py)."""
+    pc = _json("promoted_check.json")
+    if not pc:
+        return None
+    cats = {"swap": [], "fix": [], "separate": [], "nodip": [], "nodata": [], "unclear": []}
+    for k, o in pc.items():
+        ts = o.get("toi_series") or {}
+        tc = o.get("through_ctoi") or {}
+        ct = o.get("ctoi_transit") or {}
+        if o.get("matches_other_toi"):
+            cats["swap"].append(o)
+        elif o.get("error") or not ts.get("n_data"):
+            cats["nodata"].append(o)
+        elif ts.get("n_no_dip", 0) >= 2 and ts["n_no_dip"] >= ts.get("n_dip", 0) and tc.get("n_dip", 0) >= 3 \
+                and tc.get("n_no_dip", 0) <= max(1, tc.get("n_dip", 0) // 10):
+            cats["fix"].append(o)
+        elif ts.get("n_dip", 0) >= 2 and ts.get("n_no_dip", 0) <= max(1, ts.get("n_dip", 0) // 10) and (ct.get("snr") or 0) >= 7:
+            cats["separate"].append(o)
+        elif ts.get("n_dip", 0) >= 2 and (ct.get("snr") or 0) < 3:
+            cats["nodip"].append(o)
+        else:
+            cats["unclear"].append(o)
+    return {"n": len(pc), "cats": cats}
+
+
+def section_corrections():
+    cf = _json("corrections_fit.json")
+    pcs = _json("posted_cases.json")
+    pk = _json("posted_check.json")
+    if not cf or not pcs:
+        return ""
+    n_dis = len(pk)
+    kinds = [POSTED_VERDICTS.get(k, ("?", ""))[0] for k in pk]
+    n_post, n_hunt, n_sys = kinds.count("posted"), kinds.count("hunt"), kinds.count("system")
+    parts = []
+    # 1. CTOI 438225366.01: half the posted period
+    a = cf.get("CTOI 438225366.01", {})
+    if "period_d" in a:
+        rs = a.get("rad_tic") or 2.17
+        rp_rj = a["rp_rs"][0] * rs * 9.73
+        ev = pcs["438225366"]["ephemerides"]
+        half = next(e for e in ev if e["name"] == "half of posted")
+        sec = next(e for e in ev if e["name"].startswith("phase 0.5"))
+        pix = (half.get("pixels") or {})
+        n_tr = len(half["events"])
+        odd = [e for e in half["events"] if e["n"] % 2]
+        sec_d = [e["depth_ppm"] for e in sec["events"]]
+        sec_e = [e["err_ppm"] for e in sec["events"]]
+        w = np.array([1 / x ** 2 for x in sec_e])
+        sec_mean, sec_err = float((w * np.array(sec_d)).sum() / w.sum()), float(1 / np.sqrt(w.sum()))
+        oe = (pk.get("438225366|CTOI 438225366.01", {}).get("trials") or [{}])
+        oe = next((t.get("odd_even") for t in oe if t.get("label") == "half of posted"), None) or {}
+        labels = [f"S{e['sector']} · {'odd' if e['n'] % 2 else 'even'}" for e in half["events"]]
+        keep = [i for i, e in enumerate(half["events"]) if e["sector"] in (33, 43, 45, 72)][:4]
+        panels, labs = _fit_panels(a, keep, labels)
+        svg = svg_lightcurves(panels, labs, id_="lc-ctoi438", panel_w=260, xr=8, xstep=4) if panels else ""
+        parts.append(f"""
+  <div class="cand-grid" style="margin-top:28px">
+    <div>
+      <h3>CTOI 438225366.01: the period is {a['period_d'][0]:.4f} days, not 41.72</h3>
+      <p>Posted to ExoFOP in 2022 as a single transit with a period of 41.7219 days. That value joins the sector-6
+      and sector-33 transits as 18 cycles; the light curves show {n_tr} transits of the same depth every
+      {a['period_d'][0]:.3f} days, in sectors 6 to 87, {len(odd)} of them at the odd cycles where a 41.72-day period
+      allows none. The odd and even transits have the same depth ({oe.get('odd_ppm', float('nan')):.0f} and
+      {oe.get('even_ppm', float('nan')):.0f} ppm, {oe.get('diff_sigma', float('nan')):.1f}σ apart), and half-way between them the light curve is flat ({sec_mean:.0f} ± {sec_err:.0f} ppm), so the 20.86-day
+      period is not an eclipsing binary's primary and secondary at twice it.</p>
+      <figure class="plate" style="margin:0"><div class="scroll-x">{svg}</div>
+      <figcaption>Four of the {n_tr} transits (20-minute bins) with one model fitted to all of them; "odd" ones fall
+      where the posted 41.72-day period predicts nothing.</figcaption></figure>
+      <p class="muted" style="font-size:var(--step--1)">The star is an A star (8,260 K, {rs:.1f} {RSUN}, T = 10.8,
+      650 pc), so a {a['depth_ppm'][0] / 1e4:.2f}% transit means a companion of about {rp_rj:.1f} Jupiter radii: too
+      large for a planet at this distance from the star unless the catalogue radius is too big, and likely a small
+      star. The corrected period is what any follow-up needs either way.</p>
+    </div>
+    <dl class="spec">
+      <dt>Star</dt><dd><a href="{EXOFOP}438225366">TIC 438225366</a></dd>
+      <dt>Posted</dt><dd>41.7219 d (gsun, 2022)</dd>
+      <dt>Period</dt><dd>{a['period_d'][0]:.5f} ± {max(a['period_d'][1:]):.5f} d</dd>
+      <dt>Mid-transit</dt><dd>BTJD {a['tref_btjd'][0]:.4f} ± {max(a['tref_btjd'][1:]):.4f}</dd>
+      <dt>Depth</dt><dd>{a['depth_ppm'][0]:.0f} ppm (R<sub>p</sub>/R<sub>★</sub>² )</dd>
+      <dt>Duration</dt><dd>{pm(a['t14_h'], 2)} h</dd>
+      <dt>Impact par.</dt><dd>{pm(a['b'], 2)}</dd>
+      <dt>Transits</dt><dd>{n_tr} (S6, 33, 43, 45, 71, 72, 87)</dd>
+      <dt>Pixels</dt><dd>{esc(pix.get('verdict', '–'))} ({pix.get('offset_arcsec', float('nan')):.1f}″)</dd>
+      <dt>Catalogues</dt><dd>no Gaia DR3 or VSX variable</dd>
+    </dl>
+  </div>""")
+    # 2. TOI-2633.01: listed ephemeris misses the transits
+    b = cf.get("TOI-2633.01", {})
+    if "period_d" in b:
+        ev = pcs["386131764"]["ephemerides"]
+        listed = next(e for e in ev if e["name"] == "TOI-2633.01")
+        series = next(e for e in ev if e["name"].startswith("CTOI series"))
+        pix = series.get("pixels") or {}
+        nl = [e for e in listed["events"]]
+        n_flat = sum(1 for e in nl if e["depth_ppm"] < 1000)
+        svg = svg_strip(b.get("strips", []), b.get("marks", []), "strip-toi2633",
+                        label="TOI-2633.01 light curves with the listed and the corrected transit times") if b.get("strips") else ""
+        parts.append(f"""
+  <div class="cand-grid" style="margin-top:28px">
+    <div>
+      <h3>TOI-2633.01: the transits are not where the TOI's ephemeris puts them</h3>
+      <p>The TOI was made in 2021 from a community TOI, with a mid-transit time of BJD 2459229.3616 and a period of
+      18.19605 days. The light curve is flat at that time and at {n_flat - 1} of the other {len(nl) - 1} times it
+      predicts in sectors 7, 34, 87, 88 and 108. The transits are instead at the community TOI's own epoch, BJD
+      2459253.582, and every {b['period_d'][0]:.3f} days from it: two in sector 34, three in sectors 87–88 and one
+      in the sector-7 full-frame data, {b['depth_ppm'][0] / 1000:.1f} ppt deep (our sector-108 light curve shows a
+      weaker dip at the predicted time). The transit is shorter than a central crossing of this
+      {b.get('rad_tic') or 1.67:.1f} {RSUN} star would be (it implies a stellar density of {b['rho_solar'][0]:.1f}
+      against the catalogue's {b.get('rho_tic') or float('nan'):.1f} ρ<sub>☉</sub>), so the orbit is eccentric, the
+      star smaller than catalogued, or the dip on a fainter star; the pixel test cannot separate the target from a
+      G = 17.6 star 7″ away, which would need a 90% eclipse. Whatever the source, the timing is what the catalogue
+      gets wrong.</p>
+      <figure class="plate" style="margin:0"><div class="scroll-x">{svg}</div>
+      <figcaption><span class="key key-ctoi"></span>transits on the corrected ephemeris ·
+      <span class="key key-listed"></span>transit times of the listed TOI ephemeris (1-hour bins).</figcaption></figure>
+    </div>
+    <dl class="spec">
+      <dt>Star</dt><dd><a href="{EXOFOP}386131764">TIC 386131764</a> · T 11.7</dd>
+      <dt>Listed</dt><dd>BJD 2459229.3616 · 18.19605 d</dd>
+      <dt>New T<sub>0</sub></dt><dd>BTJD {b['tref_btjd'][0]:.4f} ± {max(b['tref_btjd'][1:]):.4f}</dd>
+      <dt>New P</dt><dd>{b['period_d'][0]:.5f} ± {max(b['period_d'][1:]):.5f} d</dd>
+      <dt>Depth</dt><dd>{b['depth_ppm'][0]:.0f} ppm</dd>
+      <dt>Duration</dt><dd>{pm(b['t14_h'], 2)} h</dd>
+      <dt>Pixels</dt><dd>{esc(pix.get('verdict', '–'))}</dd>
+      <dt>Density</dt><dd>{pm(b['rho_solar'], 2)} (TIC {b.get('rho_tic') or float('nan'):.2f}) ρ<sub>☉</sub></dd>
+    </dl>
+  </div>""")
+    # 3. merged community TOIs that are separate objects
+    rows = []
+    strips_html = []
+    rc_all = _json("period_recheck.json")
+    rv_all = {f"{o['tic']}|{o['id']}": o for o in (_json("period_review.json") or []) if isinstance(o, dict) and "tic" in o}
+    for key, tic, toi, toiP, off_txt in (("CTOI 156716001.01", 156716001, "TOI-7602.01", 10.2978, "24 h (96σ)"),
+                                         ("CTOI 369532319.01", 369532319, "TOI-5967.01", 15.3436, "65 h (306σ)"),
+                                         ("CTOI 67711670.01", 67711670, "TOI-6033.01", 18.0401, "110 h (45σ)")):
+        c = cf.get(key, {})
+        case = pcs.get(str(tic), {})
+        if not case:
+            continue
+        eph = {e["name"]: e for e in case["ephemerides"]}
+        te = eph.get(toi, {})
+        ce = eph.get("CTOI events", {})
+        n_toi = sum(1 for e in te.get("events", []) if e["snr"] >= 3)
+        ctr = ", ".join(f"S{e['sector']} ({e['depth_ppm'] / 1000:.1f} ppt)" for e in ce.get("events", []))
+        pix = (ce.get("pixels") or {}).get("verdict", "–")
+        al = c.get("aliases") or []
+        rho = c.get("rho_tic")
+        pmin = {156716001: 67.4, 369532319: 19.8, 67711670: 12.0}[tic]
+        # the periods the data allow (the period hunt's alias test, relaxed where it ran)
+        hk = f"{tic}|{key}"
+        allowed = (rc_all.get(hk) or {}).get("aliases") or (rv_all.get(hk) or {}).get("aliases") or []
+        allowed = json.loads(allowed) if isinstance(allowed, str) else allowed
+        ok = [x for x in al if x["P"] >= pmin and any(abs(x["P"] / a - 1) < 1e-3 for a in allowed)]
+        r_rel = max(c["rho_solar"][1:]) / c["rho_solar"][0] if c.get("rho_solar") else 9
+        good = [x for x in ok if abs(x["z"]) < 2] if r_rel < 0.5 else []
+        if ok and r_rel >= 0.5:
+            pr = f"{len(ok)} allowed ({al[0]['P']:.1f}/n d, ≥ {pmin:.0f} d); the transit shape is too noisy to choose"
+        elif good:
+            pr = f"{len(ok)} allowed ({al[0]['P']:.1f}/n d, ≥ {pmin:.0f} d); the star's density favours " + \
+                 ", ".join(f"{x['P']:.1f}" for x in sorted(good, key=lambda x: abs(x['z']))[:3]) + " d"
+        elif ok:
+            pr = f"{len(ok)} allowed ({al[0]['P']:.1f}/n d, ≥ {pmin:.0f} d)"
+        else:
+            pr = "–"
+        rows.append(f"<tr><td><a href='{EXOFOP}{tic}'>{esc(key)}</a></td><td>{toi} ({toiP:.2f} d)</td><td class='num'>{off_txt}</td>"
+                    f"<td class='num'>{n_toi}</td><td>{esc(ctr)}</td><td>{esc(pix)}</td><td>{esc(pr)}</td></tr>")
+        if c.get("strips"):
+            strips_html.append(f"<figure class='plate' style='margin:0'><div class='scroll-x'>"
+                               f"{svg_strip(c['strips'], c['marks'], 'strip-' + str(tic), label=key + ' and ' + toi)}</div>"
+                               f"<figcaption><span class='key key-ctoi'></span>{esc(key)} · <span class='key key-toi'></span>"
+                               f"{toi} · <span class='key key-listed'></span>a transit time of {toi}'s listed ephemeris "
+                               f"(its error at that epoch is under three hours) where the data show no transit or have "
+                               f"a gap; 30-minute bins.</figcaption></figure>")
+    if rows:
+        parts.append(f"""
+  <div class="col" style="margin-top:28px;display:grid;gap:12px">
+    <h3>Three community TOIs that are not the TOI they were merged into</h3>
+    <p>ExoFOP marks each of these single-transit community TOIs as promoted to a TOI that the TESS project found
+    later on the same star. In each, the community TOI's transit sits far off that TOI's ephemeris, the TOI's own
+    transits are in the data at other times, and the period hunt (with the TOI's transits masked) found a further
+    transit of the community TOI's depth and duration. All of them are on the target in the pixel test. So each
+    star has a second transiting candidate, whose period is the gap between its transits divided by a whole
+    number.</p>
+  </div>
+  <div class="scroll-x"><table class="data"><thead><tr><th>Community TOI</th><th>Merged into</th><th>Offset</th>
+  <th>TOI transits seen</th><th>Its own transits</th><th>Pixels</th><th>Period</th></tr></thead>
+  <tbody>{''.join(rows)}</tbody></table></div>
+  <div style="display:grid;gap:18px;margin-top:12px">{''.join(strips_html)}</div>""")
+    # 4. the catalogue-wide audit
+    ps = promoted_summary()
+    audit = ""
+    if ps:
+        from promoted_check import flagged
+        n_all = flagged()[2]
+        cats = ps["cats"]
+
+        def nn(k, one, many):
+            return f"{k} {one if k == 1 else many}"
+        extra = [o for o in cats["fix"] if o["tic"] != 386131764]
+        ex_rows = "".join(
+            f"<tr><td><a href='{EXOFOP}{o['tic']}'>TOI-{esc(o['toi'])}</a></td><td class='num'>{o['P']:.5f}</td>"
+            f"<td class='num'>{o['through_ctoi']['P']:.5f}</td><td class='num'>{int(o['toi_series']['n_dip'])} of {int(o['toi_series']['n_data'])}</td>"
+            f"<td class='num'>{int(o['through_ctoi']['n_dip'])} of {int(o['through_ctoi']['n_data'])}</td></tr>" for o in extra)
+        audit = f"""
+  <div class="col" style="margin-top:28px;display:grid;gap:12px">
+    <h3>All promoted community TOIs</h3>
+    <p>The same test was run on every community TOI that ExoFOP lists as promoted to a TOI: of {n_all}
+    with an epoch and a TOI period, {ps['n']} put their transit more than one transit duration and five standard
+    errors off the TOI's ephemeris. Of these, {nn(len(cats['swap']), 'matches', 'match')} another TOI on the same
+    star (planet labels swapped between the two lists); in {len(cats['nodip'])} the community TOI's transit is not in
+    the data while the TOI's transits are; {nn(len(cats['separate']), 'is a separate object', 'are separate objects')}
+    like the three above; {nn(len(cats['fix']), 'has a TOI ephemeris', 'have TOI ephemerides')} that the data
+    contradict while one through the community TOI's transit fits{', listed below' if extra else ''}; and
+    {len(cats['unclear']) + len(cats['nodata'])} could not be decided from the light curves.</p>
+  </div>
+  {f"<div class='scroll-x'><table class='data'><thead><tr><th>TOI</th><th>Listed P (d)</th><th>P through the community TOI (d)</th><th>Listed ephemeris: transits seen</th><th>Corrected: transits seen</th></tr></thead><tbody>{ex_rows}</tbody></table></div>" if extra else ""}"""
+    return f"""
+<section id="corrections">
+  <p class="kicker">Catalogue corrections · ExoFOP periods and ephemerides</p>
+  <h2>Periods and ephemerides that the TESS data contradict</h2>
+  <div class="col" style="display:grid;gap:12px">
+  <p>Where someone had already posted a period for the same candidate, the period hunt disagreed in {n_dis} cases.
+  Measuring every transit that each period predicts settles them: in {n_hunt} the posted period is right and the
+  hunt's alias test was too strict, {n_sys} are bookkeeping in confirmed multi-planet systems, and in {n_post} the
+  posted value is wrong for the transit it is attached to. A predicted transit counts as missing when the data
+  cover it and show less than a third of the expected depth, more than 3σ below it; every corrected ephemeris was
+  checked transit by transit in the light curves and at the pixel level.</p>
+  </div>
+  {''.join(parts)}
+  {audit}
 </section>"""
 
 
@@ -1514,8 +1856,9 @@ def section_caveats(lit=None):
         identifier). Of the {n_lit} stars, {n_known} turned out to be on record in some form, most of them as
         community candidates on ExoFOP; each table says what was found. On 12 October the stars were also checked in
         ESA's Gaia DR3 (orbits, eclipsing-binary models, unresolved companions), and the multiple-star candidates in
-        ZTF's light curves. TIC 402710280 and TOI-2493 were re-read live on ExoFOP and searched on the web (no ADS key
-        was available that day). Not matched row by row: candidate tables published only inside papers, such as the
+        ZTF's light curves. TIC 402710280 and TOI-2493 were re-read live on ExoFOP and searched on the web, and on
+        12 October the stars behind every new period, TOI-2493 among them, were searched in ADS full text by every
+        SIMBAD identifier and by the period itself: no paper names TIC 402710280 or TOI-2493. Not matched row by row: candidate tables published only inside papers, such as the
         T16 hunt's 10,000 candidates from TESS's first year.</div></li>
         <li class="check check-info"><span class="ci" aria-hidden="true">i</span><div><strong>How far to trust the pixel test.</strong>
         Run blind on {cal_n} confirmed TESS planets, it puts {cal_on} on their star and
@@ -1622,6 +1965,16 @@ def build():
                 f'A single-transit TOI since 2021 with no period; the period hunt found two more transits in 2025 and 2026. '
                 f'TESS should see the next one in mid-November 2026.</div></li>')
     fph = section_periodhunt(summary_only=True)
+    fcor = ""
+    if _json("corrections_fit.json") and _json("posted_cases.json"):
+        cfa = _json("corrections_fit.json")
+        p438 = cfa.get("CTOI 438225366.01", {}).get("period_d", [20.8613])[0]
+        p2633 = cfa.get("TOI-2633.01", {}).get("period_d", [18.215])[0]
+        fcor = (f'<li>{chip("Corrections", "tce")}<div><strong>Five ExoFOP entries that the TESS data contradict.</strong> '
+                f'Community TOI 438225366.01 has a period of {p438:.3f} days, half the posted 41.72; TOI-2633.01\'s '
+                f'transits fall every {p2633:.3f} days from a different epoch than its listed ephemeris, which predicts '
+                f'transits where the light curve is flat; and three single-transit community TOIs merged into later TOIs '
+                f'(TOI-7602.01, 5967.01, 6033.01) are separate objects, each with a further transit found here.</div></li>')
     passed = [int(k) for k, r in dv.items() if "error" not in r and deep_verdict(r)[0] == "candidate"]
     n_dv = sum(1 for t in passed if prior.prior(t)["kind"] is None)
     new_dv = sorted((float(tb[tb.tic == t].rp_rearth.iloc[0]), t) for t in passed
@@ -1660,7 +2013,7 @@ def build():
 </header>
 <nav class="toc" aria-label="Sections"><a href="#findings">Findings</a><a href="#tic402710280">TIC 402710280</a>
 <a href="#toi2493">TOI-2493</a><a href="#hip56966">HIP 56966</a><a href="#hd11506">HD 11506</a><a href="#hip71639">HIP 71639</a>
-<a href="#periodhunt">Periods for TOIs</a><a href="#bright">Bright candidates</a><a href="#trackb">All transit candidates</a>
+<a href="#periodhunt">Periods for TOIs</a><a href="#corrections">Corrections</a><a href="#bright">Bright candidates</a><a href="#trackb">All transit candidates</a>
 <a href="#trackc">Multiple stars</a><a href="#sources">Other data</a><a href="#trackd">Anomalies</a><a href="#calibration">Calibration</a>
 <a href="#methods">Method</a><a href="#next">Next steps</a></nav>
 
@@ -1690,6 +2043,7 @@ def build():
     from the target are already published quadruples or a sextuple. In every other one, a pixel test traces one eclipse set to a neighbouring
     star, and ZTF's sharper images see those eclipses on the named neighbour wherever they reach.</div></li>
     {fph}
+    {fcor}
     <li>{chip("Measured", "ok")}<div><strong>The false-alarm floor, and what was found again.</strong> Flipped light
     curves produced no planet-shaped dips in two-minute data. Blind, the survey found nine confirmed planetary
     systems that never became TOIs, 83 community candidates, published quadruple candidates, a sextuple star and a dipper.</div></li>
@@ -1701,6 +2055,7 @@ def build():
 {section_hd11506(fit, ex)}
 {section_hip71639(fit, ex)}
 {section_periodhunt()}
+{section_corrections()}
 {section_deepvet(dv, lit, tb)}
 {section_trackb(tb, singles, lit)}
 <section id="plates" style="padding-top:8px">

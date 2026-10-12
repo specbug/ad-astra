@@ -6,8 +6,9 @@ density the shape implies is compared with the TIC density of the star. A period
 is far from the star's needs an eccentric orbit or a different star; with several aliases, the one that matches
 the star is the likelier period.
 
-  python period_deep.py
-Output: results/candidates/period_deep.json, keyed "tic|id"
+  python period_deep.py [i n]
+Output: results/candidates/period_deep.json, keyed "tic|id". Shards (python period_deep.py i n) split the stars
+between processes and write period_deep_i.json; a run without arguments merges them first.
 """
 import json
 import math
@@ -40,13 +41,24 @@ def fit_one(o, P, lcs, teff):
     return out
 
 
-def main():
+def main(shard=0, n_shards=1):
     rv = json.load(open(C / "period_review.json"))
     pv = json.load(open(C / "period_vet.json")) if (C / "period_vet.json").exists() else {}
+    for p in sorted(C.glob("period_vet_*.json")):   # results of sharded runs not yet merged
+        pv.update(json.load(open(p)))
     res = json.load(open(OUT)) if OUT.exists() else {}
-    for o in new_periods(rv):
+    shards = sorted(C.glob("period_deep_*.json"))
+    for p in shards:
+        res.update(json.load(open(p)))
+    if n_shards == 1 and shards:
+        json.dump(res, open(OUT, "w"), indent=1, default=float)
+        for p in shards:
+            p.unlink()
+    out = OUT if n_shards == 1 else C / f"period_deep_{shard}.json"
+    mine = json.load(open(out)) if (n_shards > 1 and out.exists()) else res
+    for i, o in enumerate(new_periods(rv)):
         key = f"{o['tic']}|{o['id']}"
-        if key in res:
+        if key in res or key in mine or i % n_shards != shard:
             continue
         # only planet-like dips (<= 1%) whose transits the pixel test puts on the star (or cannot separate from it)
         v = (pv.get(key) or {}).get("verdict", "")
@@ -67,11 +79,12 @@ def main():
                 z = (r[0] - rho) / (r[2] if r[0] > rho else r[1])
                 f["rho_tic"], f["rho_z"] = rho, float(z)
             fits.append({"P": P, **(f or {})})
-        res[key] = {"tic": int(o["tic"]), "id": o["id"], "tmag": float(st.Tmag), "rad": float(st.rad) if st.rad == st.rad else None,
-                    "fits": fits, "pixels": pv.get(key, {}).get("verdict")}
+        mine[key] = {"tic": int(o["tic"]), "id": o["id"], "tmag": float(st.Tmag), "rad": float(st.rad) if st.rad == st.rad else None,
+                     "fits": fits, "pixels": pv.get(key, {}).get("verdict")}
         print(key, [(round(f["P"], 3), round(f.get("rho_solar", [np.nan])[0], 2), round(f.get("rho_z", np.nan), 1)) for f in fits], flush=True)
-        json.dump(res, open(OUT, "w"), indent=1, default=float)
+        json.dump(mine, open(out, "w"), indent=1, default=float)
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    main(*(int(a) for a in sys.argv[1:3])) if len(sys.argv) > 2 else main()
