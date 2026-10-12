@@ -290,6 +290,16 @@ the report, by the standard centroid test:
 Saturated stars (T ≲ 6.8) bleed charge along CCD columns and their centroids move along the column; the test
 does not apply to them (HIP 71639).
 
+Calibration (`centroid_calib.py`, `eb_pixels.py --kostov`):
+- 40 confirmed TESS planets (TOIs dispositioned CP or KP; T = 8–11, depth 0.07–1%, P = 2–40 d; up to four
+  transits from two 2-minute sectors and two from a full-frame-only sector): 30 on their star, 5 unresolved (a
+  star a few arcseconds away), 3 offset without a catalogued source, 2 untestable, none on a neighbour.
+- 68 quadruple candidates of Kostov et al. (2022) with both periods below 10 d, whose authors traced both eclipse
+  sets to one star: 36 of the 37 with usable eclipses have both sets on the target, 1 is unresolved, none is
+  called a blend (31 had no sector where both eclipse sets were re-found).
+So a verdict that a dip belongs to a named neighbour has not once been wrong on known on-target signals; an
+"unresolved" or "offset" verdict is inconclusive, not evidence of a blend.
+
 ### 11.4 ZTF (`ztf_check.py`)
 ZTF DR23 light curves are read from IRSA's public HATS/Parquet copy on AWS (IRSA's own services were down): the
 position columns of the HEALPix partition, then only the needed rows. For each Track C system north of −28°, the
