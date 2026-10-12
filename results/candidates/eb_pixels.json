@@ -1,0 +1,370 @@
+{
+ "293954660": {
+  "tic": 293954660,
+  "P1_cat": 2.8138,
+  "P2_cat": 9.80563,
+  "sectors": [
+   {
+    "sector": 83,
+    "kind": "2-min pixels",
+    "sets": {
+     "1": {
+      "P": 2.8144178530053328,
+      "t0": 3559.6149694842347,
+      "dur_h": 3.0,
+      "depth": 0.25711444092911173,
+      "n_eclipses": 9,
+      "n_sources": 0,
+      "best_alternative": null,
+      "best_dchi2": null,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 4.903002789383736,
+      "t0": 3564.3712160583354,
+      "dur_h": 3.0,
+      "depth": 0.00565137712889196,
+      "n_eclipses": 6,
+      "n_sources": 11,
+      "best_alternative": "G12.8 at 44\"",
+      "best_dchi2": -3492.4812215800653,
+      "verdict": "favours G12.8 at 44\""
+     }
+    }
+   },
+   {
+    "sector": 82,
+    "kind": "2-min pixels",
+    "sets": {
+     "1": {
+      "P": 2.814268195503927,
+      "t0": 3534.293425977316,
+      "dur_h": 3.0,
+      "depth": 0.2559623106484088,
+      "n_eclipses": 8,
+      "n_sources": 0,
+      "best_alternative": null,
+      "best_dchi2": null,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 4.905105333766887,
+      "t0": 3534.9475926439827,
+      "dur_h": 3.0,
+      "depth": 0.006011401902872315,
+      "n_eclipses": 5,
+      "n_sources": 11,
+      "best_alternative": "G14.2 at 24\"",
+      "best_dchi2": -17055.566005893532,
+      "verdict": "favours G14.2 at 24\""
+     }
+    }
+   },
+   {
+    "sector": 81,
+    "kind": "2-min pixels",
+    "sets": {
+     "1": {
+      "P": 2.8136530827168964,
+      "t0": 3508.972076871915,
+      "dur_h": 3.0,
+      "depth": 0.25989608933074826,
+      "n_eclipses": 7,
+      "n_sources": 0,
+      "best_alternative": null,
+      "best_dchi2": null,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 4.905586759100832,
+      "t0": 3510.4194169972234,
+      "dur_h": 2.0,
+      "depth": 0.005746726434385792,
+      "n_eclipses": 5,
+      "n_sources": 11,
+      "best_alternative": "G14.2 at 24\"",
+      "best_dchi2": -18684.15407476969,
+      "verdict": "favours G14.2 at 24\""
+     }
+    }
+   }
+  ],
+  "verdict": "blend: an eclipse set comes from a neighbour"
+ },
+ "268963812": {
+  "tic": 268963812,
+  "P1_cat": 5.03538,
+  "P2_cat": 2.07758,
+  "sectors": [
+   {
+    "sector": 89,
+    "kind": "full-frame cutout",
+    "sets": {
+     "1": {
+      "P": 5.035379818193494,
+      "t0": 3719.874772155173,
+      "dur_h": 2.0,
+      "depth": 0.01628457007173123,
+      "n_eclipses": 6,
+      "n_sources": 10,
+      "best_alternative": "G16.3 at 30\"",
+      "best_dchi2": 843.2756763966881,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 2.0763055879365977,
+      "t0": 3718.6706054885067,
+      "dur_h": 3.0,
+      "depth": 0.0021841611821552856,
+      "n_eclipses": 14,
+      "n_sources": 57,
+      "best_alternative": "G19.1 at 18\"",
+      "best_dchi2": -127.02210967156134,
+      "verdict": "favours G19.1 at 18\""
+     }
+    }
+   },
+   {
+    "sector": 88,
+    "kind": "full-frame cutout",
+    "sets": {
+     "1": {
+      "P": 5.033681167537439,
+      "t0": 3694.699913781275,
+      "dur_h": 2.0,
+      "depth": 0.015445148679020582,
+      "n_eclipses": 5,
+      "n_sources": 11,
+      "best_alternative": "G16.3 at 30\"",
+      "best_dchi2": 3827.179107914105,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 2.076728723467157,
+      "t0": 3691.6915804479413,
+      "dur_h": 3.0,
+      "depth": 0.0016594804596167124,
+      "n_eclipses": 13,
+      "n_sources": 63,
+      "best_alternative": "G17.3 at 19\"",
+      "best_dchi2": 9019.391916930073,
+      "verdict": "on target"
+     }
+    }
+   },
+   {
+    "sector": 63,
+    "kind": "full-frame cutout",
+    "sets": {
+     "1": {
+      "P": 5.038254053604763,
+      "t0": 3014.8821883066503,
+      "dur_h": 2.0,
+      "depth": 0.015578279288947838,
+      "n_eclipses": 6,
+      "n_sources": 11,
+      "best_alternative": "G16.3 at 30\"",
+      "best_dchi2": 3043.9627969204676,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 2.0747803488973218,
+      "t0": 3014.861354973317,
+      "dur_h": 3.0,
+      "depth": 0.002272104796214831,
+      "n_eclipses": 13,
+      "n_sources": 55,
+      "best_alternative": "G19.0 at 17\"",
+      "best_dchi2": 5095.313137051295,
+      "verdict": "on target"
+     }
+    }
+   }
+  ],
+  "verdict": "blend: an eclipse set comes from a neighbour"
+ },
+ "336882813": {
+  "tic": 336882813,
+  "P1_cat": 6.4246,
+  "P2_cat": 2.62333,
+  "sectors": [
+   {
+    "sector": 87,
+    "kind": "full-frame cutout",
+    "sets": {
+     "1": {
+      "P": 6.42147153265072,
+      "t0": 3667.8160148333236,
+      "dur_h": 3.0,
+      "depth": 0.07615664164912495,
+      "n_eclipses": 4,
+      "n_sources": 5,
+      "best_alternative": "G14.3 at 38\"",
+      "best_dchi2": 14656.803752953478,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 2.6251978951552504,
+      "t0": 3665.85768149999,
+      "dur_h": 2.0,
+      "depth": 0.010016542801535511,
+      "n_eclipses": 7,
+      "n_sources": 23,
+      "best_alternative": "G16.5 at 14\"",
+      "best_dchi2": 1980.152705255558,
+      "verdict": "on target"
+     }
+    }
+   },
+   {
+    "sector": 72,
+    "kind": "full-frame cutout",
+    "sets": {
+     "1": {
+      "P": 6.424602932079313,
+      "t0": 3263.135196083537,
+      "dur_h": 3.0,
+      "depth": 0.07705115695063214,
+      "n_eclipses": 3,
+      "n_sources": 5,
+      "best_alternative": "G14.3 at 38\"",
+      "best_dchi2": 3129.6447013470115,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 2.624412102908473,
+      "t0": 3264.2560294168698,
+      "dur_h": 2.0,
+      "depth": 0.012957247863305776,
+      "n_eclipses": 8,
+      "n_sources": 21,
+      "best_alternative": "G16.5 at 14\"",
+      "best_dchi2": 2758.204877157844,
+      "verdict": "on target"
+     }
+    }
+   },
+   {
+    "sector": 71,
+    "kind": "full-frame cutout",
+    "sets": {
+     "1": {
+      "P": 6.424913963251133,
+      "t0": 3237.440953832217,
+      "dur_h": 3.0,
+      "depth": 0.08009041323598665,
+      "n_eclipses": 4,
+      "n_sources": 5,
+      "best_alternative": "G14.3 at 38\"",
+      "best_dchi2": 9849.751693446666,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 2.6233300812299274,
+      "t0": 3235.3826204988836,
+      "dur_h": 2.0,
+      "depth": 0.012856636178147583,
+      "n_eclipses": 7,
+      "n_sources": 21,
+      "best_alternative": "G16.5 at 14\"",
+      "best_dchi2": 1284.4537396517765,
+      "verdict": "on target"
+     }
+    }
+   }
+  ],
+  "verdict": "both eclipse sets on the target"
+ },
+ "389836747": {
+  "tic": 389836747,
+  "P1_cat": 2.56664,
+  "P2_cat": 2.72989,
+  "sectors": [
+   {
+    "sector": 85,
+    "kind": "full-frame cutout",
+    "sets": {
+     "1": {
+      "P": 2.567403391201795,
+      "t0": 3612.318746629647,
+      "dur_h": 3.0,
+      "depth": 0.21830431991232624,
+      "n_eclipses": 9,
+      "n_sources": 0,
+      "best_alternative": null,
+      "best_dchi2": null,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 2.7301554457308086,
+      "t0": 3612.95587826738,
+      "dur_h": 3.0,
+      "depth": 0.022964916055083575,
+      "n_eclipses": 7,
+      "n_sources": 9,
+      "best_alternative": "G14.9 at 49\"",
+      "best_dchi2": -7922.470474546202,
+      "verdict": "favours G14.9 at 49\""
+     }
+    }
+   },
+   {
+    "sector": 58,
+    "kind": "full-frame cutout",
+    "sets": {
+     "1": {
+      "P": 2.566636247937599,
+      "t0": 2883.2870393333424,
+      "dur_h": 3.0,
+      "depth": 0.21882438041565422,
+      "n_eclipses": 10,
+      "n_sources": 0,
+      "best_alternative": null,
+      "best_dchi2": null,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 2.729888103459803,
+      "t0": 2883.924539333342,
+      "dur_h": 3.0,
+      "depth": 0.02260757435020011,
+      "n_eclipses": 10,
+      "n_sources": 10,
+      "best_alternative": "G14.9 at 49\"",
+      "best_dchi2": -209.7994752875199,
+      "verdict": "favours G14.9 at 49\""
+     }
+    }
+   },
+   {
+    "sector": 25,
+    "kind": "full-frame cutout",
+    "sets": {
+     "1": {
+      "P": 2.5643296717605093,
+      "t0": 1984.8192947356383,
+      "dur_h": 3.0,
+      "depth": 0.22408041875444007,
+      "n_eclipses": 10,
+      "n_sources": 0,
+      "best_alternative": null,
+      "best_dchi2": null,
+      "verdict": "on target"
+     },
+     "2": {
+      "P": 2.7307138261449415,
+      "t0": 1985.5651280689715,
+      "dur_h": 3.0,
+      "depth": 0.02336779242791665,
+      "n_eclipses": 4,
+      "n_sources": 9,
+      "best_alternative": "G14.1 at 41\"",
+      "best_dchi2": 5280.659702536727,
+      "verdict": "on target"
+     }
+    }
+   }
+  ],
+  "verdict": "blend: an eclipse set comes from a neighbour"
+ }
+}
