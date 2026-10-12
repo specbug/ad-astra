@@ -244,3 +244,78 @@ box-shaped eclipses with duty cycles of 3–10% give 1.2–3.3. Second signals n
   data gaps, ephemeris drift since discovery, and deliberately strict cuts.
 - **Independent recoveries:** seven Track B "new" stars matched TOIs created in 2026 (TOI-7701 to 7850), after
   the February TOI list the survey was first compared with.
+
+## 11. Extension (12 October): the newest TESS images, other telescopes, a period hunt
+
+### 11.1 Our own light curves of sectors 99–108 (`ffi_new.py`)
+Public full-frame light curves end at sector 98 (QLP) and near sector 80 (TESS-SPOC), but the calibrated
+full-frame image cubes of sectors 99–108 are on MAST's AWS bucket. For a target on silicon in those sectors
+(`tess-point`) without SPOC 2-minute data there, a 21 × 21-pixel cutout (astrocut) gives a light curve:
+background per cadence from the faintest 40% of pixels away from the star; an aperture of the pixels within
+r = 1–4 px of the star, choosing the r with the lowest 1-hour scatter after a 1-day running median; SPOC quality
+flags and scattered-light glints (background far above its running median) removed. 261 light curves were made
+(period-hunt targets, the 28 bright single transits, the headline stars). Typical 1-hour scatter: 200–600 ppm at
+T = 9–11.
+
+### 11.2 Period hunt (`period_hunt.py`, `period_review.py`, `period_vet.py`, `period_deep.py`)
+Targets: the 1003 TOIs and CTOIs (ExoFOP, 12 October 2026) with no period, minus false positives. Every sector is
+loaded (SPOC 2-min > TESS-SPOC > QLP, plus §11.1 light curves in a second pass), flattened and binned to 30
+minutes; transits of other known planets on the star are masked; the catalogued transit is re-measured (duration
+and time from the box SNR, because catalogued durations are sometimes far off); the rest of the data is searched
+with a box of that duration for dips of 0.5–2× the depth at ≥ 7σ with data on both sides. The alias test
+(`duo.alias_table`, vectorised on 12 October: identical results, 100× faster) lists every period that puts all
+events on one ephemeris without predicting a transit the data do not show (depth tested at 0.6× the measured one).
+Review: each new dip is re-measured on its own sector's light curve against a local quadratic baseline, with a
+red-noise term, and kept only if SNR ≥ 7, ≥ 70% covered with data on both sides, ≥ 0.5 d from sector edges and
+gaps, no background jump (> 5 MAD), at least half as deep in SAP flux, and 0.5–2× the catalogued depth. On
+record: NASA archive planets within 10″ and every period uploaded to the star's ExoFOP page. New periods (on no
+list, three or fewer aliases) then get the pixel test (§11.3) and a transit fit at each alias with the implied
+stellar density compared with the TIC value.
+
+### 11.3 Pixel test, revised: calibrated difference-image centroids (`eb_pixels.py`, `centroid_vet.py`)
+The source test of §6 (difference image fitted as a shifted copy of the whole out-of-transit image) proved
+unreliable in crowded fields: on Kostov et al.'s quadruples and against ZTF it called on-target systems blends and
+blends on-target, because the shifted image moves every star, not just one. It is replaced, for every verdict in
+the report, by the standard centroid test:
+- per transit or eclipse, the difference image (linear fit to the frames just outside, minus the mean in transit)
+  is fitted with a Gaussian of free position, width, amplitude and offset;
+- the position is measured from where the target really is on that frame: the out-of-transit image is fitted with
+  Gaussians at the Gaia DR3 positions moved to the observing date with their proper motions (fluxes in Gaia's
+  proportions, one common shift, width, scale and background), which removes errors of the frame's coordinate
+  solution (often several arcseconds) and the target's own motion;
+- eclipses are combined within a sector (weighted mean, 3.5σ clipping, errors scaled by √χ²ᵣ), then sectors are
+  combined with a 2″ systematic floor each (errors of the model are shared by every eclipse of a sector);
+- verdict: *on target* if the target lies within 3σ and every Gaia star bright enough to fake the dip (a 100%
+  eclipse at most) lies beyond 3σ; *on* a named neighbour if only it is within 3σ; *unresolved* if both are.
+Saturated stars (T ≲ 6.8) bleed charge along CCD columns and their centroids move along the column; the test
+does not apply to them (HIP 71639).
+
+### 11.4 ZTF (`ztf_check.py`)
+ZTF DR23 light curves are read from IRSA's public HATS/Parquet copy on AWS (IRSA's own services were down): the
+position columns of the HEALPix partition, then only the needed rows. For each Track C system north of −28°, the
+target and every Gaia star within 120″ able to make either eclipse depth: ZTF objects within 1.5″, points with
+catflags = 0 and fainter than 12.5 mag (saturation), each object normalised to its median. For each eclipse set, a
+box search over P(1 ± 5×10⁻⁴) with free phase (the TESS ephemeris drifts over ZTF's 2018–2024 span) and the same
+search in 300 random period windows for the false-alarm probability. A star *eclipses* if SNR ≥ 7, FAP < 1% and
+depth > 0.2× what it would need to be the source; it is *ruled out* if the depth + 3σ is below 0.3× what it would
+need.
+
+### 11.5 Gaia DR3 (`gaia_check.py`)
+Each named star is matched to the Gaia DR3 source within 15″ whose position, moved back to J2000, is closest to
+the TIC position and whose G fits T. From the ESA archive (TAP): RUWE, ipd_frac_multi_peak (a second star
+resolved in Gaia's windows), radial-velocity χ² p-value and renormalised goodness of fit, non-single-star orbits
+(`nss_two_body_orbit`), the eclipsing-binary model (`vari_eclipsing_binary`) and the variability class. For Track C
+neighbours, parallax and proper-motion consistency with the target (co-moving if |Δϖ| < 3σ and Δv_t < 5 km/s).
+
+### 11.6 KELT (`kelt_check.py`)
+For the 28 bright single transits, KELT light curves within 15″ (TFA versions; archive times are JD for KELT-North
+and JD + 2,450,000 for KELT-South) are searched at every period the TESS data allow, anchored on the TESS transit:
+night-by-night means of the points within ±0.4 T14 of t0 − kP, weighted with a red-noise floor, computed with
+difference arrays over ~10⁵–10⁶ trial periods. Calibration per star: the same search anchored on 40 false transit
+times, and the TESS transit injected at three periods.
+
+### 11.7 Vetting of the new candidates (`fit_new.py`)
+Beyond §6 and §11.3: every transit the period predicts inside the data is measured; a joint fit (batman + emcee,
+mixed cadences integrated over their exposure) with free stellar density, compared with the TIC density by a
+second fit with a density prior; and, for any neighbour the centroids cannot exclude, a shape test: the transits
+are fitted as a diluted eclipse with a large true radius ratio (k = 0.3–0.9) and compared with the planet fit.

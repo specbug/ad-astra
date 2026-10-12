@@ -416,10 +416,11 @@ def section_hip71639(fit, ex):
          "would need eclipses about 7% deep. Its brightest pixel changes by less than 0.25% at the transit times."),
         ("pass", "No sign of a stellar companion.",
          "Gaia DR3: RUWE 0.94, no non-single-star solution, radial velocity stable to 0.13 km/s over 15 epochs."),
-        ("warn", "SPOC's centroid test flagged an offset.",
+        ("warn", "Centroids cannot help here.",
          "The 2023 DV report gives a 32″ offset of the difference-image centroid, but rates 0 of its 3 difference "
          "images as good quality: the star saturates the detector and bleeds along columns, which breaks "
-         "centroiding. The pixel test above does not rely on centroids."),
+         "centroiding. Our own centroids show the same, 15–58″ offsets that run along each sector's bleed column. "
+         "The pixel test above does not rely on centroids."),
         ("info", "Not yet ruled out:",
          "an eclipsing companion closer to the star than Gaia can separate from a G = 5.9 star. Eisner et al. "
          "(2021) report Gemini speckle imaging with no nearby companion and spectra consistent with a planet; "
@@ -521,10 +522,12 @@ def section_hip56966(fit, ex):
          "Half an orbit after each transit the light curves are flat to about 150 ppm, as for a planet and unlike most "
          "eclipsing binaries."),
         ("pass", "The signal is on this star.",
-         "A source test on the 2-minute pixels of three transits: the difference image is fitted as the star's "
-         "image placed at each candidate position. The target fits best. Every Gaia source within 150″ bright "
-         "enough to cause the dip with a 50% eclipse fits worse by Δχ² ≥ 25 summed over the three; the nearest "
-         "plausible one (G = 13.9, 37″ away, which would need 10%-deep eclipses) by Δχ² = 79."),
+         (lambda c: f"Difference-image centroids of the transits (2-minute pixels), measured from the star's own "
+          f"image on each frame: {c['offset_arcsec']:.1f}″ ± {c['centroid']['err']:.1f}″ from the star. The faint "
+          f"stars that could fake the dip lie {c['closest_neighbours'][0]['sigma']:.1f}σ and "
+          f"{c['closest_neighbours'][1]['sigma']:.1f}σ from that position ({c['closest_neighbours'][0]['name']}, "
+          f"{c['closest_neighbours'][1]['name']}; they would need eclipses over 50% deep). The sector-64 transit, seen "
+          f"only in full-frame images, gives a discordant centroid and is set aside.")(cv(266376971))),
         ("pass", "No sign of a stellar companion.",
          "Gaia DR3: RUWE 0.81, no non-single-star solution, radial velocity stable to 0.18 km/s over 12 epochs."),
         ("warn", "Slightly short transit.",
@@ -804,8 +807,10 @@ def section_hd11506(fit, ex):
          "Sector 30 in both the 2-minute and the full-frame (QLP) light curves; sector 107 in 2-minute data. "
          "Both are in the raw (SAP) flux as well as the corrected flux."),
         ("pass", "On target.",
-         "Difference-image centroids shift by 0.27 and 0.39 pixels, consistent with the star. No other Gaia source "
-         "within 88″ is bright enough to cause a 700 ppm dip, even if fully eclipsed."),
+         (lambda c: f"Difference-image centroids of the two transits, measured from the star's own image: "
+          f"{c['offset_arcsec']:.1f}″ ± {c['centroid']['err']:.1f}″ from the star. No other Gaia source within 88″ "
+          f"is bright enough to cause a 700 ppm dip, even if fully eclipsed; the nearest that is "
+          f"({c['closest_neighbours'][0]['name']}) lies {c['closest_neighbours'][0]['sigma']:.0f}σ away.")(cv(266680498))),
         ("pass", "Not one of the known planets.",
          f"The three radial-velocity planets have periods of 223.9, 1618 and ~26,500 days. Neither of the first "
          f"two fits the {e['dt']:.2f}-day gap between the transits."),
@@ -1557,6 +1562,9 @@ def build():
     fph = section_periodhunt(summary_only=True)
     passed = [int(k) for k, r in dv.items() if "error" not in r and deep_verdict(r)[0] == "candidate"]
     n_dv = sum(1 for t in passed if prior.prior(t)["kind"] is None)
+    new_dv = sorted((float(tb[tb.tic == t].rp_rearth.iloc[0]), t) for t in passed
+                    if prior.prior(t)["kind"] is None and t not in (266376971, 402710280) and len(tb[tb.tic == t]))
+    small_txt = ", ".join(f"{rp:.1f} {RE} (TIC {t})" for rp, t in new_dv[:3]) if new_dv else "–"
     n_dv_known = len(passed) - n_dv
     n_dv_all = sum(1 for r in dv.values() if "error" not in r)
     tbf = trackb_shortlist(tb) if tb is not None else None
@@ -1613,11 +1621,11 @@ def build():
     posted.</strong> Of {n_dv_all} shortlisted stars brighter than T = 10.5, {n_dv + n_dv_known} pass the pixel,
     period and binarity tests; {n_dv_known} of those were already on record, as community candidates, confirmed
     planets (HD 3167, HD 278555, K2-290), binaries, or once a transit of HD 80606 b on the neighbouring star. The
-    {n_dv} left are mostly single transits of giant planets, among them the bright stars HD 41179 and HD 43475, plus
-    a grazing companion every 24.05 days around CD−34 9313 and two smaller ones (4.2 and 5.8 {RE}).</div></li>
+    {n_dv} left are mostly single transits of giant planets; the smallest are {small_txt}. Most of the rest fail
+    the pixel test: their dips come from fainter neighbours.</div></li>
     <li>{chip("None new", "known")}<div><strong>Triple and quadruple stars: every unpublished one is a blend.</strong>
-    Of {n_tc} stars with two independent eclipse sets, the six whose eclipses all come from the target are already
-    published quadruples or a sextuple. In every other one, a pixel test traces one eclipse set to a neighbouring
+    Of the 30 strongest of {n_tc} stars with two independent, recurring eclipse sets, the six whose eclipses all come
+    from the target are already published quadruples or a sextuple. In every other one, a pixel test traces one eclipse set to a neighbouring
     star, and ZTF's sharper images see those eclipses on the named neighbour wherever they reach.</div></li>
     {fph}
     <li>{chip("Measured", "ok")}<div><strong>The false-alarm floor, and what was found again.</strong> Flipped light
@@ -1675,7 +1683,8 @@ NOTES = {
     441010857: "Three transits on a 24.054-day period; the 1.7-hour duration means a grazing crossing.",
     318707987: "HD 3167 (= HIP 2736), a known K2 system: the single transit is HD 3167 c (29.85 d), and the 0.96-day SPOC detection is HD 3167 b.",
     430746529: "One 16-hour transit of a bright A star (HIP 109818): a giant on an orbit of at least 65 days.",
-    402710280: "Two 4.2 Earth-radius transits on a K dwarf; six periods of 1454/n days remain.",
+    402710280: "Now five transits and one period, 36.340 days: see TIC 402710280 at the top.",
+    447447071: "Two more dips in our sector 100 and 103 photometry fix one period, 33.698 days, and the dips are on the star; but they are grazing (impact parameter about 1.1) and Gaia finds the star's radial velocity variable: most likely a grazing eclipsing companion.",
     64038538: "Two 4.4 Earth-radius transits on a K dwarf; six periods of 1116/n days remain.",
 }
 
@@ -1719,9 +1728,13 @@ def deep_verdict(r):
     n_ev = len([e for e in r.get("events", []) if e.get("sector") is not None])
     if ("aliases" in p and not any(a["status"] == "allowed" for a in p["aliases"])) or (n_ev >= 2 and not p):
         return "no consistent period", None
-    if v.startswith("target or") or v.startswith("offset"):
+    if (v.startswith("target or") or v.startswith("offset")) and int(r["tic"]) not in PIX_SETTLED:
         return "ambiguous pixels", v
     return "candidate", None
+
+
+# stars whose unresolved pixel verdict was settled by a dedicated analysis (see their sections and NOTES)
+PIX_SETTLED = {402710280: "the one unresolved neighbour (G = 16.2, 2″) is excluded by the transit's shape"}
 
 
 def section_deepvet(dv, lit, tb):
@@ -1776,6 +1789,12 @@ def section_deepvet(dv, lit, tb):
              (f"<div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:22rem'>{esc(r.note)}</div>" if r.note else ""), "l")]
     n_c = int((df.verdict == "candidate").sum())
     counts = df.verdict.value_counts().to_dict()
+    cal = _json("centroid_calib.json")
+    cv_ = pd.Series([(o.get("verdict") or "") for o in cal.values()])
+    calib_txt = (f"The same test run on {len(cv_)} confirmed TESS planets of similar brightness and depth puts "
+                 f"{int(cv_.str.startswith('on target').sum())} on their star, leaves "
+                 f"{int(cv_.str.startswith('target or').sum() + cv_.str.startswith('offset').sum())} unresolved and "
+                 f"puts {int(cv_.str.startswith('on G').sum())} on a neighbour." if len(cv_) else "")
     n_pass = n_c + counts.get("published", 0) + counts.get("neighbour's planet", 0)
     n_pub = counts.get("published", 0)
     rejected = ", ".join(f"{v} {k}" for k, v in counts.items() if k not in ("candidate", "published", "neighbour's planet"))
@@ -1794,7 +1813,10 @@ def section_deepvet(dv, lit, tb):
   multiple-star catalogues, in NASA's confirmed-planet table (including the transit times of planets on
   neighbouring stars) and in the literature. {n_pub} were already on record, mostly as single-transit community
   candidates, and one dip is a transit of HD 80606 b on the neighbouring star. <strong>{n_c} have nothing on record
-  anywhere</strong>; they head the table, smallest first. HIP 56966 above came out of this list.</p>
+  anywhere</strong>; they head the table, smallest first. HIP 56966 and TIC 402710280 above came out of this list.
+  The pixel test is what removes most stars: in crowded fields, a single deep eclipse of a faint neighbour looks
+  exactly like a transit of the bright star, and the centroids put {counts.get("off-target", 0)} of these dips on a
+  named neighbour. {calib_txt}</p>
   </div>
   {table(df, cols)}
   <p class="muted" style="font-size:var(--step--1)">Pixels: where the light that disappears in transit comes

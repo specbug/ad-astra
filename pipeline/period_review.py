@@ -213,12 +213,25 @@ def main():
     tics = sorted({int(r["tic"]) for r in todo})
     ti = ticdb.query(tics, ["ra", "dec", "Tmag", "rho", "rad", "mass"]).set_index("tic")
     import concurrent.futures as cf
+    # checkpoint: one JSON line per reviewed target, so an interrupted run resumes where it stopped
+    ck = CATALOGS.parent / "period_review.jsonl"
     out = []
-    with cf.ProcessPoolExecutor(int(os.environ.get("N_PROC", "4"))) as ex:
+    if ck.exists():
+        for line in open(ck):
+            try:
+                out.append(json.loads(line))
+            except ValueError:
+                pass
+    done = {(o["tic"], o["id"]) for o in out}
+    todo = [r for r in todo if (r["tic"], r["id"]) not in done]
+    print(len(done), "already reviewed;", len(todo), "to go", flush=True)
+    with cf.ProcessPoolExecutor(int(os.environ.get("N_PROC", "4"))) as ex, open(ck, "a") as fh:
         futs = {ex.submit(_review_safe, r, nasa, ti): r for r in todo}
         for i, fu in enumerate(cf.as_completed(futs)):
             o = fu.result()
             out.append(o)
+            fh.write(json.dumps(o, default=float) + "\n")
+            fh.flush()
             if i % 20 == 0:
                 print(i, o["tic"], o["id"], o.get("n_credible"), o.get("n_aliases"), flush=True)
     json.dump(out, open(C / "period_review.json", "w"), indent=1, default=float)

@@ -12796,9 +12796,22 @@
   "depth": 0.00067,
   "per_event": [
    {
-    "sector": 3,
+    "sector": 30,
     "tc": 2121.6913,
-    "kind": "2-min pixels"
+    "kind": "2-min pixels",
+    "snr": 6.3249959560638445,
+    "dra": -3.5223641077998313,
+    "ddec": 3.8675026323630846,
+    "err": 3.0895640315009443,
+    "psf_sigma_px": 0.8697218686605895,
+    "redchi2": 1.029835094535027,
+    "edge": false,
+    "calibrated": true,
+    "cal_shift_px": [
+     -0.13150007778815334,
+     0.1308764810639831
+    ],
+    "cal_psf_sigma_px": 0.8862478836788761
    },
    {
     "sector": 107,
@@ -12820,15 +12833,21 @@
    }
   ],
   "centroid": {
-   "dra": 4.379324780418685,
-   "ddec": -12.338595256500183,
-   "err": 3.44117559169648,
-   "n_eclipses": 1,
-   "n_sectors": 1,
-   "n_sectors_used": 1,
+   "dra": 0.6936197145381469,
+   "ddec": -4.7793382505456075,
+   "err": 6.360132288528419,
+   "n_eclipses": 2,
+   "n_sectors": 2,
+   "n_sectors_used": 2,
    "rejected_sectors": [],
-   "reduced_chi2_sectors": null,
+   "reduced_chi2_sectors": 6.402353075258158,
    "per_sector": [
+    {
+     "sector": 30,
+     "dra": -3.522364107799831,
+     "ddec": 3.8675026323630846,
+     "err": 3.6804083883102385
+    },
     {
      "sector": 107,
      "dra": 4.379324780418685,
@@ -12838,17 +12857,17 @@
    ]
   },
   "n_candidates": 2,
-  "verdict": "offset, no catalogued source fits",
-  "offset_arcsec": 13.092723873820832,
-  "offset_sigma": 3.8047241487512102,
+  "verdict": "on target",
+  "offset_arcsec": 4.829408081900341,
+  "offset_sigma": 0.7593250993554018,
   "closest_neighbours": [
    {
     "name": "G15.2 at 90\"",
-    "sigma": 29.879944980258156
+    "sigma": 14.844406443364072
    },
    {
     "name": "G15.2 at 144\"",
-    "sigma": 44.46730677893615
+    "sigma": 23.208905225265816
    }
   ]
  }
