@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ad-astra-research"
+version = "0.2.0"
+description = "Reproducible exploratory TESS photometry research"
+requires-python = ">=3.12"
+dependencies = ["numpy", "scipy", "astropy", "requests", "matplotlib"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

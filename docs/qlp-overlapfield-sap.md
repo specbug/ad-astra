@@ -1,0 +1,21 @@
+# Postselection SAP followup of the second cohort
+
+All three visually selected SAP leads were investigated using only the already downloaded sectors 1 and 2. No protected holdout was opened. The helper, declaration, full input hashes, 144 same-frequency comparison fits (24 targets × 2 sectors × 3 lead frequencies), and three figures are in `runs/qlp-overlapfield-sap-followup-v3/`. Selection of these three leads was post hoc, and there is no calibrated false-alarm probability.
+
+| TIC | S1-selected SAP period | SAP amplitude S1/S2 (ppm) | KSP amplitude S1/S2 (ppm) | Joint robust common-mode residual amplitude S1/S2 (ppm) |
+|---|---:|---:|---:|---:|
+| 201308024 | 2.032702 d | 1853 / 356 | 42 / 20 | 1867 / 346 |
+| 355767420 | 13 d, search boundary | 3320 / 1328 | 10 / 50 | 3254 / 1235 |
+| 281593180 | 13 d, search boundary | 832 / 1295 | 24 / 17 | 851 / 1172 |
+
+Each S1 period was fixed for all subsequent S2 and comparison-star regressions. SAP has no supplied errors and was fit without borrowed KSP errors. The sinusoid regression includes independent offsets and slopes for segments separated by gaps over 0.5 d. Background, centroids, KSP and alternate corrected apertures were also fit at the same frequency.
+
+The common mode is a leave-target-out median of SAP curves on the same camera and CCD. There are 20 comparison stars for each lead in S1, 18 in S2 for the first two leads, and only four for TIC 281593180 in S2. Each target cadence has at least two available controls; coverage is 100%. Median time mismatches across comparisons are about 2–15 seconds. Nearest timestamps within 0.005 d (7.2 minutes, under half the roughly 30-minute cadence) are paired without interpolation. Different target-dependent barycentric corrections make exact timestamp matching inappropriate: the preserved first attempt had virtually zero usable coverage. The second attempt used ordinary joint regression; the third adds Huber 2.5 joint regression sensitivity. Source snapshots and declarations preserve each attempt.
+
+The common-mode coefficient is fit jointly with the fixed sinusoid and segment terms. This protects a sinusoidal signal from automatic subtraction when identifiable, but it also means surviving amplitude does **not** prove stellar origin. Detector-wide medians can miss position-dependent aperture losses and nearby blends. The sparse four-star S2 group is a further limitation for TIC 281593180. Ordinary and robust joint solutions are similar, with design condition numbers approximately 4–10.
+
+TIC 201308024 has repeated SAP structure in both sectors, but its fixed S1-frequency amplitude drops by a factor of five in S2 and its phase changes by approximately 0.410 cycles. Its S2 time-domain structure does not stay coherent at the selected S1 period. TIC 355767420 and TIC 281593180 peak at the maximum permitted 13-day search period; these are broad trends rather than resolved periodic measurements. Their SAP phase shifts are approximately 0.278 and 0.410 cycles. All three large SAP signals are heavily attenuated in corrected KSP. These observations leave processing, spacecraft behavior, variable contamination and stellar behavior unresolved; none qualifies as a validated novel variable or planet.
+
+Two meaningful synthetic tests verify that a joint sinusoid-plus-common-mode fit recovers a known injected signal in the presence of strong unrelated nuisance variability, and that missing comparison samples are not interpolated. These tests validate mechanics, not astronomical completeness or significance.
+
+A subsequent `dependency-source-audit.json` records six local source hashes, copied dependency snapshots, and independent rehashes of all 48 second-cohort science inputs. The SAP helper and its original source snapshot match the SAP v3 declaration; imported variability, diagnostics and core modules match hashes recorded in earlier declarations or frozen configuration. These dependency copies were made **after** the completed fits. The original SAP declaration bound only its top-level helper, so the post-run audit strengthens reproducibility without establishing continuous in-memory identity during execution. Original declarations, six lead results and 144 comparison fits were preserved unchanged.

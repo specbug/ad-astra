@@ -1,0 +1,3 @@
+7016822234f55b07d1a62307fc8c274bbacee4d8118104a95f83b2a55c469d43  ad-astra-qlp-pilot-20261012-core.tar.gz
+b99c45614b91f4bc1fe1f54cac26fad6f5df41b0a609f15c950fac3cf2224f69  ad-astra-qlp-pilot-20261012-figures.tar.gz
+ae1b4e51e78db4669423975baba623053299a8fbf010494a12bc9a97dc88395a  ad-astra-qlp-pilot-20261012-inventory.json

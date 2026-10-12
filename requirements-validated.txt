@@ -1,0 +1,7 @@
+numpy==2.3.5
+scipy==1.17.0
+astropy==8.0.1
+requests==2.34.2
+matplotlib==3.10.8
+pytest==9.1.1
+

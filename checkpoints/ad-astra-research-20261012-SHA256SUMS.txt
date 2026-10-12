@@ -1,0 +1,3 @@
+afb83644374882f9ebdfd26c5b86080160d8c5be032a3edc8296de3968d59ff3  ad-astra-research-20261012-core.tar.gz
+d741a1a0ce03cf5d4a8403c07494e35960b864f28f29bba42ed1f07238574cf1  ad-astra-research-20261012-figures.tar.gz
+b8593aada4318ef7efd905e61d4964062d2a8697d533a0430c57eae64daeb12e  ad-astra-research-20261012-inventory.json
