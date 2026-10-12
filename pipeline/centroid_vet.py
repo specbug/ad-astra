@@ -18,6 +18,7 @@ Input: the events of results/candidates/deep_vet.json, plus any given on the com
 
   python centroid_vet.py                      (every star in deep_vet.json)
   python centroid_vet.py TIC:dur_h:depth:sector@tc,sector@tc,...
+  python centroid_vet.py --recombine          (re-derive verdicts from the stored per-transit centroids)
 Output: results/candidates/centroid_vet.json
 """
 import io
@@ -102,6 +103,22 @@ def vet(tic, events, dur_h, depth):
             **centroid_verdict(cen, cand)}
 
 
+def recombine():
+    """Re-derive every star's combined centroid and verdict from the stored per-transit centroids (no pixel
+    data needed), e.g. after a change to eb_pixels.combine_centroids."""
+    res = json.load(open(OUT))
+    for tic, r in res.items():
+        if "per_event" not in r:
+            continue
+        st = ticdb.query([int(tic)], ["ra", "dec", "Tmag"]).iloc[0]
+        gf = gaia_field(float(st.ra), float(st.dec), float(st.Tmag))
+        cen = combine_centroids([e for e in r["per_event"] if "dra" in e])
+        r.update(centroid=cen, n_candidates=len(neighbour_offsets(gf, r["depth"], 150.0)),
+                 **centroid_verdict(cen, neighbour_offsets(gf, r["depth"], 150.0)))
+    json.dump(res, open(OUT, "w"), indent=1, default=float)
+    return res
+
+
 def from_deep_vet():
     d = json.load(open(C / "deep_vet.json"))
     out = []
@@ -144,4 +161,7 @@ def main(args):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    if sys.argv[1:] == ["--recombine"]:
+        recombine()
+    else:
+        main(sys.argv[1:])

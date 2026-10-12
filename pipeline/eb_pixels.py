@@ -203,37 +203,49 @@ def neighbour_offsets(gf, depth, max_sep=150.0):
     return out
 
 
-def combine_centroids(cents, floor=2.0, clip=3.5):
-    """Robust weighted mean of per-eclipse centroid offsets. Each offset gets its fitted error plus a 2"
-    systematic floor (about 0.1 pixel); offsets further than 3.5 sigma (2-D) from the mean are dropped in turn;
-    the error of the mean is scaled up by sqrt(reduced chi-square) when the offsets scatter more than their
-    errors say. Eclipses whose difference image a Gaussian fits very badly are dropped first, with an allowance
-    that grows with signal-to-noise (a deep eclipse of a bright star never fits a Gaussian exactly)."""
-    c = [x for x in cents if x and "dra" in x and not x["edge"] and x["redchi2"] < max(50.0, 0.002 * x["snr"] ** 2)]
-    if not c:
-        return None
-    X = np.array([[x["dra"], x["ddec"], math.hypot(x["err"], floor)] for x in c])
+def _wmean(X, clip=3.5, min_keep=2):
+    """Weighted 2-D mean of rows (dra, ddec, sigma), dropping the worst point while it is > clip sigma away;
+    the error is scaled up by sqrt(reduced chi-square) when the points scatter more than their errors say."""
     keep = np.ones(len(X), bool)
     while True:
         w = 1 / X[keep, 2] ** 2
         mx, my = np.sum(w * X[keep, 0]) / w.sum(), np.sum(w * X[keep, 1]) / w.sum()
         d = np.hypot(X[:, 0] - mx, X[:, 1] - my) / X[:, 2]
         worst = int(np.argmax(np.where(keep, d, -1)))
-        if keep.sum() <= 2 or d[worst] < clip:
+        if keep.sum() <= min_keep or d[worst] < clip:
             break
         keep[worst] = False
     n = int(keep.sum())
     err = 1 / math.sqrt(w.sum())
-    if n >= 2:
-        chi2 = float(np.sum(d[keep] ** 2))
-        red = chi2 / (2 * (n - 1))
+    red = float(np.sum(d[keep] ** 2)) / (2 * (n - 1)) if n >= 2 else None
+    if red:
         err *= math.sqrt(max(red, 1.0))
-    else:
-        red = None
-    secs = sorted({x.get("sector") for x in c})
-    return {"dra": float(mx), "ddec": float(my), "err": float(err), "n_eclipses": n, "n_rejected": int(len(X) - n),
-            "rejected_sectors": sorted({c[i].get("sector") for i in np.where(~keep)[0]}), "reduced_chi2": red,
-            "n_sectors": len(secs)}
+    return mx, my, err, keep, red
+
+
+def combine_centroids(cents, floor=2.0, clip=3.5):
+    """Combine per-eclipse centroid offsets in two steps. Within a sector, a robust weighted mean of its eclipses
+    (errors from the fits, scaled up if they scatter more). Between sectors, a robust weighted mean of the sector
+    means, each with a 2" systematic floor added (about 0.1 pixel: errors of the PSF model and of the image
+    calibration are shared by all eclipses of a sector, so they do not average down within it). Eclipses whose
+    difference image a Gaussian fits very badly are dropped first, with an allowance that grows with
+    signal-to-noise (a deep eclipse of a bright star never fits a Gaussian exactly)."""
+    c = [x for x in cents if x and "dra" in x and not x["edge"] and x["redchi2"] < max(50.0, 0.002 * x["snr"] ** 2)]
+    if not c:
+        return None
+    secs = sorted({x.get("sector") for x in c}, key=lambda v: (v is None, v))
+    S, n_ecl = [], 0
+    for sec in secs:
+        X = np.array([[x["dra"], x["ddec"], x["err"]] for x in c if x.get("sector") == sec])
+        mx, my, err, keep, _ = _wmean(X, clip, min_keep=1 if len(X) < 3 else 2)
+        S.append([mx, my, math.hypot(err, floor)])
+        n_ecl += int(keep.sum())
+    S = np.array(S)
+    mx, my, err, keep, red = _wmean(S, clip, min_keep=2 if len(S) >= 3 else len(S))
+    return {"dra": float(mx), "ddec": float(my), "err": float(err), "n_eclipses": n_ecl, "n_sectors": len(S),
+            "n_sectors_used": int(keep.sum()), "rejected_sectors": [secs[i] for i in np.where(~keep)[0]],
+            "reduced_chi2_sectors": red,
+            "per_sector": [{"sector": secs[i], "dra": float(S[i, 0]), "ddec": float(S[i, 1]), "err": float(S[i, 2])} for i in range(len(S))]}
 
 
 def centroid_verdict(cen, srcs):

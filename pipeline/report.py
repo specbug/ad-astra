@@ -9,6 +9,7 @@ drawn as inline SVG styled by the page's colour tokens, so they follow the viewe
 import glob
 import html
 import json
+import re
 import math
 from datetime import datetime, timezone
 
@@ -17,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 import prior
-from env import RESULTS
+from env import CATALOGS, RESULTS
 
 OUT = RESULTS / "report"
 CAND = RESULTS / "candidates"
@@ -586,6 +587,199 @@ def section_hip56966(fit, ex):
 </section>"""
 
 
+def _newcands():
+    p = CAND / "new_candidates.json"
+    return json.load(open(p)) if p.exists() else {}
+
+
+def section_tic402710280(fit, ex):
+    key = "TIC402710280"
+    nc = _newcands().get("402710280")
+    if key not in fit or key not in ex or not nc:
+        return ""
+    f, e = fit[key], ex[key]
+    rs, rs_err = 0.817, 0.05
+    rp = f["rp_rs"][0] * rs * R_EARTH_PER_RSUN
+    rp_err = rp * math.hypot(max(f["rp_rs"][1], f["rp_rs"][2]) / f["rp_rs"][0], rs_err / rs)
+    depth = -min(min(p["my"]) for p in f["plot"][:4])
+    labels = [f"S{s} · {btjd_to_utc(p['tc']).strftime('%b %Y')}" for s, p in zip(f["sectors"], f["plot"])]
+    svg = svg_lightcurves(f["plot"], labels, id_="lc-tic402710280", panel_w=250, xr=12, xstep=6)
+    tr = nc["transits"]
+    c = nc["centroid"]
+    near = c["closest_neighbours"]
+    dens = nc["density_test"]["dchi2_rho_fixed"]
+    nxt = "".join(f"<li><span class='num'>{btjd_to_utc(r['btjd']).strftime('%-d %b %Y, %H:%M')} UTC</span>"
+                  f"<span class='muted'>{esc(r['note'])}</span></li>" for r in e["next"])
+    checks = check_rows([
+        ("pass", "Five transits, one period, none missing.",
+         "Dips in sectors 39, 66, 93, 100 and 102 (" + ", ".join(f"{t['depth_ppm']:.0f}" for t in tr) +
+         " ppm; signal-to-noise " + ", ".join(f"{t['snr']:.0f}" for t in tr) + ") fall on one ephemeris. "
+         "Every shorter alias predicts transits inside the data that are not there. Every transit this period "
+         "predicts inside the data is there: sectors 12 and 101 contain none, and the one due in sector 103 falls "
+         "in a data gap."),
+        ("pass", "The signal is on this star.",
+         f"Difference-image centroids of the five transits, measured from the star's own image on each frame: "
+         f"{c['offset_arcsec']:.1f}″ ± {c['centroid']['err']:.1f}″ from the target. Every Gaia star able to fake "
+         f"the dip lies {near[1]['sigma']:.0f}σ or more from that position, except one: a G = 16.2 background star "
+         f"2″ away (parallax 0.69 mas against the target's 15.0)."),
+        ("pass", "Not that background star.",
+         "To make a 0.2% dip through 6.4 magnitudes of dilution it would need a 73%-deep eclipse, which takes a "
+         "companion nearly as large as the star and a long, V-shaped ingress. Fitting the transits as a diluted "
+         "eclipse of that kind is worse than a planet by Δχ² = 79 (radius ratio ≥ 0.7), and still by 65 at 0.5 and "
+         "27 at 0.3."),
+        ("pass", "A transit this star can make.",
+         f"Without the sector-102 transit the fitted stellar density is {pm(f['rho_solar'], 2)} solar; the "
+         f"catalogue K dwarf's 1.61 costs Δχ² = {dens['without_S102']:.1f}. The sector-102 transit, 1.4 days from "
+         f"the start of an orbit where our light curve has a ramp, alone pulls the density down (Δχ² = "
+         f"{dens['all_five']:.0f} with it); it is shown but left out of the shape fit."),
+        ("pass", "No secondary eclipse, even and odd alike.",
+         f"Half an orbit later the light curve is flat (37 to 120 ± 48 ppm); even and odd transits have depths "
+         f"{nc['odd_even_ppm']['even'][0]} ± {nc['odd_even_ppm']['even'][1]} and {nc['odd_even_ppm']['odd'][0]} ± "
+         f"{nc['odd_even_ppm']['odd'][1]} ppm (2.3σ)."),
+        ("pass", "No sign of a stellar companion.", "Gaia DR3: RUWE 1.00, no non-single-star solution, a single "
+         "image in every scan."),
+        ("info", "Two transits only in new data.", "The sector 100 and 102 transits come from our own photometry of "
+         "the full-frame images; no public light curve of those sectors exists yet (the public QLP light curves end "
+         "at sector 98)."),
+        ("info", "On record:", "nothing. Not a TOI or community TOI, no planet parameters, imaging or spectra on "
+         "ExoFOP (checked live on 12 October 2026); not in SIMBAD's object types, the NASA archive or the literature "
+         "searches. SPOC never observed it at 2-minute cadence, so it has no SPOC TCE."),
+    ])
+    return f"""
+<section id="tic402710280" class="cand">
+  <div class="cand-head">
+    <p class="kicker">New candidate · period hunt, sectors 99–108 full-frame images</p>
+    <h2>TIC 402710280: a sub-Neptune every 36.3 days</h2>
+    <div class="chips">{chip("Not a TOI", "new")}{chip("Not a community TOI", "new")}{chip("Period new", "new")}{chip("Nothing on record", "new")}</div>
+    <p class="lede col">A K dwarf (T = 9.2, V ≈ 10) 67 parsecs away in Triangulum Australe dims by {depth:.0f} ppm
+    for {f['t14_h'][0]:.1f} hours every {f['period_d'][0]:.4f} days: a planet about {rp:.1f} times the size of
+    Earth. The survey first saw two of its transits, 1,454 days apart; our own light curves of the newest
+    full-frame images (sectors 100 and 102) added two more, and the period they fix finds a fifth in sector 66.</p>
+  </div>
+  <div class="cand-grid">
+    <div>
+      <figure class="plate" style="margin:0">
+        <div class="scroll-x">{svg}</div>
+        <figcaption>Every transit (20-minute bins) with one model fitted to the first four: TESS-SPOC (sectors 39
+        and 66), QLP (93) and our own full-frame photometry (100 and 102). The sector-102 window sits on a ramp at
+        the start of an orbit.</figcaption>
+      </figure>
+      <div class="col" style="display:grid;gap:12px">
+        <h3>Vetting</h3>
+        {checks}
+      </div>
+    </div>
+    <div>
+      <dl class="spec">
+        <dt>Star</dt><dd>TIC 402710280 · TYC 9041-03677-1</dd>
+        <dt>Position</dt><dd>16h34m05.7s −63°32′59″</dd>
+        <dt>Brightness</dt><dd>G 9.78 · T 9.24</dd>
+        <dt>Host</dt><dd>K dwarf · 5180 K · 0.82 {RSUN} · 0.88 {MSUN}</dd>
+        <dt>Distance</dt><dd>66.8 pc</dd>
+        <dt>Period</dt><dd>{f['period_d'][0]:.5f} ± {max(f['period_d'][1:]):.5f} d</dd>
+        <dt>Mid-transit</dt><dd>BTJD {f['tref_btjd'][0]:.4f} ± {max(f['tref_btjd'][1:]):.4f}</dd>
+        <dt>Depth</dt><dd>{depth:.0f} ppm</dd>
+        <dt>Duration</dt><dd>{pm(f['t14_h'], 2)} h</dd>
+        <dt>Rp / R★</dt><dd>{pm(f['rp_rs'], 4)}</dd>
+        <dt>Radius</dt><dd>{rp:.1f} ± {rp_err:.1f} {RE}</dd>
+        <dt>Orbit</dt><dd>{e['a_au']:.3f} AU · {e['s_earth']:.0f}× Earth's insolation</dd>
+        <dt>T<sub>eq</sub></dt><dd>≈ {e['teq']:.0f} K</dd>
+        <dt>RV signal</dt><dd>≈ {e['k_ms']:.1f} m/s for {e['mass_assumed']:.0f} M<sub>⊕</sub></dd>
+        <dt>Transits</dt><dd>S39 · S66 · S93 · S100 · S102</dd>
+        <dt>Next in TESS</dt><dd>sectors 113–114</dd>
+      </dl>
+      <div class="plate">
+        <p class="label">Next transits seen from Chile</p>
+        <ul class="nexts">{nxt}</ul>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+
+def section_toi2493(fit, ex):
+    key = "TOI2493"
+    nc = _newcands().get("123664207")
+    if key not in fit or key not in ex or not nc:
+        return ""
+    f, e = fit[key], ex[key]
+    rs, rs_err = 0.652, 0.059
+    rp = f["rp_rs"][0] * rs * R_EARTH_PER_RSUN
+    rp_err = rp * math.hypot(max(f["rp_rs"][1], f["rp_rs"][2]) / f["rp_rs"][0], rs_err / rs)
+    depth = -min(min(p["my"]) for p in f["plot"])
+    labels = [f"S{s} · {btjd_to_utc(p['tc']).strftime('%b %Y')}" for s, p in zip(f["sectors"], f["plot"])]
+    svg = svg_lightcurves(f["plot"], labels, id_="lc-toi2493", panel_w=300, xr=12, xstep=6)
+    tr = nc["transits"]
+    c = nc["centroid"]
+    near = c["closest_neighbours"]
+    nxt = "".join(f"<li><span class='num'>{btjd_to_utc(r['btjd']).strftime('%-d %b %Y, %H:%M')} UTC</span>"
+                  f"<span class='muted'>{esc(r['note'])}</span></li>" for r in e["next"])
+    checks = check_rows([
+        ("pass", "Three transits, one period.",
+         "The TOI's transit (sector 33, 2021) and two more found by the period hunt in sectors 98 and 107 (" +
+         ", ".join(f"{t['depth_ppm']:.0f}" for t in tr) + " ppm; signal-to-noise " + ", ".join(f"{t['snr']:.1f}" for t in tr) +
+         ") share one period; every shorter alias predicts transits inside sectors 6, 33, 87, 98 or 107 that are not there."),
+        ("pass", "The signal is on this star.",
+         f"Difference-image centroids of the three transits (2-minute pixels): {c['offset_arcsec']:.1f}″ ± "
+         f"{c['centroid']['err']:.1f}″ from the target; every Gaia star able to fake the dip is {near[0]['sigma']:.0f}σ "
+         f"or more away."),
+        ("pass", "A transit this star can make.",
+         f"The fitted stellar density, {pm(f['rho_solar'], 2)} solar, matches the K dwarf's 2.4; fixing it changes "
+         f"χ² by less than 0.1."),
+        ("warn", "Modest signal.", "Each transit alone is a 7–9σ event, the sector-98 one the weakest. TESS should "
+         "see the next transit in sector 110, and a 1-metre telescope can catch the 1.5-ppt, 6-hour dip from the ground."),
+        ("info", "On record:", "TOI-2493.01 since February 2021, as a single transit (\"single at TBJD~2226\"), "
+         "period 0. SPOC's only detection is a 15.1-day TCE in sector 33 that the transits in sectors 98 and 107 "
+         "rule out. No period on ExoFOP or in the NASA archive, and no paper found."),
+    ])
+    return f"""
+<section id="toi2493" class="cand">
+  <div class="cand-head">
+    <p class="kicker">New period for a TOI · period hunt, SPOC 2-minute data</p>
+    <h2>TOI-2493.01: a temperate sub-Neptune every 79 days</h2>
+    <div class="chips">{chip("TOI since 2021, no period", "known")}{chip("Period new", "new")}</div>
+    <p class="lede col">A K5 dwarf (T = 11.4) 93 parsecs away dims by {depth:.0f} ppm for {f['t14_h'][0]:.1f} hours
+    every {f['period_d'][0]:.3f} days. The planet would be about {rp:.1f} times the size of Earth and receive
+    {e['s_earth']:.1f} times Earth's insolation, on the inner edge of the star's habitable zone.</p>
+  </div>
+  <div class="cand-grid">
+    <div>
+      <figure class="plate" style="margin:0">
+        <div class="scroll-x">{svg}</div>
+        <figcaption>SPOC 2-minute photometry of the three transits (20-minute bins) with one model fitted to
+        all three.</figcaption>
+      </figure>
+      <div class="col" style="display:grid;gap:12px">
+        <h3>Vetting</h3>
+        {checks}
+      </div>
+    </div>
+    <div>
+      <dl class="spec">
+        <dt>Star</dt><dd>TOI-2493 · TIC 123664207</dd>
+        <dt>Position</dt><dd>05h58m59.1s −21°34′30″</dd>
+        <dt>Brightness</dt><dd>T 11.43</dd>
+        <dt>Host</dt><dd>K5 dwarf · 4240 K · 0.65 {RSUN} · 0.66 {MSUN}</dd>
+        <dt>Distance</dt><dd>93.1 pc</dd>
+        <dt>Period</dt><dd>{f['period_d'][0]:.4f} ± {max(f['period_d'][1:]):.4f} d</dd>
+        <dt>Mid-transit</dt><dd>BTJD {f['tref_btjd'][0]:.4f} ± {max(f['tref_btjd'][1:]):.4f}</dd>
+        <dt>Depth</dt><dd>{depth:.0f} ppm</dd>
+        <dt>Duration</dt><dd>{pm(f['t14_h'], 2)} h</dd>
+        <dt>Radius</dt><dd>{rp:.1f} ± {rp_err:.1f} {RE}</dd>
+        <dt>Orbit</dt><dd>{e['a_au']:.3f} AU · {e['s_earth']:.1f}× Earth's insolation</dd>
+        <dt>T<sub>eq</sub></dt><dd>≈ {e['teq']:.0f} K</dd>
+        <dt>Transits</dt><dd>S33 · S98 · S107</dd>
+        <dt>Next in TESS</dt><dd>sector 110 (15 Nov 2026)</dd>
+      </dl>
+      <div class="plate">
+        <p class="label">Next transits seen from Chile</p>
+        <ul class="nexts">{nxt}</ul>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+
 def section_hd11506(fit, ex):
     f = fit["HD11506"]
     e = ex["HD11506"]
@@ -712,6 +906,100 @@ RECOVERED = [("NGTS-38 b", "180.5 d, one transit"), ("TIC 279401253 b", "76.8 d,
 MISSED = [("TIC 245076932 b", "21.6 d: all nine transits found, then rejected as an eclipsing binary")]
 
 
+def period_hunt_summary():
+    """Counts and the table of new periods from the period hunt and its review (period_hunt*.json, period_review.json)."""
+    rv = _json("period_review.json")
+    if not rv:
+        return None
+    rv = rv if isinstance(rv, list) else list(rv.values())
+    hunt = []
+    for name in ("period_hunt.json", "period_hunt_ffi.json"):
+        x = _json(name)
+        hunt += x if isinstance(x, list) else []
+    best = {}
+    for r in hunt:
+        k = (r["tic"], r["id"])
+        if k not in best or r.get("ffi_sectors"):
+            best[k] = r
+    targets = [r for r in best.values() if not str(r["id"]).startswith("single")]
+    n_t = len(targets)
+    n_data = sum(1 for r in targets if r.get("status") not in ("no data", "error"))
+    n_rec = sum(1 for r in targets if r.get("recovered"))
+    n_ffi = sum(1 for r in targets if r.get("ffi_sectors"))
+    rv = [o for o in rv if not str(o.get("id", "")).startswith("single") and "error" not in o]
+    cred = [o for o in rv if o.get("n_credible", 0) >= 1]
+    def known_P(o):
+        ps = []
+        for txt in (o.get("nasa") or "", o.get("exofop_periods") or ""):
+            ps += [float(v) for v in re.findall(r"P=([0-9.]+)", txt)]
+        return ps
+    def agrees(o, ps):
+        al = o.get("aliases") or []
+        return any(abs(a / p - 1) < 2e-3 for a in al for p in ps)
+    on_rec = [o for o in cred if known_P(o)]
+    n_agree = sum(1 for o in on_rec if agrees(o, known_P(o)))
+    new = [o for o in cred if not known_P(o) and o.get("n_aliases") and o["n_aliases"] <= 3]
+    return {"n_targets": n_t, "n_data": n_data, "n_rec": n_rec, "n_ffi": n_ffi, "n_review": len(rv), "n_cred": len(cred),
+            "n_onrec": len(on_rec), "n_agree": n_agree, "new": new,
+            "n_unique": sum(1 for o in cred if o.get("n_aliases") == 1)}
+
+
+def section_periodhunt(summary_only=False):
+    S = period_hunt_summary()
+    if S is None:
+        return ""
+    if summary_only:
+        return (f'<li>{chip(f"{len(S["new"])} periods", "new")}<div><strong>Periods for TOIs and community TOIs that '
+                f'have none.</strong> All {S["n_targets"]} were searched in every TESS sector, including our own light curves '
+                f'of sectors 99–108; {S["n_cred"]} gained transits that pass the checks. Where a period was already on '
+                f'record, the hunt agrees in {S["n_agree"]} of {S["n_onrec"]} cases; {len(S["new"])} periods, narrowed to '
+                f'three or fewer choices, are on no list (TOI-2493.01 is the best of them).</div></li>')
+    pv = _json("period_vet.json")
+    rows = []
+    for o in S["new"]:
+        t = int(o["tic"])
+        ev = [e for e in o.get("events", []) if e.get("ok")]
+        v = pv.get(f"{t}|{o['id']}", {})
+        rows.append(dict(id=o["id"], tic=t, disp=o.get("disp", ""), depth=o.get("depth_ref_ppm"), dur=o.get("dur_h"),
+                         n=1 + len(ev), sectors=", ".join(str(e["sector"]) for e in ev), al=o.get("aliases") or [],
+                         pmin=o.get("p_min_circular"), pix=cv_text(v) if v else "not tested",
+                         verdict=v.get("verdict", "")))
+    df = pd.DataFrame(rows)
+    if len(df):
+        df = df.sort_values("n", ascending=False)
+    cols = [("TOI / CTOI", lambda r: f"<span class='m'>{esc(r.id)}</span><div class='muted' style='font-size:0.78rem'>TIC {r.tic}</div>", "l"),
+            ("Depth", lambda r: f"{r.depth:.0f} ppm" if r.depth == r.depth else "–", "r"),
+            ("Transits", lambda r: f"{r.n} <span class='muted'>(new: S{esc(r.sectors)})</span>", "l"),
+            ("Periods allowed (d)", lambda r: esc(", ".join(f"{a:.3f}" for a in r.al[:3])), "l"),
+            ("Shortest circular", lambda r: f"{r.pmin:.0f} d" if r.pmin == r.pmin and r.pmin else "–", "r"),
+            ("Pixels", lambda r: f"<span class='muted' style='font-size:0.8rem'>{esc(r.pix)}</span>", "l")]
+    return f"""
+<section id="periodhunt">
+  <p class="kicker">Period hunt · TOIs and community TOIs without a period</p>
+  <h2>Periods for single-transit candidates, from every sector</h2>
+  <div class="col" style="display:grid;gap:12px">
+  <p>ExoFOP lists {S['n_targets']} TOIs and community TOIs (not false positives) with no period, most of them single
+  transits. For each, every sector of TESS data was loaded (SPOC 2-minute, TESS-SPOC and QLP light curves, plus our
+  own light curves of sectors 99–108 for {S['n_ffi']} of them), the catalogued transit was re-found ({S['n_rec']} of
+  {S['n_data']} with data), other planets on the star were masked, and the rest of the data was searched for dips of
+  the same duration and similar depth. Each new dip was then re-measured on its own sector's light curve against a
+  local baseline and kept only if it is significant there, fully covered, away from sector edges and gaps, free of
+  background jumps, present in the uncorrected (SAP) flux, and of the right depth. The periods that put all kept
+  transits on one ephemeris without predicting transits the data do not show are listed.</p>
+  <p>{S['n_cred']} targets gained at least one such transit, and {S['n_unique']} are left with a single possible
+  period. As a test: where a period is already on record (a confirmed planet in NASA's archive, or one posted to
+  ExoFOP), it is among the hunt's allowed periods in {S['n_agree']} of {S['n_onrec']} cases. The table lists the
+  periods that are on no list, narrowed to three or fewer, with the pixel test of their transits. TOI-2493.01,
+  above, is the strongest; the others are automated results that deserve the same one-by-one check before anyone
+  relies on them.</p>
+  </div>
+  {table(df, cols) if len(df) else ""}
+  <p class="muted" style="font-size:var(--step--1)">Shortest circular: the shortest period at which a central
+  transit across the catalogued star would last as long as the one observed; periods far below it need an
+  eccentric orbit or a different star.</p>
+</section>"""
+
+
 def section_trackb(tb, singles, lit=None):
     if tb is None or not len(tb):
         return ""
@@ -816,28 +1104,106 @@ TRACKC_NOTES = {
 }
 
 
+def _json(name):
+    p = CAND / name
+    return json.load(open(p)) if p.exists() else {}
+
+
+def eclipse_source(pix, ztf, j):
+    """Where eclipse set j comes from: the centroid verdict, with ZTF's identification when it has one."""
+    v = ((pix.get("centroid") or {}).get(str(j)) or {}).get("verdict")
+    if not v:
+        return "untested", None
+    z = (ztf or {}).get(f"set{j}_eclipser") or []
+    if v == "on target":
+        txt, who = "target", "target"
+    elif v.startswith("on G"):
+        txt, who = v[3:].replace('"', "″"), v[3:]
+    elif v.startswith("target or"):
+        txt, who = v.replace('"', "″"), None
+    elif v == "no usable centroids":
+        return "untested", None
+    else:
+        txt, who = "offset, no catalogued star", None
+    if z:
+        zz = z[0].replace('"', "″")
+        txt += f" · ZTF sees it on {zz}" if who == "target" else " · ZTF ✓" if who and z[0] == who else f" · ZTF: {zz}"
+    return txt, who
+
+
+def trackc_calibration():
+    """How the centroid test does on Kostov et al. (2022) quadruples, whose authors traced both eclipse sets to one star."""
+    k = _json("eb_pixels_kostov.json")
+    n = {"both": 0, "neighbour": 0, "other": 0}
+    for o in k.values():
+        v = o.get("centroid_verdict")
+        if v == "both sets on target":
+            n["both"] += 1
+        elif v == "a set on a neighbour":
+            n["neighbour"] += 1
+        elif o.get("centroid"):
+            n["other"] += 1
+    return n
+
+
 def section_trackc(tc, lit=None):
     if tc is None or not len(tc):
         return ""
-    litm = {int(x["tic"]): x["status"] for x in (lit or [])}
+    pix = _json("eb_pixels.json")
+    ztf = _json("ztf_check.json")
+    como = pd.read_csv(CAND / "trackc_neighbours_comoving.csv") if (CAND / "trackc_neighbours_comoving.csv").exists() else None
     x = tc[(tc.P2_recurs >= 2)].copy()
-    x["known"] = x.is_toi.astype(bool)
     x = x.sort_values(["P2_recurs", "snr2_max"], ascending=False).head(30)
-    cols = [("Star", lambda r: f"<span class='m'>TIC {int(r.tic)}</span>", "l"),
-            ("T mag", lambda r: fmt(r.Tmag, 1), "r"), ("Sectors", lambda r: esc(r.sectors), "l"),
-            ("P<sub>1</sub> (d)", lambda r: fmt(r.P1, 4), "r"), ("Depth 1", lambda r: f"{r.depth1 * 100:.1f}%", "r"),
-            ("P<sub>2</sub> (d)", lambda r: fmt(r.P2, 4), "r"), ("Depth 2", lambda r: f"{r.depth2 * 100:.2f}%", "r"),
-            ("Recurs", lambda r: f"{int(r.P2_recurs)} sectors", "r"),
-            ("Eclipse-like", lambda r: fmt(r.box_over_sine, 1), "r"),
-            ("Known?", lambda r: (chip("TOI", "known") if r.known else
-                                 chip("published", "known") if (litm.get(int(r.tic)) == "known in this role"
-                                                                or prior.prior(int(r.tic))["kind"] == "multiple") else
-                                 chip("catalogued EB", "eb") if prior.prior(int(r.tic))["kind"] == "binary" else
-                                 "<span class='muted'>no mention found</span>") +
-             (f"<div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:20rem'>{esc(prior.summary(int(r.tic)))}</div>"
-              if prior.prior(int(r.tic))["notes"] else "") +
-             (f"<div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:20rem'>{esc(TRACKC_NOTES[int(r.tic)])}</div>"
-              if int(r.tic) in TRACKC_NOTES else ""), "l")]
+    rows = []
+    for _, r in x.iterrows():
+        t = int(r.tic)
+        pr = prior.prior(t)
+        p_ = pix.get(str(t), {})
+        z = ztf.get(str(t))
+        s1, w1 = eclipse_source(p_, z, 1)
+        s2, w2 = eclipse_source(p_, z, 2)
+        published = pr["kind"] == "multiple" or any(str(l.get("tic")) == str(t) and l.get("status") == "known in this role"
+                                                     for l in (lit or []))
+        if w1 == "target" and w2 == "target":
+            verdict = "both on target" + (" (published)" if published else "")
+        elif (w1 and w1 != "target") or (w2 and w2 != "target"):
+            verdict = "blend"
+        else:
+            verdict = "unresolved"
+        cm = ""
+        if como is not None:
+            c = como[(como.tic == t) & como.comoving]
+            if len(c):
+                cm = (f"The star the other set comes from moves with this one (proper motions within "
+                      f"{c.dpm_masyr.iloc[0]:.1f} mas/yr; parallaxes differ by {abs(c.plx_diff_sigma.iloc[0]):.0f}σ): "
+                      f"possibly a wide pair of binaries, {c.sep_au.iloc[0]:,.0f} AU apart.")
+        rows.append(dict(tic=t, Tmag=r.Tmag, P1=r.P1, d1=r.depth1, s1=s1, P2=r.P2, d2=r.depth2, s2=s2,
+                         rec=int(r.P2_recurs), verdict=verdict, kind=pr["kind"], note=prior.summary(t),
+                         extra=" ".join(v for v in (TRACKC_NOTES.get(t, ""), cm) if v)))
+    df = pd.DataFrame(rows)
+    order = {"both on target (published)": 0, "both on target": 1, "unresolved": 2, "blend": 3}
+    df = df.sort_values(["verdict", "Tmag"], key=lambda q: q.map(order) if q.name == "verdict" else q)
+    kinds = {"both on target (published)": "known", "both on target": "new", "unresolved": "known", "blend": "eb"}
+    cols = [("Star", lambda r: f"<span class='m'>TIC {r.tic}</span>", "l"), ("T", lambda r: fmt(r.Tmag, 1), "r"),
+            ("P<sub>1</sub> (d)", lambda r: fmt(r.P1, 4), "r"), ("Depth", lambda r: f"{r.d1 * 100:.1f}%", "r"),
+            ("Set 1 is on", lambda r: esc(r.s1), "l"),
+            ("P<sub>2</sub> (d)", lambda r: fmt(r.P2, 4), "r"), ("Depth", lambda r: f"{r.d2 * 100:.2f}%", "r"),
+            ("Set 2 is on", lambda r: esc(r.s2), "l"),
+            ("Verdict", lambda r: chip(r.verdict, kinds.get(r.verdict, "known")) +
+             (f"<div class='muted' style='font-size:0.78rem;margin-top:4px;max-width:22rem'>{esc(r.extra)}</div>" if r.extra else ""), "l"),
+            ("On record", lambda r: f"<span class='muted' style='font-size:0.8rem'>{esc(r.note)}</span>", "l")]
+    vc = df.verdict.value_counts().to_dict()
+    n_pub_on = vc.get("both on target (published)", 0)
+    n_new_on = vc.get("both on target", 0)
+    n_blend = vc.get("blend", 0)
+    n_unres = vc.get("unresolved", 0)
+    n_ztf = sum(1 for _, r in df.iterrows() for sv in (r.s1, r.s2) if "ZTF ✓" in sv)
+    cal = trackc_calibration()
+    n_cal = sum(cal.values())
+    cal_txt = (f"On {n_cal} of Kostov et al.'s (2022) quadruple candidates, whose authors traced both eclipse "
+               f"sets to one star with their own pixel analysis, the test puts both sets on the target for "
+               f"{cal['both']}, a set on a neighbour for {cal['neighbour']}, and is unresolved for {cal['other']}. "
+               if n_cal else "")
     n_all = len(tc)
     return f"""
 <section id="trackc">
@@ -848,16 +1214,73 @@ def section_trackc(tc, lit=None):
   eclipses was subtracted, and the residuals were searched for a second eclipse train. {n_all} stars showed a
   strong second signal that is not a harmonic of the first and is eclipse-shaped (box depth at least three times
   the swing of a sine wave at that period, which rejects pulsations and spots). The table lists those whose second
-  period recurs in two or more sectors, the strongest evidence that it is real.</p>
-  <p>Two caveats apply to every row. Most such pairs are two unrelated binaries blended in the same TESS pixels,
-  which only a pixel-level analysis per eclipse set can tell apart; and many are already published. Matched
-  against VizieR (Kostov et al. 2022's 97 quadruple candidates, Zasche et al. 2022's multiply eclipsing systems,
-  the TESS and Gaia DR3 eclipsing-binary catalogues, VSX) and SIMBAD, each row says what is on record. Seven of the thirty are published quadruple or multiply eclipsing
-  candidates, among them the sextuple TIC 168789840 (all three of its eclipse periods recovered blind) and a pair
-  already shown to be two unrelated binaries; several more have a catalogued eclipsing binary a few arcseconds
-  away, the likely source of one of the two eclipse sets.</p>
+  period recurs in two or more sectors.</p>
+  <p>A TESS pixel is 21″ wide, so two unrelated eclipsing binaries an arcminute apart blend into one light curve.
+  Each eclipse set was therefore traced to its star: for every eclipse, the difference image (just before and
+  after, minus during) shows only the light that disappeared, and a fitted point-spread function says where it
+  sits, measured from the target's own image on that frame (Gaia positions moved to the date). Up to three sectors
+  per star, every eclipse, combined with a 2″ systematic floor per sector. {cal_txt}Where ZTF's 1″ pixels reach
+  (north of −30°), its light curves of the target and of every neighbour able to make the eclipses settle it
+  directly: in {n_ztf} cases ZTF sees the eclipses on exactly the neighbour the centroids point to.</p>
+  <p><strong>The outcome is clean and negative.</strong> All {n_pub_on} systems that come out with both eclipse
+  sets on the target are already published as quadruples, multiply eclipsing systems or a sextuple; every
+  unpublished one ({n_blend}) is a blend of two binaries on different stars, with the second star named in the
+  table{f", and {n_unres} could not be traced" if n_unres else ""}. {f"{n_new_on} unpublished system{'s' if n_new_on != 1 else ''} keep both sets on the target. " if n_new_on else ""}Two of the blends are pairs of stars that move together
+  on the sky, possibly wide binaries of binaries; their parallaxes disagree at 4–5σ, so this is not settled.</p>
   </div>
-  {table(x, cols)}
+  {table(df, cols)}
+</section>"""
+
+
+def section_sources():
+    """What the data beyond TESS's public light curves contributed (12 October 2026 extension)."""
+    import glob as _g
+    n_ffi = len(_g.glob(str(CATALOGS.parent / "cache" / "ffi_lc" / "*.npz")))
+    kelt = _json("kelt_check.json")
+    n_kelt = sum(1 for v in kelt.values() if v.get("status") == "searched")
+    ztf = _json("ztf_check.json")
+    n_ztf_sys = sum(1 for v in ztf.values() if v.get("status") == "checked")
+    n_ztf_id = sum(len(v.get(f"set{j}_eclipser") or []) for v in ztf.values() for j in (1, 2))
+    n_ztf_out = sum(len(v.get(f"set{j}_ruled_out") or []) for v in ztf.values() for j in (1, 2))
+    g = pd.read_csv(CAND / "gaia_checks.csv") if (CAND / "gaia_checks.csv").exists() else pd.DataFrame()
+    n_g = int((g.get("gaia_match") == "ok").sum()) if len(g) else 0
+    n_orb = int(g.nss_orbits.notna().sum()) if len(g) else 0
+    rows = [
+        ("TESS full-frame images, sectors 99–108", "NASA · our own photometry",
+         f"{n_ffi} light curves of {n_ffi} star-sectors that have no public full-frame light curve yet (QLP's end at "
+         "sector 98, TESS-SPOC's near 80): two of TIC 402710280's five transits, and the extra sectors behind the "
+         "period hunt's second pass."),
+        ("Gaia DR3 (sources, orbits, eclipsing binaries)", "ESA · Gaia archive",
+         f"{n_g} named stars matched: RUWE, resolved close companions, radial-velocity scatter and {n_orb} orbital "
+         "solutions, quoted under “On record” throughout. In Track C, four spectroscopic orbits have the period of "
+         "the eclipse set the pixels put on the target; for the blends, Gaia shows which neighbours move with the "
+         "target. Positions with proper motions anchor every pixel test."),
+        ("ZTF DR23 light curves", "NSF / Caltech · IRSA's copy on AWS",
+         f"{n_ztf_sys} Track C systems north of −30°: the eclipses seen directly on {n_ztf_id} neighbours, and "
+         f"{n_ztf_out} star–eclipse-set pairings ruled out (flat where a neighbour would need a deep eclipse). Every "
+         "identification agrees with the TESS centroids."),
+        ("KELT survey (2006–2018)", "NASA Exoplanet Archive",
+         f"An anchored period search for the 28 bright single transits: KELT covers {n_kelt} of them, and injected "
+         "copies of their TESS transits are not recovered, so its silence constrains nothing."),
+        ("SuperWASP DR1", "NASA Exoplanet Archive", "Checked for the headline stars; too sparse to help."),
+        ("Hipparcos–Gaia accelerations (Brandt 2021)", "ESA missions, via VizieR",
+         "No unexplained acceleration for any named Hipparcos star (HIP 56966: χ² = 1.1)."),
+        ("ExoFOP, SIMBAD, VizieR, NASA archive, ADS", "", "The novelty checks; ExoFOP re-read live for the new candidates."),
+    ]
+    tr = "".join(f"<tr><td><strong>{esc(a)}</strong><div class='muted' style='font-size:0.8rem'>{esc(b)}</div></td>"
+                 f"<td>{esc(c)}</td></tr>" for a, b, c in rows)
+    return f"""
+<section id="sources">
+  <p class="kicker">Beyond the public TESS light curves</p>
+  <h2>Other telescopes, and the newest TESS images</h2>
+  <div class="col" style="display:grid;gap:12px">
+  <p>Two things limit a search of public TESS light curves: the newest full-frame images have no light curves
+  yet, and TESS's 21″ pixels cannot say which star in a crowded field dims. Both were attacked with other data,
+  all public. ISRO's AstroSat, the one Indian space observatory with public data, observes in the ultraviolet and
+  X-rays and has nothing to add on optical transits; ESA's CHEOPS and PLATO archives hold nothing on these stars
+  yet.</p>
+  </div>
+  <div class="tablewrap"><table class="data"><thead><tr><th>Data</th><th>What it gave</th></tr></thead><tbody>{tr}</tbody></table></div>
 </section>"""
 
 
@@ -1117,6 +1540,21 @@ def build():
                f'every {fit["HIP56966"]["period_d"][0]:.3f} days around a V = 8.8 Sun-like star.</strong> Its 2019 transit '
                f'was posted to ExoFOP in 2025 as a single-transit community candidate (Salinas et al.), with no period. '
                f'This survey found three more transits across seven years and the period they share.</div></li>')
+    fnew = ""
+    if "TIC402710280" in fit and "TOI2493" in fit:
+        fa, fb = fit["TIC402710280"], fit["TOI2493"]
+        exa, exb = ex.get("TIC402710280", {}), ex.get("TOI2493", {})
+        rpa = fa["rp_rs"][0] * 0.817 * R_EARTH_PER_RSUN
+        rpb = fb["rp_rs"][0] * 0.652 * R_EARTH_PER_RSUN
+        fnew = (f'<li>{chip("New candidate", "new")}<div><strong>TIC 402710280: a {rpa:.1f} {RE} planet candidate every '
+                f'{fa["period_d"][0]:.3f} days around a K dwarf 67 parsecs away (T = 9.2).</strong> Not a TOI, not a '
+                f'community TOI, nothing on record anywhere. Five transits from 2021 to 2026, two of them only in our own '
+                f'light curves of the newest TESS full-frame images; the dip is on the star and has a planet\'s shape.</div></li>'
+                f'<li>{chip("Period new", "new")}<div><strong>TOI-2493.01: a {rpb:.1f} {RE} candidate every '
+                f'{fb["period_d"][0]:.2f} days, receiving {exb.get("s_earth", float("nan")):.1f}× Earth\'s insolation.</strong> '
+                f'A single-transit TOI since 2021 with no period; the period hunt found two more transits in 2025 and 2026. '
+                f'TESS should see the next one in mid-November 2026.</div></li>')
+    fph = section_periodhunt(summary_only=True)
     passed = [int(k) for k, r in dv.items() if "error" not in r and deep_verdict(r)[0] == "candidate"]
     n_dv = sum(1 for t in passed if prior.prior(t)["kind"] is None)
     n_dv_known = len(passed) - n_dv
@@ -1138,24 +1576,29 @@ def build():
   <p class="kicker">Amateur search of NASA TESS data · survey report · {today}</p>
   <h1>Ad Astra</h1>
   <p class="dek">A blind search of {int(sv.n_real.sum()) / 1e6:.1f} million TESS light curves for transits and
-  eclipses that no catalogue lists yet. Checked against ExoFOP, SIMBAD, VizieR, NASA's archive and the
-  literature, most of what it found is already known to someone. What is left: the period of a sub-Neptune
-  around HIP 56966, a second transit of a small planet around HD 11506, and {n_dv} single transits on bright stars
-  that nobody has posted.</p>
+  eclipses that no catalogue lists yet, extended with our own light curves of the newest TESS images and with
+  Gaia, ZTF and KELT data. Checked against ExoFOP, SIMBAD, VizieR, NASA's archive and the literature, most of what
+  it found is already known to someone. What is left: a sub-Neptune candidate every 36.3 days around the nearby K
+  dwarf TIC 402710280, which is on no list; the 79-day period of TOI-2493.01, a temperate sub-Neptune candidate;
+  the period of a sub-Neptune around HIP 56966; a second transit of a small planet around HD 11506; and {n_dv}
+  single transits on bright stars that nobody has posted.</p>
   <div class="strip">
     <div><span class="label">Sectors searched</span><span class="v">{n_q + n_s} of 107</span></div>
     <div><span class="label">Light curves</span><span class="v">{int(sv.n_real.sum()):,}</span></div>
     <div><span class="label">Red-dwarf deep search</span><span class="v">{ta_n:,} of {ta_total:,}</span></div>
   </div>
 </header>
-<nav class="toc" aria-label="Sections"><a href="#findings">Findings</a><a href="#hip56966">HIP 56966</a>
-<a href="#hd11506">HD 11506</a><a href="#hip71639">HIP 71639</a><a href="#bright">Bright candidates</a><a href="#trackb">All transit candidates</a><a href="#trackc">Multiple stars</a>
-<a href="#trackd">Anomalies</a><a href="#calibration">Calibration</a><a href="#methods">Method</a><a href="#next">Next steps</a></nav>
+<nav class="toc" aria-label="Sections"><a href="#findings">Findings</a><a href="#tic402710280">TIC 402710280</a>
+<a href="#toi2493">TOI-2493</a><a href="#hip56966">HIP 56966</a><a href="#hd11506">HD 11506</a><a href="#hip71639">HIP 71639</a>
+<a href="#periodhunt">Periods for TOIs</a><a href="#bright">Bright candidates</a><a href="#trackb">All transit candidates</a>
+<a href="#trackc">Multiple stars</a><a href="#sources">Other data</a><a href="#trackd">Anomalies</a><a href="#calibration">Calibration</a>
+<a href="#methods">Method</a><a href="#next">Next steps</a></nav>
 
 <section id="findings">
   <p class="kicker">Summary</p>
   <h2>What the search found</h2>
   <ul class="findings">
+    {fnew}
     {f56}
     <li>{chip("Second transit", "new")}<div><strong>HD 11506: a {rp115:.1f} {RE} transiting candidate in a known
     three-planet system.</strong> The 2020 transit was posted as a single-transit community candidate in 2024, but
@@ -1172,18 +1615,22 @@ def build():
     planets (HD 3167, HD 278555, K2-290), binaries, or once a transit of HD 80606 b on the neighbouring star. The
     {n_dv} left are mostly single transits of giant planets, among them the bright stars HD 41179 and HD 43475, plus
     a grazing companion every 24.05 days around CD−34 9313 and two smaller ones (4.2 and 5.8 {RE}).</div></li>
-    <li>{chip(f"{n_tc} stars", "known")}<div><strong>Possible triple and quadruple stars.</strong> Eclipsing
-    binaries with a second, independent set of eclipses that recurs across sectors. Of the 30 listed, seven are
-    already published as quadruples, multiply eclipsing systems or a known blend, and several more are catalogued
-    eclipsing binaries; the rest are unpublished, and most will still be blends of two binaries.</div></li>
+    <li>{chip("None new", "known")}<div><strong>Triple and quadruple stars: every unpublished one is a blend.</strong>
+    Of {n_tc} stars with two independent eclipse sets, the six whose eclipses all come from the target are already
+    published quadruples or a sextuple. In every other one, a pixel test traces one eclipse set to a neighbouring
+    star, and ZTF's sharper images see those eclipses on the named neighbour wherever they reach.</div></li>
+    {fph}
     <li>{chip("Measured", "ok")}<div><strong>The false-alarm floor, and what was found again.</strong> Flipped light
     curves produced no planet-shaped dips in two-minute data. Blind, the survey found nine confirmed planetary
     systems that never became TOIs, 83 community candidates, published quadruple candidates, a sextuple star and a dipper.</div></li>
   </ul>
 </section>
+{section_tic402710280(fit, ex)}
+{section_toi2493(fit, ex)}
 {section_hip56966(fit, ex)}
 {section_hd11506(fit, ex)}
 {section_hip71639(fit, ex)}
+{section_periodhunt()}
 {section_deepvet(dv, lit, tb)}
 {section_trackb(tb, singles, lit)}
 <section id="plates" style="padding-top:8px">
@@ -1193,6 +1640,7 @@ def build():
   {plates}
 </section>
 {section_trackc(tc, lit)}
+{section_sources()}
 {section_anomalies(td)}
 {section_tracka(ta_n, ta_total, triage)}
 {section_calibration(sv, s2, comp)}
@@ -1232,20 +1680,47 @@ NOTES = {
 }
 
 
+_CV = None
+
+
+def cv(tic):
+    """Difference-image centroid result for a transit candidate (centroid_vet.py), or {}."""
+    global _CV
+    if _CV is None:
+        p = CAND / "centroid_vet.json"
+        _CV = json.load(open(p)) if p.exists() else {}
+    return _CV.get(str(int(tic)), {})
+
+
+def cv_text(r):
+    """The centroid result in words, with its numbers."""
+    v = r.get("verdict")
+    c = r.get("centroid") or {}
+    if not v or v == "error":
+        return "not tested"
+    if v == "no usable centroids":
+        return "no usable centroid (dip too shallow in the pixels)"
+    near = (r.get("closest_neighbours") or [None])[0]
+    s = f"{r['offset_arcsec']:.1f}″ ± {c['err']:.1f}″ from the star"
+    if near:
+        s += f"; nearest star able to fake it ({near['name']}) {near['sigma']:.0f}σ away"
+    return f"{v}: {s}"
+
+
 def deep_verdict(r):
     g = r.get("gaia") or {}
-    comb = (r.get("pixels") or {}).get("combined", {})
-    worst = min(comb.items(), key=lambda kv: kv[1]["dchi2"]) if comb else None
-    if worst and worst[1]["dchi2"] < -9:
-        return "off-target", worst[0]
+    c = cv(r["tic"]) if "tic" in r else {}
+    v = c.get("verdict", "")
+    if v.startswith("on G"):
+        return "off-target", v[3:]
     if g.get("ruwe", 0) > 1.4 or g.get("nss", 0) > 0:
         return "binary host", None
     p = r.get("period") or {}
     n_ev = len([e for e in r.get("events", []) if e.get("sector") is not None])
     if ("aliases" in p and not any(a["status"] == "allowed" for a in p["aliases"])) or (n_ev >= 2 and not p):
         return "no consistent period", None
-    if worst and worst[1]["dchi2"] < 9:
-        return "ambiguous pixels", worst[0]
+    if v.startswith("target or") or v.startswith("offset"):
+        return "ambiguous pixels", v
     return "candidate", None
 
 
@@ -1271,14 +1746,7 @@ def section_deepvet(dv, lit, tb):
             per = f"≥ {p['p_min_allowed']:.0f} d" if p.get("p_min_allowed") else "–"
         else:
             per = "–"
-        comb = (r.get("pixels") or {}).get("combined", {})
-        if not comb:
-            pix = "no neighbour bright enough"
-        else:
-            w = min(comb.items(), key=lambda kv: kv[1]["dchi2"])
-            pix = (f"on target (next best Δχ² +{w[1]['dchi2']:.0f})" if w[1]["dchi2"] >= 9 else
-                   f"favours {w[0]} (Δχ² {w[1]['dchi2']:.0f})" if w[1]["dchi2"] <= -9 else
-                   f"inconclusive ({w[0]}, Δχ² {w[1]['dchi2']:+.0f})")
+        pix = cv_text(cv(tic))
         g = r.get("gaia") or {}
         verdict, _ = deep_verdict(r)
         pr = prior.prior(tic)
@@ -1320,8 +1788,8 @@ def section_deepvet(dv, lit, tb):
   <div class="col" style="display:grid;gap:12px">
   <p>Every shortlisted star brighter than T = 10.5 went through the same checks as the headline candidates:
   Gaia binarity, TOI and SPOC lookups, the depth of each dip in every sector, the period aliases, and a
-  pixel-level source test against every Gaia star within 150″ that could fake the dip with an eclipse of at
-  most 50%. {n_pass} of {sum(counts.values())} pass ({rejected} do not). Each was then looked up on ExoFOP
+  pixel-level test of where the dip comes from (difference-image centroids, compared with every Gaia star within
+  150″ bright enough to fake the dip). {n_pass} of {sum(counts.values())} pass ({rejected} do not). Each was then looked up on ExoFOP
   (TOIs, community TOIs and the periods people have posted), in SIMBAD, in VizieR's eclipsing-binary and
   multiple-star catalogues, in NASA's confirmed-planet table (including the transit times of planets on
   neighbouring stars) and in the literature. {n_pub} were already on record, mostly as single-transit community
@@ -1329,9 +1797,11 @@ def section_deepvet(dv, lit, tb):
   anywhere</strong>; they head the table, smallest first. HIP 56966 above came out of this list.</p>
   </div>
   {table(df, cols)}
-  <p class="muted" style="font-size:var(--step--1)">Pixels: Δχ² of the best alternative source relative to the
-  target, summed over transits (2-minute pixels where available, full-frame cutouts otherwise). Positive means
-  the target fits better. RUWE above 1.4 hints at an unresolved binary.</p>
+  <p class="muted" style="font-size:var(--step--1)">Pixels: where the light that disappears in transit comes
+  from, by difference-image centroids (2-minute pixels where available, full-frame cutouts otherwise), measured
+  from the star's own image on each frame and combined over sectors with a 2″ systematic floor per sector; the
+  σ is how far the nearest Gaia star able to fake the dip lies from that position. RUWE above 1.4 hints at an
+  unresolved binary.</p>
 </section>"""
 
 

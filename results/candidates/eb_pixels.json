@@ -137,24 +137,42 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 1.0937233955986072,
-     "ddec": -2.079907016106709,
-     "err": 0.527744595451883,
-     "n_eclipses": 15,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      97
-     ],
-     "reduced_chi2": 0.7495912630660581,
-     "n_sectors": 3
+     "dra": 1.9100324462097729,
+     "ddec": -3.049910239501225,
+     "err": 1.1729156895128967,
+     "n_eclipses": 12,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.8569369748032003,
+     "per_sector": [
+      {
+       "sector": 93,
+       "dra": 3.865362763543323,
+       "ddec": -4.699632323114165,
+       "err": 2.0249298283654937
+      },
+      {
+       "sector": 94,
+       "dra": 1.9801915796901925,
+       "ddec": -3.2839953333287215,
+       "err": 2.066616060911812
+      },
+      {
+       "sector": 97,
+       "dra": -0.0721848792024679,
+       "ddec": -1.212955886800213,
+       "err": 2.004569902838044
+      }
+     ]
     },
     "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 2.3499455444179254,
-    "offset_sigma": 4.452808355916515,
+    "offset_arcsec": 3.5986353544904364,
+    "offset_sigma": 3.068110851160089,
     "closest_neighbours": [
      {
       "name": "G13.1 at 61\"",
-      "sigma": 111.83900110046508
+      "sigma": 49.38338309832106
      }
     ],
     "n_candidates": 1,
@@ -435,26 +453,46 @@
    },
    "2": {
     "centroid": {
-     "dra": 12.195811976559753,
-     "ddec": -59.909156328436396,
-     "err": 0.3875086215901822,
-     "n_eclipses": 29,
-     "n_rejected": 0,
+     "dra": 12.293110512017208,
+     "ddec": -60.319576401444884,
+     "err": 1.1591644019240974,
+     "n_eclipses": 28,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.2327668473164378,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.06197458939287867,
+     "per_sector": [
+      {
+       "sector": 93,
+       "dra": 12.34727257195574,
+       "ddec": -61.12883199640539,
+       "err": 2.0171296552595948
+      },
+      {
+       "sector": 94,
+       "dra": 12.230484428709119,
+       "ddec": -59.81183614163187,
+       "err": 2.005324556538172
+      },
+      {
+       "sector": 97,
+       "dra": 12.302166056829241,
+       "ddec": -60.02880863073219,
+       "err": 2.000846199491636
+      }
+     ]
     },
     "verdict": "on G13.1 at 61\"",
-    "offset_arcsec": 61.137916563721966,
-    "offset_sigma": 157.771758245884,
+    "offset_arcsec": 61.55949856285717,
+    "offset_sigma": 53.106788356055915,
     "closest_neighbours": [
      {
       "name": "G13.1 at 61\"",
-      "sigma": 0.8729434235975495
+      "sigma": 0.37475330038348237
      },
      {
       "name": "G16.8 at 48\"",
-      "sigma": 123.27636446898588
+      "sigma": 41.44983454432563
      }
     ],
     "n_candidates": 2,
@@ -1111,34 +1149,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -1.2320385085572585,
-     "ddec": 5.932028002830189,
-     "err": 0.208025657109677,
-     "n_eclipses": 97,
-     "n_rejected": 4,
-     "rejected_sectors": [
-      82,
-      83,
-      84
-     ],
-     "reduced_chi2": 0.35954935332310395,
-     "n_sectors": 3
+     "dra": -1.118820588038174,
+     "ddec": 5.658467700223347,
+     "err": 1.1558945618203915,
+     "n_eclipses": 79,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.01572799513074208,
+     "per_sector": [
+      {
+       "sector": 82,
+       "dra": -1.316768564304835,
+       "ddec": 5.423361479407402,
+       "err": 2.0021392793997603
+      },
+      {
+       "sector": 83,
+       "dra": -1.1852781451032086,
+       "ddec": 5.608804533736207,
+       "err": 2.0027122787762277
+      },
+      {
+       "sector": 84,
+       "dra": -0.8546605584034994,
+       "ddec": 5.9429852031223485,
+       "err": 2.0013534669979145
+      }
+     ]
     },
     "verdict": "on G13.2 at 6\"",
-    "offset_arcsec": 6.058619901671462,
-    "offset_sigma": 29.124387759905918,
+    "offset_arcsec": 5.7680166628303855,
+    "offset_sigma": 4.990088934882149,
     "closest_neighbours": [
      {
       "name": "G13.2 at 6\"",
-      "sigma": 2.1828706199850183
+      "sigma": 0.44062592113603716
      },
      {
       "name": "G10.7 at 7\"",
-      "sigma": 6.0058856698749485
+      "sigma": 1.3150138117723387
      },
      {
       "name": "G11.4 at 35\"",
-      "sigma": 139.48727677690317
+      "sigma": 25.356158084709993
      }
     ],
     "n_candidates": 4,
@@ -2864,34 +2918,50 @@
    },
    "2": {
     "centroid": {
-     "dra": -7.671854881969139,
-     "ddec": 34.31032277346594,
-     "err": 0.35375279002322496,
-     "n_eclipses": 34,
-     "n_rejected": 7,
-     "rejected_sectors": [
-      82,
-      83,
-      84
-     ],
-     "reduced_chi2": 0.5098559257629351,
-     "n_sectors": 3
+     "dra": -7.7492276370016695,
+     "ddec": 35.126840036917905,
+     "err": 1.1605391149664017,
+     "n_eclipses": 27,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.1862536379640563,
+     "per_sector": [
+      {
+       "sector": 82,
+       "dra": -7.961351436592695,
+       "ddec": 35.404840932318635,
+       "err": 2.0056574217753753
+      },
+      {
+       "sector": 83,
+       "dra": -7.938119190399761,
+       "ddec": 33.83482545677453,
+       "err": 2.011909223568099
+      },
+      {
+       "sector": 84,
+       "dra": -7.346533813893448,
+       "ddec": 36.14000855701639,
+       "err": 2.01279410603834
+      }
+     ]
     },
     "verdict": "on G11.4 at 35\"",
-    "offset_arcsec": 35.15758248442872,
-    "offset_sigma": 99.38460833657459,
+    "offset_arcsec": 35.97145284735229,
+    "offset_sigma": 30.99546786787422,
     "closest_neighbours": [
      {
       "name": "G11.4 at 35\"",
-      "sigma": 0.4644851551796465
+      "sigma": 0.8013476452423007
      },
      {
       "name": "G10.7 at 7\"",
-      "sigma": 78.88657740509053
+      "sigma": 24.745862853663688
      },
      {
       "name": "G13.2 at 6\"",
-      "sigma": 82.21796766939386
+      "sigma": 25.76106374191605
      }
     ],
     "n_candidates": 4,
@@ -3758,18 +3828,38 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -1.0403849501063922,
-     "ddec": -0.4212747027097222,
-     "err": 0.4266528234023711,
+     "dra": -1.1464781472123577,
+     "ddec": -0.45802777314560605,
+     "err": 1.161340564238012,
      "n_eclipses": 24,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.2989348782928048,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.4266895863082214,
+     "per_sector": [
+      {
+       "sector": 81,
+       "dra": -2.3971064327736653,
+       "ddec": -1.5315379659648263,
+       "err": 2.0119604680467225
+      },
+      {
+       "sector": 82,
+       "dra": -1.5263302647553068,
+       "ddec": 0.719924565472137,
+       "err": 2.012873166345223
+      },
+      {
+       "sector": 83,
+       "dra": 0.47995326245562786,
+       "ddec": -0.5611669968447038,
+       "err": 2.00967300708319
+      }
+     ]
     },
     "verdict": "on target",
-    "offset_arcsec": 1.122440742111157,
-    "offset_sigma": 2.6308058462151482,
+    "offset_arcsec": 1.234585591608862,
+    "offset_sigma": 1.0630693782912062,
     "closest_neighbours": [],
     "n_candidates": 0,
     "per_eclipse": [
@@ -4185,33 +4275,52 @@
    },
    "2": {
     "centroid": {
-     "dra": 18.073435237380885,
-     "ddec": 20.08785535093756,
-     "err": 0.748066386791611,
+     "dra": 18.505845683362253,
+     "ddec": 20.32506055537075,
+     "err": 1.4852412806061788,
      "n_eclipses": 11,
-     "n_rejected": 4,
+     "n_sectors": 3,
+     "n_sectors_used": 2,
      "rejected_sectors": [
-      81,
-      82
+      81
      ],
-     "reduced_chi2": 0.8657115972765806,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.09742541426998266,
+     "per_sector": [
+      {
+       "sector": 81,
+       "dra": -4.809995428557854,
+       "ddec": -1.9953877859671005,
+       "err": 2.198727846759805
+      },
+      {
+       "sector": 82,
+       "dra": 17.910246990710437,
+       "ddec": 20.43056062248344,
+       "err": 2.020797998713369
+      },
+      {
+       "sector": 83,
+       "dra": 19.205567652780626,
+       "ddec": 20.201116840173547,
+       "err": 2.1903261598349353
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 27.021676370647175,
-    "offset_sigma": 36.12202987296448,
+    "verdict": "on G14.2 at 24\"",
+    "offset_arcsec": 27.487713819739636,
+    "offset_sigma": 18.50723796777379,
     "closest_neighbours": [
      {
       "name": "G14.2 at 24\"",
-      "sigma": 4.71321479493519
+      "sigma": 2.696722685999022
      },
      {
       "name": "G15.5 at 24\"",
-      "sigma": 11.408940123214434
+      "sigma": 5.828626672082328
      },
      {
       "name": "G15.8 at 64\"",
-      "sigma": 52.550875725298646
+      "sigma": 26.142302502170292
      }
     ],
     "n_candidates": 12,
@@ -4491,7 +4600,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "a set on a neighbour",
   "verdict": "blend: an eclipse set comes from a neighbour"
  },
  "268963812": {
@@ -4824,32 +4933,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -0.051368844215606085,
-     "ddec": 0.16627725725471412,
-     "err": 0.5510883231624126,
+     "dra": -0.10005357446353041,
+     "ddec": 0.06379716510189552,
+     "err": 1.1722177445794093,
      "n_eclipses": 16,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      89
-     ],
-     "reduced_chi2": 0.12163352672363156,
-     "n_sectors": 3
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.009499054351766578,
+     "per_sector": [
+      {
+       "sector": 63,
+       "dra": -0.18854357317160625,
+       "ddec": 0.009453248215765415,
+       "err": 2.0302930351159163
+      },
+      {
+       "sector": 88,
+       "dra": -0.25245798316605017,
+       "ddec": -0.08500329104655847,
+       "err": 2.0260980210331803
+      },
+      {
+       "sector": 89,
+       "dra": 0.14251224990154607,
+       "ddec": 0.26843545472262975,
+       "err": 2.034658086634948
+      }
+     ]
     },
     "verdict": "on target",
-    "offset_arcsec": 0.17403127430492943,
-    "offset_sigma": 0.3157956120468193,
+    "offset_arcsec": 0.11866253005042385,
+    "offset_sigma": 0.10122908529507021,
     "closest_neighbours": [
      {
       "name": "G16.3 at 30\"",
-      "sigma": 54.35910445434106
+      "sigma": 25.647144597205862
      },
      {
       "name": "G16.4 at 46\"",
-      "sigma": 83.44461216662984
+      "sigma": 39.29624121432781
      },
      {
       "name": "G13.6 at 62\"",
-      "sigma": 112.75560075034183
+      "sigma": 53.09545590791418
      }
     ],
     "n_candidates": 11,
@@ -5147,34 +5274,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 3.40466199597477,
-     "ddec": 30.782804633967363,
-     "err": 0.4838869075961031,
-     "n_eclipses": 33,
-     "n_rejected": 5,
-     "rejected_sectors": [
-      63,
-      88,
-      89
-     ],
-     "reduced_chi2": 0.7708783461890023,
-     "n_sectors": 3
+     "dra": 3.190029970705316,
+     "ddec": 31.37084138031441,
+     "err": 1.2134057211361224,
+     "n_eclipses": 31,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.20234805788242344,
+     "per_sector": [
+      {
+       "sector": 63,
+       "dra": 2.713642303399513,
+       "ddec": 31.27206597391103,
+       "err": 2.1430271756984265
+      },
+      {
+       "sector": 88,
+       "dra": 2.87290197938593,
+       "ddec": 32.60517181916538,
+       "err": 2.1191092844487716
+      },
+      {
+       "sector": 89,
+       "dra": 3.9202763249664168,
+       "ddec": 30.309668546815082,
+       "err": 2.0465551897760577
+      }
+     ]
     },
     "verdict": "on G16.3 at 30\"",
-    "offset_arcsec": 30.970514759038757,
-    "offset_sigma": 64.00362207131593,
+    "offset_arcsec": 31.53261771757691,
+    "offset_sigma": 25.98687081189352,
     "closest_neighbours": [
      {
       "name": "G16.3 at 30\"",
-      "sigma": 1.7678645906408263
+      "sigma": 1.1957729745640906
      },
      {
       "name": "G19.1 at 18\"",
-      "sigma": 31.002901282601123
+      "sigma": 12.875535067593907
      },
      {
       "name": "G17.3 at 19\"",
-      "sigma": 47.495057079739496
+      "sigma": 19.180512664740117
      }
     ],
     "n_candidates": 57,
@@ -6010,30 +6153,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -4.359505133635787,
-     "ddec": 13.214876503635345,
-     "err": 0.3540634204210673,
-     "n_eclipses": 33,
-     "n_rejected": 0,
+     "dra": -3.8659264419897905,
+     "ddec": 13.536043130442756,
+     "err": 1.1595192922535598,
+     "n_eclipses": 20,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.8062200480592306,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.2551705666011471,
+     "per_sector": [
+      {
+       "sector": 78,
+       "dra": -2.8475079503595535,
+       "ddec": 14.640345211734395,
+       "err": 2.009576020497727
+      },
+      {
+       "sector": 84,
+       "dra": -4.163040784578696,
+       "ddec": 12.415931301749314,
+       "err": 2.0070486838304658
+      },
+      {
+       "sector": 85,
+       "dra": -4.585650690660055,
+       "ddec": 13.554654119129513,
+       "err": 2.008416666204703
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 13.91539600645739,
-    "offset_sigma": 39.301987169159155,
+    "verdict": "on G12.6 at 13\"",
+    "offset_arcsec": 14.077281374046708,
+    "offset_sigma": 12.140618502937626,
     "closest_neighbours": [
      {
       "name": "G12.6 at 13\"",
-      "sigma": 3.348932847440064
+      "sigma": 0.8498306516398978
      },
      {
       "name": "G14.4 at 25\"",
-      "sigma": 95.70229327915857
+      "sigma": 28.992005207618313
      },
      {
       "name": "Gnan at 50\"",
-      "sigma": 106.86950864333633
+      "sigma": 32.773526795772206
      }
     ],
     "n_candidates": 6,
@@ -6603,30 +6766,50 @@
    },
    "2": {
     "centroid": {
-     "dra": -0.8214532678431251,
-     "ddec": 0.3834282601574273,
-     "err": 0.3843537641545868,
-     "n_eclipses": 28,
-     "n_rejected": 0,
+     "dra": -0.6546972435669746,
+     "ddec": -0.2810894715126257,
+     "err": 1.1619047549370431,
+     "n_eclipses": 20,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.450257741263206,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.05218697833596588,
+     "per_sector": [
+      {
+       "sector": 78,
+       "dra": -0.3488160615135763,
+       "ddec": -0.7011278479573644,
+       "err": 2.0210881017639117
+      },
+      {
+       "sector": 84,
+       "dra": -0.4229772705986882,
+       "ddec": -0.34745122797298345,
+       "err": 2.00717116687637
+      },
+      {
+       "sector": 85,
+       "dra": -1.1892104789606859,
+       "ddec": 0.2005461957717176,
+       "err": 2.009258687041353
+      }
+     ]
     },
     "verdict": "on target",
-    "offset_arcsec": 0.9065333429816582,
-    "offset_sigma": 2.3585910365042015,
+    "offset_arcsec": 0.712488436207523,
+    "offset_sigma": 0.6132072643476948,
     "closest_neighbours": [
      {
       "name": "G12.6 at 13\"",
-      "sigma": 32.806728078052714
+      "sigma": 11.441279609270104
      },
      {
       "name": "G14.4 at 25\"",
-      "sigma": 68.29695953412241
+      "sigma": 22.373685222363846
      },
      {
       "name": "Gnan at 50\"",
-      "sigma": 128.80939216207997
+      "sigma": 43.139886324332444
      }
     ],
     "n_candidates": 7,
@@ -7110,7 +7293,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "a set on a neighbour",
   "verdict": "blend: an eclipse set comes from a neighbour"
  },
  "48450535": {
@@ -7321,30 +7504,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -0.03725093461981001,
-     "ddec": 0.614473131958799,
-     "err": 0.46719511415440385,
-     "n_eclipses": 19,
-     "n_rejected": 0,
+     "dra": 0.026043639163267747,
+     "ddec": 0.5265750492452036,
+     "err": 1.1569631403865903,
+     "n_eclipses": 17,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.20055821096004411,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.055616354765566395,
+     "per_sector": [
+      {
+       "sector": 55,
+       "dra": 0.12891071082956232,
+       "ddec": -0.10987393564867462,
+       "err": 2.0051384989416214
+      },
+      {
+       "sector": 74,
+       "dra": -0.15498655966440114,
+       "ddec": 1.1886713287832509,
+       "err": 2.0034626424590014
+      },
+      {
+       "sector": 75,
+       "dra": 0.1043547740314364,
+       "ddec": 0.4998724742556623,
+       "err": 2.00315738615039
+      }
+     ]
     },
     "verdict": "on target",
-    "offset_arcsec": 0.6156012199706113,
-    "offset_sigma": 1.3176533771865615,
+    "offset_arcsec": 0.5272186962053367,
+    "offset_sigma": 0.4556918693444033,
     "closest_neighbours": [
      {
       "name": "G14.6 at 25\"",
-      "sigma": 54.27459152491658
+      "sigma": 21.826917762802342
      },
      {
       "name": "G13.9 at 47\"",
-      "sigma": 101.68302155621934
+      "sigma": 40.97724055052455
      },
      {
       "name": "G13.4 at 66\"",
-      "sigma": 141.86616438674812
+      "sigma": 57.199744748999905
      }
     ],
     "n_candidates": 6,
@@ -7676,30 +7879,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 55.057800381428386,
-     "ddec": -35.17327810583512,
-     "err": 0.7644242174684598,
+     "dra": 54.99550497498971,
+     "ddec": -35.31139291962674,
+     "err": 1.1578411422764918,
      "n_eclipses": 7,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.14267827591395077,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.1700507434552953,
+     "per_sector": [
+      {
+       "sector": 55,
+       "dra": 54.093793637434786,
+       "ddec": -35.67001834707962,
+       "err": 2.0059302083256254
+      },
+      {
+       "sector": 74,
+       "dra": 55.845674725665155,
+       "ddec": -34.42220880750704,
+       "err": 2.006647689493329
+      },
+      {
+       "sector": 75,
+       "dra": 55.047540832829625,
+       "ddec": -35.84016169767859,
+       "err": 2.003744580866403
+      }
+     ]
     },
     "verdict": "on G13.4 at 66\"",
-    "offset_arcsec": 65.33391826265769,
-    "offset_sigma": 85.4681429102596,
+    "offset_arcsec": 65.35594875279818,
+    "offset_sigma": 56.44638661250061,
     "closest_neighbours": [
      {
       "name": "G13.4 at 66\"",
-      "sigma": 0.9198196863778351
+      "sigma": 0.526501017742473
      },
      {
       "name": "G14.6 at 25\"",
-      "sigma": 63.02514851214305
+      "sigma": 41.587580342903216
      },
      {
       "name": "G13.9 at 47\"",
-      "sigma": 64.07909937739139
+      "sigma": 42.22659803517462
      }
     ],
     "n_candidates": 10,
@@ -8180,30 +8403,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -12.43666897668588,
-     "ddec": -48.15122792634951,
-     "err": 0.34883886760172206,
-     "n_eclipses": 35,
-     "n_rejected": 0,
+     "dra": -12.513193687546034,
+     "ddec": -48.13666419063799,
+     "err": 1.156545560899718,
+     "n_eclipses": 34,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.14656543696387195,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.13954853710177878,
+     "per_sector": [
+      {
+       "sector": 63,
+       "dra": -13.09029890233112,
+       "ddec": -48.0057425401309,
+       "err": 2.003516698194022
+      },
+      {
+       "sector": 64,
+       "dra": -11.33537038705397,
+       "ddec": -48.458801065770146,
+       "err": 2.002826867742596
+      },
+      {
+       "sector": 90,
+       "dra": -13.114559307295828,
+       "ddec": -47.94527920112651,
+       "err": 2.003243633053717
+      }
+     ]
     },
     "verdict": "on G14.0 at 50\"",
-    "offset_arcsec": 49.731393365266996,
-    "offset_sigma": 142.56264993397053,
+    "offset_arcsec": 49.736490182403216,
+    "offset_sigma": 43.00435007827225,
     "closest_neighbours": [
      {
       "name": "G14.0 at 50\"",
-      "sigma": 1.359129207978669
+      "sigma": 0.3426746065167845
      },
      {
       "name": "G16.6 at 69\"",
-      "sigma": 55.824418642831986
+      "sigma": 16.829228924699063
      },
      {
       "name": "G17.4 at 60\"",
-      "sigma": 72.5031852348662
+      "sigma": 21.801868214624896
      }
     ],
     "n_candidates": 35,
@@ -8807,30 +9050,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 1.2022616277495901,
-     "ddec": -16.677292584730022,
-     "err": 0.6740977815696853,
+     "dra": 1.2972460114694773,
+     "ddec": -16.62939415934053,
+     "err": 1.2107508765899857,
      "n_eclipses": 11,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.40392346081941266,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.2715383819858433,
+     "per_sector": [
+      {
+       "sector": 63,
+       "dra": 0.7090603397505977,
+       "ddec": -16.178565345987778,
+       "err": 2.0781538473865715
+      },
+      {
+       "sector": 64,
+       "dra": 3.0607196139881716,
+       "ddec": -16.489465749464863,
+       "err": 2.1824369104677848
+      },
+      {
+       "sector": 90,
+       "dra": 0.32474767389939174,
+       "ddec": -17.185215208154116,
+       "err": 2.0384138957352014
+      }
+     ]
     },
     "verdict": "on G15.6 at 17\"",
-    "offset_arcsec": 16.720571789811796,
-    "offset_sigma": 24.804371482838498,
+    "offset_arcsec": 16.679915986628423,
+    "offset_sigma": 13.77650539771361,
     "closest_neighbours": [
      {
       "name": "G15.6 at 17\"",
-      "sigma": 1.6384370750110941
+      "sigma": 0.9972416690502697
      },
      {
       "name": "G17.0 at 36\"",
-      "sigma": 36.764941429804516
+      "sigma": 20.412819422869557
      },
      {
       "name": "G14.0 at 50\"",
-      "sigma": 51.07601346957432
+      "sigma": 28.505373713279347
      }
     ],
     "n_candidates": 39,
@@ -9230,32 +9493,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 0.3371919777487398,
-     "ddec": -0.9699242926855578,
-     "err": 0.17495129367084183,
-     "n_eclipses": 206,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      99
-     ],
-     "reduced_chi2": 1.2921742043542208,
-     "n_sectors": 3
+     "dra": 0.12863097688752897,
+     "ddec": -0.7915966521336021,
+     "err": 1.4717000988939601,
+     "n_eclipses": 197,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 1.6195734044698142,
+     "per_sector": [
+      {
+       "sector": 64,
+       "dra": -1.368472682252348,
+       "ddec": -4.590521899145993,
+       "err": 2.002361370726973
+      },
+      {
+       "sector": 99,
+       "dra": 1.0296379844242471,
+       "ddec": 1.7850556603829277,
+       "err": 2.0036647868001123
+      },
+      {
+       "sector": 100,
+       "dra": 0.7262543933982453,
+       "ddec": 0.43475578614745936,
+       "err": 2.00295620108165
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 1.0268649197434325,
-    "offset_sigma": 5.869433133060475,
+    "verdict": "on target",
+    "offset_arcsec": 0.8019795433077873,
+    "offset_sigma": 0.5449340826371528,
     "closest_neighbours": [
      {
       "name": "Gnan at 34\"",
-      "sigma": 187.3105497940894
+      "sigma": 22.444258109904943
      },
      {
       "name": "G14.0 at 53\"",
-      "sigma": 302.0216533672743
+      "sigma": 35.96152252930964
      },
      {
       "name": "G12.6 at 56\"",
-      "sigma": 319.6606438575968
+      "sigma": 38.07706835280996
      }
     ],
     "n_candidates": 13,
@@ -12800,30 +13081,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 0.14284729359251783,
-     "ddec": -1.3944119752025323,
-     "err": 0.4380429909912636,
-     "n_eclipses": 44,
-     "n_rejected": 0,
+     "dra": 0.11666494629820735,
+     "ddec": -1.010924664464303,
+     "err": 1.8346941720987504,
+     "n_eclipses": 42,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 1.920600175348757,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 2.5070625369621498,
+     "per_sector": [
+      {
+       "sector": 64,
+       "dra": -2.2340580115555317,
+       "ddec": -5.387218388362859,
+       "err": 2.007152920835736
+      },
+      {
+       "sector": 99,
+       "dra": 0.6285903341830277,
+       "ddec": 2.296616968542536,
+       "err": 2.0071964122156705
+      },
+      {
+       "sector": 100,
+       "dra": 1.9544214691315622,
+       "ddec": 0.05735270833106961,
+       "err": 2.006572554922754
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 1.4017097081332264,
-    "offset_sigma": 3.199936391999438,
+    "verdict": "on target",
+    "offset_arcsec": 1.0176342107638812,
+    "offset_sigma": 0.5546614941278116,
     "closest_neighbours": [
      {
       "name": "Gnan at 34\"",
-      "sigma": 74.21990218176765
+      "sigma": 17.905337195824327
      },
      {
       "name": "G14.0 at 53\"",
-      "sigma": 121.51094006487267
+      "sigma": 28.914167428202248
      },
      {
       "name": "G12.6 at 56\"",
-      "sigma": 128.48708535437052
+      "sigma": 30.600187748768956
      }
     ],
     "n_candidates": 14,
@@ -13596,7 +13897,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "both sets on target",
   "verdict": "blend: an eclipse set comes from a neighbour"
  },
  "311838200": {
@@ -13749,32 +14050,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 1.363281306967838,
-     "ddec": -0.5611085568524672,
-     "err": 0.4863789391480406,
-     "n_eclipses": 27,
-     "n_rejected": 4,
-     "rejected_sectors": [
-      65
-     ],
-     "reduced_chi2": 1.503579457091779,
-     "n_sectors": 3
+     "dra": 1.2128273857283376,
+     "ddec": -0.9726317422511875,
+     "err": 1.5118915059766758,
+     "n_eclipses": 20,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 1.693031590234202,
+     "per_sector": [
+      {
+       "sector": 65,
+       "dra": 0.9879220691912054,
+       "ddec": -4.837661895532312,
+       "err": 2.013912570314256
+      },
+      {
+       "sector": 99,
+       "dra": -0.01126636167616443,
+       "ddec": 0.1296313765071776,
+       "err": 2.0067442974699286
+      },
+      {
+       "sector": 100,
+       "dra": 2.6751520592746894,
+       "ddec": 1.790873110250223,
+       "err": 2.017063297723848
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 1.474238357424265,
-    "offset_sigma": 3.0310489183733895,
+    "verdict": "on target",
+    "offset_arcsec": 1.5546584105864587,
+    "offset_sigma": 1.028287019565042,
     "closest_neighbours": [
      {
-      "name": "G11.6 at 63\"",
-      "sigma": 127.37932500772963
+      "name": "G11.4 at 62\"",
+      "sigma": 40.79122567639679
      },
      {
-      "name": "G11.4 at 62\"",
-      "sigma": 127.69073010162181
+      "name": "G11.6 at 63\"",
+      "sigma": 41.07689352508929
      },
      {
       "name": "Gnan at 80\"",
-      "sigma": 165.68755437076317
+      "sigma": 53.015906373731866
      }
     ],
     "n_candidates": 5,
@@ -14310,33 +14629,52 @@
    },
    "2": {
     "centroid": {
-     "dra": 5.777228374531241,
-     "ddec": 6.037705470666542,
-     "err": 0.8996804239092001,
-     "n_eclipses": 15,
-     "n_rejected": 13,
+     "dra": 0.48985498394574206,
+     "ddec": -1.8904876995903603,
+     "err": 2.049212891891807,
+     "n_eclipses": 18,
+     "n_sectors": 3,
+     "n_sectors_used": 2,
      "rejected_sectors": [
-      65,
-      99
+      100
      ],
-     "reduced_chi2": 2.319225498701301,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 2.0286180775192895,
+     "per_sector": [
+      {
+       "sector": 65,
+       "dra": 0.5455604968677714,
+       "ddec": -4.764493900495417,
+       "err": 2.026481808026212
+      },
+      {
+       "sector": 99,
+       "dra": 0.4332357741152026,
+       "ddec": 1.0306587293291434,
+       "err": 2.04303366377804
+      },
+      {
+       "sector": 100,
+       "dra": 8.402136720459689,
+       "ddec": 9.266429117523677,
+       "err": 2.0691275795771875
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 8.356449906629344,
-    "offset_sigma": 9.288242452047301,
+    "verdict": "on target",
+    "offset_arcsec": 1.9529213111641073,
+    "offset_sigma": 0.9530104553271649,
     "closest_neighbours": [
      {
-      "name": "G11.6 at 63\"",
-      "sigma": 64.42631751002021
-     },
-     {
       "name": "G12.8 at 57\"",
-      "sigma": 69.96378077844224
+      "sigma": 28.32432240135023
      },
      {
       "name": "G11.4 at 62\"",
-      "sigma": 77.31384091919301
+      "sigma": 29.58360334985999
+     },
+     {
+      "name": "G11.6 at 63\"",
+      "sigma": 30.66235794232102
      }
     ],
     "n_candidates": 8,
@@ -14820,7 +15158,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "both sets on target",
   "verdict": "both eclipse sets on the target"
  },
  "435263480": {
@@ -15039,32 +15377,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -0.264130473573034,
-     "ddec": -0.3949277894003005,
-     "err": 0.3497409042810263,
-     "n_eclipses": 34,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      85
-     ],
-     "reduced_chi2": 0.10589510948796603,
-     "n_sectors": 3
+     "dra": -0.11629939166863985,
+     "ddec": -0.1317514445120246,
+     "err": 1.156646867165656,
+     "n_eclipses": 31,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.07185408068568111,
+     "per_sector": [
+      {
+       "sector": 78,
+       "dra": -0.12613604459657174,
+       "ddec": 0.7268007015638616,
+       "err": 2.0028476353533353
+      },
+      {
+       "sector": 84,
+       "dra": -0.08590078874464945,
+       "ddec": -0.712411706793238,
+       "err": 2.0041943585192854
+      },
+      {
+       "sector": 85,
+       "dra": -0.13682510471813164,
+       "ddec": -0.4104859144226104,
+       "err": 2.0030722064895956
+      }
+     ]
     },
     "verdict": "on target",
-    "offset_arcsec": 0.47511352949639657,
-    "offset_sigma": 1.358472868574246,
+    "offset_arcsec": 0.1757384182058687,
+    "offset_sigma": 0.15193783270819103,
     "closest_neighbours": [
      {
       "name": "Gnan at 27\"",
-      "sigma": 76.87035147318893
+      "sigma": 23.490299417341586
      },
      {
       "name": "G13.8 at 57\"",
-      "sigma": 162.3590425077674
+      "sigma": 49.05980425850777
      },
      {
       "name": "G13.1 at 59\"",
-      "sigma": 168.85244990202253
+      "sigma": 50.924437848977696
      }
     ],
     "n_candidates": 14,
@@ -15668,30 +16024,50 @@
    },
    "2": {
     "centroid": {
-     "dra": -30.56965775295478,
-     "ddec": 49.71259539109922,
-     "err": 0.623105452099846,
+     "dra": -30.580638208326967,
+     "ddec": 49.850624845628786,
+     "err": 1.1608686964380224,
      "n_eclipses": 11,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.12663440349986227,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.08524403062339148,
+     "per_sector": [
+      {
+       "sector": 78,
+       "dra": -29.890912614901563,
+       "ddec": 50.22260272713677,
+       "err": 2.0049744091937334
+      },
+      {
+       "sector": 84,
+       "dra": -31.017246183411206,
+       "ddec": 49.19664106866627,
+       "err": 2.0136216333845516
+      },
+      {
+       "sector": 85,
+       "dra": -30.83968454702128,
+       "ddec": 50.1293791521441,
+       "err": 2.0134913528689764
+      }
+     ]
     },
     "verdict": "on G13.1 at 59\"",
-    "offset_arcsec": 58.359627446137175,
-    "offset_sigma": 93.65931119598945,
+    "offset_arcsec": 58.482990952312015,
+    "offset_sigma": 50.378644141029575,
     "closest_neighbours": [
      {
       "name": "G13.1 at 59\"",
-      "sigma": 1.9411917214785637
+      "sigma": 0.9532960482309671
      },
      {
       "name": "G13.7 at 59\"",
-      "sigma": 5.134240272479238
+      "sigma": 2.6761816919782637
      },
      {
       "name": "G13.8 at 57\"",
-      "sigma": 35.41155971056539
+      "sigma": 19.087671721438557
      }
     ],
     "n_candidates": 19,
@@ -16098,30 +16474,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 0.036709922202114505,
-     "ddec": 0.367979497372032,
-     "err": 0.6149684198207482,
+     "dra": 0.09909986644057608,
+     "ddec": 0.38365053640824054,
+     "err": 1.1594343507623026,
      "n_eclipses": 11,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.07550905353588047,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.07299146879077154,
+     "per_sector": [
+      {
+       "sector": 71,
+       "dra": -0.06182422733498439,
+       "ddec": 0.7480502712757895,
+       "err": 2.0047782433838695
+      },
+      {
+       "sector": 72,
+       "dra": 0.5098970384993333,
+       "ddec": 0.8023448913467814,
+       "err": 2.0111337568766237
+      },
+      {
+       "sector": 87,
+       "dra": -0.14914959319839075,
+       "ddec": -0.39985864708885444,
+       "err": 2.008700979532764
+      }
+     ]
     },
     "verdict": "on target",
-    "offset_arcsec": 0.36980606927720727,
-    "offset_sigma": 0.6013415605715149,
+    "offset_arcsec": 0.3962430032377489,
+    "offset_sigma": 0.34175544564228916,
     "closest_neighbours": [
      {
       "name": "G14.3 at 38\"",
-      "sigma": 62.42056660516066
+      "sigma": 33.05479161778258
      },
      {
       "name": "G13.7 at 52\"",
-      "sigma": 85.63103529301891
+      "sigma": 45.47017347946631
      },
      {
       "name": "Gnan at 66\"",
-      "sigma": 107.83420220608441
+      "sigma": 57.14463089913299
      }
     ],
     "n_candidates": 6,
@@ -16317,32 +16713,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 1.112876907234822,
-     "ddec": -0.4422250644095251,
-     "err": 0.5168319936821346,
-     "n_eclipses": 21,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      71
-     ],
-     "reduced_chi2": 0.43599435746732623,
-     "n_sectors": 3
+     "dra": 0.9175837911998769,
+     "ddec": 0.03232203482938226,
+     "err": 1.1786337932477353,
+     "n_eclipses": 20,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.10685070602594204,
+     "per_sector": [
+      {
+       "sector": 71,
+       "dra": 0.6656957707372085,
+       "ddec": 0.39668761299404254,
+       "err": 2.026082360316892
+      },
+      {
+       "sector": 72,
+       "dra": 1.4002820933170983,
+       "ddec": 0.6238015369129339,
+       "err": 2.0386177301783714
+      },
+      {
+       "sector": 87,
+       "dra": 0.6850775119263883,
+       "ddec": -0.9483869109497791,
+       "err": 2.060094278288748
+      }
+     ]
     },
     "verdict": "on target",
-    "offset_arcsec": 1.197521614940019,
-    "offset_sigma": 2.3170423456341336,
+    "offset_arcsec": 0.9181528891248184,
+    "offset_sigma": 0.778997593981113,
     "closest_neighbours": [
      {
-      "name": "G16.5 at 14\"",
-      "sigma": 26.808939068191382
+      "name": "G15.8 at 13\"",
+      "sigma": 11.402294136140759
      },
      {
-      "name": "G15.8 at 13\"",
-      "sigma": 26.935958205070577
+      "name": "G16.5 at 14\"",
+      "sigma": 11.441016930612768
      },
      {
       "name": "G16.4 at 32\"",
-      "sigma": 64.28743964183974
+      "sigma": 28.095768533428004
      }
     ],
     "n_candidates": 22,
@@ -16957,33 +17371,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 8.251344193407295,
-     "ddec": 16.41786795886008,
-     "err": 0.42212641940602375,
-     "n_eclipses": 25,
-     "n_rejected": 2,
-     "rejected_sectors": [
-      71,
-      73
-     ],
-     "reduced_chi2": 0.3082205466384272,
-     "n_sectors": 3
+     "dra": 8.123449983567284,
+     "ddec": 16.35183599874998,
+     "err": 1.161019076439226,
+     "n_eclipses": 23,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.054758940785273116,
+     "per_sector": [
+      {
+       "sector": 71,
+       "dra": 7.559697602337517,
+       "ddec": 16.286504839095848,
+       "err": 2.011944800631574
+      },
+      {
+       "sector": 72,
+       "dra": 8.262440391398602,
+       "ddec": 16.81231921125813,
+       "err": 2.014904525704633
+      },
+      {
+       "sector": 73,
+       "dra": 8.546116788708504,
+       "ddec": 15.96035428285175,
+       "err": 2.0060133703473837
+      }
+     ]
     },
     "verdict": "on G14.8 at 19\"",
-    "offset_arcsec": 18.3747399794566,
-    "offset_sigma": 43.52899779481178,
+    "offset_arcsec": 18.25850432443838,
+    "offset_sigma": 15.72627418012466,
     "closest_neighbours": [
      {
       "name": "G14.8 at 19\"",
-      "sigma": 1.389608600795542
+      "sigma": 0.609173302159713
      },
      {
       "name": "G16.2 at 6\"",
-      "sigma": 47.907004349310164
+      "sigma": 17.343810814145012
      },
      {
       "name": "G14.4 at 25\"",
-      "sigma": 58.65094588522096
+      "sigma": 21.354655487011414
      }
     ],
     "n_candidates": 14,
@@ -17451,30 +17882,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 39.15019851323668,
-     "ddec": 44.314044362787286,
-     "err": 0.5238974772039626,
-     "n_eclipses": 17,
-     "n_rejected": 0,
+     "dra": 39.32195288405214,
+     "ddec": 44.6268774341338,
+     "err": 1.1573318160214359,
+     "n_eclipses": 16,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.25753800113214326,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.06991251404376805,
+     "per_sector": [
+      {
+       "sector": 71,
+       "dra": 39.52259034656979,
+       "ddec": 44.23030475937255,
+       "err": 2.0040904824743393
+      },
+      {
+       "sector": 72,
+       "dra": 38.5832156456499,
+       "ddec": 44.75327394297835,
+       "err": 2.0035499816599085
+      },
+      {
+       "sector": 73,
+       "dra": 39.86149657381933,
+       "ddec": 44.89750970117276,
+       "err": 2.0060346099845443
+      }
+     ]
     },
     "verdict": "on G13.1 at 59\"",
-    "offset_arcsec": 59.130978102961556,
-    "offset_sigma": 112.86746105085902,
+    "offset_arcsec": 59.4791910514662,
+    "offset_sigma": 51.39337761916721,
     "closest_neighbours": [
      {
       "name": "G13.1 at 59\"",
-      "sigma": 0.20368505458592442
+      "sigma": 0.22921571696040283
      },
      {
       "name": "G12.4 at 75\"",
-      "sigma": 47.18829108804955
+      "sigma": 21.272224294083955
      },
      {
       "name": "G14.8 at 19\"",
-      "sigma": 78.76650720831253
+      "sigma": 35.9483170031274
      }
     ],
     "n_candidates": 20,
@@ -17968,32 +18419,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 0.00010409082085551625,
-     "ddec": -0.4353266045467285,
-     "err": 0.33550950486993003,
-     "n_eclipses": 38,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      105
-     ],
-     "reduced_chi2": 0.20522752593625604,
-     "n_sectors": 3
+     "dra": -0.10590272723336834,
+     "ddec": -0.6328716862241551,
+     "err": 1.158099036860622,
+     "n_eclipses": 34,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.03298332000609659,
+     "per_sector": [
+      {
+       "sector": 105,
+       "dra": -0.09582592079469637,
+       "ddec": -0.6087428680489284,
+       "err": 2.0049156665444032
+      },
+      {
+       "sector": 106,
+       "dra": -0.061870824753870915,
+       "ddec": -1.1585695410538657,
+       "err": 2.008591078579304
+      },
+      {
+       "sector": 107,
+       "dra": -0.15980982273954625,
+       "ddec": -0.13360096951545258,
+       "err": 2.0041607660259855
+      }
+     ]
     },
     "verdict": "on target",
-    "offset_arcsec": 0.43532661699129166,
-    "offset_sigma": 1.2975090442223347,
+    "offset_arcsec": 0.6416712233376768,
+    "offset_sigma": 0.5540728408488456,
     "closest_neighbours": [
      {
       "name": "G15.1 at 87\"",
-      "sigma": 260.4247032287498
+      "sigma": 75.63411516627313
      },
      {
       "name": "Gnan at 91\"",
-      "sigma": 272.7163523155169
+      "sigma": 79.16917860733237
      },
      {
       "name": "G15.2 at 107\"",
-      "sigma": 317.2349222460053
+      "sigma": 91.80729625973314
      }
     ],
     "n_candidates": 3,
@@ -18665,22 +19134,42 @@
    },
    "2": {
     "centroid": {
-     "dra": -0.5659736984890672,
-     "ddec": -1.008416970913038,
-     "err": 0.6890221287770808,
+     "dra": -0.5482688691788132,
+     "ddec": -1.0189233824858777,
+     "err": 1.1690331961625684,
      "n_eclipses": 9,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.1694157731544946,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.13723058775641422,
+     "per_sector": [
+      {
+       "sector": 105,
+       "dra": -0.7634987371788684,
+       "ddec": -0.9717445545307101,
+       "err": 2.0222967212412852
+      },
+      {
+       "sector": 106,
+       "dra": -0.7573897205654573,
+       "ddec": -2.039260068727241,
+       "err": 2.0278686815775275
+      },
+      {
+       "sector": 107,
+       "dra": -0.12421808906366243,
+       "ddec": -0.0494269316611754,
+       "err": 2.024321052193429
+      }
+     ]
     },
     "verdict": "on target",
-    "offset_arcsec": 1.1563870522480006,
-    "offset_sigma": 1.6783017612227173,
+    "offset_arcsec": 1.1570668140980782,
+    "offset_sigma": 0.9897638646158461,
     "closest_neighbours": [
      {
       "name": "Gnan at 91\"",
-      "sigma": 133.54940760354825
+      "sigma": 78.72360421717536
      }
     ],
     "n_candidates": 1,
@@ -19015,32 +19504,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -6.248076217578038,
-     "ddec": -6.774135683151466,
-     "err": 0.30119246452999393,
-     "n_eclipses": 60,
-     "n_rejected": 15,
-     "rejected_sectors": [
-      78
-     ],
-     "reduced_chi2": 1.2395410645677094,
-     "n_sectors": 3
+     "dra": -7.998889911010533,
+     "ddec": -6.22851404106014,
+     "err": 2.363647007993526,
+     "n_eclipses": 53,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 4.1699859164614415,
+     "per_sector": [
+      {
+       "sector": 58,
+       "dra": -4.262254102090985,
+       "ddec": -6.154960821609074,
+       "err": 2.003444383943398
+      },
+      {
+       "sector": 78,
+       "dra": -14.589699223616318,
+       "ddec": -5.350065243024151,
+       "err": 2.00690459822493
+      },
+      {
+       "sector": 85,
+       "dra": -5.1655029825854495,
+       "ddec": -7.178133330679289,
+       "err": 2.0041238785341573
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 9.215604737314328,
-    "offset_sigma": 30.597062750873043,
+    "verdict": "on G11.7 at 15\"",
+    "offset_arcsec": 10.137880792756906,
+    "offset_sigma": 4.289084096936641,
     "closest_neighbours": [
      {
       "name": "G11.7 at 15\"",
-      "sigma": 24.524809469398047
+      "sigma": 2.410655478646937
      },
      {
       "name": "G12.0 at 90\"",
-      "sigma": 296.5684861501677
+      "sigma": 37.07946252427713
      },
      {
       "name": "Gnan at 104\"",
-      "sigma": 376.1529619330736
+      "sigma": 48.40230489761412
      }
     ],
     "n_candidates": 3,
@@ -20324,34 +20831,52 @@
    },
    "2": {
     "centroid": {
-     "dra": 12.694725426674971,
-     "ddec": 3.7822864993807577,
-     "err": 0.6629875176739366,
-     "n_eclipses": 25,
-     "n_rejected": 12,
+     "dra": 13.25878533014457,
+     "ddec": 3.9358181824028287,
+     "err": 1.6050161770806255,
+     "n_eclipses": 24,
+     "n_sectors": 3,
+     "n_sectors_used": 2,
      "rejected_sectors": [
-      58,
-      78,
-      85
+      78
      ],
-     "reduced_chi2": 0.9620472410269946,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 1.099598088508957,
+     "per_sector": [
+      {
+       "sector": 58,
+       "dra": 15.476514517315387,
+       "ddec": 3.7283232808880946,
+       "err": 2.144467226886028
+      },
+      {
+       "sector": 78,
+       "dra": -13.105151214047018,
+       "ddec": -4.430035557959397,
+       "err": 2.289664482155631
+      },
+      {
+       "sector": 85,
+       "dra": 10.955779076324129,
+       "ddec": 4.151291766187828,
+       "err": 2.185308303884698
+      }
+     ]
     },
     "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 13.246197372154242,
-    "offset_sigma": 19.979557712682073,
+    "offset_arcsec": 13.830620130557762,
+    "offset_sigma": 8.617121950580191,
     "closest_neighbours": [
      {
       "name": "G11.7 at 15\"",
-      "sigma": 42.9719975352035
-     },
-     {
-      "name": "G13.3 at 30\"",
-      "sigma": 61.7689239166789
+      "sigma": 18.11188639779502
      },
      {
       "name": "G15.3 at 53\"",
-      "sigma": 61.997505643972175
+      "sigma": 25.305374758772533
+     },
+     {
+      "name": "G13.3 at 30\"",
+      "sigma": 25.831915252220053
      }
     ],
     "n_candidates": 13,
@@ -20988,7 +21513,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "a set on a neighbour",
   "verdict": "blend: an eclipse set comes from a neighbour"
  },
  "347301717": {
@@ -21194,30 +21719,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 0.542868149813838,
-     "ddec": -0.4049159146340057,
-     "err": 0.43378697868428007,
-     "n_eclipses": 24,
-     "n_rejected": 0,
+     "dra": 0.4618827664351503,
+     "ddec": 0.03251454668967691,
+     "err": 1.1596824997707413,
+     "n_eclipses": 20,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.40934100686150937,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.10806174695372468,
+     "per_sector": [
+      {
+       "sector": 78,
+       "dra": 0.16971264414113532,
+       "ddec": 0.5587734062067279,
+       "err": 2.010799804822247
+      },
+      {
+       "sector": 84,
+       "dra": 0.23740744503782105,
+       "ddec": -0.9085696516391679,
+       "err": 2.0052677022641934
+      },
+      {
+       "sector": 85,
+       "dra": 0.9792703725054408,
+       "ddec": 0.4521355644234952,
+       "err": 2.0098325748330645
+      }
+     ]
     },
     "verdict": "on target",
-    "offset_arcsec": 0.6772464293048677,
-    "offset_sigma": 1.5612419518885163,
+    "offset_arcsec": 0.4630257937482779,
+    "offset_sigma": 0.3992694499053093,
     "closest_neighbours": [
      {
       "name": "G15.1 at 23\"",
-      "sigma": 52.02264230767505
+      "sigma": 19.83712825211146
      },
      {
       "name": "G14.7 at 66\"",
-      "sigma": 150.35623963634063
+      "sigma": 56.45752288962674
      },
      {
       "name": "G15.3 at 76\"",
-      "sigma": 177.67560144591596
+      "sigma": 66.0902161331984
      }
     ],
     "n_candidates": 5,
@@ -21634,30 +22179,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 9.047756178862675,
-     "ddec": -22.511215562809475,
-     "err": 0.7189966357218817,
+     "dra": 8.83522322045906,
+     "ddec": -22.002136447828427,
+     "err": 1.219005269032321,
      "n_eclipses": 9,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.5122788774568969,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.21540844583146834,
+     "per_sector": [
+      {
+       "sector": 78,
+       "dra": 8.87816126651842,
+       "ddec": -20.874405258948777,
+       "err": 2.0875553672545673
+      },
+      {
+       "sector": 84,
+       "dra": 9.57088423935217,
+       "ddec": -22.051005267517372,
+       "err": 2.076533321842423
+      },
+      {
+       "sector": 85,
+       "dra": 7.982297213441557,
+       "ddec": -23.171657931129644,
+       "err": 2.174021337054371
+      }
+     ]
     },
     "verdict": "on G15.1 at 23\"",
-    "offset_arcsec": 24.261424483888476,
-    "offset_sigma": 33.74344646206821,
+    "offset_arcsec": 23.709811842867904,
+    "offset_sigma": 19.450130729696834,
     "closest_neighbours": [
      {
       "name": "G15.1 at 23\"",
-      "sigma": 1.572399634335864
+      "sigma": 0.4802444329322934
      },
      {
       "name": "G16.1 at 47\"",
-      "sigma": 42.91138405607388
+      "sigma": 25.501262174179946
      },
      {
       "name": "G15.5 at 52\"",
-      "sigma": 57.65373319835651
+      "sigma": 34.092583694771754
      }
     ],
     "n_candidates": 26,
@@ -22050,22 +22615,42 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 53.844716620637165,
-     "ddec": 47.144913264485844,
-     "err": 0.5827569479921271,
+     "dra": 53.84397286259955,
+     "ddec": 47.147608634562395,
+     "err": 1.157409636335426,
      "n_eclipses": 12,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.08156512744681126,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.10681526405753787,
+     "per_sector": [
+      {
+       "sector": 64,
+       "dra": 54.436734055916624,
+       "ddec": 47.16584442644405,
+       "err": 2.006393275370454
+      },
+      {
+       "sector": 65,
+       "dra": 54.01930325205198,
+       "ddec": 46.5272685643602,
+       "err": 2.0042592488240354
+      },
+      {
+       "sector": 89,
+       "dra": 53.07777759342393,
+       "ddec": 47.749252237483866,
+       "err": 2.0034278618401844
+      }
+     ]
     },
     "verdict": "on G12.3 at 72\"",
-    "offset_arcsec": 71.56742523433837,
-    "offset_sigma": 122.8083602965558,
+    "offset_arcsec": 71.56864127246108,
+    "offset_sigma": 61.83518697758617,
     "closest_neighbours": [
      {
       "name": "G12.3 at 72\"",
-      "sigma": 2.268531011623422
+      "sigma": 1.1398212405645893
      }
     ],
     "n_candidates": 1,
@@ -22278,32 +22863,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 42.29909580101138,
-     "ddec": -21.773443532803846,
-     "err": 0.4236737140570385,
+     "dra": 42.32481125108343,
+     "ddec": -21.92434096536084,
+     "err": 1.1588058574846762,
      "n_eclipses": 24,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      65
-     ],
-     "reduced_chi2": 0.15075924064980492,
-     "n_sectors": 3
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.0829403832993611,
+     "per_sector": [
+      {
+       "sector": 64,
+       "dra": 42.5521356006602,
+       "ddec": -21.632560143426076,
+       "err": 2.0070013035676215
+      },
+      {
+       "sector": 65,
+       "dra": 42.947714950006606,
+       "ddec": -21.912367197606486,
+       "err": 2.0087889301352733
+      },
+      {
+       "sector": 89,
+       "dra": 41.476922686619744,
+       "ddec": -22.227633802303494,
+       "err": 2.0055455741824777
+      }
+     ]
     },
     "verdict": "on G14.7 at 47\"",
-    "offset_arcsec": 47.57411427298817,
-    "offset_sigma": 112.28951123123805,
+    "offset_arcsec": 47.6661973961133,
+    "offset_sigma": 41.13389407573272,
     "closest_neighbours": [
      {
       "name": "G14.7 at 47\"",
-      "sigma": 1.2784815603648854
+      "sigma": 0.444983439528055
      },
      {
       "name": "G16.2 at 50\"",
-      "sigma": 36.99256499696016
+      "sigma": 13.418499640565175
      },
      {
       "name": "G15.7 at 30\"",
-      "sigma": 43.51968007797298
+      "sigma": 16.00726904688166
      }
     ],
     "n_candidates": 27,
@@ -22971,32 +23574,52 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 20.275476813719706,
-     "ddec": -34.78733574089785,
-     "err": 0.6019456975024972,
-     "n_eclipses": 23,
-     "n_rejected": 11,
+     "dra": 20.50156902323114,
+     "ddec": -34.340062124552404,
+     "err": 2.5711883478411934,
+     "n_eclipses": 32,
+     "n_sectors": 3,
+     "n_sectors_used": 2,
      "rejected_sectors": [
       64
      ],
-     "reduced_chi2": 1.920573412312108,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 3.2696876487780475,
+     "per_sector": [
+      {
+       "sector": 63,
+       "dra": 22.028965942999754,
+       "ddec": -31.040511596945844,
+       "err": 2.010846736241054
+      },
+      {
+       "sector": 64,
+       "dra": 3.707755184972036,
+       "ddec": -32.62886785201316,
+       "err": 2.0238440341597483
+      },
+      {
+       "sector": 90,
+       "dra": 18.973935945107794,
+       "ddec": -37.64012281190454,
+       "err": 2.0110021836877263
+      }
+     ]
     },
     "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 40.26479464710623,
-    "offset_sigma": 66.89107475004286,
+    "offset_arcsec": 39.994427100940314,
+    "offset_sigma": 15.554841454738314,
     "closest_neighbours": [
      {
       "name": "Gnan at 24\"",
-      "sigma": 34.48761308440714
+      "sigma": 7.903768529460786
      },
      {
       "name": "G9.1 at 27\"",
-      "sigma": 38.03864429212078
+      "sigma": 8.930050505557464
      },
      {
       "name": "G9.4 at 42\"",
-      "sigma": 43.3311365311132
+      "sigma": 10.273381116400795
      }
     ],
     "n_candidates": 15,
@@ -23583,33 +24206,52 @@
    },
    "2": {
     "centroid": {
-     "dra": 23.523658849237886,
-     "ddec": 0.018346457491795195,
-     "err": 1.6127076331754484,
-     "n_eclipses": 7,
-     "n_rejected": 8,
+     "dra": 23.25252000358417,
+     "ddec": 1.2465163852637913,
+     "err": 6.388789641677717,
+     "n_eclipses": 8,
+     "n_sectors": 3,
+     "n_sectors_used": 2,
      "rejected_sectors": [
-      64,
       90
      ],
-     "reduced_chi2": 1.4887072179802943,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 7.12992934554668,
+     "per_sector": [
+      {
+       "sector": 63,
+       "dra": 24.58968704590757,
+       "ddec": 3.246728323505705,
+       "err": 2.4760139094089286
+      },
+      {
+       "sector": 64,
+       "dra": 4.396087624644393,
+       "ddec": -26.96002772120142,
+       "err": 9.298010069422311
+      },
+      {
+       "sector": 90,
+       "dra": 19.323306218032187,
+       "ddec": -32.544701621894454,
+       "err": 2.9726414918125106
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 23.523666003576704,
-    "offset_sigma": 14.586441782543194,
+    "verdict": "on Gnan at 24\"",
+    "offset_arcsec": 23.285907532578864,
+    "offset_sigma": 3.6448073639287815,
     "closest_neighbours": [
      {
       "name": "Gnan at 24\"",
-      "sigma": 9.060098131749447
-     },
-     {
-      "name": "G13.4 at 56\"",
-      "sigma": 21.882685076652436
+      "sigma": 2.462195815848063
      },
      {
       "name": "G12.7 at 52\"",
-      "sigma": 21.89349223952227
+      "sigma": 5.391680150477874
+     },
+     {
+      "name": "G13.4 at 56\"",
+      "sigma": 5.674175049349568
      }
     ],
     "n_candidates": 38,
@@ -23889,7 +24531,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "a set on a neighbour",
   "verdict": "blend: an eclipse set comes from a neighbour"
  },
  "279178582": {
@@ -24512,34 +25154,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -7.555408870407246,
-     "ddec": 14.121125913366726,
-     "err": 0.40457151732498886,
-     "n_eclipses": 27,
-     "n_rejected": 3,
-     "rejected_sectors": [
-      75,
-      82,
-      83
-     ],
-     "reduced_chi2": 0.27551182364226706,
-     "n_sectors": 3
+     "dra": -7.458612262912397,
+     "ddec": 14.16943802760132,
+     "err": 1.1582517713833966,
+     "n_eclipses": 25,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.09907886080010259,
+     "per_sector": [
+      {
+       "sector": 75,
+       "dra": -7.127653629558458,
+       "ddec": 13.642726412241876,
+       "err": 2.006613449162164
+      },
+      {
+       "sector": 82,
+       "dra": -7.292857808876028,
+       "ddec": 13.80269798572717,
+       "err": 2.004983582787915
+      },
+      {
+       "sector": 83,
+       "dra": -7.95571572788978,
+       "ddec": 15.063703459672837,
+       "err": 2.0068572684752755
+      }
+     ]
     },
     "verdict": "on G13.2 at 15\"",
-    "offset_arcsec": 16.015317675905955,
-    "offset_sigma": 39.58587540170552,
+    "offset_arcsec": 16.0126159919765,
+    "offset_sigma": 13.824814593506986,
     "closest_neighbours": [
      {
       "name": "G13.2 at 15\"",
-      "sigma": 2.028269078936441
+      "sigma": 0.6962479665812975
      },
      {
       "name": "G13.0 at 40\"",
-      "sigma": 58.90512731973239
+      "sigma": 20.569886947245916
      },
      {
       "name": "G14.3 at 34\"",
-      "sigma": 79.59989850055506
+      "sigma": 27.710727407568875
      }
     ],
     "n_candidates": 33,
@@ -25058,30 +25716,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 84.17128250747932,
-     "ddec": 21.167689950532523,
-     "err": 0.3032516616398828,
-     "n_eclipses": 45,
-     "n_rejected": 0,
+     "dra": 84.21110646372341,
+     "ddec": 21.192328418769822,
+     "err": 1.1556335024092454,
+     "n_eclipses": 43,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.09257214456435121,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.10841110636630781,
+     "per_sector": [
+      {
+       "sector": 75,
+       "dra": 84.60919629867588,
+       "ddec": 21.1508214453836,
+       "err": 2.0016201700056597
+      },
+      {
+       "sector": 82,
+       "dra": 84.61173910722313,
+       "ddec": 20.589560537741278,
+       "err": 2.0015129268906318
+      },
+      {
+       "sector": 83,
+       "dra": 83.4122655702768,
+       "ddec": 21.836728757139074,
+       "err": 2.0017147416897023
+      }
+     ]
     },
     "verdict": "on G16.3 at 87\"",
-    "offset_arcsec": 86.79214190694783,
-    "offset_sigma": 286.2050002878968,
+    "offset_arcsec": 86.83677352166856,
+    "offset_sigma": 75.14213921683017,
     "closest_neighbours": [
      {
       "name": "G16.3 at 87\"",
-      "sigma": 1.9129723831569405
+      "sigma": 0.4923577769242835
      },
      {
       "name": "G13.3 at 86\"",
-      "sigma": 2.0793038100191894
+      "sigma": 0.5796217714602611
      },
      {
       "name": "G14.4 at 88\"",
-      "sigma": 7.980777669057384
+      "sigma": 2.0600851054054754
      }
     ],
     "n_candidates": 134,
@@ -26602,33 +27280,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 0.8981516750454993,
-     "ddec": 1.6566339275218125,
-     "err": 0.429353087126345,
-     "n_eclipses": 26,
-     "n_rejected": 2,
-     "rejected_sectors": [
-      64,
-      99
-     ],
-     "reduced_chi2": 0.542293554932321,
-     "n_sectors": 3
+     "dra": 1.1860598149000898,
+     "ddec": 1.4887028519989294,
+     "err": 1.1672471352449774,
+     "n_eclipses": 23,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.08174913182422364,
+     "per_sector": [
+      {
+       "sector": 64,
+       "dra": 1.8948285239412648,
+       "ddec": 1.475432478701196,
+       "err": 2.022903423404837
+      },
+      {
+       "sector": 90,
+       "dra": 1.3758707007844009,
+       "ddec": 1.5075153302597128,
+       "err": 2.0276389212493315
+      },
+      {
+       "sector": 99,
+       "dra": 0.29561837935632557,
+       "ddec": 1.4832925828825654,
+       "err": 2.014715188962429
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 1.8844395456483558,
-    "offset_sigma": 4.38902060367351,
+    "verdict": "on target",
+    "offset_arcsec": 1.9034111657943433,
+    "offset_sigma": 1.6306839471444603,
     "closest_neighbours": [
      {
       "name": "G16.4 at 21\"",
-      "sigma": 45.494529955857544
-     },
-     {
-      "name": "G15.7 at 18\"",
-      "sigma": 45.62773191635346
+      "sigma": 16.724332807337042
      },
      {
       "name": "G13.4 at 21\"",
-      "sigma": 45.71124985795712
+      "sigma": 16.902945958833737
+     },
+     {
+      "name": "G15.7 at 18\"",
+      "sigma": 16.982997132500813
      }
     ],
     "n_candidates": 69,
@@ -27113,30 +27808,50 @@
    },
    "2": {
     "centroid": {
-     "dra": -1.5788835149538585,
-     "ddec": 4.885545952883097,
-     "err": 0.7753682791155767,
+     "dra": -1.4457835577253786,
+     "ddec": 4.914265684840911,
+     "err": 1.272931396395416,
      "n_eclipses": 13,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.33696592708672,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.09502894765729213,
+     "per_sector": [
+      {
+       "sector": 64,
+       "dra": -1.7679113997693812,
+       "ddec": 5.780327898566808,
+       "err": 2.321393836510273
+      },
+      {
+       "sector": 90,
+       "dra": -0.6758590634866237,
+       "ddec": 4.597671663394305,
+       "err": 2.2212318974742398
+      },
+      {
+       "sector": 99,
+       "dra": -1.8663688096809057,
+       "ddec": 4.492485839214507,
+       "err": 2.090145244093104
+      }
+     ]
     },
     "verdict": "on G17.3 at 5\"",
-    "offset_arcsec": 5.134338556379532,
-    "offset_sigma": 6.6218063011760195,
+    "offset_arcsec": 5.122528410559961,
+    "offset_sigma": 4.024198338626514,
     "closest_neighbours": [
      {
       "name": "G17.3 at 5\"",
-      "sigma": 1.1487583894548252
+      "sigma": 0.8027365714498971
      },
      {
       "name": "G17.1 at 20\"",
-      "sigma": 18.83876875247828
+      "sigma": 11.505829558827363
      },
      {
       "name": "G13.4 at 21\"",
-      "sigma": 22.311125232172145
+      "sigma": 13.528825919476246
      }
     ],
     "n_candidates": 139,
@@ -27491,20 +28206,38 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -1.6273031768075792,
-     "ddec": -0.7741326737329262,
-     "err": 0.16654396679925987,
-     "n_eclipses": 156,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      89
-     ],
-     "reduced_chi2": 0.6104851438041121,
-     "n_sectors": 3
+     "dra": -1.5567232613334454,
+     "ddec": -0.41352247637460154,
+     "err": 1.1557049343611892,
+     "n_eclipses": 139,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.8993822736165331,
+     "per_sector": [
+      {
+       "sector": 62,
+       "dra": -1.9406807852703063,
+       "ddec": -2.105136801114321,
+       "err": 2.0019614254249984
+      },
+      {
+       "sector": 89,
+       "dra": -2.0597392073433163,
+       "ddec": -1.6807499418339455,
+       "err": 2.001185215187158
+      },
+      {
+       "sector": 99,
+       "dra": -0.6692608499096697,
+       "ddec": 2.546631609557046,
+       "err": 2.002072704389886
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 1.8020535579690544,
-    "offset_sigma": 10.82028723466831,
+    "verdict": "on target",
+    "offset_arcsec": 1.610710449101148,
+    "offset_sigma": 1.3937038782234334,
     "closest_neighbours": [],
     "n_candidates": 0,
     "per_eclipse": [
@@ -30181,20 +30914,38 @@
    },
    "2": {
     "centroid": {
-     "dra": -1.878920521408554,
-     "ddec": -4.974179818953717,
-     "err": 0.8059270592167274,
-     "n_eclipses": 7,
-     "n_rejected": 2,
-     "rejected_sectors": [
-      99
-     ],
-     "reduced_chi2": 0.07008877904806728,
-     "n_sectors": 3
+     "dra": -1.8766069441496362,
+     "ddec": -1.6720620827310169,
+     "err": 2.324367704555004,
+     "n_eclipses": 9,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 3.872949371538737,
+     "per_sector": [
+      {
+       "sector": 62,
+       "dra": -2.025201162172472,
+       "ddec": -5.179240783712244,
+       "err": 2.044930761393003
+      },
+      {
+       "sector": 89,
+       "dra": -1.7759346389162824,
+       "ddec": -4.665981722540427,
+       "err": 2.0325056315896375
+      },
+      {
+       "sector": 99,
+       "dra": -1.8292300615378325,
+       "ddec": 4.962319706417517,
+       "err": 2.0599777047919168
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 5.317217994125934,
-    "offset_sigma": 6.597641726155325,
+    "verdict": "on target",
+    "offset_arcsec": 2.513452850430543,
+    "offset_sigma": 1.0813490677507664,
     "closest_neighbours": [],
     "n_candidates": 0,
     "per_eclipse": [
@@ -30354,7 +31105,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "both sets on target",
   "verdict": "both eclipse sets on the target"
  },
  "346000671": {
@@ -30521,32 +31272,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 2.2430903616838043,
-     "ddec": -6.524269105555361,
-     "err": 0.3418129203354382,
-     "n_eclipses": 36,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      58
-     ],
-     "reduced_chi2": 0.8295932201255329,
-     "n_sectors": 3
+     "dra": 2.139127930367966,
+     "ddec": -6.369212486482429,
+     "err": 1.1590227697443798,
+     "n_eclipses": 27,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.49804085866767844,
+     "per_sector": [
+      {
+       "sector": 58,
+       "dra": 3.5011370411894065,
+       "ddec": -5.6389775144814624,
+       "err": 2.0086231059175415
+      },
+      {
+       "sector": 78,
+       "dra": 0.6166120767775773,
+       "ddec": -5.498107013959343,
+       "err": 2.009633556925744
+      },
+      {
+       "sector": 84,
+       "dra": 2.2974069532669787,
+       "ddec": -7.962659710049103,
+       "err": 2.004214730125266
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 6.899097167918635,
-    "offset_sigma": 20.183839631188324,
+    "verdict": "on G10.2 at 6\"",
+    "offset_arcsec": 6.71883442275846,
+    "offset_sigma": 5.796982249313606,
     "closest_neighbours": [
      {
       "name": "G10.2 at 6\"",
-      "sigma": 4.453764382265495
+      "sigma": 1.1827380268010241
      },
      {
       "name": "G12.2 at 42\"",
-      "sigma": 136.69422224788445
+      "sigma": 40.23990696899954
      },
      {
       "name": "Gnan at 72\"",
-      "sigma": 216.55069705188
+      "sigma": 63.840033716832636
      }
     ],
     "n_candidates": 4,
@@ -31184,32 +31953,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 11.556769180844004,
-     "ddec": -2.400341832176504,
-     "err": 1.4130665448641886,
-     "n_eclipses": 6,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      78
-     ],
-     "reduced_chi2": 1.4890278757014896,
-     "n_sectors": 3
+     "dra": 6.037839849860855,
+     "ddec": -3.4345308721314423,
+     "err": 3.3108700911474997,
+     "n_eclipses": 7,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 5.062825683275168,
+     "per_sector": [
+      {
+       "sector": 58,
+       "dra": 12.551166729035254,
+       "ddec": -2.4530481451022537,
+       "err": 2.0877774619581073
+      },
+      {
+       "sector": 78,
+       "dra": -0.6730960105055157,
+       "ddec": -4.174756712259628,
+       "err": 2.1403230200419143
+      },
+      {
+       "sector": 84,
+       "dra": 3.964,
+       "ddec": -7.93,
+       "err": 8.408322603230681
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 11.803412845893439,
-    "offset_sigma": 8.353048119915597,
+    "verdict": "target or G10.2 at 6\" (unresolved)",
+    "offset_arcsec": 6.946330856228468,
+    "offset_sigma": 2.0980378767506913,
     "closest_neighbours": [
      {
       "name": "G10.2 at 6\"",
-      "sigma": 7.989319642679917
+      "sigma": 1.743765853834294
      },
      {
       "name": "G13.1 at 15\"",
-      "sigma": 12.18643507893177
+      "sigma": 4.020464648476291
      },
      {
       "name": "G12.2 at 42\"",
-      "sigma": 27.660681910186014
+      "sigma": 12.752128466957329
      }
     ],
     "n_candidates": 10,
@@ -31336,7 +32123,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "a set on a neighbour",
   "verdict": "blend: an eclipse set comes from a neighbour"
  },
  "309334280": {
@@ -31492,18 +32279,38 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 0.7824904679148812,
-     "ddec": -2.382772242014371,
-     "err": 0.6048062889048683,
-     "n_eclipses": 22,
-     "n_rejected": 0,
+     "dra": 1.531507693488563,
+     "ddec": -2.9662899818913067,
+     "err": 1.777612685818206,
+     "n_eclipses": 18,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 1.8930183542076484,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 2.3220571109714303,
+     "per_sector": [
+      {
+       "sector": 45,
+       "dra": 0.5010783411913001,
+       "ddec": -3.735693453858261,
+       "err": 2.016534129881134
+      },
+      {
+       "sector": 71,
+       "dra": -0.4777071568132997,
+       "ddec": 0.7774949024692416,
+       "err": 2.0199290236245395
+      },
+      {
+       "sector": 72,
+       "dra": 4.590221442417971,
+       "ddec": -5.953310114959572,
+       "err": 2.0250988534356504
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 2.507966285597125,
-    "offset_sigma": 4.146726533115813,
+    "verdict": "on target",
+    "offset_arcsec": 3.3383217448118128,
+    "offset_sigma": 1.8779803786533162,
     "closest_neighbours": [],
     "n_candidates": 0,
     "per_eclipse": [
@@ -31885,30 +32692,50 @@
    },
    "2": {
     "centroid": {
-     "dra": -46.67630064530508,
-     "ddec": -24.9466271799962,
-     "err": 0.5234940709190032,
+     "dra": -46.822326033864854,
+     "ddec": -24.94369961460835,
+     "err": 1.1589967070960951,
      "n_eclipses": 15,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.09923395079836435,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.1302290367943574,
+     "per_sector": [
+      {
+       "sector": 45,
+       "dra": -46.22812434435842,
+       "ddec": -25.604192125791396,
+       "err": 2.0078464691525446
+      },
+      {
+       "sector": 71,
+       "dra": -47.794482794514785,
+       "ddec": -24.66778903489451,
+       "err": 2.008338006488801
+      },
+      {
+       "sector": 72,
+       "dra": -46.44548774072326,
+       "ddec": -24.559635900958355,
+       "err": 2.006141059307001
+      }
+     ]
     },
     "verdict": "on G12.7 at 53\"",
-    "offset_arcsec": 52.92458076913442,
-    "offset_sigma": 101.09872051888644,
+    "offset_arcsec": 53.052034510331,
+    "offset_sigma": 45.774102881840484,
     "closest_neighbours": [
      {
       "name": "G12.7 at 53\"",
-      "sigma": 0.22367971738075212
+      "sigma": 0.20983680228969168
      },
      {
       "name": "G14.1 at 55\"",
-      "sigma": 30.741883780387408
+      "sigma": 13.950437094420018
      },
      {
       "name": "G14.4 at 38\"",
-      "sigma": 39.01456902933294
+      "sigma": 17.676228185342367
      }
     ],
     "n_candidates": 9,
@@ -32316,30 +33143,38 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -5.212573133404985,
-     "ddec": 36.024792530568256,
-     "err": 1.439279874148287,
-     "n_eclipses": 2,
-     "n_rejected": 0,
+     "dra": -5.171,
+     "ddec": 37.388,
+     "err": 2.0129540481590733,
+     "n_eclipses": 1,
+     "n_sectors": 1,
+     "n_sectors_used": 1,
      "rejected_sectors": [],
-     "reduced_chi2": 0.4698496226576523,
-     "n_sectors": 1
+     "reduced_chi2_sectors": null,
+     "per_sector": [
+      {
+       "sector": 90,
+       "dra": -5.171,
+       "ddec": 37.388,
+       "err": 2.0129540481590733
+      }
+     ]
     },
     "verdict": "on G13.2 at 38\"",
-    "offset_arcsec": 36.39995323543125,
-    "offset_sigma": 25.29039270904236,
+    "offset_arcsec": 37.743897321288905,
+    "offset_sigma": 18.750501212785856,
     "closest_neighbours": [
      {
       "name": "G13.2 at 38\"",
-      "sigma": 1.5591811496458508
+      "sigma": 0.605655529887154
      },
      {
       "name": "G14.0 at 28\"",
-      "sigma": 9.486519378598075
+      "sigma": 7.2136801626147475
      },
      {
       "name": "G13.6 at 77\"",
-      "sigma": 29.71626614370435
+      "sigma": 20.703049465331418
      }
     ],
     "n_candidates": 11,
@@ -32382,32 +33217,38 @@
    },
    "2": {
     "centroid": {
-     "dra": -0.7015854596104566,
-     "ddec": -6.446884203783886,
-     "err": 0.5757324953026896,
-     "n_eclipses": 14,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      90
-     ],
-     "reduced_chi2": 0.45245903268333865,
-     "n_sectors": 1
+     "dra": -0.8887915774216447,
+     "ddec": -6.580553988857942,
+     "err": 2.0121864170212156,
+     "n_eclipses": 12,
+     "n_sectors": 1,
+     "n_sectors_used": 1,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": null,
+     "per_sector": [
+      {
+       "sector": 90,
+       "dra": -0.8887915774216447,
+       "ddec": -6.580553988857942,
+       "err": 2.0121864170212156
+      }
+     ]
     },
     "verdict": "on G14.9 at 5\"",
-    "offset_arcsec": 6.484947038653053,
-    "offset_sigma": 11.263819728020758,
+    "offset_arcsec": 6.640304305404221,
+    "offset_sigma": 3.3000442947201387,
     "closest_neighbours": [
      {
       "name": "G14.9 at 5\"",
-      "sigma": 2.3987281105766285
+      "sigma": 0.7911642869341818
      },
      {
       "name": "G16.4 at 23\"",
-      "sigma": 29.394478803320627
+      "sigma": 8.37863954126507
      },
      {
       "name": "G16.5 at 20\"",
-      "sigma": 38.07937228215458
+      "sigma": 11.005857402147841
      }
     ],
     "n_candidates": 54,
@@ -32854,28 +33695,46 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 0.621987949266046,
-     "ddec": 1.2376952139564459,
-     "err": 0.4531164222542271,
-     "n_eclipses": 20,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      87
-     ],
-     "reduced_chi2": 0.1959451996345265,
-     "n_sectors": 3
+     "dra": 0.8130140125877696,
+     "ddec": 1.1347365402537761,
+     "err": 1.1583694260136004,
+     "n_eclipses": 19,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.14287494718875168,
+     "per_sector": [
+      {
+       "sector": 33,
+       "dra": -0.08664126959278606,
+       "ddec": 0.3160176365193094,
+       "err": 2.0034341976719876
+      },
+      {
+       "sector": 34,
+       "dra": 1.219088426954106,
+       "ddec": 1.3634767713936047,
+       "err": 2.003074146025555
+      },
+      {
+       "sector": 87,
+       "dra": 1.310973810225994,
+       "ddec": 1.730042477529389,
+       "err": 2.0125992409254456
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 1.3851925684477497,
-    "offset_sigma": 3.05703457304968,
+    "verdict": "on target",
+    "offset_arcsec": 1.3959293680022553,
+    "offset_sigma": 1.205081329542848,
     "closest_neighbours": [
      {
       "name": "G13.4 at 50\"",
-      "sigma": 107.5189144530559
+      "sigma": 42.12227433292474
      },
      {
       "name": "G13.7 at 48\"",
-      "sigma": 108.05784291167357
+      "sigma": 42.29109194057639
      }
     ],
     "n_candidates": 2,
@@ -33241,32 +34100,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 8.386952431991928,
-     "ddec": 51.17065143319205,
-     "err": 0.4084328327935987,
+     "dra": 8.486827510091477,
+     "ddec": 51.032871539480595,
+     "err": 1.1581017595557808,
      "n_eclipses": 29,
-     "n_rejected": 1,
-     "rejected_sectors": [
-      87
-     ],
-     "reduced_chi2": 0.1788841445838321,
-     "n_sectors": 3
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.22869095275745105,
+     "per_sector": [
+      {
+       "sector": 33,
+       "dra": 7.475162677094371,
+       "ddec": 51.44403745436968,
+       "err": 2.0022929689637294
+      },
+      {
+       "sector": 34,
+       "dra": 8.18400391925845,
+       "ddec": 51.35522168403728,
+       "err": 2.0052747826665396
+      },
+      {
+       "sector": 87,
+       "dra": 9.810717525008666,
+       "ddec": 50.29456851177203,
+       "err": 2.0101288926689
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 51.85341395890665,
-    "offset_sigma": 126.9570166635226,
+    "verdict": "on G13.4 at 50\"",
+    "offset_arcsec": 51.73374352152736,
+    "offset_sigma": 44.67115527168454,
     "closest_neighbours": [
      {
       "name": "G13.4 at 50\"",
-      "sigma": 4.564286326746969
+      "sigma": 1.5364233467230162
      },
      {
       "name": "G17.1 at 87\"",
-      "sigma": 98.76507630421013
+      "sigma": 34.97834374989252
      },
      {
       "name": "G15.6 at 118\"",
-      "sigma": 161.39294151783147
+      "sigma": 57.01470606249673
      }
     ],
     "n_candidates": 12,
@@ -33784,7 +34661,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "a set on a neighbour",
   "verdict": "blend: an eclipse set comes from a neighbour"
  },
  "389836747": {
@@ -33941,18 +34818,38 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 3.7122158036643778,
-     "ddec": -2.848774543739917,
-     "err": 0.542163832983477,
-     "n_eclipses": 29,
-     "n_rejected": 0,
+     "dra": 3.978172712143323,
+     "ddec": -2.242957419286237,
+     "err": 1.8731823923788666,
+     "n_eclipses": 25,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 1.9897334435700762,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 2.60138734441873,
+     "per_sector": [
+      {
+       "sector": 25,
+       "dra": 1.0206276222486623,
+       "ddec": 1.437108870377536,
+       "err": 2.017738519734261
+      },
+      {
+       "sector": 58,
+       "dra": 7.075849997103359,
+       "ddec": -5.408911298896136,
+       "err": 2.0077854199874627
+      },
+      {
+       "sector": 85,
+       "dra": 3.808683973699765,
+       "ddec": -2.721560830098216,
+       "err": 2.0092711116409694
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 4.679322875591738,
-    "offset_sigma": 8.630828157315216,
+    "verdict": "on target",
+    "offset_arcsec": 4.566915382659606,
+    "offset_sigma": 2.438051628736381,
     "closest_neighbours": [],
     "n_candidates": 0,
     "per_eclipse": [
@@ -34453,34 +35350,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 2.684758521222542,
-     "ddec": -5.523811000465554,
-     "err": 0.9655113480207018,
-     "n_eclipses": 12,
-     "n_rejected": 3,
-     "rejected_sectors": [
-      25,
-      58,
-      85
-     ],
-     "reduced_chi2": 1.558566854946257,
-     "n_sectors": 3
+     "dra": 1.164690608319141,
+     "ddec": -3.13823356329021,
+     "err": 2.6210389240571734,
+     "n_eclipses": 13,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 4.408924304340458,
+     "per_sector": [
+      {
+       "sector": 25,
+       "dra": -0.8897216460701036,
+       "ddec": 3.546271654922313,
+       "err": 2.303590713816452
+      },
+      {
+       "sector": 58,
+       "dra": 5.183460335383972,
+       "ddec": -6.196471928421611,
+       "err": 2.0989048051643655
+      },
+      {
+       "sector": 85,
+       "dra": -1.1552405575626368,
+       "ddec": -5.636589789770211,
+       "err": 2.101943826417518
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 6.1416949033749075,
-    "offset_sigma": 6.361079976911076,
+    "verdict": "on target",
+    "offset_arcsec": 3.347389148406259,
+    "offset_sigma": 1.2771230208305147,
     "closest_neighbours": [
      {
-      "name": "G14.9 at 49\"",
-      "sigma": 45.553937010428626
+      "name": "G14.1 at 41\"",
+      "sigma": 16.661684242860545
      },
      {
-      "name": "G14.1 at 41\"",
-      "sigma": 47.228017709809464
+      "name": "G14.9 at 49\"",
+      "sigma": 17.55167139946349
      },
      {
       "name": "G14.5 at 49\"",
-      "sigma": 49.56971756847283
+      "sigma": 18.361816384375615
      }
     ],
     "n_candidates": 10,
@@ -34845,7 +35758,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "both sets on target",
   "verdict": "blend: an eclipse set comes from a neighbour"
  },
  "345050437": {
@@ -35096,30 +36009,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 0.5543369568474338,
-     "ddec": -1.8578318061849965,
-     "err": 0.5812983289428975,
-     "n_eclipses": 15,
-     "n_rejected": 0,
+     "dra": -0.3475280916323298,
+     "ddec": -1.4142975309612376,
+     "err": 1.5541300175966675,
+     "n_eclipses": 13,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 1.1955645743885746,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 1.7983656970204225,
+     "per_sector": [
+      {
+       "sector": 58,
+       "dra": 1.9485921962945976,
+       "ddec": -0.0780105152761602,
+       "err": 2.0067720128771214
+      },
+      {
+       "sector": 77,
+       "dra": -3.094301752302113,
+       "ddec": 0.5021785364095955,
+       "err": 2.0096759288076234
+      },
+      {
+       "sector": 84,
+       "dra": 0.09459367706542582,
+       "ddec": -4.657130120731883,
+       "err": 2.005413197811631
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 1.9387698372420281,
-    "offset_sigma": 3.3352406857382846,
+    "verdict": "on target",
+    "offset_arcsec": 1.4563698982595945,
+    "offset_sigma": 0.9370965632024463,
     "closest_neighbours": [
      {
       "name": "Gnan at 40\"",
-      "sigma": 69.95812474563917
+      "sigma": 26.593965817089103
      },
      {
       "name": "G13.5 at 68\"",
-      "sigma": 112.79048315789615
+      "sigma": 42.63449769928507
      },
      {
       "name": "G12.2 at 73\"",
-      "sigma": 123.15609446319499
+      "sigma": 46.68812645257933
      }
     ],
     "n_candidates": 8,
@@ -35383,33 +36316,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 44.89503429822247,
-     "ddec": 3.880861755390227,
-     "err": 0.4426746934803247,
-     "n_eclipses": 26,
-     "n_rejected": 2,
-     "rejected_sectors": [
-      58,
-      84
-     ],
-     "reduced_chi2": 0.3547189762485818,
-     "n_sectors": 3
+     "dra": 44.349654238478344,
+     "ddec": 4.061132865501892,
+     "err": 1.1658148761838256,
+     "n_eclipses": 25,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.4485490308383471,
+     "per_sector": [
+      {
+       "sector": 58,
+       "dra": 45.40127773881406,
+       "ddec": 4.136665128376517,
+       "err": 2.01617479372351
+      },
+      {
+       "sector": 77,
+       "dra": 42.7995513253988,
+       "ddec": 5.363147558183316,
+       "err": 2.023499063955343
+      },
+      {
+       "sector": 84,
+       "dra": 44.837863141910155,
+       "ddec": 2.6903812530626614,
+       "err": 2.0180993335714374
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 45.06245879446685,
-    "offset_sigma": 101.79587732965746,
+    "verdict": "on G16.0 at 44\"",
+    "offset_arcsec": 44.53520664849148,
+    "offset_sigma": 38.200924999578724,
     "closest_neighbours": [
      {
       "name": "G16.0 at 44\"",
-      "sigma": 3.4001693681558107
+      "sigma": 0.944187162467232
      },
      {
       "name": "G15.9 at 42\"",
-      "sigma": 7.382102976371125
+      "sigma": 2.313125414866569
      },
      {
       "name": "Gnan at 40\"",
-      "sigma": 27.727364913972007
+      "sigma": 10.141835532479043
      }
     ],
     "n_candidates": 33,
@@ -35893,7 +36843,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "a set on a neighbour",
   "verdict": "both eclipse sets on the target"
  },
  "64558861": {
@@ -36276,30 +37226,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": -21.82964407351976,
-     "ddec": -50.34420431196913,
-     "err": 0.23257033847375538,
-     "n_eclipses": 76,
-     "n_rejected": 0,
+     "dra": -21.77447554983616,
+     "ddec": -50.316942061794286,
+     "err": 1.1553125053783124,
+     "n_eclipses": 67,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.11271976085325217,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.17314538357498405,
+     "per_sector": [
+      {
+       "sector": 77,
+       "dra": -20.568391552923078,
+       "ddec": -49.70598174900909,
+       "err": 2.000590573152899
+      },
+      {
+       "sector": 83,
+       "dra": -22.432459951500395,
+       "ddec": -50.731072854576055,
+       "err": 2.0010896110463743
+      },
+      {
+       "sector": 84,
+       "dra": -22.32340200583837,
+       "ddec": -50.514157288274426,
+       "err": 2.001500000578999
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 54.87323817838571,
-    "offset_sigma": 235.94254769757723,
+    "verdict": "on G12.3 at 54\"",
+    "offset_arcsec": 54.8262933629511,
+    "offset_sigma": 47.45581226526928,
     "closest_neighbours": [
      {
       "name": "G12.3 at 54\"",
-      "sigma": 6.012344459380625
+      "sigma": 1.1591260355408934
      },
      {
       "name": "G14.1 at 80\"",
-      "sigma": 120.86464170060842
+      "sigma": 24.345612605095464
      },
      {
       "name": "G13.9 at 17\"",
-      "sigma": 308.4117299777672
+      "sigma": 62.0432672177543
      }
     ],
     "n_candidates": 14,
@@ -37600,33 +38570,50 @@
    },
    "2": {
     "centroid": {
-     "dra": 68.33099642928704,
-     "ddec": -4.9406571828909565,
-     "err": 0.4282073575483797,
-     "n_eclipses": 23,
-     "n_rejected": 4,
-     "rejected_sectors": [
-      83,
-      84
-     ],
-     "reduced_chi2": 0.3545220903808221,
-     "n_sectors": 3
+     "dra": 68.63792566693513,
+     "ddec": -5.356439156835523,
+     "err": 1.1593103805354108,
+     "n_eclipses": 20,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
+     "rejected_sectors": [],
+     "reduced_chi2_sectors": 0.39347788229101544,
+     "per_sector": [
+      {
+       "sector": 77,
+       "dra": 69.02037275881244,
+       "ddec": -4.809919406410718,
+       "err": 2.004124533267663
+      },
+      {
+       "sector": 83,
+       "dra": 68.38291429119542,
+       "ddec": -7.318784367411404,
+       "err": 2.011468783292849
+      },
+      {
+       "sector": 84,
+       "dra": 68.50808144439998,
+       "ddec": -3.948958513091952,
+       "err": 2.008380449710858
+      }
+     ]
     },
-    "verdict": "offset, no catalogued source fits",
-    "offset_arcsec": 68.50938013453406,
-    "offset_sigma": 159.99113262969502,
+    "verdict": "on G13.1 at 70\"",
+    "offset_arcsec": 68.84661415277148,
+    "offset_sigma": 59.385834293121455,
     "closest_neighbours": [
      {
       "name": "G13.1 at 70\"",
-      "sigma": 3.8396159347543337
+      "sigma": 1.0848735013710231
      },
      {
       "name": "G15.4 at 71\"",
-      "sigma": 6.699799761285634
+      "sigma": 2.295668364652238
      },
      {
       "name": "G17.2 at 69\"",
-      "sigma": 9.15630483051086
+      "sigma": 3.0226704507651316
      }
     ],
     "n_candidates": 67,
@@ -38093,7 +39080,7 @@
     ]
    }
   },
-  "centroid_verdict": "unresolved or untested",
+  "centroid_verdict": "a set on a neighbour",
   "verdict": "blend: an eclipse set comes from a neighbour"
  },
  "238196979": {
@@ -38470,30 +39457,50 @@
   "centroid": {
    "1": {
     "centroid": {
-     "dra": 20.318031746752023,
-     "ddec": 47.1239422176592,
-     "err": 0.4155361801413584,
+     "dra": 20.34545501009964,
+     "ddec": 47.1204104696429,
+     "err": 1.1566585830471543,
      "n_eclipses": 26,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.13535099133081868,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.13682094318193364,
+     "per_sector": [
+      {
+       "sector": 45,
+       "dra": 21.210814536473798,
+       "ddec": 47.11268527308787,
+       "err": 2.002913999360094
+      },
+      {
+       "sector": 71,
+       "dra": 19.487556639640584,
+       "ddec": 46.52720057771069,
+       "err": 2.004300540560173
+      },
+      {
+       "sector": 72,
+       "dra": 20.336806902434546,
+       "ddec": 47.72055307423142,
+       "err": 2.0029606867415453
+      }
+     ]
     },
     "verdict": "on G14.2 at 51\"",
-    "offset_arcsec": 51.317524727867635,
-    "offset_sigma": 123.49712776011532,
+    "offset_arcsec": 51.32514610203872,
+    "offset_sigma": 44.373635275178096,
     "closest_neighbours": [
      {
       "name": "G14.2 at 51\"",
-      "sigma": 1.0017932715583489
+      "sigma": 0.33993435274600214
      },
      {
       "name": "G15.2 at 53\"",
-      "sigma": 78.48908807582723
+      "sigma": 28.22154916756741
      },
      {
       "name": "G13.4 at 46\"",
-      "sigma": 81.03692209478614
+      "sigma": 29.136311037037338
      }
     ],
     "n_candidates": 22,
@@ -38961,30 +39968,50 @@
    },
    "2": {
     "centroid": {
-     "dra": -39.32437737425189,
-     "ddec": 61.97326347454834,
-     "err": 0.4595085666602016,
+     "dra": -39.36990034991436,
+     "ddec": 61.98090680864112,
+     "err": 1.1567678966845043,
      "n_eclipses": 20,
-     "n_rejected": 0,
+     "n_sectors": 3,
+     "n_sectors_used": 3,
      "rejected_sectors": [],
-     "reduced_chi2": 0.08724222456707145,
-     "n_sectors": 3
+     "reduced_chi2_sectors": 0.07446214517869396,
+     "per_sector": [
+      {
+       "sector": 45,
+       "dra": -38.76473412427854,
+       "ddec": 61.95884051136656,
+       "err": 2.0043590291496036
+      },
+      {
+       "sector": 71,
+       "dra": -39.28681336564719,
+       "ddec": 62.40960497696496,
+       "err": 2.0030873513690457
+      },
+      {
+       "sector": 72,
+       "dra": -40.05752955853789,
+       "ddec": 61.574161970088085,
+       "err": 2.003296624353944
+      }
+     ]
     },
     "verdict": "on G16.1 at 73\"",
-    "offset_arcsec": 73.39681220297214,
-    "offset_sigma": 159.72893114144654,
+    "offset_arcsec": 73.4276641490361,
+    "offset_sigma": 63.476574997881954,
     "closest_neighbours": [
      {
       "name": "G16.1 at 73\"",
-      "sigma": 0.4447474511349996
+      "sigma": 0.14579730725359652
      },
      {
       "name": "G14.7 at 74\"",
-      "sigma": 1.2937453791259952
+      "sigma": 0.518240647536007
      },
      {
       "name": "G17.9 at 58\"",
-      "sigma": 42.18416055219186
+      "sigma": 16.762883604529776
      }
     ],
     "n_candidates": 32,

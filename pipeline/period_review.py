@@ -23,6 +23,7 @@ Output: results/candidates/period_review.csv and period_review.json
 """
 import json
 import math
+import os
 
 import env  # noqa: F401
 import numpy as np
@@ -184,6 +185,13 @@ def review(r, nasa, ticinfo):
     return out
 
 
+def _review_safe(r, nasa, ti):
+    try:
+        return review(r, nasa, ti)
+    except Exception as ex:
+        return {"tic": r["tic"], "id": r["id"], "error": repr(ex)[:200]}
+
+
 def main():
     import ticdb
     res = []
@@ -204,15 +212,15 @@ def main():
     nasa = pd.read_csv(CATALOGS / "nasa_pscomppars_transiting_20261012.csv", low_memory=False)
     tics = sorted({int(r["tic"]) for r in todo})
     ti = ticdb.query(tics, ["ra", "dec", "Tmag", "rho", "rad", "mass"]).set_index("tic")
+    import concurrent.futures as cf
     out = []
-    for i, r in enumerate(todo):
-        try:
-            o = review(r, nasa, ti)
-        except Exception as ex:
-            o = {"tic": r["tic"], "id": r["id"], "error": repr(ex)[:200]}
-        out.append(o)
-        if i % 20 == 0:
-            print(i, o["tic"], o["id"], o.get("n_credible"), o.get("n_aliases"), flush=True)
+    with cf.ProcessPoolExecutor(int(os.environ.get("N_PROC", "4"))) as ex:
+        futs = {ex.submit(_review_safe, r, nasa, ti): r for r in todo}
+        for i, fu in enumerate(cf.as_completed(futs)):
+            o = fu.result()
+            out.append(o)
+            if i % 20 == 0:
+                print(i, o["tic"], o["id"], o.get("n_credible"), o.get("n_aliases"), flush=True)
     json.dump(out, open(C / "period_review.json", "w"), indent=1, default=float)
     flat = pd.DataFrame([{k: (v if not isinstance(v, (list, dict)) else json.dumps(v, default=float)[:300])
                           for k, v in o.items() if k not in ("events", "ref")} for o in out])
