@@ -138,19 +138,45 @@ def test_star(row, max_sectors=3):
     return out
 
 
-def main(tics=None):
-    import report  # noqa: F401  (paths, consistent with the report's Track C table)
-    tc = pd.read_csv(C / "trackc_candidates.csv")
-    x = tc[tc.P2_recurs >= 2].sort_values(["P2_recurs", "snr2_max"], ascending=False).head(30)
+def kostov_rows(max_period=10.0):
+    """Calibration sample: Kostov et al. (2022) quadruple candidates, whose two eclipse sets the authors traced to
+    one star with their own pixel analysis (VizieR J/ApJS/259/66, saved by hand to the work catalogue folder)."""
+    from dossier import all_sectors
+    from env import CATALOGS
+    k = pd.read_csv(CATALOGS / "kostov2022_quadruples.csv")
+    rows = []
+    for tic, g in k.groupby("TIC"):
+        if len(g) != 2:
+            continue
+        p1, p2 = sorted(g.Per.astype(float))
+        if not (p2 < max_period):
+            continue
+        secs = sorted({int(s) for v in all_sectors(int(tic)).values() for s in v})
+        rows.append({"tic": int(tic), "P1": p1, "P2": p2, "sectors": ";".join(map(str, secs))})
+    return pd.DataFrame(rows)
+
+
+def main(tics=None, calib=False):
+    if calib:
+        x, out = kostov_rows(), C / "eb_pixels_kostov.json"
+    else:
+        tc = pd.read_csv(C / "trackc_candidates.csv")
+        x, out = tc[tc.P2_recurs >= 2].sort_values(["P2_recurs", "snr2_max"], ascending=False).head(30), C / "eb_pixels.json"
     if tics:
         x = x[x.tic.isin(tics)]
-    res = {}
+    res = json.load(open(out)) if out.exists() else {}
     for _, r in x.iterrows():
-        o = test_star(r)
+        if str(int(r.tic)) in res and tics is None:
+            continue
+        try:
+            o = test_star(r)
+        except Exception as ex:
+            o = {"tic": int(r.tic), "verdict": "error", "error": repr(ex)[:200], "sectors": []}
         res[str(int(r.tic))] = o
         print(int(r.tic), o["verdict"], [(s.get("sector"), {j: v["verdict"] for j, v in s.get("sets", {}).items()}) for s in o["sectors"]], flush=True)
-    json.dump(res, open(C / "eb_pixels.json", "w"), indent=1, default=float)
+        json.dump(res, open(out, "w"), indent=1, default=float)
 
 
 if __name__ == "__main__":
-    main([int(a) for a in sys.argv[1:]] or None)
+    args = [a for a in sys.argv[1:] if a != "--kostov"]
+    main([int(a) for a in args] or None, calib="--kostov" in sys.argv)
