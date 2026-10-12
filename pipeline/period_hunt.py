@@ -124,16 +124,16 @@ def best_period(ref, events, depth, dur, flat):
         dt = abs(o["t"] - ref)
         nmax = int(dt / 1.0)
         P = dt / np.arange(1, max(nmax, 1) + 1)
-        P = P[P >= max(1.0, 3 * D)]
+        P = P[P >= max(1.0, 5 * D)]          # transit duty cycle below 20%
         k = np.round((times[None, :] - ref) / P[:, None])
-        on = (np.abs(times[None, :] - ref - k * P[:, None]) < 0.5 * D).sum(1)
+        on = (np.abs(times[None, :] - ref - k * P[:, None]) < 0.25 * D).sum(1)
         cands += list(zip(on.tolist(), P.tolist()))
     if not cands:
         return None
     top = max(c[0] for c in cands)
     for count in range(top, 1, -1):
-        for _, P in sorted({c for c in cands if c[0] == count}, key=lambda c: -c[1]):
-            on_t = [tt for tt in times if abs(((tt - ref) / P) - round((tt - ref) / P)) * P < 0.5 * D]
+        for _, P in sorted({c for c in cands if c[0] == count}, key=lambda c: -c[1])[:30]:
+            on_t = [tt for tt in times if abs(((tt - ref) / P) - round((tt - ref) / P)) * P < 0.25 * D]
             rows = alias_table([min(on_t), max(on_t)], 0.6 * depth, dur, flat, p_min=0.999 * P, n_max=None)
             ok = [a for a in rows if a["status"] == "allowed" and abs(a["P"] - P) < 1e-3 * P]
             if ok:

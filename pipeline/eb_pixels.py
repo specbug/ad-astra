@@ -102,20 +102,37 @@ def test_star(row, max_sectors=3):
                            f"favours {worst[0]}" if worst[1]["dchi2"] < -9 else f"ambiguous ({worst[0]})")
                 sec_res["sets"][j] = {"P": P, "t0": t0, "dur_h": D * 24, "depth": dep, "n_eclipses": n_ev,
                                       "n_sources": len(srcs), "best_alternative": worst[0] if worst else None,
-                                      "best_dchi2": worst[1]["dchi2"] if worst else None, "verdict": verdict}
+                                      "best_dchi2": worst[1]["dchi2"] if worst else None, "verdict": verdict,
+                                      "dchi2_by_source": {k: v["dchi2"] for k, v in comb.items()}}
             out["sectors"].append(sec_res)
             done += 1
         except Exception as ex:
             out["sectors"].append({"sector": s, "error": repr(ex)[:200]})
+    # combine over sectors: delta-chi2 per neighbour summed over every sector where it was tested
+    # (sources are matched by position, rounded to 1", since names carry rounded magnitudes)
     v = [x["sets"] for x in out["sectors"] if "sets" in x]
-    on = lambda j: [s[j]["verdict"] for s in v if j in s]
-    v1, v2 = on(1), on(2)
-    if not v1 or not v2:
+    summary = {}
+    for j in (1, 2):
+        tot = {}
+        for sset in v:
+            for name, dc in sset.get(j, {}).get("dchi2_by_source", {}).items():
+                tot[name] = tot.get(name, 0.0) + dc
+        n_sec = sum(1 for sset in v if j in sset and sset[j]["n_eclipses"] > 0)
+        worst = min(tot.items(), key=lambda kv: kv[1]) if tot else None
+        summary[j] = {"n_sectors": n_sec, "best_alternative": worst[0] if worst else None,
+                      "combined_dchi2": worst[1] if worst else None,
+                      "verdict": ("untested" if n_sec == 0 else "on target" if not worst or worst[1] > 9 else
+                                  f"favours {worst[0]}" if worst[1] < -9 else "ambiguous"),
+                      "per_sector": [sset[j]["verdict"] for sset in v if j in sset]}
+    out["sets"] = summary
+    s1, s2 = summary[1]["verdict"], summary[2]["verdict"]
+    if "untested" in (s1, s2):
         out["verdict"] = "untested"
-    elif any(x.startswith("favours") for x in v2) or any(x.startswith("favours") for x in v1):
+    elif s1.startswith("favours") or s2.startswith("favours"):
         out["verdict"] = "blend: an eclipse set comes from a neighbour"
-    elif all(x == "on target" for x in v1 + v2):
-        out["verdict"] = "both eclipse sets on the target"
+    elif s1 == s2 == "on target":
+        split = any(x.startswith("favours") for j in (1, 2) for x in summary[j]["per_sector"])
+        out["verdict"] = "both eclipse sets on the target" + (" (one sector dissents)" if split else "")
     else:
         out["verdict"] = "inconclusive"
     return out
