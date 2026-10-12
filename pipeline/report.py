@@ -693,10 +693,10 @@ def verdict_chip(v):
 # cross-match (known.flag_confirmed) adds the rest.
 CONFIRMED_LIT = {65910228: "NGTS-38 b", 279401253: "TIC 279401253 b", 4672985: "TIC 4672985 b",
                  137966491: "HD 278555 b", 318707987: "HD 3167 c", 221567884: "HD 148797 b, c",
-                 453147896: "NGTS-39 b", 65612701: "TIC 65612701 b"}
+                 453147896: "NGTS-39 b", 65612701: "TIC 65612701 b", 70803960: "K2-290 c"}
 # Confirmed planets without TOIs that Track B found blind (checked against the published periods), and one it lost.
 RECOVERED = [("NGTS-38 b", "180.5 d, one transit"), ("TIC 279401253 b", "76.8 d, one transit"),
-             ("TIC 4672985 b", "69.0 d, one transit"), ("NGTS-39 b", "58.2 d"),
+             ("TIC 4672985 b", "69.0 d, one transit"), ("NGTS-39 b", "58.2 d"), ("K2-290 c", "48.4 d, one transit"),
              ("HD 148797 b and c", "42.1 and 68.2 d"), ("HD 3167 c", "29.85 d, one transit"),
              ("HD 278555 b", "28.84 d, period recovered"), ("TIC 65612701 b", "10.22 d, period recovered")]
 MISSED = [("TIC 245076932 b", "21.6 d: all nine transits found, then rejected as an eclipsing binary")]
@@ -717,8 +717,10 @@ def section_trackb(tb, singles, lit=None):
     conf, cand = show[conf_mask], show[lit_known & ~conf_mask]
 
     def conf_name(r):
+        if int(r.tic) in CONFIRMED_LIT:  # the planet the survey actually saw
+            return CONFIRMED_LIT[int(r.tic)]
         kp = r.get("known_planet")
-        return kp.split("; ")[0] if isinstance(kp, str) and kp else CONFIRMED_LIT.get(int(r.tic), f"TIC {int(r.tic)}")
+        return kp.split("; ")[0] if isinstance(kp, str) and kp else f"TIC {int(r.tic)}"
     ps_txt = (f", and all {len(show)} were matched by position against NASA's confirmed-planet table of 5 October 2026"
               if "known_planet" in show else "")
     pub_txt = ""
@@ -1138,8 +1140,9 @@ def build():
     vetting.</strong> Of {n_dv_all} shortlisted stars brighter than T = 10.5, these pass the pixel source test, the
     period-alias test and Gaia's binarity checks, and no catalogue we could reach lists them. They include a warm
     giant on a 20.4-day orbit (HIP 63987), a grazing companion every 24.05 days (TIC 441010857) and a single
-    16-hour transit of the A star HIP 109818. Two stars an earlier version of this report counted here are known
-    planetary systems that never became TOIs, HD 3167 (HIP 2736) and HD 278555 (TIC 137966491). The full
+    16-hour transit of the A star HIP 109818. Three stars an earlier version of this report counted here are known
+    planetary systems that never became TOIs: HD 3167 (HIP 2736), HD 278555 (TIC 137966491) and K2-290
+    (TIC 70803960). The full
     shortlist holds {n_tb} single and paired transits with no TOI.</div></li>
     <li>{chip(f"{n_tc} stars", "known")}<div><strong>Possible triple and quadruple stars.</strong> Eclipsing
     binaries with a second, independent set of eclipses that recurs across sectors. Most will be blends of two
@@ -1184,6 +1187,7 @@ def build():
 # ----------------------------------------------------------------------------------- deep-vetted list
 
 NOTES = {
+    70803960: "K2-290 c, a known 48.4-day warm Jupiter (the system also has a 9.2-day planet, K2-290 b).",
     162305348: "Short (1.9 h) for a 35-day orbit around an F star: a grazing crossing, so the companion may be larger than it looks.",
     457134361: "One 11.6-hour, 1%-deep transit; at least 17.6 days, and long for a Sun-like star, so likely hundreds of days.",
     4011632: "Gaia reports an astrometric binary (RUWE 5.7) with a variable radial velocity: the dip may belong to the companion.",

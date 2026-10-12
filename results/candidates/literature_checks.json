@@ -117,9 +117,14 @@
  },
  {
   "tic": 70803960,
-  "status": "no mentions found",
-  "summary": "Searches for TIC 70803960 and Gaia DR3 6253844468882760832 returned no page naming this star.",
-  "sources": []
+  "status": "known in this role",
+  "summary": "K2-290: two confirmed transiting planets, b (9.21 d) and c (48.37 d), at this position (0.52″). The survey's single 0.5%-deep, 8.4-hour transit is K2-290 c. Web searches by TIC and Gaia number missed it because pages use the K2 name (NASA Exoplanet Archive confirmed-planet table of 5 Oct 2026, position match; 12 Oct 2026).",
+  "sources": [
+   {
+    "title": "K2-290 overview, NASA Exoplanet Archive",
+    "url": "https://exoplanetarchive.ipac.caltech.edu/overview/K2-290"
+   }
+  ]
  },
  {
   "tic": 320329350,
