@@ -38,6 +38,10 @@ With R★ = 0.82 R☉ the planet radius is 3.4 R⊕; the orbit (a = 0.206 AU) re
 - No secondary eclipse at phase 0.5 (≤ 150 ppm); odd and even transit depths agree (2.3σ).
 - Gaia DR3: RUWE 1.00, no non-single-star solution, a single image in all scans.
 - Our pixel test, run blind on 40 confirmed TESS planets, never placed a planet's transits on a neighbour.
+- TRICERATOPS (Giacalone et al. 2021; 10 runs, the sector apertures, no contrast curve): FPP = 0.015 ± 0.006,
+  NFPP = 5 × 10⁻⁵. Planet scenarios carry 98.5% (84% on the target itself); the leading false-positive scenario
+  (1.5%) is a planet orbiting an unresolved companion. This is at the validation threshold (FPP < 0.015,
+  NFPP < 0.001) and requires high-resolution imaging to be called a validated planet.
 
 ## Predictions
 Next transits (UTC): 2026-11-02 10:54, 2026-12-08 19:03, 2027-01-14 03:12, 2027-02-19 11:22. TESS is expected to observe the star

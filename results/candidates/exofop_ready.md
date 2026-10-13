@@ -22,7 +22,9 @@ the data is present. Difference-image centroids (five transits) 1.4" ± 1.2" fro
 Gaia neighbour (G = 16.2 at 2.2", parallax 0.69 mas, background) would need a ~73% eclipse, excluded by the
 transit shape (diluted-EB fits worse by dchi2 >= 65 for k >= 0.5). Stellar density from the transit shape
 consistent with the K dwarf (S102 transit, on a ramp 1.4 d after an orbit start, excluded from the shape fit).
-Gaia DR3 RUWE 1.00. No secondary eclipse; odd/even depths agree (2.3 sigma). Next transits: 2026-11-02 10:54, 2026-12-08 19:03, 2027-01-14 03:12, 2027-02-19 11:22 UTC.
+Gaia DR3 RUWE 1.00. No secondary eclipse; odd/even depths agree (2.3 sigma). TRICERATOPS (10 runs, no contrast
+curve): FPP = 0.0147 +- 0.0055, NFPP = 4.5e-5 (planet on target 84%, planet diluted by an unseen companion 14%,
+planet around an unseen companion 1.5%); at the validation threshold, pending high-resolution imaging. Next transits: 2026-11-02 10:54, 2026-12-08 19:03, 2027-01-14 03:12, 2027-02-19 11:22 UTC.
 
 ## TOI-2493.01 — period for a single-transit TOI
 | Field | Value |

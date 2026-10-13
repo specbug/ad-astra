@@ -187,10 +187,13 @@ def plot_data(data, tcs, P, rp, aR, inc, u, bin_min=20.0):
         x = (t - tc) * 24
         edges = np.arange(x.min(), x.max() + bin_min / 60, bin_min / 60)
         k = np.digitize(x, edges)
+        # at least 3 points per bin, or as many as the cadence allows (10-minute data gives 2 per 20-minute bin)
+        cad_min = float(np.median(np.diff(np.sort(t)))) * 1440 if t.size > 1 else bin_min
+        need = max(1, min(3, int(bin_min / max(cad_min, 1e-3))))
         xb, yb, eb = [], [], []
         for j in np.unique(k):
             m = k == j
-            if m.sum() < 3:
+            if m.sum() < need:
                 continue
             xb.append(float(x[m].mean()))
             yb.append(float((f[m].mean() - 1) * 1e6))

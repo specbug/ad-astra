@@ -386,3 +386,18 @@ more than a duration but within the listed 3σ. A result is *solid* with ≥ 5 t
 and χ²_red < 5. ExoFOP target pages are searched for an uploaded period within 3σ of the corrected one.
 Spot check by eye: the 12 largest corrections, all with flat light curves at the listed times and transits at the
 corrected ones.
+
+### 12.6 Statistical validation of TIC 402710280.01 (`fpp_triceratops.py`)
+TRICERATOPS 1.1.0 (Giacalone & Dressing 2020; Giacalone et al. 2021). Field: the TIC within 10 pixels (1,576
+stars) and a Gaia DR3 background population; TESScut images of sectors 39, 66, 93 and 100 for the stars' pixel
+positions. MAST's name resolver is not reachable from the container, so the TIC is queried by a cone at the star's
+TIC position (nearest source = the target, checked) and the cutouts are requested by coordinates. Apertures: the
+TESS-SPOC optimal apertures of sectors 39 and 66 (15 and 16 pixels, from the light-curve files), QLP's 3-pixel
+circle in sector 93 (from the file header) and our own 1.5-pixel circle in sector 100. Light curve: the four
+transits of the fit (±0.8 d, quadratic baseline divided out), folded on P = 36.33972 d, binned to 10 minutes
+(exposure time 600 s), white error 251 ppm; depth 1449 ppm; no contrast curve. Ten Monte Carlo runs (N = 10^6
+draws per scenario): FPP 0.0147 ± 0.0055, NFPP 4.5 × 10⁻⁵; scenario means TP 0.845, PTP 0.141, STP 0.015.
+Checks: errors inflated 1.5× (the out-of-transit scatter of 2-hour bins is 1.5× the white-noise expectation),
+FPP 0.011, NFPP 3.7 × 10⁻⁴; TRICERATOPS's default 5×5-pixel apertures, FPP 0.013, NFPP 2.8 × 10⁻³ (a larger
+aperture than any light curve used). Thresholds (Giacalone et al. 2021): validated planet FPP < 0.015 and NFPP <
+0.001; likely planet FPP < 0.5 and NFPP < 0.001.

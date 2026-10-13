@@ -657,6 +657,33 @@ def _newcands():
     return json.load(open(p)) if p.exists() else {}
 
 
+def fpp_row():
+    """The TRICERATOPS result (fpp_triceratops.py) as a vetting row, if it has run."""
+    d = _json("fpp_tic402710280.json")
+    if not d or not d.get("runs"):
+        return []
+    runs = d["runs"]
+    pl = 1 - d["FPP_mean"]
+    tp = np.mean([r["scenarios"].get(f"TP@{d['tic']}", 0) for r in runs])
+    stp = np.mean([r["scenarios"].get(f"STP@{d['tic']}", 0) for r in runs])
+    var = []
+    for name, label in (("fpp_tic402710280_err1.5.json", "with the errors inflated 1.5× for correlated noise"),
+                        ("fpp_tic402710280_box5.json", "with TRICERATOPS's larger default 5×5-pixel apertures")):
+        b = _json(name)
+        if b and b.get("runs"):
+            var.append(f"{label}, FPP {b['FPP_mean']:.3f} and NFPP {b['NFPP_mean']:.0e}")
+    vtxt = (" Checks: " + "; ".join(var) + ".") if var else ""
+    return [("pass", f"About {pl:.1%} likely to be a planet.",
+             f"TRICERATOPS (Giacalone et al. 2021), with each sector's photometric aperture and the Gaia field: "
+             f"false-positive probability (FPP) {d['FPP_mean']:.3f} ± {d['FPP_std']:.3f} over {len(runs)} runs, "
+             f"nearby-star FPP {d['NFPP_mean']:.0e}. A planet on this star carries {tp:.0%}, a planet diluted by an "
+             f"unseen companion most of the rest; the main false-positive scenario ({stp:.1%}) is a planet orbiting an "
+             f"unseen companion star instead. That sits on the threshold used to validate TESS planets (FPP < 0.015, "
+             f"NFPP < 0.001) and well inside the one for a likely planet (FPP < 0.5).{vtxt} No high-resolution image "
+             f"exists: companions within about an arcsecond are constrained only by Gaia and population priors, so a "
+             f"speckle image is what would turn this into a formal validation.")]
+
+
 def section_tic402710280(fit, ex):
     key = "TIC402710280"
     nc = _newcands().get("402710280")
@@ -703,6 +730,7 @@ def section_tic402710280(fit, ex):
          f"{nc['odd_even_ppm']['odd'][1]} ppm (2.3σ)."),
         ("pass", "No sign of a stellar companion.", "Gaia DR3: RUWE 1.00, no non-single-star solution, a single "
          "image in every scan."),
+        *fpp_row(),
         ("info", "Two transits only in new data.", "The sector 100 and 102 transits come from our own photometry of "
          "the full-frame images; no public light curve of those sectors exists yet (the public QLP light curves end "
          "at sector 98)."),
