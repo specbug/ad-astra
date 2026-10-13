@@ -973,6 +973,10 @@ RECOVERED = [("NGTS-38 b", "180.5 d, one transit"), ("TIC 279401253 b", "76.8 d,
 MISSED = [("TIC 245076932 b", "21.6 d: all nine transits found, then rejected as an eclipsing binary")]
 
 
+# New periods that a paper turns out to give (ads_periods.py, read by eye): not new.
+PUBLISHED_PERIODS = {"258918831|CTOI 258918831.01": "2025AJ....170..322E (eclipse timing of the 5.99-d binary)"}
+
+
 def period_hunt_summary():
     """Counts and the table of new periods from the period hunt and its review (period_hunt*.json, period_review.json,
     with the relaxed alias test of period_recheck.json where it ran)."""
@@ -1018,7 +1022,8 @@ def period_hunt_summary():
         return any(abs(a / p - 1) < 2e-3 for a in (o.get("aliases") or []) for p in ps)
     val = [o for o in cred if same_candidate_periods(o)]
     n_agree = sum(1 for o in val if agrees(o, same_candidate_periods(o)))
-    new = [o for o in cred if not any_record(o) and o.get("n_aliases") and o["n_aliases"] <= 3]
+    new = [o for o in cred if not any_record(o) and o.get("n_aliases") and o["n_aliases"] <= 3
+           and f"{o['tic']}|{o['id']}" not in PUBLISHED_PERIODS]
     return {"n_targets": n_t, "n_data": n_data, "n_rec": n_rec, "n_ffi": n_ffi, "n_review": len(rv), "n_cred": len(cred),
             "n_onrec": len(val), "n_agree": n_agree, "new": new,
             "n_unique": sum(1 for o in cred if o.get("n_aliases") == 1 and not any_record(o)),
@@ -1033,7 +1038,8 @@ def section_periodhunt(summary_only=False):
         return (f'<li>{chip(f"{len(S["new"])} periods", "new")}<div><strong>Periods for TOIs and community TOIs that '
                 f'have none.</strong> All {S["n_targets"]} were searched in every TESS sector, including our own light curves '
                 f'of sectors 99–108; {S["n_cred"]} gained transits that pass the checks. Where someone had already posted a '
-                f'period for the same candidate, the hunt agrees in {S["n_agree"]} of {S["n_onrec"]} cases; {len(S["new"])} '
+                f'period for the same candidate, the hunt agrees in {S["n_agree"]} of {S["n_onrec"]} cases, and five of the '
+                f'others turn out to be errors in the posted value; {len(S["new"])} '
                 f'periods, narrowed to three or fewer choices, are on no list (TOI-2493.01 is the best of them).</div></li>')
     pv = _json("period_vet.json")
     pdp = _json("period_deep.json")
@@ -1046,17 +1052,19 @@ def section_periodhunt(summary_only=False):
         ev = [e for e in o.get("events", []) if e.get("ok")]
         v = pv.get(key, {})
         fits = (pdp.get(key) or {}).get("fits") or []
-        def conv(f):   # a fit whose chain settled: transit time to 0.05 d, depth to 50%, reduced chi2 < 3
-            return ("tref_btjd" in f and max(f["tref_btjd"][1:]) < 0.05 and max(f["depth_ppm"][1:]) < 0.5 * f["depth_ppm"][0]
-                    and f["chi2_min"] / max(f["n_points"], 1) < 3)
+        def conv(f):   # a fit whose chain settled: transit time to 0.05 d and reduced chi2 < 3
+            return "tref_btjd" in f and max(f["tref_btjd"][1:]) < 0.05 and f["chi2_min"] / max(f["n_points"], 1) < 3
         dens = "; ".join(f"{f['P']:.3f} d: ρ {f['rho_solar'][0]:.2f} vs {f['rho_tic']:.2f} ({abs(f['rho_z']):.1f}σ)"
-                         for f in fits if "rho_z" in f and conv(f))
+                         for f in fits if "rho_z" in f and conv(f) and f["b"][0] <= 1)
         if fits and not dens:
             dens = "fit did not converge" if any("tref_btjd" in f for f in fits) else ""
         grazing = any(conv(f) and f["b"][0] > 1 for f in fits)
         if grazing:
             dens = (dens + "; " if dens else "") + "grazing (b > 1): likely an eclipsing binary"
-        rows.append(dict(id=o["id"], tic=t, disp=o.get("disp", ""), depth=o.get("depth_ref_ppm"), dur=o.get("dur_h"),
+        dens_ok = any("rho_z" in f and conv(f) and f["b"][0] <= 1 and abs(f["rho_z"]) < 2
+                      and max(f["rho_solar"][1:]) < 0.6 * f["rho_solar"][0] for f in fits)
+        rows.append(dict(dens_ok=dens_ok, grazing=grazing,
+                         id=o["id"], tic=t, disp=o.get("disp", ""), depth=o.get("depth_ref_ppm"), dur=o.get("dur_h"),
                          n=1 + len(ev), sectors=", ".join(sorted({str(e["sector"]) for e in ev}, key=int)),
                          al=o.get("aliases") or [], pmin=o.get("p_min_circular"),
                          pix=cv_text(v) if v else "not tested", verdict=v.get("verdict", ""), dens=dens or "–"))
@@ -1068,7 +1076,9 @@ def section_periodhunt(summary_only=False):
     n_deep = int((df.depth > 10000).sum()) if len(df) else 0
     if len(df):
         df = df[df.depth <= 10000]
-        rank = df.verdict.map(lambda v: 0 if v == "on target" else 1 if str(v).startswith("target or") else 3 if str(v).startswith("on G") else 2)
+        pix = df.verdict.map(lambda v: 0 if v == "on target" else 1 if str(v).startswith("target or") else 3 if str(v).startswith("on G") else 2)
+        # on the star with a matching density first, then on the star, then the rest; grazing ones after their group
+        rank = pix * 3 + np.where(df.dens_ok, 0, np.where(df.grazing, 2, 1))
         df = df.assign(rank=rank).sort_values(["rank", "n"], ascending=[True, False])
     cols = [("TOI / CTOI", lambda r: f"<span class='m'>{esc(r.id)}</span><div class='muted' style='font-size:0.78rem'>TIC {r.tic}</div>", "l"),
             ("Depth", lambda r: f"{r.depth:.0f} ppm" if r.depth == r.depth else "–", "r"),
@@ -1097,7 +1107,7 @@ def section_periodhunt(summary_only=False):
   <a href="#corrections">Corrections</a>), {n_strict} are periods the hunt's alias test wrongly excluded, and
   {n_multi} are bookkeeping in confirmed multi-planet systems. No paper in NASA's ADS gives any of the new periods
   (full-text search by every SIMBAD identifier of each star, with the period itself), except for one eclipsing
-  binary deeper than 1%. {len(S['new'])} periods
+  binary deeper than 1%, published in 2025, which is left out of the count. {len(S['new'])} periods
   are on no list and narrowed to three or fewer; {n_deep} of them belong to dips deeper than 1%, mostly eclipsing
   binaries posted as community candidates, and are left out of the table (they are in
   <span class='m'>period_review.csv</span>). The table lists the rest, those on the star first, with the pixel test
@@ -1352,11 +1362,65 @@ def section_corrections():
     errors off the TOI's ephemeris. Of these, {nn(len(cats['swap']), 'matches', 'match')} another TOI on the same
     star (planet labels swapped between the two lists); in {len(cats['nodip'])} the community TOI's transit is not in
     the data while the TOI's transits are; {nn(len(cats['separate']), 'is a separate object', 'are separate objects')}
-    like the three above; {nn(len(cats['fix']), 'has a TOI ephemeris', 'have TOI ephemerides')} that the data
+    (two of the three above; TOI-7602.01's transits are too shallow for this automatic test); {nn(len(cats['fix']), 'has a TOI ephemeris', 'have TOI ephemerides')} that the data
     contradict while one through the community TOI's transit fits{', listed below' if extra else ''}; and
     {len(cats['unclear']) + len(cats['nodata'])} could not be decided from the light curves.</p>
   </div>
   {f"<div class='scroll-x'><table class='data'><thead><tr><th>TOI</th><th>Listed P (d)</th><th>P through the community TOI (d)</th><th>Listed ephemeris: transits seen</th><th>Corrected: transits seen</th></tr></thead><tbody>{ex_rows}</tbody></table></div>" if extra else ""}"""
+    # 5. the whole TOI catalogue (toi_audit.py, toi_audit_review.py)
+    ta_all = _json("toi_audit.json")
+    tr = _json("toi_audit_corrections.json")
+    ta_html = ""
+    if ta_all and tr:
+        judged = [o for o in ta_all.values() if o.get("detectable")]
+        n_flag = sum(1 for o in ta_all.values() if o.get("flag"))
+        vals = list(tr.values())
+        corr = [r for r in vals if r.get("status") == "corrected" and r.get("solid")]
+        posted = [r for r in corr if r.get("already_posted")]
+        new_c = [r for r in corr if not r.get("already_posted")]
+        refined = [r for r in vals if r.get("status") == "refined" and r.get("solid")]
+        noalt = [r for r in vals if r.get("status") == "no alternative"]
+        new_c.sort(key=lambda r: -r["offset_dur"])
+
+        def oe_note(r):
+            o = r.get("odd_even_sigma")
+            return "" if not o or o < 3 else ("<div class='muted' style='font-size:0.74rem'>odd and even transits differ "
+                                              f"({o:.0f}σ): perhaps a binary at twice the period</div>")
+
+        def lerr(r):
+            return "–" if r.get("listed_err_h") is None else f"{r['listed_err_h']:.1f} h"
+
+        def ratio_note(r):
+            q = r.get("ratio", 1)
+            return "" if abs(q - 1) < 1e-6 else f" <span class='muted'>({'twice' if abs(q - 2) < 0.01 else 'three times' if abs(q - 3) < 0.01 else 'half' if abs(q - 0.5) < 0.01 else 'a third of' if abs(q - 1 / 3) < 0.01 else f'{q:.2f}×'} the listed)</span>"
+        trs = "".join(
+            f"<tr><td><a href='{EXOFOP}{r['tic']}'>TOI-{esc(r['toi'])}</a>{oe_note(r)}</td><td>{esc(r.get('disp') or '')}</td>"
+            f"<td class='num'>{r['P_listed']:.5f}</td><td class='num'>{r['P']:.6f} ± {r['P_err']:.6f}{ratio_note(r)}</td>"
+            f"<td class='num'>{r['T0'] + 2457000:.4f} ± {r['T0_err']:.4f}</td>"
+            f"<td class='num'>{r['listed']['n_seen']} of {r['listed']['n_data']}</td>"
+            f"<td class='num'>{r['chosen']['n_seen']} of {r['chosen']['n_data']}</td>"
+            f"<td class='num'>{r['offset_h']:+.1f} h</td>"
+            f"<td class='num'>{lerr(r)}</td></tr>"
+            for r in new_c[:30])
+        ta_html = f"""
+  <div class="col" style="margin-top:28px;display:grid;gap:12px">
+    <h3>The whole TOI catalogue: ephemerides that no longer fit</h3>
+    <p>The same measurement, run on every planet-candidate TOI (dispositions PC and APC) with a period: each transit
+    the ExoFOP ephemeris predicts in TESS sectors 1–107 is measured. {len(judged):,} TOIs are deep enough for single
+    transits to be judged; {n_flag} of these have three or more predicted transits missing. For
+    {len(corr) + len(refined)}, a nearby ephemeris through the transits that are there fits the data; the
+    corrected ephemeris comes from a straight-line fit to the individual transit times. In {len(corr)} the listed
+    ephemeris puts the transit of 1 December 2026 more than one transit duration and more than three of its own
+    standard errors away from where it will be ({len(posted)} of them already have the right period in a
+    user's upload on ExoFOP, though not in the TOI table); in {len(refined)} more the listed error bar allows the
+    offset but is much larger than ours. {len(noalt)} flagged TOIs have no ephemeris that fits: their transits are
+    missing in later data, or vary in depth from sector to sector, as a blend observed through different apertures
+    would. The table lists the {min(30, len(new_c))} largest corrections not posted anywhere; every flagged TOI, with its
+    status, is in <a href="{REPO}/results/candidates/toi_audit_corrections.csv">toi_audit_corrections.csv</a>.</p>
+  </div>
+  <div class="scroll-x"><table class="data"><thead><tr><th>TOI</th><th>Disp.</th><th>Listed P (d)</th>
+  <th>Corrected P (d)</th><th>Corrected T<sub>0</sub> (BJD)</th><th>Listed: seen</th><th>Corrected: seen</th>
+  <th>Offset, 1 Dec 2026</th><th>Listed error</th></tr></thead><tbody>{trs}</tbody></table></div>"""
     return f"""
 <section id="corrections">
   <p class="kicker">Catalogue corrections · ExoFOP periods and ephemerides</p>
@@ -1371,6 +1435,7 @@ def section_corrections():
   </div>
   {''.join(parts)}
   {audit}
+  {ta_html}
 </section>"""
 
 
@@ -1975,6 +2040,15 @@ def build():
                 f'transits fall every {p2633:.3f} days from a different epoch than its listed ephemeris, which predicts '
                 f'transits where the light curve is flat; and three single-transit community TOIs merged into later TOIs '
                 f'(TOI-7602.01, 5967.01, 6033.01) are separate objects, each with a further transit found here.</div></li>')
+        tra = _json("toi_audit_corrections.json")
+        if tra:
+            nc = sum(1 for r in tra.values() if r.get("status") == "corrected" and r.get("solid") and not r.get("already_posted"))
+            nr = sum(1 for r in tra.values() if r.get("status") == "refined" and r.get("solid"))
+            fcor += (f'<li>{chip(f"{nc} ephemerides", "tce")}<div><strong>TOIs whose catalogued ephemeris no longer finds '
+                     f'their transits.</strong> Every planet-candidate TOI was checked against all TESS sectors: for {nc}, '
+                     f'the ExoFOP ephemeris misses the transits by more than a transit duration and more than three of its own '
+                     f'error bars, and nobody has posted a better one; corrected ephemerides from the individual transit times are '
+                     f'given for them and for {nr} more whose listed errors are merely large.</div></li>')
     passed = [int(k) for k, r in dv.items() if "error" not in r and deep_verdict(r)[0] == "candidate"]
     n_dv = sum(1 for t in passed if prior.prior(t)["kind"] is None)
     new_dv = sorted((float(tb[tb.tic == t].rp_rearth.iloc[0]), t) for t in passed
@@ -2003,8 +2077,10 @@ def build():
   Gaia, ZTF and KELT data. Checked against ExoFOP, SIMBAD, VizieR, NASA's archive and the literature, most of what
   it found is already known to someone. What is left: a sub-Neptune candidate every 36.3 days around the nearby K
   dwarf TIC 402710280, which is on no list; the 79-day period of TOI-2493.01, a temperate sub-Neptune candidate;
-  the period of a sub-Neptune around HIP 56966; a second transit of a small planet around HD 11506; and {n_dv}
-  single transits on bright stars that nobody has posted.</p>
+  the period of a sub-Neptune around HIP 56966; a second transit of a small planet around HD 11506; {n_dv}
+  single transits on bright stars that nobody has posted; and corrections to ExoFOP: a community candidate whose
+  period is half the posted one, three single transits merged into TOIs they do not belong to, and TOI
+  ephemerides that no longer find their transits.</p>
   <div class="strip">
     <div><span class="label">Sectors searched</span><span class="v">{n_q + n_s} of 107</span></div>
     <div><span class="label">Light curves</span><span class="v">{int(sv.n_real.sum()):,}</span></div>
@@ -2028,7 +2104,7 @@ def build():
     with a depth and duration ten times too large. This survey measures it properly and finds a second transit in
     August 2026, 2,149 days later, so the period is 25.9 days or longer. The star's three giant planets, found by
     radial velocities, do not fit.</div></li>
-    <li>{chip("Confirmed independently", "known")}<div><strong>HIP 71639: a {rp71:.1f} {RE} planet candidate every
+    <li>{chip("Found again", "known")}<div><strong>HIP 71639: a {rp71:.1f} {RE} planet candidate every
     {f71['period_d'][0]:.3f} days around a V = 6 F star.</strong> Planet Hunters TESS posted its first transit in
     2020, and another ExoFOP user posted this period from the same four transits in May 2026. The survey found it
     independently, five months later, and agrees within 0.1σ. It is still not a TOI.</div></li>

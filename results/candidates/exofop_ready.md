@@ -116,3 +116,12 @@ event.
 | Periods allowed | 1823.80/n d (35 values >= 12 d); stellar density favours about 57-63 d (62.89 d, n = 29, is allowed) |
 Notes: the S18 transit is 110 h (45 sigma) off TOI-6033.01's ephemeris and the S85 one 2.8 d before a predicted
 TOI-6033.01 transit; no single period fits all four transits. Both on target (4.5").
+
+## TOI ephemerides that no longer find their transits (toi_audit.py, toi_audit_review.py)
+All planet-candidate TOIs (PC/APC) were checked against every TESS sector. The corrected ephemerides are in
+`toi_audit_corrections.csv` (one row per flagged TOI): columns `P`, `P_err`, `T0` (BTJD; BJD = BTJD + 2457000),
+`T0_err`, `status` ("corrected": the listed ephemeris is off on 1 Dec 2026 by more than a transit duration and more
+than 3 sigma of its own error; "refined": off by more than a duration but within its error), `solid` (>= 5 transits
+seen, >= 70% of those covered, chi2_red < 5), `already_posted` (a matching period already uploaded to ExoFOP by
+someone), `offset_h` (listed minus corrected transit time on 1 Dec 2026). Rows with `odd_even_sigma` > 3 may be
+eclipsing binaries at twice the period.

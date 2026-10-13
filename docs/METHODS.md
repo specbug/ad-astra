@@ -365,3 +365,24 @@ For each star behind a new period: all identifiers of the nearest SIMBAD object 
 (HD, HIP, TYC, 2MASS, Gaia DR2/DR3, BD/CD/CPD, UCAC4, WISE, TOI, and others), plus the TIC and TOI/CTOI names, in
 one NASA ADS full-text query; for stars with papers, a second query adds the period itself (the alias to one and
 two decimals). Matches are read by eye: identifiers like "CD-73 14" also match unrelated text.
+
+### 12.5 Ephemeris audit of the TOI catalogue (`toi_audit.py`, `toi_audit_review.py`)
+Every TOI with disposition PC or APC and a period (5,229 TOIs on 5,114 stars, ExoFOP table of 12 October 2026):
+one light curve per sector (SPOC 2-min > TESS-SPOC > QLP, sectors 1–107), and every transit the listed ephemeris
+predicts measured as in §12.1. A TOI is judged only if its catalogued depth is at least 3× the median per-transit
+error, and flagged when at least three predicted transits are missing and they are at least a third of those
+covered. For flagged TOIs, alternatives are searched through anchors (the seen transits of the listed ephemeris;
+when there are fewer than three, the strongest dips of 0.4–2.5× the catalogued depth in the sectors nearest the
+listed epoch): periods within max(0.5%, 5σ) of the listed one and of 1/3, 1/2, 2 and 3 times it, scored on 30-minute
+binned, flattened light curves, the best two per ratio re-measured transit by transit.
+
+Review: among alternatives with at least three transits seen and at most one in ten covered transits missing, the
+shortest period whose seen fraction is at least 0.8 of the best (multiples see subsets of the same transits; half
+the true period sees about half). Each seen transit is timed by maximising the box SNR within ±D/2 (error D/(2·SNR),
+floor half a cadence) and P, T0 come from a weighted straight-line fit (errors scaled by √χ²_red when above 1).
+The listed and corrected ephemerides are compared on 1 December 2026: *corrected* when they differ by more than
+one transit duration and more than 3σ of the listed ephemeris's own propagated error; *refined* when they differ by
+more than a duration but within the listed 3σ. A result is *solid* with ≥ 5 transits seen, ≥ 70% of those covered,
+and χ²_red < 5. ExoFOP target pages are searched for an uploaded period within 3σ of the corrected one.
+Spot check by eye: the 12 largest corrections, all with flat light curves at the listed times and transits at the
+corrected ones.
