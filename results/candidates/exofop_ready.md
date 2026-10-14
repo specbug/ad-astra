@@ -9,7 +9,7 @@ Prepared from this survey's fits; BJD_TDB = BTJD + 2457000. Posting needs an Exo
 | TIC | 402710280 (TYC 9041-03677-1, Gaia DR3 5828441289812582400) |
 | Period (d) | 36.33972 ± 0.00007 |
 | Transit epoch (BJD) | 2460474.8014 ± 0.0016 |
-| Depth (ppm) | 1449 ± 229 |
+| Depth (ppm) | 1655 (fitted transit depth; Rp/R*^2 = 1449 ± 229) |
 | Duration (h) | 5.19 ± 0.18 |
 | Rp/R* | 0.0381 ± 0.0029 |
 | Impact parameter | 0.46 ± 0.32 |
@@ -22,7 +22,7 @@ the data is present. Difference-image centroids (five transits) 1.4" ± 1.2" fro
 Gaia neighbour (G = 16.2 at 2.2", parallax 0.69 mas, background) would need a ~73% eclipse, excluded by the
 transit shape (diluted-EB fits worse by dchi2 >= 65 for k >= 0.5). Stellar density from the transit shape
 consistent with the K dwarf (S102 transit, on a ramp 1.4 d after an orbit start, excluded from the shape fit).
-Gaia DR3 RUWE 1.00. No secondary eclipse; odd/even depths agree (2.3 sigma). TRICERATOPS (10 runs, no contrast
+Gaia DR3 RUWE 1.00. No secondary eclipse. Odd/even is not a meaningful test here: relative to T0 the transits are epochs -30, -10, 10, 17, 18, so only S100 is odd. TRICERATOPS (10 runs, no contrast
 curve): FPP = 0.0147 +- 0.0055, NFPP = 4.5e-5 (planet on target 84%, planet diluted by an unseen companion 14%,
 planet around an unseen companion 1.5%); at the validation threshold, pending high-resolution imaging. Next transits: 2026-11-02 10:54, 2026-12-08 19:03, 2027-01-14 03:12, 2027-02-19 11:22 UTC.
 
@@ -32,7 +32,7 @@ planet around an unseen companion 1.5%); at the validation threshold, pending hi
 | TIC | 123664207 |
 | Period (d) | 79.0302 ± 0.0004 |
 | Transit epoch (BJD) | 2461043.5093 ± 0.0042 |
-| Depth (ppm) | 1467 ± 209 |
+| Depth (ppm) | 1678 (fitted transit depth; Rp/R*^2 = 1467 ± 209) |
 | Duration (h) | 6.10 ± 0.31 |
 | Rp/R* | 0.0383 ± 0.0026 |
 | Planet radius (R_Earth) | 2.7 (R* = 0.652 R_Sun) |
