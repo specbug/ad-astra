@@ -5,7 +5,11 @@ one or two events dominate, edge dominated, inconsistent sectors, broad depressi
 re-found after masking (variability), common period across stars (instrument).
 Soft flags (context): TESS-orbit alias, weak against empirical (red) noise.
 
-Usage: python triage_a.py OUTDIR TARGETS.csv
+Usage: python triage_a.py OUTDIR TARGETS.csv [OUT.csv]
+
+v2 (14 Oct 2026): other signals on the star are masked, and the secondary-eclipse and odd/even tests use the
+empirical red noise. v1 also read BLS's depth_half (the depth at half the period) as the secondary eclipse, which flagged nearly every
+real transit; v2 uses depth_phased.
 Reads OUTDIR/stars/*.json, re-derives each light curve, writes OUTDIR/triage.csv.
 """
 import glob
@@ -37,10 +41,17 @@ def box_depth(f, e, sel):
     return float(np.sum((1 - f[sel]) * w) / w.sum())
 
 
-def diagnostics(lc, sig, rho, flipped=False):
+def diagnostics(lc, sig, rho, flipped=False, others=()):
     t, f, e, sec = lc["time"], lc["flux"].copy(), lc["flux_err"], lc["sector"]
     if flipped:
         f = 2 - f
+    # mask the star's other signals: their transits would otherwise land at this one's half phase or in alternate
+    # epochs and fake a secondary eclipse or an odd/even difference (e.g. two planets near a 7:2 period ratio)
+    keep = np.ones(t.size, bool)
+    for o in others:
+        ph_o = ((t - o["t0"] + 0.5 * o["period"]) % o["period"]) - 0.5 * o["period"]
+        keep &= np.abs(ph_o) > o["duration_hr"] / 24
+    t, f, e, sec = t[keep], f[keep], e[keep], sec[keep]
     P, t0, dur = sig["period"], sig["t0"], sig["duration_hr"] / 24
     phase = ((t - t0 + 0.5 * P) % P) - 0.5 * P
     intr = np.abs(phase) < dur / 2
@@ -90,7 +101,14 @@ def diagnostics(lc, sig, rho, flipped=False):
     st = bls.compute_stats(P, dur, t0)
     d_odd, e_odd = st["depth_odd"]
     d_even, e_even = st["depth_even"]
-    d_half, e_half = st["depth_half"]
+    # the secondary eclipse is the depth at the same period shifted by half a period ("depth_phased");
+    # astropy's "depth_half" is the depth at HALF THE PERIOD, about half of any real transit (the v1 bug)
+    d_half, e_half = st["depth_phased"]
+    # judge against the empirical (red) noise of a box this long, not BLS's white-noise errors: each of the odd and
+    # even halves has half the transits, so about sqrt(2) times the noise of the full set
+    if np.isfinite(sig_emp) and sig_emp > 0:
+        e_half = max(e_half, sig_emp)
+        e_odd, e_even = max(e_odd, sig_emp * np.sqrt(2)), max(e_even, sig_emp * np.sqrt(2))
     return {"depth_ppm": depth * 1e6, "sigma_emp_ppm": sig_emp * 1e6,
             "snr_emp": depth / sig_emp if sig_emp > 0 else np.nan,
             "top_event_frac": top_frac, "snr_all": snr_all, "snr_wo_top2": snr_wo, "sector_p": sector_p,
@@ -148,7 +166,8 @@ def triage_star(args):
                 sec = rec["sectors"]
                 lc = prepare_star(load_star(rec["tic"], sec))
             try:
-                d = diagnostics(lc, s, rec["rho"], flipped=(kind == "signals_inverted"))
+                d = diagnostics(lc, s, rec["rho"], flipped=(kind == "signals_inverted"),
+                                others=[o for j, o in enumerate(sigs) if j != i])
             except ValueError as ex:  # e.g. no in-transit points left after quality cuts
                 bad = f"diagnostics_failed:{str(ex)[:40]}"
                 out.append({"tic": rec["tic"], "kind": kind, **s, "flags": bad, "hard_flags": bad})
@@ -188,7 +207,7 @@ def main():
             cp.append(others.tic.nunique() >= 3)
         df["common_period"] = cp
         df.loc[df.common_period, "hard_flags"] = df.loc[df.common_period, "hard_flags"].astype(str) + ";common_period"
-    df.to_csv(f"{outdir}/triage.csv", index=False)
+    df.to_csv(sys.argv[3] if len(sys.argv) > 3 else f"{outdir}/triage.csv", index=False)
     for kind in ("signals", "signals_inverted"):
         d = df[df.kind == kind] if len(df) else df
         if len(d):
