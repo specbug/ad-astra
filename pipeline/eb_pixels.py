@@ -129,12 +129,16 @@ def _centroid(t, F, w, tc, D, ra0, dec0, min_snr=5.0, gf=None):
     With gf (gaia_field), the offset is measured from where the target really is on this image (_calibrate), which
     removes errors of the image's coordinate solution and the target's proper motion; otherwise from the
     catalogue position through the image's coordinate solution."""
-    from astropy.wcs.utils import proj_plane_pixel_scales
-    from scipy.optimize import least_squares
     r = _diff_image(t, F, tc, D)
     if r is None:
         return None
-    diff, err, base = r
+    return fit_diff(*r, w, tc, ra0, dec0, min_snr=min_snr, gf=gf)
+
+
+def fit_diff(diff, err, base, w, tc, ra0, dec0, min_snr=5.0, gf=None):
+    """The PSF fit of _centroid, for any difference image (one eclipse, or several stacked)."""
+    from astropy.wcs.utils import proj_plane_pixel_scales
+    from scipy.optimize import least_squares
     m = np.isfinite(diff) & np.isfinite(err) & (err > 0)
     snr = float(np.sqrt(max(np.sum((diff[m] / err[m]) ** 2) - m.sum(), 0)))
     if snr < min_snr:

@@ -1,0 +1,1039 @@
+{
+ "n_free_real": 395,
+ "n_free_flipped": 126,
+ "n_known": 2,
+ "n_unknown": 393,
+ "threshold": {
+  "snr_emp": 6.0,
+  "sde": 9.5,
+  "flipped_above": 1,
+  "unknown_above": 27
+ },
+ "calibration": {
+  "snr_emp": [
+   {
+    "thr": 0.95,
+    "flipped": 126,
+    "real_unknown": 392,
+    "real_known": 2
+   },
+   {
+    "thr": 1.08,
+    "flipped": 122,
+    "real_unknown": 392,
+    "real_known": 2
+   },
+   {
+    "thr": 1.32,
+    "flipped": 119,
+    "real_unknown": 390,
+    "real_known": 2
+   },
+   {
+    "thr": 1.39,
+    "flipped": 116,
+    "real_unknown": 389,
+    "real_known": 2
+   },
+   {
+    "thr": 1.67,
+    "flipped": 113,
+    "real_unknown": 384,
+    "real_known": 2
+   },
+   {
+    "thr": 1.95,
+    "flipped": 110,
+    "real_unknown": 375,
+    "real_known": 2
+   },
+   {
+    "thr": 2.17,
+    "flipped": 107,
+    "real_unknown": 369,
+    "real_known": 2
+   },
+   {
+    "thr": 2.43,
+    "flipped": 104,
+    "real_unknown": 363,
+    "real_known": 2
+   },
+   {
+    "thr": 3.21,
+    "flipped": 99,
+    "real_unknown": 348,
+    "real_known": 2
+   },
+   {
+    "thr": 3.67,
+    "flipped": 97,
+    "real_unknown": 337,
+    "real_known": 2
+   },
+   {
+    "thr": 3.85,
+    "flipped": 94,
+    "real_unknown": 328,
+    "real_known": 2
+   },
+   {
+    "thr": 3.98,
+    "flipped": 91,
+    "real_unknown": 321,
+    "real_known": 2
+   },
+   {
+    "thr": 4.1,
+    "flipped": 88,
+    "real_unknown": 314,
+    "real_known": 2
+   },
+   {
+    "thr": 4.31,
+    "flipped": 85,
+    "real_unknown": 303,
+    "real_known": 2
+   },
+   {
+    "thr": 4.43,
+    "flipped": 82,
+    "real_unknown": 298,
+    "real_known": 2
+   },
+   {
+    "thr": 4.53,
+    "flipped": 79,
+    "real_unknown": 286,
+    "real_known": 2
+   },
+   {
+    "thr": 4.66,
+    "flipped": 75,
+    "real_unknown": 281,
+    "real_known": 2
+   },
+   {
+    "thr": 4.77,
+    "flipped": 73,
+    "real_unknown": 274,
+    "real_known": 2
+   },
+   {
+    "thr": 4.82,
+    "flipped": 69,
+    "real_unknown": 270,
+    "real_known": 2
+   },
+   {
+    "thr": 5.05,
+    "flipped": 66,
+    "real_unknown": 255,
+    "real_known": 2
+   },
+   {
+    "thr": 5.21,
+    "flipped": 63,
+    "real_unknown": 239,
+    "real_known": 2
+   },
+   {
+    "thr": 5.41,
+    "flipped": 60,
+    "real_unknown": 223,
+    "real_known": 2
+   },
+   {
+    "thr": 5.56,
+    "flipped": 57,
+    "real_unknown": 215,
+    "real_known": 2
+   },
+   {
+    "thr": 5.68,
+    "flipped": 54,
+    "real_unknown": 207,
+    "real_known": 2
+   },
+   {
+    "thr": 5.77,
+    "flipped": 50,
+    "real_unknown": 197,
+    "real_known": 2
+   },
+   {
+    "thr": 5.89,
+    "flipped": 46,
+    "real_unknown": 188,
+    "real_known": 2
+   },
+   {
+    "thr": 5.97,
+    "flipped": 44,
+    "real_unknown": 182,
+    "real_known": 2
+   },
+   {
+    "thr": 6.03,
+    "flipped": 41,
+    "real_unknown": 179,
+    "real_known": 2
+   },
+   {
+    "thr": 6.1,
+    "flipped": 38,
+    "real_unknown": 175,
+    "real_known": 2
+   },
+   {
+    "thr": 6.17,
+    "flipped": 35,
+    "real_unknown": 163,
+    "real_known": 2
+   },
+   {
+    "thr": 6.27,
+    "flipped": 32,
+    "real_unknown": 154,
+    "real_known": 2
+   },
+   {
+    "thr": 6.36,
+    "flipped": 29,
+    "real_unknown": 147,
+    "real_known": 2
+   },
+   {
+    "thr": 6.43,
+    "flipped": 25,
+    "real_unknown": 145,
+    "real_known": 2
+   },
+   {
+    "thr": 6.66,
+    "flipped": 22,
+    "real_unknown": 131,
+    "real_known": 2
+   },
+   {
+    "thr": 6.89,
+    "flipped": 19,
+    "real_unknown": 118,
+    "real_known": 2
+   },
+   {
+    "thr": 7.44,
+    "flipped": 16,
+    "real_unknown": 88,
+    "real_known": 2
+   },
+   {
+    "thr": 8.01,
+    "flipped": 13,
+    "real_unknown": 67,
+    "real_known": 2
+   },
+   {
+    "thr": 8.72,
+    "flipped": 10,
+    "real_unknown": 49,
+    "real_known": 2
+   },
+   {
+    "thr": 9.63,
+    "flipped": 7,
+    "real_unknown": 27,
+    "real_known": 2
+   },
+   {
+    "thr": 11.56,
+    "flipped": 4,
+    "real_unknown": 13,
+    "real_known": 2
+   },
+   {
+    "thr": 13.82,
+    "flipped": 0,
+    "real_unknown": 9,
+    "real_known": 2
+   }
+  ],
+  "sde": [
+   {
+    "thr": 7.02,
+    "flipped": 126,
+    "real_unknown": 380,
+    "real_known": 2
+   },
+   {
+    "thr": 7.05,
+    "flipped": 123,
+    "real_unknown": 362,
+    "real_known": 2
+   },
+   {
+    "thr": 7.08,
+    "flipped": 118,
+    "real_unknown": 353,
+    "real_known": 2
+   },
+   {
+    "thr": 7.09,
+    "flipped": 114,
+    "real_unknown": 349,
+    "real_known": 2
+   },
+   {
+    "thr": 7.11,
+    "flipped": 113,
+    "real_unknown": 343,
+    "real_known": 2
+   },
+   {
+    "thr": 7.13,
+    "flipped": 108,
+    "real_unknown": 338,
+    "real_known": 2
+   },
+   {
+    "thr": 7.14,
+    "flipped": 107,
+    "real_unknown": 332,
+    "real_known": 2
+   },
+   {
+    "thr": 7.18,
+    "flipped": 104,
+    "real_unknown": 313,
+    "real_known": 2
+   },
+   {
+    "thr": 7.19,
+    "flipped": 99,
+    "real_unknown": 303,
+    "real_known": 2
+   },
+   {
+    "thr": 7.2,
+    "flipped": 97,
+    "real_unknown": 298,
+    "real_known": 2
+   },
+   {
+    "thr": 7.21,
+    "flipped": 96,
+    "real_unknown": 296,
+    "real_known": 2
+   },
+   {
+    "thr": 7.24,
+    "flipped": 91,
+    "real_unknown": 285,
+    "real_known": 2
+   },
+   {
+    "thr": 7.25,
+    "flipped": 89,
+    "real_unknown": 282,
+    "real_known": 2
+   },
+   {
+    "thr": 7.27,
+    "flipped": 85,
+    "real_unknown": 276,
+    "real_known": 2
+   },
+   {
+    "thr": 7.33,
+    "flipped": 82,
+    "real_unknown": 256,
+    "real_known": 2
+   },
+   {
+    "thr": 7.34,
+    "flipped": 79,
+    "real_unknown": 246,
+    "real_known": 2
+   },
+   {
+    "thr": 7.38,
+    "flipped": 76,
+    "real_unknown": 231,
+    "real_known": 2
+   },
+   {
+    "thr": 7.42,
+    "flipped": 72,
+    "real_unknown": 225,
+    "real_known": 2
+   },
+   {
+    "thr": 7.46,
+    "flipped": 69,
+    "real_unknown": 206,
+    "real_known": 2
+   },
+   {
+    "thr": 7.5,
+    "flipped": 66,
+    "real_unknown": 192,
+    "real_known": 2
+   },
+   {
+    "thr": 7.56,
+    "flipped": 63,
+    "real_unknown": 176,
+    "real_known": 2
+   },
+   {
+    "thr": 7.6,
+    "flipped": 60,
+    "real_unknown": 168,
+    "real_known": 2
+   },
+   {
+    "thr": 7.63,
+    "flipped": 54,
+    "real_unknown": 163,
+    "real_known": 2
+   },
+   {
+    "thr": 7.64,
+    "flipped": 53,
+    "real_unknown": 163,
+    "real_known": 2
+   },
+   {
+    "thr": 7.7,
+    "flipped": 49,
+    "real_unknown": 149,
+    "real_known": 2
+   },
+   {
+    "thr": 7.78,
+    "flipped": 48,
+    "real_unknown": 139,
+    "real_known": 2
+   },
+   {
+    "thr": 7.82,
+    "flipped": 44,
+    "real_unknown": 131,
+    "real_known": 2
+   },
+   {
+    "thr": 7.91,
+    "flipped": 40,
+    "real_unknown": 118,
+    "real_known": 2
+   },
+   {
+    "thr": 7.96,
+    "flipped": 38,
+    "real_unknown": 115,
+    "real_known": 2
+   },
+   {
+    "thr": 8.11,
+    "flipped": 35,
+    "real_unknown": 98,
+    "real_known": 2
+   },
+   {
+    "thr": 8.17,
+    "flipped": 31,
+    "real_unknown": 93,
+    "real_known": 2
+   },
+   {
+    "thr": 8.43,
+    "flipped": 28,
+    "real_unknown": 81,
+    "real_known": 2
+   },
+   {
+    "thr": 8.7,
+    "flipped": 26,
+    "real_unknown": 71,
+    "real_known": 2
+   },
+   {
+    "thr": 9.02,
+    "flipped": 22,
+    "real_unknown": 57,
+    "real_known": 2
+   },
+   {
+    "thr": 9.74,
+    "flipped": 19,
+    "real_unknown": 51,
+    "real_known": 2
+   },
+   {
+    "thr": 11.14,
+    "flipped": 16,
+    "real_unknown": 39,
+    "real_known": 2
+   },
+   {
+    "thr": 14.42,
+    "flipped": 13,
+    "real_unknown": 26,
+    "real_known": 2
+   },
+   {
+    "thr": 16.54,
+    "flipped": 10,
+    "real_unknown": 14,
+    "real_known": 1
+   },
+   {
+    "thr": 19.65,
+    "flipped": 7,
+    "real_unknown": 8,
+    "real_known": 1
+   },
+   {
+    "thr": 21.95,
+    "flipped": 4,
+    "real_unknown": 4,
+    "real_known": 1
+   },
+   {
+    "thr": 49.54,
+    "flipped": 0,
+    "real_unknown": 2,
+    "real_known": 0
+   }
+  ]
+ },
+ "known": [
+  {
+   "tic": 288769849,
+   "period": 1.2294563083516177,
+   "sde": 15.117245149426074,
+   "known": "TOI-7922.01 (PC, P=1.2294)"
+  },
+  {
+   "tic": 358487062,
+   "period": 5.504424587971858,
+   "sde": 22.87981382633318,
+   "known": "CTOI 358487062.01 (P=5.5024)"
+  }
+ ],
+ "unknown_above": [
+  {
+   "tic": 300969635,
+   "kind": "signals",
+   "period": 7.4207105049349105,
+   "t0": 1328.2588161260614,
+   "duration_hr": 3.4,
+   "depth_ppm": 4470.16549397644,
+   "rp_rearth": 5.420503848876396,
+   "sde": 52.06855571824165,
+   "snr": 48.73858220539858,
+   "snr_emp": 159.25324960246945,
+   "n_tr_data": 36.0,
+   "soft_flags": NaN,
+   "Tmag": 11.018,
+   "Teff": 4828.0,
+   "rad": 0.74311,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 247528319,
+   "kind": "signals",
+   "period": 1.3475738415820857,
+   "t0": 1468.783246340747,
+   "duration_hr": 1.6,
+   "depth_ppm": 271.6074730643414,
+   "rp_rearth": 1.332354143783864,
+   "sde": 20.75057882663882,
+   "snr": 15.743062259816035,
+   "snr_emp": 14.27885370533294,
+   "n_tr_data": 117.0,
+   "soft_flags": NaN,
+   "Tmag": 10.318,
+   "Teff": 4686.0,
+   "rad": 0.74101,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 309780779,
+   "kind": "signals",
+   "period": 8.723580465897971,
+   "t0": 1329.1456515647258,
+   "duration_hr": 0.8,
+   "depth_ppm": 414.3313813778674,
+   "rp_rearth": 1.5220541084991275,
+   "sde": 19.971101406825003,
+   "snr": 12.73496123447844,
+   "snr_emp": 17.509222010600308,
+   "n_tr_data": 45.0,
+   "soft_flags": NaN,
+   "Tmag": 10.025,
+   "Teff": 5013.0,
+   "rad": 0.68538,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 348773952,
+   "kind": "signals",
+   "period": 2.539136170246278,
+   "t0": 1438.6070181397029,
+   "duration_hr": 2.4000000000000004,
+   "depth_ppm": 4111.32227077515,
+   "rp_rearth": 5.165508499970885,
+   "sde": 19.473575566934667,
+   "snr": 30.69063927101084,
+   "snr_emp": 51.72828468286307,
+   "n_tr_data": 11.0,
+   "soft_flags": NaN,
+   "Tmag": 9.5962,
+   "Teff": 4912.0,
+   "rad": 0.73841,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 382098683,
+   "kind": "signals",
+   "period": 4.351676442186589,
+   "t0": 1329.1440635020515,
+   "duration_hr": 1.6,
+   "depth_ppm": 330.991701718753,
+   "rp_rearth": 1.2363194947303617,
+   "sde": 18.19648074711945,
+   "snr": 12.142205114679502,
+   "snr_emp": 6.0316572682992,
+   "n_tr_data": 73.0,
+   "soft_flags": NaN,
+   "Tmag": 11.979,
+   "Teff": 4454.0,
+   "rad": 0.62287,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 297153746,
+   "kind": "signals",
+   "period": 2.146996541535922,
+   "t0": 1712.0346632357898,
+   "duration_hr": 1.6,
+   "depth_ppm": 195.85759201370476,
+   "rp_rearth": 1.236973490219818,
+   "sde": 16.554609744417867,
+   "snr": 11.833657582732013,
+   "snr_emp": 7.760538101447173,
+   "n_tr_data": 66.0,
+   "soft_flags": NaN,
+   "Tmag": 10.019,
+   "Teff": 4863.0,
+   "rad": 0.81015,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 259541182,
+   "kind": "signals",
+   "period": 1.0044694904794411,
+   "t0": 1411.2252443221917,
+   "duration_hr": 0.8,
+   "depth_ppm": 545.4356001198715,
+   "rp_rearth": 0.9998284481301862,
+   "sde": 16.470821748652725,
+   "snr": 12.107218280404409,
+   "snr_emp": 14.80719020426019,
+   "n_tr_data": 159.0,
+   "soft_flags": NaN,
+   "Tmag": 11.954,
+   "Teff": 3457.0,
+   "rad": 0.3924,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 240488148,
+   "kind": "signals",
+   "period": 1.5125021092973907,
+   "t0": 1711.4348710909233,
+   "duration_hr": 1.2000000000000002,
+   "depth_ppm": 340.2109577468945,
+   "rp_rearth": 1.3520232157476966,
+   "sde": 16.249751989205937,
+   "snr": 13.96734439220904,
+   "snr_emp": 14.411891572677778,
+   "n_tr_data": 87.0,
+   "soft_flags": NaN,
+   "Tmag": 10.165,
+   "Teff": 4403.0,
+   "rad": 0.67187,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 4206066,
+   "kind": "signals",
+   "period": 11.132752771272886,
+   "t0": 1473.7349021583398,
+   "duration_hr": 1.2000000000000002,
+   "depth_ppm": 964.6903223519856,
+   "rp_rearth": 2.196245251820702,
+   "sde": 15.574134989002372,
+   "snr": 18.433571964695656,
+   "snr_emp": 15.083274510009144,
+   "n_tr_data": 7.0,
+   "soft_flags": NaN,
+   "Tmag": 9.6817,
+   "Teff": 4010.0,
+   "rad": 0.64813,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 30832104,
+   "kind": "signals",
+   "period": 9.714062857569823,
+   "t0": 1524.4177954110207,
+   "duration_hr": 3.4,
+   "depth_ppm": 567.3071663468903,
+   "rp_rearth": 2.1490147433777307,
+   "sde": 15.230988673250788,
+   "snr": 17.719814919742056,
+   "snr_emp": 13.012010832476346,
+   "n_tr_data": 13.0,
+   "soft_flags": NaN,
+   "Tmag": 9.7299,
+   "Teff": 5177.0,
+   "rad": 0.827,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 300447058,
+   "kind": "signals",
+   "period": 2.947949661413177,
+   "t0": 1325.9544218678443,
+   "duration_hr": 1.6,
+   "depth_ppm": 289.83810933488826,
+   "rp_rearth": 1.2264886205076864,
+   "sde": 14.597558577934263,
+   "snr": 12.62402055480556,
+   "snr_emp": 12.119678086968095,
+   "n_tr_data": 293.0,
+   "soft_flags": NaN,
+   "Tmag": 11.63,
+   "Teff": 4296.0,
+   "rad": 0.66033,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 94753488,
+   "kind": "signals",
+   "period": 1.2905827216798926,
+   "t0": 2362.6106362761984,
+   "duration_hr": 2.4000000000000004,
+   "depth_ppm": 362.56318843747766,
+   "rp_rearth": 1.5861443552444103,
+   "sde": 14.266274041121603,
+   "snr": 22.14516657522476,
+   "snr_emp": 8.1907026035324,
+   "n_tr_data": 52.0,
+   "soft_flags": NaN,
+   "Tmag": 9.4096,
+   "Teff": 4598.0,
+   "rad": 0.76353,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 402710280,
+   "kind": "signals",
+   "period": 3.7837134787718334,
+   "t0": 1628.3234410499908,
+   "duration_hr": 0.8,
+   "depth_ppm": 348.6805222355955,
+   "rp_rearth": 1.6646150045753718,
+   "sde": 13.431131770182438,
+   "snr": 9.889218288910694,
+   "snr_emp": 10.237262942022118,
+   "n_tr_data": 22.0,
+   "soft_flags": NaN,
+   "Tmag": 9.2432,
+   "Teff": 5182.0,
+   "rad": 0.8171,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 167088080,
+   "kind": "signals",
+   "period": 0.979949762666867,
+   "t0": 1325.5923920930302,
+   "duration_hr": 0.6000000000000001,
+   "depth_ppm": 591.6260562168175,
+   "rp_rearth": 0.8310261335277466,
+   "sde": 13.277039733917606,
+   "snr": 9.105444224892087,
+   "snr_emp": 14.87168821524591,
+   "n_tr_data": 892.0,
+   "soft_flags": NaN,
+   "Tmag": 13.379,
+   "Teff": 3386.0,
+   "rad": 0.31316,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 4206066,
+   "kind": "signals",
+   "period": 3.182787965352556,
+   "t0": 1468.418235491673,
+   "duration_hr": 1.6,
+   "depth_ppm": 340.8085978955513,
+   "rp_rearth": 1.3053956044291208,
+   "sde": 12.168978084835022,
+   "snr": 12.97141999689502,
+   "snr_emp": 10.376363313563418,
+   "n_tr_data": 24.0,
+   "soft_flags": NaN,
+   "Tmag": 9.6817,
+   "Teff": 4010.0,
+   "rad": 0.64813,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 469939201,
+   "kind": "signals",
+   "period": 4.44784581083602,
+   "t0": 1355.2815080514383,
+   "duration_hr": 1.6,
+   "depth_ppm": 250.5517586281102,
+   "rp_rearth": 1.3614731366338813,
+   "sde": 11.77970478504191,
+   "snr": 10.45954574069705,
+   "snr_emp": 8.94518718079383,
+   "n_tr_data": 26.0,
+   "soft_flags": NaN,
+   "Tmag": 9.4907,
+   "Teff": 4783.0,
+   "rad": 0.78838,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 92350382,
+   "kind": "signals",
+   "period": 2.903704767887169,
+   "t0": 1328.0999494974485,
+   "duration_hr": 1.6,
+   "depth_ppm": 322.5076272026627,
+   "rp_rearth": 1.101757458224138,
+   "sde": 11.761949168042277,
+   "snr": 10.68754014454291,
+   "snr_emp": 9.191327007771989,
+   "n_tr_data": 30.0,
+   "soft_flags": NaN,
+   "Tmag": 10.44,
+   "Teff": 3734.0,
+   "rad": 0.56233,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 270696325,
+   "kind": "signals",
+   "period": 10.895752790777845,
+   "t0": 1689.2671734194964,
+   "duration_hr": 3.4,
+   "depth_ppm": 1046.30870181323,
+   "rp_rearth": 3.1804627191615666,
+   "sde": 11.564731403977609,
+   "snr": 22.82541039096932,
+   "snr_emp": 10.269612558136636,
+   "n_tr_data": 15.0,
+   "soft_flags": NaN,
+   "Tmag": 9.3883,
+   "Teff": 5368.0,
+   "rad": 0.90123,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 111280494,
+   "kind": "signals",
+   "period": 3.2612813337971813,
+   "t0": 2770.118412529433,
+   "duration_hr": 2.4000000000000004,
+   "depth_ppm": 404.3544264252997,
+   "rp_rearth": 1.2257667655277806,
+   "sde": 11.347736241512289,
+   "snr": 12.50719149228598,
+   "snr_emp": 9.635948103550628,
+   "n_tr_data": 16.0,
+   "soft_flags": NaN,
+   "Tmag": 9.6149,
+   "Teff": 3776.0,
+   "rad": 0.55873,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 447823044,
+   "kind": "signals",
+   "period": 2.391554922114344,
+   "t0": 1545.1345136449436,
+   "duration_hr": 1.6,
+   "depth_ppm": 73.53566144326615,
+   "rp_rearth": 0.7115997439068567,
+   "sde": 10.564248390328244,
+   "snr": 7.747300565039903,
+   "snr_emp": 6.659017839665139,
+   "n_tr_data": 74.0,
+   "soft_flags": NaN,
+   "Tmag": 8.889,
+   "Teff": 4920.2,
+   "rad": 0.76061,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 347107643,
+   "kind": "signals",
+   "period": 0.7381024548608701,
+   "t0": 1765.2392908737245,
+   "duration_hr": 1.6,
+   "depth_ppm": 76.00792989307898,
+   "rp_rearth": 0.6367549778199197,
+   "sde": 10.351460191268298,
+   "snr": 8.72015438898736,
+   "snr_emp": 6.110679103585527,
+   "n_tr_data": 224.0,
+   "soft_flags": NaN,
+   "Tmag": 9.685,
+   "Teff": 5246.0,
+   "rad": 0.66945,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 338160428,
+   "kind": "signals",
+   "period": 1.1221517625157138,
+   "t0": 1739.512880590644,
+   "duration_hr": 1.6,
+   "depth_ppm": 106.11397473191472,
+   "rp_rearth": 0.8412181774714906,
+   "sde": 10.18880058517444,
+   "snr": 7.747957237022826,
+   "snr_emp": 7.826141889767966,
+   "n_tr_data": 184.0,
+   "soft_flags": NaN,
+   "Tmag": 10.253,
+   "Teff": 4827.0,
+   "rad": 0.74851,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 260188852,
+   "kind": "signals",
+   "period": 11.143668746759491,
+   "t0": 1329.1936142800046,
+   "duration_hr": 2.4000000000000004,
+   "depth_ppm": 323.20013528234466,
+   "rp_rearth": 1.3034510162029713,
+   "sde": 10.049024637300755,
+   "snr": 8.709660832545685,
+   "snr_emp": 9.89158425409653,
+   "n_tr_data": 82.0,
+   "soft_flags": NaN,
+   "Tmag": 11.844,
+   "Teff": 4765.0,
+   "rad": 0.66456,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 188725145,
+   "kind": "signals",
+   "period": 5.786687782661742,
+   "t0": 1767.5453222214203,
+   "duration_hr": 2.4000000000000004,
+   "depth_ppm": 339.5032503691454,
+   "rp_rearth": 1.290671050909507,
+   "sde": 9.939806776505725,
+   "snr": 8.808887143375921,
+   "snr_emp": 10.24821040535966,
+   "n_tr_data": 73.0,
+   "soft_flags": NaN,
+   "Tmag": 11.68,
+   "Teff": 4243.0,
+   "rad": 0.64205,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 302453503,
+   "kind": "signals",
+   "period": 3.629158176503629,
+   "t0": 1326.116575687391,
+   "duration_hr": 1.6,
+   "depth_ppm": 313.1880580414749,
+   "rp_rearth": 0.9795496462454188,
+   "sde": 9.7926955648345,
+   "snr": 10.384944280834748,
+   "snr_emp": 6.811590932287358,
+   "n_tr_data": 29.0,
+   "soft_flags": NaN,
+   "Tmag": 10.349,
+   "Teff": 3621.0,
+   "rad": 0.50734,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 252721481,
+   "kind": "signals",
+   "period": 4.933559343309959,
+   "t0": 1740.647486673362,
+   "duration_hr": 1.2000000000000002,
+   "depth_ppm": 279.693968219908,
+   "rp_rearth": 1.1093897933415016,
+   "sde": 9.74865369529438,
+   "snr": 7.789286996371458,
+   "snr_emp": 6.884091848211593,
+   "n_tr_data": 21.0,
+   "soft_flags": NaN,
+   "Tmag": 9.7306,
+   "Teff": 4301.0,
+   "rad": 0.60802,
+   "known": "",
+   "other_tois": ""
+  },
+  {
+   "tic": 295804053,
+   "kind": "signals",
+   "period": 0.8810463099095835,
+   "t0": 1684.0212625420538,
+   "duration_hr": 1.2000000000000002,
+   "depth_ppm": 58.79257473225235,
+   "rp_rearth": 0.6775628127628339,
+   "sde": 9.73942842150884,
+   "snr": 7.059577360145433,
+   "snr_emp": 8.579695292168614,
+   "n_tr_data": 197.0,
+   "soft_flags": NaN,
+   "Tmag": 9.4888,
+   "Teff": 4897.0,
+   "rad": 0.80996,
+   "known": "",
+   "other_tois": ""
+  }
+ ]
+}
