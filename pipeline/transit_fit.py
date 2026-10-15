@@ -280,3 +280,44 @@ def fit_periodic_windows(data, epochs, P0, teff, nwalk=40, nstep=4000, seed=1, r
                             med[2], unpack(med)[4], np.degrees(np.arccos(med[3] / unpack(med)[4])), u)
     out["chain_summary"] = {"acceptance": float(np.mean(sampler.acceptance_fraction))}
     return out, ch
+
+
+def fit_stacked_windows(data, P, teff, nwalk=40, nstep=4000, seed=1):
+    """Transit shape (Rp/R*, b, stellar density) from windows each centred on its own measured mid-time (t - tc),
+    for transits whose times scatter about a straight-line ephemeris by more than the transit's ingress (timing
+    variations or timing systematics), which a common linear ephemeris would smear into a V shape. data: list of
+    (t, f, sigma, exp_s, tc) as from windows_from_lcs."""
+    u = tess_ld(teff)
+    W = [(w[0] - w[4], w[1], w[2], w[3]) for w in data]
+
+    def lnp(th):
+        rp, b, lrho = th
+        if not (0.002 < rp < 0.5 and 0 <= b < 1 + rp and -3 < lrho < 2):
+            return -np.inf
+        aR = ((10 ** lrho) * RHO_SUN * G * (P * 86400) ** 2 / (3 * np.pi)) ** (1 / 3)
+        if aR <= 1 + rp or b >= aR:
+            return -np.inf
+        inc = np.degrees(np.arccos(b / aR))
+        return sum(-0.5 * np.sum(((f - _model(t, 0.0, P, rp, aR, inc, u, exp_s=e)) / s) ** 2) for t, f, s, e in W)
+
+    best = None
+    for x0 in ([0.042, 0.2, 0.2], [0.045, 0.6, -0.2], [0.05, 0.85, -0.6]):
+        r = minimize(lambda p: -lnp(p), x0, method="Nelder-Mead", options={"maxiter": 20000, "xatol": 1e-7, "fatol": 1e-4})
+        if best is None or r.fun < best.fun:
+            best = r
+    rng = np.random.default_rng(seed)
+    pos = best.x + np.array([5e-4, 0.02, 0.02]) * rng.normal(size=(nwalk, 3))
+    pos[:, 1] = np.abs(pos[:, 1])
+    sampler = emcee.EnsembleSampler(nwalk, 3, lnp)
+    sampler.run_mcmc(pos, nstep, progress=False)
+    ch = sampler.get_chain(discard=nstep // 3, thin=5, flat=True)
+    rp, b, lrho = ch.T
+    aR = ((10 ** lrho) * RHO_SUN * G * (P * 86400) ** 2 / (3 * np.pi)) ** (1 / 3)
+    t14 = t14_hours(P, aR, rp, b)
+    out = {"u": u, "n_points": int(sum(len(w[0]) for w in W)), "chi2_min": float(2 * best.fun), "n_windows": len(W),
+           "acceptance": float(np.mean(sampler.acceptance_fraction))}
+    for name, v in (("rp_rs", rp), ("b", b), ("log10_rho", lrho), ("rho_solar", 10 ** lrho), ("a_rs", aR),
+                    ("t14_h", t14), ("depth_ppm", rp ** 2 * 1e6)):
+        q = np.percentile(v, [16, 50, 84])
+        out[name] = [float(q[1]), float(q[2] - q[1]), float(q[1] - q[0])]
+    return out, ch

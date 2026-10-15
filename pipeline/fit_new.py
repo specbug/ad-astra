@@ -1,11 +1,13 @@
 """Transit fits of the two candidates found by the period hunt, for the report (results/report/transit_fits.json,
 keys TIC402710280 and TOI2493), and their derived quantities and upcoming transits (results/report/extras.json).
 
-TIC 402710280.01: five transits (S39 TESS-SPOC, S66 TESS-SPOC, S93 QLP, S100 and S102 from our own full-frame
-photometry, ffi_new.py). The S102 transit lies 1.4 d from the start of an orbit, where the light curve has a
-ramp that the window's quadratic baseline does not follow; it alone pulls the fitted stellar density to 0.19
-solar (all five: 0.19; without it: 0.78, and the K dwarf's 1.61 costs dchi2 = 0.2). The shape is therefore fitted
-on the other four; the S102 window is shown with that model.
+TIC 402710280.01 (v2, after the independent audit of 15 October 2026): four transits (S39 TESS-SPOC, S93 QLP, S100
+and S102 from our own full-frame photometry, ffi_new.py). The S66 window lies on a stray-light ramp with data
+starting 0.4 h before ingress (audit_402710280.py): shown, not used. The mid-times scatter by tens of minutes about a
+straight line, so the shape is fitted with each window centred on its own measured mid-time
+(transit_fit.fit_stacked_windows) and the ephemeris is a weighted line through the times with errors inflated by
+sqrt(chi2_red). v1 fitted S39, S66, S93 and S100 on one linear ephemeris, which put the S66 ramp into the depth and
+smeared the shape (the low density once blamed on the S102 ramp came from that smear).
 TOI-2493.01: three transits in SPOC 2-min data (S33, S98, S107).
 
   python fit_new.py
@@ -36,21 +38,50 @@ def lcs_for(tic):
 def main():
     fits = json.load(open(FITS))
     ex = json.load(open(EXTRAS))
-    # TIC 402710280.01
+    # TIC 402710280.01 (v2, after the independent audit of 15 October 2026; audit_402710280.py). The sector-66
+    # window lies on a stray-light ramp (data start 0.4 h before ingress) and is shown but not used; the shape is
+    # fitted to sectors 39, 93 and 100 (sector 102 sits on a ramp at the start of an orbit and distorts the shape);
+    # the ephemeris comes from the four measured mid-times, its errors inflated by sqrt(chi2_red) because the times
+    # scatter by tens of minutes about a straight line.
     tic = 402710280
     lcs = lcs_for(tic)
-    tcs = [2384.607, 3111.411, 3838.214, 4092.595, 4128.936]
-    epochs = [0, 20, 40, 47, 48]
-    data = tf.windows_from_lcs(lcs, tcs, 0.8, 5.3)
-    out, ch = tf.fit_periodic_windows(data[:4], epochs[:4], 36.34001, 5182.0, nstep=6000)
+    au = json.load(open(RESULTS / "candidates" / "audit_402710280.json"))
+    meas = {x["sector"]: x for x in au["times_noS102_shape"]}
+    ep_of = {39: 0, 66: 20, 93: 40, 100: 47, 102: 48}
+    from audit_402710280 import beta_factor
+    data = []
+    for w in tf.windows_from_lcs(lcs, [meas[s]["tc"] for s in (39, 93, 100, 102)], 0.8, 5.3):
+        oot = np.abs(w[0] - w[4]) > 0.75 * 5.3 / 24
+        data.append((w[0], w[1], w[2] * beta_factor(w[0][oot], w[1][oot] - 1, w[2]), w[3], w[4]))
+    out, ch = tf.fit_stacked_windows(data, 36.3399, 5182.0, nstep=6000)
+    ref = 40
+    out["ref_epoch"] = ref
+    n = np.array([ep_of[s] for s in (39, 93, 100, 102)], float)
+    tt = np.array([meas[s]["tc"] for s in (39, 93, 100, 102)])
+    st = np.array([meas[s]["err_min"] for s in (39, 93, 100, 102)]) / 1440
+    A = np.vstack([np.ones_like(n), n - ref]).T
+    W = np.diag(1 / st ** 2)
+    cov = np.linalg.inv(A.T @ W @ A)
+    p = cov @ A.T @ W @ tt
+    chi2 = float(np.sum(((tt - A @ p) / st) ** 2))
+    sc = np.sqrt(max(chi2 / 2, 1.0))
+    eT, eP = float(np.sqrt(cov[0, 0]) * sc), float(np.sqrt(cov[1, 1]) * sc)
+    out["tref_btjd"] = [float(p[0]), eT, eT]
+    out["period_d"] = [float(p[1]), eP, eP]
+    out["ephemeris_chi2"] = [chi2, 2]
+    out["times"] = [{"sector": s, "epoch": ep_of[s], "tc": meas[s]["tc"], "err_min": meas[s]["err_min"],
+                     "depth_ppm": meas[s]["depth_ppm"], "depth_err_ppm": meas[s]["depth_err_ppm"],
+                     "product": meas[s]["product"],
+                     "o_c_min": float((meas[s]["tc"] - p[0] - (ep_of[s] - ref) * p[1]) * 1440)} for s in (39, 93, 100, 102)]
+    out["depth_transits_ppm"] = au["per_transit_depth_mean"]
     med = np.median(ch, axis=0)
-    P, tref = med[1], med[0]
-    aR = ((10 ** med[4]) * tf.RHO_SUN * tf.G * (P * 86400) ** 2 / (3 * np.pi)) ** (1 / 3)
-    inc = np.degrees(np.arccos(med[3] / aR))
-    out["plot"] = tf.plot_data([(w[0], w[1], w[2]) for w in data], [tref + (ep - out["ref_epoch"]) * P for ep in epochs],
-                               P, med[2], aR, inc, out["u"])
+    aR = ((10 ** med[2]) * tf.RHO_SUN * tf.G * (p[1] * 86400) ** 2 / (3 * np.pi)) ** (1 / 3)
+    inc = np.degrees(np.arccos(med[1] / aR))
+    centres = [meas[39]["tc"], float(p[0] + (20 - ref) * p[1]), meas[93]["tc"], meas[100]["tc"], meas[102]["tc"]]
+    pdata = tf.windows_from_lcs(lcs, centres, 0.8, 5.3)
+    out["plot"] = tf.plot_data([(w[0], w[1], w[2]) for w in pdata], centres, float(p[1]), med[0], aR, inc, out["u"])
     out["sectors"] = [39, 66, 93, 100, 102]
-    out["fit_windows"] = [39, 66, 93, 100]
+    out["fit_windows"] = [39, 93, 100, 102]
     fits["TIC402710280"] = out
     print("TIC 402710280", {k: v for k, v in out.items() if k != "plot"}, flush=True)
     # TOI-2493.01

@@ -470,8 +470,11 @@ def section_hip71639(fit, ex):
          f"Flat-bottomed, {pm(f['t14_h'], 2)} h long, with short ingress and egress. The stellar density the transit "
          f"shape implies at this period, {pm(f['rho_solar'], 2)} {RHOSUN}, is {e['rho_verdict']} with the catalogue "
          f"value for this F star ({e['rho_tic']:.2f} {RHOSUN})."),
-        ("pass", "Depths agree.",
-         "The four transits have the same depth within the noise; SPOC's odd-versus-even test found the same."),
+        ("warn", "Depths vary between sectors.",
+         "In the summed pixels the four transits are 680, 454, 665 and 623 ppm deep: the sector-38 one is about 30% "
+         "shallower, more than the errors allow. The star is saturated (T = 5.6), where light lost from the aperture "
+         "along bleed columns varies from sector to sector; that is the likely cause but is not shown here. SPOC's "
+         "odd-versus-even test passes."),
         ("pass", "The signal is on this star.",
          "The dip is present in the summed flux of all pixels (680, 454, 665 and 623 ppm in the four sectors). "
          "The only Gaia source within 2′ bright enough to mimic it is TIC 128703032 (T = 10.6, 80″ away), which "
@@ -577,19 +580,22 @@ def section_hip56966(fit, ex):
     checks = check_rows([
         ("pass", "Four transits, one period.",
          f"Dips in sectors 10, 64, 99 and 100 (710, 651, 694 and 799 ppm, each ±60) fall on one ephemeris with "
-         f"4 minutes rms: 74 and 51 cycles separate the earlier ones from the sector-99 transit. Every shorter alias "
+         f"4 minutes rms: 125 and 51 cycles separate the sector-10 and sector-64 transits from the sector-99 one. Every shorter alias "
          f"predicts transits inside the data that are missing, ruled out at more than {e['alias_min_sigma']:.0f}σ. "
          f"The only other predicted transit since 2019 fell in the mid-sector gap of sector 37."),
         ("pass", "No secondary eclipse.",
          "Half an orbit after each transit the light curves are flat to about 150 ppm, as for a planet and unlike most "
          "eclipsing binaries."),
-        ("pass", "The signal is on this star.",
+        ("warn", "Probably on this star; the offset is marginal.",
          (lambda c: f"Difference-image centroids of the transits (2-minute pixels), measured from the star's own "
-          f"image on each frame: {c['offset_arcsec']:.1f}″ ± {c['centroid']['err']:.1f}″ from the star. The faint "
+          f"image on each frame: {c['offset_arcsec']:.1f}″ ± {c['centroid']['err']:.1f}″ from the star, a "
+          f"{c['offset_sigma']:.1f}σ offset, under the 3σ line but not comfortably. The faint "
           f"stars that could fake the dip lie {c['closest_neighbours'][0]['sigma']:.1f}σ and "
           f"{c['closest_neighbours'][1]['sigma']:.1f}σ from that position ({c['closest_neighbours'][0]['name']}, "
           f"{c['closest_neighbours'][1]['name']}; they would need eclipses over 50% deep). The sector-64 transit, seen "
-          f"only in full-frame images, gives a discordant centroid and is set aside.")(cv(266376971))),
+          f"only in full-frame images, gives a discordant centroid (23″ off, blended in the large full-frame pixels) and "
+          f"is left out of the centroid but kept for timing and depth. A source closer than about 7″ that Gaia does "
+          f"not list is not excluded.")(cv(266376971))),
         ("pass", "No sign of a stellar companion.",
          "Gaia DR3: RUWE 0.81, no non-single-star solution, radial velocity stable to 0.18 km/s over 12 epochs."),
         ("warn", "Slightly short transit.",
@@ -658,30 +664,32 @@ def _newcands():
 
 
 def fpp_row():
-    """The TRICERATOPS result (fpp_triceratops.py) as a vetting row, if it has run."""
-    d = _json("fpp_tic402710280.json")
+    """The TRICERATOPS result (fpp_triceratops.py, v2 inputs: the four clean transits) as a vetting row."""
+    d = _json("fpp_tic402710280_v2.json")
     if not d or not d.get("runs"):
-        return []
+        return [("info", "TRICERATOPS being rerun.", "The first run used the sector-66 window and a 1449 ppm depth; it "
+                 "is being repeated on the four clean transits at 2100 ppm, and its earlier result is withdrawn.")]
     runs = d["runs"]
-    pl = 1 - d["FPP_mean"]
     tp = np.mean([r["scenarios"].get(f"TP@{d['tic']}", 0) for r in runs])
     stp = np.mean([r["scenarios"].get(f"STP@{d['tic']}", 0) for r in runs])
     var = []
-    for name, label in (("fpp_tic402710280_err1.5.json", "with the errors inflated 1.5× for correlated noise"),
-                        ("fpp_tic402710280_box5.json", "with TRICERATOPS's larger default 5×5-pixel apertures")):
-        b = _json(name)
-        if b and b.get("runs"):
-            var.append(f"{label}, FPP {b['FPP_mean']:.3f} and NFPP {b['NFPP_mean']:.0e}")
-    vtxt = (" Checks: " + "; ".join(var) + ".") if var else ""
-    return [("pass", f"About {pl:.1%} likely to be a planet.",
-             f"TRICERATOPS (Giacalone et al. 2021), with each sector's photometric aperture and the Gaia field: "
-             f"false-positive probability (FPP) {d['FPP_mean']:.3f} ± {d['FPP_std']:.3f} over {len(runs)} runs, "
-             f"nearby-star FPP {d['NFPP_mean']:.0e}. A planet on this star carries {tp:.0%}, a planet diluted by an "
-             f"unseen companion most of the rest; the main false-positive scenario ({stp:.1%}) is a planet orbiting an "
-             f"unseen companion star instead. That sits on the threshold used to validate TESS planets (FPP < 0.015, "
-             f"NFPP < 0.001) and well inside the one for a likely planet (FPP < 0.5).{vtxt} No high-resolution image "
-             f"exists: companions within about an arcsecond are constrained only by Gaia and population priors, so a "
-             f"speckle image is what would turn this into a formal validation.")]
+    b5 = _json("fpp_tic402710280_v2_box5.json")
+    if b5 and b5.get("runs"):
+        var.append(f"with TRICERATOPS's larger default 5×5-pixel apertures, FPP {b5['FPP_mean']:.3f} and NFPP "
+                   f"{b5['NFPP_mean']:.0e}")
+    vtxt = (" Check: " + "; ".join(var) + ".") if var else ""
+    ok = d["FPP_mean"] < 0.015 and d["NFPP_mean"] < 1e-3
+    return [("pass" if d["FPP_mean"] < 0.5 else "warn", "TRICERATOPS: FPP " + f"{d['FPP_mean']:.3f}, NFPP {d['NFPP_mean']:.0e}.",
+             f"TRICERATOPS 1.1 (Giacalone et al. 2021) on the four clean transits (each centred on its measured "
+             f"mid-time, 10-minute bins, depth 2100 ppm), with each sector's photometric aperture and the Gaia field: "
+             f"false-positive probability {d['FPP_mean']:.3f} ± {d['FPP_std']:.3f} over {len(runs)} runs, nearby-star "
+             f"FPP {d['NFPP_mean']:.0e}. A planet on this star carries {tp:.0%} of the probability; the main "
+             f"false-positive scenario ({stp:.1%}) is a planet orbiting an unseen companion star.{vtxt} "
+             + ("These values are below the validation thresholds (FPP < 0.015, NFPP < 0.001), but without a "
+                "contrast curve from high-resolution imaging this is not a validation. " if ok else
+                "That is not a validation: it needs FPP < 0.015 and NFPP < 0.001 with a contrast curve from "
+                "high-resolution imaging, and none exists. ")
+             + "The first run (sector 66 included, 1449 ppm depth) gave FPP 0.015 and is withdrawn.")]
 
 
 def section_tic402710280(fit, ex):
@@ -700,40 +708,65 @@ def section_tic402710280(fit, ex):
     c = nc["centroid"]
     near = c["closest_neighbours"]
     dens = nc["density_test"]["dchi2_rho_fixed"]
-    nxt = "".join(f"<li><span class='num'>{btjd_to_utc(r['btjd']).strftime('%-d %b %Y, %H:%M')} UTC</span>"
+    nxt = "".join(f"<li><span class='num'>{btjd_to_utc(r['btjd']).strftime('%-d %b %Y, %H:%M')} UTC ± {r['sigma_min']:.0f} min</span>"
                   f"<span class='muted'>{esc(r['note'])}</span></li>" for r in e["next"])
+    au = _json("audit_402710280.json") or {}
+    bl = _json("blend_shape_402710280.json") or {}
+    c = au.get("centroid_noS66", c)
+    near = c["closest_neighbours"]
+    tms = f["times"]
+    oc = ", ".join(f"S{t['sector']} {t['o_c_min']:+.0f} ± {t['err_min']:.0f}" for t in tms)
+    dmin = min(r["dchi2"] for r in bl.get("eb", [])) if bl.get("eb") else float("nan")
+    s66 = au.get("s66_raw", {})
     checks = check_rows([
-        ("pass", "Five transits, one period, none missing.",
-         "Dips in sectors 39, 66, 93, 100 and 102 (" + ", ".join(f"{t['depth_ppm']:.0f}" for t in tr) +
-         " ppm; signal-to-noise " + ", ".join(f"{t['snr']:.0f}" for t in tr) + ") fall on one ephemeris. "
-         "Every shorter alias predicts transits inside the data that are not there. Every transit this period "
-         "predicts inside the data is there: sectors 12 and 101 contain none, and the one due in sector 103 falls "
-         "in a data gap."),
-        ("pass", "The signal is on this star.",
-         f"Difference-image centroids of the five transits, measured from the star's own image on each frame: "
+        ("pass", "Four transits of one depth.",
+         "Sectors 39 (TESS-SPOC), 93 (QLP), 100 and 102 (our own full-frame photometry): depths "
+         + ", ".join(f"{t['depth_ppm']:.0f} ± {t['depth_err_ppm']:.0f}" for t in tms)
+         + f" ppm, mean {f['depth_transits_ppm'][0]:.0f} ± {f['depth_transits_ppm'][1]:.0f} (χ² 2.3 for 3 degrees of "
+         "freedom): three independent pipelines see the same dip. Every shorter alias predicts transits inside the "
+         "data that are not there (sector 101 is flat at P/2 and P/3); sector 103's falls in a data gap."),
+        ("warn", "Sector 66 cannot tell.",
+         f"The transit predicted in sector 66 falls on a stray-light ramp: TESS-SPOC's good data start "
+         f"{-s66.get('tspoc', {}).get('first_quality0_h', -3.2):.1f} h before mid-transit (0.6 h before ingress), the "
+         "background falls from 15,000 to 2,900 e⁻/s across the window, the raw flux sags for 13 hours, and QLP "
+         "flags every cadence within 12 hours. A transit fit gives 1620 ± 200 ppm at the predicted time, but the "
+         "answer depends on the baseline, so the sector counts neither for nor against. An earlier version of this "
+         "report counted it as a fifth transit and fitted it; that inflated the agreement and biased the depth low "
+         "(1655 ppm)."),
+        ("warn", "Transit times scatter.",
+         f"Measured one by one (shape fixed, baseline refitted, red-noise errors), the mid-times sit {oc} min "
+         f"from a straight-line ephemeris (χ² = {f['ephemeris_chi2'][0]:.0f} for 2 degrees of freedom). Either the "
+         "timing is disturbed by systematics (the sector-102 transit lies on a ramp near an orbit start) or the "
+         "planet shows timing variations; four times cannot tell. The period and epoch errors below are inflated "
+         "to match, and predictions carry about ±20 minutes; the ±2 minutes quoted earlier was wrong."),
+        ("pass", "The signal is on this star, or within 2″ of it.",
+         f"Difference-image centroids of the four transits, measured from the star's own image on each frame: "
          f"{c['offset_arcsec']:.1f}″ ± {c['centroid']['err']:.1f}″ from the target. Every Gaia star able to fake "
          f"the dip lies {near[1]['sigma']:.0f}σ or more from that position, except one: a G = 16.2 background star "
-         f"2″ away (parallax 0.69 mas against the target's 15.0)."),
-        ("pass", "Not that background star.",
-         f"To make a {depth:.0f} ppm dip through 6.4 magnitudes of dilution it would need an eclipse about "
-         f"{depth * 1e-6 * 10 ** (0.4 * 6.4) * 100:.0f}% deep, which takes a companion nearly as large as the star "
-         "and a long, V-shaped ingress. Fitting the transits as a diluted eclipse of that kind is worse than a "
-         "planet by Δχ² = 79 (radius ratio ≥ 0.7), and still by 65 at 0.5 and 27 at 0.3: strongly disfavoured, "
-         "though only high-resolution imaging can exclude it."),
+         f"2.2″ away (parallax 0.69 mas against the target's 15.0), which centroids cannot separate."),
+        ("pass", "Not that background star, by shape.",
+         f"Diluted by the target (ΔG = 6.4), a {f['depth_transits_ppm'][0]:.0f} ppm dip needs an eclipse of about "
+         f"{f['depth_transits_ppm'][0] * 1e-6 / 0.00284 * 100:.0f}% of that star's light: a companion nearly as large "
+         f"as the star, with long ingress and egress. Fitted as such an eclipse (radius ratio 0.3 to 1.2, three "
+         f"limb-darkening laws, the star given 40% more light than it has), the four transits fit worse than a planet "
+         f"by Δχ² ≥ {dmin:.0f} (2,227 points, reduced χ² of the planet fit 0.84). Strongly disfavoured; only "
+         "high-resolution imaging excludes it."),
         ("pass", "A transit this star can make.",
-         f"Without the sector-102 transit the fitted stellar density is {pm(f['rho_solar'], 2)} solar; the "
-         f"catalogue K dwarf's 1.61 costs Δχ² = {dens['without_S102']:.1f}. The sector-102 transit, 1.4 days from "
-         f"the start of an orbit where our light curve has a ramp, alone pulls the density down (Δχ² = "
-         f"{dens['all_five']:.0f} with it); it is shown but left out of the shape fit."),
+         f"The shape, fitted with each transit centred on its own mid-time, gives a stellar density of "
+         f"{pm(f['rho_solar'], 2)} solar against the catalogue K dwarf's 1.61, impact parameter {pm(f['b'], 2)}. "
+         "(Forcing all transits onto one straight-line ephemeris smears the shape; that, not the sector-102 ramp, is "
+         "what made earlier fits look grazing.)"),
         ("pass", "No secondary eclipse.",
          "Half an orbit later the light curve is flat (37 to 120 ± 48 ppm). Odd and even transits cannot be "
-         "compared: the five fall on cycles −30, −10, 10, 17 and 18, so only one (sector 100) is odd."),
+         "compared: the four fall on cycles −30, 10, 17 and 18, so only one (sector 100) is odd."),
         ("pass", "No sign of a stellar companion.", "Gaia DR3: RUWE 1.00, no non-single-star solution, a single "
          "image in every scan."),
         *fpp_row(),
-        ("info", "Two transits only in new data.", "The sector 100 and 102 transits come from our own photometry of "
-         "the full-frame images; no public light curve of those sectors exists yet (the public QLP light curves end "
-         "at sector 98)."),
+        ("info", "Half the transits only in our own photometry.", "The sector 100 and 102 transits, and the flat "
+         "sector 101 that rules out shorter periods, come from our own photometry of the full-frame images (ffi_new.py: "
+         "15×15-pixel cutouts of the calibrated images, a circular aperture, a local background annulus); no public "
+         "light curve of those sectors exists yet (the public QLP light curves end at sector 98). Sector 100's "
+         "scatter is 1.5 times its white-noise expectation, which its errors here include."),
         ("info", "On record:", "nothing. Not a TOI or community TOI, no planet parameters, imaging or spectra on "
          "ExoFOP, and absent from the full TOI and community-TOI tables (checked live on 14 October 2026); not in SIMBAD's object types, the NASA archive or the literature "
          "searches. SPOC never observed it at 2-minute cadence, so it has no SPOC TCE."),
@@ -747,15 +780,17 @@ def section_tic402710280(fit, ex):
     <p class="lede col">A K dwarf (TESS magnitude 9.2, V ≈ 10) 67 parsecs away in Triangulum Australe dims by {depth:.0f} ppm
     for {f['t14_h'][0]:.1f} hours every {f['period_d'][0]:.4f} days: a planet about {rp:.1f} times the size of
     Earth. The survey first saw two of its transits, 1,454 days apart; our own light curves of the newest
-    full-frame images (sectors 100 and 102) added two more, and the period they fix finds a fifth in sector 66.</p>
+    full-frame images found two more on consecutive orbits (sectors 100 and 102), which fix the period. A fifth
+    predicted transit, in sector 66, falls on a stray-light ramp and cannot be judged.</p>
   </div>
   <div class="cand-grid">
     <div>
       <figure class="plate" style="margin:0">
         <div class="scroll-x">{svg}</div>
-        <figcaption>Every transit (20-minute bins) with one model fitted to the first four: TESS-SPOC (sectors 39
-        and 66), QLP (93) and our own full-frame photometry (100 and 102). The sector-102 window sits on a ramp at
-        the start of an orbit.</figcaption>
+        <figcaption>Each window (20-minute bins) centred on its own measured mid-time, with the transit shape fitted
+        to sectors 39 (TESS-SPOC), 93 (QLP), 100 and 102 (our own full-frame photometry). Sector 66 (TESS-SPOC) is
+        shown at its predicted time but not used: its data start 0.6 h before ingress, on a stray-light
+        ramp.</figcaption>
       </figure>
       <div class="col" style="display:grid;gap:12px">
         <h3>Vetting</h3>
@@ -778,8 +813,8 @@ def section_tic402710280(fit, ex):
         <dt>Orbit</dt><dd>{e['a_au']:.3f} AU · {e['s_earth']:.0f}× Earth's insolation</dd>
         <dt>T<sub>eq</sub></dt><dd>≈ {e['teq']:.0f} K</dd>
         <dt>RV signal</dt><dd>≈ {e['k_ms']:.1f} m/s for {e['mass_assumed']:.0f} M<sub>⊕</sub></dd>
-        <dt>Transits</dt><dd>S39 · S66 · S93 · S100 · S102</dd>
-        <dt>Next in TESS</dt><dd>sectors 113–114</dd>
+        <dt>Transits</dt><dd>S39 · S93 · S100 · S102 (S66 unusable)</dd>
+        <dt>Next in TESS</dt><dd>sector 114 (19 Feb 2027)</dd>
       </dl>
       <div class="plate">
         <p class="label">Next transits seen from Chile</p>
@@ -811,7 +846,9 @@ def section_toi2493(fit, ex):
         ("pass", "Three transits, one period.",
          "The TOI's transit (sector 33, 2021) and two more found by the period hunt in sectors 98 and 107 (" +
          ", ".join(f"{t['depth_ppm']:.0f}" for t in tr) + " ppm; signal-to-noise " + ", ".join(f"{t['snr']:.1f}" for t in tr) +
-         ") share one period; every shorter alias predicts transits inside sectors 6, 33, 87, 98 or 107 that are not there."),
+         ") share one period; every shorter alias predicts transits inside sectors 6, 33, 87, 98 or 107 that are not there, "
+         "and our own sector-108 light curve is flat where P/3 and P/4 put transits (−620 ± 200 and −240 ± 180 ppm "
+         "against about 1500 expected)."),
         ("pass", "The signal is on this star.",
          f"Difference-image centroids of the three transits (2-minute pixels): {c['offset_arcsec']:.1f}″ ± "
          f"{c['centroid']['err']:.1f}″ from the target; every Gaia star able to fake the dip is {near[0]['sigma']:.0f}σ "
@@ -822,8 +859,10 @@ def section_toi2493(fit, ex):
         ("warn", "Modest signal.", "Each transit alone is a 7–9σ event, the sector-98 one the weakest. TESS should "
          "see the next transit in sector 110, and a 1-metre telescope can catch the 1.5-ppt, 6-hour dip from the ground."),
         ("info", "On record:", "TOI-2493.01 since February 2021, as a single transit (\"single at TBJD~2226\"), "
-         "period 0. SPOC's only detection is a 15.1-day TCE in sector 33 that the transits in sectors 98 and 107 "
-         "rule out. No period on ExoFOP or in the NASA archive, and no paper found."),
+         "period 0, depth 1704 ppm and duration 2.09 h. The duration disagrees with every transit here (6.1 h); it "
+         "most likely comes from SPOC's 15.1-day TCE fit in sector 33, a period the transits in sectors 98 and 107 rule "
+         "out. Our ephemeris puts the sector-33 transit at BJD 2459225.815, 2.2σ before the catalogue's 2459225.8233 ± "
+         "0.0039. No period on ExoFOP or in the NASA archive, and no paper found."),
     ])
     return f"""
 <section id="toi2493" class="cand">
@@ -885,12 +924,21 @@ def section_hd11506(fit, ex):
     depth = -min(min(p["my"]) for p in f["plot"])
     d_i = [depth * (x["rp_rs"] / f["rp_rs"][0]) ** 2 for x in per]
     al = e["aliases"]
-    allowed = [a for a in al if a["status"] == "allowed"]
+    s108 = (_json("s108_alias.json") or {}).get("HD11506", {})
+    out108 = {round(r["P"], 4) for r in s108.get("rows", []) if r["ruled_out_s108"]}
+    gap108 = sorted(r["P"] for r in s108.get("rows", []) if not r["ruled_out_s108"]
+                    and r["events"] and all(ev["coverage"] < 0.6 for ev in r["events"]))
+    allowed = [a for a in al if a["status"] == "allowed" and round(a["P"], 4) not in out108]
+    n_s108 = len(out108)
+    s108_gap = ("the periods " + ", ".join(f"{x:.1f}" for x in gap108[:5]) + " days"
+                + (f" (and {len(gap108) - 5} longer ones)" if len(gap108) > 5 else "")
+                + " survive only because the transit they predict in sector 108 falls in a gap of our light curve."
+                if gap108 else "")
     alias_rows = "".join(
         f"<tr><td class='r m'>{a['n']}</td><td class='r m'>{a['P']:.2f}</td><td class='r m'>{a['e_min_b50']:.2f}</td>"
         f"<td class='r m'>{a['b_circ']:.2f}</td></tr>" for a in allowed[::-1][:12])
     checks = check_rows([
-        ("pass", "Two transits, same shape.",
+        ("warn", "Two transits, same duration.",
          f"Durations agree; depths {d_i[0]:.0f} and {d_i[1]:.0f} ppm, "
          f"which differ by about {e['depth_diff_sigma']:.1f}σ."),
         ("pass", "Seen in two independent data sets.",
@@ -937,9 +985,10 @@ def section_hd11506(fit, ex):
       <div class="col" style="display:grid;gap:12px">
         <h3>What the period could be</h3>
         <p>The transits are {e['dt']:.2f} days apart, so the period is that gap divided by a whole number. Each
-        choice predicts other transits; where TESS was watching at those times (sectors 3, 30 and 107) and saw
-        nothing, that choice is ruled out. {len(allowed)} of {len(al)} choices survive, the shortest being
-        {allowed[-1]['P']:.1f} days. The table lists the shortest ones with the impact parameter a circular
+        choice predicts other transits; where TESS was watching at those times (sectors 3, 30 and 107, and sector
+        108 in our own full-frame photometry) and saw nothing, that choice is ruled out. {len(allowed)} of {len(al)}
+        choices survive, the shortest being {allowed[-1]['P']:.1f} days; {s108_gap} An earlier version of this
+        report left out sector 108, which removes {n_s108} more. The table lists the shortest ones with the impact parameter a circular
         orbit would need to give a 3.2-hour transit, and the least eccentricity that works with the fitted shape.</p>
         <div class="tablewrap"><table><thead><tr><th class="r">n</th><th class="r">Period (d)</th>
         <th class="r">min. e</th><th class="r">b if circular</th></tr></thead><tbody>{alias_rows}</tbody></table></div>
@@ -1725,7 +1774,7 @@ def section_sources():
     rows = [
         ("TESS full-frame images, sectors 99–108", "NASA · our own photometry",
          f"{n_ffi} light curves of {n_ffi} star-sectors that have no public full-frame light curve yet (QLP's end at "
-         "sector 98, TESS-SPOC's near 80): two of TIC 402710280's five transits, and the extra sectors behind the "
+         "sector 98, TESS-SPOC's near 80): two of TIC 402710280's four usable transits, and the extra sectors behind the "
          "period hunt's second pass."),
         ("Gaia DR3 (sources, orbits, eclipsing binaries)", "ESA · Gaia archive",
          f"{n_g} named stars matched: RUWE, resolved close companions, radial-velocity scatter and {n_orb} orbital "
@@ -1812,8 +1861,9 @@ def section_calibration(sv, s2, comp):
       {med_rate:.1f}, highest {max_rate:.1f} per 1000 in sector {max_sec}), driven by scattered light, which adds
       upward bumps that turn into dips when flipped. It is an upper bound: systematics are vetoed when they hit many
       stars at once, and flipping only 10% of light curves makes that veto ten times weaker for the flipped set. A
-      single full-frame dip therefore needs the pixel and period checks before it counts; all three headline
-      candidates are in two-minute data.</p>
+      single full-frame dip therefore needs the pixel and period checks before it counts. TOI-2493.01, HIP 56966 and
+      HD 11506 are in two-minute data; TIC 402710280 rests on full-frame data alone, which is why its pixel, timing and
+      shape checks are shown in full.</p>
     </div>
   </div>
   <div class="two">
@@ -1987,13 +2037,18 @@ def section_caveats(lit=None):
     </div>
     <div>
       <h3>Turning a candidate into a planet</h3>
-      <p><strong>Report it.</strong> TIC 402710280 would be a new community TOI, and TOI-2493.01's period an update
-      to its TOI; the values are ready in <a href="{REPO}/results/candidates/exofop_ready.md">exofop_ready.md</a>.
-      HIP 56966 and HD 11506 already have community TOIs on ExoFOP, so the new period and the second transit belong
-      there, the way another user posted HIP 71639's period in May. A short Research Note of the AAS is the usual
-      citable record for an amateur find.</p>
-      <p><strong>Test the predictions.</strong> TESS should catch TOI-2493.01 again on 15 November 2026 (sector 110);
-      TIC 402710280 transits on 2 November and 8 December 2026, and TESS returns to it in sectors 113–114. A missing
+      <p><strong>Publish it, then report it.</strong> Since 19 August 2026 ExoFOP accepts a new community candidate only
+      after it is published in a peer-reviewed journal with online access, and only from users approved through its
+      Published Candidate Upload Request; a Research Note of the AAS qualifies only if it cites a peer-reviewed paper
+      describing the detection and vetting method, which this survey does not yet have. So TIC 402710280 cannot
+      become a community TOI before a paper. What remains open to an ordinary account is adding parameter sets to
+      existing objects: TOI-2493.01's period, HIP 56966's period and HD 11506's second transit on their community
+      TOIs, and the corrections below, each as an alternative parameter set with a note (ExoFOP does not let one
+      user edit another's entry). The values are in <a href="{REPO}/results/candidates/exofop_ready.md">exofop_ready.md</a>;
+      ExoFOP staff should confirm that route first.</p>
+      <p><strong>Test the predictions.</strong> TESS should catch TOI-2493.01 again on 15 November 2026 (sector 110).
+      TIC 402710280's next transits (±20 minutes) fall in daylight or near the Sun from Chile until 3 May 2027, a
+      full transit at night; TESS returns to it in sector 114, with a transit on 19 February 2027. A missing
       transit at the predicted time would kill the period.</p>
       <p><strong>Rule out impostors.</strong> HIP 71639 and HIP 56966 already have Gemini speckle imaging on ExoFOP
       showing no close companion. TIC 402710280, TOI-2493 and HD 11506 have none yet; they need speckle or
@@ -2067,7 +2122,7 @@ def build():
         rpb = fb["rp_rs"][0] * 0.652 * R_EARTH_PER_RSUN
         fnew = (f'<li>{chip("New candidate", "new")}<div><strong>TIC 402710280: a {rpa:.1f} {RE} planet candidate every '
                 f'{fa["period_d"][0]:.3f} days around a K dwarf 67 parsecs away (TESS magnitude 9.2).</strong> Not a TOI, not a '
-                f'community TOI, nothing on record anywhere. Five transits from 2021 to 2026, two of them only in our own '
+                f'community TOI, nothing on record anywhere. Four transits from 2021 to 2026 (a fifth falls on stray light), two of them only in our own '
                 f'light curves of the newest TESS full-frame images; the dip comes from the star or from within 2″ of it, and has a planet\'s shape.</div></li>'
                 f'<li>{chip("Period new", "new")}<div><strong>TOI-2493.01: a {rpb:.1f} {RE} candidate every '
                 f'{fb["period_d"][0]:.2f} days, receiving {exb.get("s_earth", float("nan")):.1f}× Earth\'s insolation.</strong> '
@@ -2126,7 +2181,7 @@ def build():
   period is half the posted one, three single transits merged into TOIs they do not belong to, and TOI
   ephemerides that no longer find their transits.</p>
   <div class="strip">
-    <div><span class="label">Sectors searched</span><span class="v">{n_q + n_s} of 107</span></div>
+    <div><span class="label">Public sectors searched</span><span class="v">{n_q + n_s} of 107</span></div>
     <div><span class="label">Light curves</span><span class="v">{int(sv.n_real.sum()):,}</span></div>
     <div><span class="label">Red-dwarf deep search</span><span class="v">{ta_n:,} of {ta_total:,}</span></div>
   </div>
@@ -2220,7 +2275,7 @@ NOTES = {
     441010857: "Three transits on a 24.054-day period; the 1.7-hour duration means a grazing crossing.",
     318707987: "HD 3167 (= HIP 2736), a known K2 system: the single transit is HD 3167 c (29.85 d), and the 0.96-day SPOC detection is HD 3167 b.",
     430746529: "One 16-hour transit of a bright A star (HIP 109818): a giant on an orbit of at least 65 days.",
-    402710280: "Now five transits and one period, 36.340 days: see TIC 402710280 at the top.",
+    402710280: "Now four transits and one period, 36.340 days: see TIC 402710280 at the top.",
     447447071: "Two more dips in our sector 100 and 103 photometry fix one period, 33.698 days, and the dips are on the star; but they are grazing (impact parameter about 1.1) and Gaia finds the star's radial velocity variable: most likely a grazing eclipsing companion.",
     64038538: "Two 4.4 Earth-radius transits on a K dwarf; six periods of 1116/n days remain.",
 }

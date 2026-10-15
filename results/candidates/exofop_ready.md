@@ -3,28 +3,40 @@
 Prepared from this survey's fits; BJD_TDB = BTJD + 2457000. Posting needs an ExoFOP account (the CTOI form or
 "Upload planet parameters" on the target page). Nothing here has been posted.
 
-## TIC 402710280.01 — new community TOI (CTOI)
+## TIC 402710280.01 — new candidate (NOT uploadable yet: ExoFOP requires prior publication)
+Revised 15 October 2026 after the independent audit (pipeline/audit_402710280.py, blend_shape_402710280.py,
+fit_new.py). Since 19 August 2026 ExoFOP accepts new community candidates only after peer-reviewed publication
+and an approved Published Candidate Upload Request; these values are for the paper and a later upload.
+
 | Field | Value |
 |---|---|
 | TIC | 402710280 (TYC 9041-03677-1, Gaia DR3 5828441289812582400) |
-| Period (d) | 36.33972 ± 0.00007 |
-| Transit epoch (BJD) | 2460474.8014 ± 0.0016 |
-| Depth (ppm) | 1655 (fitted transit depth; Rp/R*^2 = 1449 ± 229) |
-| Duration (h) | 5.19 ± 0.18 |
-| Rp/R* | 0.0381 ± 0.0029 |
-| Impact parameter | 0.46 ± 0.32 |
-| Planet radius (R_Earth) | 3.4 (R* = 0.817 R_Sun, TIC v8.2) |
-| Transits used | S39 2384.607, S66 3111.411, S93 3838.214, S100 4092.595, S102 4128.936 (BTJD) |
+| Period (d) | 36.33990 ± 0.00053 (errors inflated by sqrt(chi2_red): the mid-times scatter, see below) |
+| Transit epoch (BJD_TDB) | 2460838.2019 ± 0.0122 (the sector-93 transit) |
+| Depth (ppm) | 2097 ± 46 (mean of the four transits' fitted depths; Rp/R*^2 = 1773 +60/-45) |
+| Duration (h) | 5.27 ± 0.05 |
+| Rp/R* | 0.0421 +0.0007/-0.0005 |
+| Impact parameter | 0.23 ± 0.20 |
+| Stellar density from the shape | 1.56 +0.12/-0.33 solar (TIC: 1.61) |
+| Planet radius (R_Earth) | 3.75 ± 0.24 (R* = 0.817 ± 0.05 R_Sun, TIC v8.2) |
 | Disposition | PC |
-Notes: five transits; S39 and S66 from TESS-SPOC, S93 from QLP, S100 and S102 from our own photometry of the
-sector 100/102 full-frame images (no public FFI light curves of those sectors yet). Every predicted transit inside
-the data is present. Difference-image centroids (five transits) 1.4" ± 1.2" from the target; the only unresolved
-Gaia neighbour (G = 16.2 at 2.2", parallax 0.69 mas, background) would need a ~60% eclipse, strongly disfavoured
-by the transit shape (diluted-EB fits worse by dchi2 = 79 for k >= 0.7, 65 at 0.5); only imaging can exclude it. Stellar density from the transit shape
-consistent with the K dwarf (S102 transit, on a ramp 1.4 d after an orbit start, excluded from the shape fit).
-Gaia DR3 RUWE 1.00. No secondary eclipse. Odd/even is not a meaningful test here: relative to T0 the transits are epochs -30, -10, 10, 17, 18, so only S100 is odd. TRICERATOPS (10 runs, no contrast
-curve): FPP = 0.0147 +- 0.0055, NFPP = 4.5e-5 (planet on target 84%, planet diluted by an unseen companion 14%,
-planet around an unseen companion 1.5%); at the validation threshold, pending high-resolution imaging. Next transits: 2026-11-02 10:54, 2026-12-08 19:03, 2027-01-14 03:12, 2027-02-19 11:22 UTC.
+
+| Transit | Product | Mid-time (BTJD) | O-C (min) | Depth (ppm) |
+|---|---|---|---|---|
+| S39 | TESS-SPOC | 2384.6094 ± 0.0013 | +5 | 2203 ± 85 |
+| S93 | QLP | 3838.1847 ± 0.0012 | -25 | 2050 ± 82 |
+| S100 | own FFI photometry | 4092.5851 ± 0.0024 | +6 | 2075 ± 150 |
+| S102 | own FFI photometry | 4128.9449 ± 0.0015 | +34 | 2045 ± 86 |
+
+Notes: four transits; the predicted S66 transit (BTJD ~3111.40) falls on a stray-light ramp (TESS-SPOC good data
+start 0.6 h before ingress, QLP flags the whole window) and is not used. Mid-times scatter about a straight line
+(chi2 = 461 for 2 dof): timing systematics (S102 near an orbit start) or TTVs. Shape fitted with each transit
+centred on its own mid-time. Difference-image centroids (four transits) 1.5" ± 1.3" from the target; the only
+unresolved Gaia neighbour (G = 16.15 at 2.2", parallax 0.69 mas, background) would need a ~74% eclipse; diluted
+eclipse fits are worse than a planet by dchi2 >= 142 (k = 0.3-1.2, 2227 points). Gaia DR3 RUWE 1.00. No secondary
+eclipse. Odd/even not testable (one odd transit). TRICERATOPS: being rerun on these inputs (the 12 October run,
+FPP 0.015, used the S66 window and is withdrawn). Next transits (±20 min): 2027-02-19 11:31 UTC (TESS S114),
+2027-05-03 03:50 UTC (full transit at night from Chile).
 
 ## TOI-2493.01 — period for a single-transit TOI
 | Field | Value |
@@ -38,7 +50,11 @@ planet around an unseen companion 1.5%); at the validation threshold, pending hi
 | Planet radius (R_Earth) | 2.7 (R* = 0.652 R_Sun) |
 | Transits used | S33 2225.82, S98 4043.53, S107 4280.63 (BTJD), SPOC 2-min PDCSAP |
 Notes: the S33 single transit (TOI comment "single at TBJD~2226") plus two more in sectors 98 and 107; every
-shorter alias predicts transits inside sectors 6, 33, 87, 98 or 107 that are absent. Centroids (2-min pixels)
+shorter alias predicts transits inside sectors 6, 33, 87, 98 or 107 that are absent, and our own sector-108
+photometry is flat at the P/3 and P/4 transit times (-620 ± 200 and -240 ± 180 ppm vs ~1500). The TOI table's
+2.09 h duration (and depth 1704 ppm, epoch 2459225.8233 ± 0.0039) likely comes from SPOC's 15.1 d TCE fit; every
+transit here lasts 6.1 h, and this ephemeris puts the S33 transit 2.2 sigma earlier (2459225.815). Upload as an
+additional parameter set on the existing TOI. Centroids (2-min pixels)
 3.4" ± 2.0" from the target; fitted stellar density consistent with the K5 dwarf. Each transit is a 7-9 sigma
 event. Insolation ~1.3 S_Earth. Next transits: 2026-11-15 03:07, 2027-02-02 03:50, 2027-04-22 04:34 UTC
 (the first likely in TESS sector 110).

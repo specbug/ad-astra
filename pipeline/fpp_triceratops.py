@@ -8,13 +8,16 @@ star, the photometric apertures, and population statistics. FPP is the total pro
 scenarios, NFPP that of the nearby-star ones. Giacalone et al. (2021): FPP < 0.015 and NFPP < 0.001 validates a
 planet; FPP < 0.5 and NFPP < 0.001 makes it a likely planet.
 
-Inputs used here:
-  - sectors 39, 66, 93 and 100 (the four transits of the fit in fit_new.py; sector 102's lies on a ramp);
+Inputs used here (v2, 15 October 2026, after the independent audit):
+  - sectors 39, 93, 100 and 102. Sector 66 is left out: its predicted transit falls on a stray-light ramp with data
+    starting 0.4 h before ingress (audit_402710280.py), so it is not evidence either way. v1 used 39, 66, 93, 100;
   - apertures: TESS-SPOC optimal apertures (sectors 39, 66, from the light-curve files), and circular apertures of
     the radius used for the photometry in sector 93 (QLP; radius from the file header if given, else 2 px) and
     sector 100 (our own, ffi_new.py);
-  - the transits' 1.6-day windows (quadratic baseline divided out, as in the fit), phase-folded on P = 36.33972 d
-    and binned to 10 minutes; depth 1449 ppm; no contrast curve (no high-resolution imaging exists).
+  - the transits' 1.6-day windows (quadratic baseline divided out, as in the fit), each centred on its own measured
+    mid-time (they scatter by tens of minutes about a straight-line ephemeris), stacked and binned to 10 minutes;
+    depth 2100 ppm (the four transits' mean, 2097 +- 46); no contrast curve (no high-resolution imaging exists).
+    v1 folded on P = 36.33972 d with depth 1449 ppm.
 The Monte Carlo is repeated and the mean and scatter of FPP and NFPP reported.
 
   python fpp_triceratops.py [n_runs]
@@ -32,29 +35,28 @@ from env import RESULTS
 warnings.filterwarnings("ignore")
 
 TIC = 402710280
-SECTORS = [39, 66, 93, 100]
-TCS = [2384.607, 3111.411, 3838.214, 4092.595]      # BTJD, the transits of the fit
-P_ORB = 36.33972
-T0 = 3474.8014                                     # BTJD
-DEPTH = 1449e-6
+SECTORS = [39, 93, 100, 102]
+TCS = [2384.6094, 3838.1847, 4092.5851, 4128.9449]  # BTJD, measured mid-times (audit_402710280.py)
+P_ORB = 36.3399
+DEPTH = 2100e-6
 import os
 BOX5 = os.environ.get("FPP_APERTURES") == "box5"   # sensitivity check: TRICERATOPS's default 5x5 pixel apertures
 ERRSCALE = float(os.environ.get("FPP_ERRSCALE", "1"))   # sensitivity check: errors inflated for correlated noise
-OUT = RESULTS / "candidates" / ("fpp_tic402710280_box5.json" if BOX5 else
-                                f"fpp_tic402710280_err{ERRSCALE:g}.json" if ERRSCALE != 1 else "fpp_tic402710280.json")
+OUT = RESULTS / "candidates" / ("fpp_tic402710280_v2_box5.json" if BOX5 else
+                                f"fpp_tic402710280_v2_err{ERRSCALE:g}.json" if ERRSCALE != 1 else "fpp_tic402710280_v2.json")
 FIG = RESULTS / "report" / "cases" / "TIC402710280_triceratops_field.png"
 
 
 def tess_spoc_aperture(sector):
-    """Optimal aperture of the TESS-SPOC full-frame light curve, as [[col, row], ...]."""
-    import lightkurve as lk
+    """Optimal aperture of the TESS-SPOC full-frame light curve, as [[col, row], ...] (file read from the MAST
+    bucket on S3, s3io)."""
+    import io
+    import s3io
     from astropy.io import fits
-    sr = lk.search_lightcurve(f"TIC {TIC}", author="TESS-SPOC", sector=sector)
-    if len(sr) == 0:
+    raw = s3io.fetch(s3io.key_for("tspoc", TIC, sector))
+    if raw is None:
         return None, "no TESS-SPOC file"
-    lc = sr[0].download()
-    path = lc.meta.get("FILENAME")
-    with fits.open(path) as h:
+    with fits.open(io.BytesIO(raw)) as h:
         ap = h["APERTURE"].data.astype(int)
         c0, r0 = h["APERTURE"].header["CRVAL1P"], h["APERTURE"].header["CRVAL2P"]
     rows, cols = np.nonzero(np.bitwise_and(ap, 2))
@@ -94,8 +96,7 @@ def light_curve():
     data = tf.windows_from_lcs(lcs, TCS, 0.8, 5.3)
     t, f = [], []
     for (tt, ff, sig, exp_s, tc) in data:
-        n = round((tc - T0) / P_ORB)
-        t.append(tt - (T0 + n * P_ORB))
+        t.append(tt - tc)
         f.append(ff)
     t, f = np.concatenate(t), np.concatenate(f)
     o = np.argsort(t)
@@ -151,7 +152,7 @@ def main(n_runs=5):
     aps, notes = [], {}
     for i, s in enumerate(target.sectors):
         ap, note = (None, None)
-        if s in (39, 66):
+        if s == 39:
             try:
                 ap, note = tess_spoc_aperture(s)
             except Exception as ex:
