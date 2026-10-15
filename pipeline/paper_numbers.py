@@ -2,7 +2,7 @@
 of the stored analysis products, so that every quoted value traces to a result file.
 
 Inputs: results/report/transit_fits.json (shape, times, ephemeris; fit_new.py), results/report/extras.json
-(transit predictions with site times; report_extras.py), results/candidates/audit_402710280.json (per-window
+(transit predictions with site times; predictions.py), results/candidates/audit_402710280.json (per-window
 scatter), shape_free.json (free limb darkening; shape_chains.py), second_signal_402710280.json and
 fpp_tic402710280_3.78d.json (the 3.78-day signal).
 

@@ -29,7 +29,7 @@ def known(o):
 
 def recheck(o):
     from duo import alias_table, flatten_sectors
-    from fit_new import lcs_for
+    from lcaccess import lcs_for
     try:
         lcs = lcs_for(int(o["tic"]))
         D_h = max(float(o["dur_h"]), 1.5)

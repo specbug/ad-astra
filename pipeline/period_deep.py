@@ -18,7 +18,7 @@ import numpy as np
 import ticdb
 import transit_fit as tf
 from env import RESULTS
-from fit_new import lcs_for
+from lcaccess import lcs_for
 from period_vet import new_periods
 
 C = RESULTS / "candidates"

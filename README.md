@@ -33,7 +33,7 @@ Reproducing the paper from `pipeline/` (after the Sector 100–103 light curves 
 
 ```
 python audit_402710280.py                 # preliminary times, Sector 66 diagnostics, combined centroid
-python fit_new.py --only-402710280        # transit shape, re-timing, ephemeris, predictions
+python fit_new.py                         # transit shape, re-timing, ephemeris, predictions
 python shape_chains.py free               # free limb darkening
 python timing_diagnostics_402710280.py    # baseline/window/flux-series timing tests, variability
 python secondary_scan_402710280.py        # secondary eclipse over phases 0.3-0.7

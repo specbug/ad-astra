@@ -19,7 +19,7 @@ C = RESULTS / "candidates"
 
 
 def main(mode):
-    from fit_new import lcs_for
+    from lcaccess import lcs_for
     au = json.load(open(RESULTS / "candidates" / "audit_402710280.json"))
     tcs = {t["sector"]: t["tc"] for t in au["times_noS102_shape"]}
     lcs = lcs_for(402710280)

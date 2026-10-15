@@ -32,7 +32,7 @@ U_BG = (0.40, 0.25)        # limb darkening for a background star of unknown typ
 
 
 def data():
-    from fit_new import lcs_for
+    from lcaccess import lcs_for
     au = json.load(open(RESULTS / "candidates" / "audit_402710280.json"))
     tcs = {x["sector"]: x["tc"] for x in au["times_noS102_shape"]}
     lcs = [lc for lc in lcs_for(402710280) if lc["time"].size > 100]

@@ -15,7 +15,7 @@ import env  # noqa: F401
 import numpy as np
 
 from env import RESULTS
-from fit_new import lcs_for
+from lcaccess import lcs_for
 from second_signal_402710280 import phase_dist, running_median
 
 P, T0 = 36.33989590709609, 2460838.20190249 - 2457000

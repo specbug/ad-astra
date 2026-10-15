@@ -1,6 +1,7 @@
 # pipeline
 
-Every script is standalone (`python <script>.py`, run from this directory) and starts with a docstring giving its
+The scripts the paper needs are closed under import: `build_release.py` copies exactly those (24 modules) into the
+Zenodo record, and none of them imports a survey script. Every script is standalone (`python <script>.py`, run from this directory) and starts with a docstring giving its
 inputs, method and outputs. `env.py` sets the paths: committed results go to `../results/`, bulk data to
 `$ADASTRA_WORK`.
 
@@ -10,6 +11,7 @@ inputs, method and outputs. `env.py` sets the paths: committed results go to `..
 | `env.py` | Paths and process settings shared by every script |
 | `s3io.py`, `s3parquet.py` | Light curves and parquet catalogues read directly from the MAST S3 bucket |
 | `build_tic.py`, `build_manifest.py`, `build_spoc_manifest.py`, `ticdb.py` | TIC extract and per-sector light-curve manifests |
+| `lcaccess.py` | One star's light curves from every source (SPOC, TESS-SPOC, QLP and our own photometry) |
 | `known.py`, `match_confirmed.py`, `prior.py` | Cross-matching with TOIs, community TOIs, confirmed planets and earlier checks |
 | `ffi_new.py` | Photometry of the newest full-frame images (Sectors 99–108), with target-barycentric time stamps |
 
@@ -33,10 +35,10 @@ inputs, method and outputs. `env.py` sets the paths: committed results go to `..
 ## Vetting and follow-up of candidates
 | Script | Role |
 |---|---|
-| `pixels.py`, `centroid_vet.py`, `centroid_calib.py` | Difference-image centroids and their calibration on confirmed planets |
+| `pixels.py`, `centroids.py`, `centroid_vet.py`, `centroid_calib.py` | Difference-image centroids and their calibration on confirmed planets |
 | `vet_deep.py`, `dossier.py`, `plots.py` | Deep vetting and per-candidate dossiers |
 | `gaia_check.py`, `kelt_check.py`, `ads_check.py`, `ads_periods.py`, `exofop_check.py` | Gaia DR3, KELT, NASA ADS and ExoFOP checks |
-| `transit_fit.py`, `fit_headline.py`, `replot_fits.py` | Transit models (batman + emcee) of the headline candidates |
+| `transit_fit.py`, `fit_headline.py`, `replot_fits.py`, `report_extras.py` | Transit models (batman + emcee) and derived quantities of the other headline candidates |
 
 ## Periods for period-less TOIs and the TOI ephemeris audit
 | Script | Role |
@@ -50,11 +52,11 @@ inputs, method and outputs. `env.py` sets the paths: committed results go to `..
 | Script | Role |
 |---|---|
 | `audit_402710280.py` | Preliminary transit times, Sector 66 diagnostics, combined centroid |
-| `fit_new.py` | Transit shape, re-timing, ephemeris and predictions (`--only-402710280`) |
+| `fit_new.py` | Transit shape, re-timing, ephemeris and predictions |
 | `shape_chains.py` | Shape fit with free limb darkening |
 | `timing_diagnostics_402710280.py`, `secondary_scan_402710280.py`, `blend_shape_402710280.py`, `fpp_triceratops.py` | Timing, secondary-eclipse, blend and false-positive tests |
 | `second_signal_402710280.py`, `fpp_second_signal.py` | The 3.78-day signal |
-| `report_extras.py` | Derived quantities and transit predictions with site times |
+| `predictions.py` | Derived quantities and transit predictions with site times (also used by `report_extras.py` for the other candidates) |
 | `paper_figures.py`, `paper_numbers.py` | Figures, and the manuscript filled from the result files |
 | `build_release.py`, `build_prereg.py`, `prereg_protocol.template.tex` | Zenodo data record and pre-registration |
 

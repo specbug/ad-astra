@@ -90,7 +90,7 @@ def check_period(lcs, P, T, D, depth_ref):
 
 
 def review(o, pix, dens):
-    from fit_new import lcs_for
+    from lcaccess import lcs_for
     tic = int(o["tic"])
     lcs = [lc for lc in lcs_for(tic) if lc["time"].size > 100]
     D = float(o["dur_h"]) / 24

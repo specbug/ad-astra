@@ -21,7 +21,7 @@ import numpy as np
 
 from centroid_vet import vet
 from env import RESULTS
-from fit_new import lcs_for
+from lcaccess import lcs_for
 from period_review import lc_for, measure
 
 C = RESULTS / "candidates"

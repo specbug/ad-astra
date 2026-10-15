@@ -9,6 +9,7 @@ Limb darkening is fixed at quadratic coefficients for the TESS band (Claret 2017
 in Teff). Output: posterior summaries and binned data + model curves for plotting.
 """
 import io
+import math
 
 import env  # noqa: F401
 import batman
@@ -352,3 +353,20 @@ def fit_stacked_windows(data, P, teff, nwalk=40, nstep=4000, seed=1, free_ld=Fal
         out[name] = [float(q[1]), float(q[2] - q[1]), float(q[1] - q[0])]
     out["b_95"] = float(np.percentile(b, 95))
     return out, ch
+
+
+def box_depth(lc, tc, D):
+    """Mean depth in the central 80% of a box of duration D at tc, against a quadratic baseline; with the box's
+    coverage and an error from the out-of-box point-to-point scatter."""
+    t, f = lc["time"], lc["flux"]
+    w = np.isfinite(f) & (np.abs(t - tc) < D / 2 + 0.4)
+    inn = w & (np.abs(t - tc) < 0.4 * D)
+    oot = w & (np.abs(t - tc) > 0.6 * D)
+    cad = float(np.median(np.diff(t)))
+    if inn.sum() < 3 or oot.sum() < 15:
+        return None
+    c = np.polyfit(t[oot] - tc, f[oot], 2)
+    r = f / np.polyval(c, t - tc)
+    sig = 1.4826 * np.median(np.abs(np.diff(r[oot]))) / math.sqrt(2)
+    return {"coverage": min(1.0, inn.sum() * cad / (0.8 * D)), "depth": float(1 - r[inn].mean()),
+            "err": float(sig / math.sqrt(inn.sum()))}
