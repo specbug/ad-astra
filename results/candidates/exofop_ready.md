@@ -34,8 +34,11 @@ start 0.6 h before ingress, QLP flags the whole window) and is not used. Mid-tim
 centred on its own mid-time. Difference-image centroids (four transits) 1.5" ± 1.3" from the target; the only
 unresolved Gaia neighbour (G = 16.15 at 2.2", parallax 0.69 mas, background) would need a ~74% eclipse; diluted
 eclipse fits are worse than a planet by dchi2 >= 142 (k = 0.3-1.2, 2227 points). Gaia DR3 RUWE 1.00. No secondary
-eclipse. Odd/even not testable (one odd transit). TRICERATOPS: being rerun on these inputs (the 12 October run,
-FPP 0.015, used the S66 window and is withdrawn). Next transits (±20 min): 2027-02-19 11:31 UTC (TESS S114),
+eclipse. Odd/even not testable (one odd transit). TRICERATOPS 1.1 on these inputs (10 runs, no contrast curve):
+FPP = 0.0026 ± 0.0037 (worst run 0.012), NFPP = 4e-24 (planet on target 85%, diluted by an unseen companion 14%,
+planet around an unseen companion 0.3%); default 5x5-pixel apertures: FPP 0.0010, NFPP 6e-7. Below the numerical
+thresholds, but not a validation without high-resolution imaging. The 12 October run (FPP 0.015) used the S66
+window and a 1449 ppm depth and is withdrawn. Next transits (±20 min): 2027-02-19 11:31 UTC (TESS S114),
 2027-05-03 03:50 UTC (full transit at night from Chile).
 
 ## TOI-2493.01 — period for a single-transit TOI
