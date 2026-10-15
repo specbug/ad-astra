@@ -18,11 +18,11 @@ tracks to `results/survey/sNNNN/`, which it commits and pushes to branch
 1. Make sure you are on the branch and up to date:
    `git fetch origin claude/gifted-albattani-szay6x && git checkout claude/gifted-albattani-szay6x && git pull --rebase origin claude/gifted-albattani-szay6x`
 2. Launch the worker in the background (it runs for hours):
-   `nohup bash pipeline/worker.sh <your sectors, space separated> > /home/user/worker_stdout.log 2>&1 &`
+   `nohup bash pipeline/worker.sh <your sectors, space separated> > "$ADASTRA_WORK/worker_stdout.log" 2>&1 &`
 3. Wait cheaply. Do NOT use Monitor or repeated status checks: every event costs a full model turn and all
    worker sessions share one usage limit (it was exhausted once by monitor traffic). Instead start ONE
    background Bash command (`run_in_background: true`, `timeout: 7200000`) that exits when the job ends:
-   `until grep -q "ALL DONE" /home/user/work/worker.log || ! pgrep -f "pipeline/[w]orker.sh" >/dev/null; do sleep 120; done; tail -3 /home/user/work/worker.log`
+   `until grep -q "ALL DONE" $ADASTRA_WORK/worker.log || ! pgrep -f "pipeline/[w]orker.sh" >/dev/null; do sleep 120; done; tail -3 $ADASTRA_WORK/worker.log`
    (the `[w]` keeps pgrep from matching this command itself; move an old `worker.log` aside before launching,
    so a stale `ALL DONE` cannot end the wait).
    Then end your turn and do nothing until it returns. Typical sector: 20-60 minutes.
@@ -44,8 +44,8 @@ When `ALL DONE` appears, reply with a table: sector, light curves, n_trackb, n_t
 (from each `results/survey/sNNNN/summary.json`), and any failures.
 
 ## Track A workers
-Same rules, different script: `nohup bash pipeline/worker_a.sh START STOP > /home/user/worker_a_stdout.log 2>&1 &`
+Same rules, different script: `nohup bash pipeline/worker_a.sh START STOP > "$ADASTRA_WORK/worker_a_stdout.log" 2>&1 &`
 searches rows [START, STOP) of `results/track_a/targets_search.csv` (stars already in
 `results/track_a/stars/` are skipped) and pushes every 30 minutes. Wait with the same single background
-command, using `/home/user/work/worker_a.log` and `pipeline/[w]orker_a.sh` in place of the survey names. Final
+command, using `$ADASTRA_WORK/worker_a.log` and `pipeline/[w]orker_a.sh` in place of the survey names. Final
 report: rows done, stars searched, any errors.

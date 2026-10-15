@@ -8,7 +8,7 @@ import numpy as np
 from astropy.timeseries import BoxLeastSquares
 
 import s3io
-from lcprep import bin_lc, detrend_fast, robust_std, ptp_std, segments
+from lcprep import bin_lc, detrend_fast, robust_std, ptp_std
 
 PRODUCT_ORDER = ("spoc", "tspoc", "qlp")
 DETREND_WINDOW = 0.75   # days; the reference project's injection tests favoured 0.75 d for 1-3 h transits

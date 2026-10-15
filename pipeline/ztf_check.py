@@ -30,7 +30,7 @@ import pandas as pd
 
 import pixels
 import ticdb
-from env import RESULTS
+from env import RESULTS, WORK
 
 C = RESULTS / "candidates"
 ROOT = "ipac-irsa-ztf/contributed/dr23/lc/hats/ztf_dr23_lc-hats"
@@ -202,7 +202,7 @@ def check(tic, rec):
 
 def main(tics=None):
     rec = json.load(open(C / "eb_pixels.json"))
-    pos = pd.read_csv("/home/user/work/trackc30_coords.csv") if tics is None else None
+    pos = pd.read_csv(WORK / "trackc30_coords.csv") if tics is None else None
     todo = tics or [int(t) for t in rec if float(pos[pos.tic == int(t)].dec.iloc[0]) > -28]
     p = C / "ztf_check.json"
     res = json.load(open(p)) if p.exists() else {}

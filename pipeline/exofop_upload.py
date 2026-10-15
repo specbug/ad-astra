@@ -227,7 +227,6 @@ def main():
                 depth_unc=fmt(t["depth_err_ppm"], 0), notes=note),
             f"period review ready: {t['n_timed']} transits, chi2_red {t['chi2_red']:.1f}, pixels {x.get('pixels')}")
         ev = [dict(e, o_c_min=0.0) for e in t["events"]]
-        n = np.array([e["n"] for e in ev], float)
         tt = np.array([e["tc"] for e in ev])
         k = np.round((tt - t["T0"]) / t["P"])
         for e, kk in zip(ev, k):

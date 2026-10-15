@@ -20,7 +20,7 @@ SS = RESULTS / "candidates" / "second_signal_402710280.json"
 
 
 def folded():
-    from second_signal_402710280 import load, phase_dist  # noqa: F401
+    from second_signal_402710280 import load
     ss = json.load(open(SS))
     P, T0 = ss["bls_joint"]["P"], ss["bls_joint"]["t0_btjd"]
     _, rows = load(P, T0)

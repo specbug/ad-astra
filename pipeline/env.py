@@ -8,7 +8,7 @@ import warnings
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-WORK = Path(os.environ.get("ADASTRA_WORK", "/home/user/work"))
+WORK = Path(os.environ.get("ADASTRA_WORK", REPO.parent / "work"))
 CATALOGS = WORK / "catalogs"
 CACHE = WORK / "cache"
 LCCACHE = WORK / "lc"

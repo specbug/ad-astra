@@ -1,5 +1,5 @@
 """List SPOC 2-min light curves on S3 for every sector -> (tic, sector, has_fast)."""
-import sys, re, concurrent.futures as cf
+import re, concurrent.futures as cf
 
 import env, s3io
 import pandas as pd

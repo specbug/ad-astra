@@ -712,10 +712,8 @@ def section_tic402710280(fit, ex):
     depth = -min(min(p["my"]) for p in f["plot"][:4])
     labels = [f"S{s} · {btjd_to_utc(p['tc']).strftime('%b %Y')}" for s, p in zip(f["sectors"], f["plot"])]
     svg = svg_lightcurves(f["plot"], labels, id_="lc-tic402710280", panel_w=250, xr=12, xstep=6)
-    tr = nc["transits"]
     c = nc["centroid"]
     near = c["closest_neighbours"]
-    dens = nc["density_test"]["dchi2_rho_fixed"]
     nxt = "".join(f"<li><span class='num'>{_site_utc(r)} UTC ± {r['sigma_min']:.0f} min</span>"
                   f"<span class='muted'>{esc(r['note'])}</span></li>" for r in e["next"])
     au = _json("audit_402710280.json") or {}
@@ -1421,7 +1419,6 @@ def section_corrections():
         ctr = ", ".join(f"S{e['sector']} ({e['depth_ppm'] / 1000:.1f} ppt)" for e in ce.get("events", []))
         pix = (ce.get("pixels") or {}).get("verdict", "–")
         al = c.get("aliases") or []
-        rho = c.get("rho_tic")
         pmin = {156716001: 67.4, 369532319: 19.8, 67711670: 12.0}[tic]
         # the periods the data allow (the period hunt's alias test, relaxed where it ran)
         hk = f"{tic}|{key}"
@@ -2202,7 +2199,7 @@ def build():
     fnew = ""
     if "TIC402710280" in fit and "TOI2493" in fit:
         fa, fb = fit["TIC402710280"], fit["TOI2493"]
-        exa, exb = ex.get("TIC402710280", {}), ex.get("TOI2493", {})
+        exb = ex.get("TOI2493", {})
         rpa = fa["rp_rs"][0] * 0.817 * R_EARTH_PER_RSUN
         rpb = fb["rp_rs"][0] * 0.652 * R_EARTH_PER_RSUN
         fnew = (f'<li>{chip("New candidate", "new")}<div><strong>TIC 402710280: a {rpa:.1f} {RE} planet candidate every '
@@ -2240,9 +2237,6 @@ def build():
     small_txt = ", ".join(f"{rp:.1f} {RE} (TIC {t})" for rp, t in new_dv[:3]) if new_dv else "–"
     n_dv_known = len(passed) - n_dv
     n_dv_all = sum(1 for r in dv.values() if "error" not in r)
-    tbf = trackb_shortlist(tb) if tb is not None else None
-    n_tb = len(tbf) if tbf is not None else 0
-    n_bright = int((tbf.Tmag < 10).sum()) if tbf is not None else 0
     n_tc = int((tc.P2_recurs >= 2).sum()) if tc is not None else 0
     def plate_note(t):
         note = prior.summary(int(t.split()[-1]))
@@ -2418,7 +2412,6 @@ PIX_SETTLED = {402710280: "the one unresolved neighbour (G = 16.2, 3.5″) is st
 def section_deepvet(dv, lit, tb):
     if not dv:
         return ""
-    litm = {int(x["tic"]): x for x in (lit or [])}
     rows = []
     for k, r in dv.items():
         if "error" in r:

@@ -30,7 +30,7 @@ import warnings
 import env  # noqa: F401
 import numpy as np
 
-from env import RESULTS
+from env import CACHE, RESULTS
 
 warnings.filterwarnings("ignore")
 
@@ -114,7 +114,6 @@ def light_curve():
 def patch_tic_lookup(tr):
     """TRICERATOPS looks the target up by name (MAST's name resolver, not reachable from here); query the same
     TIC cone around the star's catalogued position instead, nearest star first."""
-    import astropy.units as u
     import ticdb
     from astropy.coordinates import SkyCoord
     st = ticdb.query([TIC], ["ra", "dec"]).iloc[0]
@@ -167,7 +166,7 @@ def main(n_runs=5):
                 r = r or 2.0
                 note = (note + "; " if note else "") + f"circle r = {r} px (QLP)"
             else:
-                meta = json.loads(str(np.load(f"/home/user/work/cache/ffi_lc/{TIC}_s{s}.npz", allow_pickle=True)["meta"]))
+                meta = json.loads(str(np.load(CACHE / "ffi_lc" / f"{TIC}_s{s}.npz", allow_pickle=True)["meta"]))
                 r = float(meta["aperture_radius_px"])
                 note = (note + "; " if note else "") + f"circle r = {r} px (our photometry)"
             ap = circle(target.pix_coords[i][0], r)

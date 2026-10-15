@@ -7,7 +7,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 import s3io
-from lcprep import bin_lc, detrend_fast, robust_std
+from lcprep import bin_lc, detrend_fast
 
 
 def event_figure(product, tic, sector, t0, dur_h, out, title=None, lc=None):

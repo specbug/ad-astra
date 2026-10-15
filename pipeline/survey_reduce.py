@@ -17,7 +17,6 @@ import numpy as np
 import pandas as pd
 
 import env  # noqa: F401
-from env import CATALOGS
 
 CCD_BIN_D = 0.1
 SC_BIN_D = 0.05

@@ -11,7 +11,6 @@ Output: results/candidates/period_deep.json, keyed "tic|id". Shards (python peri
 between processes and write period_deep_i.json; a run without arguments merges them first.
 """
 import json
-import math
 
 import env  # noqa: F401
 import numpy as np

@@ -4,9 +4,9 @@
 # Star results go to results/track_a/stars/<tic>.json and are pushed every ~30 minutes.
 set -u
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-export ADASTRA_WORK="${ADASTRA_WORK:-/home/user/work}"
-BRANCH="claude/gifted-albattani-szay6x"
-PY=/home/user/venv/bin/python
+export ADASTRA_WORK="${ADASTRA_WORK:-$REPO/../work}"
+BRANCH="${ADASTRA_BRANCH:-$(git -C "$REPO" rev-parse --abbrev-ref HEAD)}"
+PY="${PYTHON:-$REPO/.venv/bin/python}"
 LOG="$ADASTRA_WORK/worker_a.log"
 mkdir -p "$ADASTRA_WORK"
 log() { echo "$(date -u +%FT%TZ) $*" | tee -a "$LOG"; }
@@ -15,7 +15,7 @@ git checkout -q "$BRANCH" 2>/dev/null || git checkout -q -b "$BRANCH" "origin/$B
 git pull -q --rebase origin "$BRANCH" || true
 if [ ! -x "$PY" ]; then
   log "creating venv"
-  python3 -m venv /home/user/venv && /home/user/venv/bin/pip install -q -r requirements.txt >> "$LOG" 2>&1
+  python3 -m venv "$REPO/.venv" && "$REPO/.venv/bin/pip" install -q -r requirements.txt >> "$LOG" 2>&1
 fi
 push() {
   cd "$REPO"

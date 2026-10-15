@@ -17,7 +17,6 @@ Results: results/candidates/period_hunt.csv (one row per target) and period_hunt
   python period_hunt.py --singles [n_proc]        (the survey's bright single transits, kelt_targets.json)
 """
 import json
-import math
 import sys
 import concurrent.futures as cf
 

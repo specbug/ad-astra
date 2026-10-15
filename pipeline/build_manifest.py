@@ -5,7 +5,6 @@
   catalogs/tspoc_manifest.parquet  same for TESS-SPOC
 """
 import glob
-import sys
 import concurrent.futures as cf
 
 import env  # noqa: F401

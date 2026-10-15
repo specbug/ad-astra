@@ -7,7 +7,6 @@ diff_image     mean out-of-event minus mean in-event image; flux-weighted centro
 """
 import csv
 import io
-import os
 import urllib.request
 
 import env  # noqa: F401

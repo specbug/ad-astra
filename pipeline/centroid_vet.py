@@ -23,7 +23,6 @@ Output: results/candidates/centroid_vet.json
 """
 import io
 import json
-import math
 import sys
 
 import env  # noqa: F401

@@ -4,7 +4,6 @@ The extract has ~22.5 million rows; loading it whole into pandas needs >15 GB, s
 projects columns and filters inside Arrow, one file at a time.
 """
 import numpy as np
-import pandas as pd
 import pyarrow as pa
 import pyarrow.compute as pc
 import pyarrow.dataset as ds

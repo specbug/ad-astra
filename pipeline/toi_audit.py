@@ -108,7 +108,7 @@ def fold_score(flat, T0, Ps, D):
 
 
 def anchors(lcs, ev_listed, T0, D, dref):
-    from period_review import lc_for, measure
+    from period_review import measure
     seen = sorted([e for e in ev_listed if e["seen"]], key=lambda e: -e["snr"])
     out = [(e["tc"], "seen transit of the listed ephemeris") for e in seen[:2]]
     if len(seen) >= 3:

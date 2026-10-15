@@ -4,9 +4,9 @@
 # Logs: $ADASTRA_WORK/worker.log (progress), $ADASTRA_WORK/run_<S>.log (per sector).
 set -u
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-export ADASTRA_WORK="${ADASTRA_WORK:-/home/user/work}"
-BRANCH="claude/gifted-albattani-szay6x"
-PY=/home/user/venv/bin/python
+export ADASTRA_WORK="${ADASTRA_WORK:-$REPO/../work}"
+BRANCH="${ADASTRA_BRANCH:-$(git -C "$REPO" rev-parse --abbrev-ref HEAD)}"
+PY="${PYTHON:-$REPO/.venv/bin/python}"
 LOG="$ADASTRA_WORK/worker.log"
 mkdir -p "$ADASTRA_WORK"
 log() { echo "$(date -u +%FT%TZ) $*" | tee -a "$LOG"; }
@@ -17,7 +17,7 @@ git pull -q --rebase origin "$BRANCH" || true
 
 if [ ! -x "$PY" ]; then
   log "creating venv"
-  python3 -m venv /home/user/venv && /home/user/venv/bin/pip install -q -r requirements.txt >> "$LOG" 2>&1
+  python3 -m venv "$REPO/.venv" && "$REPO/.venv/bin/pip" install -q -r requirements.txt >> "$LOG" 2>&1
 fi
 
 cd "$REPO/pipeline"

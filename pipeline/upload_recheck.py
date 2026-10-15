@@ -6,7 +6,6 @@ writes results/candidates/exofop_upload/live_recheck.csv with any matches, and t
 
   python upload_recheck.py
 """
-import json
 import time
 from datetime import datetime, timezone
 

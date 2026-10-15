@@ -14,7 +14,6 @@ import time
 import multiprocessing as mp
 
 import env  # noqa: F401
-import numpy as np
 import pandas as pd
 
 from env import CATALOGS

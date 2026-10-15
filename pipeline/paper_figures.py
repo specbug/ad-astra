@@ -135,7 +135,7 @@ def fig2():
 
 def fig3(fit, ex):
     f = fit["TIC402710280"]
-    P, T, ref = f["period_d"][0], f["tref_btjd"][0], f["ref_epoch"]
+    ref = f["ref_epoch"]
     eP, eT = f["period_d"][1], f["tref_btjd"][1]
     rms = math.sqrt(np.mean([t["o_c_min"] ** 2 for t in f["times"]]))
     fig, ax = plt.subplots(figsize=(COL1, 2.2))
@@ -225,7 +225,7 @@ def fig5(fit):
     a.plot(0, 0, "+", color=MODEL, ms=9, mew=1.2, label="TIC 402710280")
     off = [(nb[0] - ra) * math.cos(math.radians(dec)) * 3600 + (pm_n[0] - pm_t[0]) * (2024.775 - 2016) / 1000,
            (nb[1] - dec) * 3600 + (pm_n[1] - pm_t[1]) * (2024.775 - 2016) / 1000]
-    a.plot(off[0], off[1], "x", color="#2b8a3e", ms=6, mew=1.0, label=f"Gaia DR3 neighbour ($G$ = 16.15)")
+    a.plot(off[0], off[1], "x", color="#2b8a3e", ms=6, mew=1.0, label="Gaia DR3 neighbour ($G$ = 16.15)")
     for ps in c["per_sector"]:
         a.errorbar(ps["dra"], ps["ddec"], xerr=ps["err"], yerr=ps["err"], fmt="o", ms=2.5,
                    color=GREY, lw=0.6, mfc="white")

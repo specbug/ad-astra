@@ -16,11 +16,13 @@ import hashlib
 import importlib.util
 import json
 import math
+import platform
 import re
 import shutil
 import subprocess
 import tempfile
 import zipfile
+from importlib import metadata
 from pathlib import Path
 
 import env  # noqa: F401
@@ -125,8 +127,8 @@ def fill_protocol(r, preds, val, ex):
              f"({arch}). Applied to transit-free data from Sector~101 shifted onto a predicted mid-time, it returns "
              f"\\emph{{excluded}} (depths ${nul[0]['depth_ppm']:.0f} \\pm {nul[0]['depth_err_ppm']:.0f}$ and "
              f"${nul[1]['depth_ppm']:.0f} \\pm {nul[1]['depth_err_ppm']:.0f}$~ppm at two offsets), and "
-             f"\\emph{{insufficient data}} when the predicted transit falls in a data gap. Software: Python~3.13, "
-             f"numpy~{np.__version__.rsplit('.', 1)[0]}, batman~2.5.1.")
+             f"\\emph{{insufficient data}} when the predicted transit falls in a data gap. Software: Python~"
+             f"{platform.python_version()}, numpy~{np.__version__}, batman~{metadata.version('batman-package')}.")
     utc59 = next(x["utc"][11:] for x in ex["all_next"] if x["epoch"] == 59)
     rep = {"P": f"{r['P']:.5f}", "EP": f"{r['SIG_P']:.5f}", "T0": f"{r['T0']:.5f}", "ET0": f"{r['SIG_T0']:.5f}",
            "RMS": f"{r['RMS']:.1f}", "TC57": f"{preds[57][0]:.4f}", "S57": f"{preds[57][1]:.1f}",
