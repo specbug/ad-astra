@@ -8,6 +8,13 @@ authors:
     email: rishitv@protonmail.com
     orcid: "https://orcid.org/0009-0003-8778-9883"
 license: MIT
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23390274"
+    description: "Data and code record (Zenodo)"
+  - type: doi
+    value: "10.5281/zenodo.23390325"
+    description: "Pre-registered test of the 2027 transits (Zenodo)"
 repository-code: "https://github.com/specbug/ad-astra"
 keywords: [exoplanets, TESS, transit photometry, sub-Neptune, TIC 402710280]
 preferred-citation:
@@ -19,3 +26,6 @@ preferred-citation:
       orcid: "https://orcid.org/0009-0003-8778-9883"
   year: 2026
   status: preprint
+  publisher:
+    name: Zenodo
+  doi: "10.5281/zenodo.23390317"

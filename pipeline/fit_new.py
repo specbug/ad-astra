@@ -1,5 +1,5 @@
-"""Transit fits of the two candidates found by the period hunt, for the report (results/report/transit_fits.json,
-keys TIC402710280 and TOI2493), and their derived quantities and upcoming transits (results/report/extras.json).
+"""Transit fit of TIC 402710280.01 (results/report/transit_fits.json, key TIC402710280), and its derived quantities
+and upcoming transits (results/report/extras.json).
 
 TIC 402710280.01 (v2, after the independent audit of 15 October 2026): four transits (S39 TESS-SPOC, S93 QLP, S100
 and S102 from our own full-frame photometry, ffi_new.py). The S66 window lies on a stray-light ramp with data
@@ -8,32 +8,21 @@ straight line, so the shape is fitted with each window centred on its own measur
 (transit_fit.fit_stacked_windows) and the ephemeris is a weighted line through the times with errors inflated by
 sqrt(chi2_red). v1 fitted S39, S66, S93 and S100 on one linear ephemeris, which put the S66 ramp into the depth and
 smeared the shape (the low density once blamed on the S102 ramp came from that smear).
-TOI-2493.01: three transits in SPOC 2-min data (S33, S98, S107).
 
-  python fit_new.py [--only-402710280]
+  python fit_new.py
 """
 import json
-import sys
 
 import env  # noqa: F401
 import numpy as np
 
-import report_extras as rx
-import ticdb
+import predictions
 import transit_fit as tf
-from dossier import all_sectors, best_lcs
 from env import RESULTS
-from ffi_new import new_lcs
+from lcaccess import lcs_for
 
 FITS = RESULTS / "report" / "transit_fits.json"
 EXTRAS = RESULTS / "report" / "extras.json"
-
-
-def lcs_for(tic):
-    st = ticdb.query([tic], ["ra", "dec"]).iloc[0]
-    lcs = best_lcs(tic, all_sectors(tic))
-    have = {lc["meta"]["sector"] for lc in lcs}
-    return lcs + [lc for lc in new_lcs(tic, float(st.ra), float(st.dec), build_missing=False, target_time=True) if lc["meta"]["sector"] not in have]
 
 
 NSTEP = 30000     # autocorrelation times reach ~450 steps (b-rho-k degeneracy); 30,000 steps is >50 of them
@@ -111,34 +100,13 @@ def main():
     out["fit_windows"] = [39, 93, 100, 102]
     fits["TIC402710280"] = out
     print("TIC 402710280", {k: v for k, v in out.items() if k != "plot"}, flush=True)
-    if "--only-402710280" in sys.argv:
-        fresh = json.load(open(FITS))
-        fresh["TIC402710280"] = fits["TIC402710280"]
-        json.dump(fresh, open(FITS, "w"), indent=1, default=float)
-        ex = json.load(open(EXTRAS))
-        ex["TIC402710280"] = rx.periodic(fresh, "TIC402710280", 0.88, 0.817, 5182.0, 248.524, -63.55, now=4325.5)
-        json.dump(ex, open(EXTRAS, "w"), indent=1, default=float)
-        return
-    # TOI-2493.01
-    tic = 123664207
-    lcs = lcs_for(tic)
-    data = tf.windows_from_lcs(lcs, [2225.82, 4043.534, 4280.627], 0.8, 5.0)
-    out, ch = tf.fit_periodic_windows(data, [0, 23, 26], 79.03019, 4242.0, nstep=NSTEP)
-    out["sectors"] = [33, 98, 107]
-    fits["TOI2493"] = out
-    print("TOI-2493", {k: v for k, v in out.items() if k != "plot"}, flush=True)
-    fresh = json.load(open(FITS))           # other fits may have been written meanwhile (fit_headline.py)
-    fresh.update({k: fits[k] for k in ("TIC402710280", "TOI2493")})
+    fresh = json.load(open(FITS))           # other fits may have been written to the file meanwhile
+    fresh["TIC402710280"] = fits["TIC402710280"]
     json.dump(fresh, open(FITS, "w"), indent=1, default=float)
     ex = json.load(open(EXTRAS))
-    ex["TIC402710280"] = rx.periodic(fits, "TIC402710280", 0.88, 0.817, 5182.0, 248.524, -63.55, now=4325.5)
-    ex["TOI2493"] = rx.periodic(fits, "TOI2493", 0.66, 0.652, 4242.0, 89.74609, -21.57558, now=4325.5)
+    ex["TIC402710280"] = predictions.periodic(fresh, "TIC402710280", 0.88, 0.817, 5182.0, 248.524, -63.55, now=4325.5)
     json.dump(ex, open(EXTRAS, "w"), indent=1, default=float)
-    for k in ("TIC402710280", "TOI2493"):
-        print(k, {a: b for a, b in ex[k].items() if a not in ("next", "all_next")})
-        for x in ex[k]["next"]:
-            print("   ", x["utc"], x["note"])
-
+    print("TIC402710280", {a: b for a, b in ex["TIC402710280"].items() if a not in ("next", "all_next")})
 
 if __name__ == "__main__":
     main()

@@ -47,7 +47,7 @@ def fmt(x, nd=2, dash="–"):
 
 
 def _site_utc(r):
-    """A predicted transit's time as seen from La Silla (report_extras.periodic)."""
+    """A predicted transit's time as seen from La Silla (predictions.periodic)."""
     return datetime.strptime(r["utc"], "%Y-%m-%d %H:%M").strftime("%-d %b %Y, %H:%M")
 
 

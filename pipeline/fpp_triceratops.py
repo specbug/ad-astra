@@ -91,7 +91,7 @@ def circle(center, r):
 
 def light_curve():
     import transit_fit as tf
-    from fit_new import lcs_for
+    from lcaccess import lcs_for
     lcs = lcs_for(TIC)
     data = tf.windows_from_lcs(lcs, TCS, 0.8, 5.3)
     t, f = [], []

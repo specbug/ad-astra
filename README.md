@@ -7,7 +7,8 @@ described below. Nothing in this repository is a confirmed planet.
 ## TIC 402710280.01: a 36.34-day sub-Neptune candidate
 
 > R. Vora (2026), *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280, Identified in TESS
-> Full-Frame Images*. Preprint: [`paper/tic402710280.pdf`](paper/tic402710280.pdf).
+> Full-Frame Images*. Preprint: [doi:10.5281/zenodo.23390317](https://doi.org/10.5281/zenodo.23390317) ([`paper/tic402710280.pdf`](paper/tic402710280.pdf)).
+> Data and code: [doi:10.5281/zenodo.23390274](https://doi.org/10.5281/zenodo.23390274). Pre-registered test of the 2027 transits: [doi:10.5281/zenodo.23390325](https://doi.org/10.5281/zenodo.23390325).
 
 | | |
 |---|---|
@@ -32,7 +33,7 @@ Reproducing the paper from `pipeline/` (after the Sector 100–103 light curves 
 
 ```
 python audit_402710280.py                 # preliminary times, Sector 66 diagnostics, combined centroid
-python fit_new.py --only-402710280        # transit shape, re-timing, ephemeris, predictions
+python fit_new.py                         # transit shape, re-timing, ephemeris, predictions
 python shape_chains.py free               # free limb darkening
 python timing_diagnostics_402710280.py    # baseline/window/flux-series timing tests, variability
 python secondary_scan_402710280.py        # secondary eclipse over phases 0.3-0.7

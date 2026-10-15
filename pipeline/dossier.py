@@ -11,41 +11,15 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 import s3io
+from lcaccess import all_sectors, best_lcs  # noqa: F401 (re-exported for survey scripts)
 import ticdb
 import known
 import pixels
 from lcprep import bin_lc, detrend_fast
 from vet_events import vet_one, _trap
-from env import RESULTS, CATALOGS
+from env import RESULTS
 
 DOSSIERS = RESULTS / "dossiers"
-
-
-def all_sectors(tic):
-    import pandas as pd
-    out = {}
-    for p in ("spoc", "tspoc", "qlp"):
-        m = pd.read_parquet(CATALOGS / f"{p}_manifest.parquet", columns=["tic", "sector"],
-                            filters=[("tic", "==", int(tic))])
-        out[p] = sorted(m.sector.astype(int).tolist())
-    return out
-
-
-def best_lcs(tic, secs):
-    """One light curve per sector: SPOC 2-min > TESS-SPOC > QLP."""
-    got, lcs = set(), []
-    for p in ("spoc", "tspoc", "qlp"):
-        for s in secs.get(p, []):
-            if s in got:
-                continue
-            try:
-                lc = s3io.load(p, tic, s)
-            except Exception:
-                lc = None
-            if lc is not None and lc["time"].size > 100:
-                lcs.append(lc)
-                got.add(s)
-    return sorted(lcs, key=lambda l: l["meta"]["sector"])
 
 
 def make_single_transit_dossier(tic, events, label="", pixel=True):

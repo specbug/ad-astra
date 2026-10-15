@@ -282,7 +282,7 @@ def fig6():
 
 
 def main():
-    from fit_new import lcs_for
+    from lcaccess import lcs_for
     fit = json.load(open(RESULTS / "report" / "transit_fits.json"))
     ex = json.load(open(RESULTS / "report" / "extras.json"))["TIC402710280"]
     lcs = [lc for lc in lcs_for(402710280) if lc["time"].size > 100]

@@ -2,9 +2,9 @@
 
 The standard pixel test (as in the TESS data validation reports): for every transit, the out-of-transit image
 (a linear fit to the pixels just outside the transit) minus the in-transit image shows only the light that
-disappeared; a Gaussian PSF with free position, width and amplitude is fitted to it (eb_pixels._centroid). The
+disappeared; a Gaussian PSF with free position, width and amplitude is fitted to it (centroids._centroid). The
 offsets are measured from where the target really is on each image: the out-of-transit image is fitted with
-Gaussians at the Gaia positions moved to the observing date (eb_pixels._calibrate), which removes errors of the
+Gaussians at the Gaia positions moved to the observing date (centroids._calibrate), which removes errors of the
 image's coordinate solution and the target's proper motion. They are combined over all transits of a star
 (3-sigma clipped, error from their scatter, with a 2" floor or the scatter between sectors) and compared with the
 target and with every Gaia star close enough and bright enough to make the dip (an eclipse of at most 100%).
@@ -33,8 +33,8 @@ from astropy.wcs import WCS
 import pixels
 import s3io
 import ticdb
-from dossier import all_sectors
-from eb_pixels import _centroid, centroid_verdict, combine_centroids, gaia_field, neighbour_offsets
+from centroids import _centroid, centroid_verdict, combine_centroids, gaia_field, neighbour_offsets
+from lcaccess import all_sectors
 from env import RESULTS
 
 C = RESULTS / "candidates"
@@ -104,7 +104,7 @@ def vet(tic, events, dur_h, depth):
 
 def recombine():
     """Re-derive every star's combined centroid and verdict from the stored per-transit centroids (no pixel
-    data needed), e.g. after a change to eb_pixels.combine_centroids."""
+    data needed), e.g. after a change to centroids.combine_centroids."""
     res = json.load(open(OUT))
     for tic, r in res.items():
         if "per_event" not in r:

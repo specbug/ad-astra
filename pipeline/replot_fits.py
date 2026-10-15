@@ -14,7 +14,7 @@ import numpy as np
 
 import transit_fit as tf
 from env import RESULTS
-from fit_new import lcs_for
+from lcaccess import lcs_for
 
 FITS = RESULTS / "report" / "transit_fits.json"
 CORR = RESULTS / "candidates" / "corrections_fit.json"

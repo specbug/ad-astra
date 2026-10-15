@@ -24,7 +24,7 @@ from astropy.timeseries import BoxLeastSquares
 
 import transit_fit as tf
 from env import RESULTS
-from fit_new import lcs_for
+from lcaccess import lcs_for
 
 TIC = 402710280
 P1, T1 = 36.33989590709609, 2460838.20190249 - 2457000      # TIC 402710280.01 (BTJD)

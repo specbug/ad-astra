@@ -5,7 +5,8 @@ Everything is regenerated from the stored analysis products and light curves, so
   data/ffi_photometry/    our light curves of sectors 100-103 (no public FFI light curves exist for them)
   data/results/           transit times, parameters, predictions, alias and secondary-eclipse tests, blend test,
                           TRICERATOPS runs, difference-image centroids, sector-66 diagnostics
-  code/                   the analysis pipeline at the commit given in README.md
+  code/                   the scripts that reproduce the paper (paper_modules(): every module the paper's scripts
+                          import, transitively), at the commit given in README.md
   manuscript/             LaTeX source, bibliography, figures and PDF
 plus LICENSE-DATA (CC-BY-4.0), LICENSE-CODE (MIT), README.md and SHA256SUMS.txt.
 
@@ -41,7 +42,7 @@ def write_csv(path, header, rows):
 
 
 def alias_and_secondary(lcs, P, T0, D, depth_ppm, known):
-    from merged_ctoi_test import box_depth
+    from transit_fit import box_depth
     alias_rows, sec_rows = [], []
     use = [lc for lc in lcs if lc["meta"]["sector"] != 66]
     for k in (2, 3, 4, 5):
@@ -67,8 +68,30 @@ def alias_and_secondary(lcs, P, T0, D, depth_ppm, known):
     return alias_rows, sec_rows
 
 
+PAPER_SCRIPTS = ("ffi_new", "centroid_vet", "audit_402710280", "fit_new", "shape_chains", "timing_diagnostics_402710280",
+                 "secondary_scan_402710280", "blend_shape_402710280", "fpp_triceratops", "second_signal_402710280",
+                 "fpp_second_signal", "paper_figures", "paper_numbers", "build_release", "build_prereg")
+
+
+def paper_modules():
+    """The paper's scripts and every pipeline module they import, directly or not (read from their source)."""
+    import ast
+    pipe = ROOT / "pipeline"
+    local = {p.stem for p in pipe.glob("*.py")}
+    seen, todo = set(), list(PAPER_SCRIPTS)
+    while todo:
+        m = todo.pop()
+        if m in seen:
+            continue
+        seen.add(m)
+        for n in ast.walk(ast.parse((pipe / f"{m}.py").read_text())):
+            names = [a.name for a in n.names] if isinstance(n, ast.Import) else [n.module] if isinstance(n, ast.ImportFrom) and n.module else []
+            todo += [x.split(".")[0] for x in names if x.split(".")[0] in local]
+    return sorted(seen)
+
+
 def main():
-    from fit_new import lcs_for
+    from lcaccess import lcs_for
     if REL.exists():
         shutil.rmtree(REL)
     REL.mkdir(parents=True)
@@ -138,7 +161,12 @@ def main():
     json.dump(au.get("s66_raw", {}), open(res / "sector66_diagnostics.json", "w"), indent=1, default=float)
     # code and manuscript
     commit = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
-    shutil.copytree(ROOT / "pipeline", REL / "code" / "pipeline", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+    (REL / "code" / "pipeline").mkdir(parents=True)
+    mods = paper_modules()
+    for m in mods:
+        shutil.copy(ROOT / "pipeline" / f"{m}.py", REL / "code" / "pipeline" / f"{m}.py")
+    shutil.copy(ROOT / "pipeline" / "prereg_protocol.template.tex", REL / "code" / "pipeline" / "prereg_protocol.template.tex")
+    print(len(mods), "modules in code/pipeline:", " ".join(mods))
     shutil.copy(ROOT / "requirements.txt", REL / "code" / "requirements.txt")
     man = REL / "manuscript"
     man.mkdir()
@@ -178,6 +206,8 @@ README = """# TIC 402710280.01: data products and analysis code
 Supporting record for the preprint *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280,
 Identified in TESS Full-Frame Images* (R. Vora, 2026).
 
+DOIs: this record 10.5281/zenodo.23390274; the preprint 10.5281/zenodo.23390317; the pre-registered test of the 2027 transits 10.5281/zenodo.23390325.
+
 Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJD_TDB.
 
 ## Contents
@@ -201,7 +231,7 @@ Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJ
 | `data/results/signal_3.78d.json`, `triceratops_3.78d.json` | The 3.78-day signal: searches, per-sector depths, transit fit, and TRICERATOPS (Figure 6). |
 | `data/results/paper_numbers.json` | Every number filled into the manuscript template by `paper_numbers.py`. |
 | `data/results/sector66_diagnostics.json` | Quality-flag and coverage summary of the Sector 66 window. |
-| `code/pipeline/` | The analysis pipeline (Python), git commit `{commit}`. |
+| `code/pipeline/` | The scripts that reproduce this paper and everything they import (Python), from git commit `{commit}` of the author's analysis repository. |
 | `manuscript/` | LaTeX source, bibliography, figures and PDF of the preprint. |
 
 ## Reproducing the paper
@@ -211,14 +241,19 @@ With the packages in `code/requirements.txt` (and TRICERATOPS 1.1 for the false-
 
 1. `ffi_new.py` builds the Sector 100-103 light curves from the calibrated full-frame images on the MAST AWS bucket.
 2. `audit_402710280.py` measures preliminary transit times, the Sector 66 diagnostics and the combined centroid.
-3. `fit_new.py --only-402710280` fits the transit shape (each window centred on its measured mid-time), re-times the
+3. `fit_new.py` fits the transit shape (each window centred on its measured mid-time), re-times the
    transits with that shape, and fits the ephemeris; `shape_chains.py free` repeats the shape fit with free limb
    darkening.
 4. `timing_diagnostics_402710280.py`, `secondary_scan_402710280.py`, `blend_shape_402710280.py` and
    `fpp_triceratops.py` run the timing, secondary-eclipse, blend and TRICERATOPS tests;
    `second_signal_402710280.py` and `fpp_second_signal.py` characterise the 3.78-day signal.
 5. `paper_numbers.py` fills the manuscript from the result files, `paper_figures.py` makes the figures, and
-   `build_release.py` builds this record.
+   `build_release.py` and `build_prereg.py` build this record and the pre-registration.
+
+The per-transit difference-image centroids (`data/results/centroids.json`) come from `centroid_vet.py` (method in
+`centroids.py`), run as `python centroid_vet.py 402710280:5.27:0.0021:39@2384.609,93@3838.185,100@4092.585,102@4128.945`.
+The search that first found the two archival transits (a box-filter search of public full-frame light curves for
+individual transit-like events) belongs to a wider survey and is not part of this record; the paper describes it.
 
 Light curves are read from the public MAST archive (TESS-SPOC and QLP high-level science products, SPOC target
 pixel files and calibrated full-frame images).

@@ -158,7 +158,7 @@ def centroid_no_s66():
     """Difference-image centroids of the four used transits (new_candidates.json, eb_pixels), combined, and compared
     with every Gaia source able to make the depth, all moved to the mean epoch of the transits."""
     import ticdb
-    from eb_pixels import centroid_verdict, combine_centroids, gaia_field, neighbour_offsets
+    from centroids import centroid_verdict, combine_centroids, gaia_field, neighbour_offsets
     d = json.load(open(RESULTS / "candidates" / "new_candidates.json"))
     ev = [dict(e) for e in d[str(TIC)]["centroid"]["per_event"] if e.get("sector") != 66 and "dra" in e]
     st = ticdb.query([TIC], ["ra", "dec", "Tmag"]).iloc[0]
@@ -170,7 +170,7 @@ def centroid_no_s66():
 
 
 def main():
-    from fit_new import lcs_for
+    from lcaccess import lcs_for
     lcs = [lc for lc in lcs_for(TIC) if lc["time"].size > 100]
     by_sec = {lc["meta"]["sector"]: lc for lc in lcs}
     out = {"centroid_noS66": centroid_no_s66()}

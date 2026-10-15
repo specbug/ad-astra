@@ -19,7 +19,7 @@ from astropy.timeseries import LombScargle
 import transit_fit as tf
 from audit_402710280 import beta_factor
 from env import RESULTS
-from fit_new import lcs_for
+from lcaccess import lcs_for
 
 TIC = 402710280
 P, T0, REF = 36.33989590709609, 2460838.20190249 - 2457000, 40

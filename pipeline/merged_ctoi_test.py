@@ -23,6 +23,7 @@ import pandas as pd
 
 from env import CATALOGS, RESULTS
 from toi_audit_timing import time_one
+from transit_fit import box_depth
 
 OUT = RESULTS / "candidates" / "merged_ctoi_test.json"
 CASES = [
@@ -52,21 +53,6 @@ def lc_at(lcs, t):
         if lc["time"].min() - 0.05 <= t <= lc["time"].max() + 0.05:
             return lc
     return None
-
-
-def box_depth(lc, tc, D):
-    t, f = lc["time"], lc["flux"]
-    w = np.isfinite(f) & (np.abs(t - tc) < D / 2 + 0.4)
-    inn = w & (np.abs(t - tc) < 0.4 * D)
-    oot = w & (np.abs(t - tc) > 0.6 * D)
-    cad = float(np.median(np.diff(t)))
-    if inn.sum() < 3 or oot.sum() < 15:
-        return None
-    c = np.polyfit(t[oot] - tc, f[oot], 2)
-    r = f / np.polyval(c, t - tc)
-    sig = 1.4826 * np.median(np.abs(np.diff(r[oot]))) / math.sqrt(2)
-    return {"coverage": min(1.0, inn.sum() * cad / (0.8 * D)), "depth": float(1 - r[inn].mean()),
-            "err": float(sig / math.sqrt(inn.sum()))}
 
 
 def one_object(lcs, ev, D, depth):
@@ -111,7 +97,7 @@ def one_object(lcs, ev, D, depth):
 
 
 def main():
-    from fit_new import lcs_for
+    from lcaccess import lcs_for
     toi = pd.read_csv(CATALOGS / "exofop" / "toi_20261012.csv", low_memory=False)
     toi["key"] = toi["TOI"].map(lambda x: f"{float(x):.2f}")
     res = {}

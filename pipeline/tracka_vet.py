@@ -1,10 +1,10 @@
 """Vetting of the Track A signals that beat the flipped-data baseline (tracka_v2.py) and are on no list.
 
 For each signal:
-  - pixels: per sector, the difference images (out of transit minus in transit, eb_pixels._diff_image) of every
+  - pixels: per sector, the difference images (out of transit minus in transit, centroids._diff_image) of every
     transit in the sector are stacked (inverse-variance weighted) and one PSF is fitted to the stack
-    (eb_pixels.fit_diff, offsets measured from the target's own image); sectors are combined and compared with the
-    target and the Gaia stars bright enough to make the dip (eb_pixels.combine_centroids, centroid_verdict). The
+    (centroids.fit_diff, offsets measured from the target's own image); sectors are combined and compared with the
+    target and the Gaia stars bright enough to make the dip (centroids.combine_centroids, centroid_verdict). The
     signals are too shallow for single-transit centroids;
   - per-sector depths and the phase-folded light curve (figure), from the same stitched light curve the search used;
   - Gaia DR3 (gaia_check.match): RUWE, non-single-star flag, radial-velocity scatter;
@@ -30,7 +30,7 @@ MAX_SECTORS = 6
 
 
 def stacked_centroid(t, F, w, tcs, D, ra, dec, gf):
-    from eb_pixels import _diff_image, fit_diff
+    from centroids import _diff_image, fit_diff
     num = den = base = None
     n = 0
     for tc in tcs:
@@ -57,7 +57,7 @@ def stacked_centroid(t, F, w, tcs, D, ra, dec, gf):
 def pixels_for(tic, rec, sig):
     import ticdb
     from centroid_vet import cube
-    from eb_pixels import centroid_verdict, combine_centroids, gaia_field, neighbour_offsets
+    from centroids import centroid_verdict, combine_centroids, gaia_field, neighbour_offsets
     st = ticdb.query([tic], ["ra", "dec", "Tmag"]).iloc[0]
     ra, dec, tmag = float(st.ra), float(st.dec), float(st.Tmag)
     gf = gaia_field(ra, dec, tmag)
