@@ -1,0 +1,50 @@
+tic,catalog,vizier,info,track
+48450535,TESS EBs (Prsa+2022),J/ApJS/258/16/tess-ebs,"{""_r"": 0.257, ""TIC"": ""0048450535"", ""Per"": 4.23383, ""Morph"": 0.233}",C
+238196979,TESS EBs (Prsa+2022),J/ApJS/258/16/tess-ebs,"{""_r"": 0.07, ""TIC"": ""0238196979"", ""Per"": 9.42285, ""Morph"": 0.313}",C
+293954660,TESS EBs (Prsa+2022),J/ApJS/258/16/tess-ebs,"{""_r"": 0.131, ""TIC"": ""0293954660"", ""Per"": 2.81369, ""Morph"": 0.468}",C
+293954660,Gaia DR3 eclipsing binaries,I/358/veb,"{""_r"": 0.244}",C
+304213412,Gaia DR3 eclipsing binaries,I/358/veb,"{""_r"": 0.404}",D
+306255021,Gaia DR3 eclipsing binaries,I/358/veb,"{""_r"": 4.74}",C
+321471064,Gaia DR3 eclipsing binaries,I/358/veb,"{""_r"": 0.785}",C
+346000671,Gaia DR3 eclipsing binaries,I/358/veb,"{""_r"": 6.0}",C
+418134886,Gaia DR3 eclipsing binaries,I/358/veb,"{""_r"": 0.152}",C
+434452777,Gaia DR3 eclipsing binaries,I/358/veb,"{""_r"": 1.389}",C
+457872192,Gaia DR3 eclipsing binaries,I/358/veb,"{""_r"": 5.011}",C
+13093071,VSX,B/vsx/vsx,"{""_r"": 0.1, ""Name"": ""Gaia DR3 2958881069899924736"", ""Type"": ""ROT""}",B
+48450535,VSX,B/vsx/vsx,"{""_r"": 0.21, ""Name"": ""T-Lyr1-01662"", ""Type"": ""EA"", ""Period"": 4.23339}",C
+52546430,VSX,B/vsx/vsx,"{""_r"": 0.38, ""Name"": ""Gaia DR3 5583971403407931776"", ""Type"": ""DSCT|GDOR|SXPHE""}",C
+64038538,VSX,B/vsx/vsx,"{""_r"": 0.64, ""Name"": ""Gaia DR3 2062997075745478528"", ""Type"": ""ROT""}",B
+64558861,VSX,B/vsx/vsx,"{""_r"": 0.13, ""Name"": ""Gaia DR3 2006848521618462592"", ""Type"": ""ROT""}",C
+147813662,VSX,B/vsx/vsx,"{""_r"": 1.59, ""Name"": ""Gaia DR3 6238492469059785088"", ""Type"": ""ROT""}",B
+168789840,VSX,B/vsx/vsx,"{""_r"": 0.06, ""Name"": ""TIC 168789840"", ""Type"": ""EA+EA+EA"", ""Period"": 1.57001}",C
+177994853,VSX,B/vsx/vsx,"{""_r"": 0.16, ""Name"": ""Gaia DR3 239581698204302848"", ""Type"": ""ROT""}",B
+188043856,VSX,B/vsx/vsx,"{""_r"": 0.68, ""Name"": ""ASASSN-V J104320.84-292733.8"", ""Type"": ""ROT"", ""Period"": 12.746}",B
+212375563,VSX,B/vsx/vsx,"{""_r"": 0.17, ""Name"": ""Gaia DR3 5142431452365814912"", ""Type"": ""ROT""}",B
+219413978,VSX,B/vsx/vsx,"{""_r"": 0.16, ""Name"": ""Gaia DR3 4773415245341279488"", ""Type"": ""RS""}",B
+238196979,VSX,B/vsx/vsx,"{""_r"": 0.06, ""Name"": ""ASASSN-V J034808.03-725325.0"", ""Type"": ""ROT"", ""Period"": 9.3135}",C
+293954660,VSX,B/vsx/vsx,"{""_r"": 0.14, ""Name"": ""NEV388"", ""Type"": ""EA"", ""Period"": 2.81366}",C
+304213412,VSX,B/vsx/vsx,"{""_r"": 0.17, ""Name"": ""Gaia DR3 5246931167778728064"", ""Type"": ""E"", ""Period"": 6.8554}",D
+306255021,VSX,B/vsx/vsx,"{""_r"": 4.67, ""Name"": ""Gaia DR3 5340841276248117248"", ""Type"": ""E"", ""Period"": 10.5708}",C
+318707987,VSX,B/vsx/vsx,"{""_r"": 0.06, ""Name"": ""HD 3167"", ""Type"": ""EP+BY"", ""Period"": 29.84649}",B
+321471064,VSX,B/vsx/vsx,"{""_r"": 0.44, ""Name"": ""[DPS2013] 60"", ""Type"": ""EA"", ""Period"": 0.68423}",C
+346000671,VSX,B/vsx/vsx,"{""_r"": 5.95, ""Name"": ""Gaia DR3 1998225872245119616"", ""Type"": ""E"", ""Period"": 1.46652}",C
+389836747,VSX,B/vsx/vsx,"{""_r"": 0.2, ""Name"": ""WISE J013310.8+613507"", ""Type"": ""EA"", ""Period"": 2.54917}",C
+418134886,VSX,B/vsx/vsx,"{""_r"": 0.05, ""Name"": ""Gaia DR3 432159716707294464"", ""Type"": ""E"", ""Period"": 1.15152}",C
+434452777,VSX,B/vsx/vsx,"{""_r"": 1.49, ""Name"": ""Gaia DR3 5676629108002652416"", ""Type"": ""E"", ""Period"": 0.89984}",C
+448471716,VSX,B/vsx/vsx,"{""_r"": 0.92, ""Name"": ""ASASSN-V J110252.18-351814.1"", ""Type"": ""ROT"", ""Period"": 27.211}",B
+457872192,VSX,B/vsx/vsx,"{""_r"": 5.03, ""Name"": ""Gaia DR3 5353965257483245312"", ""Type"": ""E"", ""Period"": 1.87652}",C
+168789840,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 0.101, ""TIC"": ""168789840"", ""Per"": 1.30588, ""Comm"": ""Confirmed sextuple [2021AJ....161..162P]""}",C
+168789840,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 0.101, ""TIC"": ""168789840"", ""Per"": 1.57001, ""Comm"": """"}",C
+168789840,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 0.101, ""TIC"": ""168789840"", ""Per"": 8.21711, ""Comm"": """"}",C
+311838200,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 0.171, ""TIC"": ""311838200"", ""Per"": 2.13397, ""Comm"": ""blended eclipses""}",C
+311838200,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 0.171, ""TIC"": ""311838200"", ""Per"": 2.49618, ""Comm"": ""blended eclipses""}",C
+321471064,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 0.653, ""TIC"": ""321471064"", ""Per"": 0.34209, ""Comm"": ""heavily-blended eclipses""}",C
+321471064,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 0.653, ""TIC"": ""321471064"", ""Per"": 1.55727, ""Comm"": ""heavily-blended eclipses; period may be twice the listed value; secondary too blended and too low SNR for reliable measurements""}",C
+336882813,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 0.041, ""TIC"": ""336882813"", ""Per"": 2.62503, ""Comm"": """"}",C
+336882813,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 0.041, ""TIC"": ""336882813"", ""Per"": 6.42286, ""Comm"": ""potential ETVs""}",C
+389836747,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 0.085, ""TIC"": ""389836747"", ""Per"": 2.56703, ""Comm"": """"}",C
+389836747,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 0.085, ""TIC"": ""389836747"", ""Per"": 2.7304, ""Comm"": """"}",C
+434452777,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 1.489, ""TIC"": ""434452777"", ""Per"": 0.4499, ""Comm"": ""blended star too faint to be source ({Delta}T ~ 8 mag)""}",C
+434452777,Kostov+2022 quadruple candidates,J/ApJS/259/66/table1,"{""_r"": 1.489, ""TIC"": ""434452777"", ""Per"": 8.041, ""Comm"": ""completely blended eclipses; ephemeris might be off""}",C
+321471064,Zasche+2022 multiply eclipsing,J/A+A/664/A96/tablea1,"{""_r"": 0.454, ""TIC"": ""TIC  321471064""}",C
+389836747,Zasche+2022 multiply eclipsing,J/A+A/664/A96/tablea1,"{""_r"": 0.178, ""TIC"": ""TIC  389836747""}",C

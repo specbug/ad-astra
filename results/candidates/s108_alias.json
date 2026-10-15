@@ -1,0 +1,482 @@
+{
+ "HD11506": {
+  "depth_ppm": 668.4445929309592,
+  "dur_h": 3.2360242458566635,
+  "n_allowed_before": 43,
+  "n_allowed_after": 32,
+  "shortest_after": 25.896252617987155,
+  "seen_in_s108": [],
+  "rows": [
+   {
+    "n": 1,
+    "P": 2149.388967292934,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 2,
+    "P": 1074.694483646467,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 4,
+    "P": 537.3472418232335,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 5,
+    "P": 429.8777934585868,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 7,
+    "P": 307.05556675613343,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 8,
+    "P": 268.67362091161675,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 10,
+    "P": 214.9388967292934,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 11,
+    "P": 195.39899702663035,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 13,
+    "P": 165.33761286868724,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 14,
+    "P": 153.52778337806672,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 16,
+    "P": 134.33681045580838,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 17,
+    "P": 126.43464513487847,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 19,
+    "P": 113.12573512068074,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 20,
+    "P": 107.4694483646467,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 22,
+    "P": 97.69949851331518,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 23,
+    "P": 93.45169423012757,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 25,
+    "P": 85.97555869171737,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 26,
+    "P": 82.66880643434362,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 28,
+    "P": 76.76389168903336,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 29,
+    "P": 74.11686094113566,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 31,
+    "P": 69.33512797719142,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 32,
+    "P": 67.16840522790419,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 34,
+    "P": 63.21732256743923,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 35,
+    "P": 61.41111335122669,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 37,
+    "P": 58.09159371061984,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 40,
+    "P": 53.73472418232335,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 43,
+    "P": 49.98578993704498,
+    "events": [],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 46,
+    "P": 46.725847115063786,
+    "events": [
+     {
+      "tc": 4317.806157042169,
+      "coverage": 0.944256351768057,
+      "measured": true,
+      "depth_ppm": 57.86014741782086,
+      "err_ppm": 135.88594251052731,
+      "beta": 3.175301385930605
+     }
+    ],
+    "ruled_out_s108": true,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 49,
+    "P": 43.865080965161916,
+    "events": [
+     {
+      "tc": 4314.945390892267,
+      "coverage": 1.0,
+      "measured": true,
+      "depth_ppm": 10.889360533949954,
+      "err_ppm": 31.86537763427086,
+      "beta": 1.0380279204219716
+     }
+    ],
+    "ruled_out_s108": true,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 52,
+    "P": 41.33440321717181,
+    "events": [
+     {
+      "tc": 4312.414713144277,
+      "coverage": 0.9871770950302414,
+      "measured": true,
+      "depth_ppm": -17.180096006708112,
+      "err_ppm": 25.451018418252566,
+      "beta": 1.0
+     }
+    ],
+    "ruled_out_s108": true,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 55,
+    "P": 39.07979940532607,
+    "events": [
+     {
+      "tc": 4310.160109332432,
+      "coverage": 0.9871770950302414,
+      "measured": true,
+      "depth_ppm": -98.39208831685653,
+      "err_ppm": 54.80554856589285,
+      "beta": 1.5601939373376819
+     }
+    ],
+    "ruled_out_s108": true,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 58,
+    "P": 37.05843047056783,
+    "events": [
+     {
+      "tc": 4308.138740397673,
+      "coverage": 0.0,
+      "measured": false
+     }
+    ],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 61,
+    "P": 35.23588470972023,
+    "events": [
+     {
+      "tc": 4306.3161946368255,
+      "coverage": 0.0,
+      "measured": false
+     }
+    ],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 64,
+    "P": 33.584202613952094,
+    "events": [
+     {
+      "tc": 4304.664512541058,
+      "coverage": 0.0,
+      "measured": false
+     }
+    ],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 67,
+    "P": 32.08043234765573,
+    "events": [
+     {
+      "tc": 4303.16074227476,
+      "coverage": 1.0,
+      "measured": true,
+      "depth_ppm": 34.99983323540512,
+      "err_ppm": 35.17734515378717,
+      "beta": 1.0
+     }
+    ],
+    "ruled_out_s108": true,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 68,
+    "P": 31.608661283719616,
+    "events": [
+     {
+      "tc": 4302.688971210824,
+      "coverage": 1.0,
+      "measured": true,
+      "depth_ppm": -28.672296424669952,
+      "err_ppm": 36.47900331912236,
+      "beta": 1.0
+     }
+    ],
+    "ruled_out_s108": true,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 70,
+    "P": 30.705556675613344,
+    "events": [
+     {
+      "tc": 4301.785866602719,
+      "coverage": 1.0,
+      "measured": true,
+      "depth_ppm": -36.72595476267304,
+      "err_ppm": 32.874491797512185,
+      "beta": 1.0
+     }
+    ],
+    "ruled_out_s108": true,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 71,
+    "P": 30.273084046379353,
+    "events": [
+     {
+      "tc": 4301.353393973484,
+      "coverage": 1.0,
+      "measured": true,
+      "depth_ppm": 84.84484455473229,
+      "err_ppm": 30.968416246922516,
+      "beta": 1.0
+     }
+    ],
+    "ruled_out_s108": true,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 73,
+    "P": 29.44368448346485,
+    "events": [
+     {
+      "tc": 4300.523994410571,
+      "coverage": 1.0,
+      "measured": true,
+      "depth_ppm": -49.778317143811535,
+      "err_ppm": 29.101393785867607,
+      "beta": 1.0
+     }
+    ],
+    "ruled_out_s108": true,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 74,
+    "P": 29.04579685530992,
+    "events": [
+     {
+      "tc": 4300.126106782415,
+      "coverage": 1.0,
+      "measured": true,
+      "depth_ppm": 12.54598110944638,
+      "err_ppm": 27.56579534358583,
+      "beta": 1.0
+     }
+    ],
+    "ruled_out_s108": true,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 77,
+    "P": 27.914142432375765,
+    "events": [
+     {
+      "tc": 4298.99445235948,
+      "coverage": 1.0,
+      "measured": true,
+      "depth_ppm": -51.76179167798445,
+      "err_ppm": 35.369756687192684,
+      "beta": 1.1080404506622492
+     }
+    ],
+    "ruled_out_s108": true,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 80,
+    "P": 26.867362091161674,
+    "events": [
+     {
+      "tc": 4297.9476720182665,
+      "coverage": 0.0,
+      "measured": false
+     }
+    ],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   },
+   {
+    "n": 83,
+    "P": 25.896252617987155,
+    "events": [
+     {
+      "tc": 4296.976562545093,
+      "coverage": 0.0,
+      "measured": false
+     }
+    ],
+    "ruled_out_s108": false,
+    "transit_seen_s108": false
+   }
+  ]
+ },
+ "TOI2493": {
+  "depth_ppm": 1466.9558447761235,
+  "dur_h": 6.102363948532492,
+  "aliases": {
+   "P": {
+    "P": 79.03020129770078,
+    "events": []
+   },
+   "P/2": {
+    "P": 39.51510064885039,
+    "events": []
+   },
+   "P/3": {
+    "P": 26.343400432566927,
+    "events": [
+     {
+      "tc": 4306.9432657479165,
+      "coverage": 1.0,
+      "measured": true,
+      "depth_ppm": -623.4964704106005,
+      "err_ppm": 201.26155155896916,
+      "beta": 1.0
+     }
+    ]
+   },
+   "P/4": {
+    "P": 19.757550324425196,
+    "events": [
+     {
+      "tc": 4300.357415639774,
+      "coverage": 1.0,
+      "measured": true,
+      "depth_ppm": -240.44779089327227,
+      "err_ppm": 179.34612850452993,
+      "beta": 1.0
+     }
+    ]
+   }
+  }
+ }
+}

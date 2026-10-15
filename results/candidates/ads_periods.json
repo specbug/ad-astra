@@ -1,0 +1,2745 @@
+{
+ "161169240|TOI-6667.01": {
+  "tic": 161169240,
+  "id": "TOI-6667.01",
+  "simbad": "UCAC4 184-215750",
+  "names": [
+   "2MASS J22372575-5319076",
+   "Gaia DR3 6507438682567821568",
+   "TIC 161169240",
+   "TOI 6667",
+   "TOI-6667",
+   "TOI-6667.01",
+   "UCAC4 184-215750",
+   "WISE J223725.83-531908.2"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "151.0",
+   "151.01",
+   "75.5",
+   "75.50"
+  ],
+  "papers_with_period": []
+ },
+ "6610653|CTOI 6610653.01": {
+  "tic": 6610653,
+  "id": "CTOI 6610653.01",
+  "simbad": "TYC 5400-729-1",
+  "names": [
+   "2MASS J07312222-1100172",
+   "Gaia DR2 3035076061778180096",
+   "Gaia DR3 3035076061778180096",
+   "TIC 6610653",
+   "TIC 6610653.01",
+   "TYC 5400-729-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "16.1",
+   "16.13"
+  ],
+  "papers_with_period": []
+ },
+ "14767026|CTOI 14767026.01": {
+  "tic": 14767026,
+  "id": "CTOI 14767026.01",
+  "simbad": "TYC  777-1267-1",
+  "names": [
+   "2MASS J07350093+1319414",
+   "Gaia DR2 3163408035306490368",
+   "Gaia DR3 3163408035308748800",
+   "TIC 14767026",
+   "TIC 14767026.01",
+   "TYC 777-1267-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "6.56",
+   "6.6"
+  ],
+  "papers_with_period": []
+ },
+ "16488877|CTOI 16488877.01": {
+  "tic": 16488877,
+  "id": "CTOI 16488877.01",
+  "simbad": "BD+15  1661",
+  "names": [
+   "2MASS J07473971+1447441",
+   "BD+15 1661",
+   "Gaia DR2 3164776377528907520",
+   "Gaia DR3 3164776377528907520",
+   "TIC 16488877",
+   "TIC 16488877.01",
+   "TYC 791-45-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "28.1",
+   "28.14"
+  ],
+  "papers_with_period": []
+ },
+ "14445414|CTOI 14445414.01": {
+  "tic": 14445414,
+  "id": "CTOI 14445414.01",
+  "simbad": "TYC  771-1365-1",
+  "names": [
+   "2MASS J07231701+1239476",
+   "Gaia DR2 3163160370313966848",
+   "Gaia DR3 3163160370313966848",
+   "TIC 14445414",
+   "TIC 14445414.01",
+   "TYC 771-1365-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "17.4",
+   "17.40"
+  ],
+  "papers_with_period": []
+ },
+ "22642772|CTOI 22642772.01": {
+  "tic": 22642772,
+  "id": "CTOI 22642772.01",
+  "simbad": "HD  55986",
+  "names": [
+   "2MASS J07133587-3658093",
+   "CD-36 3442",
+   "CPD-36 1180",
+   "Gaia DR2 5590096168510977536",
+   "Gaia DR3 5590096168510977536",
+   "HD 55986",
+   "TIC 22642772",
+   "TIC 22642772.01",
+   "TYC 7115-2417-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "22.2",
+   "22.21"
+  ],
+  "papers_with_period": []
+ },
+ "22712495|CTOI 22712495.01": {
+  "tic": 22712495,
+  "id": "CTOI 22712495.01",
+  "simbad": "TYC 1775-110-1",
+  "names": [
+   "2MASS J02313140+2754374",
+   "Gaia DR2 127730373173085824",
+   "Gaia DR3 127730373174191360",
+   "TIC 22712495",
+   "TIC 22712495.01",
+   "TYC 1775-110-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "17.7",
+   "17.71"
+  ],
+  "papers_with_period": []
+ },
+ "33973338|CTOI 33973338.01": {
+  "tic": 33973338,
+  "id": "CTOI 33973338.01",
+  "simbad": "TYC 8168-1709-1",
+  "names": [
+   "2MASS J09434871-4514478",
+   "Gaia DR2 5412413749438923520",
+   "Gaia DR3 5412413749438923520",
+   "TIC 33973338",
+   "TIC 33973338.01",
+   "TYC 8168-1709-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "11.37",
+   "11.4"
+  ],
+  "papers_with_period": []
+ },
+ "31273263|CTOI 31273263.01": {
+  "tic": 31273263,
+  "id": "CTOI 31273263.01",
+  "simbad": "HD 270269",
+  "names": [
+   "2MASS J05522487-6809343",
+   "Gaia DR2 4659189872865776384",
+   "Gaia DR3 4659189872865776384",
+   "HD 270269",
+   "TIC 31273263",
+   "TIC 31273263.01",
+   "TYC 9163-869-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "22.57",
+   "22.6"
+  ],
+  "papers_with_period": []
+ },
+ "38138512|CTOI 38138512.01": {
+  "tic": 38138512,
+  "id": "CTOI 38138512.01",
+  "simbad": "UCAC4 430-053570",
+  "names": [
+   "2MASS J11214039-0411500",
+   "Gaia DR3 3786879094450390656",
+   "TIC 38138512",
+   "TIC 38138512.01",
+   "UCAC4 430-053570"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "30.8",
+   "30.84"
+  ],
+  "papers_with_period": []
+ },
+ "39167176|CTOI 39167176.01": {
+  "tic": 39167176,
+  "id": "CTOI 39167176.01",
+  "simbad": "LAMOST J055318.57-034751.5",
+  "names": [
+   "Gaia DR3 3023782320709582592",
+   "TIC 39167176",
+   "TIC 39167176.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "21.79",
+   "21.8"
+  ],
+  "papers_with_period": []
+ },
+ "41840228|CTOI 41840228.01": {
+  "tic": 41840228,
+  "id": "CTOI 41840228.01",
+  "simbad": "TYC 2643-3269-1",
+  "names": [
+   "2MASS J19023525+3219588",
+   "Gaia DR2 2043623131110700416",
+   "Gaia DR3 2043623131110700416",
+   "TIC 41840228",
+   "TIC 41840228.01",
+   "TYC 2643-3269-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "30.19",
+   "30.2"
+  ],
+  "papers_with_period": []
+ },
+ "42196078|CTOI 42196078.01": {
+  "tic": 42196078,
+  "id": "CTOI 42196078.01",
+  "simbad": "TYC 2640-2098-1",
+  "names": [
+   "2MASS J19051519+3148498",
+   "Gaia DR2 2042786059164682368",
+   "Gaia DR3 2042786059164682368",
+   "TIC 42196078",
+   "TIC 42196078.01",
+   "TYC 2640-2098-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "63.7",
+   "63.75"
+  ],
+  "papers_with_period": []
+ },
+ "48139432|CTOI 48139432.01": {
+  "tic": 48139432,
+  "id": "CTOI 48139432.01",
+  "simbad": "UCAC4 700-064053",
+  "names": [
+   "2MASS J18495195+4948568",
+   "Gaia DR3 2143960675306114560",
+   "TIC 48139432",
+   "TIC 48139432.01",
+   "UCAC4 700-064053",
+   "WISE J184951.94+494857.3"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "23.45",
+   "23.5"
+  ],
+  "papers_with_period": []
+ },
+ "53847727|CTOI 53847727.01": {
+  "tic": 53847727,
+  "id": "CTOI 53847727.01",
+  "simbad": "HD   5494",
+  "names": [
+   "2MASS J00570980+3451505",
+   "BD+34 152",
+   "Gaia DR2 363015519236803840",
+   "Gaia DR3 363015519236803840",
+   "HD 5494",
+   "HIP 4457",
+   "TIC 53847727",
+   "TIC 53847727.01",
+   "TYC 2285-1074-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "1.5",
+   "1.51"
+  ],
+  "papers_with_period": []
+ },
+ "52195587|CTOI 52195587.01": {
+  "tic": 52195587,
+  "id": "CTOI 52195587.01",
+  "simbad": "UCAC4 120-001167",
+  "names": [
+   "2MASS J01165961-6609490",
+   "Gaia DR2 4704923681046075520",
+   "Gaia DR3 4704923681046075520",
+   "TIC 52195587",
+   "TIC 52195587.01",
+   "UCAC4 120-001167",
+   "WISE J011659.62-660949.3",
+   "WISEA J011659.64-660949.3"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "47.3",
+   "47.34"
+  ],
+  "papers_with_period": []
+ },
+ "57352825|CTOI 57352825.01": {
+  "tic": 57352825,
+  "id": "CTOI 57352825.01",
+  "simbad": "TYC 7223-211-1",
+  "names": [
+   "2MASS J11265526-3428475",
+   "Gaia DR2 5399375671827220480",
+   "Gaia DR3 5399375671827220480",
+   "TIC 57352825",
+   "TIC 57352825.01",
+   "TYC 7223-211-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "62.09",
+   "62.1"
+  ],
+  "papers_with_period": []
+ },
+ "55659311|CTOI 55659311.01": {
+  "tic": 55659311,
+  "id": "CTOI 55659311.01",
+  "simbad": "CPD-64   390",
+  "names": [
+   "2MASS J04562815-6429150",
+   "CPD-64 390",
+   "Gaia DR2 4664639877106383232",
+   "Gaia DR3 4664639877112275712",
+   "TIC 55659311",
+   "TIC 55659311.01",
+   "TYC 8885-90-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "31.1",
+   "31.11"
+  ],
+  "papers_with_period": []
+ },
+ "66102144|CTOI 66102144.01": {
+  "tic": 66102144,
+  "id": "CTOI 66102144.01",
+  "simbad": "TYC 4835-1281-1",
+  "names": [
+   "2MASS J07393606-0220373",
+   "Gaia DR2 3060956503907991552",
+   "Gaia DR3 3060956503907991552",
+   "TIC 66102144",
+   "TIC 66102144.01",
+   "TYC 4835-1281-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "2.29",
+   "2.3",
+   "2.30"
+  ],
+  "papers_with_period": []
+ },
+ "77320223|CTOI 77320223.01": {
+  "tic": 77320223,
+  "id": "CTOI 77320223.01",
+  "simbad": "TYC 2333-13-1",
+  "names": [
+   "2MASS J02461242+3346296",
+   "Gaia DR2 139900347689740800",
+   "Gaia DR3 139900347689740800",
+   "TIC 77320223",
+   "TIC 77320223.01",
+   "TYC 2333-13-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "8.55",
+   "8.59",
+   "8.6",
+   "8.64"
+  ],
+  "papers_with_period": []
+ },
+ "82011491|CTOI 82011491.01": {
+  "tic": 82011491,
+  "id": "CTOI 82011491.01",
+  "simbad": "BD+60   650",
+  "names": [
+   "2MASS J03153063+6038047",
+   "BD+60 650",
+   "Gaia DR2 462952536271488768",
+   "Gaia DR3 462952536271488768",
+   "TIC 82011491",
+   "TIC 82011491.01",
+   "TYC 4049-1431-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "29.76",
+   "29.8"
+  ],
+  "papers_with_period": []
+ },
+ "83580723|CTOI 83580723.01": {
+  "tic": 83580723,
+  "id": "CTOI 83580723.01",
+  "simbad": "TYC 7858-409-1",
+  "names": [
+   "2MASS J16374184-4014259",
+   "Gaia DR2 5969321164939386112",
+   "Gaia DR3 5969321164939386112",
+   "TIC 83580723",
+   "TIC 83580723.01",
+   "TYC 7858-409-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "5.1",
+   "5.12"
+  ],
+  "papers_with_period": []
+ },
+ "85668557|CTOI 85668557.01": {
+  "tic": 85668557,
+  "id": "CTOI 85668557.01",
+  "simbad": "UCAC4 786-010504",
+  "names": [
+   "2MASS J03491101+6711104",
+   "Gaia DR3 493199826272521600",
+   "TIC 85668557",
+   "TIC 85668557.01",
+   "UCAC4 786-010504"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "13.46",
+   "13.5"
+  ],
+  "papers_with_period": []
+ },
+ "113645244|CTOI 113645244.01": {
+  "tic": 113645244,
+  "id": "CTOI 113645244.01",
+  "simbad": "TYC 7437-1773-1",
+  "names": [
+   "2MASS J19345018-3613308",
+   "Gaia DR2 6740862492885594624",
+   "Gaia DR3 6740862492885594624",
+   "TIC 113645244",
+   "TIC 113645244.01",
+   "TYC 7437-1773-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "41.9",
+   "41.95"
+  ],
+  "papers_with_period": []
+ },
+ "117888314|CTOI 117888314.01": {
+  "tic": 117888314,
+  "id": "CTOI 117888314.01",
+  "simbad": "TYC 6023-3584-1",
+  "names": [
+   "2MASS J08325172-2037370",
+   "Gaia DR2 5703628921693462272",
+   "Gaia DR3 5703628921693462272",
+   "TIC 117888314",
+   "TIC 117888314.01",
+   "TYC 6023-3584-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "141.3",
+   "141.35",
+   "35.3",
+   "35.34",
+   "70.67",
+   "70.7"
+  ],
+  "papers_with_period": []
+ },
+ "119362383|CTOI 119362383.01": {
+  "tic": 119362383,
+  "id": "CTOI 119362383.01",
+  "simbad": "TYC 7621-2049-1",
+  "names": [
+   "2MASS J06290581-4143129",
+   "Gaia DR2 5570062821833579008",
+   "Gaia DR3 5570062821833579008",
+   "TIC 119362383",
+   "TIC 119362383.01",
+   "TYC 7621-2049-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "62.86",
+   "62.9"
+  ],
+  "papers_with_period": []
+ },
+ "120311283|CTOI 120311283.01": {
+  "tic": 120311283,
+  "id": "CTOI 120311283.01",
+  "simbad": "UCAC4 634-062350",
+  "names": [
+   "2MASS J18583350+3645008",
+   "Gaia DR3 2093771753371497600",
+   "TIC 120311283",
+   "TIC 120311283.01",
+   "UCAC4 634-062350",
+   "WISE J185833.49+364500.7"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "9.27",
+   "9.3"
+  ],
+  "papers_with_period": []
+ },
+ "121389437|CTOI 121389437.01": {
+  "tic": 121389437,
+  "id": "CTOI 121389437.01",
+  "simbad": "TYC 4870-1677-1",
+  "names": [
+   "2MASS J08371975-0457485",
+   "Gaia DR2 5755596479785001728",
+   "Gaia DR3 5755596479785001728",
+   "TIC 121389437",
+   "TIC 121389437.01",
+   "TYC 4870-1677-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "11.9",
+   "11.90"
+  ],
+  "papers_with_period": []
+ },
+ "136519753|CTOI 136519753.01": {
+  "tic": 136519753,
+  "id": "CTOI 136519753.01",
+  "simbad": "TYC 3177-1986-1",
+  "names": [
+   "2MASS J21101678+4216558",
+   "Gaia DR2 1969785943146610176",
+   "Gaia DR3 1969785943146610176",
+   "TIC 136519753",
+   "TIC 136519753.01",
+   "TYC 3177-1986-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "25.67",
+   "25.7"
+  ],
+  "papers_with_period": []
+ },
+ "140777703|CTOI 140777703.01": {
+  "tic": 140777703,
+  "id": "CTOI 140777703.01",
+  "simbad": "TYC 4515-298-1",
+  "names": [
+   "2MASS J04570503+7728540",
+   "Gaia DR2 552205598812022400",
+   "Gaia DR3 552205598812022400",
+   "TIC 140777703",
+   "TIC 140777703.01",
+   "TYC 4515-298-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "25.07",
+   "25.1"
+  ],
+  "papers_with_period": []
+ },
+ "145913596|CTOI 145913596.01": {
+  "tic": 145913596,
+  "id": "CTOI 145913596.01",
+  "simbad": "TYC 7121-1252-1",
+  "names": [
+   "2MASS J08123114-3033196",
+   "Gaia DR2 5596428840099480704",
+   "Gaia DR3 5596428840099480704",
+   "TIC 145913596",
+   "TIC 145913596.01",
+   "TYC 7121-1252-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "54.09",
+   "54.1"
+  ],
+  "papers_with_period": []
+ },
+ "147898114|CTOI 147898114.01": {
+  "tic": 147898114,
+  "id": "CTOI 147898114.01",
+  "simbad": null,
+  "names": [
+   "TIC 147898114",
+   "TIC 147898114.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "24.57",
+   "24.6",
+   "49.1",
+   "49.13"
+  ],
+  "papers_with_period": []
+ },
+ "153838604|CTOI 153838604.01": {
+  "tic": 153838604,
+  "id": "CTOI 153838604.01",
+  "simbad": null,
+  "names": [
+   "TIC 153838604",
+   "TIC 153838604.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "56.08",
+   "56.1"
+  ],
+  "papers_with_period": []
+ },
+ "159614322|CTOI 159614322.01": {
+  "tic": 159614322,
+  "id": "CTOI 159614322.01",
+  "simbad": "TYC 4179-194-1",
+  "names": [
+   "2MASS J14400231+6529032",
+   "Gaia DR2 1669046625055549312",
+   "Gaia DR3 1669046625055549312",
+   "TIC 159614322",
+   "TIC 159614322.01",
+   "TYC 4179-194-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "143.9",
+   "143.94",
+   "359.86",
+   "359.9",
+   "719.7",
+   "719.72"
+  ],
+  "papers_with_period": []
+ },
+ "156457567|CTOI 156457567.01": {
+  "tic": 156457567,
+  "id": "CTOI 156457567.01",
+  "simbad": "TYC 4562-1156-1",
+  "names": [
+   "2MASS J14273463+7751426",
+   "Gaia DR2 1714472539936523904",
+   "Gaia DR3 1714472539936523904",
+   "TIC 156457567",
+   "TIC 156457567.01",
+   "TYC 4562-1156-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "52.7",
+   "52.70"
+  ],
+  "papers_with_period": []
+ },
+ "159730525|CTOI 159730525.01": {
+  "tic": 159730525,
+  "id": "CTOI 159730525.01",
+  "simbad": "TYC 7966-866-1",
+  "names": [
+   "2MASS J21143061-3918506",
+   "Gaia DR2 6583420566747746176",
+   "Gaia DR3 6583420566747746176",
+   "TIC 159730525",
+   "TIC 159730525.01",
+   "TYC 7966-866-1"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2024MNRAS.530.2565D",
+    "year": "2024",
+    "title": "The EBLM Project XII. An eccentric, long-period eclipsing binary with a companion near the hydrogen-burning limit",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "44.9",
+   "44.92"
+  ],
+  "papers_with_period": []
+ },
+ "162305348|CTOI 162305348.01": {
+  "tic": 162305348,
+  "id": "CTOI 162305348.01",
+  "simbad": "CD-43  6925",
+  "names": [
+   "2MASS J11163782-4411397",
+   "CD-43 6925",
+   "CPD-43 5297",
+   "Gaia DR2 5376650759348839552",
+   "Gaia DR3 5376650759348839552",
+   "TIC 162305348",
+   "TIC 162305348.01",
+   "TYC 7738-531-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "35.38",
+   "35.4"
+  ],
+  "papers_with_period": []
+ },
+ "170692379|CTOI 170692379.01": {
+  "tic": 170692379,
+  "id": "CTOI 170692379.01",
+  "simbad": "HD 152006",
+  "names": [
+   "2MASS J16535542-5504216",
+   "CD-54 7022",
+   "CPD-54 7888",
+   "Gaia DR2 5929637763070845952",
+   "Gaia DR3 5929637763070845952",
+   "HD 152006",
+   "HIP 82663",
+   "TIC 170692379",
+   "TIC 170692379.01",
+   "TYC 8730-887-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "31.28",
+   "31.3"
+  ],
+  "papers_with_period": []
+ },
+ "176402194|CTOI 176402194.01": {
+  "tic": 176402194,
+  "id": "CTOI 176402194.01",
+  "simbad": "UCAC4 436-007549",
+  "names": [
+   "2MASS J04492161-0254406",
+   "Gaia DR3 3225845413701484800",
+   "TIC 176402194",
+   "TIC 176402194.01",
+   "UCAC4 436-007549"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "23.49",
+   "23.5",
+   "46.97",
+   "47.0"
+  ],
+  "papers_with_period": []
+ },
+ "187657618|CTOI 187657618.01": {
+  "tic": 187657618,
+  "id": "CTOI 187657618.01",
+  "simbad": "TYC 5395-2586-1",
+  "names": [
+   "Gaia DR2 3047770537696481408",
+   "Gaia DR3 3047770537696481408",
+   "TIC 187657618",
+   "TIC 187657618.01",
+   "TYC 5395-2586-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "15.7",
+   "15.74"
+  ],
+  "papers_with_period": []
+ },
+ "193759514|CTOI 193759514.01": {
+  "tic": 193759514,
+  "id": "CTOI 193759514.01",
+  "simbad": "TYC 3164-805-1",
+  "names": [
+   "2MASS J20253061+4442493",
+   "Gaia DR2 2070883288542394624",
+   "Gaia DR3 2070883288542394624",
+   "TIC 193759514",
+   "TIC 193759514.01",
+   "TYC 3164-805-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "15.76",
+   "15.8"
+  ],
+  "papers_with_period": []
+ },
+ "207363637|CTOI 207363637.01": {
+  "tic": 207363637,
+  "id": "CTOI 207363637.01",
+  "simbad": null,
+  "names": [
+   "TIC 207363637",
+   "TIC 207363637.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "34.75",
+   "34.8",
+   "69.5",
+   "69.51"
+  ],
+  "papers_with_period": []
+ },
+ "211409161|CTOI 211409161.01": {
+  "tic": 211409161,
+  "id": "CTOI 211409161.01",
+  "simbad": "TYC 7474-380-1",
+  "names": [
+   "2MASS J21270643-3031383",
+   "Gaia DR2 6785898209983083008",
+   "Gaia DR3 6785898209983083008",
+   "TIC 211409161",
+   "TIC 211409161.01",
+   "TYC 7474-380-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "25.35",
+   "25.4"
+  ],
+  "papers_with_period": []
+ },
+ "218430451|CTOI 218430451.01": {
+  "tic": 218430451,
+  "id": "CTOI 218430451.01",
+  "simbad": "HD 158278",
+  "names": [
+   "2MASS J17303800-4708486",
+   "CD-47 11590",
+   "CPD-47 8338",
+   "HD 158278",
+   "TIC 218430451",
+   "TIC 218430451.01",
+   "TYC 8346-1907-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "13.8",
+   "13.82"
+  ],
+  "papers_with_period": []
+ },
+ "198357385|CTOI 198357385.01": {
+  "tic": 198357385,
+  "id": "CTOI 198357385.01",
+  "simbad": null,
+  "names": [
+   "TIC 198357385",
+   "TIC 198357385.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "1117.8",
+   "1117.82",
+   "279.46",
+   "279.5",
+   "558.9",
+   "558.91"
+  ],
+  "papers_with_period": []
+ },
+ "214517366|CTOI 214517366.01": {
+  "tic": 214517366,
+  "id": "CTOI 214517366.01",
+  "simbad": "TYC 8004-411-1",
+  "names": [
+   "2MASS J22414566-3828594",
+   "Gaia DR2 6595524819675695872",
+   "Gaia DR3 6595524819675695872",
+   "TIC 214517366",
+   "TIC 214517366.01",
+   "TYC 8004-411-1",
+   "WISEA J224145.64-382901.0"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2025KosNT..31f..80D",
+    "year": "2025",
+    "title": "Visual inspection of potential exocomet transits identified through machine learning and statistical methods",
+    "pub": "Kosmichna Nauka i Tekhnologiya",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "52.8",
+   "52.82"
+  ],
+  "papers_with_period": []
+ },
+ "219244541|CTOI 219244541.01": {
+  "tic": 219244541,
+  "id": "CTOI 219244541.01",
+  "simbad": null,
+  "names": [
+   "TIC 219244541",
+   "TIC 219244541.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "24.2",
+   "24.23"
+  ],
+  "papers_with_period": []
+ },
+ "231637303|CTOI 231637303.01": {
+  "tic": 231637303,
+  "id": "CTOI 231637303.01",
+  "simbad": "TYC 8805-561-1",
+  "names": [
+   "2MASS J21115701-5927149",
+   "Gaia DR2 6453394490607105536",
+   "Gaia DR3 6453394490607105536",
+   "TIC 231637303",
+   "TIC 231637303.01",
+   "TYC 8805-561-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "184.0",
+   "184.05",
+   "368.1",
+   "368.10"
+  ],
+  "papers_with_period": []
+ },
+ "231833061|CTOI 231833061.02": {
+  "tic": 231833061,
+  "id": "CTOI 231833061.02",
+  "simbad": "TYC 8856-529-1",
+  "names": [
+   "2MASS J01360163-6541271",
+   "Gaia DR2 4710814864347502848",
+   "Gaia DR3 4710814864347897472",
+   "TIC 231833061",
+   "TIC 231833061.02",
+   "TYC 8856-529-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "26.19",
+   "26.2"
+  ],
+  "papers_with_period": []
+ },
+ "231969683|CTOI 231969683.01": {
+  "tic": 231969683,
+  "id": "CTOI 231969683.01",
+  "simbad": "TYC 7625-1710-1",
+  "names": [
+   "2MASS J06211249-4309240",
+   "Gaia DR2 5568391087420066432",
+   "Gaia DR3 5568391087420702720",
+   "TIC 231969683",
+   "TIC 231969683.01",
+   "TYC 7625-1710-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "21.98",
+   "22.0"
+  ],
+  "papers_with_period": []
+ },
+ "230130556|CTOI 230130556.01": {
+  "tic": 230130556,
+  "id": "CTOI 230130556.01",
+  "simbad": "TYC 4423-1354-1",
+  "names": [
+   "2MASS J16464333+7001072",
+   "Gaia DR2 1650036657422885504",
+   "Gaia DR3 1650036657422885504",
+   "TIC 230130556",
+   "TIC 230130556.01",
+   "TYC 4423-1354-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "22.26",
+   "22.3"
+  ],
+  "papers_with_period": []
+ },
+ "235996401|CTOI 235996401.01": {
+  "tic": 235996401,
+  "id": "CTOI 235996401.01",
+  "simbad": "TYC 4589-1072-1",
+  "names": [
+   "2MASS J20162382+7813001",
+   "Gaia DR2 2291017263144801664",
+   "Gaia DR3 2291017263144801664",
+   "TIC 235996401",
+   "TIC 235996401.01",
+   "TYC 4589-1072-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "8.6",
+   "8.62"
+  ],
+  "papers_with_period": []
+ },
+ "240855518|CTOI 240855518.01": {
+  "tic": 240855518,
+  "id": "CTOI 240855518.01",
+  "simbad": "UCAC4 701-008078",
+  "names": [
+   "2MASS J01051269+5002034",
+   "Gaia DR3 404218136942575488",
+   "TIC 240855518",
+   "TIC 240855518.01",
+   "UCAC4 701-008078"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "23.9",
+   "23.90",
+   "47.8",
+   "47.81"
+  ],
+  "papers_with_period": []
+ },
+ "245750473|CTOI 245750473.01": {
+  "tic": 245750473,
+  "id": "CTOI 245750473.01",
+  "simbad": "HD  16702",
+  "names": [
+   "2MASS J02425865+5811520",
+   "BD+57 616",
+   "Gaia DR2 463953194934419968",
+   "Gaia DR3 463953194934419968",
+   "HD 16702",
+   "HIP 12685",
+   "TIC 245750473",
+   "TIC 245750473.01",
+   "TYC 3712-628-1"
+  ],
+  "n": 5,
+  "papers": [
+   {
+    "bibcode": "2016A&A...585A..46B",
+    "year": "2016",
+    "title": "The SOPHIE search for northern extrasolar planets. VIII. Follow-up of ELODIE candidates: long-period brown-dwarf companions",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2015MNRAS.451.2337S",
+    "year": "2015",
+    "title": "PASTIS: Bayesian extrasolar planet validation - II. Constraining exoplanet blend scenarios using spectroscopic diagnoses",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2015ApJ...799....4R",
+    "year": "2015",
+    "title": "A Survey of the High Order Multiplicity of Nearby Solar-type Binary Stars with Robo-AO",
+    "pub": "The Astrophysical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2015AJ....149...18K",
+    "year": "2015",
+    "title": "Detection of Stars Within \u223c0.8 in of Kepler Objects of Interest",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2012A&A...538A.113D",
+    "year": "2012",
+    "title": "The SOPHIE search for northern extrasolar planets. IV. Massive companions in the planet-brown dwarf boundary",
+    "pub": "Astronomy and Astrophysics",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "25.4",
+   "25.40"
+  ],
+  "papers_with_period": [
+   "2015ApJ...799....4R",
+   "2015AJ....149...18K"
+  ]
+ },
+ "248620873|CTOI 248620873.01": {
+  "tic": 248620873,
+  "id": "CTOI 248620873.01",
+  "simbad": null,
+  "names": [
+   "TIC 248620873",
+   "TIC 248620873.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "24.4",
+   "24.44",
+   "48.88",
+   "48.9"
+  ],
+  "papers_with_period": []
+ },
+ "251083502|CTOI 251083502.01": {
+  "tic": 251083502,
+  "id": "CTOI 251083502.01",
+  "simbad": null,
+  "names": [
+   "TIC 251083502",
+   "TIC 251083502.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "12.3",
+   "12.31"
+  ],
+  "papers_with_period": []
+ },
+ "259784884|CTOI 259784884.01": {
+  "tic": 259784884,
+  "id": "CTOI 259784884.01",
+  "simbad": "UCAC4 143-216099",
+  "names": [
+   "2MASS J21342855-6134581",
+   "Gaia DR3 6403954258773075328",
+   "TIC 259784884",
+   "TIC 259784884.01",
+   "UCAC4 143-216099",
+   "WISE J213428.57-613458.0"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "28.6",
+   "28.63"
+  ],
+  "papers_with_period": []
+ },
+ "259784884|CTOI 259784884.02": {
+  "tic": 259784884,
+  "id": "CTOI 259784884.02",
+  "simbad": "UCAC4 143-216099",
+  "names": [
+   "2MASS J21342855-6134581",
+   "Gaia DR3 6403954258773075328",
+   "TIC 259784884",
+   "TIC 259784884.02",
+   "UCAC4 143-216099",
+   "WISE J213428.57-613458.0"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "28.6",
+   "28.63"
+  ],
+  "papers_with_period": []
+ },
+ "260908297|CTOI 260908297.01": {
+  "tic": 260908297,
+  "id": "CTOI 260908297.01",
+  "simbad": "TYC 2155-184-1",
+  "names": [
+   "2MASS J20141006+2315180",
+   "Gaia DR2 1830477304522456704",
+   "Gaia DR3 1830477304522456704",
+   "TIC 260908297",
+   "TIC 260908297.01",
+   "TYC 2155-184-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "19.7",
+   "19.71"
+  ],
+  "papers_with_period": []
+ },
+ "258918831|CTOI 258918831.01": {
+  "tic": 258918831,
+  "id": "CTOI 258918831.01",
+  "simbad": "UCAC4 798-027929",
+  "names": [
+   "2MASS J19143319+6926352",
+   "Gaia DR3 2262123746834145152",
+   "TIC 258918831",
+   "TIC 258918831.01",
+   "UCAC4 798-027929"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2025AJ....170..322E",
+    "year": "2025",
+    "title": "Eclipse Timing Variations of Circumbinary Substellar Objects in TESS Data",
+    "pub": "The Astronomical Journal",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "5.99",
+   "6.0"
+  ],
+  "papers_with_period": [
+   "2025AJ....170..322E"
+  ]
+ },
+ "264333501|CTOI 264333501.01": {
+  "tic": 264333501,
+  "id": "CTOI 264333501.01",
+  "simbad": "TYC 4649-2378-1",
+  "names": [
+   "2MASS J21283583+8304082",
+   "Gaia DR2 2300283882720402944",
+   "Gaia DR3 2300283882720402944",
+   "TIC 264333501",
+   "TIC 264333501.01",
+   "TYC 4649-2378-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "31.55",
+   "31.6"
+  ],
+  "papers_with_period": []
+ },
+ "264766922|CTOI 264766922.01": {
+  "tic": 264766922,
+  "id": "CTOI 264766922.01",
+  "simbad": "TYC 8565-1780-1",
+  "names": [
+   "2MASS J07485945-5821501",
+   "Gaia DR2 5294397424047198976",
+   "Gaia DR3 5294397424047198976",
+   "TIC 264766922",
+   "TIC 264766922.01",
+   "TYC 8565-1780-1"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2021MNRAS.501.4669E",
+    "year": "2021",
+    "title": "Planet Hunters TESS II: findings from the first two years of TESS",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "198.89",
+   "198.9",
+   "66.3",
+   "66.30"
+  ],
+  "papers_with_period": []
+ },
+ "265469420|CTOI 265469420.02": {
+  "tic": 265469420,
+  "id": "CTOI 265469420.02",
+  "simbad": "TYC 9102-351-1",
+  "names": [
+   "2MASS J21250093-6021314",
+   "Gaia DR2 6452313052201874176",
+   "Gaia DR3 6452313052201874176",
+   "TIC 265469420",
+   "TIC 265469420.02",
+   "TYC 9102-351-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "31.7",
+   "31.71"
+  ],
+  "papers_with_period": []
+ },
+ "266376971|CTOI 266376971.01": {
+  "tic": 266376971,
+  "id": "CTOI 266376971.01",
+  "simbad": "HD 101544",
+  "names": [
+   "2MASS J11404068-5806156",
+   "CD-57 4068",
+   "CPD-57 4910",
+   "Gaia DR2 5342456978547165824",
+   "Gaia DR3 5342456978547165824",
+   "HD 101544",
+   "HIP 56966",
+   "TIC 266376971",
+   "TIC 266376971.01",
+   "TYC 8638-592-1",
+   "WISEA J114040.49-580615.5"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "19.8",
+   "19.83"
+  ],
+  "papers_with_period": []
+ },
+ "267185423|CTOI 267185423.01": {
+  "tic": 267185423,
+  "id": "CTOI 267185423.01",
+  "simbad": "CD-73    14",
+  "names": [
+   "2MASS J00235773-7218576",
+   "CD-73 14",
+   "CPD-73 21",
+   "TIC 267185423",
+   "TIC 267185423.01",
+   "TYC 9137-481-1"
+  ],
+  "n": 11,
+  "papers": [
+   {
+    "bibcode": "2024JSSST..13l3002N",
+    "year": "2024",
+    "title": "Promising Anti-Microbial from Functionalized Magnesium Nickel Doped Cobalt Nano-Ferrites Structural and Optical Studies",
+    "pub": "Journal of Solid State Science and Technology",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2024arXiv240503505K",
+    "year": "2024",
+    "title": "Tropical Vector Bundles",
+    "pub": "arXiv e-prints",
+    "doctype": "eprint"
+   },
+   {
+    "bibcode": "2023Heliy...918599Y",
+    "year": "2023",
+    "title": "Combination of human platelet lysate and 3D gelatin scaffolds to enhance osteogenic differentiation of human amniotic fluid derived mesenchymal stem cells",
+    "pub": "Heliyon",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2022NatSR..1210423S",
+    "year": "2022",
+    "title": "CD73 downregulation by EGFR-targeted liposomal CD73 siRNA potentiates antitumor effect of liposomal doxorubicin in 4T1 tumor-bearing mice",
+    "pub": "Scientific Reports",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2020NatSR..1015073S",
+    "year": "2020",
+    "title": "Advantage of fat-derived CD73 positive cells from multiple human tissues, prospective isolated mesenchymal stromal cells",
+    "pub": "Scientific Reports",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2015IJEHR..25..614G",
+    "year": "2015",
+    "title": "Genetic characterization of Vibrio vulnificus strains isolated from oyster samples in Mexico",
+    "pub": "International Journal of Environmental Health Research",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2015ToxVi..29.1254B",
+    "year": "2015",
+    "title": "Evaluation of a new standardized enzymatic isolation protocol for human umbilical cord-derived stem cells",
+    "pub": "Toxicology in Vitro",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "2009MRFMM.665....7R",
+    "year": "2009",
+    "title": "Influence of cytosine methylation on ultraviolet-induced cyclobutane pyrimidine dimer formation in genomic DNA",
+    "pub": "Mutation Research - Fundamental and Molecular Mechanisms of Mutagenesis",
+    "doctype": "article"
+   },
+   {
+    "bibcode": "1915phae.proj.2205C",
+    "year": "1915",
+    "title": "Annie Cannon Notebooks",
+    "pub": "Project PHAEDRA: Preserving Harvard's Early Data and Research in Astronomy (https://library.cfa.harvard.edu/project-phaedra). Harvard College Observatory observations",
+    "doctype": "misc"
+   },
+   {
+    "bibcode": "1912phae.proj.2134C",
+    "year": "1912",
+    "title": "Annie Cannon Notebooks",
+    "pub": "Project PHAEDRA: Preserving Harvard's Early Data and Research in Astronomy (https://library.cfa.harvard.edu/project-phaedra). Harvard College Observatory observations",
+    "doctype": "misc"
+   },
+   {
+    "bibcode": "1907phae.proj..901F",
+    "year": "1907",
+    "title": "Objects of Interest - South Bache Plates",
+    "pub": "Project PHAEDRA: Preserving Harvard's Early Data and Research in Astronomy (https://library.cfa.harvard.edu/project-phaedra). Harvard College Observatory observations",
+    "doctype": "misc"
+   }
+  ],
+  "period_terms": [
+   "39.4",
+   "39.43"
+  ],
+  "papers_with_period": [
+   "1915phae.proj.2205C",
+   "1912phae.proj.2134C",
+   "1907phae.proj..901F"
+  ]
+ },
+ "265469420|CTOI 265469420.01": {
+  "tic": 265469420,
+  "id": "CTOI 265469420.01",
+  "simbad": "TYC 9102-351-1",
+  "names": [
+   "2MASS J21250093-6021314",
+   "Gaia DR2 6452313052201874176",
+   "Gaia DR3 6452313052201874176",
+   "TIC 265469420",
+   "TIC 265469420.01",
+   "TYC 9102-351-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "31.7",
+   "31.71",
+   "95.1",
+   "95.13"
+  ],
+  "papers_with_period": []
+ },
+ "270450687|CTOI 270450687.02": {
+  "tic": 270450687,
+  "id": "CTOI 270450687.02",
+  "simbad": "TYC 3513-814-1",
+  "names": [
+   "2MASS J17370974+4734552",
+   "Gaia DR2 1363568179936006272",
+   "Gaia DR3 1363568179936006272",
+   "TIC 270450687",
+   "TIC 270450687.02",
+   "TYC 3513-814-1",
+   "WASP0-TR 01"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2005MNRAS.364.1091K",
+    "year": "2005",
+    "title": "Results from the Wide Angle Search for Planets Prototype (WASP0) - III. Planet hunting in the Draco field",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "97.2",
+   "97.22"
+  ],
+  "papers_with_period": []
+ },
+ "277802975|CTOI 277802975.01": {
+  "tic": 277802975,
+  "id": "CTOI 277802975.01",
+  "simbad": "TYC 9341-1028-1",
+  "names": [
+   "2MASS J22575011-7102031",
+   "Gaia DR2 6384025885397393024",
+   "Gaia DR3 6384025885397393024",
+   "TIC 277802975",
+   "TIC 277802975.01",
+   "TYC 9341-1028-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "105.1",
+   "105.12"
+  ],
+  "papers_with_period": []
+ },
+ "280692653|CTOI 280692653.01": {
+  "tic": 280692653,
+  "id": "CTOI 280692653.01",
+  "simbad": "TYC 4328-2081-1",
+  "names": [
+   "2MASS J04152255+6730508",
+   "Gaia DR2 490489564469187072",
+   "Gaia DR3 490489564469187072",
+   "TIC 280692653",
+   "TIC 280692653.01",
+   "TYC 4328-2081-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "27.49",
+   "27.5",
+   "54.97",
+   "55.0"
+  ],
+  "papers_with_period": []
+ },
+ "279727635|CTOI 279727635.01": {
+  "tic": 279727635,
+  "id": "CTOI 279727635.01",
+  "simbad": null,
+  "names": [
+   "TIC 279727635",
+   "TIC 279727635.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "111.6",
+   "111.63"
+  ],
+  "papers_with_period": []
+ },
+ "286969201|CTOI 286969201.01": {
+  "tic": 286969201,
+  "id": "CTOI 286969201.01",
+  "simbad": "TYC 1019-1072-1",
+  "names": [
+   "2MASS J17550416+1428061",
+   "Gaia DR2 4499889840781255040",
+   "Gaia DR3 4499889840781255040",
+   "TIC 286969201",
+   "TIC 286969201.01",
+   "TYC 1019-1072-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "29.3",
+   "29.33"
+  ],
+  "papers_with_period": []
+ },
+ "289596640|CTOI 289596640.01": {
+  "tic": 289596640,
+  "id": "CTOI 289596640.01",
+  "simbad": "TYC 5454-358-1",
+  "names": [
+   "2MASS J08465113-1327386",
+   "Gaia DR2 5735069044371651328",
+   "Gaia DR3 5735069044371651328",
+   "TIC 289596640",
+   "TIC 289596640.01",
+   "TYC 5454-358-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "34.9",
+   "34.94"
+  ],
+  "papers_with_period": []
+ },
+ "290686569|CTOI 290686569.01": {
+  "tic": 290686569,
+  "id": "CTOI 290686569.01",
+  "simbad": "TYC 2174-191-1",
+  "names": [
+   "2MASS J20391337+2536516",
+   "Gaia DR2 1855647049808911744",
+   "Gaia DR3 1855647049808911744",
+   "TIC 290686569",
+   "TIC 290686569.01",
+   "TYC 2174-191-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "29.16",
+   "29.2"
+  ],
+  "papers_with_period": []
+ },
+ "288160753|CTOI 288160753.01": {
+  "tic": 288160753,
+  "id": "CTOI 288160753.01",
+  "simbad": null,
+  "names": [
+   "TIC 288160753",
+   "TIC 288160753.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "83.16",
+   "83.2"
+  ],
+  "papers_with_period": []
+ },
+ "300202855|CTOI 300202855.01": {
+  "tic": 300202855,
+  "id": "CTOI 300202855.01",
+  "simbad": "TYC 7612-1193-1",
+  "names": [
+   "2MASS J06113007-3834384",
+   "Gaia DR2 2884556351606337920",
+   "Gaia DR3 2884556351606337920",
+   "TIC 300202855",
+   "TIC 300202855.01",
+   "TYC 7612-1193-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "25.76",
+   "25.8"
+  ],
+  "papers_with_period": []
+ },
+ "302207444|CTOI 302207444.01": {
+  "tic": 302207444,
+  "id": "CTOI 302207444.01",
+  "simbad": "TYC 1940-339-1",
+  "names": [
+   "2MASS J08210992+2944564",
+   "Gaia DR2 708313503808001408",
+   "Gaia DR3 708313503808001408",
+   "TIC 302207444",
+   "TIC 302207444.01",
+   "TYC 1940-339-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "35.59",
+   "35.6"
+  ],
+  "papers_with_period": []
+ },
+ "308403559|CTOI 308403559.01": {
+  "tic": 308403559,
+  "id": "CTOI 308403559.01",
+  "simbad": "UCAC4 149-012619",
+  "names": [
+   "2MASS J08013588-6016150",
+   "Gaia DR2 5290854939321026816",
+   "Gaia DR3 5290854939321026816",
+   "TIC 308403559",
+   "TIC 308403559.01",
+   "UCAC4 149-012619",
+   "WISE J080135.87-601614.9"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "158.6",
+   "158.63"
+  ],
+  "papers_with_period": []
+ },
+ "317107805|CTOI 317107805.01": {
+  "tic": 317107805,
+  "id": "CTOI 317107805.01",
+  "simbad": "HD 336675",
+  "names": [
+   "2MASS J18403629+2708074",
+   "Gaia DR2 4538719098217175168",
+   "Gaia DR3 4538719098217175168",
+   "HD 336675",
+   "TIC 317107805",
+   "TIC 317107805.01",
+   "TYC 2115-701-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "163.9",
+   "163.94",
+   "54.6",
+   "54.65"
+  ],
+  "papers_with_period": []
+ },
+ "334656125|CTOI 334656125.01": {
+  "tic": 334656125,
+  "id": "CTOI 334656125.01",
+  "simbad": "TYC 5471-914-1",
+  "names": [
+   "2MASS J09253188-1429301",
+   "Gaia DR2 5689512017024524288",
+   "Gaia DR3 5689512017024524288",
+   "TIC 334656125",
+   "TIC 334656125.01",
+   "TYC 5471-914-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "28.1",
+   "28.10"
+  ],
+  "papers_with_period": []
+ },
+ "348952772|CTOI 348952772.01": {
+  "tic": 348952772,
+  "id": "CTOI 348952772.01",
+  "simbad": "UCAC4 599-011480",
+  "names": [
+   "2MASS J04071145+2944524",
+   "Gaia DR3 164374037713903616",
+   "TIC 348952772",
+   "TIC 348952772.01",
+   "UCAC4 599-011480"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "14.0",
+   "14.01",
+   "28.0",
+   "28.03"
+  ],
+  "papers_with_period": []
+ },
+ "342004815|CTOI 342004815.01": {
+  "tic": 342004815,
+  "id": "CTOI 342004815.01",
+  "simbad": "TYC 8578-770-1",
+  "names": [
+   "2MASS J08095690-5847474",
+   "Gaia DR2 5291403694401860096",
+   "Gaia DR3 5291403694401860096",
+   "TIC 342004815",
+   "TIC 342004815.01",
+   "TYC 8578-770-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "39.3",
+   "39.31"
+  ],
+  "papers_with_period": []
+ },
+ "349091983|CTOI 349091983.01": {
+  "tic": 349091983,
+  "id": "CTOI 349091983.01",
+  "simbad": null,
+  "names": [
+   "TIC 349091983",
+   "TIC 349091983.01"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2024MNRAS.528.1841H",
+    "year": "2024",
+    "title": "TESS duotransit candidates from the Southern Ecliptic Hemisphere",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "549.06",
+   "549.1"
+  ],
+  "papers_with_period": []
+ },
+ "369456296|CTOI 369456296.01": {
+  "tic": 369456296,
+  "id": "CTOI 369456296.01",
+  "simbad": "TYC 7967-574-1",
+  "names": [
+   "2MASS J20463809-4032192",
+   "Gaia DR2 6678572680972611328",
+   "Gaia DR3 6678572680972611328",
+   "TIC 369456296",
+   "TIC 369456296.01",
+   "TYC 7967-574-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "37.0",
+   "37.01"
+  ],
+  "papers_with_period": []
+ },
+ "357098189|CTOI 357098189.01": {
+  "tic": 357098189,
+  "id": "CTOI 357098189.01",
+  "simbad": "TYC 3904-971-1",
+  "names": [
+   "2MASS J18185606+5405464",
+   "Gaia DR2 2149087491868876160",
+   "Gaia DR3 2149087491868876160",
+   "TIC 357098189",
+   "TIC 357098189.01",
+   "TYC 3904-971-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "1340.7",
+   "1340.72",
+   "268.1",
+   "268.14"
+  ],
+  "papers_with_period": []
+ },
+ "370324073|CTOI 370324073.01": {
+  "tic": 370324073,
+  "id": "CTOI 370324073.01",
+  "simbad": "TYC 8829-111-1",
+  "names": [
+   "2MASS J22445853-5816010",
+   "Gaia DR2 6503477657568081280",
+   "Gaia DR3 6503477657569280256",
+   "TIC 370324073",
+   "TIC 370324073.01",
+   "TYC 8829-111-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "15.9",
+   "15.91",
+   "31.8",
+   "31.82"
+  ],
+  "papers_with_period": []
+ },
+ "370324073|CTOI 370324073.02": {
+  "tic": 370324073,
+  "id": "CTOI 370324073.02",
+  "simbad": "TYC 8829-111-1",
+  "names": [
+   "2MASS J22445853-5816010",
+   "Gaia DR2 6503477657568081280",
+   "Gaia DR3 6503477657569280256",
+   "TIC 370324073",
+   "TIC 370324073.02",
+   "TYC 8829-111-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "31.8",
+   "31.82"
+  ],
+  "papers_with_period": []
+ },
+ "384882500|CTOI 384882500.01": {
+  "tic": 384882500,
+  "id": "CTOI 384882500.01",
+  "simbad": "TYC 1196-92-1",
+  "names": [
+   "2MASS J01053625+1653109",
+   "Gaia DR2 2784544743878131968",
+   "Gaia DR3 2784544743878131968",
+   "TIC 384882500",
+   "TIC 384882500.01",
+   "TYC 1196-92-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "17.3",
+   "17.32"
+  ],
+  "papers_with_period": []
+ },
+ "388014300|CTOI 388014300.01": {
+  "tic": 388014300,
+  "id": "CTOI 388014300.01",
+  "simbad": null,
+  "names": [
+   "TIC 388014300",
+   "TIC 388014300.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "134.3",
+   "134.34"
+  ],
+  "papers_with_period": []
+ },
+ "393229954|CTOI 393229954.01": {
+  "tic": 393229954,
+  "id": "CTOI 393229954.01",
+  "simbad": "UCAC4 217-006891",
+  "names": [
+   "2MASS J05465876-4642426",
+   "Gaia DR2 4795950629505730304",
+   "Gaia DR3 4795950629505730304",
+   "TIC 393229954",
+   "TIC 393229954.01",
+   "UCAC4 217-006891"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "108.2",
+   "108.25"
+  ],
+  "papers_with_period": []
+ },
+ "382513740|CTOI 382513740.01": {
+  "tic": 382513740,
+  "id": "CTOI 382513740.01",
+  "simbad": "TYC 8911-2004-1",
+  "names": [
+   "2MASS J07502109-6114250",
+   "Gaia DR2 5289195707552751744",
+   "Gaia DR3 5289195707552751744",
+   "TIC 382513740",
+   "TIC 382513740.01",
+   "TYC 8911-2004-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "202.67",
+   "202.7"
+  ],
+  "papers_with_period": []
+ },
+ "397762695|CTOI 397762695.01": {
+  "tic": 397762695,
+  "id": "CTOI 397762695.01",
+  "simbad": null,
+  "names": [
+   "TIC 397762695",
+   "TIC 397762695.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "24.9",
+   "24.91"
+  ],
+  "papers_with_period": []
+ },
+ "401913803|CTOI 401913803.01": {
+  "tic": 401913803,
+  "id": "CTOI 401913803.01",
+  "simbad": "CPD-75   967",
+  "names": [
+   "2MASS J14332447-7558437",
+   "CPD-75 967",
+   "Gaia DR2 5792850991758467200",
+   "Gaia DR3 5792850991758467200",
+   "TIC 401913803",
+   "TIC 401913803.01",
+   "TYC 9427-2709-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "31.7",
+   "31.72"
+  ],
+  "papers_with_period": []
+ },
+ "406115330|CTOI 406115330.01": {
+  "tic": 406115330,
+  "id": "CTOI 406115330.01",
+  "simbad": "TYC 8760-346-1",
+  "names": [
+   "2MASS J19065188-5341357",
+   "Gaia DR2 6644446146444271872",
+   "Gaia DR3 6644446146444271872",
+   "TIC 406115330",
+   "TIC 406115330.01",
+   "TYC 8760-346-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "19.5",
+   "19.53"
+  ],
+  "papers_with_period": []
+ },
+ "412119488|CTOI 412119488.01": {
+  "tic": 412119488,
+  "id": "CTOI 412119488.01",
+  "simbad": "HD 208905A",
+  "names": [
+   "HD 208905A",
+   "TIC 412119488",
+   "TIC 412119488.01",
+   "TYC 4262-1454-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "25.66",
+   "25.7"
+  ],
+  "papers_with_period": []
+ },
+ "428976250|CTOI 428976250.01": {
+  "tic": 428976250,
+  "id": "CTOI 428976250.01",
+  "simbad": null,
+  "names": [
+   "TIC 428976250",
+   "TIC 428976250.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "18.1",
+   "18.15"
+  ],
+  "papers_with_period": []
+ },
+ "427344083|CTOI 427344083.01": {
+  "tic": 427344083,
+  "id": "CTOI 427344083.01",
+  "simbad": "UCAC4 804-034414",
+  "names": [
+   "2MASS J22563609+7040518",
+   "Gaia DR3 2226636016914795392",
+   "TIC 427344083",
+   "TIC 427344083.01",
+   "UCAC4 804-034414"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2021MNRAS.501.4669E",
+    "year": "2021",
+    "title": "Planet Hunters TESS II: findings from the first two years of TESS",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "82.7",
+   "82.73"
+  ],
+  "papers_with_period": []
+ },
+ "436774928|CTOI 436774928.01": {
+  "tic": 436774928,
+  "id": "CTOI 436774928.01",
+  "simbad": "TYC 2239-605-1",
+  "names": [
+   "2MASS J23040664+2559014",
+   "Gaia DR2 2843695067839966848",
+   "Gaia DR3 2843695067839966848",
+   "TIC 436774928",
+   "TIC 436774928.01",
+   "TYC 2239-605-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "12.8",
+   "12.81"
+  ],
+  "papers_with_period": []
+ },
+ "441297232|CTOI 441297232.01": {
+  "tic": 441297232,
+  "id": "CTOI 441297232.01",
+  "simbad": "TYC 7459-1780-1",
+  "names": [
+   "2MASS J20320453-3315255",
+   "Gaia DR2 6792666945299749504",
+   "Gaia DR3 6792666945299749504",
+   "TIC 441297232",
+   "TIC 441297232.01",
+   "TYC 7459-1780-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "7.18",
+   "7.2"
+  ],
+  "papers_with_period": []
+ },
+ "448471716|CTOI 448471716.01": {
+  "tic": 448471716,
+  "id": "CTOI 448471716.01",
+  "simbad": null,
+  "names": [
+   "TIC 448471716",
+   "TIC 448471716.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "32.17",
+   "32.2"
+  ],
+  "papers_with_period": []
+ },
+ "453444539|CTOI 453444539.01": {
+  "tic": 453444539,
+  "id": "CTOI 453444539.01",
+  "simbad": "TYC 3439-688-1",
+  "names": [
+   "2MASS J09511082+5223430",
+   "Gaia DR2 828075677559053056",
+   "Gaia DR3 828075677559053056",
+   "TIC 453444539",
+   "TIC 453444539.01",
+   "TYC 3439-688-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "28.16",
+   "28.2"
+  ],
+  "papers_with_period": []
+ },
+ "456909420|CTOI 456909420.01": {
+  "tic": 456909420,
+  "id": "CTOI 456909420.01",
+  "simbad": "StKM 1-193",
+  "names": [
+   "2MASS J01461415+1841432",
+   "Gaia DR2 95170810218081024",
+   "Gaia DR3 95170810218081024",
+   "TIC 456909420",
+   "TIC 456909420.01",
+   "TYC 1208-1094-1"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2021MNRAS.501.4669E",
+    "year": "2021",
+    "title": "Planet Hunters TESS II: findings from the first two years of TESS",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "28.9",
+   "28.95"
+  ],
+  "papers_with_period": []
+ },
+ "841384851|CTOI 841384851.01": {
+  "tic": 841384851,
+  "id": "CTOI 841384851.01",
+  "simbad": "TYC 4544-1272-1",
+  "names": [
+   "TIC 841384851",
+   "TIC 841384851.01",
+   "TYC 4544-1272-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "49.3",
+   "49.32"
+  ],
+  "papers_with_period": []
+ },
+ "469974264|CTOI 469974264.01": {
+  "tic": 469974264,
+  "id": "CTOI 469974264.01",
+  "simbad": null,
+  "names": [
+   "TIC 469974264",
+   "TIC 469974264.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "138.17",
+   "138.2",
+   "69.09",
+   "69.1"
+  ],
+  "papers_with_period": []
+ },
+ "123664207|TOI-2493.01": {
+  "tic": 123664207,
+  "id": "TOI-2493.01",
+  "simbad": "UCAC4 343-010274",
+  "names": [
+   "2MASS J05585906-2134321",
+   "Gaia DR3 2917842382508546560",
+   "TIC 123664207",
+   "TOI 2493",
+   "TOI-2493",
+   "TOI-2493.01",
+   "UCAC4 343-010274",
+   "WISE J055859.08-213430.8"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "79.0",
+   "79.03"
+  ],
+  "papers_with_period": []
+ },
+ "1504460|CTOI 1504460.01": {
+  "tic": 1504460,
+  "id": "CTOI 1504460.01",
+  "simbad": null,
+  "names": [
+   "TIC 1504460",
+   "TIC 1504460.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "19.28",
+   "19.3"
+  ],
+  "papers_with_period": []
+ },
+ "5360702|CTOI 5360702.01": {
+  "tic": 5360702,
+  "id": "CTOI 5360702.01",
+  "simbad": "TYC 6040-1025-1",
+  "names": [
+   "2MASS J09164334-2052408",
+   "Gaia DR2 5676220978733875968",
+   "Gaia DR3 5676220978733875968",
+   "TIC 5360702",
+   "TIC 5360702.01",
+   "TYC 6040-1025-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "4.5",
+   "4.55"
+  ],
+  "papers_with_period": []
+ },
+ "7145074|CTOI 7145074.01": {
+  "tic": 7145074,
+  "id": "CTOI 7145074.01",
+  "simbad": "TYC 7530-365-1",
+  "names": [
+   "2MASS J00180315-4324344",
+   "Gaia DR2 4991911020646951552",
+   "Gaia DR3 4991911024942810752",
+   "TIC 7145074",
+   "TIC 7145074.01",
+   "TYC 7530-365-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "41.29",
+   "41.3"
+  ],
+  "papers_with_period": []
+ },
+ "13713700|CTOI 13713700.01": {
+  "tic": 13713700,
+  "id": "CTOI 13713700.01",
+  "simbad": null,
+  "names": [
+   "TIC 13713700",
+   "TIC 13713700.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "50.6",
+   "50.63"
+  ],
+  "papers_with_period": []
+ },
+ "32498861|CTOI 32498861.01": {
+  "tic": 32498861,
+  "id": "CTOI 32498861.01",
+  "simbad": null,
+  "names": [
+   "TIC 32498861",
+   "TIC 32498861.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "182.7",
+   "182.73",
+   "365.45",
+   "365.5",
+   "73.09",
+   "73.1"
+  ],
+  "papers_with_period": []
+ },
+ "64108432|CTOI 64108432.01": {
+  "tic": 64108432,
+  "id": "CTOI 64108432.01",
+  "simbad": "BD-20   499",
+  "names": [
+   "2MASS J02392928-2002238",
+   "BD-20 499",
+   "Gaia DR2 5127259153974964480",
+   "Gaia DR3 5127259153974964480",
+   "TIC 64108432",
+   "TIC 64108432.01",
+   "TYC 5862-1683-1"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2023MNRAS.519.3546S",
+    "year": "2023",
+    "title": "The EBLM project - IX. Five fully convective M-dwarfs, precisely measured with CHEOPS and TESS light curves",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "2.78",
+   "2.8"
+  ],
+  "papers_with_period": []
+ },
+ "64549889|CTOI 64549889.01": {
+  "tic": 64549889,
+  "id": "CTOI 64549889.01",
+  "simbad": "TYC 6524-4327-1",
+  "names": [
+   "2MASS J07080165-2408311",
+   "Gaia DR2 2927369002233849472",
+   "Gaia DR3 2927369002233849472",
+   "TIC 64549889",
+   "TIC 64549889.01",
+   "TYC 6524-4327-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "35.75",
+   "35.8"
+  ],
+  "papers_with_period": []
+ },
+ "67599025|CTOI 67599025.01": {
+  "tic": 67599025,
+  "id": "CTOI 67599025.01",
+  "simbad": null,
+  "names": [
+   "TIC 67599025",
+   "TIC 67599025.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "23.7",
+   "23.70"
+  ],
+  "papers_with_period": []
+ },
+ "70561926|CTOI 70561926.01": {
+  "tic": 70561926,
+  "id": "CTOI 70561926.01",
+  "simbad": "TYC 6595-1230-1",
+  "names": [
+   "2MASS J09170140-2642023",
+   "Gaia DR2 5637836688508288000",
+   "Gaia DR3 5637836688508288000",
+   "TIC 70561926",
+   "TIC 70561926.01",
+   "TYC 6595-1230-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "21.49",
+   "21.5"
+  ],
+  "papers_with_period": []
+ },
+ "123763494|CTOI 123763494.01": {
+  "tic": 123763494,
+  "id": "CTOI 123763494.01",
+  "simbad": null,
+  "names": [
+   "TIC 123763494",
+   "TIC 123763494.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "24.09",
+   "24.1",
+   "48.19",
+   "48.2"
+  ],
+  "papers_with_period": []
+ },
+ "140278302|CTOI 140278302.01": {
+  "tic": 140278302,
+  "id": "CTOI 140278302.01",
+  "simbad": "TYC 5992-1102-1",
+  "names": [
+   "2MASS J07430197-2048469",
+   "Gaia DR2 5715292231811646976",
+   "Gaia DR3 5715292227508589056",
+   "TIC 140278302",
+   "TIC 140278302.01",
+   "TYC 5992-1102-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "28.47",
+   "28.5"
+  ],
+  "papers_with_period": []
+ },
+ "141786309|CTOI 141786309.01": {
+  "tic": 141786309,
+  "id": "CTOI 141786309.01",
+  "simbad": "TYC 5985-1026-1",
+  "names": [
+   "2MASS J07510061-1807090",
+   "Gaia DR2 5717664114607726592",
+   "Gaia DR3 5717664114607726592",
+   "TIC 141786309",
+   "TIC 141786309.01",
+   "TYC 5985-1026-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "16.5",
+   "16.55"
+  ],
+  "papers_with_period": []
+ },
+ "142278054|CTOI 142278054.01": {
+  "tic": 142278054,
+  "id": "CTOI 142278054.01",
+  "simbad": "TYC 7235-1230-1",
+  "names": [
+   "2MASS J12030301-3320348",
+   "Gaia DR2 3466367774167141504",
+   "Gaia DR3 3466367774167141504",
+   "TIC 142278054",
+   "TIC 142278054.01",
+   "TYC 7235-1230-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "26.49",
+   "26.5"
+  ],
+  "papers_with_period": []
+ },
+ "147035057|CTOI 147035057.01": {
+  "tic": 147035057,
+  "id": "CTOI 147035057.01",
+  "simbad": "HD  51545",
+  "names": [
+   "2MASS J06570582-1628418",
+   "BD-16 1672",
+   "Gaia DR2 2947647054662200192",
+   "Gaia DR3 2947647054662200192",
+   "HD 51545",
+   "TIC 147035057",
+   "TIC 147035057.01",
+   "TYC 5963-1913-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "37.3",
+   "37.32"
+  ],
+  "papers_with_period": []
+ },
+ "159490807|CTOI 159490807.01": {
+  "tic": 159490807,
+  "id": "CTOI 159490807.01",
+  "simbad": "TYC 7823-1040-1",
+  "names": [
+   "2MASS J14405638-3922323",
+   "Gaia DR2 6105287288191573248",
+   "Gaia DR3 6105287288192980608",
+   "TIC 159490807",
+   "TIC 159490807.01",
+   "TYC 7823-1040-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "23.4",
+   "23.43",
+   "46.86",
+   "46.9",
+   "93.7",
+   "93.71"
+  ],
+  "papers_with_period": []
+ },
+ "207783865|CTOI 207783865.01": {
+  "tic": 207783865,
+  "id": "CTOI 207783865.01",
+  "simbad": "TYC 8668-926-1",
+  "names": [
+   "2MASS J13481459-5425142",
+   "Gaia DR2 6064975786002098816",
+   "Gaia DR3 6064975786002098816",
+   "TIC 207783865",
+   "TIC 207783865.01",
+   "TYC 8668-926-1"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "24.8",
+   "24.84"
+  ],
+  "papers_with_period": []
+ },
+ "218977148|CTOI 218977148.01": {
+  "tic": 218977148,
+  "id": "CTOI 218977148.01",
+  "simbad": null,
+  "names": [
+   "TIC 218977148",
+   "TIC 218977148.01"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2024MNRAS.528.1841H",
+    "year": "2024",
+    "title": "TESS duotransit candidates from the Southern Ecliptic Hemisphere",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "31.9",
+   "31.94"
+  ],
+  "papers_with_period": []
+ },
+ "221915858|CTOI 221915858.01": {
+  "tic": 221915858,
+  "id": "CTOI 221915858.01",
+  "simbad": "CD-54  6866",
+  "names": [
+   "2MASS J16380312-5421282",
+   "CD-54 6866",
+   "CPD-54 7771",
+   "Gaia DR2 5930348356845353856",
+   "Gaia DR3 5930348356845353856",
+   "TIC 221915858",
+   "TIC 221915858.01",
+   "TYC 8712-2425-1"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2024MNRAS.528.1841H",
+    "year": "2024",
+    "title": "TESS duotransit candidates from the Southern Ecliptic Hemisphere",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "45.57",
+   "45.6"
+  ],
+  "papers_with_period": []
+ },
+ "268534931|CTOI 268534931.01": {
+  "tic": 268534931,
+  "id": "CTOI 268534931.01",
+  "simbad": null,
+  "names": [
+   "TIC 268534931",
+   "TIC 268534931.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "30.87",
+   "30.9",
+   "46.3",
+   "46.30",
+   "92.6",
+   "92.60"
+  ],
+  "papers_with_period": []
+ },
+ "265466589|CTOI 265466589.01": {
+  "tic": 265466589,
+  "id": "CTOI 265466589.01",
+  "simbad": null,
+  "names": [
+   "TIC 265466589",
+   "TIC 265466589.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "32.6",
+   "32.63",
+   "97.9",
+   "97.90"
+  ],
+  "papers_with_period": []
+ },
+ "381553868|CTOI 381553868.01": {
+  "tic": 381553868,
+  "id": "CTOI 381553868.01",
+  "simbad": null,
+  "names": [
+   "TIC 381553868",
+   "TIC 381553868.01"
+  ],
+  "n": 1,
+  "papers": [
+   {
+    "bibcode": "2024MNRAS.528.1841H",
+    "year": "2024",
+    "title": "TESS duotransit candidates from the Southern Ecliptic Hemisphere",
+    "pub": "Monthly Notices of the Royal Astronomical Society",
+    "doctype": "article"
+   }
+  ],
+  "period_terms": [
+   "46.0",
+   "46.02"
+  ],
+  "papers_with_period": []
+ },
+ "437293313|CTOI 437293313.01": {
+  "tic": 437293313,
+  "id": "CTOI 437293313.01",
+  "simbad": null,
+  "names": [
+   "TIC 437293313",
+   "TIC 437293313.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "24.99",
+   "25.0"
+  ],
+  "papers_with_period": []
+ },
+ "442893494|CTOI 442893494.01": {
+  "tic": 442893494,
+  "id": "CTOI 442893494.01",
+  "simbad": null,
+  "names": [
+   "TIC 442893494",
+   "TIC 442893494.01"
+  ],
+  "n": 0,
+  "papers": [],
+  "period_terms": [
+   "36.09",
+   "36.1",
+   "72.17",
+   "72.2"
+  ],
+  "papers_with_period": []
+ }
+}

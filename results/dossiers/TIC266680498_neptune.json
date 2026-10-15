@@ -1,0 +1,160 @@
+{
+ "tic": 266680498,
+ "star": {
+  "tic": 266680498,
+  "ra": 28.2105606248464,
+  "dec": -19.5069752211837,
+  "Tmag": 6.9833999,
+  "Teff": 6030.0,
+  "logg": 4.2263999,
+  "rad": 1.35033,
+  "mass": 1.12,
+  "d": 51.261002,
+  "contratio": 0.00029949262,
+  "lumclass": "DWARF",
+  "GAIA": "5137855525488932864",
+  "HIP": 8770
+ },
+ "sectors": {
+  "spoc": [
+   3,
+   30,
+   107
+  ],
+  "tspoc": [
+   3,
+   30
+  ],
+  "qlp": [
+   3,
+   30
+  ]
+ },
+ "known": [],
+ "events": [
+  {
+   "product": "spoc",
+   "sector": 107,
+   "t0": 4271.0796,
+   "dur_h": 3.0,
+   "snr_here": 24.739312546303005,
+   "max_bump_snr": 3.8370734302297107,
+   "max_other_dip_snr": 5.23110317860674,
+   "n_fit": 809,
+   "fit_depth": 0.0006772780856561229,
+   "fit_t14_h": 3.4341221899841914,
+   "fit_ingress_frac": 0.21497109479899928,
+   "fit_t0": 4271.07955899158,
+   "dchi2_trap": 503.17963722965476,
+   "dchi2_asym": 0.23313193257547482,
+   "dchi2_trap_vs_gauss": 54.009034816612484,
+   "redchi2_trap": 0.9752842938707343,
+   "fit_in_frac": 0.205549501213747,
+   "fit_eg_frac": 0.24224111455422362,
+   "fit_sigma": 0.0002436574402120043,
+   "sap_fit_depth": 0.0007011102988926289,
+   "sap_dchi2_trap": 565.2477155392353,
+   "pix_n_in": 50,
+   "pix_n_out": 216,
+   "pix_target_x": 7.308712924850667,
+   "pix_target_y": 7.646905747198129,
+   "pix_cx_diff": 7.737882326280364,
+   "pix_cy_diff": 8.231900714193849,
+   "pix_peak_x": 7,
+   "pix_peak_y": 8,
+   "pix_offset_pix": 0.7255380669088612,
+   "pix_offset_arcsec": 15.236299405086086,
+   "pix_offset_err_pix": 0.4226090389675409,
+   "pix_offset_sigma": 1.7168067883294547,
+   "pix_offset_direct_pix": 0.47411072374439395,
+   "pix_diff_snr": 119.42507676028279,
+   "pix_diff_at_target_snr": 119.42507676028279,
+   "neighbors_within_60as": [
+    {
+     "source_id": 5137855525488932864,
+     "phot_g_mean_mag": 7.387888431549072,
+     "sep_arcsec": 1.602747186293468
+    }
+   ]
+  },
+  {
+   "product": "qlp",
+   "sector": 30,
+   "t0": 2121.692,
+   "dur_h": 3.0,
+   "snr_here": 17.24760151916529,
+   "max_bump_snr": 5.391530174738933,
+   "max_other_dip_snr": 4.901155524845484,
+   "n_fit": 118,
+   "fit_depth": 0.0007908216050853132,
+   "fit_t14_h": 3.3750779164423657,
+   "fit_ingress_frac": 0.25329529518079996,
+   "fit_t0": 2121.6891354003933,
+   "dchi2_trap": 280.1760768035173,
+   "dchi2_asym": 0.012678459036806089,
+   "dchi2_trap_vs_gauss": 16.566988399046835,
+   "redchi2_trap": 1.2823560834458165,
+   "fit_in_frac": 0.24658649904681793,
+   "fit_eg_frac": 0.2603555696663855,
+   "fit_sigma": 0.00014870603830671535,
+   "sap_fit_depth": 0.0007908216050853132,
+   "sap_dchi2_trap": 280.1760768035173,
+   "pix_n_in": 17,
+   "pix_n_out": 72,
+   "pix_target_x": 7.046303050672281,
+   "pix_target_y": 7.005181815945408,
+   "pix_cx_diff": 6.435978841010618,
+   "pix_cy_diff": 7.11027366783977,
+   "pix_peak_x": 7,
+   "pix_peak_y": 7,
+   "pix_offset_pix": 0.6193060134002574,
+   "pix_offset_arcsec": 13.005426281405406,
+   "pix_offset_err_pix": 0.4660377668203389,
+   "pix_offset_sigma": 1.3288751631131315,
+   "pix_offset_direct_pix": 0.5000069202392405,
+   "pix_diff_snr": 250.21121220666546,
+   "pix_diff_at_target_snr": 250.21121220666546,
+   "neighbors_within_60as": [
+    {
+     "source_id": 5137855525488932864,
+     "phot_g_mean_mag": 7.387888431549072,
+     "sep_arcsec": 1.602747186293468
+    }
+   ]
+  },
+  {
+   "product": "qlp",
+   "sector": 30,
+   "t0": 2141.56,
+   "dur_h": 3.0,
+   "snr_here": NaN,
+   "max_bump_snr": 5.391530174738933,
+   "max_other_dip_snr": 17.24760151916529,
+   "n_fit": 0,
+   "sap_fit_depth": NaN,
+   "sap_dchi2_trap": NaN,
+   "pix_n_in": 14,
+   "pix_n_out": 72,
+   "pix_target_x": 7.046303050672281,
+   "pix_target_y": 7.005181815945408,
+   "pix_cx_diff": 6.948374436725216,
+   "pix_cy_diff": 6.9504874933940215,
+   "pix_peak_x": 7,
+   "pix_peak_y": 7,
+   "pix_offset_pix": 0.11216720710148852,
+   "pix_offset_arcsec": 2.355511349131259,
+   "pix_offset_err_pix": 0.3024389431812141,
+   "pix_offset_sigma": 0.3708755424207412,
+   "pix_offset_direct_pix": 0.25011880238404033,
+   "pix_diff_snr": 123.4540321320857,
+   "pix_diff_at_target_snr": 123.4540321320857,
+   "neighbors_within_60as": [
+    {
+     "source_id": 5137855525488932864,
+     "phot_g_mean_mag": 7.387888431549072,
+     "sep_arcsec": 1.602747186293468
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,186 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\href{#1}{#1}}
+\providecommand{\dodoi}[1]{doi:~\href{http://doi.org/#1}{\nolinkurl{#1}}}
+\providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
+\providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
+
+\bibitem[{{Akeson} {et~al.}(2013){Akeson}, {Chen}, {Ciardi},
+  {et~al.}}]{Akeson2013}
+{Akeson}, R.~L., {Chen}, X., {Ciardi}, D., {et~al.} 2013, PASP, 125, 989,
+  \dodoi{10.1086/672273}
+
+\bibitem[{{Andrae} {et~al.}(2023){Andrae}, {Fouesneau}, {Sordo},
+  {et~al.}}]{Andrae2023}
+{Andrae}, R., {Fouesneau}, M., {Sordo}, R., {et~al.} 2023, A\&A, 674, A27,
+  \dodoi{10.1051/0004-6361/202243462}
+
+\bibitem[{{Astropy Collaboration} {et~al.}(2022){Astropy Collaboration},
+  {Price-Whelan}, {Lim}, {et~al.}}]{Astropy2022}
+{Astropy Collaboration}, {Price-Whelan}, A.~M., {Lim}, P.~L., {et~al.} 2022,
+  ApJ, 935, 167, \dodoi{10.3847/1538-4357/ac7c74}
+
+\bibitem[{{Brasseur} {et~al.}(2019){Brasseur}, {Phillip}, {Fleming},
+  {Mullally}, \& {White}}]{Brasseur2019}
+{Brasseur}, C.~E., {Phillip}, C., {Fleming}, S.~W., {Mullally}, S.~E., \&
+  {White}, R.~L. 2019, {Astrocut: Tools for creating cutouts of TESS images},
+  Astrophysics Source Code Library, record ascl:1905.007
+
+\bibitem[{{Bryson} {et~al.}(2013){Bryson}, {Jenkins}, {Gilliland},
+  {et~al.}}]{Bryson2013}
+{Bryson}, S.~T., {Jenkins}, J.~M., {Gilliland}, R.~L., {et~al.} 2013, PASP,
+  125, 889, \dodoi{10.1086/671767}
+
+\bibitem[{{Burke} {et~al.}(2020){Burke}, {Levine}, {Fausnaugh},
+  {et~al.}}]{Burke2020}
+{Burke}, C.~J., {Levine}, A., {Fausnaugh}, M., {et~al.} 2020, {TESS-Point: High
+  precision TESS pointing tool}, Astrophysics Source Code Library, record
+  ascl:2003.001
+
+\bibitem[{{Caldwell} {et~al.}(2020{\natexlab{a}}){Caldwell}, {Tenenbaum},
+  {Twicken}, {et~al.}}]{Caldwell2020}
+{Caldwell}, D.~A., {Tenenbaum}, P., {Twicken}, J.~D., {et~al.}
+  2020{\natexlab{a}}, Research Notes of the AAS, 4, 201,
+  \dodoi{10.3847/2515-5172/abc9b3}
+
+\bibitem[{{Caldwell} {et~al.}(2020{\natexlab{b}})}]{TESSSPOC}
+{Caldwell}, D.~A., {et~al.} 2020{\natexlab{b}}, {TESS Science Processing
+  Operations Center FFI Target List Products}, STScI/MAST,
+  \dodoi{10.17909/t9-wpz1-8s54}
+
+\bibitem[{{Chen} \& {Kipping}(2017)}]{ChenKipping2017}
+{Chen}, J., \& {Kipping}, D. 2017, ApJ, 834, 17,
+  \dodoi{10.3847/1538-4357/834/1/17}
+
+\bibitem[{{Claret}(2017)}]{Claret2017}
+{Claret}, A. 2017, A\&A, 600, A30, \dodoi{10.1051/0004-6361/201629705}
+
+\bibitem[{{Creevey} {et~al.}(2023){Creevey}, {Sordo}, {Pailler},
+  {et~al.}}]{Creevey2023}
+{Creevey}, O.~L., {Sordo}, R., {Pailler}, F., {et~al.} 2023, A\&A, 674, A26,
+  \dodoi{10.1051/0004-6361/202243688}
+
+\bibitem[{{Foreman-Mackey} {et~al.}(2013){Foreman-Mackey}, {Hogg}, {Lang}, \&
+  {Goodman}}]{ForemanMackey2013}
+{Foreman-Mackey}, D., {Hogg}, D.~W., {Lang}, D., \& {Goodman}, J. 2013, PASP,
+  125, 306, \dodoi{10.1086/670067}
+
+\bibitem[{{Fulton} {et~al.}(2017){Fulton}, {Petigura}, {Howard},
+  {et~al.}}]{Fulton2017}
+{Fulton}, B.~J., {Petigura}, E.~A., {Howard}, A.~W., {et~al.} 2017, AJ, 154,
+  109, \dodoi{10.3847/1538-3881/aa80eb}
+
+\bibitem[{{Gaia Collaboration} {et~al.}(2016){Gaia Collaboration}, {Prusti},
+  {de Bruijne}, {et~al.}}]{Gaia2016}
+{Gaia Collaboration}, {Prusti}, T., {de Bruijne}, J.~H.~J., {et~al.} 2016,
+  A\&A, 595, A1, \dodoi{10.1051/0004-6361/201629272}
+
+\bibitem[{{Gaia Collaboration} {et~al.}(2023){Gaia Collaboration}, {Vallenari},
+  {Brown}, {et~al.}}]{GaiaDR3}
+{Gaia Collaboration}, {Vallenari}, A., {Brown}, A.~G.~A., {et~al.} 2023, A\&A,
+  674, A1, \dodoi{10.1051/0004-6361/202243940}
+
+\bibitem[{{Giacalone} \& {Dressing}(2020)}]{Giacalone2020}
+{Giacalone}, S., \& {Dressing}, C.~D. 2020, {triceratops: Candidate exoplanet
+  rating tool}, Astrophysics Source Code Library, record ascl:2002.004
+
+\bibitem[{{Giacalone} {et~al.}(2021){Giacalone}, {Dressing}, {Jensen},
+  {et~al.}}]{Giacalone2021}
+{Giacalone}, S., {Dressing}, C.~D., {Jensen}, E.~L.~N., {et~al.} 2021, AJ, 161,
+  24, \dodoi{10.3847/1538-3881/abc6af}
+
+\bibitem[{{Goodman} \& {Weare}(2010)}]{Goodman2010}
+{Goodman}, J., \& {Weare}, J. 2010, Communications in Applied Mathematics and
+  Computational Science, 5, 65, \dodoi{10.2140/camcos.2010.5.65}
+
+\bibitem[{{Guerrero} {et~al.}(2021){Guerrero}, {Seager}, {Huang},
+  {et~al.}}]{Guerrero2021}
+{Guerrero}, N.~M., {Seager}, S., {Huang}, C.~X., {et~al.} 2021, ApJS, 254, 39,
+  \dodoi{10.3847/1538-4365/abefe1}
+
+\bibitem[{{Harris} {et~al.}(2020){Harris}, {Millman}, {van der Walt},
+  {et~al.}}]{Harris2020}
+{Harris}, C.~R., {Millman}, K.~J., {van der Walt}, S.~J., {et~al.} 2020,
+  Nature, 585, 357, \dodoi{10.1038/s41586-020-2649-2}
+
+\bibitem[{{Huang} {et~al.}(2020{\natexlab{a}}){Huang}, {Vanderburg}, {P{\'a}l},
+  {et~al.}}]{Huang2020a}
+{Huang}, C.~X., {Vanderburg}, A., {P{\'a}l}, A., {et~al.} 2020{\natexlab{a}},
+  Research Notes of the AAS, 4, 204, \dodoi{10.3847/2515-5172/abca2e}
+
+\bibitem[{{Huang} {et~al.}(2020{\natexlab{b}}){Huang}, {Vanderburg}, {P{\'a}l},
+  {et~al.}}]{Huang2020b}
+---. 2020{\natexlab{b}}, Research Notes of the AAS, 4, 206,
+  \dodoi{10.3847/2515-5172/abca2d}
+
+\bibitem[{{Huang} {et~al.}(2020{\natexlab{c}})}]{QLPdata}
+{Huang}, C.~X., {et~al.} 2020{\natexlab{c}}, {TESS Lightcurves From The MIT
+  Quick-Look Pipeline (``QLP'')}, STScI/MAST, \dodoi{10.17909/t9-r086-e880}
+
+\bibitem[{{Hunter}(2007)}]{Hunter2007}
+{Hunter}, J.~D. 2007, Computing in Science and Engineering, 9, 90,
+  \dodoi{10.1109/MCSE.2007.55}
+
+\bibitem[{{Jenkins} {et~al.}(2016){Jenkins}, {Twicken}, {McCauliff},
+  {et~al.}}]{Jenkins2016}
+{Jenkins}, J.~M., {Twicken}, J.~D., {McCauliff}, S., {et~al.} 2016, in Proc.
+  SPIE, Vol. 9913, Software and Cyberinfrastructure for Astronomy IV, 99133E,
+  \dodoi{10.1117/12.2233418}
+
+\bibitem[{{Kipping}(2013)}]{Kipping2013}
+{Kipping}, D.~M. 2013, MNRAS, 435, 2152, \dodoi{10.1093/mnras/stt1435}
+
+\bibitem[{{Kov{\'a}cs} {et~al.}(2002){Kov{\'a}cs}, {Zucker}, \&
+  {Mazeh}}]{Kovacs2002}
+{Kov{\'a}cs}, G., {Zucker}, S., \& {Mazeh}, T. 2002, A\&A, 391, 369,
+  \dodoi{10.1051/0004-6361:20020802}
+
+\bibitem[{{Kreidberg}(2015)}]{Kreidberg2015}
+{Kreidberg}, L. 2015, PASP, 127, 1161, \dodoi{10.1086/683602}
+
+\bibitem[{{Lightkurve Collaboration}(2018)}]{Lightkurve2018}
+{Lightkurve Collaboration}. 2018, {Lightkurve: Kepler and TESS time series
+  analysis in Python}, Astrophysics Source Code Library, record ascl:1812.013
+
+\bibitem[{{Lindegren} {et~al.}(2021){Lindegren}, {Klioner}, {Hern{\'a}ndez},
+  {et~al.}}]{Lindegren2021}
+{Lindegren}, L., {Klioner}, S.~A., {Hern{\'a}ndez}, J., {et~al.} 2021, A\&A,
+  649, A2, \dodoi{10.1051/0004-6361/202039709}
+
+\bibitem[{{Pont} {et~al.}(2006){Pont}, {Zucker}, \& {Queloz}}]{Pont2006}
+{Pont}, F., {Zucker}, S., \& {Queloz}, D. 2006, MNRAS, 373, 231,
+  \dodoi{10.1111/j.1365-2966.2006.11012.x}
+
+\bibitem[{{Ricker} {et~al.}(2015){Ricker}, {Winn}, {Vanderspek},
+  {et~al.}}]{Ricker2015}
+{Ricker}, G.~R., {Winn}, J.~N., {Vanderspek}, R., {et~al.} 2015, Journal of
+  Astronomical Telescopes, Instruments, and Systems, 1, 014003,
+  \dodoi{10.1117/1.JATIS.1.1.014003}
+
+\bibitem[{{Seager} \& {Mall{\'e}n-Ornelas}(2003)}]{Seager2003}
+{Seager}, S., \& {Mall{\'e}n-Ornelas}, G. 2003, ApJ, 585, 1038,
+  \dodoi{10.1086/346105}
+
+\bibitem[{{Stassun} {et~al.}(2019){Stassun}, {Oelkers}, {Paegert},
+  {et~al.}}]{Stassun2019}
+{Stassun}, K.~G., {Oelkers}, R.~J., {Paegert}, M., {et~al.} 2019, AJ, 158, 138,
+  \dodoi{10.3847/1538-3881/ab3467}
+
+\bibitem[{{Twicken} {et~al.}(2018){Twicken}, {Catanzarite}, {Clarke},
+  {et~al.}}]{Twicken2018}
+{Twicken}, J.~D., {Catanzarite}, J.~H., {Clarke}, B.~D., {et~al.} 2018, PASP,
+  130, 064502, \dodoi{10.1088/1538-3873/aab694}
+
+\bibitem[{{Virtanen} {et~al.}(2020){Virtanen}, {Gommers}, {Oliphant},
+  {et~al.}}]{Virtanen2020}
+{Virtanen}, P., {Gommers}, R., {Oliphant}, T.~E., {et~al.} 2020, Nature
+  Methods, 17, 261, \dodoi{10.1038/s41592-019-0686-2}
+
+\bibitem[{{Vora}(2026)}]{DataRecord}
+{Vora}, R. 2026, {TIC 402710280.01: data products and analysis code}, Zenodo
+
+\bibitem[{{Winn} {et~al.}(2008){Winn}, {Holman}, {Torres}, {et~al.}}]{Winn2008}
+{Winn}, J.~N., {Holman}, M.~J., {Torres}, G., {et~al.} 2008, ApJ, 683, 1076,
+  \dodoi{10.1086/589737}
+
+\end{thebibliography}

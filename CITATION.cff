@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the preprint below."
+title: "ad-astra: a search of public TESS data, and the TIC 402710280.01 analysis"
+authors:
+  - family-names: Vora
+    given-names: Rishit
+    affiliation: Independent Researcher
+    email: rishitv@protonmail.com
+    orcid: "https://orcid.org/0009-0003-8778-9883"
+license: MIT
+repository-code: "https://github.com/specbug/ad-astra"
+keywords: [exoplanets, TESS, transit photometry, sub-Neptune, TIC 402710280]
+preferred-citation:
+  type: article
+  title: "A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280, Identified in TESS Full-Frame Images"
+  authors:
+    - family-names: Vora
+      given-names: Rishit
+      orcid: "https://orcid.org/0009-0003-8778-9883"
+  year: 2026
+  status: preprint

@@ -1,0 +1,78 @@
+{
+ "tic": 206385646,
+ "star": {
+  "tic": 206385646,
+  "ra": 54.3737319787437,
+  "dec": -49.2780644018035,
+  "Tmag": 10.8275,
+  "Teff": 6293.0,
+  "logg": 4.1056299,
+  "rad": 1.6262,
+  "mass": 1.23,
+  "d": 385.57599,
+  "contratio": 0.001627574,
+  "lumclass": "DWARF",
+  "GAIA": "4832762180020925440",
+  "HIP": null
+ },
+ "sectors": {
+  "spoc": [],
+  "tspoc": [
+   4,
+   30
+  ],
+  "qlp": [
+   4,
+   30,
+   97
+  ]
+ },
+ "known": [],
+ "events": [
+  {
+   "product": "qlp",
+   "sector": 97,
+   "t0": 3952.483,
+   "dur_h": 13.1882,
+   "snr_here": 67.1615655917781,
+   "max_bump_snr": 6.526507669491285,
+   "max_other_dip_snr": 7.964257695652143,
+   "n_fit": 1448,
+   "fit_depth": 0.009303515908581,
+   "fit_t14_h": 13.2490049278664,
+   "fit_ingress_frac": 0.3735591614297648,
+   "fit_t0": 3952.4828329267016,
+   "dchi2_trap": 10466.220108839543,
+   "dchi2_asym": 1.5096795550380193,
+   "dchi2_trap_vs_gauss": 636.8695895186027,
+   "redchi2_trap": 1.0954855029648534,
+   "fit_in_frac": 0.35635947283467506,
+   "fit_eg_frac": 0.39369800936719535,
+   "fit_sigma": 0.0010153549165501392,
+   "sap_fit_depth": 0.009388759670307074,
+   "sap_dchi2_trap": 9926.144345728546,
+   "pix_n_in": 191,
+   "pix_n_out": 477,
+   "pix_target_x": 7.069819881052183,
+   "pix_target_y": 7.569618982548532,
+   "pix_cx_diff": 6.865079594193567,
+   "pix_cy_diff": 7.546357410206672,
+   "pix_peak_x": 7,
+   "pix_peak_y": 8,
+   "pix_offset_pix": 0.2060574818121487,
+   "pix_offset_arcsec": 4.327207118055123,
+   "pix_offset_err_pix": 0.028902163096160175,
+   "pix_offset_sigma": 7.129483046877023,
+   "pix_offset_direct_pix": 0.08025233749478816,
+   "pix_diff_snr": 167.84710835550425,
+   "pix_diff_at_target_snr": 167.84710835550425,
+   "neighbors_within_60as": [
+    {
+     "source_id": 4832762180020925440,
+     "phot_g_mean_mag": 11.183470726013184,
+     "sep_arcsec": 0.18949344035893728
+    }
+   ]
+  }
+ ]
+}

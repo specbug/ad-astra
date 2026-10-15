@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+cache/
+data/
+*.tmp
+.ipynb_checkpoints/
+
+# build output of pipeline/build_release.py (the zip next to it is the uploadable record)
+release/tic402710280_zenodo/
+# LaTeX intermediates
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk

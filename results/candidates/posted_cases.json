@@ -1,0 +1,903 @@
+{
+ "438225366": {
+  "label": "CTOI 438225366.01",
+  "sectors": [
+   6,
+   33,
+   43,
+   44,
+   45,
+   71,
+   72,
+   87
+  ],
+  "ephemerides": [
+   {
+    "name": "posted (41.72 d)",
+    "P": 41.7219,
+    "T0": 2221.5204,
+    "dur_h": 5.0,
+    "events": [
+     {
+      "n": -18,
+      "tc": 1470.5262,
+      "sector": 6,
+      "product": "tspoc",
+      "depth_ppm": 8037.6,
+      "err_ppm": 227.1,
+      "snr": 35.39
+     },
+     {
+      "n": 0,
+      "tc": 2221.5204,
+      "sector": 33,
+      "product": "spoc",
+      "depth_ppm": 7656.2,
+      "err_ppm": 168.9,
+      "snr": 45.34
+     },
+     {
+      "n": 25,
+      "tc": 3264.5679,
+      "sector": 72,
+      "product": "spoc",
+      "depth_ppm": 7729.7,
+      "err_ppm": 157.1,
+      "snr": 49.21
+     },
+     {
+      "n": 35,
+      "tc": 3681.7869,
+      "sector": 87,
+      "product": "qlp",
+      "depth_ppm": 7838.5,
+      "err_ppm": 253.0,
+      "snr": 30.98
+     }
+    ],
+    "pixels": {
+     "verdict": "on target",
+     "offset_arcsec": 2.056507779538076
+    }
+   },
+   {
+    "name": "half of posted",
+    "P": 20.86132,
+    "T0": 2221.5204,
+    "dur_h": 5.0,
+    "events": [
+     {
+      "n": -36,
+      "tc": 1470.5129,
+      "sector": 6,
+      "product": "tspoc",
+      "depth_ppm": 8549.2,
+      "err_ppm": 195.7,
+      "snr": 43.68
+     },
+     {
+      "n": 0,
+      "tc": 2221.5204,
+      "sector": 33,
+      "product": "spoc",
+      "depth_ppm": 7656.2,
+      "err_ppm": 168.9,
+      "snr": 45.34
+     },
+     {
+      "n": 13,
+      "tc": 2492.7176,
+      "sector": 43,
+      "product": "spoc",
+      "depth_ppm": 7679.9,
+      "err_ppm": 180.5,
+      "snr": 42.54
+     },
+     {
+      "n": 15,
+      "tc": 2534.4402,
+      "sector": 45,
+      "product": "spoc",
+      "depth_ppm": 7749.4,
+      "err_ppm": 202.8,
+      "snr": 38.21
+     },
+     {
+      "n": 49,
+      "tc": 3243.7251,
+      "sector": 71,
+      "product": "spoc",
+      "depth_ppm": 8011.3,
+      "err_ppm": 237.5,
+      "snr": 33.73
+     },
+     {
+      "n": 50,
+      "tc": 3264.5864,
+      "sector": 72,
+      "product": "spoc",
+      "depth_ppm": 8001.8,
+      "err_ppm": 157.9,
+      "snr": 50.69
+     },
+     {
+      "n": 51,
+      "tc": 3285.4477,
+      "sector": 72,
+      "product": "spoc",
+      "depth_ppm": 7710.5,
+      "err_ppm": 154.1,
+      "snr": 50.04
+     },
+     {
+      "n": 70,
+      "tc": 3681.8128,
+      "sector": 87,
+      "product": "qlp",
+      "depth_ppm": 8003.8,
+      "err_ppm": 268.0,
+      "snr": 29.86
+     }
+    ],
+    "pixels": {
+     "verdict": "on target",
+     "offset_arcsec": 1.2226572418605748
+    }
+   },
+   {
+    "name": "phase 0.5 of 20.86 d",
+    "P": 20.86132,
+    "T0": 2231.95106,
+    "dur_h": 5.0,
+    "events": [
+     {
+      "n": -36,
+      "tc": 1480.9435,
+      "sector": 6,
+      "product": "tspoc",
+      "depth_ppm": -450.6,
+      "err_ppm": 228.1,
+      "snr": -1.98
+     },
+     {
+      "n": -1,
+      "tc": 2211.0897,
+      "sector": 33,
+      "product": "spoc",
+      "depth_ppm": -163.5,
+      "err_ppm": 222.6,
+      "snr": -0.73
+     },
+     {
+      "n": 12,
+      "tc": 2482.2869,
+      "sector": 43,
+      "product": "spoc",
+      "depth_ppm": -13.4,
+      "err_ppm": 176.0,
+      "snr": -0.08
+     },
+     {
+      "n": 13,
+      "tc": 2503.1482,
+      "sector": 44,
+      "product": "spoc",
+      "depth_ppm": -94.1,
+      "err_ppm": 252.6,
+      "snr": -0.37
+     },
+     {
+      "n": 14,
+      "tc": 2524.0095,
+      "sector": 44,
+      "product": "spoc",
+      "depth_ppm": 295.9,
+      "err_ppm": 159.5,
+      "snr": 1.86
+     },
+     {
+      "n": 15,
+      "tc": 2544.8709,
+      "sector": 45,
+      "product": "spoc",
+      "depth_ppm": 309.7,
+      "err_ppm": 180.7,
+      "snr": 1.71
+     },
+     {
+      "n": 49,
+      "tc": 3254.1557,
+      "sector": 71,
+      "product": "spoc",
+      "depth_ppm": -71.6,
+      "err_ppm": 207.3,
+      "snr": -0.35
+     },
+     {
+      "n": 69,
+      "tc": 3671.3821,
+      "sector": 87,
+      "product": "qlp",
+      "depth_ppm": 265.1,
+      "err_ppm": 204.9,
+      "snr": 1.29
+     }
+    ]
+   }
+  ],
+  "figure": "/home/user/ad-astra/results/report/cases/TIC438225366_cases.png"
+ },
+ "156716001": {
+  "label": "CTOI 156716001.01 / TOI-7602.01",
+  "sectors": [
+   6,
+   7,
+   33,
+   34,
+   61,
+   87,
+   88
+  ],
+  "ephemerides": [
+   {
+    "name": "TOI-7602.01",
+    "P": 10.29778812572357,
+    "T0": 3700.427709000185,
+    "dur_h": 3.8,
+    "events": [
+     {
+      "n": -216,
+      "tc": 1476.1055,
+      "sector": 6,
+      "product": "tspoc",
+      "depth_ppm": 979.4,
+      "err_ppm": 158.2,
+      "snr": 6.19
+     },
+     {
+      "n": -215,
+      "tc": 1486.4033,
+      "sector": 6,
+      "product": "tspoc",
+      "depth_ppm": 716.9,
+      "err_ppm": 183.3,
+      "snr": 3.91
+     },
+     {
+      "n": -214,
+      "tc": 1496.7011,
+      "sector": 7,
+      "product": "tspoc",
+      "depth_ppm": 652.5,
+      "err_ppm": 170.7,
+      "snr": 3.82
+     },
+     {
+      "n": -213,
+      "tc": 1506.9988,
+      "sector": 7,
+      "product": "tspoc",
+      "depth_ppm": 515.2,
+      "err_ppm": 120.5,
+      "snr": 4.28
+     },
+     {
+      "n": -145,
+      "tc": 2207.2484,
+      "sector": 33,
+      "product": "tspoc",
+      "depth_ppm": 926.1,
+      "err_ppm": 225.4,
+      "snr": 4.11
+     },
+     {
+      "n": -144,
+      "tc": 2217.5462,
+      "sector": 33,
+      "product": "tspoc",
+      "depth_ppm": 954.8,
+      "err_ppm": 181.9,
+      "snr": 5.25
+     },
+     {
+      "n": -142,
+      "tc": 2238.1418,
+      "sector": 34,
+      "product": "tspoc",
+      "depth_ppm": 974.6,
+      "err_ppm": 159.0,
+      "snr": 6.13
+     },
+     {
+      "n": -141,
+      "tc": 2248.4396,
+      "sector": 34,
+      "product": "tspoc",
+      "depth_ppm": 775.5,
+      "err_ppm": 158.4,
+      "snr": 4.89
+     },
+     {
+      "n": -71,
+      "tc": 2969.2848,
+      "sector": 61,
+      "product": "qlp",
+      "depth_ppm": 581.3,
+      "err_ppm": 205.2,
+      "snr": 2.83
+     },
+     {
+      "n": -70,
+      "tc": 2979.5825,
+      "sector": 61,
+      "product": "qlp",
+      "depth_ppm": 1031.5,
+      "err_ppm": 199.2,
+      "snr": 5.18
+     },
+     {
+      "n": -2,
+      "tc": 3679.8321,
+      "sector": 87,
+      "product": "spoc",
+      "depth_ppm": 810.4,
+      "err_ppm": 255.3,
+      "snr": 3.17
+     },
+     {
+      "n": 0,
+      "tc": 3700.4277,
+      "sector": 88,
+      "product": "spoc",
+      "depth_ppm": 455.0,
+      "err_ppm": 163.0,
+      "snr": 2.79
+     },
+     {
+      "n": 1,
+      "tc": 3710.7255,
+      "sector": 88,
+      "product": "spoc",
+      "depth_ppm": 939.5,
+      "err_ppm": 201.3,
+      "snr": 4.67
+     }
+    ],
+    "pixels": {
+     "verdict": "target or G18.8 at 12\" (unresolved)",
+     "offset_arcsec": 6.881056367458298
+    }
+   },
+   {
+    "name": "TOI-7602.01 through the CTOI transit",
+    "P": 10.29778812572357,
+    "T0": 1485.405999999959,
+    "dur_h": 3.8,
+    "events": [
+     {
+      "n": -1,
+      "tc": 1475.1082,
+      "sector": 6,
+      "product": "tspoc",
+      "depth_ppm": -38.3,
+      "err_ppm": 194.3,
+      "snr": -0.2
+     },
+     {
+      "n": 0,
+      "tc": 1485.406,
+      "sector": 6,
+      "product": "tspoc",
+      "depth_ppm": 1924.6,
+      "err_ppm": 423.6,
+      "snr": 4.54
+     },
+     {
+      "n": 1,
+      "tc": 1495.7038,
+      "sector": 7,
+      "product": "tspoc",
+      "depth_ppm": 324.1,
+      "err_ppm": 267.4,
+      "snr": 1.21
+     },
+     {
+      "n": 2,
+      "tc": 1506.0016,
+      "sector": 7,
+      "product": "tspoc",
+      "depth_ppm": -277.4,
+      "err_ppm": 163.0,
+      "snr": -1.7
+     },
+     {
+      "n": 70,
+      "tc": 2206.2512,
+      "sector": 33,
+      "product": "tspoc",
+      "depth_ppm": 9.6,
+      "err_ppm": 248.4,
+      "snr": 0.04
+     },
+     {
+      "n": 71,
+      "tc": 2216.549,
+      "sector": 33,
+      "product": "tspoc",
+      "depth_ppm": -52.8,
+      "err_ppm": 167.8,
+      "snr": -0.31
+     },
+     {
+      "n": 72,
+      "tc": 2226.8467,
+      "sector": 33,
+      "product": "tspoc",
+      "depth_ppm": -178.2,
+      "err_ppm": 170.6,
+      "snr": -1.04
+     },
+     {
+      "n": 73,
+      "tc": 2237.1445,
+      "sector": 34,
+      "product": "tspoc",
+      "depth_ppm": 51.0,
+      "err_ppm": 240.0,
+      "snr": 0.21
+     },
+     {
+      "n": 74,
+      "tc": 2247.4423,
+      "sector": 34,
+      "product": "tspoc",
+      "depth_ppm": -87.1,
+      "err_ppm": 149.8,
+      "snr": -0.58
+     },
+     {
+      "n": 144,
+      "tc": 2968.2875,
+      "sector": 61,
+      "product": "qlp",
+      "depth_ppm": 392.0,
+      "err_ppm": 220.6,
+      "snr": 1.78
+     },
+     {
+      "n": 145,
+      "tc": 2978.5853,
+      "sector": 61,
+      "product": "qlp",
+      "depth_ppm": -100.0,
+      "err_ppm": 204.3,
+      "snr": -0.49
+     },
+     {
+      "n": 212,
+      "tc": 3668.5371,
+      "sector": 87,
+      "product": "spoc",
+      "depth_ppm": 175.2,
+      "err_ppm": 173.3,
+      "snr": 1.01
+     },
+     {
+      "n": 214,
+      "tc": 3689.1327,
+      "sector": 87,
+      "product": "spoc",
+      "depth_ppm": 71.6,
+      "err_ppm": 216.6,
+      "snr": 0.33
+     },
+     {
+      "n": 215,
+      "tc": 3699.4304,
+      "sector": 88,
+      "product": "spoc",
+      "depth_ppm": -130.4,
+      "err_ppm": 220.8,
+      "snr": -0.59
+     },
+     {
+      "n": 216,
+      "tc": 3709.7282,
+      "sector": 88,
+      "product": "spoc",
+      "depth_ppm": -252.7,
+      "err_ppm": 230.0,
+      "snr": -1.1
+     }
+    ]
+   },
+   {
+    "name": "CTOI events",
+    "P": null,
+    "T0": [
+     1485.405999999959,
+     2224.52,
+     3702.77
+    ],
+    "dur_h": 8.0,
+    "events": [
+     {
+      "n": 0,
+      "tc": 1485.406,
+      "sector": 6,
+      "product": "tspoc",
+      "depth_ppm": 2342.4,
+      "err_ppm": 114.1,
+      "snr": 20.52
+     },
+     {
+      "n": 1,
+      "tc": 2224.52,
+      "sector": 33,
+      "product": "tspoc",
+      "depth_ppm": 3058.3,
+      "err_ppm": 133.6,
+      "snr": 22.89
+     },
+     {
+      "n": 2,
+      "tc": 3702.77,
+      "sector": 88,
+      "product": "spoc",
+      "depth_ppm": 2425.4,
+      "err_ppm": 134.5,
+      "snr": 18.03
+     }
+    ],
+    "pixels": {
+     "verdict": "on target",
+     "offset_arcsec": 1.337154292282129
+    }
+   }
+  ],
+  "figure": "/home/user/ad-astra/results/report/cases/TIC156716001_cases.png"
+ },
+ "67711670": {
+  "label": "CTOI 67711670.01 / TOI-6033.01",
+  "sectors": [
+   18,
+   58,
+   85
+  ],
+  "ephemerides": [
+   {
+    "name": "TOI-6033.01",
+    "P": 18.0401494432717,
+    "T0": 2885.981072000228,
+    "dur_h": 6.04,
+    "events": [
+     {
+      "n": -60,
+      "tc": 1803.5721,
+      "sector": 18,
+      "product": "tspoc",
+      "depth_ppm": -527.6,
+      "err_ppm": 147.1,
+      "snr": -3.59
+     },
+     {
+      "n": 0,
+      "tc": 2885.9811,
+      "sector": 58,
+      "product": "spoc",
+      "depth_ppm": 5597.6,
+      "err_ppm": 120.7,
+      "snr": 46.39
+     },
+     {
+      "n": 1,
+      "tc": 2904.0212,
+      "sector": 58,
+      "product": "spoc",
+      "depth_ppm": 5300.3,
+      "err_ppm": 117.7,
+      "snr": 45.05
+     }
+    ],
+    "pixels": {
+     "verdict": "on target",
+     "offset_arcsec": 1.2803789656358926
+    }
+   },
+   {
+    "name": "CTOI events",
+    "P": null,
+    "T0": [
+     1798.9854000001214,
+     3622.8
+    ],
+    "dur_h": 6.0,
+    "events": [
+     {
+      "n": 0,
+      "tc": 1798.9854,
+      "sector": 18,
+      "product": "tspoc",
+      "depth_ppm": 5844.5,
+      "err_ppm": 152.8,
+      "snr": 38.24
+     },
+     {
+      "n": 1,
+      "tc": 3622.8,
+      "sector": 85,
+      "product": "spoc",
+      "depth_ppm": 4677.5,
+      "err_ppm": 114.0,
+      "snr": 41.02
+     }
+    ],
+    "pixels": {
+     "verdict": "on target",
+     "offset_arcsec": 4.503247076242132
+    }
+   }
+  ],
+  "figure": "/home/user/ad-astra/results/report/cases/TIC67711670_cases.png"
+ },
+ "369532319": {
+  "label": "CTOI 369532319.01 / TOI-5967.01",
+  "sectors": [
+   16,
+   56,
+   83
+  ],
+  "ephemerides": [
+   {
+    "name": "TOI-5967.01",
+    "P": 15.343585,
+    "T0": 3563.6568820001557,
+    "dur_h": 3.9,
+    "events": [
+     {
+      "n": -118,
+      "tc": 1753.1139,
+      "sector": 16,
+      "product": "spoc",
+      "depth_ppm": 896.3,
+      "err_ppm": 160.3,
+      "snr": 5.59
+     },
+     {
+      "n": -48,
+      "tc": 2827.1648,
+      "sector": 56,
+      "product": "spoc",
+      "depth_ppm": 1117.5,
+      "err_ppm": 155.6,
+      "snr": 7.18
+     },
+     {
+      "n": -47,
+      "tc": 2842.5084,
+      "sector": 56,
+      "product": "spoc",
+      "depth_ppm": 1505.7,
+      "err_ppm": 135.1,
+      "snr": 11.15
+     },
+     {
+      "n": 0,
+      "tc": 3563.6569,
+      "sector": 83,
+      "product": "spoc",
+      "depth_ppm": 1440.2,
+      "err_ppm": 166.1,
+      "snr": 8.67
+     },
+     {
+      "n": 1,
+      "tc": 3579.0005,
+      "sector": 83,
+      "product": "spoc",
+      "depth_ppm": 1406.9,
+      "err_ppm": 144.0,
+      "snr": 9.77
+     }
+    ],
+    "pixels": {
+     "verdict": "on target",
+     "offset_arcsec": 1.0617958060559065
+    }
+   },
+   {
+    "name": "CTOI events",
+    "P": null,
+    "T0": [
+     1755.8100000000559,
+     2831.56
+    ],
+    "dur_h": 5.6,
+    "events": [
+     {
+      "n": 0,
+      "tc": 1755.81,
+      "sector": 16,
+      "product": "spoc",
+      "depth_ppm": 1211.1,
+      "err_ppm": 129.3,
+      "snr": 9.36
+     },
+     {
+      "n": 1,
+      "tc": 2831.56,
+      "sector": 56,
+      "product": "spoc",
+      "depth_ppm": 1246.7,
+      "err_ppm": 122.1,
+      "snr": 10.21
+     }
+    ],
+    "pixels": {
+     "verdict": "on target",
+     "offset_arcsec": 1.828921095606182
+    }
+   }
+  ],
+  "figure": "/home/user/ad-astra/results/report/cases/TIC369532319_cases.png"
+ },
+ "386131764": {
+  "label": "CTOI 386131764.01 / TOI-2633.01",
+  "sectors": [
+   7,
+   34,
+   87,
+   88,
+   108
+  ],
+  "ephemerides": [
+   {
+    "name": "TOI-2633.01",
+    "P": 18.1960490983542,
+    "T0": 2229.361574999988,
+    "dur_h": 4.86,
+    "events": [
+     {
+      "n": -40,
+      "tc": 1501.5196,
+      "sector": 7,
+      "product": "qlp",
+      "depth_ppm": 282.9,
+      "err_ppm": 680.4,
+      "snr": 0.42
+     },
+     {
+      "n": 0,
+      "tc": 2229.3616,
+      "sector": 34,
+      "product": "spoc",
+      "depth_ppm": -290.2,
+      "err_ppm": 300.2,
+      "snr": -0.97
+     },
+     {
+      "n": 1,
+      "tc": 2247.5576,
+      "sector": 34,
+      "product": "spoc",
+      "depth_ppm": -6.4,
+      "err_ppm": 365.8,
+      "snr": -0.02
+     },
+     {
+      "n": 79,
+      "tc": 3666.8495,
+      "sector": 87,
+      "product": "spoc",
+      "depth_ppm": 1543.6,
+      "err_ppm": 449.4,
+      "snr": 3.43
+     },
+     {
+      "n": 80,
+      "tc": 3685.0455,
+      "sector": 87,
+      "product": "spoc",
+      "depth_ppm": -452.2,
+      "err_ppm": 368.1,
+      "snr": -1.23
+     },
+     {
+      "n": 81,
+      "tc": 3703.2416,
+      "sector": 88,
+      "product": "spoc",
+      "depth_ppm": -341.3,
+      "err_ppm": 359.4,
+      "snr": -0.95
+     },
+     {
+      "n": 114,
+      "tc": 4303.7112,
+      "sector": 108,
+      "product": "ffi",
+      "depth_ppm": 759.9,
+      "err_ppm": 187.9,
+      "snr": 4.04
+     }
+    ]
+   },
+   {
+    "name": "CTOI series (18.215 d)",
+    "P": 18.2149,
+    "T0": 2253.5816000001505,
+    "dur_h": 4.0,
+    "events": [
+     {
+      "n": -41,
+      "tc": 1506.7707,
+      "sector": 7,
+      "product": "qlp",
+      "depth_ppm": 4353.4,
+      "err_ppm": 783.3,
+      "snr": 5.56
+     },
+     {
+      "n": -1,
+      "tc": 2235.3667,
+      "sector": 34,
+      "product": "spoc",
+      "depth_ppm": 3030.8,
+      "err_ppm": 373.2,
+      "snr": 8.12
+     },
+     {
+      "n": 0,
+      "tc": 2253.5816,
+      "sector": 34,
+      "product": "spoc",
+      "depth_ppm": 3028.4,
+      "err_ppm": 668.6,
+      "snr": 4.53
+     },
+     {
+      "n": 78,
+      "tc": 3674.3438,
+      "sector": 87,
+      "product": "spoc",
+      "depth_ppm": 3271.1,
+      "err_ppm": 420.8,
+      "snr": 7.77
+     },
+     {
+      "n": 79,
+      "tc": 3692.5587,
+      "sector": 88,
+      "product": "spoc",
+      "depth_ppm": 3580.6,
+      "err_ppm": 722.4,
+      "snr": 4.96
+     },
+     {
+      "n": 80,
+      "tc": 3710.7736,
+      "sector": 88,
+      "product": "spoc",
+      "depth_ppm": 4070.5,
+      "err_ppm": 385.8,
+      "snr": 10.55
+     },
+     {
+      "n": 112,
+      "tc": 4293.6504,
+      "sector": 108,
+      "product": "ffi",
+      "depth_ppm": 1028.8,
+      "err_ppm": 312.5,
+      "snr": 3.29
+     }
+    ],
+    "pixels": {
+     "verdict": "target or G17.6 at 7\" (unresolved)",
+     "offset_arcsec": 2.0387719085107254
+    }
+   }
+  ],
+  "figure": "/home/user/ad-astra/results/report/cases/TIC386131764_cases.png"
+ }
+}
