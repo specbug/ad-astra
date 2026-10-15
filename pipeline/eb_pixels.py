@@ -187,20 +187,29 @@ def fit_diff(diff, err, base, w, tc, ra0, dec0, min_snr=5.0, gf=None):
     return out
 
 
-def neighbour_offsets(gf, depth, max_sep=150.0):
+def neighbour_offsets(gf, depth, max_sep=150.0, epoch=2016.0):
     """Gaia stars able to make a dip of this depth (an eclipse of at most 100%), as offsets from the target's
-    Gaia position (same epoch, so offsets are not blurred by the target's proper motion)."""
+    position, both moved with their proper motions to `epoch` (decimal year; Gaia DR3 positions are for 2016.0).
+    The centroids are measured from the target's own image on each frame, so the relevant offsets are those at
+    the observing epoch; a fast-moving target changes them (TIC 402710280's 2.3" neighbour of 2000 is 3.1" away in
+    2016 and 3.4-3.6" in 2021-2026)."""
     tg = gf[gf.is_target]
     if tg.empty:
         return []
     t = tg.iloc[0]
+    dt = epoch - 2016.0
+
+    def pm(r):
+        return (0.0 if r.pmra != r.pmra else float(r.pmra)) * dt / 1000, (0.0 if r.pmdec != r.pmdec else float(r.pmdec)) * dt / 1000
+    tpa, tpd = pm(t)
     lim = float(t.tmag_est) - 2.5 * math.log10(max(depth, 1e-5))
     out = []
     for _, r in gf.iterrows():
         if r.is_target or r.tmag_est >= lim:
             continue
-        dra = (float(r.ra) - float(t.ra)) * math.cos(math.radians(float(t.dec))) * 3600
-        ddec = (float(r.dec) - float(t.dec)) * 3600
+        rpa, rpd = pm(r)
+        dra = (float(r.ra) - float(t.ra)) * math.cos(math.radians(float(t.dec))) * 3600 + rpa - tpa
+        ddec = (float(r.dec) - float(t.dec)) * 3600 + rpd - tpd
         sep = math.hypot(dra, ddec)
         if 1.0 < sep < max_sep:
             out.append({"name": f"G{r.phot_g_mean_mag:.1f} at {sep:.0f}\"", "dra": dra, "ddec": ddec})

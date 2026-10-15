@@ -23,13 +23,34 @@ def a_over_rs(P_d, rho_solar):
     return (G * rho_solar * RHO_SUN * (P_d * 86400) ** 2 / (3 * math.pi)) ** (1 / 3)
 
 
+LA_SILLA = (-29.2563, -70.7380, 2400)
+
+
+def site_time(tc_btjd, ra, dec, site=LA_SILLA):
+    """The time a transit at barycentric BJD_TDB = tc_btjd + 2457000 is seen at the site, as an astropy Time: the
+    barycentric light-travel time to the site, towards the star, is removed by iteration. (Before 15 October 2026
+    the report printed BJD_TDB directly as UTC, about 6 minutes off; found by an independent audit.)"""
+    from astropy.coordinates import EarthLocation, SkyCoord
+    from astropy.time import Time
+    import astropy.units as u
+    loc = EarthLocation(lat=site[0] * u.deg, lon=site[1] * u.deg, height=site[2] * u.m)
+    star = SkyCoord(ra * u.deg, dec * u.deg)
+    bjd = Time(np.atleast_1d(tc_btjd) + 2457000.0, format="jd", scale="tdb", location=loc)
+    t = bjd
+    for _ in range(3):
+        t = Time(bjd.jd - t.light_travel_time(star, "barycentric").to_value("day"), format="jd", scale="tdb",
+                 location=loc)
+    return t
+
+
 def observability(tc_btjd, t14_h, ra, dec, site):
-    """Fraction of the transit (+-T14/2) when the Sun is below -12 deg and the star above 30 deg."""
+    """Fraction of the transit (+-T14/2, as seen at the site) when the Sun is below -12 deg and the star above 30 deg."""
     from astropy.coordinates import AltAz, EarthLocation, SkyCoord, get_sun
     from astropy.time import Time
     import astropy.units as u
     loc = EarthLocation(lat=site[0] * u.deg, lon=site[1] * u.deg, height=site[2] * u.m)
-    ts = Time(tc_btjd + 2457000.0 + np.linspace(-t14_h / 48, t14_h / 48, 25), format="jd", scale="tdb")
+    t0 = site_time(tc_btjd, ra, dec, site)[0]
+    ts = Time(t0.jd + np.linspace(-t14_h / 48, t14_h / 48, 25), format="jd", scale="tdb")
     fr = AltAz(obstime=ts, location=loc)
     star = SkyCoord(ra * u.deg, dec * u.deg).transform_to(fr)
     sun = get_sun(ts).transform_to(fr)
@@ -40,7 +61,6 @@ def observability(tc_btjd, t14_h, ra, dec, site):
 
 def periodic(fit, key, M, R, Teff, ra, dec, dv_check=None, now=4323.0, n_show=8):
     """Orbit, insolation, RV amplitude and upcoming transits seen at night from La Silla."""
-    from report import btjd_to_utc
     f = fit[key]
     P, Pe = f["period_d"][0], max(f["period_d"][1:])
     T, Te = f["tref_btjd"][0], max(f["tref_btjd"][1:])
@@ -56,10 +76,12 @@ def periodic(fit, key, M, R, Teff, ra, dec, dv_check=None, now=4323.0, n_show=8)
     for n in range(n0, n0 + 40):
         tc = T + (n - ref) * P
         sig = math.hypot(Te, (n - ref) * Pe) * 1440
-        frac, sun_sep = observability(tc, f["t14_h"][0], ra, dec, (-29.2563, -70.7380, 2400))
+        frac, sun_sep = observability(tc, f["t14_h"][0], ra, dec, LA_SILLA)
+        site_utc = site_time(tc, ra, dec)[0].utc.datetime
         note = ("full transit at night" if frac > 0.95 else f"{frac:.0%} of the transit at night" if frac > 0.05
                 else "daytime or too low" if sun_sep > 50 else "too close to the Sun")
-        nxt.append({"epoch": n, "btjd": tc, "utc": btjd_to_utc(tc).strftime("%Y-%m-%d %H:%M"), "sigma_min": sig,
+        nxt.append({"epoch": n, "btjd": tc, "utc": site_utc.strftime("%Y-%m-%d %H:%M"),
+                    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)", "sigma_min": sig,
                     "night_frac": frac, "sun_sep": sun_sep, "note": note})
     rho_tic = M / R ** 3
     r = f["rho_solar"]
@@ -118,7 +140,9 @@ def hd11506(fit):
 
 def main():
     fit = json.load(open(RESULTS / "report" / "transit_fits.json"))
-    ex = {"HIP71639": hip71639(fit), "HD11506": hd11506(fit)}
+    p = RESULTS / "report" / "extras.json"
+    ex = json.load(open(p)) if p.exists() else {}          # keep the entries fit_new.py writes
+    ex.update({"HIP71639": hip71639(fit), "HD11506": hd11506(fit)})
     if "HIP56966" in fit:
         ex["HIP56966"] = hip56966(fit)
     json.dump(ex, open(RESULTS / "report" / "extras.json", "w"), indent=1, default=float)

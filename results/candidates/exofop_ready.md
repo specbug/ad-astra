@@ -1,6 +1,6 @@
 # ExoFOP-ready values (12 October 2026)
 
-Prepared from this survey's fits; BJD_TDB = BTJD + 2457000. Posting needs an ExoFOP account (the CTOI form or
+Prepared from this survey's fits; BJD_TDB = BTJD + 2457000. Revised 15 October 2026 after two independent audits. Posting needs an ExoFOP account (the CTOI form or
 "Upload planet parameters" on the target page). Nothing here has been posted.
 
 ## TIC 402710280.01 — new candidate (NOT uploadable yet: ExoFOP requires prior publication)
@@ -32,7 +32,8 @@ Notes: four transits; the predicted S66 transit (BTJD ~3111.40) falls on a stray
 start 0.6 h before ingress, QLP flags the whole window) and is not used. Mid-times scatter about a straight line
 (chi2 = 461 for 2 dof): timing systematics (S102 near an orbit start) or TTVs. Shape fitted with each transit
 centred on its own mid-time. Difference-image centroids (four transits) 1.5" ± 1.3" from the target; the only
-unresolved Gaia neighbour (G = 16.15 at 2.2", parallax 0.69 mas, background) would need a ~74% eclipse; diluted
+unresolved Gaia neighbour (G = 16.15; 3.10" away at Gaia epoch 2016, 3.4-3.6" during the transits, 2.3" in TIC
+epoch-2000 positions; parallax 0.69 mas, background) would need a ~74% eclipse; diluted
 eclipse fits are worse than a planet by dchi2 >= 142 (k = 0.3-1.2, 2227 points). Gaia DR3 RUWE 1.00. No secondary
 eclipse. Odd/even not testable (one odd transit). TRICERATOPS 1.1 on these inputs (10 runs, no contrast curve):
 FPP = 0.0026 ± 0.0037 (worst run 0.012), NFPP = 4e-24 (planet on target 85%, diluted by an unseen companion 14%,
@@ -69,7 +70,10 @@ Found by comparing the period hunt with periods already posted (`posted_check.py
 level. These are corrections to other people's entries: post them as planet-parameter updates on the target page
 with a short note; for the TOI ones the TESS TOI team can also be told through ExoFOP.
 
-## CTOI 438225366.01 — the period is 20.8615 d, not 41.7219 d
+## CTOI 438225366.01 — dips recur every 20.8615 d (half the posted 41.7219 d)
+Post as an alternative parameter set with a note: "photometric recurrence 20.861509 d; the orbital period is
+20.86 d if these are transits, or ~41.723 d if they are the two equal eclipses of a (possibly diluted) twin
+eclipsing binary". Equal odd/even depths do not distinguish the two.
 | Field | Value |
 |---|---|
 | TIC | 438225366 |
@@ -108,7 +112,7 @@ density of 1.2 vs the TIC's 0.40 solar: eccentric orbit, a smaller star, or a bl
 | Its transits (BJD) | 2458485.406 (S6), 2459224.525 (S33), 2460702.770 (S88, new) |
 | Depth (ppm) | 2303 (+124/-78) |
 | Duration (h) | 8.9 ± 0.15 |
-| Periods allowed | 739.12/n d, n = 1-10 (>= 67 d for a circular orbit); stellar density favours n = 6-7 (123.2 or 105.6 d) |
+| Periods allowed | 739.12/n d, n = 1-11 (>= 67.2 d for a circular orbit; n = 10 is 73.9 d, n = 11 is 67.2 d); stellar density favours n = 6-7 (123.2 or 105.6 d) |
 Notes: the S6 transit is 24 h (96 sigma) off TOI-7602.01's ephemeris; TOI-7602.01's own shallow transits are in the
 data at other times (one of them a day later in S6). All three transits on target (1.3"). A second transiting
 candidate on the star.

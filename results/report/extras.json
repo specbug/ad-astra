@@ -13,435 +13,483 @@
    {
     "epoch": 120,
     "btjd": 4467.967237660053,
-    "utc": "2027-03-03 11:12",
+    "utc": "2027-03-03 11:09",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.4802912840340965,
     "night_frac": 0.32,
-    "sun_sep": 106.97170096004531,
+    "sun_sep": 106.97024552008574,
     "note": "32% of the transit at night"
    },
    {
     "epoch": 121,
     "btjd": 4491.851590553182,
-    "utc": "2027-03-27 08:26",
+    "utc": "2027-03-27 08:20",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.4968252755582467,
     "night_frac": 0.72,
-    "sun_sep": 126.7411905146693,
+    "sun_sep": 126.73848079134966,
     "note": "72% of the transit at night"
    },
    {
     "epoch": 122,
     "btjd": 4515.735943446311,
-    "utc": "2027-04-20 05:39",
+    "utc": "2027-04-20 05:31",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.51339692256981,
     "night_frac": 1.0,
-    "sun_sep": 143.21335415831902,
+    "sun_sep": 143.21075272273617,
     "note": "full transit at night"
    },
    {
     "epoch": 123,
     "btjd": 4539.62029633944,
-    "utc": "2027-05-14 02:53",
+    "utc": "2027-05-14 02:44",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.5300050015175,
     "night_frac": 1.0,
-    "sun_sep": 150.55968218957358,
+    "sun_sep": 150.5596904143522,
     "note": "full transit at night"
    },
    {
     "epoch": 124,
     "btjd": 4563.504649232569,
-    "utc": "2027-06-07 00:06",
+    "utc": "2027-06-06 23:58",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.5466483387714227,
-    "night_frac": 0.68,
-    "sun_sep": 143.28700733865176,
-    "note": "68% of the transit at night"
+    "night_frac": 0.64,
+    "sun_sep": 143.28957672027005,
+    "note": "64% of the transit at night"
    },
    {
     "epoch": 125,
     "btjd": 4587.3890021256975,
-    "utc": "2027-06-30 21:20",
+    "utc": "2027-06-30 21:13",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.5633258082406496,
     "night_frac": 0.28,
-    "sun_sep": 127.38007174227847,
+    "sun_sep": 127.3827551991558,
     "note": "28% of the transit at night"
    },
    {
     "epoch": 137,
     "btjd": 4874.001236843245,
-    "utc": "2028-04-12 12:01",
+    "utc": "2028-04-12 11:54",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.7657637747941233,
-    "night_frac": 0.24,
-    "sun_sep": 138.97313599151127,
-    "note": "24% of the transit at night"
+    "night_frac": 0.28,
+    "sun_sep": 138.9702929481486,
+    "note": "28% of the transit at night"
    },
    {
     "epoch": 138,
     "btjd": 4897.885589736376,
-    "utc": "2028-05-06 09:15",
+    "utc": "2028-05-06 09:06",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.782800483443291,
-    "night_frac": 0.52,
-    "sun_sep": 149.87255787674306,
-    "note": "52% of the transit at night"
+    "night_frac": 0.56,
+    "sun_sep": 149.87156810474502,
+    "note": "56% of the transit at night"
    }
   ],
   "all_next": [
    {
     "epoch": 114,
     "btjd": 4324.661120301279,
-    "utc": "2026-10-11 03:52",
+    "utc": "2026-10-11 03:56",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.3819535738088216,
     "night_frac": 0.0,
-    "sun_sep": 44.62501955193904,
+    "sun_sep": 44.622136217089704,
     "note": "too close to the Sun"
    },
    {
     "epoch": 115,
     "btjd": 4348.545473194408,
-    "utc": "2026-11-04 01:05",
+    "utc": "2026-11-04 01:11",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.3982328067025973,
     "night_frac": 0.0,
-    "sun_sep": 31.391799343297777,
+    "sun_sep": 31.390185217416477,
     "note": "too close to the Sun"
    },
    {
     "epoch": 116,
     "btjd": 4372.429826087537,
-    "utc": "2026-11-27 22:18",
+    "utc": "2026-11-27 22:24",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.4145582360040592,
     "night_frac": 0.0,
-    "sun_sep": 31.8125874829181,
+    "sun_sep": 31.814350223826924,
     "note": "too close to the Sun"
    },
    {
     "epoch": 117,
     "btjd": 4396.314178980666,
-    "utc": "2026-12-21 19:32",
+    "utc": "2026-12-21 19:36",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.4309282805526804,
     "night_frac": 0.0,
-    "sun_sep": 45.85647511530316,
+    "sun_sep": 45.85939331881589,
     "note": "too close to the Sun"
    },
    {
     "epoch": 118,
     "btjd": 4420.198531873795,
-    "utc": "2027-01-14 16:45",
+    "utc": "2027-01-14 16:48",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.447341426497227,
     "night_frac": 0.0,
-    "sun_sep": 65.22121988576255,
+    "sun_sep": 65.22324058732431,
     "note": "daytime or too low"
    },
    {
     "epoch": 119,
     "btjd": 4444.082884766924,
-    "utc": "2027-02-07 13:59",
+    "utc": "2027-02-07 13:58",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.4637962239859925,
     "night_frac": 0.0,
-    "sun_sep": 86.08493908844854,
+    "sun_sep": 86.08526363136798,
     "note": "daytime or too low"
    },
    {
     "epoch": 120,
     "btjd": 4467.967237660053,
-    "utc": "2027-03-03 11:12",
+    "utc": "2027-03-03 11:09",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.4802912840340965,
     "night_frac": 0.32,
-    "sun_sep": 106.97170096004531,
+    "sun_sep": 106.97024552008574,
     "note": "32% of the transit at night"
    },
    {
     "epoch": 121,
     "btjd": 4491.851590553182,
-    "utc": "2027-03-27 08:26",
+    "utc": "2027-03-27 08:20",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.4968252755582467,
     "night_frac": 0.72,
-    "sun_sep": 126.7411905146693,
+    "sun_sep": 126.73848079134966,
     "note": "72% of the transit at night"
    },
    {
     "epoch": 122,
     "btjd": 4515.735943446311,
-    "utc": "2027-04-20 05:39",
+    "utc": "2027-04-20 05:31",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.51339692256981,
     "night_frac": 1.0,
-    "sun_sep": 143.21335415831902,
+    "sun_sep": 143.21075272273617,
     "note": "full transit at night"
    },
    {
     "epoch": 123,
     "btjd": 4539.62029633944,
-    "utc": "2027-05-14 02:53",
+    "utc": "2027-05-14 02:44",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.5300050015175,
     "night_frac": 1.0,
-    "sun_sep": 150.55968218957358,
+    "sun_sep": 150.5596904143522,
     "note": "full transit at night"
    },
    {
     "epoch": 124,
     "btjd": 4563.504649232569,
-    "utc": "2027-06-07 00:06",
+    "utc": "2027-06-06 23:58",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.5466483387714227,
-    "night_frac": 0.68,
-    "sun_sep": 143.28700733865176,
-    "note": "68% of the transit at night"
+    "night_frac": 0.64,
+    "sun_sep": 143.28957672027005,
+    "note": "64% of the transit at night"
    },
    {
     "epoch": 125,
     "btjd": 4587.3890021256975,
-    "utc": "2027-06-30 21:20",
+    "utc": "2027-06-30 21:13",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.5633258082406496,
     "night_frac": 0.28,
-    "sun_sep": 127.38007174227847,
+    "sun_sep": 127.3827551991558,
     "note": "28% of the transit at night"
    },
    {
     "epoch": 126,
     "btjd": 4611.273355018827,
-    "utc": "2027-07-24 18:33",
+    "utc": "2027-07-24 18:29",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.5800363291168984,
     "night_frac": 0.0,
-    "sun_sep": 108.53960347656562,
+    "sun_sep": 108.54113897455255,
     "note": "daytime or too low"
    },
    {
     "epoch": 127,
     "btjd": 4635.157707911956,
-    "utc": "2027-08-17 15:47",
+    "utc": "2027-08-17 15:46",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.5967788637372955,
     "night_frac": 0.0,
-    "sun_sep": 88.72328297276523,
+    "sun_sep": 88.72318578237791,
     "note": "daytime or too low"
    },
    {
     "epoch": 128,
     "btjd": 4659.0420608050845,
-    "utc": "2027-09-10 13:00",
+    "utc": "2027-09-10 13:02",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.6135524155595868,
     "night_frac": 0.0,
-    "sun_sep": 68.78794410632766,
+    "sun_sep": 68.78621781156473,
     "note": "daytime or too low"
    },
    {
     "epoch": 129,
     "btjd": 4682.926413698214,
-    "utc": "2027-10-04 10:14",
+    "utc": "2027-10-04 10:18",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.6303560272435065,
     "night_frac": 0.0,
-    "sun_sep": 49.738659763305,
+    "sun_sep": 49.73585609203403,
     "note": "too close to the Sun"
    },
    {
     "epoch": 130,
     "btjd": 4706.810766591343,
-    "utc": "2027-10-28 07:27",
+    "utc": "2027-10-28 07:33",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.647188778832385,
     "night_frac": 0.0,
-    "sun_sep": 34.28052474039051,
+    "sun_sep": 34.27821866135792,
     "note": "too close to the Sun"
    },
    {
     "epoch": 131,
     "btjd": 4730.695119484471,
-    "utc": "2027-11-21 04:40",
+    "utc": "2027-11-21 04:46",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.6640497860293908,
     "night_frac": 0.0,
-    "sun_sep": 29.915504495622137,
+    "sun_sep": 29.916348491612354,
     "note": "too close to the Sun"
    },
    {
     "epoch": 132,
     "btjd": 4754.579472377602,
-    "utc": "2027-12-15 01:54",
+    "utc": "2027-12-15 01:59",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.6809381985631247,
     "night_frac": 0.0,
-    "sun_sep": 40.898922556829916,
+    "sun_sep": 40.90180093028678,
     "note": "too close to the Sun"
    },
    {
     "epoch": 133,
     "btjd": 4778.46382527073,
-    "utc": "2028-01-07 23:07",
+    "utc": "2028-01-07 23:10",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.6978531986375813,
     "night_frac": 0.0,
-    "sun_sep": 59.29983354939408,
+    "sun_sep": 59.302248404985804,
     "note": "daytime or too low"
    },
    {
     "epoch": 134,
     "btjd": 4802.348178163858,
     "utc": "2028-01-31 20:21",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.7147939994617816,
     "night_frac": 0.0,
-    "sun_sep": 79.92690405434035,
+    "sun_sep": 79.92777072033427,
     "note": "daytime or too low"
    },
    {
     "epoch": 135,
     "btjd": 4826.232531056989,
-    "utc": "2028-02-24 17:34",
+    "utc": "2028-02-24 17:32",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.7317598438546387,
     "night_frac": 0.0,
-    "sun_sep": 100.9175822737697,
+    "sun_sep": 100.9166306267132,
     "note": "daytime or too low"
    },
    {
     "epoch": 136,
     "btjd": 4850.116883950117,
-    "utc": "2028-03-19 14:48",
+    "utc": "2028-03-19 14:42",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.7487500029208851,
     "night_frac": 0.0,
-    "sun_sep": 121.1577081661911,
+    "sun_sep": 121.1552798255278,
     "note": "daytime or too low"
    },
    {
     "epoch": 137,
     "btjd": 4874.001236843245,
-    "utc": "2028-04-12 12:01",
+    "utc": "2028-04-12 11:54",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.7657637747941233,
-    "night_frac": 0.24,
-    "sun_sep": 138.97313599151127,
-    "note": "24% of the transit at night"
+    "night_frac": 0.28,
+    "sun_sep": 138.9702929481486,
+    "note": "28% of the transit at night"
    },
    {
     "epoch": 138,
     "btjd": 4897.885589736376,
-    "utc": "2028-05-06 09:15",
+    "utc": "2028-05-06 09:06",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.782800483443291,
-    "night_frac": 0.52,
-    "sun_sep": 149.87255787674306,
-    "note": "52% of the transit at night"
+    "night_frac": 0.56,
+    "sun_sep": 149.87156810474502,
+    "note": "56% of the transit at night"
    },
    {
     "epoch": 139,
     "btjd": 4921.769942629504,
-    "utc": "2028-05-30 06:28",
+    "utc": "2028-05-30 06:20",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.799859477539042,
-    "night_frac": 0.68,
-    "sun_sep": 146.70519130815921,
-    "note": "68% of the transit at night"
+    "night_frac": 0.72,
+    "sun_sep": 146.70728393597975,
+    "note": "72% of the transit at night"
    },
    {
     "epoch": 140,
     "btjd": 4945.654295522632,
-    "utc": "2028-06-23 03:42",
+    "utc": "2028-06-23 03:35",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.8169401293767602,
-    "night_frac": 0.84,
-    "sun_sep": 132.49324800085878,
-    "note": "84% of the transit at night"
+    "night_frac": 0.88,
+    "sun_sep": 132.49607329644985,
+    "note": "88% of the transit at night"
    },
    {
     "epoch": 141,
     "btjd": 4969.5386484157625,
-    "utc": "2028-07-17 00:55",
+    "utc": "2028-07-17 00:51",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.8340418338530902,
     "night_frac": 0.76,
-    "sun_sep": 114.20879795683413,
+    "sun_sep": 114.21073703129801,
     "note": "76% of the transit at night"
    },
    {
     "epoch": 142,
     "btjd": 4993.423001308891,
-    "utc": "2028-08-09 22:09",
+    "utc": "2028-08-09 22:07",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.851164007493074,
     "night_frac": 0.36,
-    "sun_sep": 94.5716770864842,
+    "sun_sep": 94.57207016160922,
     "note": "36% of the transit at night"
    },
    {
     "epoch": 143,
     "btjd": 5017.307354202019,
-    "utc": "2028-09-02 19:22",
+    "utc": "2028-09-02 19:23",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.8683060875251336,
     "night_frac": 0.0,
-    "sun_sep": 74.59168010629578,
+    "sun_sep": 74.59039422310653,
     "note": "daytime or too low"
    },
    {
     "epoch": 144,
     "btjd": 5041.1917070951495,
-    "utc": "2028-09-26 16:36",
+    "utc": "2028-09-26 16:39",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.8854675310013085,
     "night_frac": 0.0,
-    "sun_sep": 55.123628526132606,
+    "sun_sep": 55.12103187928934,
     "note": "daytime or too low"
    },
    {
     "epoch": 145,
     "btjd": 5065.076059988278,
-    "utc": "2028-10-20 13:49",
+    "utc": "2028-10-20 13:54",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.9026478139603007,
     "night_frac": 0.0,
-    "sun_sep": 38.10664073916719,
+    "sun_sep": 38.10392159097221,
     "note": "too close to the Sun"
    },
    {
     "epoch": 146,
     "btjd": 5088.960412881406,
-    "utc": "2028-11-13 11:02",
+    "utc": "2028-11-13 11:09",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.9198464306310268,
     "night_frac": 0.0,
-    "sun_sep": 29.47390030833229,
+    "sun_sep": 29.473672367456544,
     "note": "too close to the Sun"
    },
    {
     "epoch": 147,
     "btjd": 5112.844765774536,
-    "utc": "2028-12-07 08:16",
+    "utc": "2028-12-07 08:21",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.937062892674505,
     "night_frac": 0.0,
-    "sun_sep": 36.53060573834638,
+    "sun_sep": 36.53322248689865,
     "note": "too close to the Sun"
    },
    {
     "epoch": 148,
     "btjd": 5136.729118667665,
-    "utc": "2028-12-31 05:29",
+    "utc": "2028-12-31 05:33",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.9542967284620294,
-    "night_frac": 0.12,
-    "sun_sep": 53.55314459709628,
-    "note": "12% of the transit at night"
+    "night_frac": 0.16,
+    "sun_sep": 53.555863502674015,
+    "note": "16% of the transit at night"
    },
    {
     "epoch": 149,
     "btjd": 5160.613471560793,
-    "utc": "2029-01-24 02:43",
+    "utc": "2029-01-24 02:44",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.9715474823877062,
     "night_frac": 0.04,
-    "sun_sep": 73.79864802825975,
+    "sun_sep": 73.80003211706892,
     "note": "daytime or too low"
    },
    {
     "epoch": 150,
     "btjd": 5184.497824453923,
-    "utc": "2029-02-16 23:56",
+    "utc": "2029-02-16 23:55",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 1.9888147142135333,
     "night_frac": 0.0,
-    "sun_sep": 94.80415393970817,
+    "sun_sep": 94.8037331224338,
     "note": "daytime or too low"
    },
    {
     "epoch": 151,
     "btjd": 5208.382177347052,
-    "utc": "2029-03-12 21:10",
+    "utc": "2029-03-12 21:05",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.0060979984453047,
     "night_frac": 0.0,
-    "sun_sep": 115.38408066107326,
+    "sun_sep": 115.38201952943551,
     "note": "daytime or too low"
    },
    {
     "epoch": 152,
     "btjd": 5232.26653024018,
-    "utc": "2029-04-05 18:23",
+    "utc": "2029-04-05 18:16",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.0233969237377276,
     "night_frac": 0.0,
-    "sun_sep": 134.18219297317904,
+    "sun_sep": 134.17930610839844,
     "note": "daytime or too low"
    },
    {
     "epoch": 153,
     "btjd": 5256.15088313331,
-    "utc": "2029-04-29 15:37",
+    "utc": "2029-04-29 15:29",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.040711092327227,
     "night_frac": 0.0,
-    "sun_sep": 147.8702919922273,
+    "sun_sep": 147.86846475188514,
     "note": "daytime or too low"
    }
   ],
@@ -476,7 +524,7 @@
     "P": 716.4629890976447,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 1.014353216949122,
     "e_min_b50": 0.9495850161054513
@@ -506,7 +554,7 @@
     "P": 358.23149454882235,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 1.0075362652509923,
     "e_min_b50": 0.9211388906653263
@@ -536,7 +584,7 @@
     "P": 238.82099636588157,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 1.001782774944315,
     "e_min_b50": 0.8979120742808572
@@ -566,7 +614,7 @@
     "P": 179.11574727441118,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9966192763251971,
     "e_min_b50": 0.877649616520527
@@ -596,7 +644,7 @@
     "P": 143.29259781952894,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9918498715099002,
     "e_min_b50": 0.8594045257501938
@@ -626,7 +674,7 @@
     "P": 119.41049818294078,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9873695747380226,
     "e_min_b50": 0.8426629983000745
@@ -656,7 +704,7 @@
     "P": 102.3518555853778,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.9831138994113203,
     "e_min_b50": 0.8271060110891546
@@ -686,7 +734,7 @@
     "P": 89.55787363720559,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9790396766701541,
     "e_min_b50": 0.8125179232421966
@@ -716,7 +764,7 @@
     "P": 79.60699878862718,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.9751162315450066,
     "e_min_b50": 0.7987441463146568
@@ -746,7 +794,7 @@
     "P": 71.64629890976447,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9713207872027989,
     "e_min_b50": 0.7856689603369861
@@ -776,7 +824,7 @@
     "P": 65.1329990088768,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9676358496935503,
     "e_min_b50": 0.773202816468189
@@ -806,7 +854,7 @@
     "P": 59.70524909147039,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9640476170349757,
     "e_min_b50": 0.7612745705701979
@@ -826,7 +874,7 @@
     "P": 56.56286756034037,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 20.516880893930978,
+    "max_reject_sigma": 20.516880893930953,
     "worst_time": 1386.3740643497463,
     "b_circ": 0.961703602905221,
     "e_min_b50": 0.7535922814825942
@@ -836,7 +884,7 @@
     "P": 55.11253762289574,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9605449595216199,
     "e_min_b50": 0.7498264794189902
@@ -856,7 +904,7 @@
     "P": 52.4241211534862,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 17.752716619333775,
+    "max_reject_sigma": 17.752716619350622,
     "worst_time": 1387.7536464853645,
     "b_circ": 0.9582528164758062,
     "e_min_b50": 0.7424372762105712
@@ -866,7 +914,7 @@
     "P": 51.1759277926889,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.9571187380584918,
     "e_min_b50": 0.7388108390207652
@@ -886,7 +934,7 @@
     "P": 48.84974925665759,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 20.237408323695167,
+    "max_reject_sigma": 20.237408323533995,
     "worst_time": 1388.9451037843073,
     "b_circ": 0.9548732401189634,
     "e_min_b50": 0.731687311783571
@@ -896,7 +944,7 @@
     "P": 47.76419927317631,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.9537613323807724,
     "e_min_b50": 0.7281876469050079
@@ -916,7 +964,7 @@
     "P": 45.73168015516881,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 22.13171530127024,
+    "max_reject_sigma": 22.13171530127017,
     "worst_time": 1389.98446015147,
     "b_circ": 0.9515580730679486,
     "e_min_b50": 0.7213065595013036
@@ -926,7 +974,7 @@
     "P": 44.778936818602794,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9504663048935191,
     "e_min_b50": 0.7179229287913859
@@ -946,7 +994,7 @@
     "P": 42.987779345858684,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 20.082076456385757,
+    "max_reject_sigma": 20.08207645650305,
     "worst_time": 1390.8990937545736,
     "b_circ": 0.9483015254657449,
     "e_min_b50": 0.7112643606585524
@@ -956,7 +1004,7 @@
     "P": 42.144881711626155,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.9472281551359605,
     "e_min_b50": 0.7079875109680945
@@ -976,7 +1024,7 @@
     "P": 40.554508816847815,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 18.068600802240926,
+    "max_reject_sigma": 18.068600802177063,
     "worst_time": 1391.7101839309105,
     "b_circ": 0.9450986168101906,
     "e_min_b50": 0.7015342159379476
@@ -986,7 +1034,7 @@
     "P": 39.80349939431359,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.944042136566603,
     "e_min_b50": 0.6983561003527511
@@ -1006,7 +1054,7 @@
     "P": 38.38194584451668,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 23.056255083671058,
+    "max_reject_sigma": 23.056255083518707,
     "worst_time": 1392.4343715883542,
     "b_circ": 0.9419450236375814,
     "e_min_b50": 0.6920930185015577
@@ -1016,7 +1064,7 @@
     "P": 37.70857837356024,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.940904117282584,
     "e_min_b50": 0.6890065822657891
@@ -1036,7 +1084,7 @@
     "P": 36.430321479541256,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.344214394280655,
+    "max_reject_sigma": 21.344214394522073,
     "worst_time": 1393.0849130433462,
     "b_circ": 0.9388369624345978,
     "e_min_b50": 0.6829204620749184
@@ -1046,7 +1094,7 @@
     "P": 35.823149454882234,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9378104723907473,
     "e_min_b50": 0.6799194756168848
@@ -1066,7 +1114,7 @@
     "P": 34.66756398859571,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 18.492665602777844,
+    "max_reject_sigma": 18.492665602636812,
     "worst_time": 1393.6724988736614,
     "b_circ": 0.9357710982622971,
     "e_min_b50": 0.6739985772044786
@@ -1076,7 +1124,7 @@
     "P": 34.11728519512594,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9347579996221808,
     "e_min_b50": 0.6710775040929079
@@ -1096,7 +1144,7 @@
     "P": 33.06752257373745,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 18.70309635476427,
+    "max_reject_sigma": 18.703096354418587,
     "worst_time": 1394.2058460119474,
     "b_circ": 0.9327444724810856,
     "e_min_b50": 0.6653113630602503
@@ -1106,7 +1154,7 @@
     "P": 32.5664995044384,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.931743852308267,
     "e_min_b50": 0.6624652542878384
@@ -1136,7 +1184,7 @@
     "P": 31.150564743375856,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9287654855234994,
     "e_min_b50": 0.6540688999876338
@@ -1166,7 +1214,7 @@
     "P": 29.852624545735196,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9258206123514412,
     "e_min_b50": 0.6458759774826079
@@ -1196,7 +1244,7 @@
     "P": 28.658519563905788,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9229071680307629,
     "e_min_b50": 0.6378752007264882
@@ -1206,7 +1254,7 @@
     "P": 28.281433780170186,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 20.516880893930978,
+    "max_reject_sigma": 20.516880893930953,
     "worst_time": 1386.3740643497463,
     "b_circ": 0.9219426754652459,
     "e_min_b50": 0.6352491736328212
@@ -1226,7 +1274,7 @@
     "P": 27.55626881144787,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9200232803047823,
     "e_min_b50": 0.63005630796134
@@ -1236,7 +1284,7 @@
     "P": 27.207455282189038,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.573798072292842,
+    "max_reject_sigma": 21.57379807233319,
     "worst_time": 1387.0900500150672,
     "b_circ": 0.9190682535124246,
     "e_min_b50": 0.6274887866257448
@@ -1256,7 +1304,7 @@
     "P": 26.53566626287573,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9171672447051367,
     "e_min_b50": 0.6224099334454233
@@ -1266,7 +1314,7 @@
     "P": 26.2120605767431,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 17.752716619333775,
+    "max_reject_sigma": 17.752716619350622,
     "worst_time": 1387.7536464853645,
     "b_circ": 0.9162211491301967,
     "e_min_b50": 0.6198979758875665
@@ -1286,7 +1334,7 @@
     "P": 25.58796389634445,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.914337503797145,
     "e_min_b50": 0.6149274993962154
@@ -1296,7 +1344,7 @@
     "P": 25.286929026975695,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 18.58314397253366,
+    "max_reject_sigma": 18.58314397247918,
     "worst_time": 1388.3704008518762,
     "b_circ": 0.9133998498558498,
     "e_min_b50": 0.6124684052066124
@@ -1306,7 +1354,7 @@
     "P": 24.99289496852249,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 22.192264796919826,
+    "max_reject_sigma": 22.192264796651283,
     "worst_time": 1396.897388547019,
     "b_circ": 0.912464907998597,
     "e_min_b50": 0.6100263697714333
@@ -1316,7 +1364,7 @@
     "P": 24.705620313711886,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9115326296338074,
     "e_min_b50": 0.6076011243534282
@@ -1326,7 +1374,7 @@
     "P": 24.424874628328794,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 20.237408323695167,
+    "max_reject_sigma": 20.237408323533995,
     "worst_time": 1388.9451037843073,
     "b_circ": 0.9106029674730204,
     "e_min_b50": 0.6051924072628105
@@ -1336,7 +1384,7 @@
     "P": 24.15043783475207,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 22.936414777074965,
+    "max_reject_sigma": 22.93641477711105,
     "worst_time": 1397.1782075916092,
     "b_circ": 0.9096758754811964,
     "e_min_b50": 0.602799963595837
@@ -1346,7 +1394,7 @@
     "P": 23.882099636588155,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.9087513088294441,
     "e_min_b50": 0.6004235449858993
@@ -1356,7 +1404,7 @@
     "P": 23.619658981241034,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.204560035019817,
+    "max_reject_sigma": 21.204560034798252,
     "worst_time": 1389.4819142156991,
     "b_circ": 0.9078292238500296,
     "e_min_b50": 0.5980629093664181
@@ -1366,7 +1414,7 @@
     "P": 23.362923557531893,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 22.325426080545363,
+    "max_reject_sigma": 22.325426080457987,
     "worst_time": 1397.4407123506826,
     "b_circ": 0.9069095779935351,
     "e_min_b50": 0.5957178207448305
@@ -1376,7 +1424,7 @@
     "P": 23.111709325730473,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9059923297880399,
     "e_min_b50": 0.5933880489870598
@@ -1386,7 +1434,7 @@
     "P": 22.865840077584405,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 22.13171530127024,
+    "max_reject_sigma": 22.13171530127017,
     "worst_time": 1389.98446015147,
     "b_circ": 0.9050774388002083,
     "e_min_b50": 0.5910733696118561
@@ -1396,7 +1444,7 @@
     "P": 22.625147024136147,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 19.347524821211618,
+    "max_reject_sigma": 19.34752482129201,
     "worst_time": 1397.6866378618145,
     "b_circ": 0.904164865598177,
     "e_min_b50": 0.5887735635944673
@@ -1406,7 +1454,7 @@
     "P": 22.389468409301397,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9032545717161401,
     "e_min_b50": 0.5864884171791164
@@ -1416,7 +1464,7 @@
     "P": 22.158649147349834,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.11313257086765,
+    "max_reject_sigma": 21.113132570840673,
     "worst_time": 1390.4559207716266,
     "b_circ": 0.9023465196205364,
     "e_min_b50": 0.5842177216998026
@@ -1426,7 +1474,7 @@
     "P": 21.932540482580958,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 20.275551189160844,
+    "max_reject_sigma": 20.27555118899967,
     "worst_time": 1397.9175067089996,
     "b_circ": 0.9014406726777531,
     "e_min_b50": 0.581961273408981
@@ -1436,7 +1484,7 @@
     "P": 21.710999669625597,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.9005369951232602,
     "e_min_b50": 0.5797188733136881
@@ -1446,7 +1494,7 @@
     "P": 21.493889672929342,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 20.082076456385757,
+    "max_reject_sigma": 20.08207645650305,
     "worst_time": 1390.8990937545736,
     "b_circ": 0.8996354520321012,
     "e_min_b50": 0.577490327018724
@@ -1456,7 +1504,7 @@
     "P": 21.281078884088455,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 18.448184891015796,
+    "max_reject_sigma": 18.448184890823615,
     "worst_time": 1398.1346605751637,
     "b_circ": 0.8987360092906652,
     "e_min_b50": 0.5752754445765196
@@ -1466,7 +1514,7 @@
     "P": 21.072440855813078,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.8978386335696747,
     "e_min_b50": 0.5730740403433352
@@ -1476,7 +1524,7 @@
     "P": 20.86785405138771,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 19.011871873981928,
+    "max_reject_sigma": 19.011871873740244,
     "worst_time": 1391.3164508356012,
     "b_circ": 0.896943292298325,
     "e_min_b50": 0.5708859328414706
@@ -1486,7 +1534,7 @@
     "P": 20.667201608585906,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 17.448493196871322,
+    "max_reject_sigma": 17.44849319679069,
     "worst_time": 1398.3392863336644,
     "b_circ": 0.8960499536395121,
     "e_min_b50": 0.5687109446271735
@@ -1496,7 +1544,7 @@
     "P": 20.470371117075562,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.8951585864661006,
     "e_min_b50": 0.5665489021639631
@@ -1506,7 +1554,7 @@
     "P": 20.277254408423907,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 18.068600802240926,
+    "max_reject_sigma": 18.068600802177063,
     "worst_time": 1391.7101839309105,
     "b_circ": 0.8942691603381693,
     "e_min_b50": 0.5643996357010935
@@ -1516,7 +1564,7 @@
     "P": 20.087747357877888,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.18617793064818,
+    "max_reject_sigma": 21.186177930597307,
     "worst_time": 1398.5324377505672,
     "b_circ": 0.893381645481194,
     "e_min_b50": 0.5622629791569028
@@ -1526,7 +1574,7 @@
     "P": 19.901749697156795,
     "status": "excluded",
     "n_covered": 1,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.8924960127651137,
     "e_min_b50": 0.5601387700068098
@@ -1536,7 +1584,7 @@
     "P": 19.719164837549854,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 19.922169014454475,
+    "max_reject_sigma": 19.922169014125558,
     "worst_time": 1392.0822436448266,
     "b_circ": 0.8916122336842414,
     "e_min_b50": 0.5580268491757275
@@ -1546,7 +1594,7 @@
     "P": 19.539899702663035,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 24.953330151871718,
+    "max_reject_sigma": 24.95333015176623,
     "worst_time": 2141.2312423368344,
     "b_circ": 0.8907302803379753,
     "e_min_b50": 0.555927060934686
@@ -1556,7 +1604,7 @@
     "P": 19.363864570206612,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.844910024849238,
+    "max_reject_sigma": 22.844910023594693,
     "worst_time": 4290.444174497312,
     "b_circ": 0.8898501254122723,
     "e_min_b50": 0.5538392528014559
@@ -1566,7 +1614,7 @@
     "P": 19.19097292225834,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 23.056255083671058,
+    "max_reject_sigma": 23.056255083518707,
     "worst_time": 1392.4343715883542,
     "b_circ": 0.8889717421618477,
     "e_min_b50": 0.5517632754449906
@@ -1576,7 +1624,7 @@
     "P": 19.021141303477293,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 21.666657778380255,
+    "max_reject_sigma": 21.666657778633773,
     "worst_time": 1398.887973102034,
     "b_circ": 0.888095104393065,
     "e_min_b50": 0.5496989825935031
@@ -1586,7 +1634,7 @@
     "P": 18.85428918678012,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.8872201864474857,
     "e_min_b50": 0.5476462309460073
@@ -1596,7 +1644,7 @@
     "P": 18.69033884602551,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 20.879378068253203,
+    "max_reject_sigma": 20.87937806804506,
     "worst_time": 1392.7681276391763,
     "b_circ": 0.8863469631860439,
     "e_min_b50": 0.5456048800871681
@@ -1606,7 +1654,7 @@
     "P": 18.529215235283914,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.12660323470587,
+    "max_reject_sigma": 22.126603235575423,
     "worst_time": 1399.0519484580987,
     "b_circ": 0.885475409973822,
     "e_min_b50": 0.5435747924053067
@@ -1616,7 +1664,7 @@
     "P": 18.37084587429858,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.8846055026653953,
     "e_min_b50": 0.5415558330134156
@@ -1626,7 +1674,7 @@
     "P": 18.215160739770628,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 21.344214394280655,
+    "max_reject_sigma": 21.344214394522073,
     "worst_time": 1393.0849130433462,
     "b_circ": 0.8837372175907213,
     "e_min_b50": 0.5395478696730527
@@ -1636,7 +1684,7 @@
     "P": 18.062092162125495,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 24.405736502054033,
+    "max_reject_sigma": 24.405736503095437,
     "worst_time": 4289.14240208923,
     "b_circ": 0.8828705315415504,
     "e_min_b50": 0.5375507727209826
@@ -1646,7 +1694,7 @@
     "P": 17.911574727441117,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.92475893703995,
+    "max_reject_sigma": 22.924758940171042,
     "worst_time": 4288.991884654546,
     "b_circ": 0.8820054217583313,
     "e_min_b50": 0.5355644149984449
@@ -1656,7 +1704,7 @@
     "P": 17.763545184239124,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.584521520188744,
+    "max_reject_sigma": 22.584521522151466,
     "worst_time": 4288.843855111345,
     "b_circ": 0.8811418659175918,
     "e_min_b50": 0.5335886717829332
@@ -1666,7 +1714,7 @@
     "P": 17.617942354860116,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 21.103453807881813,
+    "max_reject_sigma": 21.103453808650592,
     "worst_time": 4288.698252281965,
     "b_circ": 0.8802798421197737,
     "e_min_b50": 0.5316234207223799
@@ -1676,7 +1724,7 @@
     "P": 17.474707051162063,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.8794193288774995,
     "e_min_b50": 0.5296685417716337
@@ -1686,7 +1734,7 @@
     "P": 17.333781994297855,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 20.647761986873395,
+    "max_reject_sigma": 20.647761986930952,
     "worst_time": 4288.414091921402,
     "b_circ": 0.8785603051042562,
     "e_min_b50": 0.5277239171311455
@@ -1696,7 +1744,7 @@
     "P": 17.19511173834347,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 25.11726356411332,
+    "max_reject_sigma": 25.117263562478975,
     "worst_time": 4288.275421665448,
     "b_circ": 0.8777027501034739,
     "e_min_b50": 0.525789431187754
@@ -1706,7 +1754,7 @@
     "P": 17.05864259756297,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 24.585131818760217,
+    "max_reject_sigma": 24.58513182060714,
     "worst_time": 4288.138952524669,
     "b_circ": 0.876846643557985,
     "e_min_b50": 0.5238649704574947
@@ -1716,7 +1764,7 @@
     "P": 16.924322577109717,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 23.739530332800033,
+    "max_reject_sigma": 23.73953033278796,
     "worst_time": 4288.004632504215,
     "b_circ": 0.8759919655198484,
     "e_min_b50": 0.5219504235303417
@@ -1726,7 +1774,7 @@
     "P": 16.792101306976047,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.52455159126887,
+    "max_reject_sigma": 22.52455159064096,
     "worst_time": 4287.872411234081,
     "b_circ": 0.8751386964005201,
     "e_min_b50": 0.520045681016803
@@ -1736,7 +1784,7 @@
     "P": 16.661929979014992,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.8742868169613585,
     "e_min_b50": 0.5181506354962935
@@ -1746,7 +1794,7 @@
     "P": 16.533761286868724,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.20363883644509,
+    "max_reject_sigma": 22.20363883395217,
     "worst_time": 4287.614071213974,
     "b_circ": 0.8734363083044505,
     "e_min_b50": 0.5162651814672153
@@ -1756,7 +1804,7 @@
     "P": 16.40754936864835,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.536686684736807,
+    "max_reject_sigma": 22.536686684043588,
     "worst_time": 4287.487859295754,
     "b_circ": 0.8725871518637438,
     "e_min_b50": 0.5143892152986733
@@ -1766,7 +1814,7 @@
     "P": 16.2832497522192,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.766722456994824,
+    "max_reject_sigma": 22.76672245807226,
     "worst_time": 4287.363559679325,
     "b_circ": 0.871739329396473,
     "e_min_b50": 0.5125226351837592
@@ -1776,7 +1824,7 @@
     "P": 16.16081930295439,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 24.617284971562984,
+    "max_reject_sigma": 24.617284971867218,
     "worst_time": 1394.4544740012236,
     "b_circ": 0.8708928229748696,
     "e_min_b50": 0.5106653410943478
@@ -1786,7 +1834,7 @@
     "P": 16.040216173827865,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 20.95078972872884,
+    "max_reject_sigma": 20.950789729733437,
     "worst_time": 4287.120526100933,
     "b_circ": 0.8700476149781408,
     "e_min_b50": 0.508817234737339
@@ -1796,7 +1844,7 @@
     "P": 15.921399757725437,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.132051124858226,
+    "max_reject_sigma": 23.132051124952287,
     "worst_time": 1389.306953778801,
     "b_circ": 0.8692036880847114,
     "e_min_b50": 0.5069782195122925
@@ -1806,7 +1854,7 @@
     "P": 15.804330641859808,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 21.68099652740643,
+    "max_reject_sigma": 21.680996526596974,
     "worst_time": 4286.884640568966,
     "b_circ": 0.868361025264713,
     "e_min_b50": 0.5051482004703981
@@ -1816,7 +1864,7 @@
     "P": 15.688970564182,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.209344385310573,
+    "max_reject_sigma": 22.209344385074473,
     "worst_time": 4286.769280491288,
     "b_circ": 0.8675196097727152,
     "e_min_b50": 0.5033270842747349
@@ -1826,7 +1874,7 @@
     "P": 15.575282371687928,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.79488851668918,
+    "max_reject_sigma": 22.794888518291607,
     "worst_time": 4286.655592298794,
     "b_circ": 0.8666794251406856,
     "e_min_b50": 0.5015147791617632
@@ -1836,7 +1884,7 @@
     "P": 15.463229980524705,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 22.334548273704137,
+    "max_reject_sigma": 22.33454827340184,
     "worst_time": 4286.5435399076305,
     "b_circ": 0.8658404551711738,
     "e_min_b50": 0.49971119490400834
@@ -1846,7 +1894,7 @@
     "P": 15.352778337806672,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 19.394552995767487,
+    "max_reject_sigma": 19.39455299871663,
     "worst_time": 4286.433088264912,
     "b_circ": 0.8650026839307068,
     "e_min_b50": 0.4979162427738875
@@ -1856,7 +1904,7 @@
     "P": 15.24389338505627,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.13171530127024,
+    "max_reject_sigma": 22.13171530127017,
     "worst_time": 1389.98446015147,
     "b_circ": 0.86416609574339,
     "e_min_b50": 0.49612983550863626
@@ -1866,7 +1914,7 @@
     "P": 15.136542023189676,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 21.902223444475453,
+    "max_reject_sigma": 21.902223446606815,
     "worst_time": 4286.216851950295,
     "b_circ": 0.8633306751847063,
     "e_min_b50": 0.4943518872762994
@@ -1876,7 +1924,7 @@
     "P": 15.030692078971567,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.92598382181775,
+    "max_reject_sigma": 22.92598382384345,
     "worst_time": 4286.111002006077,
     "b_circ": 0.8624964070755036,
     "e_min_b50": 0.49258231364273825
@@ -1886,7 +1934,7 @@
     "P": 14.926312272867598,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.867826867209022,
+    "max_reject_sigma": 22.867826867078413,
     "worst_time": 1390.3020412636588,
     "b_circ": 0.8616632764761668,
     "e_min_b50": 0.49082103153962275
@@ -1896,7 +1944,7 @@
     "P": 14.82337218822713,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 21.215361645689715,
+    "max_reject_sigma": 21.215361642463645,
     "worst_time": 4285.903682115332,
     "b_circ": 0.8608312686809636,
     "e_min_b50": 0.489067959233373
@@ -1906,7 +1954,7 @@
     "P": 14.721842241732425,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 21.456647120516564,
+    "max_reject_sigma": 21.456647119815923,
     "worst_time": 4285.802152168837,
     "b_circ": 0.8600003692125617,
     "e_min_b50": 0.48732301629501007
@@ -1916,7 +1964,7 @@
     "P": 14.621693655053972,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.88340406145153,
+    "max_reject_sigma": 21.883404061599002,
     "worst_time": 1390.6066598814725,
     "b_circ": 0.8591705638167088,
     "e_min_b50": 0.4855861235708895
@@ -1926,7 +1974,7 @@
     "P": 14.52289842765496,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 20.65592138071725,
+    "max_reject_sigma": 20.655921381772796,
     "worst_time": 2136.214241061826,
     "b_circ": 0.8583418384570685,
     "e_min_b50": 0.4838572031542836
@@ -1946,7 +1994,7 @@
     "P": 14.329259781952894,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.51980498588465,
+    "max_reject_sigma": 22.519804986718377,
     "worst_time": 2136.020602416124,
     "b_circ": 0.8566875727607415,
     "e_min_b50": 0.48042297368647147
@@ -1956,7 +2004,7 @@
     "P": 14.23436402180751,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 22.00737710747507,
+    "max_reject_sigma": 22.00737710694542,
     "worst_time": 4285.314673948913,
     "b_circ": 0.8558620053965884,
     "e_min_b50": 0.47871751481190944
@@ -1966,7 +2014,7 @@
     "P": 14.140716890085093,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.920528443618984,
+    "max_reject_sigma": 21.920528443684066,
     "worst_time": 1400.5147812398313,
     "b_circ": 0.8550374640044023,
     "e_min_b50": 0.4770197285467882
@@ -1976,7 +2024,7 @@
     "P": 14.048293903875386,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.78008467195675,
+    "max_reject_sigma": 23.780084670384905,
     "worst_time": 4285.128603830981,
     "b_circ": 0.8542139355651053,
     "e_min_b50": 0.47532954282034295
@@ -1986,7 +2034,7 @@
     "P": 13.957071216187883,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 23.29999969478173,
+    "max_reject_sigma": 23.299999694886854,
     "worst_time": 4285.037381143293,
     "b_circ": 0.8533914072495584,
     "e_min_b50": 0.4736468866544313
@@ -1996,7 +2044,7 @@
     "P": 13.867025595438284,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.34044172077163,
+    "max_reject_sigma": 23.340441722531278,
     "worst_time": 4284.947335522544,
     "b_circ": 0.8525698664143547,
     "e_min_b50": 0.4719716901402787
@@ -2006,7 +2054,7 @@
     "P": 13.778134405723936,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 25.044684514436977,
+    "max_reject_sigma": 25.044684515592976,
     "worst_time": 4284.858444332829,
     "b_circ": 0.8517493005977272,
     "e_min_b50": 0.47030388441586135
@@ -2016,7 +2064,7 @@
     "P": 13.690375587853083,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 23.334586573653713,
+    "max_reject_sigma": 23.334586574741746,
     "worst_time": 2135.381718222024,
     "b_circ": 0.8509296975155732,
     "e_min_b50": 0.4686434016439094
@@ -2026,7 +2074,7 @@
     "P": 13.603727641094519,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.609280394186094,
+    "max_reject_sigma": 22.60928039365253,
     "worst_time": 4284.6840375681995,
     "b_circ": 0.8501110450575876,
     "e_min_b50": 0.46699017499050505
@@ -2036,7 +2084,7 @@
     "P": 13.518169605615936,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.521607729389906,
+    "max_reject_sigma": 22.52160773194041,
     "worst_time": 4284.59847953272,
     "b_circ": 0.8492933312835022,
     "e_min_b50": 0.465344138604261
@@ -2046,7 +2094,7 @@
     "P": 13.433681045580837,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 22.767200103209138,
+    "max_reject_sigma": 22.76720010553472,
     "worst_time": 4284.513990972686,
     "b_circ": 0.8484765444194284,
     "e_min_b50": 0.46370522759605454
@@ -2056,7 +2104,7 @@
     "P": 13.350242032875366,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 24.50434904760598,
+    "max_reject_sigma": 24.504349047239607,
     "worst_time": 4284.43055195998,
     "b_circ": 0.8476606728542991,
     "e_min_b50": 0.4620733780193027
@@ -2066,7 +2114,7 @@
     "P": 13.267833131437865,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.878496436690682,
+    "max_reject_sigma": 23.878496439553427,
     "worst_time": 4284.348143058543,
     "b_circ": 0.8468457051364063,
     "e_min_b50": 0.46044852685076193
@@ -2076,7 +2124,7 @@
     "P": 13.18643538216524,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 22.515332986835844,
+    "max_reject_sigma": 22.51533298826882,
     "worst_time": 4284.266745309271,
     "b_circ": 0.8460316299700309,
     "e_min_b50": 0.45883061197182884
@@ -2086,7 +2134,7 @@
     "P": 13.10603028837155,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.747243649246677,
+    "max_reject_sigma": 22.74724364956942,
     "worst_time": 4284.186340215477,
     "b_circ": 0.8452184362121636,
     "e_min_b50": 0.45721957215033426
@@ -2096,7 +2144,7 @@
     "P": 13.026599801775358,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 25.166257685100327,
+    "max_reject_sigma": 25.16625768549605,
     "worst_time": 4284.10690972888,
     "b_circ": 0.8444061128693117,
     "e_min_b50": 0.4556153470228074
@@ -2106,7 +2154,7 @@
     "P": 12.948126308993578,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 23.884788240810952,
+    "max_reject_sigma": 23.88478824026591,
     "worst_time": 4284.028436236098,
     "b_circ": 0.8435946490943897,
     "e_min_b50": 0.4540178770772022
@@ -2116,7 +2164,7 @@
     "P": 12.870592618520563,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.76442642956553,
+    "max_reject_sigma": 22.7644264296996,
     "worst_time": 4283.950902545626,
     "b_circ": 0.8427840341836926,
     "e_min_b50": 0.4524271036360622
@@ -2126,7 +2174,7 @@
     "P": 12.793981948172226,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.56924737777791,
+    "max_reject_sigma": 23.569247378122547,
     "worst_time": 4283.874291875278,
     "b_circ": 0.8419742575739452,
     "e_min_b50": 0.4508429688401215
@@ -2136,7 +2184,7 @@
     "P": 12.71827791297594,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.095184167451304,
+    "max_reject_sigma": 22.095184167793366,
     "worst_time": 1396.7495015945426,
     "b_circ": 0.8411653088394303,
     "e_min_b50": 0.4492654156323155
@@ -2146,7 +2194,7 @@
     "P": 12.643464513487848,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 23.571469506289624,
+    "max_reject_sigma": 23.571469505977827,
     "worst_time": 1401.013865365364,
     "b_circ": 0.8403571776891896,
     "e_min_b50": 0.447694387742201
@@ -2156,7 +2204,7 @@
     "P": 12.569526124520081,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.108601632899223,
+    "max_reject_sigma": 22.108601633036777,
     "worst_time": 1392.6588274120065,
     "b_circ": 0.8395498539642952,
     "e_min_b50": 0.4461298296707645
@@ -2166,7 +2214,7 @@
     "P": 12.496447484261244,
     "status": "excluded",
     "n_covered": 2,
-    "max_reject_sigma": 22.192264796919826,
+    "max_reject_sigma": 22.192264796651283,
     "worst_time": 1396.897388547019,
     "b_circ": 0.8387433276351913,
     "e_min_b50": 0.44457168667560776
@@ -2176,7 +2224,7 @@
     "P": 12.424213683774186,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.95669450008409,
+    "max_reject_sigma": 22.956694499936322,
     "worst_time": 1401.0869489752686,
     "b_circ": 0.8379375887991034,
     "e_min_b50": 0.4430199047565047
@@ -2186,7 +2234,7 @@
     "P": 12.352810156855943,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.80255268638291,
+    "max_reject_sigma": 22.80255268620159,
     "worst_time": 1392.8755433796705,
     "b_circ": 0.8371326276775105,
     "e_min_b50": 0.441474430641311
@@ -2196,7 +2244,7 @@
     "P": 12.282222670245337,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 20.582762282208872,
+    "max_reject_sigma": 20.582762282208737,
     "worst_time": 1397.0402050896964,
     "b_circ": 0.8363284346136818,
     "e_min_b50": 0.43993521177222056
@@ -2206,7 +2254,7 @@
     "P": 12.212437314164397,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 26.202043605494048,
+    "max_reject_sigma": 26.202043605363418,
     "worst_time": 1401.1575410984717,
     "b_circ": 0.8355250000702747,
     "e_min_b50": 0.43840219629235805
@@ -2216,7 +2264,7 @@
     "P": 12.143440493180417,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.8347223146269905,
     "e_min_b50": 0.4368753330326932
@@ -2226,7 +2274,7 @@
     "P": 12.075218917376034,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.936414777074965,
+    "max_reject_sigma": 22.93641477711105,
     "worst_time": 1397.1782075916092,
     "b_circ": 0.8339203689782887,
     "e_min_b50": 0.4353545714992747
@@ -2236,7 +2284,7 @@
     "P": 12.007759593815274,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 25.94866242267124,
+    "max_reject_sigma": 25.948662422656575,
     "worst_time": 1401.2257670052547,
     "b_circ": 0.8331191539311561,
     "e_min_b50": 0.433839861860766
@@ -2246,7 +2294,7 @@
     "P": 11.941049818294077,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 24.073916692527764,
+    "max_reject_sigma": 24.073916691982753,
     "worst_time": 4283.0213597453985,
     "b_circ": 0.8323186604029307,
     "e_min_b50": 0.4323311549362813
@@ -2256,7 +2304,7 @@
     "P": 11.875077167364276,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.48844622965682,
+    "max_reject_sigma": 22.4884462253135,
     "worst_time": 4282.955387094469,
     "b_circ": 0.8315188794191776,
     "e_min_b50": 0.4308284021835092
@@ -2266,7 +2314,7 @@
     "P": 11.809829490620517,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.261485777518097,
+    "max_reject_sigma": 23.261485777356906,
     "worst_time": 1401.2917437063197,
     "b_circ": 0.8307198021116149,
     "e_min_b50": 0.42933155568711373
@@ -2276,7 +2324,7 @@
     "P": 11.745294903240076,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.8299214197160903,
     "e_min_b50": 0.42784056814741156
@@ -2286,7 +2334,7 @@
     "P": 11.681461778765946,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.325426080545363,
+    "max_reject_sigma": 22.325426080457987,
     "worst_time": 1397.4407123506826,
     "b_circ": 0.8291237235706053,
     "e_min_b50": 0.42635539286930985
@@ -2296,7 +2344,7 @@
     "P": 11.618318742123968,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 25.836874227725584,
+    "max_reject_sigma": 25.83687422868575,
     "worst_time": 4282.698628669229,
     "b_circ": 0.8283267051133839,
     "e_min_b50": 0.4248759837515029
@@ -2306,7 +2354,7 @@
     "P": 11.555854662865237,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.8275303558809899,
     "e_min_b50": 0.42340229527591494
@@ -2316,7 +2364,7 @@
     "P": 11.494058648625316,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.852430601272864,
+    "max_reject_sigma": 22.852430601265617,
     "worst_time": 1386.071589122151,
     "b_circ": 0.8267346675064849,
     "e_min_b50": 0.42193428249739073
@@ -2326,7 +2374,7 @@
     "P": 11.432920038792203,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.18705735474236,
+    "max_reject_sigma": 23.187057354379874,
     "worst_time": 1401.4173801902625,
     "b_circ": 0.8259396317176302,
     "e_min_b50": 0.4204719010336137
@@ -2336,7 +2384,7 @@
     "P": 11.372428398375312,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.071511455157594,
+    "max_reject_sigma": 23.071511453738793,
     "worst_time": 4282.452738325481,
     "b_circ": 0.8251452403351307,
     "e_min_b50": 0.4190151070552613
@@ -2346,7 +2394,7 @@
     "P": 11.312573512068074,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 24.375805544903596,
+    "max_reject_sigma": 24.375805545698267,
     "worst_time": 4282.392883439174,
     "b_circ": 0.8243514852709168,
     "e_min_b50": 0.4175638572763749
@@ -2356,7 +2404,7 @@
     "P": 11.253345378497036,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.715118894432628,
+    "max_reject_sigma": 23.71511889744048,
     "worst_time": 4282.3336553056015,
     "b_circ": 0.8235583585264685,
     "e_min_b50": 0.4161181089449527
@@ -2366,7 +2414,7 @@
     "P": 11.194734204650699,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 24.57403042183131,
+    "max_reject_sigma": 24.574030422383704,
     "worst_time": 4282.275044131757,
     "b_circ": 0.822765852191174,
     "e_min_b50": 0.4146778198337478
@@ -2376,7 +2424,7 @@
     "P": 11.136730400481524,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.26743517829066,
+    "max_reject_sigma": 23.26743517592709,
     "worst_time": 4282.217040327587,
     "b_circ": 0.8219739584407276,
     "e_min_b50": 0.4132429482312748
@@ -2386,7 +2434,7 @@
     "P": 11.079324573674917,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 24.015144142278377,
+    "max_reject_sigma": 24.01514414224198,
     "worst_time": 1401.5352453453015,
     "b_circ": 0.8211826695355628,
     "e_min_b50": 0.4118134529330107
@@ -2396,7 +2444,7 @@
     "P": 11.022507524579149,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.18523905911176,
+    "max_reject_sigma": 22.185239060668046,
     "worst_time": 4282.102817451685,
     "b_circ": 0.8203919778193203,
     "e_min_b50": 0.41038929323279677
@@ -2406,7 +2454,7 @@
     "P": 10.966270241290479,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 24.35810536378244,
+    "max_reject_sigma": 24.35810536868493,
     "worst_time": 4282.046580168395,
     "b_circ": 0.8196018757173484,
     "e_min_b50": 0.4089704289144184
@@ -2416,7 +2464,7 @@
     "P": 10.91060389488799,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.591589538209433,
+    "max_reject_sigma": 22.59158953825277,
     "worst_time": 1390.6808816766759,
     "b_circ": 0.8188123557352396,
     "e_min_b50": 0.40755682024337947
@@ -2426,7 +2474,7 @@
     "P": 10.855499834812798,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.445863202691072,
+    "max_reject_sigma": 22.4458632029459,
     "worst_time": 1394.3728537017137,
     "b_circ": 0.818023410457396,
     "e_min_b50": 0.4061484279588456
@@ -2436,7 +2484,7 @@
     "P": 10.800949584386602,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.273460907601777,
+    "max_reject_sigma": 22.273460906935,
     "worst_time": 4281.881259511492,
     "b_circ": 0.8172350325456279,
     "e_min_b50": 0.4047452132657674
@@ -2446,7 +2494,7 @@
     "P": 10.746944836464671,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 20.632407007421847,
+    "max_reject_sigma": 20.63240700728395,
     "worst_time": 2132.4382874706357,
     "b_circ": 0.816447214737782,
     "e_min_b50": 0.4033471378271703
@@ -2456,7 +2504,7 @@
     "P": 10.693477449218577,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.815659949846399,
     "e_min_b50": 0.4019541637566079
@@ -2466,7 +2514,7 @@
     "P": 10.640539442044227,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 20.103490750384797,
+    "max_reject_sigma": 20.10349075035951,
     "worst_time": 1387.4941211331195,
     "b_circ": 0.8148732307574004,
     "e_min_b50": 0.4005662536107786
@@ -2476,7 +2524,7 @@
     "P": 10.588122991590808,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.158694262905385,
+    "max_reject_sigma": 22.158694263637692,
     "worst_time": 4281.6684329186955,
     "b_circ": 0.8140870504288031,
     "e_min_b50": 0.39918337038229595
@@ -2486,7 +2534,7 @@
     "P": 10.536220427906539,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.8133014018894611,
     "e_min_b50": 0.3978054774926119
@@ -2496,7 +2544,7 @@
     "P": 10.484824230697239,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.868232565438216,
+    "max_reject_sigma": 22.86823256209483,
     "worst_time": 4281.565134157802,
     "b_circ": 0.8125162782378342,
     "e_min_b50": 0.3964325387850883
@@ -2506,7 +2554,7 @@
     "P": 10.433927025693855,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 20.72124460698937,
+    "max_reject_sigma": 20.721244604601445,
     "worst_time": 4281.5142369527985,
     "b_circ": 0.8117316726407817,
     "e_min_b50": 0.39506451851821217
@@ -2516,7 +2564,7 @@
     "P": 10.383521581125285,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.8109475783323814,
     "e_min_b50": 0.3937013813589529
@@ -2526,7 +2574,7 @@
     "P": 10.333600804292953,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 20.35500634289239,
+    "max_reject_sigma": 20.355006342035566,
     "worst_time": 4281.413910731399,
     "b_circ": 0.8101639886127749,
     "e_min_b50": 0.39234309237625636
@@ -2536,7 +2584,7 @@
     "P": 10.284157738243703,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.411791836852416,
+    "max_reject_sigma": 22.411791836388424,
     "worst_time": 1401.800300957112,
     "b_circ": 0.8093808968470334,
     "e_min_b50": 0.3909896170346694
@@ -2546,7 +2594,7 @@
     "P": 10.235185558537781,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 21.8713166955248,
+    "max_reject_sigma": 21.871316700908963,
     "worst_time": 4281.315495485644,
     "b_circ": 0.8085982964640499,
     "e_min_b50": 0.38964092118810123
@@ -2556,7 +2604,7 @@
     "P": 10.186677570108692,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 19.920908823343712,
+    "max_reject_sigma": 19.92090882816878,
     "worst_time": 4281.266987497214,
     "b_circ": 0.8078161809554519,
     "e_min_b50": 0.38829697107370353
@@ -2566,7 +2614,7 @@
     "P": 10.138627204211954,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.089932772040594,
+    "max_reject_sigma": 23.089932771554857,
     "worst_time": 1401.8488111351226,
     "b_circ": 0.8070345438745384,
     "e_min_b50": 0.3869577333058827
@@ -2576,7 +2624,7 @@
     "P": 10.091028015459784,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 22.48928101847432,
+    "max_reject_sigma": 22.4892810216208,
     "worst_time": 4281.1713379425655,
     "b_circ": 0.8062533788352351,
     "e_min_b50": 0.38562317487042624
@@ -2586,7 +2634,7 @@
     "P": 10.043873678938944,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.18617793064818,
+    "max_reject_sigma": 21.186177930597307,
     "worst_time": 1398.5324377505672,
     "b_circ": 0.805472679511074,
     "e_min_b50": 0.3842932631187508
@@ -2596,7 +2644,7 @@
     "P": 9.997157987408995,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.29253186634982,
+    "max_reject_sigma": 22.29253186735462,
     "worst_time": 4281.077467914514,
     "b_circ": 0.8046924396341915,
     "e_min_b50": 0.38296796576226416
@@ -2606,7 +2654,7 @@
     "P": 9.950874848578398,
     "status": "excluded",
     "n_covered": 3,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.8039126529943467,
     "e_min_b50": 0.38164725086683743
@@ -2616,7 +2664,7 @@
     "P": 9.905018282455917,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 21.97501061772764,
+    "max_reject_sigma": 21.97501061713478,
     "worst_time": 4280.985328209561,
     "b_circ": 0.8031333134379595,
     "e_min_b50": 0.38033108684739014
@@ -2626,7 +2674,7 @@
     "P": 9.859582418774927,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.848297718655967,
+    "max_reject_sigma": 22.848297718107112,
     "worst_time": 2131.5509250529462,
     "b_circ": 0.8023544148671675,
     "e_min_b50": 0.37901944246257924
@@ -2636,7 +2684,7 @@
     "P": 9.814561494488283,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 24.017957071478733,
+    "max_reject_sigma": 24.017957071035607,
     "worst_time": 4290.709432916082,
     "b_circ": 0.8015759512389009,
     "e_min_b50": 0.3777122868095924
@@ -2646,7 +2694,7 @@
     "P": 9.769949851331518,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.953330151871718,
+    "max_reject_sigma": 24.95333015176623,
     "worst_time": 2141.2312423368344,
     "b_circ": 0.8007979165639767,
     "e_min_b50": 0.37640958931904483
@@ -2656,7 +2704,7 @@
     "P": 9.72574193345219,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 22.646086847173162,
+    "max_reject_sigma": 22.646086847296218,
     "worst_time": 1392.2606976252569,
     "b_circ": 0.8000203049062083,
     "e_min_b50": 0.3751113197499725
@@ -2666,7 +2714,7 @@
     "P": 9.681932285103306,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.844910024849238,
+    "max_reject_sigma": 22.844910023594693,
     "worst_time": 4290.444174497312,
     "b_circ": 0.7992431103815352,
     "e_min_b50": 0.37381744818492635
@@ -2676,7 +2724,7 @@
     "P": 9.638515548398807,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.192500769959903,
+    "max_reject_sigma": 24.1925007660994,
     "worst_time": 4290.357341023902,
     "b_circ": 0.7984663271571659,
     "e_min_b50": 0.372527945025155
@@ -2686,7 +2734,7 @@
     "P": 9.59548646112917,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.275766124302972,
+    "max_reject_sigma": 24.275766122441198,
     "worst_time": 4280.675796388234,
     "b_circ": 0.7976899494507409,
     "e_min_b50": 0.37124278098588565
@@ -2696,7 +2744,7 @@
     "P": 9.552839854635263,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.87665342454883,
+    "max_reject_sigma": 24.876653423423924,
     "worst_time": 4280.633149781741,
     "b_circ": 0.7969139715295087,
     "e_min_b50": 0.3699619270916911
@@ -2706,7 +2754,7 @@
     "P": 9.510570651738647,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 25.059968194069437,
+    "max_reject_sigma": 25.059968192975912,
     "worst_time": 4280.590880578844,
     "b_circ": 0.796138387709518,
     "e_min_b50": 0.36868535467194785
@@ -2716,7 +2764,7 @@
     "P": 9.468673864726581,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.535758473132983,
+    "max_reject_sigma": 24.535758472133434,
     "worst_time": 4280.548983791832,
     "b_circ": 0.7953631923548262,
     "e_min_b50": 0.3674130353563766
@@ -2726,7 +2774,7 @@
     "P": 9.42714459339006,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.947605614718917,
+    "max_reject_sigma": 24.94760561408782,
     "worst_time": 4280.507454520495,
     "b_circ": 0.7945883798767228,
     "e_min_b50": 0.3661449410706711
@@ -2736,7 +2784,7 @@
     "P": 9.38597802311325,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.73066440750499,
+    "max_reject_sigma": 24.73066440789281,
     "worst_time": 4280.466287950218,
     "b_circ": 0.7938139447329643,
     "e_min_b50": 0.36488104403220434
@@ -2746,7 +2794,7 @@
     "P": 9.345169423012756,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 25.299449667677184,
+    "max_reject_sigma": 25.299449668386448,
     "worst_time": 4280.425479350118,
     "b_circ": 0.7930398814270266,
     "e_min_b50": 0.36362131674581855
@@ -2756,7 +2804,7 @@
     "P": 9.304714144125256,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 22.488805060607337,
+    "max_reject_sigma": 22.48880506156137,
     "worst_time": 4280.385024071231,
     "b_circ": 0.7922661845073706,
     "e_min_b50": 0.3623657319996926
@@ -2766,7 +2814,7 @@
     "P": 9.264607617641957,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.982942350972827,
+    "max_reject_sigma": 24.982942350950918,
     "worst_time": 1389.7873408404566,
     "b_circ": 0.7914928485667193,
     "e_min_b50": 0.3611142628612839
@@ -2776,7 +2824,7 @@
     "P": 9.224845353188558,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 25.17074812881974,
+    "max_reject_sigma": 25.170748128667373,
     "worst_time": 1392.928559732275,
     "b_circ": 0.7907198682413499,
     "e_min_b50": 0.35986688267334754
@@ -2786,7 +2834,7 @@
     "P": 9.18542293714929,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 22.99360846453634,
+    "max_reject_sigma": 22.993608463204602,
     "worst_time": 4280.2657328642545,
     "b_circ": 0.7899472382103986,
     "e_min_b50": 0.3586235650500289
@@ -2796,7 +2844,7 @@
     "P": 9.146336031033762,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 23.772085458783156,
+    "max_reject_sigma": 23.77208545937455,
     "worst_time": 4289.372981989172,
     "b_circ": 0.7891749531951768,
     "e_min_b50": 0.357384283873024
@@ -2806,7 +2854,7 @@
     "P": 9.107580369885314,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 21.344214394280655,
+    "max_reject_sigma": 21.344214394522073,
     "worst_time": 1393.0849130433462,
     "b_circ": 0.7884030079585009,
     "e_min_b50": 0.35614901328781506
@@ -2816,7 +2864,7 @@
     "P": 9.06915176072968,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 22.073482676348785,
+    "max_reject_sigma": 22.073482677842623,
     "worst_time": 4289.218613448565,
     "b_circ": 0.7876313973040334,
     "e_min_b50": 0.354917727699969
@@ -2826,7 +2874,7 @@
     "P": 9.031046081062748,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.405736502054033,
+    "max_reject_sigma": 24.405736503095437,
     "worst_time": 4289.14240208923,
     "b_circ": 0.7868601160756351,
     "e_min_b50": 0.3536904017715069
@@ -2836,7 +2884,7 @@
     "P": 8.993259277376293,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.41604582216287,
+    "max_reject_sigma": 24.41604582151602,
     "worst_time": 4289.066828481858,
     "b_circ": 0.7860891591567306,
     "e_min_b50": 0.3524670104173366
@@ -2846,7 +2894,7 @@
     "P": 8.955787363720559,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 22.92475893703995,
+    "max_reject_sigma": 22.924758940171042,
     "worst_time": 4288.991884654546,
     "b_circ": 0.7853185214696828,
     "e_min_b50": 0.3512475288017495
@@ -2856,7 +2904,7 @@
     "P": 8.918626420302632,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.65789218615509,
+    "max_reject_sigma": 24.657892188933513,
     "worst_time": 4288.9175627677105,
     "b_circ": 0.7845481979751793,
     "e_min_b50": 0.3500319323349804
@@ -2866,7 +2914,7 @@
     "P": 8.881772592119562,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 25.71179456378624,
+    "max_reject_sigma": 25.711794560317873,
     "worst_time": 4279.962082519225,
     "b_circ": 0.7837781836716303,
     "e_min_b50": 0.3488201966698273
@@ -2876,7 +2924,7 @@
     "P": 8.845222087625244,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 25.30085981345267,
+    "max_reject_sigma": 25.30085981285298,
     "worst_time": 4288.770754102356,
     "b_circ": 0.7830084735945753,
     "e_min_b50": 0.34761229769833324
@@ -2886,7 +2934,7 @@
     "P": 8.808971177430058,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.15585115448519,
+    "max_reject_sigma": 22.155851154585694,
     "worst_time": 1390.5467349074763,
     "b_circ": 0.7822390628161009,
     "e_min_b50": 0.34640821154852364
@@ -2896,7 +2944,7 @@
     "P": 8.773016193032383,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 21.77458317110686,
+    "max_reject_sigma": 21.774583173289148,
     "worst_time": 4288.6263423131695,
     "b_circ": 0.7814699464442688,
     "e_min_b50": 0.3452079145812023
@@ -2906,7 +2954,7 @@
     "P": 8.737353525581032,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.780701119622553,
     "e_min_b50": 0.34401138338680465
@@ -2916,7 +2964,7 @@
     "P": 8.701979624667748,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.873457971842058,
+    "max_reject_sigma": 22.873457971791172,
     "worst_time": 1390.7250541620804,
     "b_circ": 0.7799325775292867,
     "e_min_b50": 0.34281859478230386
@@ -2926,7 +2974,7 @@
     "P": 8.666890997148927,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 20.647761986873395,
+    "max_reject_sigma": 20.647761986930952,
     "worst_time": 4288.414091921402,
     "b_circ": 0.7791643153771187,
     "e_min_b50": 0.3416295258081714
@@ -2936,7 +2984,7 @@
     "P": 8.632084205995719,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.830782120999874,
+    "max_reject_sigma": 22.830782118688468,
     "worst_time": 4288.344478339097,
     "b_circ": 0.7783963284124783,
     "e_min_b50": 0.34044415372538905
@@ -2946,7 +2994,7 @@
     "P": 8.597555869171735,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 25.11726356411332,
+    "max_reject_sigma": 25.117263562478975,
     "worst_time": 4288.275421665448,
     "b_circ": 0.7776286119150505,
     "e_min_b50": 0.339262456012514
@@ -2956,7 +3004,7 @@
     "P": 8.563302658537586,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 23.199920726330404,
+    "max_reject_sigma": 23.199920727618352,
     "worst_time": 4288.20691524418,
     "b_circ": 0.7768611611972578,
     "e_min_b50": 0.33808441036279335
@@ -2966,7 +3014,7 @@
     "P": 8.529321298781484,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.585131818760217,
+    "max_reject_sigma": 24.58513182060714,
     "worst_time": 4288.138952524669,
     "b_circ": 0.776093971603753,
     "e_min_b50": 0.3369099946813286
@@ -2976,7 +3024,7 @@
     "P": 8.495608566375234,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.267701950423557,
+    "max_reject_sigma": 23.267701950470627,
     "worst_time": 4288.071527059856,
     "b_circ": 0.7753270385109183,
     "e_min_b50": 0.3357391870822856
@@ -2986,7 +3034,7 @@
     "P": 8.462161288554858,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.739530332800033,
+    "max_reject_sigma": 23.73953033278796,
     "worst_time": 4288.004632504215,
     "b_circ": 0.7745603573263731,
     "e_min_b50": 0.33457196588615595
@@ -2996,7 +3044,7 @@
     "P": 8.428976342325232,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 25.10217204530893,
+    "max_reject_sigma": 25.102172045869246,
     "worst_time": 4287.938262611756,
     "b_circ": 0.7737939234884907,
     "e_min_b50": 0.3334083096170611
@@ -3006,7 +3054,7 @@
     "P": 8.396050653488023,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.52455159126887,
+    "max_reject_sigma": 22.52455159064096,
     "worst_time": 4287.872411234081,
     "b_circ": 0.7730277324659219,
     "e_min_b50": 0.33224819700010255
@@ -3016,7 +3064,7 @@
     "P": 8.36338119569235,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.611388402464122,
+    "max_reject_sigma": 22.611388402743305,
     "worst_time": 4287.80707231849,
     "b_circ": 0.7722617797571264,
     "e_min_b50": 0.33109160695875933
@@ -3026,7 +3074,7 @@
     "P": 8.330964989507496,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.192264796919826,
+    "max_reject_sigma": 22.192264796651283,
     "worst_time": 1396.897388547019,
     "b_circ": 0.7714960608899115,
     "e_min_b50": 0.3299385186123234
@@ -3036,7 +3084,7 @@
     "P": 8.298799101517119,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 20.868982110908703,
+    "max_reject_sigma": 20.868982110505975,
     "worst_time": 1399.695820802182,
     "b_circ": 0.770730571420979,
     "e_min_b50": 0.3287889112733824
@@ -3046,7 +3094,7 @@
     "P": 8.266880643434362,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.20363883644509,
+    "max_reject_sigma": 22.20363883395217,
     "worst_time": 4287.614071213974,
     "b_circ": 0.769965306935478,
     "e_min_b50": 0.3276427644453418
@@ -3056,7 +3104,7 @@
     "P": 8.235206771237294,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 23.084658725741317,
+    "max_reject_sigma": 23.084658724903047,
     "worst_time": 4287.55072346958,
     "b_circ": 0.7692002630465663,
     "e_min_b50": 0.32650005781998853
@@ -3066,7 +3114,7 @@
     "P": 8.203774684324175,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.536686684736807,
+    "max_reject_sigma": 22.536686684043588,
     "worst_time": 4287.487859295754,
     "b_circ": 0.768435435394976,
     "e_min_b50": 0.3253607712750949
@@ -3076,7 +3124,7 @@
     "P": 8.172581624687963,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.363948303208005,
+    "max_reject_sigma": 22.363948303207994,
     "worst_time": 1386.1589964122545,
     "b_circ": 0.76767081964859,
     "e_min_b50": 0.3242248848720599
@@ -3086,7 +3134,7 @@
     "P": 8.1416248761096,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.766722456994824,
+    "max_reject_sigma": 22.76672245807226,
     "worst_time": 4287.363559679325,
     "b_circ": 0.76690641150202,
     "e_min_b50": 0.3230923788535916
@@ -3096,7 +3144,7 @@
     "P": 8.110901763369561,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.47647971004724,
+    "max_reject_sigma": 23.47647971029753,
     "worst_time": 4287.302113453844,
     "b_circ": 0.766142206676196,
     "e_min_b50": 0.32196323364142543
@@ -3106,7 +3154,7 @@
     "P": 8.080409651477195,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 24.617284971562984,
+    "max_reject_sigma": 24.617284971867218,
     "worst_time": 1394.4544740012236,
     "b_circ": 0.7653782009179577,
     "e_min_b50": 0.32083742983408026
@@ -3116,7 +3164,7 @@
     "P": 8.050145944917356,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.936414777074965,
+    "max_reject_sigma": 22.93641477711105,
     "worst_time": 1397.1782075916092,
     "b_circ": 0.764614389999655,
     "e_min_b50": 0.31971494820464846
@@ -3126,7 +3174,7 @@
     "P": 8.020108086913933,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 20.95078972872884,
+    "max_reject_sigma": 20.950789729733437,
     "worst_time": 4287.120526100933,
     "b_circ": 0.7638507697187542,
     "e_min_b50": 0.3185957696986267
@@ -3136,7 +3184,7 @@
     "P": 7.990293558709792,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.529059547046252,
+    "max_reject_sigma": 21.529059547401467,
     "worst_time": 4287.060897044525,
     "b_circ": 0.7630873358974481,
     "e_min_b50": 0.31747987543177375
@@ -3146,7 +3194,7 @@
     "P": 7.960699878862719,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 24.689693778364028,
+    "max_reject_sigma": 24.68969377822616,
     "worst_time": 1397.2676536576637,
     "b_circ": 0.7623240843822744,
     "e_min_b50": 0.3163672466880101
@@ -3156,7 +3204,7 @@
     "P": 7.931324602556952,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.362390791401875,
+    "max_reject_sigma": 22.362390789311963,
     "worst_time": 4286.942959132219,
     "b_circ": 0.7615610110437381,
     "e_min_b50": 0.3152578649173452
@@ -3166,7 +3214,7 @@
     "P": 7.902165320929904,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.298688766491022,
+    "max_reject_sigma": 22.298688767418557,
     "worst_time": 1402.5942984295498,
     "b_circ": 0.7607981117759403,
     "e_min_b50": 0.3141517117338407
@@ -3176,7 +3224,7 @@
     "P": 7.873219660413677,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 21.823253498799897,
+    "max_reject_sigma": 21.823253499713918,
     "worst_time": 4286.826749247933,
     "b_circ": 0.7600353824962127,
     "e_min_b50": 0.31304876891360534
@@ -3186,7 +3234,7 @@
     "P": 7.844485282091,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.209344385310573,
+    "max_reject_sigma": 22.209344385074473,
     "worst_time": 4286.769280491288,
     "b_circ": 0.7592728191447562,
     "e_min_b50": 0.3119490183928198
@@ -3196,7 +3244,7 @@
     "P": 7.815959881065215,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.869562605505283,
+    "max_reject_sigma": 23.869562605527083,
     "worst_time": 1386.991113814041,
     "b_circ": 0.7585104176842854,
     "e_min_b50": 0.31085244226579417
@@ -3206,7 +3254,7 @@
     "P": 7.787641185843964,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.79488851668918,
+    "max_reject_sigma": 22.794888518291607,
     "worst_time": 4286.655592298794,
     "b_circ": 0.7577481740996791,
     "e_min_b50": 0.3097590227830545
@@ -3216,7 +3264,7 @@
     "P": 7.759526957736224,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.432288776090015,
+    "max_reject_sigma": 21.432288776311303,
     "worst_time": 1392.2958086069661,
     "b_circ": 0.7569860843976344,
     "e_min_b50": 0.30866874234946073
@@ -3226,7 +3274,7 @@
     "P": 7.7316149902623525,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.334548273704137,
+    "max_reject_sigma": 22.33454827340184,
     "worst_time": 4286.5435399076305,
     "b_circ": 0.7562241446063267,
     "e_min_b50": 0.3075815835223519
@@ -3236,7 +3284,7 @@
     "P": 7.703903108576824,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.820905679893364,
+    "max_reject_sigma": 22.820905679832826,
     "worst_time": 1389.820547319373,
     "b_circ": 0.7554623507750734,
     "e_min_b50": 0.3064975290097204
@@ -3246,7 +3294,7 @@
     "P": 7.676389168903336,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.056255083671058,
+    "max_reject_sigma": 23.056255083518707,
     "worst_time": 1392.4343715883542,
     "b_circ": 0.7547006989740044,
     "e_min_b50": 0.3054165616684158
@@ -3256,7 +3304,7 @@
     "P": 7.649071057981971,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.69997224275203,
+    "max_reject_sigma": 22.699972241901122,
     "worst_time": 4286.378452043069,
     "b_circ": 0.7539391852937343,
     "e_min_b50": 0.3043386645023749
@@ -3266,7 +3314,7 @@
     "P": 7.621946692528135,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.13171530127024,
+    "max_reject_sigma": 22.13171530127017,
     "worst_time": 1389.98446015147,
     "b_circ": 0.7531778058450421,
     "e_min_b50": 0.3032638206608779
@@ -3276,7 +3324,7 @@
     "P": 7.595014018702947,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 20.722720022743992,
+    "max_reject_sigma": 20.72272002286463,
     "worst_time": 1392.5699968386884,
     "b_circ": 0.7524165567585528,
     "e_min_b50": 0.30219201343683305
@@ -3286,7 +3334,7 @@
     "P": 7.568271011594838,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.902223444475453,
+    "max_reject_sigma": 21.902223446606815,
     "worst_time": 4286.216851950295,
     "b_circ": 0.7516554341844256,
     "e_min_b50": 0.3011232262650873
@@ -3296,7 +3344,7 @@
     "P": 7.541715674712049,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.7508944342920439,
     "e_min_b50": 0.3000574427207594
@@ -3306,7 +3354,7 @@
     "P": 7.515346039485784,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.92598382181775,
+    "max_reject_sigma": 22.92598382384345,
     "worst_time": 4286.111002006077,
     "b_circ": 0.7501335532697128,
     "e_min_b50": 0.2989946465176024
@@ -3316,7 +3364,7 @@
     "P": 7.489160164783742,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 20.263202133599684,
+    "max_reject_sigma": 20.26320213310205,
     "worst_time": 4286.058630256673,
     "b_circ": 0.7493727873243565,
     "e_min_b50": 0.29793482150638806
@@ -3326,7 +3374,7 @@
     "P": 7.463156136433799,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.867826867209022,
+    "max_reject_sigma": 22.867826867078413,
     "worst_time": 1390.3020412636588,
     "b_circ": 0.7486121326812236,
     "e_min_b50": 0.2968779516733161
@@ -3336,7 +3384,7 @@
     "P": 7.437332066757557,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 24.012365067763728,
+    "max_reject_sigma": 24.0123650675244,
     "worst_time": 1392.8328000919305,
     "b_circ": 0.7478515855835938,
     "e_min_b50": 0.2958240211384469
@@ -3346,7 +3394,7 @@
     "P": 7.411686094113565,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.215361645689715,
+    "max_reject_sigma": 21.215361642463645,
     "worst_time": 4285.903682115332,
     "b_circ": 0.7470911422924897,
     "e_min_b50": 0.2947730141541574
@@ -3356,7 +3404,7 @@
     "P": 7.386216382449945,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.492253876887396,
+    "max_reject_sigma": 22.49225387676404,
     "worst_time": 1397.8421371540767,
     "b_circ": 0.746330799086392,
     "e_min_b50": 0.29372491510362125
@@ -3366,7 +3414,7 @@
     "P": 7.360921120866212,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.157441773394762,
+    "max_reject_sigma": 23.157441773528806,
     "worst_time": 1392.960151668416,
     "b_circ": 0.7455705522609586,
     "e_min_b50": 0.292679708499309
@@ -3376,7 +3424,7 @@
     "P": 7.335798523184075,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.443738933037366,
+    "max_reject_sigma": 23.443738934459617,
     "worst_time": 4285.7519069734735,
     "b_circ": 0.7448103981287462,
     "e_min_b50": 0.2916373789815135
@@ -3386,7 +3434,7 @@
     "P": 7.310846827526986,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 21.88340406145153,
+    "max_reject_sigma": 21.883404061599002,
     "worst_time": 1390.6066598814725,
     "b_circ": 0.7440503330189376,
     "e_min_b50": 0.2905979113168921
@@ -3396,7 +3444,7 @@
     "P": 7.286064295908251,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 21.377459884966303,
+    "max_reject_sigma": 21.37745988647054,
     "worst_time": 4285.652438518922,
     "b_circ": 0.7432903532770706,
     "e_min_b50": 0.2895612903970361
@@ -3406,7 +3454,7 @@
     "P": 7.26144921382748,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 20.65592138071725,
+    "max_reject_sigma": 20.655921381772796,
     "worst_time": 2136.214241061826,
     "b_circ": 0.7425304552647713,
     "e_min_b50": 0.2885275012370572
@@ -3416,7 +3464,7 @@
     "P": 7.236999889875198,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.74177063535949,
     "e_min_b50": 0.28749652897419337
@@ -3436,7 +3484,7 @@
     "P": 7.188591863855967,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.246960945401927,
+    "max_reject_sigma": 22.24696094633349,
     "worst_time": 2136.068526361883,
     "b_circ": 0.7402512154573464,
     "e_min_b50": 0.28544297629119486
@@ -3446,7 +3494,7 @@
     "P": 7.164629890976447,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.51980498588465,
+    "max_reject_sigma": 22.519804986718377,
     "worst_time": 2136.020602416124,
     "b_circ": 0.7394916082921804,
     "e_min_b50": 0.28442036674392707
@@ -3456,7 +3504,7 @@
     "P": 7.140827133863568,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.732082047550392,
+    "max_reject_sigma": 22.732082049450657,
     "worst_time": 4285.361964194832,
     "b_circ": 0.73873206489692,
     "e_min_b50": 0.2834005158368632
@@ -3466,7 +3514,7 @@
     "P": 7.117182010903755,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 22.00737710747507,
+    "max_reject_sigma": 22.00737710694542,
     "worst_time": 4285.314673948913,
     "b_circ": 0.737972581724296,
     "e_min_b50": 0.282383409297691
@@ -3476,7 +3524,7 @@
     "P": 7.093692961362819,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.7372131552413489,
     "e_min_b50": 0.281369032968283
@@ -3486,7 +3534,7 @@
     "P": 7.0703584450425465,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 21.920528443618984,
+    "max_reject_sigma": 21.920528443684066,
     "worst_time": 1400.5147812398313,
     "b_circ": 0.7364537819291864,
     "e_min_b50": 0.28035737280344075
@@ -3496,7 +3544,7 @@
     "P": 7.047176941944046,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.554099064156528,
+    "max_reject_sigma": 23.554099063489947,
     "worst_time": 4285.174663810993,
     "b_circ": 0.7356944582827449,
     "e_min_b50": 0.27934841486965034
@@ -3506,7 +3554,7 @@
     "P": 7.024146951937693,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 23.78008467195675,
+    "max_reject_sigma": 23.780084670384905,
     "worst_time": 4285.128603830981,
     "b_circ": 0.7349351808105521,
     "e_min_b50": 0.2783421453438613
@@ -3516,7 +3564,7 @@
     "P": 7.001266994439525,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.989289627765366,
+    "max_reject_sigma": 22.98928962739151,
     "worst_time": 4285.082843915985,
     "b_circ": 0.7341759460344948,
     "e_min_b50": 0.2773385505122812
@@ -3526,7 +3574,7 @@
     "P": 6.978535608093941,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.29999969478173,
+    "max_reject_sigma": 23.299999694886854,
     "worst_time": 4285.037381143293,
     "b_circ": 0.733416750489587,
     "e_min_b50": 0.2763376167691847
@@ -3536,7 +3584,7 @@
     "P": 6.95595135046257,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 23.698671512224184,
+    "max_reject_sigma": 23.698671514767607,
     "worst_time": 4284.992212628031,
     "b_circ": 0.7326575907237426,
     "e_min_b50": 0.27533933061574245
@@ -3546,7 +3594,7 @@
     "P": 6.933512797719142,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 23.34044172077163,
+    "max_reject_sigma": 23.340441722531278,
     "worst_time": 4284.947335522544,
     "b_circ": 0.7318984632975488,
     "e_min_b50": 0.27434367865886516
@@ -3556,7 +3604,7 @@
     "P": 6.9112185443502705,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 25.635865659017323,
+    "max_reject_sigma": 25.635865661004246,
     "worst_time": 4284.902747015805,
     "b_circ": 0.7311393647840433,
     "e_min_b50": 0.27335064761006067
@@ -3566,7 +3614,7 @@
     "P": 6.889067202861968,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 25.044684514436977,
+    "max_reject_sigma": 25.044684515592976,
     "worst_time": 4284.858444332829,
     "b_circ": 0.7303802917684942,
     "e_min_b50": 0.2723602242843142
@@ -3576,7 +3624,7 @@
     "P": 6.867057403491802,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 25.1398929033665,
+    "max_reject_sigma": 25.139892904067906,
     "worst_time": 4284.814424734089,
     "b_circ": 0.7296212408481816,
     "e_min_b50": 0.2713723955989754
@@ -3586,7 +3634,7 @@
     "P": 6.8451877939265415,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.334586573653713,
+    "max_reject_sigma": 23.334586574741746,
     "worst_time": 2135.381718222024,
     "b_circ": 0.7288622086321812,
     "e_min_b50": 0.2703871485726661
@@ -3596,7 +3644,7 @@
     "P": 6.823457039025187,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 23.533668012470997,
+    "max_reject_sigma": 23.53366801253262,
     "worst_time": 4284.727224005155,
     "b_circ": 0.7281031917411521,
     "e_min_b50": 0.2694044703242028
@@ -3606,7 +3654,7 @@
     "P": 6.8018638205472595,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.609280394186094,
+    "max_reject_sigma": 22.60928039365253,
     "worst_time": 4284.6840375681995,
     "b_circ": 0.7273441868071241,
     "e_min_b50": 0.2684243480715311
@@ -3616,7 +3664,7 @@
     "P": 6.780406836886227,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 23.246837336072886,
+    "max_reject_sigma": 23.246837338166326,
     "worst_time": 4284.641123600877,
     "b_circ": 0.7265851904732905,
     "e_min_b50": 0.267446769130677
@@ -3626,7 +3674,7 @@
     "P": 6.759084802807968,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 22.521607729389906,
+    "max_reject_sigma": 22.52160773194041,
     "worst_time": 4284.59847953272,
     "b_circ": 0.7258261993938002,
     "e_min_b50": 0.2664717209147116
@@ -3636,7 +3684,7 @@
     "P": 6.73789644919415,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 23.301238030482175,
+    "max_reject_sigma": 23.30123803427368,
     "worst_time": 4284.556102825493,
     "b_circ": 0.7250672102335536,
     "e_min_b50": 0.2654991909327293
@@ -3646,7 +3694,7 @@
     "P": 6.716840522790418,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 25.198763302913534,
+    "max_reject_sigma": 25.198763302884377,
     "worst_time": 1389.5557256500156,
     "b_circ": 0.7243082196680005,
     "e_min_b50": 0.2645291667888422
@@ -3656,7 +3704,7 @@
     "P": 6.695915785959296,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 23.260822194386343,
+    "max_reject_sigma": 23.260822195275182,
     "worst_time": 4284.472141499024,
     "b_circ": 0.7235492243829392,
     "e_min_b50": 0.2635616361811832
@@ -3666,7 +3714,7 @@
     "P": 6.675121016437683,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 24.50434904760598,
+    "max_reject_sigma": 24.504349047239607,
     "worst_time": 4284.43055195998,
     "b_circ": 0.7227902210743189,
     "e_min_b50": 0.2625965869009295
@@ -3676,7 +3724,7 @@
     "P": 6.654455007098867,
     "status": "excluded",
     "n_covered": 4,
-    "max_reject_sigma": 24.452871397206682,
+    "max_reject_sigma": 24.452871398610924,
     "worst_time": 4284.389219941303,
     "b_circ": 0.722031206448043,
     "e_min_b50": 0.26163400683133076
@@ -3686,7 +3734,7 @@
     "P": 6.633916565718932,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 23.878496436690682,
+    "max_reject_sigma": 23.878496439553427,
     "worst_time": 4284.348143058543,
     "b_circ": 0.7212721772197747,
     "e_min_b50": 0.26067388394675745
@@ -3696,7 +3744,7 @@
     "P": 6.613504514747489,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 22.92446314689718,
+    "max_reject_sigma": 22.924463149382433,
     "worst_time": 4284.3073189566,
     "b_circ": 0.7205131301147454,
     "e_min_b50": 0.25971620631175835
@@ -3706,7 +3754,7 @@
     "P": 6.59321769108262,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 24.261657090749686,
+    "max_reject_sigma": 24.261657090785764,
     "worst_time": 1389.8441789240005,
     "b_circ": 0.7197540618675631,
     "e_min_b50": 0.2587609620801307
@@ -3716,7 +3764,7 @@
     "P": 6.573054945849951,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 23.012350284699327,
+    "max_reject_sigma": 23.012350284056975,
     "worst_time": 4284.226419818805,
     "b_circ": 0.7189949692220242,
     "e_min_b50": 0.25780813949400405
@@ -3726,7 +3774,7 @@
     "P": 6.553015144185775,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 23.01919933866134,
+    "max_reject_sigma": 23.019199338646693,
     "worst_time": 1394.30666162955,
     "b_circ": 0.7182358489309272,
     "e_min_b50": 0.25685772688293385
@@ -3736,7 +3784,7 @@
     "P": 6.533097165024116,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 25.11194356136112,
+    "max_reject_sigma": 25.111943562164416,
     "worst_time": 4284.1465042571535,
     "b_circ": 0.717476697755887,
     "e_min_b50": 0.2559097126630087
@@ -3746,7 +3794,7 @@
     "P": 6.513299900887679,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 25.166257685100327,
+    "max_reject_sigma": 25.16625768549605,
     "worst_time": 4284.10690972888,
     "b_circ": 0.7167175124671513,
     "e_min_b50": 0.25496408533597015
@@ -3756,7 +3804,7 @@
     "P": 6.49362225768258,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 25.11707145572982,
+    "max_reject_sigma": 25.117071454440353,
     "worst_time": 4284.06755444247,
     "b_circ": 0.7159582898434197,
     "e_min_b50": 0.2540208334883405
@@ -3766,7 +3814,7 @@
     "P": 6.474063154496789,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 23.884788240810952,
+    "max_reject_sigma": 23.88478824026591,
     "worst_time": 4284.028436236098,
     "b_circ": 0.7151990266716632,
     "e_min_b50": 0.253079945790567
@@ -3776,7 +3824,7 @@
     "P": 6.454621523402205,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 23.0424640937223,
+    "max_reject_sigma": 23.042464093856417,
     "worst_time": 4283.98955297391,
     "b_circ": 0.7144397197469462,
     "e_min_b50": 0.2521414109961709
@@ -3786,7 +3834,7 @@
     "P": 6.4352963092602815,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 23.58004095357199,
+    "max_reject_sigma": 23.580040950404413,
     "worst_time": 4290.386198854886,
     "b_circ": 0.7136803658722489,
     "e_min_b50": 0.25120521794091405
@@ -3796,7 +3844,7 @@
     "P": 6.416086469531146,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 23.2643023720123,
+    "max_reject_sigma": 23.264302372625387,
     "worst_time": 4283.912482866168,
     "b_circ": 0.7129209618582933,
     "e_min_b50": 0.25027135554197116
@@ -3806,7 +3854,7 @@
     "P": 6.396990974086113,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 24.026677807242603,
+    "max_reject_sigma": 24.026677807235355,
     "worst_time": 1386.0373806142682,
     "b_circ": 0.7121615045233688,
     "e_min_b50": 0.24933981279711587
@@ -3816,7 +3864,7 @@
     "P": 6.378008805023543,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 23.7884008772174,
+    "max_reject_sigma": 23.788400875394736,
     "worst_time": 4283.836327537152,
     "b_circ": 0.7114019906931598,
     "e_min_b50": 0.24841057878391448
@@ -3826,7 +3874,7 @@
     "P": 6.35913895648797,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 23.882861274785576,
+    "max_reject_sigma": 23.882861274763673,
     "worst_time": 1390.3903626380547,
     "b_circ": 0.710642417200576,
     "e_min_b50": 0.24748364265893377
@@ -3836,7 +3884,7 @@
     "P": 6.340380434492431,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.7098827808855817,
     "e_min_b50": 0.24655899365695502
@@ -3846,7 +3894,7 @@
     "P": 6.321732256743924,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 23.571469506289624,
+    "max_reject_sigma": 23.571469505977827,
     "worst_time": 1401.013865365364,
     "b_circ": 0.7091230785950293,
     "e_min_b50": 0.24563662109020004
@@ -3856,7 +3904,7 @@
     "P": 6.303193452471947,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 25.366529413235554,
+    "max_reject_sigma": 25.366529413264377,
     "worst_time": 1396.8240955998972,
     "b_circ": 0.708363307182492,
     "e_min_b50": 0.244716514347567
@@ -3866,7 +3914,7 @@
     "P": 6.2847630622600406,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 22.108601632899223,
+    "max_reject_sigma": 22.108601633036777,
     "worst_time": 1392.6588274120065,
     "b_circ": 0.7076034635080989,
     "e_min_b50": 0.2437986628938758
@@ -3876,7 +3924,7 @@
     "P": 6.266440137880274,
     "status": "excluded",
     "n_covered": 5,
-    "max_reject_sigma": 24.475163475263276,
+    "max_reject_sigma": 24.475163475118162,
     "worst_time": 1401.0507267779399,
     "b_circ": 0.7068435444383715,
     "e_min_b50": 0.2428830562691221
@@ -3886,7 +3934,7 @@
     "P": 6.248223742130622,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 22.192264796919826,
+    "max_reject_sigma": 22.192264796651283,
     "worst_time": 1396.897388547019,
     "b_circ": 0.7060835468460602,
     "e_min_b50": 0.241969684087742
@@ -3896,7 +3944,7 @@
     "P": 6.230112948675171,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.7053234676099839,
     "e_min_b50": 0.2410585360378844
@@ -3906,7 +3954,7 @@
     "P": 6.212106841887093,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 22.95669450008409,
+    "max_reject_sigma": 22.956694499936322,
     "worst_time": 1401.0869489752686,
     "b_circ": 0.7045633036148702,
     "e_min_b50": 0.2401496018806952
@@ -3916,7 +3964,7 @@
     "P": 6.1942045166943345,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 22.08937860875747,
+    "max_reject_sigma": 22.089378608590632,
     "worst_time": 1396.969414180934,
     "b_circ": 0.7038030517511952,
     "e_min_b50": 0.23924287144960615
@@ -3926,7 +3974,7 @@
     "P": 6.176405078427972,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 23.51500503134898,
+    "max_reject_sigma": 23.515005031334454,
     "worst_time": 1386.6991383012426,
     "b_circ": 0.7030427089150278,
     "e_min_b50": 0.23833833464963733
@@ -3936,7 +3984,7 @@
     "P": 6.158707642673163,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 23.22890914182218,
+    "max_reject_sigma": 23.2289091416006,
     "worst_time": 1401.122548441411,
     "b_circ": 0.702282272007871,
     "e_min_b50": 0.23743598145670414
@@ -3946,7 +3994,7 @@
     "P": 6.141111335122669,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 20.582762282208872,
+    "max_reject_sigma": 20.582762282208737,
     "worst_time": 1397.0402050896964,
     "b_circ": 0.7015217379365086,
     "e_min_b50": 0.23653580191693557
@@ -3956,7 +4004,7 @@
     "P": 6.12361529143286,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 22.820883324580528,
+    "max_reject_sigma": 22.820883324788383,
     "worst_time": 1392.9811229536608,
     "b_circ": 0.7007611036128497,
     "e_min_b50": 0.23563778614599937
@@ -3966,7 +4014,7 @@
     "P": 6.106218657082199,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 26.202043605494048,
+    "max_reject_sigma": 26.202043605363418,
     "worst_time": 1401.1575410984717,
     "b_circ": 0.7000003659537752,
     "e_min_b50": 0.23474192432843702
@@ -3976,7 +4024,7 @@
     "P": 6.088920587232107,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 24.66148087295105,
+    "max_reject_sigma": 24.661480873307507,
     "worst_time": 4289.347071688801,
     "b_circ": 0.6992395218809875,
     "e_min_b50": 0.23384820671700515
@@ -3986,7 +4034,7 @@
     "P": 6.071720246590209,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 23.8000578768629,
+    "max_reject_sigma": 23.800057876877467,
     "worst_time": 1387.013192796756,
     "b_circ": 0.698478568320857,
     "e_min_b50": 0.23295662363202552
@@ -3996,7 +4044,7 @@
     "P": 6.0546168092758705,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 24.536759577641565,
+    "max_reject_sigma": 24.536759578962084,
     "worst_time": 4283.189543545657,
     "b_circ": 0.6977175022042734,
     "e_min_b50": 0.232067165460744
@@ -4006,7 +4054,7 @@
     "P": 6.037609458688017,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 25.645333707907845,
+    "max_reject_sigma": 25.645333710357228,
     "worst_time": 4289.19313830317,
     "b_circ": 0.6969563204664971,
     "e_min_b50": 0.23117982265669634
@@ -4016,7 +4064,7 @@
     "P": 6.020697387375165,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 24.405736502054033,
+    "max_reject_sigma": 24.405736503095437,
     "worst_time": 4289.14240208923,
     "b_circ": 0.696195020047009,
     "e_min_b50": 0.23029458573908085
@@ -4026,7 +4074,7 @@
     "P": 6.003879796907637,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 25.94866242267124,
+    "max_reject_sigma": 25.948662422656575,
     "worst_time": 1401.2257670052547,
     "b_circ": 0.6954335978893651,
     "e_min_b50": 0.2294114452921409
@@ -4036,7 +4084,7 @@
     "P": 5.987155897751905,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 24.643876429937908,
+    "max_reject_sigma": 24.643876429620285,
     "worst_time": 4289.041777620361,
     "b_circ": 0.6946720509410493,
     "e_min_b50": 0.22853039196455266
@@ -4046,7 +4094,7 @@
     "P": 5.970524909147039,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 24.073916692527764,
+    "max_reject_sigma": 24.073916691982753,
     "worst_time": 4283.0213597453985,
     "b_circ": 0.6939103761533287,
     "e_min_b50": 0.22765141646882173
@@ -4056,7 +4104,7 @@
     "P": 5.9539860589831965,
     "status": "excluded",
     "n_covered": 6,
-    "max_reject_sigma": 25.85293793424973,
+    "max_reject_sigma": 25.852937934380016,
     "worst_time": 1401.2590294972044,
     "b_circ": 0.6931485704811076,
     "e_min_b50": 0.22677450958068587
@@ -4066,7 +4114,7 @@
     "P": 5.937538583682138,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 22.48844622965682,
+    "max_reject_sigma": 22.4884462253135,
     "worst_time": 4282.955387094469,
     "b_circ": 0.6923866308827855,
     "e_min_b50": 0.2258996621385267
@@ -4076,7 +4124,7 @@
     "P": 5.921181728079708,
     "status": "excluded",
     "n_covered": 9,
-    "max_reject_sigma": 24.23709735460575,
+    "max_reject_sigma": 24.237097352720454,
     "worst_time": 4282.922673383265,
     "b_circ": 0.6916245543201124,
     "e_min_b50": 0.22502686504278396
@@ -4086,7 +4134,7 @@
     "P": 5.904914745310259,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 24.914749033821185,
+    "max_reject_sigma": 24.914749033660367,
     "worst_time": 4288.795054163036,
     "b_circ": 0.6908623377580482,
     "e_min_b50": 0.22415610925538437
@@ -4096,7 +4144,7 @@
     "P": 5.88873689669297,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 22.31802849220012,
+    "max_reject_sigma": 22.31802849377896,
     "worst_time": 4282.857783720491,
     "b_circ": 0.6900999781646208,
     "e_min_b50": 0.22328738579916904
@@ -4106,7 +4154,7 @@
     "P": 5.872647451620038,
     "status": "excluded",
     "n_covered": 9,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365266,
     "b_circ": 0.6893374725107844,
     "e_min_b50": 0.22242068575733318
@@ -4116,7 +4164,7 @@
     "P": 5.856645687446687,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 25.146270073870248,
+    "max_reject_sigma": 25.146270073746873,
     "worst_time": 1401.3239230782287,
     "b_circ": 0.6885748177702818,
     "e_min_b50": 0.2215560002728699
@@ -4126,7 +4174,7 @@
     "P": 5.840730889382973,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 22.325426080545363,
+    "max_reject_sigma": 22.325426080457987,
     "worst_time": 1397.4407123506826,
     "b_circ": 0.6878120109195036,
     "e_min_b50": 0.2206933205480226
@@ -4136,7 +4184,7 @@
     "P": 5.824902350387355,
     "status": "excluded",
     "n_covered": 9,
-    "max_reject_sigma": 23.813057088052975,
+    "max_reject_sigma": 23.813057089396903,
     "worst_time": 4282.7301146278805,
     "b_circ": 0.6870490489373501,
     "e_min_b50": 0.21983263784374057
@@ -4146,7 +4194,7 @@
     "P": 5.809159371061984,
     "status": "excluded",
     "n_covered": 7,
-    "max_reject_sigma": 25.836874227725584,
+    "max_reject_sigma": 25.83687422868575,
     "worst_time": 4282.698628669229,
     "b_circ": 0.6862859288050935,
     "e_min_b50": 0.2189739434791442
@@ -4156,7 +4204,7 @@
     "P": 5.7935012595496875,
     "status": "excluded",
     "n_covered": 9,
-    "max_reject_sigma": 25.138065426092055,
+    "max_reject_sigma": 25.13806542759074,
     "worst_time": 4282.667312446205,
     "b_circ": 0.685522647506242,
     "e_min_b50": 0.21811722883099496
@@ -4166,7 +4214,7 @@
     "P": 5.777927331432618,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 21.79626844650763,
+    "max_reject_sigma": 21.796268445809655,
     "worst_time": 1405.2283535365264,
     "b_circ": 0.6847592020264003,
     "e_min_b50": 0.2172624853331714
@@ -4176,7 +4224,7 @@
     "P": 5.762436909632531,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 25.50922241163429,
+    "max_reject_sigma": 25.509222411496417,
     "worst_time": 1401.3867289301047,
     "b_circ": 0.6839955893531372,
     "e_min_b50": 0.21640970447615093
@@ -4186,7 +4234,7 @@
     "P": 5.747029324312658,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 23.448213438506517,
+    "max_reject_sigma": 23.448213434961573,
     "worst_time": 4288.321397900043,
     "b_circ": 0.6832318064758481,
     "e_min_b50": 0.21555887780650057
@@ -4196,7 +4244,7 @@
     "P": 5.731703912781158,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 25.11726356411332,
+    "max_reject_sigma": 25.117263562478975,
     "worst_time": 4288.275421665448,
     "b_circ": 0.6824678503856211,
     "e_min_b50": 0.2147099969263682
@@ -4206,7 +4254,7 @@
     "P": 5.716460019396101,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 24.806767549558888,
+    "max_reject_sigma": 24.806767548943444,
     "worst_time": 4288.229689985294,
     "b_circ": 0.6817037180751025,
     "e_min_b50": 0.2138630534929842
@@ -4216,7 +4264,7 @@
     "P": 5.701296995471973,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.083999520136754,
+    "max_reject_sigma": 24.08399952130044,
     "worst_time": 4282.4829039180495,
     "b_circ": 0.6809394065383637,
     "e_min_b50": 0.21301803921816775
@@ -4226,7 +4274,7 @@
     "P": 5.686214199187656,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.585131818760217,
+    "max_reject_sigma": 24.58513182060714,
     "worst_time": 4288.138952524669,
     "b_circ": 0.6801749127707672,
     "e_min_b50": 0.2121749458678376
@@ -4236,7 +4284,7 @@
     "P": 5.671210995495868,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 25.315596009347004,
+    "max_reject_sigma": 25.3155960093106,
     "worst_time": 1401.447546206196,
     "b_circ": 0.6794102337688355,
     "e_min_b50": 0.2113337652615292
@@ -4246,7 +4294,7 @@
     "P": 5.656286756034037,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.375805544903596,
+    "max_reject_sigma": 24.375805545698267,
     "worst_time": 4282.392883439174,
     "b_circ": 0.6786453665301166,
     "e_min_b50": 0.21049448927191777
@@ -4256,7 +4304,7 @@
     "P": 5.641440859036572,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 25.79581339085074,
+    "max_reject_sigma": 25.795813392555516,
     "worst_time": 4282.363191645178,
     "b_circ": 0.677880308053056,
     "e_min_b50": 0.20965710982434613
@@ -4266,7 +4314,7 @@
     "P": 5.626672689248518,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 24.626727130594745,
+    "max_reject_sigma": 24.626727130590645,
     "worst_time": 4287.960327994851,
     "b_circ": 0.677115055336861,
     "e_min_b50": 0.208821618896358
@@ -4276,7 +4324,7 @@
     "P": 5.611981637840559,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 25.079239732434,
+    "max_reject_sigma": 25.07923973161481,
     "worst_time": 4287.9162548406275,
     "b_circ": 0.6763496053813743,
     "e_min_b50": 0.20798800851723712
@@ -4286,7 +4334,7 @@
     "P": 5.597367102325349,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.57403042183131,
+    "max_reject_sigma": 24.574030422383704,
     "worst_time": 4282.275044131757,
     "b_circ": 0.67558395518694,
     "e_min_b50": 0.2071562707675505
@@ -4296,7 +4344,7 @@
     "P": 5.582828486475154,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 23.114480479574127,
+    "max_reject_sigma": 23.114480479500166,
     "worst_time": 1401.5064678788763,
     "b_circ": 0.6748181017542766,
     "e_min_b50": 0.20632639777869757
@@ -4306,7 +4354,7 @@
     "P": 5.568365200240762,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 23.26743517829066,
+    "max_reject_sigma": 23.26743517592709,
     "worst_time": 4282.217040327587,
     "b_circ": 0.6740520420843455,
     "e_min_b50": 0.2054983817324653
@@ -4316,7 +4364,7 @@
     "P": 5.553976659671664,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 23.585200945781466,
+    "max_reject_sigma": 23.585200941948308,
     "worst_time": 4282.1882632464485,
     "b_circ": 0.6732857731782225,
     "e_min_b50": 0.2046722148605862
@@ -4326,7 +4374,7 @@
     "P": 5.5396622868374585,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 24.015144142278377,
+    "max_reject_sigma": 24.01514414224198,
     "worst_time": 1401.5352453453015,
     "b_circ": 0.6725192920369689,
     "e_min_b50": 0.20384788944430224
@@ -4336,7 +4384,7 @@
     "P": 5.525421509750473,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 23.591598149027917,
+    "max_reject_sigma": 23.591598148851222,
     "worst_time": 4282.131152946606,
     "b_circ": 0.6717525956615027,
     "e_min_b50": 0.20302539781393497
@@ -4346,7 +4394,7 @@
     "P": 5.5112537622895745,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 22.90858628914635,
+    "max_reject_sigma": 22.908586289627948,
     "worst_time": 4265.569056164815,
     "b_circ": 0.6709856810524713,
     "e_min_b50": 0.20220473234845757
@@ -4356,7 +4404,7 @@
     "P": 5.497158484125151,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 23.29137902552544,
+    "max_reject_sigma": 23.291379025325185,
     "worst_time": 4265.58315144298,
     "b_circ": 0.6702185452101219,
     "e_min_b50": 0.201385885475075
@@ -4366,7 +4414,7 @@
     "P": 5.4831351206452394,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.35810536378244,
+    "max_reject_sigma": 24.35810536868493,
     "worst_time": 4282.046580168395,
     "b_circ": 0.6694511851341758,
     "e_min_b50": 0.2005688496688058
@@ -4376,7 +4424,7 @@
     "P": 5.469183122882784,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 23.685702070422426,
+    "max_reject_sigma": 23.68570207035548,
     "worst_time": 4265.611126804222,
     "b_circ": 0.6686835978236992,
     "e_min_b50": 0.1997536174520702
@@ -4386,7 +4434,7 @@
     "P": 5.455301947443995,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 23.11820992684507,
+    "max_reject_sigma": 23.118209926723168,
     "worst_time": 4265.625007979661,
     "b_circ": 0.6679157802769775,
     "e_min_b50": 0.1989401813942822
@@ -4396,7 +4444,7 @@
     "P": 5.441491056437807,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 23.62109234891532,
+    "max_reject_sigma": 23.621092349107016,
     "worst_time": 4281.963292039981,
     "b_circ": 0.6671477294913875,
     "e_min_b50": 0.19812853411144707
@@ -4406,7 +4454,7 @@
     "P": 5.427749917406399,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 23.8001233481349,
+    "max_reject_sigma": 23.800123348937994,
     "worst_time": 4265.652560009699,
     "b_circ": 0.6663794424632707,
     "e_min_b50": 0.19731866826576083
@@ -4416,7 +4464,7 @@
     "P": 5.414078003256761,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 24.607487590890937,
+    "max_reject_sigma": 24.60748759123171,
     "worst_time": 4265.6662319238485,
     "b_circ": 0.6656109161878081,
     "e_min_b50": 0.19651057656521725
@@ -4426,7 +4474,7 @@
     "P": 5.400474792193301,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 23.19185630897442,
+    "max_reject_sigma": 23.191856308245015,
     "worst_time": 4287.281734303685,
     "b_circ": 0.6648421476588913,
     "e_min_b50": 0.1957042517632176
@@ -4436,7 +4484,7 @@
     "P": 5.386939767651464,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.617284971562984,
+    "max_reject_sigma": 24.617284971867218,
     "worst_time": 1394.4544740012234,
     "b_circ": 0.6640731338689998,
     "e_min_b50": 0.19489968665818364
@@ -4446,7 +4494,7 @@
     "P": 5.3734724182323355,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 22.223065638891754,
+    "max_reject_sigma": 22.2230656342291,
     "worst_time": 4287.200727181802,
     "b_circ": 0.6633038718090711,
     "e_min_b50": 0.1940968740931763
@@ -4456,7 +4504,7 @@
     "P": 5.3600722376382395,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 22.06646965455752,
+    "max_reject_sigma": 22.0664696546226,
     "worst_time": 1392.7215183153708,
     "b_circ": 0.6625343584683786,
     "e_min_b50": 0.19329580695551862
@@ -4466,7 +4514,7 @@
     "P": 5.346738724609288,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 23.47566884520551,
+    "max_reject_sigma": 23.475668845256102,
     "worst_time": 4265.733571202496,
     "b_circ": 0.6617645908344028,
     "e_min_b50": 0.1924964781764211
@@ -4476,7 +4524,7 @@
     "P": 5.333471382860878,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 21.81082643156278,
+    "max_reject_sigma": 21.81082643123954,
     "worst_time": 4265.746838544244,
     "b_circ": 0.6609945658927081,
     "e_min_b50": 0.19169888073061372
@@ -4486,7 +4534,7 @@
     "P": 5.320269721022114,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.612058575998653,
+    "max_reject_sigma": 24.61205857591617,
     "worst_time": 4287.041119090171,
     "b_circ": 0.660224280626815,
     "e_min_b50": 0.19090300763597878
@@ -4496,7 +4544,7 @@
     "P": 5.307133252575146,
     "status": "excluded",
     "n_covered": 9,
-    "max_reject_sigma": 24.482053956839117,
+    "max_reject_sigma": 24.482053956372546,
     "worst_time": 4265.77317667453,
     "b_circ": 0.6594537320180762,
     "e_min_b50": 0.190108851953189
@@ -4506,7 +4554,7 @@
     "P": 5.294061495795404,
     "status": "excluded",
     "n_covered": 8,
-    "max_reject_sigma": 22.385512649381834,
+    "max_reject_sigma": 22.385512648318503,
     "worst_time": 4265.78624843131,
     "b_circ": 0.6586829170455514,
     "e_min_b50": 0.18931640678535303
@@ -4516,7 +4564,7 @@
     "P": 5.281053973692712,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 25.30451092490725,
+    "max_reject_sigma": 25.3045109248636,
     "worst_time": 1392.905894264577,
     "b_circ": 0.6579118326858796,
     "e_min_b50": 0.18852566527765677
@@ -4526,7 +4574,7 @@
     "P": 5.268110213953269,
     "status": "excluded",
     "n_covered": 9,
-    "max_reject_sigma": 24.452739671563823,
+    "max_reject_sigma": 24.45273967121482,
     "worst_time": 4265.812199713152,
     "b_circ": 0.6571404759131567,
     "e_min_b50": 0.1877366206170164
@@ -4536,7 +4584,7 @@
     "P": 5.2552297488824795,
     "status": "excluded",
     "n_covered": 9,
-    "max_reject_sigma": 23.149349108825877,
+    "max_reject_sigma": 23.149349106332963,
     "worst_time": 4281.590769424871,
     "b_circ": 0.6563688436988087,
     "e_min_b50": 0.18694926603173134
@@ -4546,7 +4594,7 @@
     "P": 5.242412115348619,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.47460931867526,
+    "max_reject_sigma": 24.47460931890628,
     "worst_time": 4265.837897811756,
     "b_circ": 0.6555969330114654,
     "e_min_b50": 0.18616359479114067
@@ -4556,7 +4604,7 @@
     "P": 5.229656854727334,
     "status": "excluded",
     "n_covered": 9,
-    "max_reject_sigma": 23.444600616213375,
+    "max_reject_sigma": 23.444600616179674,
     "worst_time": 1389.5393829723444,
     "b_circ": 0.6548247408168375,
     "e_min_b50": 0.18537960020528418
@@ -4566,7 +4614,7 @@
     "P": 5.216963512846927,
     "status": "excluded",
     "n_covered": 9,
-    "max_reject_sigma": 23.63799905754645,
+    "max_reject_sigma": 23.63799905994065,
     "worst_time": 4286.731200465646,
     "b_circ": 0.6540522640775888,
     "e_min_b50": 0.18459727562456724
@@ -4576,7 +4624,7 @@
     "P": 5.204331639934465,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.226233527441494,
+    "max_reject_sigma": 24.226233527986,
     "worst_time": 4265.875978287171,
     "b_circ": 0.6532794997532122,
     "e_min_b50": 0.1838166144394288
@@ -4586,7 +4634,7 @@
     "P": 5.191760790562642,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 22.79488851668918,
+    "max_reject_sigma": 22.794888518291607,
     "worst_time": 4286.655592298794,
     "b_circ": 0.6525064447999037,
     "e_min_b50": 0.18303761008001176
@@ -4596,7 +4644,7 @@
     "P": 5.179250523597432,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.028434772786845,
+    "max_reject_sigma": 24.028434774052425,
     "worst_time": 4265.901059403508,
     "b_circ": 0.6517330961704366,
     "e_min_b50": 0.18226025601583887
@@ -4606,7 +4654,7 @@
     "P": 5.166800402146476,
     "status": "excluded",
     "n_covered": 11,
-    "max_reject_sigma": 22.129256732600666,
+    "max_reject_sigma": 22.12925673417146,
     "worst_time": 4265.9135095249585,
     "b_circ": 0.6509594508140368,
     "e_min_b50": 0.181484545755491
@@ -4616,7 +4664,7 @@
     "P": 5.154409993508235,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.0551875865832,
+    "max_reject_sigma": 24.055187586568547,
     "worst_time": 1389.7651235560018,
     "b_circ": 0.6501855056762554,
     "e_min_b50": 0.18071047284628758
@@ -4626,7 +4674,7 @@
     "P": 5.1420788691218515,
     "status": "excluded",
     "n_covered": 11,
-    "max_reject_sigma": 24.55827854936066,
+    "max_reject_sigma": 24.558278550892812,
     "worst_time": 4265.938231057983,
     "b_circ": 0.6494112576988443,
     "e_min_b50": 0.1799380308739722
@@ -4636,7 +4684,7 @@
     "P": 5.129806604517742,
     "status": "excluded",
     "n_covered": 11,
-    "max_reject_sigma": 23.176424413921023,
+    "max_reject_sigma": 23.176424416656108,
     "worst_time": 4276.210116531623,
     "b_circ": 0.6486367038196291,
     "e_min_b50": 0.17916721346240236
@@ -4646,7 +4694,7 @@
     "P": 5.1175927792688904,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.536337361138816,
+    "max_reject_sigma": 24.53633736232609,
     "worst_time": 4265.962717147837,
     "b_circ": 0.6478618409723836,
     "e_min_b50": 0.17839801427323798
@@ -4656,7 +4704,7 @@
     "P": 5.105436976942836,
     "status": "excluded",
     "n_covered": 11,
-    "max_reject_sigma": 22.848161426455512,
+    "max_reject_sigma": 22.848161425904546,
     "worst_time": 1401.8247288852313,
     "b_circ": 0.6470866660867037,
     "e_min_b50": 0.17763042700563775
@@ -4666,7 +4714,7 @@
     "P": 5.093338785054346,
     "status": "excluded",
     "n_covered": 11,
-    "max_reject_sigma": 25.18927595481481,
+    "max_reject_sigma": 25.189275955672983,
     "worst_time": 4265.986971142051,
     "b_circ": 0.6463111760878788,
     "e_min_b50": 0.1768644453959564
@@ -4676,7 +4724,7 @@
     "P": 5.081297795018757,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 25.386957916693056,
+    "max_reject_sigma": 25.3869579170653,
     "worst_time": 4265.999012132086,
     "b_circ": 0.6455353678967684,
     "e_min_b50": 0.17610006321744678
@@ -4686,7 +4734,7 @@
     "P": 5.069313602105977,
     "status": "excluded",
     "n_covered": 11,
-    "max_reject_sigma": 24.531650690601644,
+    "max_reject_sigma": 24.531650690927624,
     "worst_time": 1396.7794975330166,
     "b_circ": 0.6447592384296719,
     "e_min_b50": 0.1753372742799613
@@ -4696,7 +4744,7 @@
     "P": 5.057385805395139,
     "status": "excluded",
     "n_covered": 11,
-    "max_reject_sigma": 25.115188066345326,
+    "max_reject_sigma": 25.115188067399437,
     "worst_time": 4266.02292412171,
     "b_circ": 0.6439827845982036,
     "e_min_b50": 0.17457607242966075
@@ -4706,7 +4754,7 @@
     "P": 5.045514007729892,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 23.387119661503565,
+    "max_reject_sigma": 23.387119661604874,
     "worst_time": 1390.0918115133368,
     "b_circ": 0.6432060033091646,
     "e_min_b50": 0.17381645154872463
@@ -4716,7 +4764,7 @@
     "P": 5.033697815674318,
     "status": "excluded",
     "n_covered": 11,
-    "max_reject_sigma": 25.20986035581921,
+    "max_reject_sigma": 25.209860356747928,
     "worst_time": 4266.046612111431,
     "b_circ": 0.6424288914644138,
     "e_min_b50": 0.17305840555506136
@@ -4726,7 +4774,7 @@
     "P": 5.021936839469472,
     "status": "excluded",
     "n_covered": 11,
-    "max_reject_sigma": 23.50093847445761,
+    "max_reject_sigma": 23.50093847811764,
     "worst_time": 4276.102246766575,
     "b_circ": 0.6416514459607424,
     "e_min_b50": 0.17230192840202727
@@ -4736,7 +4784,7 @@
     "P": 5.010230692990522,
     "status": "excluded",
     "n_covered": 10,
-    "max_reject_sigma": 24.262366119533464,
+    "max_reject_sigma": 24.262366119897695,
     "worst_time": 4266.070079234114,
     "b_circ": 0.6408736636897441,
     "e_min_b50": 0.1715470140781443
@@ -4758,73 +4806,81 @@
    {
     "epoch": 143,
     "btjd": 4421.9147391674305,
-    "utc": "2027-01-16 09:57",
+    "utc": "2027-01-16 09:56",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.511243181980602,
     "night_frac": 0.2,
-    "sun_sep": 87.72603761658105,
+    "sun_sep": 87.72616981746161,
     "note": "20% of the transit at night"
    },
    {
     "epoch": 144,
     "btjd": 4441.740895456307,
-    "utc": "2027-02-05 05:46",
+    "utc": "2027-02-05 05:44",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.5335576705409664,
     "night_frac": 1.0,
-    "sun_sep": 99.81692424633104,
+    "sun_sep": 99.81633887608386,
     "note": "full transit at night"
    },
    {
     "epoch": 145,
     "btjd": 4461.567051745184,
-    "utc": "2027-02-25 01:36",
+    "utc": "2027-02-25 01:32",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.556867537046122,
     "night_frac": 0.76,
-    "sun_sep": 111.02468508333652,
+    "sun_sep": 111.02360541128334,
     "note": "76% of the transit at night"
    },
    {
     "epoch": 150,
     "btjd": 4560.697833189565,
-    "utc": "2027-06-04 04:44",
+    "utc": "2027-06-04 04:40",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.6874024594714845,
     "night_frac": 0.56,
-    "sun_sep": 115.97027429741907,
+    "sun_sep": 115.97141641394269,
     "note": "56% of the transit at night"
    },
    {
     "epoch": 151,
     "btjd": 4580.523989478442,
-    "utc": "2027-06-24 00:34",
+    "utc": "2027-06-24 00:31",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.7161183696590405,
     "night_frac": 1.0,
-    "sun_sep": 106.19660956178772,
+    "sun_sep": 106.19748489970637,
     "note": "full transit at night"
    },
    {
     "epoch": 161,
     "btjd": 4778.785552367206,
     "utc": "2028-01-08 06:51",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.0436233585041013,
     "night_frac": 1.0,
-    "sun_sep": 82.59766735659724,
+    "sun_sep": 82.59810919060016,
     "note": "full transit at night"
    },
    {
     "epoch": 162,
     "btjd": 4798.611708656083,
-    "utc": "2028-01-28 02:40",
+    "utc": "2028-01-28 02:39",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.079893660451994,
     "night_frac": 0.48,
-    "sun_sep": 94.74954642340393,
+    "sun_sep": 94.74925697154535,
     "note": "48% of the transit at night"
    },
    {
     "epoch": 167,
     "btjd": 4897.742490100464,
-    "utc": "2028-05-06 05:49",
+    "utc": "2028-05-06 05:43",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.2691786021800335,
     "night_frac": 0.84,
-    "sun_sep": 125.43425042186114,
+    "sun_sep": 125.4349360866572,
     "note": "84% of the transit at night"
    }
   ],
@@ -4832,362 +4888,402 @@
    {
     "epoch": 139,
     "btjd": 4342.610114011925,
-    "utc": "2026-10-29 02:38",
+    "utc": "2026-10-29 02:42",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.4324686075459856,
     "night_frac": 0.0,
-    "sun_sep": 53.04354713270434,
+    "sun_sep": 53.04381398625785,
     "note": "daytime or too low"
    },
    {
     "epoch": 140,
     "btjd": 4362.436270300802,
-    "utc": "2026-11-17 22:28",
+    "utc": "2026-11-17 22:31",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.450537849756233,
     "night_frac": 0.0,
-    "sun_sep": 57.0321257988594,
+    "sun_sep": 57.03310452267795,
     "note": "daytime or too low"
    },
    {
     "epoch": 141,
     "btjd": 4382.262426589678,
-    "utc": "2026-12-07 18:17",
+    "utc": "2026-12-07 18:20",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.4697070596752013,
     "night_frac": 0.0,
-    "sun_sep": 65.10736576750719,
+    "sun_sep": 65.10852365667836,
     "note": "daytime or too low"
    },
    {
     "epoch": 142,
     "btjd": 4402.088582878555,
-    "utc": "2026-12-27 14:07",
+    "utc": "2026-12-27 14:08",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.4899508326996296,
     "night_frac": 0.0,
-    "sun_sep": 75.786284916978,
+    "sun_sep": 75.78708799409837,
     "note": "daytime or too low"
    },
    {
     "epoch": 143,
     "btjd": 4421.9147391674305,
-    "utc": "2027-01-16 09:57",
+    "utc": "2027-01-16 09:56",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.511243181980602,
     "night_frac": 0.2,
-    "sun_sep": 87.72603761658105,
+    "sun_sep": 87.72616981746161,
     "note": "20% of the transit at night"
    },
    {
     "epoch": 144,
     "btjd": 4441.740895456307,
-    "utc": "2027-02-05 05:46",
+    "utc": "2027-02-05 05:44",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.5335576705409664,
     "night_frac": 1.0,
-    "sun_sep": 99.81692424633104,
+    "sun_sep": 99.81633887608386,
     "note": "full transit at night"
    },
    {
     "epoch": 145,
     "btjd": 4461.567051745184,
-    "utc": "2027-02-25 01:36",
+    "utc": "2027-02-25 01:32",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.556867537046122,
     "night_frac": 0.76,
-    "sun_sep": 111.02468508333652,
+    "sun_sep": 111.02360541128334,
     "note": "76% of the transit at night"
    },
    {
     "epoch": 146,
     "btjd": 4481.39320803406,
-    "utc": "2027-03-16 21:26",
+    "utc": "2027-03-16 21:20",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.581145814396014,
     "night_frac": 0.0,
-    "sun_sep": 120.17372626863718,
+    "sun_sep": 120.17260644696873,
     "note": "daytime or too low"
    },
    {
     "epoch": 147,
     "btjd": 4501.219364322937,
-    "utc": "2027-04-05 17:15",
+    "utc": "2027-04-05 17:09",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.6063654405087275,
     "night_frac": 0.0,
-    "sun_sep": 125.88692125832162,
+    "sun_sep": 125.88631302846073,
     "note": "daytime or too low"
    },
    {
     "epoch": 148,
     "btjd": 4521.045520611813,
-    "utc": "2027-04-25 13:05",
+    "utc": "2027-04-25 12:59",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.632499360857068,
     "night_frac": 0.0,
-    "sun_sep": 127.00029299278717,
+    "sun_sep": 127.00053163726454,
     "note": "daytime or too low"
    },
    {
     "epoch": 149,
     "btjd": 4540.87167690069,
-    "utc": "2027-05-15 08:55",
+    "utc": "2027-05-15 08:49",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.6595206224953234,
     "night_frac": 0.0,
-    "sun_sep": 123.35961547727476,
+    "sun_sep": 123.36054741762332,
     "note": "daytime or too low"
    },
    {
     "epoch": 150,
     "btjd": 4560.697833189565,
-    "utc": "2027-06-04 04:44",
+    "utc": "2027-06-04 04:40",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.6874024594714845,
     "night_frac": 0.56,
-    "sun_sep": 115.97027429741907,
+    "sun_sep": 115.97141641394269,
     "note": "56% of the transit at night"
    },
    {
     "epoch": 151,
     "btjd": 4580.523989478442,
-    "utc": "2027-06-24 00:34",
+    "utc": "2027-06-24 00:31",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.7161183696590405,
     "night_frac": 1.0,
-    "sun_sep": 106.19660956178772,
+    "sun_sep": 106.19748489970637,
     "note": "full transit at night"
    },
    {
     "epoch": 152,
     "btjd": 4600.350145767318,
-    "utc": "2027-07-13 20:24",
+    "utc": "2027-07-13 20:22",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.745642183161457,
     "night_frac": 0.0,
-    "sun_sep": 95.170459677275,
+    "sun_sep": 95.17076582318302,
     "note": "daytime or too low"
    },
    {
     "epoch": 153,
     "btjd": 4620.176302056195,
     "utc": "2027-08-02 16:13",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.7759481225416236,
     "night_frac": 0.0,
-    "sun_sep": 83.76120525833204,
+    "sun_sep": 83.7608436925901,
     "note": "daytime or too low"
    },
    {
     "epoch": 154,
     "btjd": 4640.002458345071,
-    "utc": "2027-08-22 12:03",
+    "utc": "2027-08-22 12:04",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.8070108552087123,
     "night_frac": 0.0,
-    "sun_sep": 72.74780156065961,
+    "sun_sep": 72.74688414882269,
     "note": "daytime or too low"
    },
    {
     "epoch": 155,
     "btjd": 4659.828614633948,
-    "utc": "2027-09-11 07:53",
+    "utc": "2027-09-11 07:55",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.8388055383571373,
     "night_frac": 0.0,
-    "sun_sep": 63.05219780438268,
+    "sun_sep": 63.05105087485595,
     "note": "daytime or too low"
    },
    {
     "epoch": 156,
     "btjd": 4679.654770922823,
-    "utc": "2027-10-01 03:42",
+    "utc": "2027-10-01 03:46",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.871307856898175,
     "night_frac": 0.0,
-    "sun_sep": 55.93039158701014,
+    "sun_sep": 55.92952016965775,
     "note": "daytime or too low"
    },
    {
     "epoch": 157,
     "btjd": 4699.4809272117,
-    "utc": "2027-10-20 23:32",
+    "utc": "2027-10-20 23:36",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.9044940548559666,
     "night_frac": 0.0,
-    "sun_sep": 52.85357658228806,
+    "sun_sep": 52.853464504995905,
     "note": "daytime or too low"
    },
    {
     "epoch": 158,
     "btjd": 4719.3070835005765,
-    "utc": "2027-11-09 19:22",
+    "utc": "2027-11-09 19:25",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.938340960717892,
     "night_frac": 0.0,
-    "sun_sep": 54.7684096017105,
+    "sun_sep": 54.76914040245876,
     "note": "daytime or too low"
    },
    {
     "epoch": 159,
     "btjd": 4739.133239789453,
-    "utc": "2027-11-29 15:11",
+    "utc": "2027-11-29 15:14",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 2.972826007236526,
     "night_frac": 0.0,
-    "sun_sep": 61.28670286487086,
+    "sun_sep": 61.28786086109681,
     "note": "daytime or too low"
    },
    {
     "epoch": 160,
     "btjd": 4758.9593960783295,
-    "utc": "2027-12-19 11:01",
+    "utc": "2027-12-19 11:03",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.0079272461782733,
     "night_frac": 0.0,
-    "sun_sep": 71.04421412550866,
+    "sun_sep": 71.04522455514797,
     "note": "daytime or too low"
    },
    {
     "epoch": 161,
     "btjd": 4778.785552367206,
     "utc": "2028-01-08 06:51",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.0436233585041013,
     "night_frac": 1.0,
-    "sun_sep": 82.59766735659724,
+    "sun_sep": 82.59810919060016,
     "note": "full transit at night"
    },
    {
     "epoch": 162,
     "btjd": 4798.611708656083,
-    "utc": "2028-01-28 02:40",
+    "utc": "2028-01-28 02:39",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.079893660451994,
     "night_frac": 0.48,
-    "sun_sep": 94.74954642340393,
+    "sun_sep": 94.74925697154535,
     "note": "48% of the transit at night"
    },
    {
     "epoch": 163,
     "btjd": 4818.437864944959,
-    "utc": "2028-02-16 22:30",
+    "utc": "2028-02-16 22:27",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.1167181059703513,
     "night_frac": 0.0,
-    "sun_sep": 106.46172021018631,
+    "sun_sep": 106.46081002918434,
     "note": "daytime or too low"
    },
    {
     "epoch": 164,
     "btjd": 4838.264021233835,
-    "utc": "2028-03-07 18:20",
+    "utc": "2028-03-07 18:15",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.154077285927672,
     "night_frac": 0.0,
-    "sun_sep": 116.64087110921679,
+    "sun_sep": 116.63970473956468,
     "note": "daytime or too low"
    },
    {
     "epoch": 165,
     "btjd": 4858.090177522711,
-    "utc": "2028-03-27 14:09",
+    "utc": "2028-03-27 14:04",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.191952424497701,
     "night_frac": 0.0,
-    "sun_sep": 123.97800250356016,
+    "sun_sep": 123.97711699450001,
     "note": "daytime or too low"
    },
    {
     "epoch": 166,
     "btjd": 4877.916333811588,
-    "utc": "2028-04-16 09:59",
+    "utc": "2028-04-16 09:53",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.2303253730915498,
     "night_frac": 0.0,
-    "sun_sep": 127.131527336716,
+    "sun_sep": 127.13139669934691,
     "note": "daytime or too low"
    },
    {
     "epoch": 167,
     "btjd": 4897.742490100464,
-    "utc": "2028-05-06 05:49",
+    "utc": "2028-05-06 05:43",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.2691786021800335,
     "night_frac": 0.84,
-    "sun_sep": 125.43425042186114,
+    "sun_sep": 125.4349360866572,
     "note": "84% of the transit at night"
    },
    {
     "epoch": 168,
     "btjd": 4917.568646389341,
-    "utc": "2028-05-26 01:38",
+    "utc": "2028-05-26 01:33",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.3084951913211182,
     "night_frac": 1.0,
-    "sun_sep": 119.4643970267473,
+    "sun_sep": 119.46551268402779,
     "note": "full transit at night"
    },
    {
     "epoch": 169,
     "btjd": 4937.394802678217,
-    "utc": "2028-06-14 21:28",
+    "utc": "2028-06-14 21:24",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.348258817679505,
     "night_frac": 0.04,
-    "sun_sep": 110.54289490598453,
+    "sun_sep": 110.54392843290864,
     "note": "daytime or too low"
    },
    {
     "epoch": 170,
     "btjd": 4957.220958967093,
-    "utc": "2028-07-04 17:18",
+    "utc": "2028-07-04 17:15",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.388453743298346,
     "night_frac": 0.0,
-    "sun_sep": 99.92827563227385,
+    "sun_sep": 99.9288431132659,
     "note": "daytime or too low"
    },
    {
     "epoch": 171,
     "btjd": 4977.047115255969,
-    "utc": "2028-07-24 13:07",
+    "utc": "2028-07-24 13:06",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.429064801357219,
     "night_frac": 0.0,
-    "sun_sep": 88.58614995763648,
+    "sun_sep": 88.58606626787454,
     "note": "daytime or too low"
    },
    {
     "epoch": 172,
     "btjd": 4996.873271544846,
-    "utc": "2028-08-13 08:57",
+    "utc": "2028-08-13 08:58",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.4700773816259343,
     "night_frac": 0.0,
-    "sun_sep": 77.30636172663995,
+    "sun_sep": 77.30564887700059,
     "note": "daytime or too low"
    },
    {
     "epoch": 173,
     "btjd": 5016.699427833722,
-    "utc": "2028-09-02 04:47",
+    "utc": "2028-09-02 04:49",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.5114774153007446,
     "night_frac": 0.0,
-    "sun_sep": 66.92080196216821,
+    "sun_sep": 66.91969619836482,
     "note": "daytime or too low"
    },
    {
     "epoch": 174,
     "btjd": 5036.525584122599,
-    "utc": "2028-09-22 00:36",
+    "utc": "2028-09-22 00:40",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.553251359388036,
     "night_frac": 0.0,
-    "sun_sep": 58.53399997031749,
+    "sun_sep": 58.53294202644106,
     "note": "daytime or too low"
    },
    {
     "epoch": 175,
     "btjd": 5056.3517404114755,
-    "utc": "2028-10-11 20:26",
+    "utc": "2028-10-11 20:30",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.595386180780736,
     "night_frac": 0.0,
-    "sun_sep": 53.57565528819926,
+    "sun_sep": 53.575179752119425,
     "note": "daytime or too low"
    },
    {
     "epoch": 176,
     "btjd": 5076.177896700352,
-    "utc": "2028-10-31 16:16",
+    "utc": "2028-10-31 16:19",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.637869340154436,
     "night_frac": 0.0,
-    "sun_sep": 53.34180920404978,
+    "sun_sep": 53.342210714512554,
     "note": "daytime or too low"
    },
    {
     "epoch": 177,
     "btjd": 5096.0040529892285,
-    "utc": "2028-11-20 12:05",
+    "utc": "2028-11-20 12:09",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.6806887757935587,
     "night_frac": 0.0,
-    "sun_sep": 58.04679091301903,
+    "sun_sep": 58.04784062085622,
     "note": "daytime or too low"
    },
    {
     "epoch": 178,
     "btjd": 5115.830209278104,
-    "utc": "2028-12-10 07:55",
+    "utc": "2028-12-10 07:57",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 3.723832887442738,
-    "night_frac": 0.76,
-    "sun_sep": 66.62171516934205,
-    "note": "76% of the transit at night"
+    "night_frac": 0.72,
+    "sun_sep": 66.62285479825532,
+    "note": "72% of the transit at night"
    }
   ],
   "alias_min_sigma": 16.4
@@ -5206,73 +5302,81 @@
    {
     "epoch": 57,
     "btjd": 4455.980132911562,
-    "utc": "2027-02-19 11:31",
+    "utc": "2027-02-19 11:32",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 21.879425352303986,
     "night_frac": 0.16,
-    "sun_sep": 77.03246404691535,
+    "sun_sep": 77.0334028572947,
     "note": "16% of the transit at night"
    },
    {
     "epoch": 59,
     "btjd": 4528.659924725754,
-    "utc": "2027-05-03 03:50",
+    "utc": "2027-05-03 03:43",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 22.814666502538895,
     "night_frac": 0.96,
-    "sun_sep": 127.9417875190383,
+    "sun_sep": 127.93985351008142,
     "note": "full transit at night"
    },
    {
     "epoch": 60,
     "btjd": 4564.99982063285,
-    "utc": "2027-06-08 11:59",
+    "utc": "2027-06-08 11:52",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 23.305590337321295,
     "night_frac": 0.08,
-    "sun_sep": 138.95611178496088,
+    "sun_sep": 138.95607690546342,
     "note": "8% of the transit at night"
    },
    {
     "epoch": 62,
     "btjd": 4637.679612447042,
-    "utc": "2027-08-20 04:18",
+    "utc": "2027-08-20 04:15",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 24.329342787915785,
     "night_frac": 0.6,
-    "sun_sep": 105.64611204880399,
+    "sun_sep": 105.64723247087872,
     "note": "60% of the transit at night"
    },
    {
     "epoch": 68,
     "btjd": 4855.718987889619,
-    "utc": "2028-03-25 05:15",
+    "utc": "2028-03-25 05:12",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 27.678196502623862,
     "night_frac": 0.76,
-    "sun_sep": 102.86597645477778,
+    "sun_sep": 102.86502827377444,
     "note": "76% of the transit at night"
    },
    {
     "epoch": 70,
     "btjd": 4928.398779703811,
-    "utc": "2028-06-05 21:34",
+    "utc": "2028-06-05 21:26",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 28.869129005697886,
     "night_frac": 0.24,
-    "sun_sep": 138.90948271571372,
+    "sun_sep": 138.9092967504026,
     "note": "24% of the transit at night"
    },
    {
     "epoch": 71,
     "btjd": 4964.738675610907,
-    "utc": "2028-07-12 05:43",
+    "utc": "2028-07-12 05:37",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 29.476096924694254,
     "night_frac": 0.8,
-    "sun_sep": 129.50784356017368,
+    "sun_sep": 129.50971767377692,
     "note": "80% of the transit at night"
    },
    {
     "epoch": 73,
     "btjd": 5037.418467425099,
     "utc": "2028-09-22 22:02",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 30.71076299067764,
     "night_frac": 0.24,
-    "sun_sep": 80.60430012843923,
+    "sun_sep": 80.60361364605167,
     "note": "24% of the transit at night"
    }
   ],
@@ -5280,361 +5384,401 @@
    {
     "epoch": 54,
     "btjd": 4346.960445190273,
-    "utc": "2026-11-02 11:03",
+    "utc": "2026-11-02 11:06",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 20.608685183480237,
     "night_frac": 0.0,
-    "sun_sep": 53.448135281357914,
+    "sun_sep": 53.44617982922102,
     "note": "daytime or too low"
    },
    {
     "epoch": 55,
     "btjd": 4383.30034109737,
-    "utc": "2026-12-08 19:12",
+    "utc": "2026-12-08 19:17",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 21.01318436052089,
     "night_frac": 0.0,
-    "sun_sep": 41.05601846374659,
+    "sun_sep": 41.05591599069391,
     "note": "too close to the Sun"
    },
    {
     "epoch": 56,
     "btjd": 4419.640237004465,
-    "utc": "2027-01-14 03:21",
+    "utc": "2027-01-14 03:25",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 21.437141442388903,
     "night_frac": 0.0,
-    "sun_sep": 52.298949758984726,
+    "sun_sep": 52.30091248516797,
     "note": "daytime or too low"
    },
    {
     "epoch": 57,
     "btjd": 4455.980132911562,
-    "utc": "2027-02-19 11:31",
+    "utc": "2027-02-19 11:32",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 21.879425352303986,
     "night_frac": 0.16,
-    "sun_sep": 77.03246404691535,
+    "sun_sep": 77.0334028572947,
     "note": "16% of the transit at night"
    },
    {
     "epoch": 58,
     "btjd": 4492.320028818658,
-    "utc": "2027-03-27 19:40",
+    "utc": "2027-03-27 19:37",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 22.338947570272936,
     "night_frac": 0.0,
-    "sun_sep": 104.2220007475029,
+    "sun_sep": 104.22095571473719,
     "note": "daytime or too low"
    },
    {
     "epoch": 59,
     "btjd": 4528.659924725754,
-    "utc": "2027-05-03 03:50",
+    "utc": "2027-05-03 03:43",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 22.814666502538895,
     "night_frac": 0.96,
-    "sun_sep": 127.9417875190383,
+    "sun_sep": 127.93985351008142,
     "note": "full transit at night"
    },
    {
     "epoch": 60,
     "btjd": 4564.99982063285,
-    "utc": "2027-06-08 11:59",
+    "utc": "2027-06-08 11:52",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 23.305590337321295,
     "night_frac": 0.08,
-    "sun_sep": 138.95611178496088,
+    "sun_sep": 138.95607690546342,
     "note": "8% of the transit at night"
    },
    {
     "epoch": 61,
     "btjd": 4601.3397165399465,
-    "utc": "2027-07-14 20:09",
+    "utc": "2027-07-14 20:02",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 23.810778622177054,
     "night_frac": 0.0,
-    "sun_sep": 128.55821464233262,
+    "sun_sep": 128.5601181401767,
     "note": "daytime or too low"
    },
    {
     "epoch": 62,
     "btjd": 4637.679612447042,
-    "utc": "2027-08-20 04:18",
+    "utc": "2027-08-20 04:15",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 24.329342787915785,
     "night_frac": 0.6,
-    "sun_sep": 105.64611204880399,
+    "sun_sep": 105.64723247087872,
     "note": "60% of the transit at night"
    },
    {
     "epoch": 63,
     "btjd": 4674.019508354138,
     "utc": "2027-09-25 12:28",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 24.860445825926014,
     "night_frac": 0.0,
-    "sun_sep": 79.251039294529,
+    "sun_sep": 79.250262714045,
     "note": "daytime or too low"
    },
    {
     "epoch": 64,
     "btjd": 4710.359404261235,
-    "utc": "2027-10-31 20:37",
+    "utc": "2027-10-31 20:41",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 25.403301303373958,
     "night_frac": 0.0,
-    "sun_sep": 54.53289088126912,
+    "sun_sep": 54.53093062412879,
     "note": "daytime or too low"
    },
    {
     "epoch": 65,
     "btjd": 4746.69930016833,
-    "utc": "2027-12-07 04:46",
+    "utc": "2027-12-07 04:51",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 25.957171876583672,
     "night_frac": 0.0,
-    "sun_sep": 41.13654658042055,
+    "sun_sep": 41.136280897880255,
     "note": "too close to the Sun"
    },
    {
     "epoch": 66,
     "btjd": 4783.039196075427,
-    "utc": "2028-01-12 12:56",
+    "utc": "2028-01-12 13:00",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 26.52136743882784,
     "night_frac": 0.0,
-    "sun_sep": 51.259026580129614,
+    "sun_sep": 51.26097302555912,
     "note": "daytime or too low"
    },
    {
     "epoch": 67,
     "btjd": 4819.379091982522,
-    "utc": "2028-02-17 21:05",
+    "utc": "2028-02-17 21:06",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 27.095243015969345,
     "night_frac": 0.0,
-    "sun_sep": 75.64873211644051,
+    "sun_sep": 75.64977265319187,
     "note": "daytime or too low"
    },
    {
     "epoch": 68,
     "btjd": 4855.718987889619,
-    "utc": "2028-03-25 05:15",
+    "utc": "2028-03-25 05:12",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 27.678196502623862,
     "night_frac": 0.76,
-    "sun_sep": 102.86597645477778,
+    "sun_sep": 102.86502827377444,
     "note": "76% of the transit at night"
    },
    {
     "epoch": 69,
     "btjd": 4892.058883796715,
-    "utc": "2028-04-30 13:24",
+    "utc": "2028-04-30 13:18",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 28.269666313127757,
     "night_frac": 0.0,
-    "sun_sep": 126.9289031001338,
+    "sun_sep": 126.9269611785112,
     "note": "daytime or too low"
    },
    {
     "epoch": 70,
     "btjd": 4928.398779703811,
-    "utc": "2028-06-05 21:34",
+    "utc": "2028-06-05 21:26",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 28.869129005697886,
     "night_frac": 0.24,
-    "sun_sep": 138.90948271571372,
+    "sun_sep": 138.9092967504026,
     "note": "24% of the transit at night"
    },
    {
     "epoch": 71,
     "btjd": 4964.738675610907,
-    "utc": "2028-07-12 05:43",
+    "utc": "2028-07-12 05:37",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 29.476096924694254,
     "night_frac": 0.8,
-    "sun_sep": 129.50784356017368,
+    "sun_sep": 129.50971767377692,
     "note": "80% of the transit at night"
    },
    {
     "epoch": 72,
     "btjd": 5001.078571518003,
-    "utc": "2028-08-17 13:53",
+    "utc": "2028-08-17 13:49",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 30.09011589466913,
     "night_frac": 0.0,
-    "sun_sep": 106.95119551176161,
+    "sun_sep": 106.95239321446729,
     "note": "daytime or too low"
    },
    {
     "epoch": 73,
     "btjd": 5037.418467425099,
     "utc": "2028-09-22 22:02",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 30.71076299067764,
     "night_frac": 0.24,
-    "sun_sep": 80.60430012843923,
+    "sun_sep": 80.60361364605167,
     "note": "24% of the transit at night"
    },
    {
     "epoch": 74,
     "btjd": 5073.758363332196,
-    "utc": "2028-10-29 06:12",
+    "utc": "2028-10-29 06:15",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 31.3376444018825,
     "night_frac": 0.0,
-    "sun_sep": 55.64339922437125,
+    "sun_sep": 55.6414431029444,
     "note": "daytime or too low"
    },
    {
     "epoch": 75,
     "btjd": 5110.098259239292,
-    "utc": "2028-12-04 14:21",
+    "utc": "2028-12-04 14:26",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 31.970393399556507,
     "night_frac": 0.0,
-    "sun_sep": 41.28726838533803,
+    "sun_sep": 41.28684106845391,
     "note": "too close to the Sun"
    },
    {
     "epoch": 76,
     "btjd": 5146.4381551463875,
-    "utc": "2029-01-09 22:30",
+    "utc": "2029-01-09 22:35",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 32.608668415933224,
     "night_frac": 0.0,
-    "sun_sep": 50.25702547513049,
+    "sun_sep": 50.258948904468724,
     "note": "daytime or too low"
    },
    {
     "epoch": 77,
     "btjd": 5182.778051053483,
-    "utc": "2029-02-15 06:40",
+    "utc": "2029-02-15 06:41",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 33.25215123676154,
-    "night_frac": 0.56,
-    "sun_sep": 74.27681290755599,
-    "note": "56% of the transit at night"
+    "night_frac": 0.6,
+    "sun_sep": 74.27795196572181,
+    "note": "60% of the transit at night"
    },
    {
     "epoch": 78,
     "btjd": 5219.1179469605795,
-    "utc": "2029-03-23 14:49",
+    "utc": "2029-03-23 14:47",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 33.90054530769305,
     "night_frac": 0.0,
-    "sun_sep": 101.50284027375172,
+    "sun_sep": 101.50199270981125,
     "note": "daytime or too low"
    },
    {
     "epoch": 79,
     "btjd": 5255.457842867676,
-    "utc": "2029-04-28 22:59",
+    "utc": "2029-04-28 22:53",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 34.553574152607474,
     "night_frac": 0.04,
-    "sun_sep": 125.8832429691595,
+    "sun_sep": 125.88130157094807,
     "note": "daytime or too low"
    },
    {
     "epoch": 80,
     "btjd": 5291.797738774772,
-    "utc": "2029-06-04 07:08",
+    "utc": "2029-06-04 07:01",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 35.210979900520286,
     "night_frac": 1.0,
-    "sun_sep": 138.79986218895735,
+    "sun_sep": 138.79952699996429,
     "note": "full transit at night"
    },
    {
     "epoch": 81,
     "btjd": 5328.137634681868,
-    "utc": "2029-07-10 15:18",
+    "utc": "2029-07-10 15:11",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 35.87252191670179,
     "night_frac": 0.0,
-    "sun_sep": 130.42103321933138,
+    "sun_sep": 130.42287140965493,
     "note": "daytime or too low"
    },
    {
     "epoch": 82,
     "btjd": 5364.477530588964,
-    "utc": "2029-08-15 23:27",
+    "utc": "2029-08-15 23:23",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 36.53797553297066,
-    "night_frac": 0.56,
-    "sun_sep": 108.2445992990954,
-    "note": "56% of the transit at night"
+    "night_frac": 0.52,
+    "sun_sep": 108.24587073170535,
+    "note": "52% of the transit at night"
    },
    {
     "epoch": 83,
     "btjd": 5400.81742649606,
     "utc": "2029-09-21 07:37",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 37.20713087172918,
     "night_frac": 0.0,
-    "sun_sep": 81.96492415607446,
+    "sun_sep": 81.9643305640147,
     "note": "daytime or too low"
    },
    {
     "epoch": 84,
     "btjd": 5437.157322403156,
-    "utc": "2029-10-27 15:46",
+    "utc": "2029-10-27 15:49",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 37.87979175811699,
     "night_frac": 0.0,
-    "sun_sep": 56.78335325441385,
+    "sun_sep": 56.781408464194215,
     "note": "daytime or too low"
    },
    {
     "epoch": 85,
     "btjd": 5473.497218310253,
-    "utc": "2029-12-02 23:55",
+    "utc": "2029-12-03 00:00",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 38.555774714625294,
     "night_frac": 0.0,
-    "sun_sep": 41.50810245528293,
+    "sun_sep": 41.50751660592093,
     "note": "too close to the Sun"
    },
    {
     "epoch": 86,
     "btjd": 5509.837114217348,
-    "utc": "2030-01-08 08:05",
+    "utc": "2030-01-08 08:09",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 39.23490803259105,
-    "night_frac": 0.0,
-    "sun_sep": 49.29257239688617,
+    "night_frac": 0.04,
+    "sun_sep": 49.29446012414476,
     "note": "too close to the Sun"
    },
    {
     "epoch": 87,
     "btjd": 5546.177010124445,
-    "utc": "2030-02-13 16:14",
+    "utc": "2030-02-13 16:16",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 39.91703091515101,
     "night_frac": 0.0,
-    "sun_sep": 72.90889216331945,
+    "sun_sep": 72.9101243126966,
     "note": "daytime or too low"
    },
    {
     "epoch": 88,
     "btjd": 5582.51690603154,
-    "utc": "2030-03-22 00:24",
+    "utc": "2030-03-22 00:21",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 40.601992686451645,
     "night_frac": 0.0,
-    "sun_sep": 100.13091103733875,
+    "sun_sep": 100.13016455575219,
     "note": "daytime or too low"
    },
    {
     "epoch": 89,
     "btjd": 5618.856801938637,
-    "utc": "2030-04-27 08:33",
+    "utc": "2030-04-27 08:27",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 41.28965206216359,
-    "night_frac": 0.8,
-    "sun_sep": 124.81342408142368,
-    "note": "80% of the transit at night"
+    "night_frac": 0.84,
+    "sun_sep": 124.81148730999945,
+    "note": "84% of the transit at night"
    },
    {
     "epoch": 90,
     "btjd": 5655.196697845733,
-    "utc": "2030-06-02 16:43",
+    "utc": "2030-06-02 16:35",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 41.97987647662501,
     "night_frac": 0.0,
-    "sun_sep": 138.6281305593071,
+    "sun_sep": 138.62764985003952,
     "note": "daytime or too low"
    },
    {
     "epoch": 91,
     "btjd": 5691.5365937528295,
-    "utc": "2030-07-09 00:52",
+    "utc": "2030-07-09 00:45",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 42.67254146222326,
     "night_frac": 0.84,
-    "sun_sep": 131.29508228477135,
+    "sun_sep": 131.296875734561,
     "note": "84% of the transit at night"
    },
    {
     "epoch": 92,
     "btjd": 5727.876489659925,
-    "utc": "2030-08-14 09:02",
+    "utc": "2030-08-14 08:58",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 43.36753007691283,
     "night_frac": 0.0,
-    "sun_sep": 109.52703066760544,
+    "sun_sep": 109.52837417436751,
     "note": "daytime or too low"
    },
    {
     "epoch": 93,
     "btjd": 5764.216385567021,
     "utc": "2030-09-19 17:11",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 44.064732376051275,
     "night_frac": 0.0,
-    "sun_sep": 83.3252945610537,
+    "sun_sep": 83.3247969330102,
     "note": "daytime or too low"
    }
   ]
@@ -5653,435 +5797,483 @@
    {
     "epoch": 27,
     "btjd": 4359.630190291252,
-    "utc": "2026-11-15 03:07",
+    "utc": "2026-11-15 03:01",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 6.5416129908038725,
     "night_frac": 0.56,
-    "sun_sep": 124.22755925218873,
+    "sun_sep": 124.22589332366604,
     "note": "56% of the transit at night"
    },
    {
     "epoch": 28,
     "btjd": 4438.660390245355,
-    "utc": "2027-02-02 03:50",
+    "utc": "2027-02-02 03:45",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 6.742226456376057,
-    "night_frac": 0.88,
-    "sun_sep": 121.13040699219975,
-    "note": "88% of the transit at night"
+    "night_frac": 0.92,
+    "sun_sep": 121.13207823570622,
+    "note": "92% of the transit at night"
    },
    {
     "epoch": 31,
     "btjd": 4675.7509901076655,
-    "utc": "2027-09-27 06:01",
+    "utc": "2027-09-27 05:59",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 7.55020473554667,
     "night_frac": 0.52,
-    "sun_sep": 92.72835127625642,
+    "sun_sep": 92.72817081727925,
     "note": "52% of the transit at night"
    },
    {
     "epoch": 32,
     "btjd": 4754.781190061769,
-    "utc": "2027-12-15 06:44",
+    "utc": "2027-12-15 06:38",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 7.876504541195766,
     "night_frac": 0.8,
-    "sun_sep": 134.5617462731791,
+    "sun_sep": 134.56125637316256,
     "note": "80% of the transit at night"
    },
    {
     "epoch": 35,
     "btjd": 4991.871789924079,
-    "utc": "2028-08-08 08:55",
+    "utc": "2028-08-08 08:58",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 8.982969623721342,
-    "night_frac": 0.24,
-    "sun_sep": 60.74596091429921,
-    "note": "24% of the transit at night"
+    "night_frac": 0.2,
+    "sun_sep": 60.74757144857666,
+    "note": "20% of the transit at night"
    },
    {
     "epoch": 36,
     "btjd": 5070.901989878183,
-    "utc": "2028-10-26 09:38",
+    "utc": "2028-10-26 09:34",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 9.38596242644884,
     "night_frac": 0.4,
-    "sun_sep": 112.9225097906796,
+    "sun_sep": 112.92108546442867,
     "note": "40% of the transit at night"
    },
    {
     "epoch": 37,
     "btjd": 5149.932189832287,
-    "utc": "2029-01-13 10:22",
+    "utc": "2029-01-13 10:15",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 9.80260383130519,
     "night_frac": 0.08,
-    "sun_sep": 130.4383111389246,
+    "sun_sep": 130.4396962672458,
     "note": "8% of the transit at night"
    },
    {
     "epoch": 40,
     "btjd": 5387.022789694596,
-    "utc": "2029-09-07 12:32",
+    "utc": "2029-09-07 12:33",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 11.118836190840877,
-    "night_frac": 0.12,
-    "sun_sep": 79.5196413036426,
-    "note": "12% of the transit at night"
+    "night_frac": 0.08,
+    "sun_sep": 79.52035545991622,
+    "note": "8% of the transit at night"
    }
   ],
   "all_next": [
    {
     "epoch": 27,
     "btjd": 4359.630190291252,
-    "utc": "2026-11-15 03:07",
+    "utc": "2026-11-15 03:01",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 6.5416129908038725,
     "night_frac": 0.56,
-    "sun_sep": 124.22755925218873,
+    "sun_sep": 124.22589332366604,
     "note": "56% of the transit at night"
    },
    {
     "epoch": 28,
     "btjd": 4438.660390245355,
-    "utc": "2027-02-02 03:50",
+    "utc": "2027-02-02 03:45",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 6.742226456376057,
-    "night_frac": 0.88,
-    "sun_sep": 121.13040699219975,
-    "note": "88% of the transit at night"
+    "night_frac": 0.92,
+    "sun_sep": 121.13207823570622,
+    "note": "92% of the transit at night"
    },
    {
     "epoch": 29,
     "btjd": 4517.690590199459,
-    "utc": "2027-04-22 04:34",
+    "utc": "2027-04-22 04:36",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 6.97959443302125,
     "night_frac": 0.0,
-    "sun_sep": 68.13241924431988,
+    "sun_sep": 68.13104204360106,
     "note": "daytime or too low"
    },
    {
     "epoch": 30,
     "btjd": 4596.720790153562,
-    "utc": "2027-07-10 05:17",
+    "utc": "2027-07-10 05:22",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 7.250107799382429,
     "night_frac": 0.0,
-    "sun_sep": 47.66694055755727,
+    "sun_sep": 47.66804267936915,
     "note": "too close to the Sun"
    },
    {
     "epoch": 31,
     "btjd": 4675.7509901076655,
-    "utc": "2027-09-27 06:01",
+    "utc": "2027-09-27 05:59",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 7.55020473554667,
     "night_frac": 0.52,
-    "sun_sep": 92.72835127625642,
+    "sun_sep": 92.72817081727925,
     "note": "52% of the transit at night"
    },
    {
     "epoch": 32,
     "btjd": 4754.781190061769,
-    "utc": "2027-12-15 06:44",
+    "utc": "2027-12-15 06:38",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 7.876504541195766,
     "night_frac": 0.8,
-    "sun_sep": 134.5617462731791,
+    "sun_sep": 134.56125637316256,
     "note": "80% of the transit at night"
    },
    {
     "epoch": 33,
     "btjd": 4833.811390015872,
-    "utc": "2028-03-03 07:28",
+    "utc": "2028-03-03 07:25",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 8.225889606546176,
     "night_frac": 0.04,
-    "sun_sep": 101.80254463960775,
+    "sun_sep": 101.80334774279173,
     "note": "daytime or too low"
    },
    {
     "epoch": 34,
     "btjd": 4912.841589969976,
-    "utc": "2028-05-21 08:11",
+    "utc": "2028-05-21 08:15",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 8.595545337178557,
     "night_frac": 0.0,
-    "sun_sep": 51.91952088992456,
+    "sun_sep": 51.917993259976384,
     "note": "daytime or too low"
    },
    {
     "epoch": 35,
     "btjd": 4991.871789924079,
-    "utc": "2028-08-08 08:55",
+    "utc": "2028-08-08 08:58",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 8.982969623721342,
-    "night_frac": 0.24,
-    "sun_sep": 60.74596091429921,
-    "note": "24% of the transit at night"
+    "night_frac": 0.2,
+    "sun_sep": 60.74757144857666,
+    "note": "20% of the transit at night"
    },
    {
     "epoch": 36,
     "btjd": 5070.901989878183,
-    "utc": "2028-10-26 09:38",
+    "utc": "2028-10-26 09:34",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 9.38596242644884,
     "night_frac": 0.4,
-    "sun_sep": 112.9225097906796,
+    "sun_sep": 112.92108546442867,
     "note": "40% of the transit at night"
    },
    {
     "epoch": 37,
     "btjd": 5149.932189832287,
-    "utc": "2029-01-13 10:22",
+    "utc": "2029-01-13 10:15",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 9.80260383130519,
     "night_frac": 0.08,
-    "sun_sep": 130.4383111389246,
+    "sun_sep": 130.4396962672458,
     "note": "8% of the transit at night"
    },
    {
     "epoch": 38,
     "btjd": 5228.962389786389,
-    "utc": "2029-04-02 11:05",
+    "utc": "2029-04-02 11:06",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 10.231226557413812,
     "night_frac": 0.0,
-    "sun_sep": 80.90894435037885,
+    "sun_sep": 80.90831369566176,
     "note": "daytime or too low"
    },
    {
     "epoch": 39,
     "btjd": 5307.992589740494,
-    "utc": "2029-06-20 11:49",
+    "utc": "2029-06-20 11:54",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 10.670386856039519,
     "night_frac": 0.0,
-    "sun_sep": 45.01408879855523,
+    "sun_sep": 45.014045095043954,
     "note": "too close to the Sun"
    },
    {
     "epoch": 40,
     "btjd": 5387.022789694596,
-    "utc": "2029-09-07 12:32",
+    "utc": "2029-09-07 12:33",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 11.118836190840877,
-    "night_frac": 0.12,
-    "sun_sep": 79.5196413036426,
-    "note": "12% of the transit at night"
+    "night_frac": 0.08,
+    "sun_sep": 79.52035545991622,
+    "note": "8% of the transit at night"
    },
    {
     "epoch": 41,
     "btjd": 5466.0529896487005,
-    "utc": "2029-11-25 13:16",
+    "utc": "2029-11-25 13:09",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 11.575495005085767,
     "night_frac": 0.0,
-    "sun_sep": 129.2343462756705,
+    "sun_sep": 129.23285917664398,
     "note": "daytime or too low"
    },
    {
     "epoch": 42,
     "btjd": 5545.083189602803,
-    "utc": "2030-02-12 13:59",
+    "utc": "2030-02-12 13:55",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 12.039429171666693,
     "night_frac": 0.0,
-    "sun_sep": 114.67672026853133,
+    "sun_sep": 114.67823230945089,
     "note": "daytime or too low"
    },
    {
     "epoch": 43,
     "btjd": 5624.113389556907,
-    "utc": "2030-05-02 14:43",
+    "utc": "2030-05-02 14:46",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 12.509829284973998,
     "night_frac": 0.0,
-    "sun_sep": 61.67296971290911,
+    "sun_sep": 61.671375010904605,
     "note": "daytime or too low"
    },
    {
     "epoch": 44,
     "btjd": 5703.143589511011,
-    "utc": "2030-07-20 15:26",
+    "utc": "2030-07-20 15:30",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 12.985992703355718,
     "night_frac": 0.0,
-    "sun_sep": 51.32334338157358,
+    "sun_sep": 51.32482361294908,
     "note": "daytime or too low"
    },
    {
     "epoch": 45,
     "btjd": 5782.173789465114,
-    "utc": "2030-10-07 16:10",
+    "utc": "2030-10-07 16:07",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 13.467308121403605,
     "night_frac": 0.0,
-    "sun_sep": 100.08456407249005,
+    "sun_sep": 100.08386726669045,
     "note": "daytime or too low"
    },
    {
     "epoch": 46,
     "btjd": 5861.203989419218,
-    "utc": "2030-12-25 16:53",
+    "utc": "2030-12-25 16:46",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 13.953242396476877,
     "night_frac": 0.0,
-    "sun_sep": 134.8617766842761,
+    "sun_sep": 134.86204879278628,
     "note": "daytime or too low"
    },
    {
     "epoch": 47,
     "btjd": 5940.234189373321,
-    "utc": "2031-03-14 17:37",
+    "utc": "2031-03-14 17:35",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 14.44332934283702,
     "night_frac": 0.0,
-    "sun_sep": 94.35509108221105,
+    "sun_sep": 94.35540090126653,
     "note": "daytime or too low"
    },
    {
     "epoch": 48,
     "btjd": 6019.264389327424,
-    "utc": "2031-06-01 18:20",
+    "utc": "2031-06-01 18:25",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 14.937160219709588,
     "night_frac": 0.0,
-    "sun_sep": 48.05950518787752,
+    "sun_sep": 48.05834498901368,
     "note": "too close to the Sun"
    },
    {
     "epoch": 49,
     "btjd": 6098.294589281528,
-    "utc": "2031-08-19 19:04",
+    "utc": "2031-08-19 19:06",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 15.434375664266211,
     "night_frac": 0.0,
-    "sun_sep": 67.03650705312087,
+    "sun_sep": 67.03790907912179,
     "note": "daytime or too low"
    },
    {
     "epoch": 50,
     "btjd": 6177.324789235631,
-    "utc": "2031-11-06 19:47",
+    "utc": "2031-11-06 19:42",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 15.934658849655747,
     "night_frac": 0.0,
-    "sun_sep": 119.45748179919758,
+    "sun_sep": 119.45583199817412,
     "note": "daytime or too low"
    },
    {
     "epoch": 51,
     "btjd": 6256.354989189735,
-    "utc": "2032-01-24 20:31",
+    "utc": "2032-01-24 20:25",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 16.4377296776937,
     "night_frac": 0.0,
-    "sun_sep": 125.74102741359326,
+    "sun_sep": 125.74268610626235,
     "note": "daytime or too low"
    },
    {
     "epoch": 52,
     "btjd": 6335.385189143838,
-    "utc": "2032-04-12 21:14",
+    "utc": "2032-04-12 21:15",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 16.943339843482832,
-    "night_frac": 0.16,
-    "sun_sep": 73.69453835125893,
-    "note": "16% of the transit at night"
+    "night_frac": 0.2,
+    "sun_sep": 73.69346243219364,
+    "note": "20% of the transit at night"
    },
    {
     "epoch": 53,
     "btjd": 6414.415389097941,
-    "utc": "2032-06-30 21:58",
+    "utc": "2032-06-30 22:02",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 17.45126863409575,
     "night_frac": 0.0,
-    "sun_sep": 45.79521179829795,
+    "sun_sep": 45.79584866613765,
     "note": "too close to the Sun"
    },
    {
     "epoch": 54,
     "btjd": 6493.445589052045,
-    "utc": "2032-09-17 22:41",
+    "utc": "2032-09-17 22:40",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 17.96131934518721,
     "night_frac": 0.0,
-    "sun_sep": 86.79140682642398,
+    "sun_sep": 86.791629829962,
     "note": "daytime or too low"
    },
    {
     "epoch": 55,
     "btjd": 6572.475789006148,
-    "utc": "2032-12-05 23:25",
+    "utc": "2032-12-05 23:18",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 18.473316218075713,
     "night_frac": 0.2,
-    "sun_sep": 132.87913730024047,
+    "sun_sep": 132.87810805222887,
     "note": "20% of the transit at night"
    },
    {
     "epoch": 56,
     "btjd": 6651.505988960252,
-    "utc": "2033-02-23 00:08",
+    "utc": "2033-02-23 00:04",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 18.987101815681157,
     "night_frac": 0.48,
-    "sun_sep": 107.68523264716693,
+    "sun_sep": 107.68640197270457,
     "note": "48% of the transit at night"
    },
    {
     "epoch": 57,
     "btjd": 6730.536188914355,
-    "utc": "2033-05-13 00:52",
+    "utc": "2033-05-13 00:55",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 19.50253476904648,
     "night_frac": 0.12,
-    "sun_sep": 55.89883942193162,
+    "sun_sep": 55.89719515433791,
     "note": "12% of the transit at night"
    },
    {
     "epoch": 58,
     "btjd": 6809.5663888684585,
-    "utc": "2033-07-31 01:35",
+    "utc": "2033-07-31 01:39",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 20.01948783734219,
     "night_frac": 0.0,
-    "sun_sep": 56.17480506467294,
+    "sun_sep": 56.176446160815956,
     "note": "daytime or too low"
    },
    {
     "epoch": 59,
     "btjd": 6888.596588822562,
-    "utc": "2033-10-18 02:19",
+    "utc": "2033-10-18 02:15",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 20.537846233573703,
     "night_frac": 0.16,
-    "sun_sep": 107.30510432438929,
+    "sun_sep": 107.30396819412923,
     "note": "16% of the transit at night"
    },
    {
     "epoch": 60,
     "btjd": 6967.626788776665,
-    "utc": "2034-01-05 03:02",
+    "utc": "2034-01-05 02:55",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 21.057506175973074,
     "night_frac": 0.84,
-    "sun_sep": 133.1486345451683,
+    "sun_sep": 133.14960358011612,
     "note": "84% of the transit at night"
    },
    {
     "epoch": 61,
     "btjd": 7046.656988730769,
-    "utc": "2034-03-25 03:46",
+    "utc": "2034-03-25 03:45",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 21.5783736315129,
     "night_frac": 0.4,
-    "sun_sep": 86.87254758919057,
+    "sun_sep": 86.87231834287643,
     "note": "40% of the transit at night"
    },
    {
     "epoch": 62,
     "btjd": 7125.687188684872,
-    "utc": "2034-06-12 04:29",
+    "utc": "2034-06-12 04:34",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 22.10036322334995,
     "night_frac": 0.0,
-    "sun_sep": 45.68510593708269,
+    "sun_sep": 45.684509529550816,
     "note": "too close to the Sun"
    },
    {
     "epoch": 63,
     "btjd": 7204.7173886389755,
-    "utc": "2034-08-30 05:13",
+    "utc": "2034-08-30 05:14",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 22.62339727847318,
     "night_frac": 0.12,
-    "sun_sep": 73.81640992028815,
+    "sun_sep": 73.81748336881147,
     "note": "12% of the transit at night"
    },
    {
     "epoch": 64,
     "btjd": 7283.74758859308,
-    "utc": "2034-11-17 05:56",
+    "utc": "2034-11-17 05:50",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 23.147404995550954,
-    "night_frac": 0.92,
-    "sun_sep": 125.28651057347396,
-    "note": "92% of the transit at night"
+    "night_frac": 0.96,
+    "sun_sep": 125.28485983077357,
+    "note": "full transit at night"
    },
    {
     "epoch": 65,
     "btjd": 7362.777788547182,
-    "utc": "2035-02-04 06:40",
+    "utc": "2035-02-04 06:34",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 23.672321716073547,
     "night_frac": 0.44,
-    "sun_sep": 119.93623352617543,
+    "sun_sep": 119.93788639224672,
     "note": "44% of the transit at night"
    },
    {
     "epoch": 66,
     "btjd": 7441.807988501287,
-    "utc": "2035-04-24 07:23",
+    "utc": "2035-04-24 07:25",
+    "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
     "sigma_min": 24.198088284476484,
     "night_frac": 0.0,
-    "sun_sep": 66.83435744288907,
+    "sun_sep": 66.83292015110239,
     "note": "daytime or too low"
    }
   ]

@@ -313,7 +313,8 @@
   "future_tess_sectors": [
    113,
    114
-  ]
+  ],
+  "superseded": "15 October 2026: 'transits', 'fit_all_five', 'density_test', 'blend_shape_test', 'centroid', 'odd_even_ppm', 'planet' and 'next_transits_utc' here are the 12 October analysis, which counted the sector-66 window as a transit and used one linear ephemeris. The preferred values are results/report/transit_fits.json (TIC402710280), results/candidates/audit_402710280.json, blend_shape_402710280.json and fpp_tic402710280_v2.json; exofop_ready.md quotes them."
  },
  "123664207": {
   "name": "TOI-2493.01",

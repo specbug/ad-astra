@@ -8,8 +8,11 @@ over its multiples when they do equally well. For the chosen ephemeris:
     error of D / (2 SNR), floored at half a cadence;
   - a weighted straight-line fit to the times gives P and T0 with errors (scaled by sqrt(chi2_red) when above 1);
   - odd and even transits are compared (a period that is half the true one shows two depths);
-  - the listed and the corrected ephemerides are compared on 1 December 2026 (BTJD 4100.5): the offset in hours
-    and in transit durations, and the listed ephemeris's own error there;
+  - the listed and the corrected ephemerides are compared on 1 December 2026 (BTJD 4375.5): the offset in hours
+    and in transit durations, and the listed ephemeris's own error there (its period and epoch errors combined in
+    quadrature: the catalogue gives no covariance). Before 15 October 2026 this used BTJD 4100.5, which is
+    1 March 2026, not 1 December (found by an independent audit); `python toi_audit_review.py --reclassify`
+    recomputes offsets and statuses from the stored fits;
   - ExoFOP's planet-parameter uploads for the star (target pages, cached) are searched for a period within 3
     sigma of the corrected one, i.e. someone who has already posted it.
 
@@ -30,7 +33,13 @@ from env import CATALOGS, RESULTS
 C = RESULTS / "candidates"
 CKPT = CATALOGS.parent / "toi_audit.jsonl"
 OUT = C / "toi_audit_corrections.json"
-REF = 4100.5          # BTJD of 2026-12-01 00:00 UTC (BJD 2461100.5)
+REF = 4375.5          # BTJD (TDB) of 2026-12-01 00:00 UTC (BJD 2461375.5); checked in _check_ref()
+
+
+def _check_ref():
+    from astropy.time import Time
+    d = Time(REF + 2457000, format="jd", scale="tdb").utc.datetime
+    assert (d.year, d.month, d.day) in ((2026, 12, 1), (2026, 11, 30)), d
 
 
 def flagged():
@@ -123,26 +132,59 @@ def review_one(key, o):
         so = dep[odd].std(ddof=1) / math.sqrt(odd.sum()) if odd.sum() > 1 else np.nan
         se = dep[~odd].std(ddof=1) / math.sqrt((~odd).sum()) if (~odd).sum() > 1 else np.nan
         res["odd_even_sigma"] = float(abs(do - de) / math.hypot(so, se)) if so == so and se == se and (so or se) else None
-    # where the two ephemerides put the transit on 1 Dec 2026
-    k_c = round((REF - T0) / P)
-    t_c = T0 + k_c * P
-    k_l = round((t_c - o["T0"]) / o["P"])
-    t_l = o["T0"] + k_l * o["P"]
-    Pe_l = o.get("P_err")
-    res.update(offset_h=float((t_l - t_c) * 24), offset_dur=float(abs(t_l - t_c) / D),
-               listed_err_h=float(abs(k_l) * Pe_l * 24) if Pe_l else None,
-               corrected_err_h=float(math.hypot(eT0, k_c * eP) * 24))
-    le = res["listed_err_h"]
-    res["sigma_listed"] = float(abs(res["offset_h"]) / le) if le else None
-    if res["offset_dur"] < 1:
-        res["status"] = "within a transit duration"
-    elif le and abs(res["offset_h"]) < 3 * le:
-        res["status"] = "refined"          # the listed error already allows the offset; ours is much smaller
-    else:
-        res["status"] = "corrected"        # the listed ephemeris is wrong by more than its own error
+    res.update(classify(T0, P, eT0, eP, o["T0"], o["P"], o.get("P_err"), o.get("T0_err"), D))
     res["solid"] = bool(res["chosen"]["n_seen"] >= 5 and res["chosen"]["n_seen"] >= 0.7 * res["chosen"]["n_data"]
                         and res["chi2_red"] < 5)
     return res
+
+
+def classify(T0, P, eT0, eP, T0_l, P_l, Pe_l, T0e_l, D):
+    """Where the corrected and the listed ephemerides put the transit nearest 1 December 2026, the offset
+    (listed minus corrected) in hours and in durations, each ephemeris's error there, and the status. The corrected
+    epoch is at the weighted-mean cycle of the timed transits, so its period-epoch covariance is negligible."""
+    k_c = round((REF - T0) / P)
+    t_c = T0 + k_c * P
+    k_l = round((t_c - T0_l) / P_l)
+    t_l = T0_l + k_l * P_l
+    out = {"offset_h": float((t_l - t_c) * 24), "offset_dur": float(abs(t_l - t_c) / D),
+           "listed_err_h": float(math.hypot(abs(k_l) * Pe_l, T0e_l if T0e_l and T0e_l == T0e_l else 0.0) * 24)
+           if Pe_l else None,
+           "corrected_err_h": float(math.hypot(eT0, k_c * eP) * 24), "ref_btjd": REF}
+    le = out["listed_err_h"]
+    out["sigma_listed"] = float(abs(out["offset_h"]) / le) if le else None
+    if out["offset_dur"] < 1:
+        out["status"] = "within a transit duration"
+    elif le and abs(out["offset_h"]) < 3 * le:
+        out["status"] = "refined"          # the listed error already allows the offset; ours is much smaller
+    else:
+        out["status"] = "corrected"        # the listed ephemeris is wrong by more than its own error
+    return out
+
+
+def reclassify():
+    """Recompute offsets and statuses of the stored results (after the reference-date fix), keeping the fits."""
+    import toi_audit as ta
+    _check_ref()
+    res = json.load(open(OUT))
+    t = ta.tois()
+    cat = {f"{float(x):.2f}": (float(a) if a == a else None, float(b) if b == b else None)
+           for x, a, b in zip(t["TOI"], t["Period (days) err"], t["Epoch (BJD) err"])}
+    changed = 0
+    for k, r in res.items():
+        if "P" not in r or r.get("status") in (None, "error", "no alternative", "too few timed transits"):
+            continue
+        Pe_l, T0e_l = cat.get(r["toi"], (None, None))
+        old = r.get("status")
+        r.update(classify(r["T0"], r["P"], r["T0_err"], r["P_err"], r["T0_listed"], r["P_listed"], Pe_l, T0e_l,
+                          r["dur_h"] / 24))
+        r["T0_err_listed"] = T0e_l
+        changed += old != r["status"]
+    json.dump(res, open(OUT, "w"), indent=1, default=float)
+    rows = [{k: v for k, v in r.items() if not isinstance(v, (list, dict))} | {"already_posted": "; ".join(r.get("already_posted", []))}
+            for r in res.values()]
+    pd.DataFrame(rows).to_csv(C / "toi_audit_corrections.csv", index=False)
+    print(changed, "statuses changed")
+    print(pd.Series([r.get("status") for r in res.values()]).value_counts().to_string())
 
 
 def exofop_uploads(tic):
@@ -166,6 +208,7 @@ def exofop_uploads(tic):
 
 def main():
     import toi_audit as ta
+    _check_ref()
     fl = flagged()
     t = ta.tois()
     perr = {f"{float(x):.2f}": (float(a) if a == a else None) for x, a in zip(t["TOI"], t["Period (days) err"])}
@@ -203,4 +246,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    reclassify() if "--reclassify" in sys.argv else main()
