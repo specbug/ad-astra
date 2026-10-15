@@ -1,5 +1,10 @@
 # Publishing TIC 402710280.01 on Zenodo
 
+**Status: published 2026-10-15.** A: https://doi.org/10.5281/zenodo.23390274 (data and code), B:
+https://doi.org/10.5281/zenodo.23390317 (preprint), C: https://doi.org/10.5281/zenodo.23390325 (pre-registration).
+Every published file was checked byte for byte (MD5) against this repository. The steps below are kept as the record
+of how they were made; the next action on C is a new version with the outcome of the 2027 transits.
+
 Three records, uploaded in this order so that each can cite the others. Zenodo can **reserve a DOI** for a draft
 before it is published ("Reserve DOI" in the upload form); use it to get all three DOIs first.
 
