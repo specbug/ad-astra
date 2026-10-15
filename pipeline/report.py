@@ -1231,9 +1231,9 @@ POSTED_VERDICTS = {
     "243417115|CTOI 243417115.01": ("hunt", "Posted period right (4 of 4 predicted transits); a weak transit mis-timed by the hunt."),
     "438225366|CTOI 438225366.01": ("posted", "The posted period is twice the true one."),
     "386131764|CTOI 386131764.01": ("posted", "TOI-2633.01's listed ephemeris misses the transits."),
-    "156716001|CTOI 156716001.01": ("posted", "Not the TOI it was merged into (TOI-7602.01)."),
-    "369532319|CTOI 369532319.01": ("posted", "Not the TOI it was merged into (TOI-5967.01)."),
-    "67711670|CTOI 67711670.01": ("posted", "Not the TOI it was merged into (TOI-6033.01)."),
+    "156716001|CTOI 156716001.01": ("posted", "Not the same signal as the TOI it was merged into (TOI-7602.01)."),
+    "369532319|CTOI 369532319.01": ("posted", "Not the same signal as the TOI it was merged into (TOI-5967.01)."),
+    "67711670|CTOI 67711670.01": ("posted", "Not the same signal as the TOI it was merged into (TOI-6033.01)."),
 }
 
 EXOFOP = "https://exofop.ipac.caltech.edu/tess/target.php?id="
@@ -1269,6 +1269,29 @@ def promoted_summary():
         else:
             cats["unclear"].append(o)
     return {"n": len(pc), "cats": cats}
+
+
+def toi_audit_merged():
+    """toi_audit_corrections.json (first pass: flags, chosen alternative, transit counts) with the ephemeris,
+    errors, offset and status replaced by the transit-model timing of toi_audit_timing.py where it ran."""
+    tr = _json("toi_audit_corrections.json")
+    tt = _json("toi_audit_timing.json") or {}
+    if not tr:
+        return None
+    out = {}
+    for k, r in tr.items():
+        r = dict(r)
+        t = tt.get(k)
+        if t and "P" in t:
+            r.update({a: t[a] for a in ("P", "P_err", "T0", "T0_err", "offset_h", "offset_dur", "listed_err_h",
+                                        "corrected_err_h", "sigma_listed", "status", "solid", "chi2_red", "n_timed",
+                                        "o_c_rms_min") if a in t})
+            r["odd_even_sigma"] = t.get("odd_even_sigma")
+            r["timing"] = "model"
+        elif t:
+            r["status"], r["solid"] = t.get("status", r.get("status")), False
+        out[k] = r
+    return out
 
 
 def section_corrections():
@@ -1426,15 +1449,42 @@ def section_corrections():
                                f"(its error at that epoch is under three hours) where the data show no transit or have "
                                f"a gap; 30-minute bins.</figcaption></figure>")
     if rows:
+        mt = _json("merged_ctoi_test.json") or {}
+
+        def _shape(x):
+            return f"{x['depth_ppm']:.0f} ppm, about {x['dur_h_median']:.0f} h" if x else "–"
+        mli = []
+        for key, toi in (("CTOI 156716001.01", "TOI-7602.01"), ("CTOI 369532319.01", "TOI-5967.01"), ("CTOI 67711670.01", "TOI-6033.01")):
+            m = mt.get(key)
+            if not m:
+                continue
+            extra = ""
+            if m.get("toi_in_S16"):
+                extra = (" TOI-5967.01's own transit is in sector 16 exactly where its ephemeris puts it, 2.7 days before "
+                         "the community TOI's dip.")
+            if m.get("toi_in_S18"):
+                extra = (" But TOI-6033.01's own 18.04-day period, set by two transits in sector 58, predicts a transit "
+                         "in sector 18 that is not there (at most about 500 ppm where 5,500 is expected): that TOI's "
+                         "period is itself in question, and an expert look at the whole star is needed.")
+            mli.append(f"<li><strong>{esc(key)}</strong>: its {m['ctoi_shape']['n']} dips are {_shape(m['ctoi_shape'])}; "
+                       f"{toi}'s {m['toi_shape']['n']} transits are {_shape(m['toi_shape'])}. Of the periods that "
+                       f"could put every dip on one ephemeris, {len(m['single_object_allowed'])} survive the rest of the "
+                       f"data.{extra}</li>")
+        merged_li = "".join(mli)
+        merged_link = f'<a href="{REPO}/pipeline/merged_ctoi_test.py">merged_ctoi_test.py</a>'
         parts.append(f"""
   <div class="col" style="margin-top:28px;display:grid;gap:12px">
-    <h3>Three community TOIs that are not the TOI they were merged into</h3>
+    <h3>Three community TOIs whose dips are not the TOI they were merged into</h3>
     <p>ExoFOP marks each of these single-transit community TOIs as promoted to a TOI that the TESS project found
-    later on the same star. In each, the community TOI's transit sits far off that TOI's ephemeris, the TOI's own
-    transits are in the data at other times, and the period hunt (with the TOI's transits masked) found a further
-    transit of the community TOI's depth and duration. All of them are on the target in the pixel test. So each
-    star has a second transiting candidate, whose period is the gap between its transits divided by a whole
-    number.</p>
+    later on the same star. In each, the community TOI's dips sit far off that TOI's ephemeris and the period hunt
+    (with the TOI's transits masked) found a further one. A merge would still be right if the two were one object
+    with a wrong TOI ephemeris, so every dip on each star was measured the same way (mid-time, depth and best
+    duration) and every period that could put all of them on one ephemeris was tested against the rest of the
+    data ({merged_link}):</p>
+    <ul class="col">{merged_li}</ul>
+    <p>So these are separate signals on the same stars. Whether each is a second planet, or comes from another star in
+    the aperture, is not settled by this; the community TOIs are on the target in the pixel test, and the
+    re-association is for ExoFOP and the TOI team to decide, not something to overwrite with a parameter upload.</p>
   </div>
   <div class="scroll-x"><table class="data"><thead><tr><th>Community TOI</th><th>Merged into</th><th>Offset</th>
   <th>TOI transits seen</th><th>Its own transits</th><th>Pixels</th><th>Period</th></tr></thead>
@@ -1470,13 +1520,14 @@ def section_corrections():
   {f"<div class='scroll-x'><table class='data'><thead><tr><th>TOI</th><th>Listed P (d)</th><th>P through the community TOI (d)</th><th>Listed ephemeris: transits seen</th><th>Corrected: transits seen</th></tr></thead><tbody>{ex_rows}</tbody></table></div>" if extra else ""}"""
     # 5. the whole TOI catalogue (toi_audit.py, toi_audit_review.py)
     ta_all = _json("toi_audit.json")
-    tr = _json("toi_audit_corrections.json")
+    tr = toi_audit_merged()
     ta_html = ""
     if ta_all and tr:
         judged = [o for o in ta_all.values() if o.get("detectable")]
         n_flag = sum(1 for o in ta_all.values() if o.get("flag"))
         vals = list(tr.values())
         corr = [r for r in vals if r.get("status") == "corrected" and r.get("solid")]
+        held = [r for r in vals if r.get("status") == "corrected" and not r.get("solid") and (r.get("chi2_red") or 0) >= 5]
         posted = [r for r in corr if r.get("already_posted")]
         new_c = [r for r in corr if not r.get("already_posted")]
         refined = [r for r in vals if r.get("status") == "refined" and r.get("solid")]
@@ -1509,8 +1560,13 @@ def section_corrections():
     <p>The same measurement, run on every planet-candidate TOI (dispositions PC and APC) with a period: each transit
     the ExoFOP ephemeris predicts in TESS sectors 1–107 is measured. {len(judged):,} TOIs are deep enough for single
     transits to be judged; {n_flag} of these have three or more predicted transits missing. For
-    {len(corr) + len(refined)}, a nearby ephemeris through the transits that are there fits the data; the
-    corrected ephemeris comes from a straight-line fit to the individual transit times. In {len(corr)} the listed
+    {len(corr) + len(refined)}, a nearby ephemeris through the transits that are there fits the data. Each of those
+    transits is then timed with a trapezoid model (mid-time on a one-minute grid, depth and a quadratic baseline
+    refitted at every step, errors from Δχ² = 1 scaled for correlated noise), and the corrected ephemeris is a
+    straight line through the times with its full covariance, errors inflated when the times scatter. (A first
+    pass timed transits with a coarse box search; an independent audit rightly called that uncalibrated, and
+    {len(held)} corrections whose times scatter more than five times their errors are now held back for a look by
+    eye.) In {len(corr)} the listed
     ephemeris puts the transit of 1 December 2026 more than one transit duration and more than three of its own
     standard errors away from where it will be ({len(posted)} of them already have the right period in a
     user's upload on ExoFOP, though not in the TOI table); in {len(refined)} more the listed error bar allows the
@@ -2167,8 +2223,8 @@ def build():
                 f'Community TOI 438225366.01 dips every {p438:.3f} days, half the posted 41.72 (which may still be its orbit if it is a twin eclipsing binary); TOI-2633.01\'s '
                 f'transits fall every {p2633:.3f} days from a different epoch than its listed ephemeris, which predicts '
                 f'transits where the light curve is flat; and three single-transit community TOIs merged into later TOIs '
-                f'(TOI-7602.01, 5967.01, 6033.01) are separate objects, each with a further transit found here.</div></li>')
-        tra = _json("toi_audit_corrections.json")
+                f'(TOI-7602.01, 5967.01, 6033.01) are separate signals that no single period fits, each with a further dip found here.</div></li>')
+        tra = toi_audit_merged()
         if tra:
             nc = sum(1 for r in tra.values() if r.get("status") == "corrected" and r.get("solid") and not r.get("already_posted"))
             nr = sum(1 for r in tra.values() if r.get("status") == "refined" and r.get("solid"))
