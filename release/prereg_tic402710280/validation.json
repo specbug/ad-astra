@@ -1,0 +1,105 @@
+{
+ "archival": [
+  {
+   "epoch": 0,
+   "predicted_tc": 2459384.6062981174,
+   "sigma_pred_min": 40.4157557458815,
+   "n_points": 230,
+   "coverage_of_window": 1.0,
+   "best_tc": 2459384.609251404,
+   "o_minus_c_min": 4.252732917666435,
+   "depth_ppm": 2203.000623913525,
+   "depth_err_ppm": 82.42362768843188,
+   "delta_chi2": 714.3742472415998,
+   "at_grid_edge": false,
+   "outcome": "recovered",
+   "sector": 39
+  },
+  {
+   "epoch": 40,
+   "predicted_tc": 2460838.2008036566,
+   "sigma_pred_min": 27.724800488709924,
+   "n_points": 682,
+   "coverage_of_window": 0.987556387752628,
+   "best_tc": 2460838.1847103224,
+   "o_minus_c_min": -23.174401223659515,
+   "depth_ppm": 2027.7556928245413,
+   "depth_err_ppm": 82.51737429504769,
+   "delta_chi2": 603.8658335902626,
+   "at_grid_edge": false,
+   "outcome": "recovered",
+   "sector": 93
+  },
+  {
+   "epoch": 47,
+   "predicted_tc": 2461092.579842126,
+   "sigma_pred_min": 28.198370611063897,
+   "n_points": 616,
+   "coverage_of_window": 1.0,
+   "best_tc": 2461092.5846371874,
+   "o_minus_c_min": 6.904888451099396,
+   "depth_ppm": 2097.918279063577,
+   "depth_err_ppm": 98.26756874002683,
+   "delta_chi2": 455.781519058669,
+   "at_grid_edge": false,
+   "outcome": "recovered",
+   "sector": 100
+  },
+  {
+   "epoch": 48,
+   "predicted_tc": 2461128.9197047646,
+   "sigma_pred_min": 28.341759157710193,
+   "n_points": 680,
+   "coverage_of_window": 0.9937476491157271,
+   "best_tc": 2461128.9443399888,
+   "o_minus_c_min": 35.474722757935524,
+   "depth_ppm": 2047.3979302534144,
+   "depth_err_ppm": 87.37401765715795,
+   "delta_chi2": 549.0854147511658,
+   "at_grid_edge": false,
+   "outcome": "recovered",
+   "sector": 102
+  }
+ ],
+ "null": [
+  {
+   "epoch": 57,
+   "predicted_tc": 2461455.978468511,
+   "sigma_pred_min": 30.41156716900182,
+   "n_points": 692,
+   "coverage_of_window": 1.0,
+   "best_tc": 2461455.9498333014,
+   "o_minus_c_min": -41.234701573848724,
+   "depth_ppm": 85.764327225534,
+   "depth_err_ppm": 83.69046578754933,
+   "delta_chi2": 1.050174334814983,
+   "at_grid_edge": false,
+   "outcome": "excluded",
+   "case": "transit-free, offset A"
+  },
+  {
+   "epoch": 57,
+   "predicted_tc": 2461455.978468511,
+   "sigma_pred_min": 30.41156716900182,
+   "n_points": 588,
+   "coverage_of_window": 0.9957386995352603,
+   "best_tc": 2461456.041499968,
+   "o_minus_c_min": 90.76529860496521,
+   "depth_ppm": -129.79234694693827,
+   "depth_err_ppm": 89.81667405929026,
+   "delta_chi2": 2.088258381587366,
+   "at_grid_edge": true,
+   "outcome": "excluded",
+   "case": "transit-free, offset B"
+  },
+  {
+   "epoch": 57,
+   "predicted_tc": 2461455.978468511,
+   "sigma_pred_min": 30.41156716900182,
+   "n_points": 27,
+   "coverage_of_window": 0.0,
+   "outcome": "insufficient data",
+   "case": "prediction inside a data gap"
+  }
+ ]
+}

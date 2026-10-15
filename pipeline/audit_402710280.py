@@ -154,11 +154,27 @@ def plot_s66(s66):
     plt.close(fig)
 
 
+def centroid_no_s66():
+    """Difference-image centroids of the four used transits (new_candidates.json, eb_pixels), combined, and compared
+    with every Gaia source able to make the depth, all moved to the mean epoch of the transits."""
+    import ticdb
+    from eb_pixels import centroid_verdict, combine_centroids, gaia_field, neighbour_offsets
+    d = json.load(open(RESULTS / "candidates" / "new_candidates.json"))
+    ev = [dict(e) for e in d[str(TIC)]["centroid"]["per_event"] if e.get("sector") != 66 and "dra" in e]
+    st = ticdb.query([TIC], ["ra", "dec", "Tmag"]).iloc[0]
+    gf = gaia_field(float(st.ra), float(st.dec), float(st.Tmag))
+    epoch = float(np.mean([2016.0 + (e["tc"] + 2457000 - 2457389.0) / 365.25 for e in ev]))
+    cen = combine_centroids(ev)
+    src = neighbour_offsets(gf, 0.0021, 150.0, epoch=epoch)
+    return {"centroid": cen, **centroid_verdict(cen, src), "n_candidates": len(src), "epoch": epoch}
+
+
 def main():
     from fit_new import lcs_for
     lcs = [lc for lc in lcs_for(TIC) if lc["time"].size > 100]
     by_sec = {lc["meta"]["sector"]: lc for lc in lcs}
-    out = {"products": {int(s): by_sec[s]["meta"].get("product") for s in (39, 66, 93, 100, 102) if s in by_sec}}
+    out = {"centroid_noS66": centroid_no_s66()}
+    out |= {"products": {int(s): by_sec[s]["meta"].get("product") for s in (39, 66, 93, 100, 102) if s in by_sec}}
     out["s66_raw"] = s66 = s66_raw()
     plot_s66(s66)
     for s in s66:
@@ -207,6 +223,24 @@ def main():
         x.update(tc_predicted=tc_pred, first_point_h=float((t.min() - tc_pred) * 24), last_point_h=float((t.max() - tc_pred) * 24))
         out["s66_fit"] = x
         print("S66", json.dumps({k: x[k] for k in ("tc", "err_min", "depth_ppm", "depth_err_ppm", "first_point_h", "dchi2_no_transit")}))
+    # times again with the shape of the fit without sector 102 (whose window sits on a ramp and distorts the shape);
+    # these centre the windows of the final stacked fit (fit_new.py), which re-times the transits with its own shape
+    f3 = fits["no_S102"]
+    rp, aR, b, u = f3["rp_rs"][0], f3["a_rs"][0], f3["b"][0], f3["u"]
+    inc = math.degrees(math.acos(b / aR))
+    times = []
+    for s, tc in TRANSITS.items():
+        t, f = raw_window(by_sec[s], tc)
+        x = time_one(t, f, tc, P0, rp, aR, inc, u, float(np.median(np.diff(t)) * 86400), D)
+        x.update(sector=s, epoch=epochs[s], product=by_sec[s]["meta"].get("product"))
+        times.append(x)
+    out["times_noS102_shape"] = times
+    out["ephemeris_noS102_shape_all4"] = ephemeris(times)
+    dep = np.array([x["depth_ppm"] for x in times])
+    err = np.array([x["depth_err_ppm"] for x in times])
+    w = 1 / err ** 2
+    out["per_transit_depth_mean"] = [float(np.sum(w * dep) / w.sum()), float(1 / math.sqrt(w.sum()))]
+    print("times (no-S102 shape)", [(x["sector"], round(x["tc"], 5), round(x["err_min"], 1)) for x in times], flush=True)
     json.dump(out, open(OUT, "w"), indent=1, default=float)
 
 

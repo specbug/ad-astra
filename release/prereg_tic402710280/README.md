@@ -8,9 +8,10 @@ the rules that assign each tested transit one of four outcomes: recovered, incon
 |---|---|
 | `PROTOCOL.pdf`, `PROTOCOL.tex` | The protocol. |
 | `prereg_test.py` | Frozen analysis code (Python 3, numpy, batman). Usage: `python prereg_test.py lightcurve.csv EPOCH [exposure_s]`. |
+| `validation.json` | Output of the frozen code on the archival transits and on transit-free data (Section 7 of the protocol). |
 | `predictions.json` | The registered ephemeris and predicted mid-times with uncertainties for epochs 57-66. |
 | `SHA256SUMS.txt` | Checksums of every file in this record. |
 
-Companion records: the preprint and its data/code record (R. Vora 2026, Zenodo).
+Companion records: the preprint *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280, Identified in TESS Full-Frame Images* and its data/code record (R. Vora 2026, Zenodo).
 
 Licences: text CC BY 4.0; code MIT.

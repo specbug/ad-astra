@@ -292,16 +292,24 @@ def fit_periodic_windows(data, epochs, P0, teff, nwalk=40, nstep=4000, seed=1, r
     return out, ch
 
 
-def fit_stacked_windows(data, P, teff, nwalk=40, nstep=4000, seed=1):
+def fit_stacked_windows(data, P, teff, nwalk=40, nstep=4000, seed=1, free_ld=False):
     """Transit shape (Rp/R*, b, stellar density) from windows each centred on its own measured mid-time (t - tc),
     for transits whose times scatter about a straight-line ephemeris by more than the transit's ingress (timing
     variations or timing systematics), which a common linear ephemeris would smear into a V shape. data: list of
-    (t, f, sigma, exp_s, tc) as from windows_from_lcs."""
-    u = tess_ld(teff)
+    (t, f, sigma, exp_s, tc) as from windows_from_lcs. With free_ld, the quadratic limb-darkening coefficients are
+    fitted too, as Kipping (2013) q1, q2 with uniform priors on [0, 1]; otherwise they are fixed at tess_ld(teff)."""
+    u0 = tess_ld(teff)
     W = [(w[0] - w[4], w[1], w[2], w[3]) for w in data]
 
     def lnp(th):
-        rp, b, lrho = th
+        rp, b, lrho = th[:3]
+        if free_ld:
+            q1, q2 = th[3:5]
+            if not (0 < q1 < 1 and 0 < q2 < 1):
+                return -np.inf
+            u = (2 * np.sqrt(q1) * q2, np.sqrt(q1) * (1 - 2 * q2))
+        else:
+            u = u0
         if not (0.002 < rp < 0.5 and 0 <= b < 1 + rp and -3 < lrho < 2):
             return -np.inf
         aR = ((10 ** lrho) * RHO_SUN * G * (P * 86400) ** 2 / (3 * np.pi)) ** (1 / 3)
@@ -310,24 +318,37 @@ def fit_stacked_windows(data, P, teff, nwalk=40, nstep=4000, seed=1):
         inc = np.degrees(np.arccos(b / aR))
         return sum(-0.5 * np.sum(((f - _model(t, 0.0, P, rp, aR, inc, u, exp_s=e)) / s) ** 2) for t, f, s, e in W)
 
+    q0 = [(u0[0] + u0[1]) ** 2, u0[0] / (2 * (u0[0] + u0[1]))]
+    starts = ([0.042, 0.2, 0.2], [0.045, 0.6, -0.2], [0.05, 0.85, -0.6])
     best = None
-    for x0 in ([0.042, 0.2, 0.2], [0.045, 0.6, -0.2], [0.05, 0.85, -0.6]):
+    for x0 in starts:
+        x0 = list(x0) + (q0 if free_ld else [])
         r = minimize(lambda p: -lnp(p), x0, method="Nelder-Mead", options={"maxiter": 20000, "xatol": 1e-7, "fatol": 1e-4})
         if best is None or r.fun < best.fun:
             best = r
+    ndim = 5 if free_ld else 3
     rng = np.random.default_rng(seed)
-    pos = best.x + np.array([5e-4, 0.02, 0.02]) * rng.normal(size=(nwalk, 3))
+    scale = np.array([5e-4, 0.02, 0.02] + ([0.02, 0.02] if free_ld else []))
+    pos = best.x + scale * rng.normal(size=(nwalk, ndim))
     pos[:, 1] = np.abs(pos[:, 1])
-    sampler = emcee.EnsembleSampler(nwalk, 3, lnp)
+    if free_ld:
+        pos[:, 3:5] = np.clip(pos[:, 3:5], 0.01, 0.99)
+    sampler = emcee.EnsembleSampler(nwalk, ndim, lnp)
     sampler.run_mcmc(pos, nstep, progress=False)
     ch = sampler.get_chain(discard=nstep // 3, thin=5, flat=True)
-    rp, b, lrho = ch.T
+    rp, b, lrho = ch.T[:3]
     aR = ((10 ** lrho) * RHO_SUN * G * (P * 86400) ** 2 / (3 * np.pi)) ** (1 / 3)
     t14 = t14_hours(P, aR, rp, b)
-    out = {"u": u, "n_points": int(sum(len(w[0]) for w in W)), "chi2_min": float(2 * best.fun), "n_windows": len(W),
-           "chain_summary": convergence(sampler, nstep, ["rp_rs", "b", "log10_rho"])}
-    for name, v in (("rp_rs", rp), ("b", b), ("log10_rho", lrho), ("rho_solar", 10 ** lrho), ("a_rs", aR),
-                    ("t14_h", t14), ("depth_ppm", rp ** 2 * 1e6)):
+    names = ["rp_rs", "b", "log10_rho"] + (["q1", "q2"] if free_ld else [])
+    out = {"u": u0 if not free_ld else None, "free_ld": free_ld, "n_points": int(sum(len(w[0]) for w in W)),
+           "chi2_min": float(2 * best.fun), "n_windows": len(W), "chain_summary": convergence(sampler, nstep, names)}
+    pairs = [("rp_rs", rp), ("b", b), ("log10_rho", lrho), ("rho_solar", 10 ** lrho), ("a_rs", aR), ("t14_h", t14),
+             ("depth_ppm", rp ** 2 * 1e6)]
+    if free_ld:
+        q1, q2 = ch.T[3:5]
+        pairs += [("q1", q1), ("q2", q2), ("u1", 2 * np.sqrt(q1) * q2), ("u2", np.sqrt(q1) * (1 - 2 * q2))]
+    for name, v in pairs:
         q = np.percentile(v, [16, 50, 84])
         out[name] = [float(q[1]), float(q[2] - q[1]), float(q[1] - q[0])]
+    out["b_95"] = float(np.percentile(b, 95))
     return out, ch

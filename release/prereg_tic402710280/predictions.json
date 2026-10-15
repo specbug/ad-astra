@@ -1,11 +1,12 @@
 {
- "period_d": 36.33989590709609,
- "t0_bjd_tdb": 2460838.201902491,
- "sigma_period_d": 0.0005291248056646923,
- "sigma_t0_d": 0.012245276672495607,
- "sigma_rms_min": 21.48,
- "expected_depth_ppm": 2096.5,
- "expected_t14_h": 5.2723,
+ "period_d": 36.33986263847596,
+ "t0_bjd_tdb": 2460838.2008036566,
+ "reference_epoch": 40,
+ "sigma_period_d": 0.0005105373388072621,
+ "sigma_t0_d": 0.011922049057609426,
+ "sigma_rms_min": 21.77,
+ "expected_depth_ppm": 2092.0,
+ "expected_t14_h": 5.2727,
  "registered_epochs": [
   57,
   59
@@ -13,53 +14,53 @@
  "predictions": [
   {
    "epoch": 57,
-   "tc_bjd_tdb": 2461455.98013,
-   "sigma_pred_min": 30.7
+   "tc_bjd_tdb": 2461455.97847,
+   "sigma_pred_min": 30.4
   },
   {
    "epoch": 58,
-   "tc_bjd_tdb": 2461492.32003,
-   "sigma_pred_min": 31.0
+   "tc_bjd_tdb": 2461492.31833,
+   "sigma_pred_min": 30.7
   },
   {
    "epoch": 59,
-   "tc_bjd_tdb": 2461528.65992,
-   "sigma_pred_min": 31.3
+   "tc_bjd_tdb": 2461528.65819,
+   "sigma_pred_min": 31.0
   },
   {
    "epoch": 60,
-   "tc_bjd_tdb": 2461564.99982,
-   "sigma_pred_min": 31.7
+   "tc_bjd_tdb": 2461564.99806,
+   "sigma_pred_min": 31.4
   },
   {
    "epoch": 61,
-   "tc_bjd_tdb": 2461601.33972,
-   "sigma_pred_min": 32.1
+   "tc_bjd_tdb": 2461601.33792,
+   "sigma_pred_min": 31.7
   },
   {
    "epoch": 62,
-   "tc_bjd_tdb": 2461637.67961,
-   "sigma_pred_min": 32.5
+   "tc_bjd_tdb": 2461637.67778,
+   "sigma_pred_min": 32.1
   },
   {
    "epoch": 63,
-   "tc_bjd_tdb": 2461674.01951,
-   "sigma_pred_min": 32.9
+   "tc_bjd_tdb": 2461674.01764,
+   "sigma_pred_min": 32.5
   },
   {
    "epoch": 64,
-   "tc_bjd_tdb": 2461710.3594,
-   "sigma_pred_min": 33.3
+   "tc_bjd_tdb": 2461710.35751,
+   "sigma_pred_min": 32.9
   },
   {
    "epoch": 65,
-   "tc_bjd_tdb": 2461746.6993,
-   "sigma_pred_min": 33.7
+   "tc_bjd_tdb": 2461746.69737,
+   "sigma_pred_min": 33.3
   },
   {
    "epoch": 66,
-   "tc_bjd_tdb": 2461783.0392,
-   "sigma_pred_min": 34.1
+   "tc_bjd_tdb": 2461783.03723,
+   "sigma_pred_min": 33.7
   }
  ]
 }

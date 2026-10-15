@@ -94,7 +94,7 @@ def main():
     for s in (100, 101, 102, 103):
         z = np.load(CATALOGS.parent / "cache" / "ffi_lc" / f"{TIC}_s{s}.npz", allow_pickle=True)
         meta = json.loads(str(z["meta"]))
-        rows = [[f"{t + 2457000:.6f}", f"{f:.3f}", f"{e:.3f}", f"{sa:.3f}", f"{b:.3f}", f"{x:.4f}", f"{y:.4f}"]
+        rows = [[f"{t + 2457000:.6f}", f"{f:.7f}", f"{e:.7f}", f"{sa:.7f}", f"{b:.3f}", f"{x:.4f}", f"{y:.4f}"]
                 for t, f, e, sa, b, x, y in zip(z["time"], z["flux"], z["flux_err"], z["sap_flux"], z["bkg"], z["cx"], z["cy"])]
         write_csv(REL / "data" / "ffi_photometry" / f"tic402710280_s{s:03d}_ffi.csv",
                   ["bjd_tdb", "flux", "flux_err", "sap_flux", "background", "centroid_col", "centroid_row"], rows)
@@ -122,8 +122,16 @@ def main():
     write_csv(res / "alias_test.csv", ["alias", "period_d", "sector", "predicted_bjd_tdb", "depth_ppm", "err_ppm", "exclusion_sigma"], al)
     write_csv(res / "secondary_eclipse.csv", ["sector", "phase_half_bjd_tdb", "depth_ppm", "err_ppm"], sec)
     for src, dst in (("blend_shape_402710280.json", "blend_test.json"), ("fpp_tic402710280_v2.json", "triceratops.json"),
-                     ("fpp_tic402710280_v2_box5.json", "triceratops_5x5_apertures.json")):
-        shutil.copy(C / src, res / dst)
+                     ("fpp_tic402710280_v2_box5.json", "triceratops_5x5_apertures.json"),
+                     ("shape_free.json", "shape_free_limb_darkening.json"),
+                     ("timing_diagnostics_402710280.json", "timing_diagnostics.json"),
+                     ("secondary_scan_402710280.json", "secondary_scan.json"),
+                     ("second_signal_402710280.json", "signal_3.78d.json"),
+                     ("fpp_tic402710280_3.78d.json", "triceratops_3.78d.json"),
+                     ("paper_numbers.json", "paper_numbers.json")):
+        if (C / src).exists():
+            shutil.copy(C / src, res / dst)
+    np.save(res / "shape_chain.npy", np.load(C / "shape_chain_fixed.npy"))
     json.dump({"combined": au["centroid_noS66"], "per_transit": [e for e in json.load(open(C / "new_candidates.json"))
                                                                   ["402710280"]["centroid"]["per_event"] if e.get("sector") != 66]},
               open(res / "centroids.json", "w"), indent=1, default=float)
@@ -167,8 +175,8 @@ def main():
 
 README = """# TIC 402710280.01: data products and analysis code
 
-Supporting record for the preprint *TIC 402710280.01: A Sub-Neptune Candidate on a 36.34-Day Orbit around a Nearby
-K Dwarf, Identified in TESS Full-Frame Images* (R. Vora, 2026).
+Supporting record for the preprint *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280,
+Identified in TESS Full-Frame Images* (R. Vora, 2026).
 
 Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJD_TDB.
 
@@ -177,15 +185,21 @@ Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJ
 | Path | Description |
 |---|---|
 | `data/transit_windows/` | The four transits used (Sectors 39, 93, 100, 102) and the unused Sector 66 window, cadence by cadence, flux normalised by the out-of-transit quadratic baseline used in the shape fit. |
-| `data/ffi_photometry/` | Our light curves of Sectors 100-103 from the calibrated TESS full-frame images, with per-sector extraction metadata (camera, CCD, aperture radius, scatter). No public full-frame light curves of these sectors existed when the analysis was done. |
+| `data/ffi_photometry/` | Our light curves of Sectors 100-103 from the calibrated TESS full-frame images (quality-flagged cadences removed; times barycentric for the target), with per-sector extraction metadata (camera, CCD, circular aperture radius in pixels around the target's position, scatter). No public full-frame light curves of these sectors existed when the analysis was done. |
 | `data/results/transit_times.csv` | Individual mid-times, uncertainties (red-noise scaled), O-C and depths (Table 2 of the paper). |
 | `data/results/parameters.json` | Ephemeris and transit-shape posterior summaries, convergence diagnostics and derived quantities (Table 3). |
-| `data/results/predicted_transits.csv` | Predicted transits with ephemeris-only and total (including the observed 21.5-min timing scatter) uncertainties, and visibility from La Silla (Table 4). |
+| `data/results/predicted_transits.csv` | The next 30 predicted transits, with ephemeris-only and total (including the observed timing scatter) uncertainties, and topocentric UTC and visibility at La Silla (Table 4). |
 | `data/results/alias_test.csv` | Every transit predicted by P/2-P/5 inside the data, with the measured flux and the exclusion significance. |
 | `data/results/secondary_eclipse.csv` | Flux at orbital phase 0.5. |
 | `data/results/blend_test.json` | Diluted-eclipse fits for Gaia DR3 5828441289812582656 (Figure 4). |
 | `data/results/triceratops*.json` | TRICERATOPS runs with the photometric apertures and with 5x5-pixel apertures. |
-| `data/results/centroids.json` | Difference-image centroids, per transit and combined. |
+| `data/results/centroids.json` | Difference-image centroids, per transit and combined (Figure 5). |
+| `data/results/shape_chain.npy` | Posterior samples of the shape fit (columns Rp/R*, b, log10 rho*/rho_sun; float32). |
+| `data/results/shape_free_limb_darkening.json` | The shape fit with free limb darkening (Kipping 2013 q1, q2). |
+| `data/results/timing_diagnostics.json` | Mid-times under varied baselines and windows, the Sector 93 flux-series test, variability periodograms, Sector 103 coverage. |
+| `data/results/secondary_scan.json` | Secondary-eclipse search over orbital phases 0.3-0.7. |
+| `data/results/signal_3.78d.json`, `triceratops_3.78d.json` | The 3.78-day signal: searches, per-sector depths, transit fit, and TRICERATOPS (Figure 6). |
+| `data/results/paper_numbers.json` | Every number filled into the manuscript template by `paper_numbers.py`. |
 | `data/results/sector66_diagnostics.json` | Quality-flag and coverage summary of the Sector 66 window. |
 | `code/pipeline/` | The analysis pipeline (Python), git commit `{commit}`. |
 | `manuscript/` | LaTeX source, bibliography, figures and PDF of the preprint. |
@@ -196,10 +210,15 @@ With the packages in `code/requirements.txt` (and TRICERATOPS 1.1 for the false-
 `code/pipeline/`:
 
 1. `ffi_new.py` builds the Sector 100-103 light curves from the calibrated full-frame images on the MAST AWS bucket.
-2. `audit_402710280.py` measures the individual transit times and depths and the Sector 66 diagnostics.
-3. `fit_new.py` fits the transit shape (each window centred on its measured mid-time) and the ephemeris.
-4. `blend_shape_402710280.py` runs the diluted-eclipse test; `fpp_triceratops.py` the TRICERATOPS calculation.
-5. `paper_figures.py` makes the figures; `build_release.py` builds this record.
+2. `audit_402710280.py` measures preliminary transit times, the Sector 66 diagnostics and the combined centroid.
+3. `fit_new.py --only-402710280` fits the transit shape (each window centred on its measured mid-time), re-times the
+   transits with that shape, and fits the ephemeris; `shape_chains.py free` repeats the shape fit with free limb
+   darkening.
+4. `timing_diagnostics_402710280.py`, `secondary_scan_402710280.py`, `blend_shape_402710280.py` and
+   `fpp_triceratops.py` run the timing, secondary-eclipse, blend and TRICERATOPS tests;
+   `second_signal_402710280.py` and `fpp_second_signal.py` characterise the 3.78-day signal.
+5. `paper_numbers.py` fills the manuscript from the result files, `paper_figures.py` makes the figures, and
+   `build_release.py` builds this record.
 
 Light curves are read from the public MAST archive (TESS-SPOC and QLP high-level science products, SPOC target
 pixel files and calibrated full-frame images).

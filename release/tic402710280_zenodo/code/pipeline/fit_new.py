@@ -10,9 +10,10 @@ sqrt(chi2_red). v1 fitted S39, S66, S93 and S100 on one linear ephemeris, which 
 smeared the shape (the low density once blamed on the S102 ramp came from that smear).
 TOI-2493.01: three transits in SPOC 2-min data (S33, S98, S107).
 
-  python fit_new.py
+  python fit_new.py [--only-402710280]
 """
 import json
+import sys
 
 import env  # noqa: F401
 import numpy as np
@@ -32,7 +33,7 @@ def lcs_for(tic):
     st = ticdb.query([tic], ["ra", "dec"]).iloc[0]
     lcs = best_lcs(tic, all_sectors(tic))
     have = {lc["meta"]["sector"] for lc in lcs}
-    return lcs + [lc for lc in new_lcs(tic, float(st.ra), float(st.dec), build_missing=False) if lc["meta"]["sector"] not in have]
+    return lcs + [lc for lc in new_lcs(tic, float(st.ra), float(st.dec), build_missing=False, target_time=True) if lc["meta"]["sector"] not in have]
 
 
 NSTEP = 30000     # autocorrelation times reach ~450 steps (b-rho-k degeneracy); 30,000 steps is >50 of them
@@ -43,9 +44,9 @@ def main():
     ex = json.load(open(EXTRAS))
     # TIC 402710280.01 (v2, after the independent audit of 15 October 2026; audit_402710280.py). The sector-66
     # window lies on a stray-light ramp (data start 0.4 h before ingress) and is shown but not used; the shape is
-    # fitted to sectors 39, 93 and 100 (sector 102 sits on a ramp at the start of an orbit and distorts the shape);
-    # the ephemeris comes from the four measured mid-times, its errors inflated by sqrt(chi2_red) because the times
-    # scatter by tens of minutes about a straight line.
+    # fitted to the four transits (39, 93, 100, 102), each window centred on its measured mid-time; the ephemeris
+    # comes from the four mid-times re-measured with that shape, its errors inflated by sqrt(chi2_red) because the
+    # times scatter by tens of minutes about a straight line.
     tic = 402710280
     lcs = lcs_for(tic)
     au = json.load(open(RESULTS / "candidates" / "audit_402710280.json"))
@@ -57,6 +58,29 @@ def main():
         oot = np.abs(w[0] - w[4]) > 0.75 * 5.3 / 24
         data.append((w[0], w[1], w[2] * beta_factor(w[0][oot], w[1][oot] - 1, w[2]), w[3], w[4]))
     out, ch = tf.fit_stacked_windows(data, 36.3399, 5182.0, nstep=NSTEP)
+    np.save(RESULTS / "candidates" / "shape_chain_fixed.npy", ch.astype(np.float32))
+    # re-time each transit with this shape (the windows above were centred on times measured with a preliminary
+    # shape, audit_402710280.py); these times give the ephemeris and Table 2 of the paper
+    import math
+    from audit_402710280 import raw_window, time_one
+    by = {lc["meta"]["sector"]: lc for lc in lcs}
+    rp_, b_, aR_ = out["rp_rs"][0], out["b"][0], out["a_rs"][0]
+    inc_ = math.degrees(math.acos(b_ / aR_))
+    pre = meas
+    meas = {}
+    for s in (39, 93, 100, 102):
+        t, f = raw_window(by[s], pre[s]["tc"])
+        x = time_one(t, f, pre[s]["tc"], 36.3399, rp_, aR_, inc_, out["u"], float(np.median(np.diff(t)) * 86400), 5.3 / 24)
+        x.update(sector=s, product=pre[s]["product"], shift_from_preliminary_min=(x["tc"] - pre[s]["tc"]) * 1440)
+        meas[s] = x
+    print("re-timed", {s: (round(x["tc"], 5), round(x["err_min"], 2), round(x["shift_from_preliminary_min"], 2))
+                       for s, x in meas.items()}, flush=True)
+    dep = np.array([meas[s]["depth_ppm"] for s in meas])
+    derr = np.array([meas[s]["depth_err_ppm"] for s in meas])
+    w = 1 / derr ** 2
+    dmean = float(np.sum(w * dep) / w.sum())
+    au["per_transit_depth_mean"] = [dmean, float(1 / np.sqrt(w.sum()))]
+    out["depth_chi2"] = [float(np.sum(((dep - dmean) / derr) ** 2)), len(dep) - 1]
     ref = 40
     out["ref_epoch"] = ref
     n = np.array([ep_of[s] for s in (39, 93, 100, 102)], float)
@@ -74,7 +98,7 @@ def main():
     out["ephemeris_chi2"] = [chi2, 2]
     out["times"] = [{"sector": s, "epoch": ep_of[s], "tc": meas[s]["tc"], "err_min": meas[s]["err_min"],
                      "depth_ppm": meas[s]["depth_ppm"], "depth_err_ppm": meas[s]["depth_err_ppm"],
-                     "product": meas[s]["product"],
+                     "product": meas[s]["product"], "beta": meas[s]["beta"], "err_white_min": meas[s]["err_white_min"],
                      "o_c_min": float((meas[s]["tc"] - p[0] - (ep_of[s] - ref) * p[1]) * 1440)} for s in (39, 93, 100, 102)]
     out["depth_transits_ppm"] = au["per_transit_depth_mean"]
     med = np.median(ch, axis=0)
@@ -87,6 +111,14 @@ def main():
     out["fit_windows"] = [39, 93, 100, 102]
     fits["TIC402710280"] = out
     print("TIC 402710280", {k: v for k, v in out.items() if k != "plot"}, flush=True)
+    if "--only-402710280" in sys.argv:
+        fresh = json.load(open(FITS))
+        fresh["TIC402710280"] = fits["TIC402710280"]
+        json.dump(fresh, open(FITS, "w"), indent=1, default=float)
+        ex = json.load(open(EXTRAS))
+        ex["TIC402710280"] = rx.periodic(fresh, "TIC402710280", 0.88, 0.817, 5182.0, 248.524, -63.55, now=4325.5)
+        json.dump(ex, open(EXTRAS, "w"), indent=1, default=float)
+        return
     # TOI-2493.01
     tic = 123664207
     lcs = lcs_for(tic)

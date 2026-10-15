@@ -8,6 +8,9 @@ there, this makes a light curve from a 21x21-pixel cutout (astrocut):
     scatter once a 1-day running median is removed;
   - cadences flagged by SPOC (QUALITY != 0), and those whose background jumps far above its running median
     (scattered-light glints), are dropped;
+  - times: the cube's TIME column is barycentric-corrected for a reference position on the CCD, not for the star
+    (TIMECORR); it is recomputed for the star's position (target_times), as the SPOC and QLP light curves do. The
+    geocentre stands in for the spacecraft (TESS stays within 0.003 AU of Earth: error < 1.5 s);
   - output in the s3io.parse_lc format (time, flux, flux_err, sap_flux, bkg, cx, cy, meta), product "ffi".
 Cache: cache/ffi_lc/{tic}_s{sector}.npz
 
@@ -53,13 +56,56 @@ def _running_median(t, y, w):
     return out
 
 
-def build(tic, ra, dec, sector, camera, ccd, size=21):
-    """Make (or read from cache) the light curve of one star in one new sector."""
+def target_times(t, timecorr, ra, dec):
+    """BJD_TDB - 2457000 for the star at (ra, dec), from cube times corrected for the CCD reference position."""
+    import astropy.units as u
+    from astropy.coordinates import EarthLocation, SkyCoord
+    from astropy.time import Time
+    tobs = Time(np.asarray(t) - np.asarray(timecorr) + 2457000, format="jd", scale="tdb",
+                location=EarthLocation.from_geocentric(0, 0, 0, unit="m"))
+    ltt = tobs.light_travel_time(SkyCoord(ra, dec, unit="deg"), "barycentric").to(u.d).value
+    return np.asarray(t) - np.asarray(timecorr) + ltt
+
+
+def retime_cached(lc, tic, ra, dec, sector, camera, ccd):
+    """Recompute the times of a light curve cached before target_times existed: TIMECORR from a 3x3 cutout of
+    the same cube, matched by cadence time; the cache is rewritten with meta time_ref = "target"."""
+    from astropy.io import fits
+    import pixels
+    path = pixels.cutout(ra, dec, sector, camera, ccd, size=3)
+    try:
+        with fits.open(path) as h:
+            tc, corr = np.asarray(h[1].data["TIME"], float), np.asarray(h[1].data["TIMECORR"], float)
+    finally:
+        try:
+            os.remove(path)
+        except OSError:
+            pass
+    ok = np.isfinite(tc) & np.isfinite(corr)
+    tc, corr = tc[ok], corr[ok]
+    j = np.clip(np.searchsorted(tc, lc["time"]), 1, tc.size - 1)
+    j = np.where(np.abs(tc[j - 1] - lc["time"]) < np.abs(tc[j] - lc["time"]), j - 1, j)
+    assert np.max(np.abs(tc[j] - lc["time"])) < 1e-6, "cadences do not match the cube"
+    new = target_times(lc["time"], corr[j], ra, dec)
+    lc["meta"]["time_ref"] = "target"
+    lc["meta"]["time_shift_s"] = float(np.median(new - lc["time"]) * 86400)
+    lc["time"] = new
+    p = CACHE / f"{int(tic)}_s{sector}.npz"
+    np.savez_compressed(p, **{k: v for k, v in lc.items() if k != "meta"}, meta=json.dumps(lc["meta"]))
+    return lc
+
+
+def build(tic, ra, dec, sector, camera, ccd, size=21, target_time=False):
+    """Make (or read from cache) the light curve of one star in one new sector. New light curves always carry
+    target-corrected times; a cached one made before that is retimed only with target_time=True."""
     CACHE.mkdir(parents=True, exist_ok=True)
     p = CACHE / f"{int(tic)}_s{sector}.npz"
     if p.exists():
         z = np.load(p, allow_pickle=True)
-        return {k: z[k] for k in z.files if k != "meta"} | {"meta": json.loads(str(z["meta"]))}
+        lc = {k: z[k] for k in z.files if k != "meta"} | {"meta": json.loads(str(z["meta"]))}
+        if target_time and lc["meta"].get("time_ref") != "target":
+            lc = retime_cached(lc, tic, ra, dec, sector, camera, ccd)
+        return lc
     from astropy.io import fits
     from astropy.wcs import WCS
     import pixels
@@ -68,6 +114,7 @@ def build(tic, ra, dec, sector, camera, ccd, size=21):
         with fits.open(path) as h:
             d = h[1].data
             t = np.asarray(d["TIME"], float)
+            tcorr = np.asarray(d["TIMECORR"], float)
             F = np.asarray(d["FLUX"], float)
             E = np.asarray(d["FLUX_ERR"], float)
             q = np.asarray(d["QUALITY"], int)
@@ -77,8 +124,8 @@ def build(tic, ra, dec, sector, camera, ccd, size=21):
             os.remove(path)   # cutouts are large; the light curve is what is kept
         except OSError:
             pass
-    good = np.isfinite(t) & (q == 0) & np.isfinite(F).all(axis=(1, 2))
-    t, F, E = t[good], F[good], E[good]
+    good = np.isfinite(t) & np.isfinite(tcorr) & (q == 0) & np.isfinite(F).all(axis=(1, 2))
+    t, F, E = target_times(t[good], tcorr[good], ra, dec), F[good], E[good]
     x0, y0 = (float(v) for v in w.all_world2pix([[ra, dec]], 0)[0])
     ny, nx = F.shape[1:]
     yy, xx = np.mgrid[0:ny, 0:nx]
@@ -122,12 +169,12 @@ def build(tic, ra, dec, sector, camera, ccd, size=21):
     out = {"time": t, "flux": f / medf, "flux_err": fe / medf, "sap_flux": f / medf, "bkg": bkg, "cx": cx, "cy": cy,
            "meta": {"tic": int(tic), "sector": int(sector), "camera": int(camera), "ccd": int(ccd), "product": "ffi",
                     "cadence_s": float(np.median(np.diff(t)) * 86400), "aperture_radius_px": r,
-                    "n_aperture_px": int(ap.sum()), "scatter_1h_ppm": float(s1h * 1e6)}}
+                    "n_aperture_px": int(ap.sum()), "scatter_1h_ppm": float(s1h * 1e6), "time_ref": "target"}}
     np.savez_compressed(p, **{k: v for k, v in out.items() if k != "meta"}, meta=json.dumps(out["meta"]))
     return out
 
 
-def new_lcs(tic, ra, dec, cov=None, build_missing=True):
+def new_lcs(tic, ra, dec, cov=None, build_missing=True, target_time=False):
     """Our light curves of the new sectors for one star (only sectors without SPOC 2-min data)."""
     cov = cov if cov is not None else coverage([tic], [ra], [dec])[int(tic)]
     have = spoc_sectors(tic)
@@ -139,7 +186,7 @@ def new_lcs(tic, ra, dec, cov=None, build_missing=True):
         if not p.exists() and not build_missing:
             continue
         try:
-            lc = build(tic, ra, dec, s, cam, ccd)
+            lc = build(tic, ra, dec, s, cam, ccd, target_time=target_time)
         except Exception as ex:
             print("ffi", tic, s, "failed:", repr(ex)[:120], flush=True)
             lc = None

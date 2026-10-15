@@ -5,11 +5,13 @@ before it is published ("Reserve DOI" in the upload form); use it to get all thr
 
 ## Before uploading
 
-1. In `paper/tic402710280.tex`, replace `EMAIL` with your address and `0000-0000-0000-0000` with your ORCID iD
+1. In `paper/tic402710280.template.tex` (the source that `pipeline/paper_numbers.py` fills to make
+   `paper/tic402710280.tex`), replace `EMAIL` with your address and `0000-0000-0000-0000` with your ORCID iD
    (or delete the `[0000-0000-0000-0000]` argument if you have none; an ORCID is free at orcid.org and recommended).
 2. Reserve the three DOIs (step A below), put the data-record DOI into `paper/refs.bib` (entry `DataRecord`,
-   replacing `10.5281/zenodo.XXXXXXXX`), rebuild the PDF (`latexmk -pdf tic402710280.tex` in `paper/`), and rebuild
-   the data record (`python pipeline/build_release.py`) so it carries the final PDF.
+   replacing `10.5281/zenodo.XXXXXXXX`), run `python pipeline/paper_numbers.py`, rebuild the PDF
+   (`latexmk -pdf tic402710280.tex` in `paper/`), and rebuild the data record (`python pipeline/build_release.py`)
+   so it carries the final PDF.
 3. Re-check ExoFOP for TIC 402710280 on the day (target page and the full TOI/CTOI tables).
 
 ## A. Data and code record
@@ -18,9 +20,9 @@ before it is published ("Reserve DOI" in the upload form); use it to get all thr
 - Resource type: Dataset. Licence: Creative Commons Attribution 4.0 (the code inside is MIT; see LICENSE-CODE).
 - Title: *TIC 402710280.01: data products and analysis code*
 - Description: Light curves of every transit window, TESS full-frame-image photometry of Sectors 100-103, transit
-  times, posterior summaries, alias, secondary-eclipse, blend and TRICERATOPS results, the analysis pipeline, and
-  the manuscript source for the preprint "TIC 402710280.01: A Sub-Neptune Candidate on a 36.34-Day Orbit around a
-  Nearby K Dwarf, Identified in TESS Full-Frame Images".
+  times, posterior summaries and chains, alias, secondary-eclipse, timing, blend and TRICERATOPS results, the
+  characterisation of the 3.78-day signal, the analysis pipeline, and the manuscript source for the preprint "A
+  36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280, Identified in TESS Full-Frame Images".
 - Keywords: exoplanets; transit photometry; TESS; sub-Neptune; TIC 402710280
 - Related identifiers: "is supplement to" the preprint DOI (B).
 
@@ -28,7 +30,7 @@ before it is published ("Reserve DOI" in the upload form); use it to get all thr
 
 - File: `paper/tic402710280.pdf`.
 - Resource type: Publication → Preprint. Licence: CC BY 4.0.
-- Title: *TIC 402710280.01: A Sub-Neptune Candidate on a 36.34-Day Orbit around a Nearby K Dwarf, Identified in TESS
+- Title: *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280, Identified in TESS
   Full-Frame Images*
 - Description: paste the abstract from the PDF.
 - Keywords: as above.
@@ -36,7 +38,7 @@ before it is published ("Reserve DOI" in the upload form); use it to get all thr
 
 ## C. Pre-registration
 
-- File: `release/prereg_tic402710280.zip` (or its five files).
+- File: `release/prereg_tic402710280.zip` (or its six files).
 - Resource type: Other (or Publication → Other). Licence: CC BY 4.0 (code MIT).
 - Title: *A Pre-registered Test of the Transiting Planet Candidate TIC 402710280.01 at Its Predicted Transits of 2027*
 - Description: This record fixes, before the data exist, the predicted transit times of TIC 402710280.01 for 2027

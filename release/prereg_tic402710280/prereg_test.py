@@ -17,17 +17,17 @@ import sys
 import batman
 import numpy as np
 
-# ---- registered quantities (from the preprint, Table 3; do not edit) ------------------------------------------
-P = 36.33989590709609            # d
-T0 = 2460838.201902490928        # BJD_TDB, epoch 40 (the Sector 39 transit is epoch 0)
-SIG_P = 0.0005291248056646923    # d
-SIG_T0 = 0.012245276672495607    # d
-SIG_RMS = 21.48 / 1440           # d, rms of the four timing residuals
+# ---- registered quantities (from the preprint, Table 3; do not edit) ----------
+P = 36.33986263847596            # d
+T0 = 2460838.2008036566        # BJD_TDB, epoch 40 (the Sector 39 transit is epoch 0)
+SIG_P = 0.0005105373388072621    # d
+SIG_T0 = 0.011922049057609426    # d
+SIG_RMS = 21.77 / 1440           # d, rms of the four timing residuals
 REF_EPOCH = 40
-RP_RS, B, A_RS = 0.04208122638534462, 0.21934461732459248, 53.68913012236519
+RP_RS, B, A_RS = 0.04209035139686697, 0.2243329623513426, 53.629504154358976
 U = (0.39272, 0.20682)
-T14 = 5.2723279925923014 / 24    # d
-DEPTH = 2096.5                   # ppm, expected depth at mid-transit
+T14 = 5.272711765676274 / 24    # d
+DEPTH = 2092.0                   # ppm, expected depth at mid-transit
 DEPTH_LO, DEPTH_HI = 0.5 * DEPTH, 1.5 * DEPTH
 DCHI2_DETECT = 25.0
 WINDOW = 0.8                     # d, half-width of the analysis window around the prediction

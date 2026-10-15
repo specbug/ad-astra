@@ -1,14 +1,15 @@
-"""Could the 2.2" background star (Gaia DR3 5828441289812582656, G = 16.15) make TIC 402710280.01's transits?
+"""Could the 3.1-3.6" background star (Gaia DR3 5828441289812582656, G = 16.15) make TIC 402710280.01's transits?
 
 Diluted by the target (Delta G = 6.37, a flux fraction of about 0.28%), a ~2100 ppm dip needs an eclipse of about
 74% of that star's light: a companion nearly as large as the star, and a transit whose ingress and egress last a
 large fraction of its duration. The four clean transits (sectors 39, 93, 100, 102; each centred on its measured
 mid-time, quadratic baseline divided out, errors scaled by the red-noise factor) are fitted with
   - a planet: radius ratio k, impact parameter b and a/R* free, undiluted;
-  - an eclipse of the background star: k fixed on a grid (0.3-1.2), b and a/R* free, diluted by the fraction F
+  - an eclipse of the background star: k fixed on a grid (0.3-10), b and a/R* free, diluted by the fraction F
     (free, but at most the star's flux share, generously 0.4% to allow for the TESS-band colour difference),
 and the chi-square difference is reported for each k. A smaller k cannot reach the depth within the flux budget,
-which the fit enforces.
+which the fit enforces. For k > 1 the eclipsed star would have to supply most of the neighbour's light while being
+smaller than its companion, which no main-sequence pair does; those k are fitted to show how the shape behaves.
 
   python blend_shape_402710280.py
 Output: results/candidates/blend_shape_402710280.json
@@ -71,7 +72,7 @@ def main():
            "n_points": int(sum(len(w[0]) for w in W)), "eb": []}
     print("planet chi2 %.1f  k %.4f b %.2f a/R %.1f" % (pl.fun, *pl.x), flush=True)
     for u_bg in (U_BG, (0.25, 0.30), (0.55, 0.15)):
-        for k in (0.3, 0.5, 0.7, 0.85, 1.0, 1.2):
+        for k in (0.3, 0.5, 0.7, 0.85, 1.0, 1.2, 1.5, 2.0, 3.0, 5.0, 10.0):
             def fun(p):
                 F = F_MAX / (1 + math.exp(-p[2]))
                 return chi2(W, k, abs(p[0]), p[1], F, u_bg)
