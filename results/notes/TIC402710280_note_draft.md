@@ -33,9 +33,11 @@ With R★ = 0.82 R☉ the planet radius is 3.4 R⊕; the orbit (a = 0.206 AU) re
   frame (Gaia DR3 positions propagated to the epoch), lie 1.4″ ± 1.2″
   from the target; every Gaia star bright enough to cause the dip lies ≥ 22σ away except a G = 16.2 background
   star 2.2″ away (parallax 0.69 mas vs. 14.96 mas).
-- That star would need a ~73%-deep eclipse; fitting the transits as a diluted eclipse with a true radius ratio
-  k ≥ 0.5 is worse than the planet model by Δχ² ≥ 65 (Δχ² = 27 even at k = 0.3).
-- No secondary eclipse at phase 0.5 (≤ 150 ppm); odd and even transit depths agree (2.3σ).
+- That star would need a ~60%-deep eclipse; fitting the transits as a diluted eclipse with a true radius ratio
+  k ≥ 0.7 is worse than the planet model by Δχ² = 79 (65 at k = 0.5, 27 at k = 0.3): strongly disfavoured, not
+  excluded, until high-resolution imaging.
+- No secondary eclipse at phase 0.5 (≤ 150 ppm). Odd and even depths cannot be compared: the transits fall on
+  cycles −30, −10, 10, 17 and 18, so only one is odd.
 - Gaia DR3: RUWE 1.00, no non-single-star solution, a single image in all scans.
 - Our pixel test, run blind on 40 confirmed TESS planets, never placed a planet's transits on a neighbour.
 - TRICERATOPS (Giacalone et al. 2021; 10 runs, the sector apertures, no contrast curve): FPP = 0.015 ± 0.006,

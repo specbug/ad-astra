@@ -715,19 +715,19 @@ def section_tic402710280(fit, ex):
          f"the dip lies {near[1]['sigma']:.0f}σ or more from that position, except one: a G = 16.2 background star "
          f"2″ away (parallax 0.69 mas against the target's 15.0)."),
         ("pass", "Not that background star.",
-         "To make a 0.2% dip through 6.4 magnitudes of dilution it would need a 73%-deep eclipse, which takes a "
-         "companion nearly as large as the star and a long, V-shaped ingress. Fitting the transits as a diluted "
-         "eclipse of that kind is worse than a planet by Δχ² = 79 (radius ratio ≥ 0.7), and still by 65 at 0.5 and "
-         "27 at 0.3."),
+         f"To make a {depth:.0f} ppm dip through 6.4 magnitudes of dilution it would need an eclipse about "
+         f"{depth * 1e-6 * 10 ** (0.4 * 6.4) * 100:.0f}% deep, which takes a companion nearly as large as the star "
+         "and a long, V-shaped ingress. Fitting the transits as a diluted eclipse of that kind is worse than a "
+         "planet by Δχ² = 79 (radius ratio ≥ 0.7), and still by 65 at 0.5 and 27 at 0.3: strongly disfavoured, "
+         "though only high-resolution imaging can exclude it."),
         ("pass", "A transit this star can make.",
          f"Without the sector-102 transit the fitted stellar density is {pm(f['rho_solar'], 2)} solar; the "
          f"catalogue K dwarf's 1.61 costs Δχ² = {dens['without_S102']:.1f}. The sector-102 transit, 1.4 days from "
          f"the start of an orbit where our light curve has a ramp, alone pulls the density down (Δχ² = "
          f"{dens['all_five']:.0f} with it); it is shown but left out of the shape fit."),
-        ("pass", "No secondary eclipse, even and odd alike.",
-         f"Half an orbit later the light curve is flat (37 to 120 ± 48 ppm); even and odd transits have depths "
-         f"{nc['odd_even_ppm']['even'][0]} ± {nc['odd_even_ppm']['even'][1]} and {nc['odd_even_ppm']['odd'][0]} ± "
-         f"{nc['odd_even_ppm']['odd'][1]} ppm (2.3σ)."),
+        ("pass", "No secondary eclipse.",
+         "Half an orbit later the light curve is flat (37 to 120 ± 48 ppm). Odd and even transits cannot be "
+         "compared: the five fall on cycles −30, −10, 10, 17 and 18, so only one (sector 100) is odd."),
         ("pass", "No sign of a stellar companion.", "Gaia DR3: RUWE 1.00, no non-single-star solution, a single "
          "image in every scan."),
         *fpp_row(),
@@ -735,7 +735,7 @@ def section_tic402710280(fit, ex):
          "the full-frame images; no public light curve of those sectors exists yet (the public QLP light curves end "
          "at sector 98)."),
         ("info", "On record:", "nothing. Not a TOI or community TOI, no planet parameters, imaging or spectra on "
-         "ExoFOP (checked live on 12 October 2026); not in SIMBAD's object types, the NASA archive or the literature "
+         "ExoFOP, and absent from the full TOI and community-TOI tables (checked live on 14 October 2026); not in SIMBAD's object types, the NASA archive or the literature "
          "searches. SPOC never observed it at 2-minute cadence, so it has no SPOC TCE."),
     ])
     return f"""
@@ -744,7 +744,7 @@ def section_tic402710280(fit, ex):
     <p class="kicker">New candidate · period hunt, sectors 99–108 full-frame images</p>
     <h2>TIC 402710280: a sub-Neptune every 36.3 days</h2>
     <div class="chips">{chip("Not a TOI", "new")}{chip("Not a community TOI", "new")}{chip("Period new", "new")}{chip("Nothing on record", "new")}</div>
-    <p class="lede col">A K dwarf (T = 9.2, V ≈ 10) 67 parsecs away in Triangulum Australe dims by {depth:.0f} ppm
+    <p class="lede col">A K dwarf (TESS magnitude 9.2, V ≈ 10) 67 parsecs away in Triangulum Australe dims by {depth:.0f} ppm
     for {f['t14_h'][0]:.1f} hours every {f['period_d'][0]:.4f} days: a planet about {rp:.1f} times the size of
     Earth. The survey first saw two of its transits, 1,454 days apart; our own light curves of the newest
     full-frame images (sectors 100 and 102) added two more, and the period they fix finds a fifth in sector 66.</p>
@@ -1874,13 +1874,24 @@ def section_anomalies(td):
 
 def section_tracka(ta_n, ta_total, triage):
     sig = ""
-    if triage is not None and len(triage):
-        clean = triage[(triage.kind == "signals") & (triage.hard_flags.fillna("") == "")]
-        flip = triage[(triage.kind == "signals_inverted") & (triage.hard_flags.fillna("") == "")]
-        if len(clean):
-            sig = (f" Of {triage.tic.nunique():,} stars with a signal passing the search thresholds, {clean.tic.nunique()} have one "
-                   f"with no red flag; the strongest has SDE {clean.sde.max():.1f}, against {flip.sde.max():.1f} for the strongest "
-                   f"flag-free signal in the same stars' flipped light curves." if len(flip) else "")
+    v2 = _json_a("tracka_v2.json")
+    if triage is not None and len(triage) and v2:
+        th = v2["threshold"]
+        above = v2["unknown_above"]
+        n_lit = sum(1 for r in above if int(r["tic"]) == 4206066)
+        sec = [r for r in above if int(r["tic"]) == 402710280]
+        sig = (f" Of {triage.tic.nunique():,} stars with a signal passing the search thresholds, {v2['n_free_real']} signals "
+               f"carry no red flag, against {v2['n_free_flipped']} in the same stars' flipped light curves (the flipped data "
+               f"contain no transits, so their flag-free signals measure the false-alarm rate). Above SDE {th['sde']:g}, where "
+               f"{th['flipped_above']} flipped signal is left, {len(above)} real ones are on no TOI, community-TOI or NASA list. "
+               + ("Two of them are TIC 4206066's planets, described in an independent manuscript and recovered here "
+                "blind" if n_lit == 2 else "None is a planet described elsewhere"))
+        if sec:
+            sig += (f"; one is a second, shorter signal on TIC 402710280 ({sec[0]['period']:.3f} days, about "
+                    f"{sec[0]['depth_ppm']:.0f} ppm), the star of the new candidate above")
+        sig += (". The rest are being checked in the pixels and against today's ExoFOP before any is called a candidate. "
+                "An earlier version of this triage read the depth at half the period as a secondary eclipse, which "
+                "flagged nearly every real transit (TIC 4206066's planets among them); that is fixed.")
     return f"""
 <section id="tracka">
   <p class="kicker">Track A · small planets</p>
@@ -1888,10 +1899,14 @@ def section_tracka(ta_n, ta_total, triage):
   <div class="col" style="display:grid;gap:12px">
   <p>{ta_total:,} K and M dwarfs within 150 parsecs, with years of TESS coverage but few two-minute sectors, are
   being searched with every sector stitched together, for planets down to about 1.5 Earth radii. {ta_n:,} have been
-  searched so far.{sig} No candidate has cleared that bar yet. The search continues and will be reported in the
-  same way, against its own flipped-data baseline.</p>
+  searched so far.{sig}</p>
   </div>
 </section>"""
+
+
+def _json_a(name):
+    p = RESULTS / "track_a" / name
+    return json.load(open(p)) if p.exists() else None
 
 
 def section_methods():
@@ -2029,7 +2044,8 @@ def build():
     ta_dir = RESULTS / "track_a"
     ta_n = len(glob.glob(str(ta_dir / "stars" / "*.json")))
     ta_total = len(pd.read_csv(ta_dir / "targets_search.csv"))
-    triage = pd.read_csv(ta_dir / "triage.csv") if (ta_dir / "triage.csv").exists() else None
+    tri_p = ta_dir / "triage_v2.csv" if (ta_dir / "triage_v2.csv").exists() else ta_dir / "triage.csv"
+    triage = pd.read_csv(tri_p, low_memory=False) if tri_p.exists() else None
     n_q = int((sv["product"] == "qlp").sum())
     n_s = int((sv["product"] == "spoc").sum())
     today = datetime.now(timezone.utc).strftime("%-d %B %Y")
@@ -2050,9 +2066,9 @@ def build():
         rpa = fa["rp_rs"][0] * 0.817 * R_EARTH_PER_RSUN
         rpb = fb["rp_rs"][0] * 0.652 * R_EARTH_PER_RSUN
         fnew = (f'<li>{chip("New candidate", "new")}<div><strong>TIC 402710280: a {rpa:.1f} {RE} planet candidate every '
-                f'{fa["period_d"][0]:.3f} days around a K dwarf 67 parsecs away (T = 9.2).</strong> Not a TOI, not a '
+                f'{fa["period_d"][0]:.3f} days around a K dwarf 67 parsecs away (TESS magnitude 9.2).</strong> Not a TOI, not a '
                 f'community TOI, nothing on record anywhere. Five transits from 2021 to 2026, two of them only in our own '
-                f'light curves of the newest TESS full-frame images; the dip is on the star and has a planet\'s shape.</div></li>'
+                f'light curves of the newest TESS full-frame images; the dip comes from the star or from within 2″ of it, and has a planet\'s shape.</div></li>'
                 f'<li>{chip("Period new", "new")}<div><strong>TOI-2493.01: a {rpb:.1f} {RE} candidate every '
                 f'{fb["period_d"][0]:.2f} days, receiving {exb.get("s_earth", float("nan")):.1f}× Earth\'s insolation.</strong> '
                 f'A single-transit TOI since 2021 with no period; the period hunt found two more transits in 2025 and 2026. '
@@ -2255,7 +2271,7 @@ def deep_verdict(r):
 
 
 # stars whose unresolved pixel verdict was settled by a dedicated analysis (see their sections and NOTES)
-PIX_SETTLED = {402710280: "the one unresolved neighbour (G = 16.2, 2″) is excluded by the transit's shape"}
+PIX_SETTLED = {402710280: "the one unresolved neighbour (G = 16.2, 2″) is strongly disfavoured by the transit's shape"}
 
 
 def section_deepvet(dv, lit, tb):

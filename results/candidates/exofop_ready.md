@@ -19,8 +19,8 @@ Prepared from this survey's fits; BJD_TDB = BTJD + 2457000. Posting needs an Exo
 Notes: five transits; S39 and S66 from TESS-SPOC, S93 from QLP, S100 and S102 from our own photometry of the
 sector 100/102 full-frame images (no public FFI light curves of those sectors yet). Every predicted transit inside
 the data is present. Difference-image centroids (five transits) 1.4" ± 1.2" from the target; the only unresolved
-Gaia neighbour (G = 16.2 at 2.2", parallax 0.69 mas, background) would need a ~73% eclipse, excluded by the
-transit shape (diluted-EB fits worse by dchi2 >= 65 for k >= 0.5). Stellar density from the transit shape
+Gaia neighbour (G = 16.2 at 2.2", parallax 0.69 mas, background) would need a ~60% eclipse, strongly disfavoured
+by the transit shape (diluted-EB fits worse by dchi2 = 79 for k >= 0.7, 65 at 0.5); only imaging can exclude it. Stellar density from the transit shape
 consistent with the K dwarf (S102 transit, on a ramp 1.4 d after an orbit start, excluded from the shape fit).
 Gaia DR3 RUWE 1.00. No secondary eclipse. Odd/even is not a meaningful test here: relative to T0 the transits are epochs -30, -10, 10, 17, 18, so only S100 is odd. TRICERATOPS (10 runs, no contrast
 curve): FPP = 0.0147 +- 0.0055, NFPP = 4.5e-5 (planet on target 84%, planet diluted by an unseen companion 14%,
