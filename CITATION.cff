@@ -19,7 +19,7 @@ repository-code: "https://github.com/specbug/ad-astra"
 keywords: [exoplanets, TESS, transit photometry, sub-Neptune, TIC 402710280]
 preferred-citation:
   type: article
-  title: "A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280, Identified in TESS Full-Frame Images"
+  title: "A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280"
   authors:
     - family-names: Vora
       given-names: Rishit

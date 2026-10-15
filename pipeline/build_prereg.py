@@ -170,7 +170,7 @@ def main():
         readme = readme.replace("| `predictions.json` |", "| `validation.json` | Output of the frozen code on the archival transits and on transit-free data (Section 7 of the protocol). |\n| `predictions.json` |")
     readme = readme.replace("Companion records: the preprint and its data/code record (R. Vora 2026, Zenodo).",
                             "Companion records: the preprint *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf "
-                            "TIC 402710280, Identified in TESS Full-Frame Images* and its data/code record (R. Vora 2026, Zenodo).")
+                            "TIC 402710280* and its data/code record (R. Vora 2026, Zenodo).")
     (REC / "README.md").write_text(readme)
     files = sorted(p for p in REC.iterdir() if p.is_file() and p.name != "SHA256SUMS.txt")
     (REC / "SHA256SUMS.txt").write_text("".join(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}\n" for p in files))

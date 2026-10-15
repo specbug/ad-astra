@@ -23,7 +23,7 @@ before it is published ("Reserve DOI" in the upload form); use it to get all thr
 - Description: Light curves of every transit window, TESS full-frame-image photometry of Sectors 100-103, transit
   times, posterior summaries and chains, alias, secondary-eclipse, timing, blend and TRICERATOPS results, the
   characterisation of the 3.78-day signal, the analysis pipeline, and the manuscript source for the preprint "A
-  36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280, Identified in TESS Full-Frame Images".
+  36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280".
 - Keywords: exoplanets; transit photometry; TESS; sub-Neptune; TIC 402710280
 - Related identifiers: "is supplement to" the preprint DOI (B).
 
@@ -31,8 +31,7 @@ before it is published ("Reserve DOI" in the upload form); use it to get all thr
 
 - File: `paper/tic402710280.pdf`.
 - Resource type: Publication → Preprint. Licence: CC BY 4.0.
-- Title: *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280, Identified in TESS
-  Full-Frame Images*
+- Title: *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280*
 - Description: paste the abstract from the PDF.
 - Keywords: as above.
 - Related identifiers: "is supplemented by" the data record (A); "is referenced by" the pre-registration (C).
