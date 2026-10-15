@@ -5,9 +5,8 @@ before it is published ("Reserve DOI" in the upload form); use it to get all thr
 
 ## Before uploading
 
-1. In `paper/tic402710280.template.tex` (the source that `pipeline/paper_numbers.py` fills to make
-   `paper/tic402710280.tex`), replace `EMAIL` with your address and `0000-0000-0000-0000` with your ORCID iD
-   (or delete the `[0000-0000-0000-0000]` argument if you have none; an ORCID is free at orcid.org and recommended).
+1. Author details are in place (rishitv@protonmail.com, ORCID 0009-0003-8778-9883); on Zenodo, add the same ORCID
+   to the creator field of all three records.
 2. Reserve the three DOIs (step A below), put the data-record DOI into `paper/refs.bib` (entry `DataRecord`,
    replacing `10.5281/zenodo.XXXXXXXX`), run `python pipeline/paper_numbers.py`, rebuild the PDF
    (`latexmk -pdf tic402710280.tex` in `paper/`), and rebuild the data record (`python pipeline/build_release.py`)
