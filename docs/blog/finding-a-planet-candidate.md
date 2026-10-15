@@ -7,7 +7,7 @@ tags: [astronomy, exoplanets, tess, ai]
 
 There's a star in the southern constellation Triangulum Australe, about 218 light-years away, that dims by 0.21% for a little over five hours every 36.34 days. As far as I can tell, nobody had noticed until last week. If the dip is caused by what I think it is, it's a planet slightly smaller than Neptune, and I found it in public NASA data.
 
-I've wanted to find something in the sky that nobody else had found since I was a kid, so I'm going to be a bit insufferable about this for a while. It's still only a candidate, though. On 19 February 2027 the TESS space telescope looks at this star again, and I've already published the rules of the test that will decide whether my planet survives that observation. It may well not.
+Since I was a child I have wanted to find something in the sky that no one had seen before. I always imagined it would involve a telescope. Instead it was a column of numbers, and a small dip in them that came back. It is still only a candidate. On 19 February 2027 the TESS space telescope looks at this star again, and I've already published the rules of the test that will decide whether my planet survives that observation. It may well not.
 
 ## Where it was hiding
 
