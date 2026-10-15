@@ -7,13 +7,15 @@ before it is published ("Reserve DOI" in the upload form); use it to get all thr
 
 1. Author details are in place (rishitv@protonmail.com, ORCID 0009-0003-8778-9883); on Zenodo, add the same ORCID
    to the creator field of all three records.
-2. Reserve the three DOIs (step A below), put the data-record DOI into `paper/refs.bib` (entry `DataRecord`,
-   replacing `10.5281/zenodo.XXXXXXXX`), run `python pipeline/paper_numbers.py`, rebuild the PDF
-   (`latexmk -pdf tic402710280.tex` in `paper/`), and rebuild the data record (`python pipeline/build_release.py`)
-   so it carries the final PDF.
+2. The three DOIs are reserved and already written into every file:
+   - A, data and code record: `10.5281/zenodo.23390274`
+   - B, preprint: `10.5281/zenodo.23390317`
+   - C, pre-registration: `10.5281/zenodo.23390325`
+
+   Upload each file to the draft whose DOI it carries; a mismatch would be permanent.
 3. Re-check ExoFOP for TIC 402710280 on the day (target page and the full TOI/CTOI tables).
 
-## A. Data and code record
+## A. Data and code record (DOI 10.5281/zenodo.23390274)
 
 - File: `release/tic402710280_zenodo.zip` (upload the zip, or its contents).
 - Resource type: Dataset. Licence: Creative Commons Attribution 4.0 (the code inside is MIT; see LICENSE-CODE).
@@ -25,7 +27,7 @@ before it is published ("Reserve DOI" in the upload form); use it to get all thr
 - Keywords: exoplanets; transit photometry; TESS; sub-Neptune; TIC 402710280
 - Related identifiers: "is supplement to" the preprint DOI (B).
 
-## B. Preprint
+## B. Preprint (DOI 10.5281/zenodo.23390317)
 
 - File: `paper/tic402710280.pdf`.
 - Resource type: Publication → Preprint. Licence: CC BY 4.0.
@@ -35,7 +37,7 @@ before it is published ("Reserve DOI" in the upload form); use it to get all thr
 - Keywords: as above.
 - Related identifiers: "is supplemented by" the data record (A); "is referenced by" the pre-registration (C).
 
-## C. Pre-registration
+## C. Pre-registration (DOI 10.5281/zenodo.23390325)
 
 - File: `release/prereg_tic402710280.zip` (or its six files).
 - Resource type: Other (or Publication → Other). Licence: CC BY 4.0 (code MIT).

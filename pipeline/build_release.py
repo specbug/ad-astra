@@ -178,6 +178,8 @@ README = """# TIC 402710280.01: data products and analysis code
 Supporting record for the preprint *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280,
 Identified in TESS Full-Frame Images* (R. Vora, 2026).
 
+DOIs: this record 10.5281/zenodo.23390274; the preprint 10.5281/zenodo.23390317; the pre-registered test of the 2027 transits 10.5281/zenodo.23390325.
+
 Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJD_TDB.
 
 ## Contents

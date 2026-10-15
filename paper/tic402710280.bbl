@@ -176,8 +176,14 @@
 {Virtanen}, P., {Gommers}, R., {Oliphant}, T.~E., {et~al.} 2020, Nature
   Methods, 17, 261, \dodoi{10.1038/s41592-019-0686-2}
 
-\bibitem[{{Vora}(2026)}]{DataRecord}
-{Vora}, R. 2026, {TIC 402710280.01: data products and analysis code}, Zenodo
+\bibitem[{{Vora}(2026{\natexlab{a}})}]{DataRecord}
+{Vora}, R. 2026{\natexlab{a}}, {TIC 402710280.01: data products and analysis
+  code}, Zenodo, \dodoi{10.5281/zenodo.23390274}
+
+\bibitem[{{Vora}(2026{\natexlab{b}})}]{PreReg}
+---. 2026{\natexlab{b}}, {A Pre-registered Test of the Transiting Planet
+  Candidate TIC 402710280.01 at Its Predicted Transits of 2027}, Zenodo,
+  \dodoi{10.5281/zenodo.23390325}
 
 \bibitem[{{Winn} {et~al.}(2008){Winn}, {Holman}, {Torres}, {et~al.}}]{Winn2008}
 {Winn}, J.~N., {Holman}, M.~J., {Torres}, G., {et~al.} 2008, ApJ, 683, 1076,
