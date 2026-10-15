@@ -235,6 +235,19 @@ def main():
         oc_plot({"events": ev, "P_listed": t["P"], "T0_listed": t["T0"], "toi": name, "P": t["P"], "P_err": t["P_err"],
                  "chi2_red": t["chi2_red"], "depth_ppm_listed": x["depth_ref_ppm"], "label": name, "no_listed": True},
                 D / "period_review" / f"{tgt}.png")
+    # drop rows that the live recheck (upload_recheck.py) found already posted by someone else; the CTOI
+    # 438225366.01 row is kept on purpose (it offers the half period as an alternative to the posted one)
+    lr = D / "live_recheck.csv"
+    if lr.exists():
+        hits = pd.read_csv(lr).fillna("")
+        dup = {r.target for r in hits.itertuples() if r.matching_posts and r.target != "TIC438225366.01"}
+        for r in rows:
+            if r["target"] in dup:
+                for x in review:
+                    if x["target"] == r["target"] and x["included"]:
+                        x["included"], x["why"] = False, "already posted (live recheck): " + \
+                            hits[hits.target == r["target"]].matching_posts.iloc[0][:150]
+        rows = [r for r in rows if r["target"] not in dup]
     with open(D / "params_planet_DRAFT.txt", "w") as fh:
         fh.write("\\ DRAFT, not for upload as is: replace the tag, review each row (upload_review.csv, toi_review/).\n")
         fh.write("|".join(COLS) + "\n")

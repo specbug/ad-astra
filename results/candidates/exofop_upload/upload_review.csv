@@ -1,0 +1,208 @@
+target,included,why,notes
+TOI2493.01,True,"3 transits, aliases excluded; MCMC converged","Period from 3 transits S33,S98,S107 (2-min); shorter aliases excluded incl. S108. Ad Astra survey"
+TIC266376971.01,True,4 transits; centroid caveat in note,"Period from 4 transits S10,S64,S99,S100; centroid offset marginal (2.7 sigma). Ad Astra survey"
+TIC266680498.01,True,second transit; period left blank (aliases),"2nd transit S107 (1st S30); P=2149.389/n d, 32 values >=25.9 d allowed. Ad Astra survey"
+TIC438225366.01,True,recurrence; EB alternative in note,"8 equal dips every 20.8615 d. Orbit 20.86 d if transits, or ~41.72 d if twin-EB eclipses. Ad Astra"
+TOI2633.01,True,6 transits; density caveat in note,Ephemeris from 6 transits S7-S88; listed T0 is off-phase. Density 3x TIC: blend/ecc possible. Ad Astra
+TOI2627.01,True,"122 transits, chi2_red 2.0, offset -8.4 h = 257x listed error",Alt. ephemeris from 122 transit times S1-S105; listed off 8 h on 2026-12-01. Ad Astra
+TOI5058.01,False,"too few or too sparse transits, or chi2_red >= 5; matching period already posted: TESS project 2024-08-22 P=23.7123919; timing chi2_red 6.2",
+TOI5315.01,False,matching period already posted: TESS project 2025-10-17 P=2.4704071,
+TOI6753.01,True,"137 transits, chi2_red 3.8, offset -6.9 h = 104x listed error",Alt. ephemeris from 137 transit times S12-S102; listed off 7 h on 2026-12-01. Ad Astra
+TOI6238.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 5.5",
+TOI3668.01,True,"53 transits, chi2_red 3.4, offset +6.1 h = 94x listed error",Alt. ephemeris from 53 transit times S58-S85; listed off 6 h on 2026-12-01. Ad Astra
+TOI613.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 6.8",
+TOI2091.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 76.7",
+TOI2352.01,False,odd/even depths differ 4.9 sigma (EB at 2P?),
+TOI1847.02,True,"8 transits, chi2_red 3.3, offset -45.3 h = 71x listed error",Alt. ephemeris from 8 transit times S3-S97; listed off 45 h on 2026-12-01. Ad Astra
+TOI5167.01,False,"too few or too sparse transits, or chi2_red >= 5; matching period already posted: Castro 2021-09-09 P=4.8718955; timing chi2_red 11.1",
+TOI5816.01,False,matching period already posted: wzhou 2022-09-23 P=20.41901,
+TOI852.01,True,"17 transits, chi2_red 3.6, offset -32.9 h = 52x listed error",Alt. ephemeris from 17 transit times S3-S97; listed off 33 h on 2026-12-01. Ad Astra
+TOI5829.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 5.9",
+TOI4945.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 6.7",
+TOI6226.01,True,"12 transits, chi2_red 3.8, offset +16.3 h = 50x listed error",Alt. ephemeris from 12 transit times S57-S84; listed off 16 h on 2026-12-01. Ad Astra
+TOI2304.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 47.0",
+TOI3275.01,True,"5 transits, chi2_red 0.6, offset -116.6 h = 44x listed error",Alt. ephemeris from 5 transit times S13-S102; listed off 117 h on 2026-12-01. Ad Astra
+TOI6738.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 12.4",
+TOI5625.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 35.1",
+TOI6757.01,True,"20 transits, chi2_red 4.7, offset -10.0 h = 38x listed error",Alt. ephemeris from 20 transit times S13-S104; listed off 10 h on 2026-12-01. Ad Astra
+TOI6114.01,True,"6 transits, chi2_red 1.1, offset +87.9 h = 38x listed error",Alt. ephemeris from 6 transit times S56-S82; listed off 88 h on 2026-12-01. Ad Astra
+TOI4185.01,False,"too few or too sparse transits, or chi2_red >= 5",
+TOI4371.01,False,"too few or too sparse transits, or chi2_red >= 5; odd/even depths differ 3.4 sigma (EB at 2P?); timing chi2_red 9.5",
+TOI4931.01,False,odd/even depths differ 3.0 sigma (EB at 2P?),
+TOI5360.01,True,"12 transits, chi2_red 3.9, offset -10.0 h = 34x listed error",Alt. ephemeris from 12 transit times S42-S71; listed off 10 h on 2026-12-01. Ad Astra
+TOI6904.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 10.3",
+TOI6139.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 9.6",
+TOI6649.01,True,"7 transits, chi2_red 1.1, offset -6.1 h = 28x listed error",Alt. ephemeris from 7 transit times S57-S84; listed off 6 h on 2026-12-01. Ad Astra
+TOI4929.01,True,"42 transits, chi2_red 4.9, offset +13.6 h = 27x listed error",Alt. ephemeris from 42 transit times S11-S102; listed off 14 h on 2026-12-01. Ad Astra
+TOI3494.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 69.4",
+TOI4650.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 9.0",
+TOI1708.01,False,matching period already posted: lafargamagro 2026-05-21 P=11.470236826379317,
+TOI7125.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 93.3",
+TOI2633.01,True,"6 transits, chi2_red 2.3, offset -197.9 h = 22x listed error",Alt. ephemeris from 6 transit times S7-S88; listed off 198 h on 2026-12-01. Ad Astra
+TOI4694.01,False,matching period already posted: TESS project 2024-08-22 P=5.629318,
+TOI2674.01,False,"too few or too sparse transits, or chi2_red >= 5; matching period already posted: TESS project 2022-03-23 P=7.2972359; timing chi2_red 7.5",
+TOI2063.01,False,"too few or too sparse transits, or chi2_red >= 5",
+TOI7482.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 65.7",
+TOI3900.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 18.5",
+TOI2446.01,False,odd/even depths differ 3.0 sigma (EB at 2P?),
+TOI6194.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 7.7",
+TOI346.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 5.4",
+TOI7775.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 15.7",
+TOI5014.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 9.1",
+TOI3434.01,False,matching period already posted: TESS project 2024-08-22 P=3.1510024,
+TOI2396.01,True,"71 transits, chi2_red 4.8, offset +1.5 h = 9x listed error",Alt. ephemeris from 71 transit times S9-S101; listed off 1 h on 2026-12-01. Ad Astra
+TOI7388.01,False,matching period already posted: TESS project 2025-09-05 P=0.3328569446175977,
+TOI2361.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 952.6",
+TOI943.01,True,"7 transits, chi2_red 0.8, offset -37.1 h = 8x listed error",Alt. ephemeris from 7 transit times S5-S98; listed off 37 h on 2026-12-01. Ad Astra
+TOI121.01,False,matching period already posted: TESS project 2023-11-15 P=14.7741056; eastman 2019-05-31 P=14.7746; eastman 2019,
+TOI5288.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 684.6",
+TOI4212.01,False,"too few or too sparse transits, or chi2_red >= 5; matching period already posted: TESS project 2024-08-22 P=2.3485025; timing chi2_red 9.1",
+TOI7821.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 137.6",
+TOI5464.01,False,matching period already posted: TESS project 2026-07-15 P=1.1606902,
+TOI6148.01,True,"8 transits, chi2_red 2.2, offset +33.0 h = 6x listed error",Alt. ephemeris from 8 transit times S56-S83; listed off 33 h on 2026-12-01. Ad Astra
+TOI6168.01,True,"9 transits, chi2_red 2.3, offset -21.3 h = 6x listed error",Alt. ephemeris from 9 transit times S56-S83; listed off 21 h on 2026-12-01. Ad Astra
+TOI5783.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 5.9",
+TOI4850.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 11.6",
+TOI3296.01,True,"21 transits, chi2_red 1.5, offset +66.9 h = 5x listed error",Alt. ephemeris from 21 transit times S13-S104; listed off 67 h on 2026-12-01. Ad Astra
+TOI948.01,True,"7 transits, chi2_red 3.3, offset -57.1 h = 5x listed error",Alt. ephemeris from 7 transit times S5-S107; listed off 57 h on 2026-12-01. Ad Astra
+TOI2648.01,True,"31 transits, chi2_red 4.4, offset -13.8 h = 5x listed error",Alt. ephemeris from 31 transit times S1-S96; listed off 14 h on 2026-12-01. Ad Astra
+TOI3750.01,True,"7 transits, chi2_red 0.6, offset +32.9 h = 5x listed error",Alt. ephemeris from 7 transit times S19-S86; listed off 33 h on 2026-12-01. Ad Astra
+TOI6907.01,True,"83 transits, chi2_red 1.2, offset +19.1 h = 5x listed error",Alt. ephemeris from 83 transit times S73-S86; listed off 19 h on 2026-12-01. Ad Astra
+TOI5931.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 165.3",
+TOI7851.01,False,already posted (live recheck): TIC 73232401.01 P=11.007487418355442 by lafargamagro 2026-05-21 (1 Dec 2026 within 17 min),Alt. ephemeris from 9 transit times S10-S101; listed off 4 h on 2026-12-01. Ad Astra
+TOI4614.01,True,"8 transits, chi2_red 3.1, offset -4.7 h = 4x listed error",Alt. ephemeris from 8 transit times S42-S71; listed off 5 h on 2026-12-01. Ad Astra
+TOI6256.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 7.8",
+TOI4204.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 89.1",
+TOI6721.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 362.4",
+TOI3336.01,False,"too few or too sparse transits, or chi2_red >= 5; odd/even depths differ 4.4 sigma (EB at 2P?); timing chi2_red 6.6",
+TOI3699.01,True,"17 transits, chi2_red 2.3, offset -13.7 h = 3x listed error",Alt. ephemeris from 17 transit times S19-S86; listed off 14 h on 2026-12-01. Ad Astra
+TOI3346.01,True,"19 transits, chi2_red 2.3, offset -55.9 h = 3x listed error",Alt. ephemeris from 19 transit times S13-S104; listed off 56 h on 2026-12-01. Ad Astra
+TOI6679.01,True,"34 transits, chi2_red 2.8, offset +8.1 h = 3x listed error",Alt. ephemeris from 34 transit times S67-S104; listed off 8 h on 2026-12-01. Ad Astra
+TOI4655.01,True,"23 transits, chi2_red 1.5, offset -22.2 h = 3x listed error",Alt. ephemeris from 23 transit times S28-S106; listed off 22 h on 2026-12-01. Ad Astra
+TOI3739.01,False,"too few or too sparse transits, or chi2_red >= 5; timing chi2_red 48.9",
+TIC113645244.01,True,"period review ready: 4 transits, chi2_red 0.3, pixels on target",Period from 4 transit times S13-S94; no other period fits. Ad Astra survey
+TIC117888314.01,False,period review: aliases: ,
+TIC119362383.01,False,period review: hold: P=62.8618: odd/even 3.6 sigma,
+TIC120311283.01,True,"period review ready: 18 transits, chi2_red 2.5, pixels on target",Period from 18 transit times S14-S81; no other period fits. Ad Astra survey
+TIC121389437.01,True,"period review ready: 9 transits, chi2_red 1.6, pixels on target",Period from 9 transit times S8-S99; no other period fits. Ad Astra survey
+TOI2493.01,False,period review: hold: P=79.0310: timing chi2_red 59.1,
+TIC123763494.01,False,period review: hold: P=48.1893: odd/even 3.1 sigma,
+TIC136519753.01,True,"period review ready: 6 transits, chi2_red 2.6, pixels target or G16.1 at 3"" (unresolved)",Period from 6 transit times S55-S83; no other period fits. Ad Astra survey
+TIC13713700.01,False,period review: hold: P=50.6323: timing chi2_red 5.3,
+TIC140278302.01,True,"period review ready: 5 transits, chi2_red 0.7, pixels on target",Period from 5 transit times S7-S108; no other period fits. Ad Astra survey
+TIC140777703.01,True,"period review ready: 10 transits, chi2_red 4.6, pixels on target",Period from 10 transit times S19-S86; no other period fits. Ad Astra survey
+TIC141786309.01,False,period review: hold: P=16.5459: timing chi2_red 11.3,
+TIC142278054.01,True,"period review ready: 6 transits, chi2_red 1.6, pixels on target",Period from 6 transit times S10-S101; no other period fits. Ad Astra survey
+TIC14445414.01,False,"period review: hold: pixels: on G17.2 at 16""; P=17.4007: timing chi2_red 5.6",
+TIC145913596.01,False,"period review: hold: pixels: on G15.5 at 16""; P=54.0882: timing chi2_red 26.2",
+TIC147035057.01,True,"period review ready: 4 transits, chi2_red 0.3, pixels on target",Period from 4 transit times S7-S108; no other period fits. Ad Astra survey
+TIC14767026.01,False,"period review: hold: pixels: on G12.7 at 23""; P=6.5631: odd/even 3.4 sigma",
+TIC147898114.01,False,period review: aliases: ,
+TIC1504460.01,False,"period review: hold: pixels: on G14.1 at 18""",
+TIC153838604.01,False,period review: hold: P=56.0794: timing chi2_red 5.4,
+TIC156457567.01,False,"period review: hold: pixels: on G16.9 at 18""",
+TIC159490807.01,False,"period review: hold: pixels: on G15.0 at 12""; P=93.7138: odd/even 3.1 sigma",
+TIC159614322.01,False,period review: hold: P=719.7193: 2 transits timed; P=359.8596: 2 transits timed; P=143.9439: 2 transits timed,
+TIC159730525.01,True,"period review ready: 3 transits, chi2_red 1.2, pixels on target",Period from 3 transit times S1-S105; no other period fits. Ad Astra survey
+TOI6667.01,False,period review: aliases: ,
+TIC162305348.01,False,period review: hold: P=35.3828: timing chi2_red 16.8,
+TIC16488877.01,True,"period review ready: 4 transits, chi2_red 0.0, pixels on target",Period from 4 transit times S7-S72; no other period fits. Ad Astra survey
+TIC170692379.01,True,"period review ready: 4 transits, chi2_red 0.1, pixels on target",Period from 4 transit times S12-S103; no other period fits. Ad Astra survey
+TIC176402194.01,False,period review: hold: P=46.9747: timing chi2_red 15.9; P=23.4873: timing chi2_red 15.9,
+TIC187657618.01,True,"period review ready: 3 transits, chi2_red 0.1, pixels on target",Period from 3 transit times S7-S34; no other period fits. Ad Astra survey
+TIC193759514.01,False,"period review: hold: pixels: on G15.8 at 35""; P=15.7585: timing chi2_red 8.4",
+TIC198357385.01,False,period review: hold: P=1117.8214: 2 transits timed,
+TIC207363637.01,False,period review: aliases: ,
+TIC207783865.01,True,"period review ready: 7 transits, chi2_red 3.0, pixels on target",Period from 7 transit times S11-S102; no other period fits. Ad Astra survey
+TIC211409161.01,True,"period review ready: 3 transits, chi2_red 1.1, pixels target or G14.9 at 2"" (unresolved)",Period from 3 transit times S1-S68; no other period fits. Ad Astra survey
+TIC214517366.01,True,"period review ready: 3 transits, chi2_red 0.3, pixels on target",Period from 3 transit times S1-S106; no other period fits. Ad Astra survey
+TIC218430451.01,True,"period review ready: 12 transits, chi2_red 2.5, pixels target or G13.0 at 2"" (unresolved)",Period from 12 transit times S12-S104; no other period fits. Ad Astra survey
+TIC218977148.01,False,period review: hold: P=31.9397: timing chi2_red 33.8,
+TIC219244541.01,True,"period review ready: 7 transits, chi2_red 1.3, pixels on target",Period from 7 transit times S4-S98; no other period fits. Ad Astra survey
+TIC221915858.01,True,"period review ready: 4 transits, chi2_red 2.9, pixels on target",Period from 4 transit times S39-S102; no other period fits. Ad Astra survey
+TIC22642772.01,False,"period review: hold: pixels: on G13.9 at 64""; P=22.2111: timing chi2_red 8.5",
+TIC22712495.01,True,"period review ready: 4 transits, chi2_red 0.5, pixels on target",Period from 4 transit times S43-S58; no other period fits. Ad Astra survey
+TIC230130556.01,True,"period review ready: 38 transits, chi2_red 0.9, pixels on target",Period from 38 transit times S15-S86; no other period fits. Ad Astra survey
+TIC231637303.01,False,period review: hold: P=368.0981: timing chi2_red 11.2; P=184.0491: timing chi2_red 11.2,
+TIC231833061.02,True,"period review ready: 7 transits, chi2_red 0.0, pixels on target",Period from 7 transit times S1-S96; no other period fits. Ad Astra survey
+TIC231969683.01,False,period review: hold: P=21.9781: timing chi2_red 5.4,
+TIC235996401.01,True,"period review ready: 57 transits, chi2_red 2.3, pixels on target",Period from 57 transit times S17-S86; no other period fits. Ad Astra survey
+TIC240855518.01,False,"period review: hold: pixels: on G14.8 at 26""; P=23.9041: odd/even 7.8 sigma",
+TIC245750473.01,False,"period review: hold: pixels: on G14.5 at 32""",
+TIC248620873.01,False,"period review: hold: pixels: offset, no catalogued source fits; P=48.8827: timing chi2_red 9.2; P=24.4414: timing chi2_red 9.2",
+TIC251083502.01,True,"period review ready: 3 transits, chi2_red 0.1, pixels on target",Period from 3 transit times S4-S31; no other period fits. Ad Astra survey
+TIC259784884.01,False,"period review: hold: pixels: offset, no catalogued source fits",
+TIC259784884.02,True,"period review ready: 5 transits, chi2_red 0.2, pixels on target",Period from 5 transit times S1-S105; no other period fits. Ad Astra survey
+TIC260908297.01,True,"period review ready: 3 transits, chi2_red 0.1, pixels on target",Period from 3 transit times S14-S54; no other period fits. Ad Astra survey
+TIC264333501.01,True,"period review ready: 10 transits, chi2_red 4.9, pixels on target",Period from 10 transit times S19-S85; no other period fits. Ad Astra survey
+TIC264766922.01,False,period review: aliases: ,
+TIC265466589.01,False,period review: hold: P=97.9034: timing chi2_red 10.7; P=32.6345: timing chi2_red 11.0,
+TIC265469420.01,False,period review: aliases: ,
+TIC265469420.02,True,"period review ready: 5 transits, chi2_red 0.0, pixels on target",Period from 5 transit times S1-S103; no other period fits. Ad Astra survey
+TIC266376971.01,True,"period review ready: 4 transits, chi2_red 0.9, pixels on target",Period from 4 transit times S10-S100; no other period fits. Ad Astra survey
+TIC267185423.01,True,"period review ready: 3 transits, chi2_red 0.0, pixels target or G13.0 at 2"" (unresolved)",Period from 3 transit times S1-S95; no other period fits. Ad Astra survey
+TIC268534931.01,False,period review: aliases: ,
+TIC270450687.02,True,"period review ready: 3 transits, chi2_red 0.2, pixels on target",Period from 3 transit times S26-S80; no other period fits. Ad Astra survey
+TIC277802975.01,True,"period review ready: 4 transits, chi2_red 0.1, pixels on target",Period from 4 transit times S1-S104; no other period fits. Ad Astra survey
+TIC279727635.01,True,"period review ready: 3 transits, chi2_red 0.5, pixels on target",Period from 3 transit times S1-S96; no other period fits. Ad Astra survey
+TIC280692653.01,False,period review: aliases: ,
+TIC286969201.01,False,period review: hold: P=29.3346: timing chi2_red 6.2,
+TIC288160753.01,False,period review: hold: P=83.1629: timing chi2_red 6.5,
+TIC289596640.01,False,period review: hold: P=34.9354: timing chi2_red 15.2,
+TIC290686569.01,False,"period review: hold: pixels: on G13.1 at 20""; P=29.1588: odd/even 5.2 sigma",
+TIC300202855.01,True,"period review ready: 7 transits, chi2_red 2.0, pixels on target",Period from 7 transit times S6-S98; no other period fits. Ad Astra survey
+TIC302207444.01,True,"period review ready: 5 transits, chi2_red 1.8, pixels on target",Period from 5 transit times S45-S72; no other period fits. Ad Astra survey
+TIC308403559.01,True,"period review ready: 5 transits, chi2_red 1.0, pixels on target",Period from 5 transit times S8-S95; no other period fits. Ad Astra survey
+TIC31273263.01,True,"period review ready: 31 transits, chi2_red 1.0, pixels on target",Period from 31 transit times S1-S98; no other period fits. Ad Astra survey
+TIC317107805.01,False,period review: hold: P=163.9425: 2 transits timed; P=54.6475: timing chi2_red 5.1,
+TIC32498861.01,False,period review: aliases: ,
+TIC334656125.01,False,period review: hold: P=28.1043: timing chi2_red 7.4,
+TIC33973338.01,False,"period review: hold: pixels: on G14.0 at 31""",
+TIC342004815.01,False,"period review: hold: pixels: on G14.8 at 23""; P=39.3119: timing chi2_red 25.6",
+TIC348952772.01,False,"period review: hold: P=28.0279: 1 predicted transits missing, timing chi2_red 22.2; P=14.0139: 3 predicted transits missing, timing chi2_red 9.4; P=7.0070: 6 predicted transits missing, timing chi2_re",
+TIC349091983.01,False,period review: hold: P=549.0614: 2 transits timed,
+TIC357098189.01,False,"period review: hold: pixels: offset, no catalogued source fits; P=1340.7196: 2 transits timed; P=268.1439: 2 transits timed",
+TIC369456296.01,False,period review: hold: P=37.0138: timing chi2_red 13.9,
+TIC370324073.01,False,"period review: hold: P=15.9122: 3 predicted transits missing, timing chi2_red 265.6, odd/even 23.5 sigma",
+TIC370324073.02,True,"period review ready: 5 transits, chi2_red 0.0, pixels on target",Period from 5 transit times S1-S103; no other period fits. Ad Astra survey
+TIC38138512.01,True,"period review ready: 4 transits, chi2_red 0.2, pixels on target",Period from 4 transit times S9-S46; no other period fits. Ad Astra survey
+TIC381553868.01,True,"period review ready: 5 transits, chi2_red 2.0, pixels on target",Period from 5 transit times S13-S103; no other period fits. Ad Astra survey
+TIC382513740.01,False,"period review: hold: pixels: on G16.1 at 15""",
+TIC384882500.01,False,period review: hold: P=17.3234: timing chi2_red 6.3,
+TIC388014300.01,False,period review: hold: P=134.3408: timing chi2_red 29.6,
+TIC39167176.01,True,"period review ready: 5 transits, chi2_red 1.0, pixels on target",Period from 5 transit times S6-S98; no other period fits. Ad Astra survey
+TIC393229954.01,True,"period review ready: 3 transits, chi2_red 0.1, pixels on target",Period from 3 transit times S5-S98; no other period fits. Ad Astra survey
+TIC397762695.01,False,"period review: hold: pixels: on G16.2 at 13""",
+TIC401913803.01,False,"period review: hold: pixels: on G15.6 at 19""; P=31.7211: timing chi2_red 6.0",
+TIC406115330.01,True,"period review ready: 3 transits, chi2_red 4.4, pixels target or G16.7 at 3"" (unresolved)",Period from 3 transit times S67-S104; no other period fits. Ad Astra survey
+TIC412119488.01,True,"period review ready: 9 transits, chi2_red 0.5, pixels on target",Period from 9 transit times S16-S84; no other period fits. Ad Astra survey
+TIC41840228.01,True,"period review ready: 3 transits, chi2_red 4.0, pixels on target",Period from 3 transit times S40-S74; no other period fits. Ad Astra survey
+TIC42196078.01,True,"period review ready: 4 transits, chi2_red 3.3, pixels on target",Period from 4 transit times S14-S80; no other period fits. Ad Astra survey
+TIC427344083.01,False,"period review: hold: pixels: on G16.0 at 13""",
+TIC428976250.01,False,"period review: hold: pixels: on G13.2 at 14""",
+TIC436774928.01,False,period review: hold: P=12.8143: timing chi2_red 65.8,
+TIC437293313.01,True,"period review ready: 4 transits, chi2_red 1.1, pixels on target",Period from 4 transit times S10-S101; no other period fits. Ad Astra survey
+TIC441297232.01,False,period review: hold: P=7.1838: timing chi2_red 7.3,
+TIC442893494.01,False,period review: hold: P=72.1737: timing chi2_red 14.5; P=36.0868: timing chi2_red 14.5,
+TIC448471716.01,True,"period review ready: 5 transits, chi2_red 1.0, pixels on target",Period from 5 transit times S36-S100; no other period fits. Ad Astra survey
+TIC453444539.01,False,"period review: hold: pixels: on G14.9 at 7""",
+TIC456909420.01,True,"period review ready: 3 transits, chi2_red 0.3, pixels on target",Period from 3 transit times S17-S71; no other period fits. Ad Astra survey
+TIC469974264.01,False,period review: aliases: ,
+TIC48139432.01,True,"period review ready: 13 transits, chi2_red 2.8, pixels on target",Period from 13 transit times S14-S86; no other period fits. Ad Astra survey
+TIC52195587.01,False,period review: hold: P=47.3366: timing chi2_red 91.6,
+TIC5360702.01,True,"period review ready: 19 transits, chi2_red 1.6, pixels on target",Period from 19 transit times S8-S99; no other period fits. Ad Astra survey
+TIC53847727.01,False,period review: hold: P=1.5055: odd/even 11.5 sigma,
+TIC55659311.01,True,"period review ready: 26 transits, chi2_red 0.0, pixels on target",Period from 26 transit times S1-S98; no other period fits. Ad Astra survey
+TIC57352825.01,False,"period review: hold: pixels: on G15.1 at 11""",
+TIC64108432.01,True,"period review ready: 46 transits, chi2_red 0.5, pixels on target",Period from 46 transit times S4-S108; no other period fits. Ad Astra survey
+TIC64549889.01,True,"period review ready: 5 transits, chi2_red 1.5, pixels target or G15.9 at 4"" (unresolved)",Period from 5 transit times S7-S88; no other period fits. Ad Astra survey
+TIC66102144.01,False,period review: hold: P=2.3001: timing chi2_red 961.7; P=2.2859: timing chi2_red 1054.0,
+TIC6610653.01,False,"period review: hold: pixels: on G13.4 at 18""; P=16.1339: timing chi2_red 5.8",
+TIC67599025.01,True,"period review ready: 4 transits, chi2_red 1.8, pixels on target",Period from 4 transit times S3-S107; no other period fits. Ad Astra survey
+TIC70561926.01,True,"period review ready: 4 transits, chi2_red 0.3, pixels on target",Period from 4 transit times S8-S89; no other period fits. Ad Astra survey
+TIC7145074.01,True,"period review ready: 6 transits, chi2_red 0.7, pixels on target",Period from 6 transit times S29-S106; no other period fits. Ad Astra survey
+TIC77320223.01,False,period review: hold: P=8.6356: timing chi2_red 17.4; P=8.5948: timing chi2_red 6.6; P=8.5545: timing chi2_red 12.8,
+TIC82011491.01,False,period review: hold: P=29.7634: timing chi2_red 7.4,
+TIC83580723.01,False,"period review: hold: pixels: on G14.4 at 17""",
+TIC841384851.01,True,"period review ready: 5 transits, chi2_red 2.4, pixels on target",Period from 5 transit times S20-S74; no other period fits. Ad Astra survey
+TIC85668557.01,True,"period review ready: 6 transits, chi2_red 2.6, pixels on target",Period from 6 transit times S19-S86; no other period fits. Ad Astra survey

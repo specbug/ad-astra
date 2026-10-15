@@ -1,0 +1,52 @@
+# Publishing TIC 402710280.01 on Zenodo
+
+Three records, uploaded in this order so that each can cite the others. Zenodo can **reserve a DOI** for a draft
+before it is published ("Reserve DOI" in the upload form); use it to get all three DOIs first.
+
+## Before uploading
+
+1. In `paper/tic402710280.tex`, replace `EMAIL` with your address and `0000-0000-0000-0000` with your ORCID iD
+   (or delete the `[0000-0000-0000-0000]` argument if you have none; an ORCID is free at orcid.org and recommended).
+2. Reserve the three DOIs (step A below), put the data-record DOI into `paper/refs.bib` (entry `DataRecord`,
+   replacing `10.5281/zenodo.XXXXXXXX`), rebuild the PDF (`latexmk -pdf tic402710280.tex` in `paper/`), and rebuild
+   the data record (`python pipeline/build_release.py`) so it carries the final PDF.
+3. Re-check ExoFOP for TIC 402710280 on the day (target page and the full TOI/CTOI tables).
+
+## A. Data and code record
+
+- File: `release/tic402710280_zenodo.zip` (upload the zip, or its contents).
+- Resource type: Dataset. Licence: Creative Commons Attribution 4.0 (the code inside is MIT; see LICENSE-CODE).
+- Title: *TIC 402710280.01: data products and analysis code*
+- Description: Light curves of every transit window, TESS full-frame-image photometry of Sectors 100-103, transit
+  times, posterior summaries, alias, secondary-eclipse, blend and TRICERATOPS results, the analysis pipeline, and
+  the manuscript source for the preprint "TIC 402710280.01: A Sub-Neptune Candidate on a 36.34-Day Orbit around a
+  Nearby K Dwarf, Identified in TESS Full-Frame Images".
+- Keywords: exoplanets; transit photometry; TESS; sub-Neptune; TIC 402710280
+- Related identifiers: "is supplement to" the preprint DOI (B).
+
+## B. Preprint
+
+- File: `paper/tic402710280.pdf`.
+- Resource type: Publication → Preprint. Licence: CC BY 4.0.
+- Title: *TIC 402710280.01: A Sub-Neptune Candidate on a 36.34-Day Orbit around a Nearby K Dwarf, Identified in TESS
+  Full-Frame Images*
+- Description: paste the abstract from the PDF.
+- Keywords: as above.
+- Related identifiers: "is supplemented by" the data record (A); "is referenced by" the pre-registration (C).
+
+## C. Pre-registration
+
+- File: `release/prereg_tic402710280.zip` (or its five files).
+- Resource type: Other (or Publication → Other). Licence: CC BY 4.0 (code MIT).
+- Title: *A Pre-registered Test of the Transiting Planet Candidate TIC 402710280.01 at Its Predicted Transits of 2027*
+- Description: This record fixes, before the data exist, the predicted transit times of TIC 402710280.01 for 2027
+  (TESS Sector 114 on 2027 February 19; ground-based photometry on 2027 May 3), the data to be used, the processing,
+  and the rules that assign each tested transit one of four outcomes. Start with PROTOCOL.pdf.
+- Related identifiers: "references" the preprint (B) and the data record (A).
+- Must be published before 2027 February 19, and before any Sector 114 data are released.
+
+## After publishing
+
+- arXiv: once you have an endorser for astro-ph.EP, submit the same LaTeX source (`paper/`), citing the Zenodo DOIs.
+- ExoFOP: a new community candidate still requires refereed publication; the preprint is the record to cite when
+  that paper is written.

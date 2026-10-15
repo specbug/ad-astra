@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+
+\title{A Pre-registered Test of the Transiting Planet Candidate TIC~402710280.01\\ at Its Predicted Transits of 2027}
+\author{Rishit Vora\\ \small Independent Researcher}
+\date{Registered before any data of the tested epochs exist}
+
+\begin{document}
+\maketitle
+
+\section*{1. Purpose}
+The preprint \emph{TIC~402710280.01: A Sub-Neptune Candidate on a 36.34-Day Orbit around a Nearby K Dwarf, Identified in TESS Full-Frame Images} reports a transit signal with period $P = 36.33990 \pm 0.00053$~d, detected in four transits recorded between 2021 and 2026. Because the period and transit shape were selected after those data were inspected, the archival data cannot test them independently. This document fixes, before the data exist, the predictions for the next observable transits, the data to be used, the processing, and the rules that map the result onto one of four outcomes. The analysis code (\texttt{prereg\_test.py}) is frozen; its SHA-256 checksum is listed in \texttt{SHA256SUMS.txt}.
+
+\section*{2. Predictions}
+The linear ephemeris of the preprint gives the mid-time of epoch $E$ (counted from the Sector~39 transit) as
+\begin{equation*}
+T_c(E) = T_0 + (E - 40)\,P, \qquad T_0 = 2460838.20190~\mathrm{BJD_{TDB}},
+\end{equation*}
+with uncertainty
+\begin{equation*}
+\sigma_{\rm pred}(E) = \left[\sigma_{T_0}^2 + (E-40)^2\sigma_P^2 + \sigma_{\rm rms}^2\right]^{1/2},
+\end{equation*}
+where $\sigma_{T_0} = 0.01225$~d, $\sigma_P = 0.00053$~d, and $\sigma_{\rm rms} = 21.5$~min is the rms of the four archival timing residuals, included because individual transits scatter about the linear ephemeris by that amount. The registered tests are:
+
+\begin{center}
+\begin{tabular}{cccl}
+\toprule
+Epoch & $T_c$ (BJD$_{\rm TDB}$) & $\sigma_{\rm pred}$ (min) & Expected data \\
+\midrule
+57 & 2461455.9801 & 30.7 & TESS Sector~114 (2027 February~19) \\
+59 & 2461528.6599 & 31.3 & Ground-based photometry from Chile (2027 May~3, 03:43~UTC at La Silla) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The expected depth at mid-transit is 2097~ppm and the expected duration is 5.27~h. Any later transit may be tested with the same code and rules; the result for each epoch is reported separately.
+
+\section*{3. Data}
+For epoch~57, the data are, in order of preference: SPOC two-minute light curves (if the star is observed at that cadence), TESS-SPOC or QLP full-frame light curves, or a light curve extracted from the calibrated full-frame images with the code of the preprint's data record (\texttt{ffi\_new.py}), without modification. For epoch~59, any ground-based light curve whose coverage satisfies the rule below. Cadences flagged by the data provider are removed before the test. The source used is reported with the outcome; no other source is substituted after a result has been obtained.
+
+\section*{4. Processing}
+\texttt{prereg\_test.py} reads the light curve, keeps cadences within $\pm 0.8$~d of the prediction, and normalises the flux by its median. The transit shape is fixed at the preprint's posterior medians ($R_p/R_\star = 0.04208$, $b = 0.219$, $a/R_\star = 53.69$, quadratic limb darkening $(0.393, 0.207)$), integrated over the exposure time. For each trial mid-time on a 0.5-minute grid spanning $\pm 3\sigma_{\rm pred}$, the code fits a quadratic baseline and a free transit amplitude by weighted least squares, with uniform weights set by the point-to-point scatter of the data outside the window. The best trial mid-time minimises $\chi^2$; the detection statistic is $\Delta\chi^2 = \chi^2_{\rm baseline\ only} - \chi^2_{\rm best}$.
+
+\section*{5. Outcomes}
+\begin{description}
+\item[Recovered:] $\Delta\chi^2 \geq 25$, a positive depth between 1048 and 3145~ppm (0.5--1.5 times the expected depth), and a best mid-time not at the edge of the $\pm 3\sigma_{\rm pred}$ grid.
+\item[Inconsistent:] $\Delta\chi^2 \geq 25$ with a positive depth outside that range.
+\item[Excluded:] no detection, the data cover at least 80\% of the interval $T_c \pm (3\sigma_{\rm pred} + T_{14}/2)$, and at every trial mid-time the depth plus three times its uncertainty is below 1048~ppm.
+\item[Insufficient data:] any other case.
+\end{description}
+An \emph{excluded} result at epoch~57 or~59 would falsify the reported period. The measured mid-time and its offset from the prediction are reported in every case; an offset larger than 65~min ($3\sigma_{\rm rms}$) would independently confirm the timing scatter reported in the preprint.
+
+\section*{6. Pixel-level check}
+If target pixel files are available for epoch~57, a difference image (out-of-transit minus in-transit) is formed and a point-spread function fitted to it, as in the preprint. The signal is \emph{compatible with the target} if the fitted position lies within $3\sigma$ of the target's position measured on the same image, and is reported as such; this check does not change the photometric outcome.
+
+\section*{7. Validation of the frozen code}
+Applied to the four archival transits of the data record, the code returns \emph{recovered} for each (Sector~39: $O-C = +4.8$~min, depth $2203 \pm 85$~ppm; Sector~93: $-24.9$~min, $2031 \pm 82$~ppm; Sector~100: $+5.6$~min, $2087 \pm 98$~ppm; Sector~102: $+34.1$~min, $2045 \pm 85$~ppm). Applied to transit-free data from Sector~101 shifted onto a predicted mid-time, it returns \emph{excluded} (depths $92 \pm 144$ and $231 \pm 144$~ppm at two offsets), and \emph{insufficient data} when the predicted transit falls in a data gap. Software: Python~3.13, numpy~2.5, batman~2.5.1.
+
+\section*{8. Reporting}
+The outcome for each tested epoch, the data source, and the code output will be published as a new version of this record, regardless of the outcome.
+
+\end{document}
