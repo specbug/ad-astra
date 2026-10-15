@@ -24,7 +24,7 @@
  "EPH_CHI2": "417",
  "INTERVAL_EXCESS": "29.2",
  "TIMES_ROWS": "39 & TESS-SPOC & 600 & 355 & 1.00 & 0 & $2459384.6094 \\pm 0.0013$ & $+4.4$ & $2203 \\pm 86$ \\\\\n93 & QLP & 200 & 594 & 1.02 & 40 & $2460838.1847 \\pm 0.0012$ & $-23.2$ & $2025 \\pm 84$ \\\\\n100 & This work & 200 & 702 & 1.47 & 47 & $2461092.5845 \\pm 0.0023$ & $+6.8$ & $2078 \\pm 144$ \\\\\n102 & This work & 200 & 608 & 1.08 & 48 & $2461128.9446 \\pm 0.0017$ & $+35.9$ & $2053 \\pm 91$ \\\\",
- "PRED_ROWS": "57 & 2461455.978 & 30 & 2027 Feb. 19, 11:29 UTC; \\tess\\ Sector~114 \\\\\n58 & 2461492.318 & 31 & 2027 Mar. 27, 19:35 UTC; daytime at La Silla \\\\\n59 & 2461528.658 & 31 & 2027 May 3, 03:41 UTC; full transit at night at La Silla \\\\",
+ "PRED_ROWS": "57 & 2461455.978 & 30 & 2027 Feb. 19, 11:29 & \\tess\\ Sector~114 \\\\\n58 & 2461492.318 & 31 & 2027 Mar. 27, 19:35 & daytime at La Silla \\\\\n59 & 2461528.658 & 31 & 2027 May 3, 03:41 & full transit at night at La Silla \\\\",
  "ALIAS_MIN": "18.6",
  "P2_MIN": "28.5",
  "P3_MIN": "27.8",
@@ -45,7 +45,7 @@
  "SS_SEC": "-61 \\pm 26",
  "SS_NEIGH": "14",
  "SS_SECTOR_CHI2": "7.3",
- "SS_FIT": "$R_p/R_\\star = 0.0197^{+0.0018}_{-0.0009}$, $b = 0.50 \\pm 0.33$ and $\\rho_\\star = 8.2^{+3.7}_{-5.9}\\,\\rho_\\odot$",
- "SS_INTERP": "On the target, the signal would correspond to a planet of $1.75 \\pm 0.12\\,\\rearth$ on an inner orbit. The fitted density, $8^{+4}_{-6}\\,\\rho_\\odot$, exceeds the target's $1.61 \\pm 0.38\\,\\rho_\\odot$: a transit across the target reproduces the short duration only at a high impact parameter, near the upper end of the 68\\% interval of $b$ (0.16--0.83).",
- "SS_FPP": ""
+ "SS_FIT": "$R_p/R_\\star = 0.0196^{+0.0015}_{-0.0008}$, $b = 0.49 \\pm 0.32$ and $\\rho_\\star = 8.3^{+3.7}_{-5.5}\\,\\rho_\\odot$",
+ "SS_INTERP": "On the target, the signal would correspond to a planet of $1.75 \\pm 0.11\\,\\rearth$ on an inner orbit. The fitted density, $8.3^{+3.7}_{-5.5}\\,\\rho_\\odot$, exceeds the target's $1.61 \\pm 0.38\\,\\rho_\\odot$: 13\\% of the posterior lies below $2.37\\,\\rho_\\odot$ (the target's value plus $2\\sigma$), almost all of it at $b > 0.82$, so a transit across the target is consistent with the short duration only if it is nearly grazing.",
+ "SS_FPP": "\\texttt{TRICERATOPS}, applied as in \\S\\ref{sec:fpp}, assigns 98\\% of the probability to a planet around the target or an unresolved companion, but gives ${\\rm FPP} = 0.12 \\pm 0.01$ and ${\\rm NFPP} = 0.015 \\pm 0.001$, above the limit of 0.001 below which \\citet{Giacalone2021} consider nearby false positives excluded."
 }

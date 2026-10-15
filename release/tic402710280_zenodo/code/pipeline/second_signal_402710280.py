@@ -12,6 +12,7 @@ Steps:
   6. the dilution required if the 3.1-3.6" background neighbour (G = 16.15) were the source.
 
   python second_signal_402710280.py [nstep]
+  python second_signal_402710280.py --refit nstep     (step 5 only, on the stored ephemeris)
 Output: results/candidates/second_signal_402710280.json, results/report/cases/TIC402710280_3.78d.png
 """
 import json
@@ -214,7 +215,7 @@ def fit_folded(rows, P, t0, nstep, nwalk=32, seed=2):
     aR = ((10 ** lrho) * tf.RHO_SUN * tf.G * (P * 86400) ** 2 / (3 * np.pi)) ** (1 / 3)
     t14 = tf.t14_hours(P, aR, k, b)
     out = {"P_fixed": P, "t0_btjd": t0, "u": u, "n_points": int(sum(len(d[0]) for d in D)),
-           "chi2_min": float(2 * best.fun), "betas": [float(d[2]) for d in D],
+           "chi2_min": float(2 * best.fun), "sigma_per_cadence_scaled": [float(d[2]) for d in D],
            "chain_summary": tf.convergence(sampler, nstep, ["dt", "rp_rs", "b", "log10_rho"])}
     for name, v in (("dt_min", dt), ("rp_rs", k), ("b", b), ("log10_rho", lrho), ("rho_solar", 10 ** lrho),
                     ("a_rs", aR), ("t14_h", t14)):
@@ -259,5 +260,24 @@ def plot(T, F, P, t0, dur, sec, d_all):
     fig.savefig(FIG, dpi=130)
 
 
+def refit(nstep):
+    """Re-run only the transit fit (step 5) on the stored ephemeris, e.g. with a longer chain."""
+    out = json.load(open(OUT))
+    P2, T2 = out["bls_joint"]["P"], out["bls_joint"]["t0_btjd"]
+    _, rows = load(P2, T2)
+    fit, ch = fit_folded(rows, P2, T2, nstep)
+    out["fit_free_rho"] = fit
+    rho = 10 ** ch[:, 3]
+    out["rho_compare"] = {"p_rho_below_catalogue_plus_2sigma": float(np.mean(rho < RHO_STAR[0] + 2 * RHO_STAR[1])),
+                          "rho_star_catalogue": RHO_STAR}
+    k = ch[:, 1]
+    out["radius_earth_if_on_target"] = [float(np.median(k) * 0.817 * 109.1), float(np.std(k) * 0.817 * 109.1)]
+    np.save(RESULTS / "candidates" / "second_signal_chain.npy", ch.astype(np.float32))
+    json.dump(out, open(OUT, "w"), indent=1, default=float)
+
+
 if __name__ == "__main__":
-    main(int(sys.argv[1]) if len(sys.argv) > 1 else 12000)
+    if "--refit" in sys.argv:
+        refit(int(sys.argv[-1]))
+    else:
+        main(int(sys.argv[1]) if len(sys.argv) > 1 else 12000)

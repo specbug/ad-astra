@@ -26,7 +26,7 @@ Ephemeris: P = 36.33986 d, T0 = 2460838.2008 BJD_TDB. All times in this record a
 | `data/results/signal_3.78d.json`, `triceratops_3.78d.json` | The 3.78-day signal: searches, per-sector depths, transit fit, and TRICERATOPS (Figure 6). |
 | `data/results/paper_numbers.json` | Every number filled into the manuscript template by `paper_numbers.py`. |
 | `data/results/sector66_diagnostics.json` | Quality-flag and coverage summary of the Sector 66 window. |
-| `code/pipeline/` | The analysis pipeline (Python), git commit `635f034356e58c1f34c2ad347c417624c7b29841`. |
+| `code/pipeline/` | The analysis pipeline (Python), git commit `39e7e4e98d253ecf08f9dcd5c39ec57c55bfef34`. |
 | `manuscript/` | LaTeX source, bibliography, figures and PDF of the preprint. |
 
 ## Reproducing the paper

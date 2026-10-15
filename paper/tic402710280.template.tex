@@ -213,7 +213,7 @@ Three observations would most efficiently test the candidate: high-resolution im
 
 \section{Predicted Transits} \label{sec:predictions}
 
-Table~\ref{tab:predictions} lists three of the next transits predicted by the ephemeris of Table~\ref{tab:params}; the transits through 2028 are listed in the data record \citep{DataRecord}. The quoted uncertainty, $\sigma_{\rm pred} = (\sigma_{T_0}^2 + n^2\sigma_P^2 + \sigma_{\rm rms}^2)^{1/2}$, adds the observed residual scatter $\sigma_{\rm rms} = @@RMS@@$~min to the ephemeris uncertainty, so that it describes an individual transit rather than the mean ephemeris. \tess\ is expected to observe \tic\ in Sectors~113 and~114 \citep{Burke2020}; the transit of 2027 February~19 is predicted to fall in Sector~114. The transit of 2027 May~3 is observable in full from the southern hemisphere.
+Table~\ref{tab:predictions} lists three of the next transits predicted by the ephemeris of Table~\ref{tab:params}; the next 30 are listed in the data record \citep{DataRecord}. The quoted uncertainty, $\sigma_{\rm pred} = (\sigma_{T_0}^2 + n^2\sigma_P^2 + \sigma_{\rm rms}^2)^{1/2}$, adds the observed residual scatter $\sigma_{\rm rms} = @@RMS@@$~min to the ephemeris uncertainty, so that it describes an individual transit rather than the mean ephemeris. \tess\ is expected to observe \tic\ in Sectors~113 and~114 \citep{Burke2020}; the transit of 2027 February~19 is predicted to fall in Sector~114. The transit of 2027 May~3 is observable in full from the southern hemisphere.
 
 \begin{deluxetable*}{ccccl}
 \tablecaption{Predicted transits of \planet \label{tab:predictions}}
@@ -226,17 +226,16 @@ Table~\ref{tab:predictions} lists three of the next transits predicted by the ep
 
 A transit absent from the predicted window, in data that cover it, would falsify the reported period.
 
-\begin{acknowledgments}
-\nolinenumbers
+\section*{Acknowledgments}
 This paper includes data collected by the \tess\ mission, which are publicly available from the Mikulski Archive for Space Telescopes (MAST). Funding for the \tess\ mission is provided by NASA's Science Mission Directorate. This work has made use of data from the European Space Agency (ESA) mission \gaia\ (\url{https://www.cosmos.esa.int/gaia}), processed by the \gaia\ Data Processing and Analysis Consortium (DPAC, \url{https://www.cosmos.esa.int/web/gaia/dpac/consortium}). Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the \gaia\ Multilateral Agreement. This research has made use of the Exoplanet Follow-up Observation Program (ExoFOP; DOI: 10.26134/ExoFOP5) website and of the NASA Exoplanet Archive, both operated by the California Institute of Technology under contract with the National Aeronautics and Space Administration under the Exoplanet Exploration Program. The analysis code and the manuscript were developed with the assistance of an AI system (Claude, Anthropic). The author directed the work, verified the results and takes full responsibility for the content; every numerical result can be reproduced from the archived code and data \citep{DataRecord}.
-\end{acknowledgments}
+
 
 \facilities{TESS, Gaia}
 
 \software{astropy \citep{Astropy2022}, astrocut \citep{Brasseur2019}, batman \citep{Kreidberg2015}, emcee \citep{ForemanMackey2013}, lightkurve \citep{Lightkurve2018}, matplotlib \citep{Hunter2007}, numpy \citep{Harris2020}, scipy \citep{Virtanen2020}, tess-point \citep{Burke2020}, TRICERATOPS \citep{Giacalone2020}}
 
 \section*{Data Availability}
-The light curves of all transit windows, our photometry of Sectors~100--103, the measured transit times, the posterior summaries and chains, the predicted transits through 2028, and the analysis code are available on Zenodo \citep{DataRecord}.
+The light curves of all transit windows, our photometry of Sectors~100--103, the measured transit times, the posterior summaries and chains, the next 30 predicted transits, and the analysis code are available on Zenodo \citep{DataRecord}.
 
 \bibliography{refs}{}
 \bibliographystyle{aasjournal}

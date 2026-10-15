@@ -132,13 +132,21 @@ def main():
     rep["SS_FIT"] = (f"$R_p/R_\\star = {pm(sf['rp_rs'], 4)}$, $b = {pm(sf['b'], 2)}$ and "
                      f"$\\rho_\\star = {pm(sf['rho_solar'], 1)}\\,\\rho_\\odot$")
     rr = ss["radius_earth_if_on_target"]
-    rep["SS_INTERP"] = SS_INTERP.format(rp=rr[0], erp=rr[1], rho=pm(sf["rho_solar"], 0, sym_tol=0.0),
-                                        b16=sf["b"][0] - sf["b"][2], b84=sf["b"][0] + sf["b"][1])
+    chs = np.load(RESULTS / "candidates" / "second_signal_chain.npy")
+    low = 10 ** chs[:, 3] < 1.61 + 2 * 0.38
+    rep["SS_INTERP"] = SS_INTERP.format(rp=rr[0], erp=rr[1], rho=pm(sf["rho_solar"], 1, sym_tol=0.0),
+                                        frac=100 * low.mean(), bmin=float(np.percentile(chs[low, 2], 2.5)))
     fp = RESULTS / "candidates" / "fpp_tic402710280_3.78d.json"
     if fp.exists():
         d = json.load(open(fp))
-        rep["SS_FPP"] = (f"\\texttt{{TRICERATOPS}}, applied as in \\S\\ref{{sec:fpp}}, gives ${{\\rm FPP}} = "
-                         f"{d['FPP_mean']:.2f} \\pm {d['FPP_std']:.2f}$ and ${{\\rm NFPP}} = {d['NFPP_mean']:.2f}$.")
+        pl = 0.0
+        for r in d["runs"]:
+            pl += sum(v for k_, v in r["scenarios"].items() if k_.split("@")[0] in ("TP", "PTP", "STP")) / len(d["runs"])
+        rep["SS_FPP"] = (f"\\texttt{{TRICERATOPS}}, applied as in \\S\\ref{{sec:fpp}}, assigns {100 * pl:.0f}\\% of the "
+                         f"probability to a planet around the target or an unresolved companion, but gives "
+                         f"${{\\rm FPP}} = {d['FPP_mean']:.2f} \\pm {d['FPP_std']:.2f}$ and ${{\\rm NFPP}} = "
+                         f"{d['NFPP_mean']:.3f} \\pm {d['NFPP_std']:.3f}$, above the limit of 0.001 below which "
+                         f"\\citet{{Giacalone2021}} consider nearby false positives excluded.")
     else:
         rep["SS_FPP"] = ""
     tex = open(TPL).read()
@@ -155,9 +163,10 @@ def main():
 
 
 SS_INTERP = ("On the target, the signal would correspond to a planet of ${rp:.2f} \\pm {erp:.2f}\\,\\rearth$ on an inner "
-             "orbit. The fitted density, ${rho}\\,\\rho_\\odot$, exceeds the target's $1.61 \\pm 0.38\\,\\rho_\\odot$: a "
-             "transit across the target reproduces the short duration only at a high impact parameter, near the upper end "
-             "of the 68\\% interval of $b$ ({b16:.2f}--{b84:.2f}).")
+             "orbit. The fitted density, ${rho}\\,\\rho_\\odot$, exceeds the target's $1.61 \\pm 0.38\\,\\rho_\\odot$: "
+             "{frac:.0f}\\% of the posterior lies below $2.37\\,\\rho_\\odot$ (the target's value plus $2\\sigma$), almost all of "
+             "it at $b > {bmin:.2f}$, so a transit across the target is consistent with the short duration only if it is "
+             "nearly grazing.")
 
 
 if __name__ == "__main__":

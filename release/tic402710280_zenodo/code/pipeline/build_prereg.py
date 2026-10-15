@@ -67,6 +67,8 @@ def write_test(r):
 
 
 def load_test():
+    import sys
+    sys.dont_write_bytecode = True
     spec = importlib.util.spec_from_file_location("prereg_test", REC / "prereg_test.py")
     m = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(m)
@@ -173,7 +175,8 @@ def main():
     zp = REC.parent / "prereg_tic402710280.zip"
     with zipfile.ZipFile(zp, "w", zipfile.ZIP_DEFLATED) as z:
         for p in sorted(REC.iterdir()):
-            z.write(p, p.relative_to(REC.parent))
+            if p.is_file():
+                z.write(p, p.relative_to(REC.parent))
     print("registered:", {k: (round(v, 6) if isinstance(v, float) else v) for k, v in r.items()})
     print("epoch 57: %.4f +- %.1f min; epoch 59: %.4f +- %.1f min" % (*preds[57], *preds[59]))
     print("validation:", [(x["sector"], x["outcome"], round(x["o_minus_c_min"], 1)) for x in val["archival"]],
