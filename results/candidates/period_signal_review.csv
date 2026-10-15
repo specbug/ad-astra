@@ -1,0 +1,127 @@
+key,tier,aliases,pixels,why
+6610653|CTOI 6610653.01,hold,[16.13387],"on G13.4 at 18""","pixels: on G13.4 at 18""; P=16.1339: timing chi2_red 5.8"
+16488877|CTOI 16488877.01,ready,[28.14227],on target,
+14767026|CTOI 14767026.01,hold,[6.56313],"on G12.7 at 23""","pixels: on G12.7 at 23""; P=6.5631: odd/even 3.4 sigma"
+161169240|TOI-6667.01,aliases,"[151.00903, 75.50452]",on target,
+14445414|CTOI 14445414.01,hold,[17.40074],"on G17.2 at 16""","pixels: on G17.2 at 16""; P=17.4007: timing chi2_red 5.6"
+22642772|CTOI 22642772.01,hold,[22.21112],"on G13.9 at 64""","pixels: on G13.9 at 64""; P=22.2111: timing chi2_red 8.5"
+22712495|CTOI 22712495.01,ready,[17.71375],on target,
+33973338|CTOI 33973338.01,hold,[11.37292],"on G14.0 at 31""","pixels: on G14.0 at 31"""
+38138512|CTOI 38138512.01,ready,[30.83635],on target,
+39167176|CTOI 39167176.01,ready,[21.78811],on target,
+41840228|CTOI 41840228.01,ready,[30.1866],on target,
+31273263|CTOI 31273263.01,ready,[22.57409],on target,
+42196078|CTOI 42196078.01,ready,[63.74965],on target,
+48139432|CTOI 48139432.01,ready,[23.45145],on target,
+53847727|CTOI 53847727.01,hold,[1.50553],on target,P=1.5055: odd/even 11.5 sigma
+52195587|CTOI 52195587.01,hold,[47.3366],on target,P=47.3366: timing chi2_red 91.6
+57352825|CTOI 57352825.01,hold,[62.08596],"on G15.1 at 11""","pixels: on G15.1 at 11"""
+66102144|CTOI 66102144.01,hold,"[2.3001, 2.29298, 2.28589]",on target,P=2.3001: timing chi2_red 961.7; P=2.2859: timing chi2_red 1054.0
+77320223|CTOI 77320223.01,hold,"[8.63558, 8.59484, 8.55449]",on target,P=8.6356: timing chi2_red 17.4; P=8.5948: timing chi2_red 6.6; P=8.5545: timing chi2_red 12.8
+82011491|CTOI 82011491.01,hold,[29.76336],on target,P=29.7634: timing chi2_red 7.4
+83580723|CTOI 83580723.01,hold,[5.11805],"on G14.4 at 17""","pixels: on G14.4 at 17"""
+85668557|CTOI 85668557.01,ready,[13.45631],on target,
+55659311|CTOI 55659311.01,ready,[31.11464],on target,
+113645244|CTOI 113645244.01,ready,[41.94551],on target,
+117888314|CTOI 117888314.01,aliases,"[141.3489, 70.67445, 35.33723]",on target,
+119362383|CTOI 119362383.01,hold,[62.86183],on target,P=62.8618: odd/even 3.6 sigma
+120311283|CTOI 120311283.01,ready,[9.27175],on target,
+121389437|CTOI 121389437.01,ready,[11.89798],on target,
+136519753|CTOI 136519753.01,ready,[25.67187],"target or G16.1 at 3"" (unresolved)",
+140777703|CTOI 140777703.01,ready,[25.06784],on target,
+145913596|CTOI 145913596.01,hold,[54.08816],"on G15.5 at 16""","pixels: on G15.5 at 16""; P=54.0882: timing chi2_red 26.2"
+147898114|CTOI 147898114.01,aliases,"[49.1331, 24.56655]",on target,
+153838604|CTOI 153838604.01,hold,[56.07939],on target,P=56.0794: timing chi2_red 5.4
+159614322|CTOI 159614322.01,hold,"[719.71931, 359.85965, 143.94386]",on target,P=719.7193: 2 transits timed; P=359.8596: 2 transits timed; P=143.9439: 2 transits timed
+159730525|CTOI 159730525.01,ready,[44.92463],on target,
+156457567|CTOI 156457567.01,hold,[52.70273],"on G16.9 at 18""","pixels: on G16.9 at 18"""
+162305348|CTOI 162305348.01,hold,[35.38275],on target,P=35.3828: timing chi2_red 16.8
+170692379|CTOI 170692379.01,ready,[31.28254],on target,
+176402194|CTOI 176402194.01,hold,"[46.9747, 23.48735]",on target,P=46.9747: timing chi2_red 15.9; P=23.4873: timing chi2_red 15.9
+187657618|CTOI 187657618.01,ready,[15.73897],on target,
+193759514|CTOI 193759514.01,hold,[15.75848],"on G15.8 at 35""","pixels: on G15.8 at 35""; P=15.7585: timing chi2_red 8.4"
+211409161|CTOI 211409161.01,ready,[25.35399],"target or G14.9 at 2"" (unresolved)",
+207363637|CTOI 207363637.01,aliases,"[69.50746, 34.75373]",on target,
+218430451|CTOI 218430451.01,ready,[13.82029],"target or G13.0 at 2"" (unresolved)",
+214517366|CTOI 214517366.01,ready,[52.82074],on target,
+219244541|CTOI 219244541.01,ready,[24.22878],on target,
+231637303|CTOI 231637303.01,hold,"[368.09811, 184.04906]",on target,P=368.0981: timing chi2_red 11.2; P=184.0491: timing chi2_red 11.2
+198357385|CTOI 198357385.01,hold,"[1117.82137, 558.91068, 279.45534]",on target,P=1117.8214: 2 transits timed
+231833061|CTOI 231833061.02,ready,[26.18754],on target,
+231969683|CTOI 231969683.01,hold,[21.97806],on target,P=21.9781: timing chi2_red 5.4
+240855518|CTOI 240855518.01,hold,"[47.80821, 23.9041]","on G14.8 at 26""","pixels: on G14.8 at 26""; P=23.9041: odd/even 7.8 sigma"
+245750473|CTOI 245750473.01,hold,[25.39566],"on G14.5 at 32""","pixels: on G14.5 at 32"""
+235996401|CTOI 235996401.01,ready,[8.62023],on target,
+230130556|CTOI 230130556.01,ready,[22.25895],on target,
+248620873|CTOI 248620873.01,hold,"[48.88271, 24.44136]","offset, no catalogued source fits","pixels: offset, no catalogued source fits; P=48.8827: timing chi2_red 9.2; P=24.4414: timing chi2_red 9.2"
+251083502|CTOI 251083502.01,ready,[12.3105],on target,
+259784884|CTOI 259784884.02,ready,[28.6346],on target,
+259784884|CTOI 259784884.01,hold,[28.6349],"offset, no catalogued source fits","pixels: offset, no catalogued source fits"
+260908297|CTOI 260908297.01,ready,[19.70617],on target,
+264333501|CTOI 264333501.01,ready,[31.55158],on target,
+266376971|CTOI 266376971.01,ready,[19.82629],on target,
+265469420|CTOI 265469420.02,ready,[31.71055],on target,
+264766922|CTOI 264766922.01,aliases,"[198.89461, 66.2982]",on target,
+267185423|CTOI 267185423.01,ready,[39.434],"target or G13.0 at 2"" (unresolved)",
+265469420|CTOI 265469420.01,aliases,"[95.13086, 31.71029]",on target,
+277802975|CTOI 277802975.01,ready,[105.12323],on target,
+270450687|CTOI 270450687.02,ready,[97.21547],on target,
+280692653|CTOI 280692653.01,aliases,"[54.97313, 27.48657]",on target,
+286969201|CTOI 286969201.01,hold,[29.33456],on target,P=29.3346: timing chi2_red 6.2
+289596640|CTOI 289596640.01,hold,[34.93539],on target,P=34.9354: timing chi2_red 15.2
+279727635|CTOI 279727635.01,ready,[111.62826],on target,
+290686569|CTOI 290686569.01,hold,[29.15877],"on G13.1 at 20""","pixels: on G13.1 at 20""; P=29.1588: odd/even 5.2 sigma"
+288160753|CTOI 288160753.01,hold,[83.16289],"target or G16.5 at 2"" (unresolved)",P=83.1629: timing chi2_red 6.5
+300202855|CTOI 300202855.01,ready,[25.76262],on target,
+302207444|CTOI 302207444.01,ready,[35.59359],on target,
+308403559|CTOI 308403559.01,ready,[158.63038],on target,
+334656125|CTOI 334656125.01,hold,[28.10425],on target,P=28.1043: timing chi2_red 7.4
+317107805|CTOI 317107805.01,hold,"[163.94253, 54.64751]",on target,P=163.9425: 2 transits timed; P=54.6475: timing chi2_red 5.1
+348952772|CTOI 348952772.01,hold,"[28.02787, 14.01393, 7.00697]",on target,"P=28.0279: 1 predicted transits missing, timing chi2_red 22.2; P=14.0139: 3 predicted transits missing, timing chi2_red 9.4; P=7.0070: 6 predicted transits missing, timing chi2_red 119.6, odd/even 46.3 sigma"
+342004815|CTOI 342004815.01,hold,[39.31192],"on G14.8 at 23""","pixels: on G14.8 at 23""; P=39.3119: timing chi2_red 25.6"
+369456296|CTOI 369456296.01,hold,[37.0138],on target,P=37.0138: timing chi2_red 13.9
+370324073|CTOI 370324073.01,hold,"[31.82444, 15.91222]",on target,"P=15.9122: 3 predicted transits missing, timing chi2_red 265.6, odd/even 23.5 sigma"
+349091983|CTOI 349091983.01,hold,[549.06142],on target,P=549.0614: 2 transits timed
+370324073|CTOI 370324073.02,ready,[31.82429],on target,
+357098189|CTOI 357098189.01,hold,"[1340.71962, 268.14392]","offset, no catalogued source fits","pixels: offset, no catalogued source fits; P=1340.7196: 2 transits timed; P=268.1439: 2 transits timed"
+384882500|CTOI 384882500.01,hold,[17.32335],on target,P=17.3234: timing chi2_red 6.3
+388014300|CTOI 388014300.01,hold,[134.34084],on target,P=134.3408: timing chi2_red 29.6
+393229954|CTOI 393229954.01,ready,[108.24999],on target,
+382513740|CTOI 382513740.01,hold,[202.67034],"on G16.1 at 15""","pixels: on G16.1 at 15"""
+397762695|CTOI 397762695.01,hold,[24.90567],"on G16.2 at 13""","pixels: on G16.2 at 13"""
+401913803|CTOI 401913803.01,hold,[31.7211],"on G15.6 at 19""","pixels: on G15.6 at 19""; P=31.7211: timing chi2_red 6.0"
+406115330|CTOI 406115330.01,ready,[19.52561],"target or G16.7 at 3"" (unresolved)",
+428976250|CTOI 428976250.01,hold,[18.14944],"on G13.2 at 14""","pixels: on G13.2 at 14"""
+412119488|CTOI 412119488.01,ready,[25.66069],on target,
+436774928|CTOI 436774928.01,hold,[12.81426],on target,P=12.8143: timing chi2_red 65.8
+427344083|CTOI 427344083.01,hold,[82.73393],"on G16.0 at 13""","pixels: on G16.0 at 13"""
+441297232|CTOI 441297232.01,hold,[7.18385],on target,P=7.1838: timing chi2_red 7.3
+453444539|CTOI 453444539.01,hold,[28.15613],"on G14.9 at 7""","pixels: on G14.9 at 7"""
+448471716|CTOI 448471716.01,ready,[32.1722],on target,
+456909420|CTOI 456909420.01,ready,[28.94631],on target,
+1504460|CTOI 1504460.01,hold,[19.28221],"on G14.1 at 18""","pixels: on G14.1 at 18"""
+841384851|CTOI 841384851.01,ready,[49.32188],on target,
+123664207|TOI-2493.01,hold,[79.03104],on target,P=79.0310: timing chi2_red 59.1
+469974264|CTOI 469974264.01,aliases,"[138.17028, 69.08514]",on target,
+5360702|CTOI 5360702.01,ready,[4.54521],on target,
+7145074|CTOI 7145074.01,ready,[41.29393],on target,
+13713700|CTOI 13713700.01,hold,[50.63231],on target,P=50.6323: timing chi2_red 5.3
+32498861|CTOI 32498861.01,aliases,"[365.45472, 182.72736, 73.09094]",on target,
+64108432|CTOI 64108432.01,ready,[2.77869],on target,
+64549889|CTOI 64549889.01,ready,[35.75319],"target or G15.9 at 4"" (unresolved)",
+67599025|CTOI 67599025.01,ready,[23.70339],on target,
+70561926|CTOI 70561926.01,ready,[21.49426],on target,
+123763494|CTOI 123763494.01,hold,"[48.18933, 24.09467]",on target,P=48.1893: odd/even 3.1 sigma
+141786309|CTOI 141786309.01,hold,[16.54588],"target or G16.4 at 6"" (unresolved)",P=16.5459: timing chi2_red 11.3
+140278302|CTOI 140278302.01,ready,[28.4673],on target,
+142278054|CTOI 142278054.01,ready,[26.4939],on target,
+147035057|CTOI 147035057.01,ready,[37.31509],on target,
+159490807|CTOI 159490807.01,hold,"[93.71377, 46.85689, 23.42844]","on G15.0 at 12""","pixels: on G15.0 at 12""; P=93.7138: odd/even 3.1 sigma"
+207783865|CTOI 207783865.01,ready,[24.83922],on target,
+218977148|CTOI 218977148.01,hold,[31.93974],on target,P=31.9397: timing chi2_red 33.8
+221915858|CTOI 221915858.01,ready,[45.57484],on target,
+268534931|CTOI 268534931.01,aliases,"[92.59964, 46.29982, 30.86655]",on target,
+265466589|CTOI 265466589.01,hold,"[97.90342, 32.63447]",on target,P=97.9034: timing chi2_red 10.7; P=32.6345: timing chi2_red 11.0
+381553868|CTOI 381553868.01,ready,[46.01686],on target,
+437293313|CTOI 437293313.01,ready,[24.98786],on target,
+442893494|CTOI 442893494.01,hold,"[72.17366, 36.08683]",on target,P=72.1737: timing chi2_red 14.5; P=36.0868: timing chi2_red 14.5

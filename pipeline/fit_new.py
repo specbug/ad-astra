@@ -35,6 +35,9 @@ def lcs_for(tic):
     return lcs + [lc for lc in new_lcs(tic, float(st.ra), float(st.dec), build_missing=False) if lc["meta"]["sector"] not in have]
 
 
+NSTEP = 30000     # autocorrelation times reach ~450 steps (b-rho-k degeneracy); 30,000 steps is >50 of them
+
+
 def main():
     fits = json.load(open(FITS))
     ex = json.load(open(EXTRAS))
@@ -53,7 +56,7 @@ def main():
     for w in tf.windows_from_lcs(lcs, [meas[s]["tc"] for s in (39, 93, 100, 102)], 0.8, 5.3):
         oot = np.abs(w[0] - w[4]) > 0.75 * 5.3 / 24
         data.append((w[0], w[1], w[2] * beta_factor(w[0][oot], w[1][oot] - 1, w[2]), w[3], w[4]))
-    out, ch = tf.fit_stacked_windows(data, 36.3399, 5182.0, nstep=6000)
+    out, ch = tf.fit_stacked_windows(data, 36.3399, 5182.0, nstep=NSTEP)
     ref = 40
     out["ref_epoch"] = ref
     n = np.array([ep_of[s] for s in (39, 93, 100, 102)], float)
@@ -88,11 +91,14 @@ def main():
     tic = 123664207
     lcs = lcs_for(tic)
     data = tf.windows_from_lcs(lcs, [2225.82, 4043.534, 4280.627], 0.8, 5.0)
-    out, ch = tf.fit_periodic_windows(data, [0, 23, 26], 79.03019, 4242.0, nstep=6000)
+    out, ch = tf.fit_periodic_windows(data, [0, 23, 26], 79.03019, 4242.0, nstep=NSTEP)
     out["sectors"] = [33, 98, 107]
     fits["TOI2493"] = out
     print("TOI-2493", {k: v for k, v in out.items() if k != "plot"}, flush=True)
-    json.dump(fits, open(FITS, "w"), indent=1, default=float)
+    fresh = json.load(open(FITS))           # other fits may have been written meanwhile (fit_headline.py)
+    fresh.update({k: fits[k] for k in ("TIC402710280", "TOI2493")})
+    json.dump(fresh, open(FITS, "w"), indent=1, default=float)
+    ex = json.load(open(EXTRAS))
     ex["TIC402710280"] = rx.periodic(fits, "TIC402710280", 0.88, 0.817, 5182.0, 248.524, -63.55, now=4325.5)
     ex["TOI2493"] = rx.periodic(fits, "TOI2493", 0.66, 0.652, 4242.0, 89.74609, -21.57558, now=4325.5)
     json.dump(ex, open(EXTRAS, "w"), indent=1, default=float)

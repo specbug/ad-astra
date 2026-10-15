@@ -3,6 +3,28 @@
 Prepared from this survey's fits; BJD_TDB = BTJD + 2457000. Revised 15 October 2026 after two independent audits. Posting needs an ExoFOP account (the CTOI form or
 "Upload planet parameters" on the target page). Nothing here has been posted.
 
+## How the values map to ExoFOP's fields (ExoFOP bulk template, read 15 October 2026)
+- **Which uploads need a paper.** ExoFOP requires a published paper (`paper` field) only for `flag = newctoi`
+  (a new candidate). Parameter sets on existing TOIs and community TOIs (`flag = newparams`) need none. So
+  everything below except TIC 402710280.01 can go in as `newparams`; TIC 402710280.01 waits for a paper.
+- **The draft upload.** `results/candidates/exofop_upload/params_planet_DRAFT.txt` is in ExoFOP's own
+  bar-delimited format, written by `pipeline/exofop_upload.py`. `upload_review.csv` beside it says why each row
+  is in or out.
+- **Field by field:**
+  - `depth` (ppm): the transit depth as seen in the light curve, i.e. the fitted limb-darkened model's depth at
+    mid-transit. It is not (Rp/R*)^2, which is smaller by the limb-darkening factor.
+    - Rp/R* goes in `r_planet`, with its own error.
+    - For the TOI ephemeris rows, depth is the mean in-transit depth of the per-transit trapezoid fits.
+  - `epoch` (BJD_TDB): an observed transit. BJD = BTJD + 2457000.
+  - `period`/`epoch` errors: from the fits, scaled up by sqrt(chi2_red) when the transit times scatter more than
+    their errors.
+  - `duration` (h): first to fourth contact.
+  - `dens` (g/cm^3): the fitted stellar density, with 1 solar = 1.408 g/cm^3. The sections below quote it in solar
+    units.
+  - `radius` (R_Earth): from Rp/R* and the TIC v8.2 stellar radius, with both errors propagated.
+  - `notes`: at most 120 characters each.
+  - `tag`: a placeholder; replace it with your own data tag before uploading.
+
 ## TIC 402710280.01 — new candidate (NOT uploadable yet: ExoFOP requires prior publication)
 Revised 15 October 2026 after the independent audit (pipeline/audit_402710280.py, blend_shape_402710280.py,
 fit_new.py). Since 19 August 2026 ExoFOP accepts new community candidates only after peer-reviewed publication

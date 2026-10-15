@@ -23,6 +23,15 @@ G = 6.674e-11
 RHO_SUN = 1408.0  # kg m^-3
 
 
+def convergence(sampler, nstep, names):
+    """emcee autocorrelation times per parameter, and the chain length in units of the longest one (Foreman-Mackey
+    et al. 2013 suggest > 50); the first third of each chain is discarded as burn-in."""
+    tau = sampler.get_autocorr_time(tol=0)
+    n_eff = nstep / float(np.max(tau))
+    return {"tau_steps": {k: float(t) for k, t in zip(names, tau)}, "n_steps": int(nstep),
+            "steps_over_tau": n_eff, "converged": bool(n_eff > 50), "acceptance": float(np.mean(sampler.acceptance_fraction))}
+
+
 def tess_ld(teff):
     """Rough TESS-band quadratic limb darkening (Claret 2017, logg 4.5, solar metallicity)."""
     grid = np.array([3500, 4500, 5500, 6000, 6500, 7000])
@@ -118,7 +127,7 @@ def fit_periodic(tic, events, epochs, P0, t14_h, teff, nwalk=40, nstep=4000, win
     med = np.median(ch, axis=0)
     out["plot"] = plot_data(data, [med[0] + (ep - ref) * med[1] for ep in epochs], med[1], med[2],
                             unpack(med)[4], np.degrees(np.arccos(med[3] / unpack(med)[4])), u)
-    out["chain_summary"] = {"acceptance": float(np.mean(sampler.acceptance_fraction))}
+    out["chain_summary"] = convergence(sampler, nstep, ["tref", "P", "rp_rs", "b", "log10_rho"])
     return out, ch
 
 
@@ -157,6 +166,7 @@ def fit_shape(tic, events, t14_h, teff, nwalk=40, nstep=4000, win=0.6, seed=1, P
     ch = sampler.get_chain(discard=nstep // 3, thin=5, flat=True)
     out = {"u": u, "n_points": int(sum(len(t) for t, _, _ in data))}
     names = ["rp_rs", "b", "t14_h"] + [f"tc_{i}" for i in range(n)]
+    out["chain_summary"] = convergence(sampler, nstep, names)
     for i, name in enumerate(names):
         q = np.percentile(ch[:, i], [16, 50, 84])
         out[name] = [float(q[1]), float(q[2] - q[1]), float(q[1] - q[0])]
@@ -278,7 +288,7 @@ def fit_periodic_windows(data, epochs, P0, teff, nwalk=40, nstep=4000, seed=1, r
     med = np.median(ch, axis=0)
     out["plot"] = plot_data([(w[0], w[1], w[2]) for w in data], [med[0] + (ep - ref) * med[1] for ep in epochs], med[1],
                             med[2], unpack(med)[4], np.degrees(np.arccos(med[3] / unpack(med)[4])), u)
-    out["chain_summary"] = {"acceptance": float(np.mean(sampler.acceptance_fraction))}
+    out["chain_summary"] = convergence(sampler, nstep, ["tref", "P", "rp_rs", "b", "log10_rho"])
     return out, ch
 
 
@@ -315,7 +325,7 @@ def fit_stacked_windows(data, P, teff, nwalk=40, nstep=4000, seed=1):
     aR = ((10 ** lrho) * RHO_SUN * G * (P * 86400) ** 2 / (3 * np.pi)) ** (1 / 3)
     t14 = t14_hours(P, aR, rp, b)
     out = {"u": u, "n_points": int(sum(len(w[0]) for w in W)), "chi2_min": float(2 * best.fun), "n_windows": len(W),
-           "acceptance": float(np.mean(sampler.acceptance_fraction))}
+           "chain_summary": convergence(sampler, nstep, ["rp_rs", "b", "log10_rho"])}
     for name, v in (("rp_rs", rp), ("b", b), ("log10_rho", lrho), ("rho_solar", 10 ** lrho), ("a_rs", aR),
                     ("t14_h", t14), ("depth_ppm", rp ** 2 * 1e6)):
         q = np.percentile(v, [16, 50, 84])
