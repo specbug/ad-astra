@@ -25,7 +25,7 @@ This is a Director's Discretionary Targets (DDT) proposal for two-minute cadence
 >
 > Please find attached a Director's Discretionary Targets proposal and target list requesting two-minute cadence for one target, TIC 402710280, in Sectors 113 and 114.
 >
-> TIC 402710280.01 is a 36.34-day sub-Neptune candidate (3.75 Earth radii) found in full-frame images. A transit is predicted in Sector 114 on 2027 February 19 (BJD_TDB 2461455.978 ± 30 min). I registered the test of that prediction, including the data to be used and the rules that decide its outcome, before the data exist. According to tess-point, Sectors 113 and 114 are the only TESS observations of the star through Sector 134, so this is the only transit TESS can record for at least two years.
+> TIC 402710280.01 is a 36.34-day sub-Neptune candidate (3.75 Earth radii) found in full-frame images. Its next transit visible to TESS is predicted for 2027 February 19 in Sector 114 (BJD_TDB 2461455.978 ± 30 min). The test of that prediction, with the data to be used and the criteria for its outcome, was registered on Zenodo on 15 October 2026. According to tess-point, TESS will not observe the star again through Sector 134, so this is the only transit it will record before late 2028.
 >
 > Preprint: https://doi.org/10.5281/zenodo.23390317
 > Pre-registered test: https://doi.org/10.5281/zenodo.23390325
