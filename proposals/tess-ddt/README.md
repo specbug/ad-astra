@@ -12,7 +12,7 @@ This is a Director's Discretionary Targets (DDT) proposal for two-minute cadence
 - **Not already scheduled.** TIC 402710280 is not on the GI 2-minute or 20-second target lists for S113 or S114 (`GI_S113.pri`, `GI_S114.pri`, `GI-20s_S11{3,4}.pri`, checked 2026-10-18).
 - **On silicon.** tess-point places the star on camera 4 / CCD 4 (col 385, row 209) in S113 and camera 4 / CCD 1 (col 646, row 475) in S114.
 - **No later TESS coverage.** The star is not observed again through S134, the last sector tess-point knows.
-- **Transit timing.** Transit 57 is predicted for 2027-02-19 11:29 UTC (BJD_TDB 2461455.978 ± 30 min), inside S114 (13 Feb–14 Mar 2027). Transit 56 (14 Jan) falls before S113 starts, and transit 58 (27 Mar) after S114 ends.
+- **Transit timing.** Transit 57 is predicted for 2027-02-19 11:29 UTC (BJD_TDB 2461455.9785 ± 30 min), inside S114 (13 Feb–14 Mar 2027). Transit 56 (14 Jan) falls before S113 starts, and transit 58 (27 Mar) after S114 ends.
 - **Deadlines.** The DDT rule is six weeks before the sector starts. For S113 (starts 17 Jan 2027) that is **6 Dec 2026**; for S114 (starts 13 Feb 2027) it is **2 Jan 2027**. Submit before 6 Dec so that both sectors are covered.
 
 ## Email
@@ -25,7 +25,7 @@ This is a Director's Discretionary Targets (DDT) proposal for two-minute cadence
 >
 > Please find attached a Director's Discretionary Targets proposal and target list requesting two-minute cadence for one target, TIC 402710280, in Sectors 113 and 114.
 >
-> TIC 402710280.01 is a 36.34-day sub-Neptune candidate (3.75 Earth radii) found in full-frame images. Its next transit visible to TESS is predicted for 2027 February 19 in Sector 114 (BJD_TDB 2461455.978 ± 30 min). The test of that prediction, with the data to be used and the criteria for its outcome, was registered on Zenodo on 15 October 2026. According to tess-point, TESS will not observe the star again through Sector 134, so this is the only transit it will record before late 2028.
+> The star hosts a 36.34-day sub-Neptune candidate (3.75 Earth radii) found in full-frame images. Its next transit visible to TESS is predicted for 2027 February 19 in Sector 114 (BJD_TDB 2461455.9785 ± 30 min). The test of that prediction, with the data to be used and the criteria for its outcome, was registered on Zenodo on 15 October 2026. According to tess-point, TESS will not observe the star again through Sector 134, so this is the only transit it will record before late 2028.
 >
 > Preprint: https://doi.org/10.5281/zenodo.23390317
 > Pre-registered test: https://doi.org/10.5281/zenodo.23390325
