@@ -18,23 +18,26 @@ This is a Director's Discretionary Targets (DDT) proposal for two-minute cadence
 ## Email
 
 **To:** tess-ddt@mit.edu
-**Subject:** DDT proposal: two-minute cadence for TIC 402710280 (Sectors 113–114)
+**Subject:** DDT request: TIC 402710280, two-minute cadence in Sectors 113–114
 **Attach:** `Vora_DDT_TIC402710280_S113-114.pdf`, `Vora_DDT_TIC402710280_S113-114_targets.csv`
 
 > Dear TESS Science Office,
 >
-> Please find attached a Director's Discretionary Targets proposal and target list requesting two-minute cadence for one target, TIC 402710280, in Sectors 113 and 114.
+> I would like to request two-minute cadence for TIC 402710280 in Sectors 113 and 114. The proposal and target list are attached.
 >
-> The star hosts a 36.34-day sub-Neptune candidate (3.75 Earth radii) found in full-frame images. Its next transit visible to TESS is predicted for 2027 February 19 in Sector 114 (BJD_TDB 2461455.9785 ± 30 min). The test of that prediction, with the data to be used and the criteria for its outcome, was registered on Zenodo on 15 October 2026. According to tess-point, TESS will not observe the star again through Sector 134, so this is the only transit it will record before late 2028.
+> The star, a V = 10 K dwarf at 67 pc, shows four transits of a 3.75 Earth-radius candidate with a period of 36.34 days, all in full-frame images. The period became clear only with the Sector 102 transit on 29 March 2026, after the Cycle 9 deadline, so the star could not be included in a GI proposal.
+>
+> The next transit is due on 19 February 2027 (BJD_TDB 2461455.9785 ± 30 min), in Sector 114. On 15 October 2026 I registered this prediction on Zenodo, together with the data to be used and the criteria for judging the result. The test was designed around SPOC two-minute light curves, which will exist only if the star is a two-minute target. tess-point shows no further TESS coverage through Sector 134, so this is the one transit TESS can record before late 2028.
 >
 > Preprint: https://doi.org/10.5281/zenodo.23390317
+> Data and code: https://doi.org/10.5281/zenodo.23390274
 > Pre-registered test: https://doi.org/10.5281/zenodo.23390325
 >
-> I am an independent researcher and would be glad to provide anything else you need.
+> Thank you for considering the request. I would be glad to answer any questions.
 >
 > Best regards,
 > Rishit Vora
-> rishitv@protonmail.com · ORCID 0009-0003-8778-9883
+> Independent researcher · rishitv@protonmail.com · ORCID 0009-0003-8778-9883
 
 ## After submission
 
