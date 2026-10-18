@@ -4,8 +4,8 @@ This is a Director's Discretionary Targets (DDT) proposal for two-minute cadence
 
 | File | What it is |
 |---|---|
-| `proposal.tex` / `proposal.pdf` | Two-page proposal, the template's limit (text, figure and references). |
-| `targets.csv` | Target list in the template's CSV format. |
+| `proposal.tex` → `Vora_DDT_TIC402710280_S113-114.pdf` | Two-page proposal, the template's limit (text, figure and references). |
+| `Vora_DDT_TIC402710280_S113-114_targets.csv` | Target list in the template's CSV format. |
 
 ## Facts behind the request
 
@@ -19,7 +19,7 @@ This is a Director's Discretionary Targets (DDT) proposal for two-minute cadence
 
 **To:** tess-ddt@mit.edu
 **Subject:** DDT proposal: two-minute cadence for TIC 402710280 (Sectors 113–114)
-**Attach:** `proposal.pdf`, `targets.csv`
+**Attach:** `Vora_DDT_TIC402710280_S113-114.pdf`, `Vora_DDT_TIC402710280_S113-114_targets.csv`
 
 > Dear TESS Science Office,
 >
