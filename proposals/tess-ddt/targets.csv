@@ -1,0 +1,15 @@
+# DDT PI: Rishit Vora
+# Cadence: 2m
+# Subject: Two-minute cadence for TIC 402710280, a 36.3-day sub-Neptune candidate with a pre-registered transit in Sector 114
+# DDT: <to be supplied by TESS team>
+#
+# Original filename: targets.csv
+# Created by: Rishit Vora
+# Created on: 2026-10-18
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+402710280,1.0,TIC 402710280;TYC 9041-03677-1;TIC 402710280.01;sub-Neptune candidate;transit 2027-02-19 Sector 114;3.78-day signal

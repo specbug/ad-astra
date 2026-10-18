@@ -1,0 +1,92 @@
+%% TESS Director's Discretionary Targets proposal, from the official template
+%% (tess.mit.edu/science/ddt, V1.0 2018-10-19). Two pages including figures and references.
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{graphics,graphicx}
+\usepackage[round]{natbib}
+\usepackage[colorlinks]{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=blue,citecolor=blue}
+\usepackage{cleveref}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{-0.0625in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\hoffset}{0in}
+\setlength{\voffset}{0in}
+
+\makeatletter
+\renewcommand{\section}{\@startsection%
+{section}{1}{0mm}{-0.6\baselineskip}%
+{0.3\baselineskip}{\normalfont\large\bfseries}}%
+\makeatother
+
+\newcommand{\tess}{{\it TESS}}
+\newcommand{\rsun}{$R_{\odot}$}
+\newcommand{\msun}{$M_{\odot}$}
+\newcommand{\re}{$R_{\oplus}$}
+\newcommand{\ms}{m~s$^{-1}$}
+
+\title{\vspace{-0.6in}Two-minute cadence for TIC 402710280,\\ a 36.3-day sub-Neptune candidate with a pre-registered transit in Sector 114}
+\author{Rishit Vora (Independent Researcher \textbar\ \href{mailto:rishitv@protonmail.com}{rishitv@protonmail.com})}
+\date{\vspace{-0.3in}}
+
+\begin{document}
+\pagestyle{plain}
+\pagenumbering{arabic}
+\maketitle
+
+\section{DDT Justification}
+
+TIC~402710280 (TYC~9041-03677-1, $T = 9.24$) hosts a transiting sub-Neptune candidate, TIC~402710280.01, with $P = 36.33986 \pm 0.00051$~d \citep{Vora2026}. \tess\ has observed the star only in full-frame images (FFIs). The period could be fixed only once the Sector~100 and 102 transits (2026 February and March) fell on consecutive cycles, so the target was not proposed in the Cycle~9 Guest Investigator call. \tess\ will observe the star in Sectors~113 and~114 (camera~4), and according to \texttt{tess-point} \citep{Burke2020} it will not observe it again through Sector~134 (2028 September). The transit predicted for 2027 February~19 in Sector~114 is therefore the only transit \tess\ can record for at least the next two years. Without a DDT allocation it will be recorded only in 200-s FFIs, and no target pixel files or SPOC two-minute light curves will exist.
+
+\section{Scientific Justification}
+
+Four transits, in Sectors~39, 93, 100 and~102, share a depth of $2092 \pm 47$~ppm and a duration of $5.27 \pm 0.05$~h (Figure~\ref{fig:transits}). They come from three independent reductions (TESS-SPOC, QLP and our own FFI photometry). Every shorter alias period predicts transits in covered data that are absent at $\geq 18.6\sigma$. With the host's TIC parameters ($T_{\rm eff} = 5182$~K, $R_\star = 0.82$\,\rsun, $M_\star = 0.88$\,\msun) the candidate has $R_p = 3.75 \pm 0.22$\,\re, $a = 0.206$~AU and $T_{\rm eq} \approx 500$~K. The vetting is as follows:
+\begin{itemize}\setlength\itemsep{0pt}
+\item Difference-image centroids place the signal $1.5'' \pm 1.3''$ from the target.
+\item The only \textit{Gaia} star close enough to contribute ($3.5''$ away, 354 times fainter) would need a 74\% eclipse, whose shape is disfavoured for any main-sequence pair ($\Delta\chi^2 \geq 142$).
+\item No secondary eclipse is detected.
+\item \texttt{TRICERATOPS} \citep{Giacalone2021} gives ${\rm FPP} = 0.003 \pm 0.004$ and ${\rm NFPP} < 10^{-6}$. No high-resolution imaging exists, so we treat these as upper bounds on the evidence rather than a validation.
+\end{itemize}
+Long-period, temperate sub-Neptunes around stars this bright are uncommon among known planets. The expected radial-velocity semi-amplitude, about 2.8~\ms\ for a mass of about 14~$M_\oplus$, is within reach of current spectrographs.
+
+Two-minute data in Sector~114 would address three open questions.
+
+\textbf{(1) The registered test of the ephemeris.} The transit times scatter about a linear ephemeris by 21.8~min rms, against formal uncertainties of 1.7--3.3~min. We find no instrumental cause, and four epochs cannot separate timing systematics from transit-timing variations. We registered the prediction for epoch~57 (BJD$_{\rm TDB}$~2461455.978~$\pm$~30~min) and the rules that decide its outcome before the data exist \citep{PreReg}. That protocol names SPOC two-minute light curves as the first-choice data, ahead of any FFI product. Its pixel-level check of the signal's position uses target pixel files.
+
+\textbf{(2) An independent measurement of the timing.} Our reductions produced two of the four mid-times. A SPOC light curve gives a mid-time from photometry that we did not make. If the timing scatter comes from our light-curve production, it should disappear in SPOC data. If it comes from a perturbing body, it should persist.
+
+\textbf{(3) The 3.78-day signal.} The light curve also contains a $407 \pm 26$~ppm, 1.3-h signal with $P = 3.78371$~d \citep{Vora2026}. It may come from the target, possibly as a grazing transit, or from the $3.5''$ neighbour. Sectors~113 and~114 together contain about a dozen of its events. At two-minute cadence they would resolve its ingress shape, which tests the grazing geometry. The target pixel files would also tighten its difference-image centroid, which is currently $5.2'' \pm 6.7''$ from the target.
+
+\section{Target Justification and Feasibility}
+
+The request is for one target, TIC~402710280 (RA~$248.5236^\circ$, Dec~$-63.5497^\circ$), at two-minute cadence in Sectors~113 and~114. Sector~114 has priority 1.0. \texttt{tess-point} places the star on silicon in both sectors: camera~4, CCD~4 (column~385, row~209) in Sector~113, and camera~4, CCD~1 (column~646, row~475) in Sector~114. The TIC contamination ratio is 0.06, and there are no stars brighter than 7th magnitude in the field.
+
+The epoch-57 transit is predicted for 2027 February~19 at 11:29~UTC, with $\sigma = 30$~min (34~min including the covariance of $T_0$ and $P$). This is about six days after the sector begins, well inside the first orbit. The adjacent transits (2027 January~14 and March~27) fall outside the two sectors.
+
+In FFIs each transit is measured with a depth uncertainty of 86--144~ppm, so a single transit is detected at about 15--24$\sigma$. SPOC photometry at $T = 9.2$ should do at least as well. Ingress and egress each last about 14~min, so they span seven two-minute cadences compared with four 200-s cadences. This improves the mid-time and the shape constraint, which is the discriminant between the planet and a diluted eclipse of the neighbour.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{../../paper/figures/fig1.pdf}
+\vspace{-6pt}
+\caption{\small The four transits of TIC~402710280.01 with the median transit model and residuals (20-min bins). The rightmost panel shows the Sector~66 window, which scattered light corrupted and which is excluded from all fits \citep{Vora2026}.}
+\label{fig:transits}
+\end{figure}
+\vspace{-12pt}
+
+\renewcommand{\refname}{\large References}
+\begingroup\small
+\begin{thebibliography}{9}\setlength\itemsep{0pt}
+\bibitem[Burke et al.(2020)]{Burke2020} Burke, C.~J., Levine, A., Fausnaugh, M., et al.\ 2020, \texttt{tess-point}, Astrophysics Source Code Library, ascl:2003.001
+\bibitem[Giacalone et al.(2021)]{Giacalone2021} Giacalone, S., Dressing, C.~D., Jensen, E.~L.~N., et al.\ 2021, AJ, 161, 24
+\bibitem[Vora(2026a)]{Vora2026} Vora, R.\ 2026a, preprint, \href{https://doi.org/10.5281/zenodo.23390317}{doi:10.5281/zenodo.23390317}; data and code, \href{https://doi.org/10.5281/zenodo.23390274}{doi:10.5281/zenodo.23390274}
+\bibitem[Vora(2026b)]{PreReg} Vora, R.\ 2026b, pre-registered test of the epoch-57 and 59 transits, \href{https://doi.org/10.5281/zenodo.23390325}{doi:10.5281/zenodo.23390325}
+\end{thebibliography}
+\endgroup
+
+\end{document}
