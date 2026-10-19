@@ -29,8 +29,8 @@ This is a Director's Discretionary Targets (DDT) proposal for two-minute cadence
 >
 > The next transit is due on 19 February 2027 (BJD_TDB 2461455.9785 ± 30 min), in Sector 114. On 15 October 2026 I registered this prediction on Zenodo, together with the data to be used and the criteria for judging the result. The test was designed around SPOC two-minute light curves, which will exist only if the star is a two-minute target. tess-point shows no further TESS coverage through Sector 134, so this is the one transit TESS can record before late 2028.
 >
-> Preprint: https://doi.org/10.5281/zenodo.23390317
-> Data and code: https://doi.org/10.5281/zenodo.23390274
+> Preprint: https://doi.org/10.5281/zenodo.23390316
+> Data and code: https://doi.org/10.5281/zenodo.23390273
 > Pre-registered test: https://doi.org/10.5281/zenodo.23390325
 >
 > Thank you for considering the request. I would be glad to answer any questions.

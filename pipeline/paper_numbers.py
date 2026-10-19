@@ -4,7 +4,8 @@ of the stored analysis products, so that every quoted value traces to a result f
 Inputs: results/report/transit_fits.json (shape, times, ephemeris; fit_new.py), results/report/extras.json
 (transit predictions with site times; predictions.py), results/candidates/audit_402710280.json (per-window
 scatter), shape_free.json (free limb darkening; shape_chains.py), second_signal_402710280.json and
-fpp_tic402710280_3.78d.json (the 3.78-day signal).
+fpp_tic402710280_3.78d.json (the 3.78-day signal); qlp_recheck_402710280.json (version 2: the QLP light curves of
+Sectors 100 and 102, our photometry of Sectors 39 and 93, and Sector 66 with the final shape).
 
   python paper_numbers.py
 """
@@ -110,8 +111,31 @@ def main():
     w_ = 1 / e_ ** 2
     sd, se = float(np.sum(w_ * d_) / w_.sum()), float(1 / math.sqrt(w_.sum()))
     rep["SEC_DEPTH"], rep["SEC_3SIG"] = f"{sd:.0f} \\pm {se:.0f}", f"{sd + 3 * se:.0f}"
-    s66 = au["s66_fit"]
-    rep["S66_DEPTH"] = f"{s66['depth_ppm']:.0f} \\pm {s66['depth_err_ppm']:.0f}"
+    # version 2: Sector 66 with the final shape, and the QLP light curves of Sectors 100 and 102 (qlp_recheck_402710280.py)
+    qc = json.load(open(RESULTS / "candidates" / "qlp_recheck_402710280.json"))
+    s66 = qc["s66"]
+    fb = s66["free_time_by_baseline"]
+    assert not any(v["at_grid_edge"] for v in fb.values())
+    rep["S66_FIRST_H"] = f"{-s66['first_quality0_rel_mid_h']:.1f}"
+    rep["S66_PRE_INGRESS_H"] = f"{-s66['first_quality0_rel_ingress_h']:.1f}"
+    rep["S66_DEPTHS"] = ", ".join(f"{fb[b]['depth_ppm']:.0f}" for b in ("constant", "linear")) + f" and {fb['quadratic']['depth_ppm']:.0f}"
+    rep["S66_DERR"] = f"{min(v['depth_err_ppm'] for v in fb.values()):.0f}--{max(v['depth_err_ppm'] for v in fb.values()):.0f}"
+    ocs = [fb[b]["o_c_min"] for b in ("constant", "linear", "quadratic")]
+    rep["S66_OC_RANGE"] = f"${min(ocs):+.0f}$ to ${max(ocs):+.0f}$"
+    rq = qc["retime_qlp"]
+    q100, q102 = rq["100"], rq["102"]
+    rep["QLP_OFF100"] = f"{-q100['time_offset']['offset_at_transit_s']:.0f}"
+    rep["QLP_OFF102"] = f"{-q102['time_offset']['offset_at_transit_s']:.0f}"
+    rep["QLP_OFF93"] = f"{math.ceil(abs(rq['93']['time_offset']['offset_at_transit_s'])):.0f}"
+    assert q100["minus_published_min"] < 0 and q102["minus_published_min"] < 0
+    rep["QLP_EARLY100"], rep["QLP_EARLY102"] = f"{-q100['minus_published_min']:.1f}", f"{-q102['minus_published_min']:.1f}"
+    rep["QLP_SIG100"], rep["QLP_SIG102"] = f"{-q100['sigma_of_difference']:.1f}", f"{-q102['sigma_of_difference']:.1f}"
+    rep["QLP_INTERVAL"] = f"{((q102['tc'] - q100['tc']) - P) * 1440:.1f}"
+    rep["QLP_DEP100"] = f"{q100['depth_ppm']:.0f} \\pm {q100['depth_err_ppm']:.0f}"
+    rep["QLP_DEP102"] = f"{q102['depth_ppm']:.0f} \\pm {q102['depth_err_ppm']:.0f}"
+    assert q100["depth_minus_published_sigma"] < 0 and q102["depth_minus_published_sigma"] < 0
+    rep["QLP_DSIG100"], rep["QLP_DSIG102"] = f"{-q100['depth_minus_published_sigma']:.1f}", f"{-q102['depth_minus_published_sigma']:.1f}"
+    rep["OWN_MAX"] = f"{max(abs(v['minus_published_min']) for v in qc['own_control'].values()):.1f}"
     fl = json.load(open(RESULTS / "candidates" / "shape_free.json"))
     rep["K_FREELD"] = "$" + pm(fl["rp_rs"], 4) + "$"
     rep["B_FREELD"] = "$" + pm(fl["b"], 2) + "$"

@@ -70,7 +70,8 @@ def alias_and_secondary(lcs, P, T0, D, depth_ppm, known):
 
 PAPER_SCRIPTS = ("ffi_new", "centroid_vet", "audit_402710280", "fit_new", "shape_chains", "timing_diagnostics_402710280",
                  "secondary_scan_402710280", "blend_shape_402710280", "fpp_triceratops", "second_signal_402710280",
-                 "fpp_second_signal", "paper_figures", "paper_numbers", "build_release", "build_prereg")
+                 "fpp_second_signal", "qlp_recheck_402710280", "paper_figures", "paper_numbers", "build_release",
+                 "build_prereg")
 
 
 def paper_modules():
@@ -151,7 +152,8 @@ def main():
                      ("secondary_scan_402710280.json", "secondary_scan.json"),
                      ("second_signal_402710280.json", "signal_3.78d.json"),
                      ("fpp_tic402710280_3.78d.json", "triceratops_3.78d.json"),
-                     ("paper_numbers.json", "paper_numbers.json")):
+                     ("paper_numbers.json", "paper_numbers.json"),
+                     ("qlp_recheck_402710280.json", "qlp_comparison.json")):
         if (C / src).exists():
             shutil.copy(C / src, res / dst)
     np.save(res / "shape_chain.npy", np.load(C / "shape_chain_fixed.npy"))
@@ -206,7 +208,9 @@ README = """# TIC 402710280.01: data products and analysis code
 Supporting record for the preprint *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280*
 (R. Vora, 2026).
 
-DOIs: this record 10.5281/zenodo.23390274; the preprint 10.5281/zenodo.23390317; the pre-registered test of the 2027 transits 10.5281/zenodo.23390325.
+Version 2. DOIs (all versions): this record 10.5281/zenodo.23390273; the preprint 10.5281/zenodo.23390316. Version 1 of this
+record is 10.5281/zenodo.23390274 and of the preprint 10.5281/zenodo.23390317. The pre-registered test of the 2027 transits,
+10.5281/zenodo.23390325, has one version and will not be revised before the 2027 data are analysed.
 
 Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJD_TDB.
 
@@ -215,7 +219,7 @@ Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJ
 | Path | Description |
 |---|---|
 | `data/transit_windows/` | The four transits used (Sectors 39, 93, 100, 102) and the unused Sector 66 window, cadence by cadence, flux normalised by the out-of-transit quadratic baseline used in the shape fit. |
-| `data/ffi_photometry/` | Our light curves of Sectors 100-103 from the calibrated TESS full-frame images (quality-flagged cadences removed; times barycentric for the target), with per-sector extraction metadata (camera, CCD, circular aperture radius in pixels around the target's position, scatter). No public full-frame light curves of these sectors existed when the analysis was done. |
+| `data/ffi_photometry/` | Our light curves of Sectors 100-103 from the calibrated TESS full-frame images (quality-flagged cadences removed; times barycentric for the target), with per-sector extraction metadata (camera, CCD, circular aperture radius in pixels around the target's position, scatter). QLP light curves of these sectors exist at MAST (released 2026 March-July) but are absent from the AWS copy of the archive that the pipeline reads; version 1 stated wrongly that none existed. |
 | `data/results/transit_times.csv` | Individual mid-times, uncertainties (red-noise scaled), O-C and depths (Table 2 of the paper). |
 | `data/results/parameters.json` | Ephemeris and transit-shape posterior summaries, convergence diagnostics and derived quantities (Table 3). |
 | `data/results/predicted_transits.csv` | The next 30 predicted transits, with ephemeris-only and total (including the observed timing scatter) uncertainties, and topocentric UTC and visibility at La Silla (Table 4). |
@@ -231,6 +235,7 @@ Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJ
 | `data/results/signal_3.78d.json`, `triceratops_3.78d.json` | The 3.78-day signal: searches, per-sector depths, transit fit, and TRICERATOPS (Figure 6). |
 | `data/results/paper_numbers.json` | Every number filled into the manuscript template by `paper_numbers.py`. |
 | `data/results/sector66_diagnostics.json` | Quality-flag and coverage summary of the Sector 66 window. |
+| `data/results/qlp_comparison.json` | Version 2: the Sector 100 and 102 transits timed in the QLP light curves, with the QLP time-stamp offsets measured against the full-frame image headers; our photometry of the Sector 39 and 93 transits as a control; and the Sector 66 event fitted with the final shape for three baselines (`qlp_recheck_402710280.py`). |
 | `code/pipeline/` | The scripts that reproduce this paper and everything they import (Python), from git commit `{commit}` of the author's analysis repository. |
 | `manuscript/` | LaTeX source, bibliography, figures and PDF of the preprint. |
 
@@ -247,7 +252,8 @@ With the packages in `code/requirements.txt` (and TRICERATOPS 1.1 for the false-
 4. `timing_diagnostics_402710280.py`, `secondary_scan_402710280.py`, `blend_shape_402710280.py` and
    `fpp_triceratops.py` run the timing, secondary-eclipse, blend and TRICERATOPS tests;
    `second_signal_402710280.py` and `fpp_second_signal.py` characterise the 3.78-day signal.
-5. `paper_numbers.py` fills the manuscript from the result files, `paper_figures.py` makes the figures, and
+5. `qlp_recheck_402710280.py` makes the version 2 comparison with the QLP light curves and the Sector 66 refit.
+6. `paper_numbers.py` fills the manuscript from the result files, `paper_figures.py` makes the figures, and
    `build_release.py` and `build_prereg.py` build this record and the pre-registration.
 
 The per-transit difference-image centroids (`data/results/centroids.json`) come from `centroid_vet.py` (method in
@@ -257,6 +263,14 @@ individual transit-like events) belongs to a wider survey and is not part of thi
 
 Light curves are read from the public MAST archive (TESS-SPOC and QLP high-level science products, SPOC target
 pixel files and calibrated full-frame images).
+
+## Versions
+
+- Version 2 (2026 October 19): adds `data/results/qlp_comparison.json` and `qlp_recheck_402710280.py` (the QLP light
+  curves of Sectors 100 and 102 reproduce the timing excess between those transits; their time stamps are 121 and
+  139 s early at the transits), the Sector 66 refit, and the version 2 manuscript. The light curves, transit times,
+  fits, ephemeris and predictions are unchanged.
+- Version 1 (2026 October 15): first release.
 
 ## Licences
 
