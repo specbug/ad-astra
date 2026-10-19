@@ -10,8 +10,8 @@ authors:
 license: MIT
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.23390274"
-    description: "Data and code record (Zenodo)"
+    value: "10.5281/zenodo.23390273"
+    description: "Data and code record, all versions (Zenodo)"
   - type: doi
     value: "10.5281/zenodo.23390325"
     description: "Pre-registered test of the 2027 transits (Zenodo)"
@@ -28,4 +28,4 @@ preferred-citation:
   status: preprint
   publisher:
     name: Zenodo
-  doi: "10.5281/zenodo.23390317"
+  doi: "10.5281/zenodo.23390316"

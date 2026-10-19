@@ -6,8 +6,8 @@ described below. Nothing in this repository is a confirmed planet.
 
 ## TIC 402710280.01: a 36.34-day sub-Neptune candidate
 
-> R. Vora (2026), *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280*. Preprint: [doi:10.5281/zenodo.23390317](https://doi.org/10.5281/zenodo.23390317) ([`paper/tic402710280.pdf`](paper/tic402710280.pdf)).
-> Data and code: [doi:10.5281/zenodo.23390274](https://doi.org/10.5281/zenodo.23390274). Pre-registered test of the 2027 transits: [doi:10.5281/zenodo.23390325](https://doi.org/10.5281/zenodo.23390325).
+> R. Vora (2026), *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280*. Preprint (all versions): [doi:10.5281/zenodo.23390316](https://doi.org/10.5281/zenodo.23390316) ([`paper/tic402710280.pdf`](paper/tic402710280.pdf), version 2).
+> Data and code (all versions): [doi:10.5281/zenodo.23390273](https://doi.org/10.5281/zenodo.23390273). Pre-registered test of the 2027 transits: [doi:10.5281/zenodo.23390325](https://doi.org/10.5281/zenodo.23390325).
 
 | | |
 |---|---|
