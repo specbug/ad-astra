@@ -2,6 +2,8 @@
 
 ## Version 2 (2026 October 19)
 
+**Status: published 2026-10-19.** A v2: https://doi.org/10.5281/zenodo.23466491 (md5 of the zip a8473ea13fd5619791d41cdf2089097a); B v2: https://doi.org/10.5281/zenodo.23466634 (md5 of the PDF 29ca5ef9e4c9121b9ff48eb67d2edfa9). Both checked against this repository through the Zenodo API, as were the unchanged version 1 files and the pre-registration (C), which still has a single version.
+
 Version 2 updates two of the three records: A (data and code) and B (preprint). **Record C, the pre-registration,
 is not touched.** Its value comes from being fixed before the 2027 data exist.
 
