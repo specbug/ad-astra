@@ -5,188 +5,284 @@
 \providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
 \providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
 
-\bibitem[{{Akeson} {et~al.}(2013){Akeson}, {Chen}, {Ciardi},
+% type= article
+\bibitem[{R.~L. {Akeson} {et~al.}(2013){Akeson}, {Chen}, {Ciardi},
   {et~al.}}]{Akeson2013}
-{Akeson}, R.~L., {Chen}, X., {Ciardi}, D., {et~al.} 2013, PASP, 125, 989,
-  \dodoi{10.1086/672273}
+{Akeson}, R.~L., {Chen}, X., {Ciardi}, D., {et~al.} 2013, \bibinfo{title}{{The
+  NASA Exoplanet Archive: Data and Tools for Exoplanet Research},} PASP, 125,
+  989, \dodoi{10.1086/672273}
 
-\bibitem[{{Andrae} {et~al.}(2023){Andrae}, {Fouesneau}, {Sordo},
+% type= article
+\bibitem[{R. {Andrae} {et~al.}(2023){Andrae}, {Fouesneau}, {Sordo},
   {et~al.}}]{Andrae2023}
-{Andrae}, R., {Fouesneau}, M., {Sordo}, R., {et~al.} 2023, A\&A, 674, A27,
+{Andrae}, R., {Fouesneau}, M., {Sordo}, R., {et~al.} 2023, \bibinfo{title}{Gaia
+  Data Release 3. Analysis of the Gaia BP/RP spectra using the General Stellar
+  Parameterizer from Photometry,} A\&A, 674, A27,
   \dodoi{10.1051/0004-6361/202243462}
 
-\bibitem[{{Astropy Collaboration} {et~al.}(2022){Astropy Collaboration},
+% type= article
+\bibitem[{ {Astropy Collaboration} {et~al.}(2022){Astropy Collaboration},
   {Price-Whelan}, {Lim}, {et~al.}}]{Astropy2022}
 {Astropy Collaboration}, {Price-Whelan}, A.~M., {Lim}, P.~L., {et~al.} 2022,
-  ApJ, 935, 167, \dodoi{10.3847/1538-4357/ac7c74}
+  \bibinfo{title}{{The Astropy Project: Sustaining and Growing a
+  Community-oriented Open-source Project and the Latest Major Release (v5.0) of
+  the Core Package},} ApJ, 935, 167, \dodoi{10.3847/1538-4357/ac7c74}
 
-\bibitem[{{Brasseur} {et~al.}(2019){Brasseur}, {Phillip}, {Fleming},
+% type= misc
+\bibitem[{C.~E. {Brasseur} {et~al.}(2019){Brasseur}, {Phillip}, {Fleming},
   {Mullally}, \& {White}}]{Brasseur2019}
 {Brasseur}, C.~E., {Phillip}, C., {Fleming}, S.~W., {Mullally}, S.~E., \&
-  {White}, R.~L. 2019, {Astrocut: Tools for creating cutouts of TESS images},
+  {White}, R.~L. 2019, {Astrocut: Tools for creating cutouts of TESS images},,
   Astrophysics Source Code Library, record ascl:1905.007
 
-\bibitem[{{Bryson} {et~al.}(2013){Bryson}, {Jenkins}, {Gilliland},
+% type= article
+\bibitem[{S.~T. {Bryson} {et~al.}(2013){Bryson}, {Jenkins}, {Gilliland},
   {et~al.}}]{Bryson2013}
-{Bryson}, S.~T., {Jenkins}, J.~M., {Gilliland}, R.~L., {et~al.} 2013, PASP,
-  125, 889, \dodoi{10.1086/671767}
+{Bryson}, S.~T., {Jenkins}, J.~M., {Gilliland}, R.~L., {et~al.} 2013,
+  \bibinfo{title}{{Identification of Background False Positives from Kepler
+  Data},} PASP, 125, 889, \dodoi{10.1086/671767}
 
-\bibitem[{{Burke} {et~al.}(2020){Burke}, {Levine}, {Fausnaugh},
+% type= misc
+\bibitem[{C.~J. {Burke} {et~al.}(2020){Burke}, {Levine}, {Fausnaugh},
   {et~al.}}]{Burke2020}
 {Burke}, C.~J., {Levine}, A., {Fausnaugh}, M., {et~al.} 2020, {TESS-Point: High
-  precision TESS pointing tool}, Astrophysics Source Code Library, record
+  precision TESS pointing tool},, Astrophysics Source Code Library, record
   ascl:2003.001
 
-\bibitem[{{Caldwell} {et~al.}(2020{\natexlab{a}}){Caldwell}, {Tenenbaum},
+% type= article
+\bibitem[{D.~A. {Caldwell} {et~al.}(2020{\natexlab{a}}){Caldwell}, {Tenenbaum},
   {Twicken}, {et~al.}}]{Caldwell2020}
 {Caldwell}, D.~A., {Tenenbaum}, P., {Twicken}, J.~D., {et~al.}
-  2020{\natexlab{a}}, Research Notes of the AAS, 4, 201,
+  2020{\natexlab{a}}, \bibinfo{title}{{TESS Science Processing Operations
+  Center FFI Target List Products},} Research Notes of the AAS, 4, 201,
   \dodoi{10.3847/2515-5172/abc9b3}
 
-\bibitem[{{Caldwell} {et~al.}(2020{\natexlab{b}})}]{TESSSPOC}
+% type= misc
+\bibitem[{D.~A. {Caldwell} {et~al.}(2020{\natexlab{b}}){Caldwell}
+  {et~al.}}]{TESSSPOC}
 {Caldwell}, D.~A., {et~al.} 2020{\natexlab{b}}, {TESS Science Processing
-  Operations Center FFI Target List Products}, STScI/MAST,
+  Operations Center FFI Target List Products},, STScI/MAST
   \dodoi{10.17909/t9-wpz1-8s54}
 
-\bibitem[{{Chen} \& {Kipping}(2017)}]{ChenKipping2017}
-{Chen}, J., \& {Kipping}, D. 2017, ApJ, 834, 17,
+% type= article
+\bibitem[{J. {Chen} \& D. {Kipping}(2017){Chen} \& {Kipping}}]{ChenKipping2017}
+{Chen}, J., \& {Kipping}, D. 2017, \bibinfo{title}{{Probabilistic Forecasting
+  of the Masses and Radii of Other Worlds},} ApJ, 834, 17,
   \dodoi{10.3847/1538-4357/834/1/17}
 
-\bibitem[{{Claret}(2017)}]{Claret2017}
-{Claret}, A. 2017, A\&A, 600, A30, \dodoi{10.1051/0004-6361/201629705}
+% type= article
+\bibitem[{A. {Claret}(2017){Claret}}]{Claret2017}
+{Claret}, A. 2017, \bibinfo{title}{{Limb and gravity-darkening coefficients for
+  the TESS satellite at several metallicities, surface gravities, and
+  microturbulent velocities},} A\&A, 600, A30,
+  \dodoi{10.1051/0004-6361/201629705}
 
-\bibitem[{{Creevey} {et~al.}(2023){Creevey}, {Sordo}, {Pailler},
+% type= article
+\bibitem[{O.~L. {Creevey} {et~al.}(2023){Creevey}, {Sordo}, {Pailler},
   {et~al.}}]{Creevey2023}
-{Creevey}, O.~L., {Sordo}, R., {Pailler}, F., {et~al.} 2023, A\&A, 674, A26,
+{Creevey}, O.~L., {Sordo}, R., {Pailler}, F., {et~al.} 2023,
+  \bibinfo{title}{Gaia Data Release 3. Astrophysical parameters inference
+  system (Apsis). I. Methods and content overview,} A\&A, 674, A26,
   \dodoi{10.1051/0004-6361/202243688}
 
-\bibitem[{{Foreman-Mackey} {et~al.}(2013){Foreman-Mackey}, {Hogg}, {Lang}, \&
-  {Goodman}}]{ForemanMackey2013}
-{Foreman-Mackey}, D., {Hogg}, D.~W., {Lang}, D., \& {Goodman}, J. 2013, PASP,
-  125, 306, \dodoi{10.1086/670067}
+% type= article
+\bibitem[{D. {Foreman-Mackey} {et~al.}(2013){Foreman-Mackey}, {Hogg}, {Lang},
+  \& {Goodman}}]{ForemanMackey2013}
+{Foreman-Mackey}, D., {Hogg}, D.~W., {Lang}, D., \& {Goodman}, J. 2013,
+  \bibinfo{title}{{emcee: The MCMC Hammer},} PASP, 125, 306,
+  \dodoi{10.1086/670067}
 
-\bibitem[{{Fulton} {et~al.}(2017){Fulton}, {Petigura}, {Howard},
+% type= article
+\bibitem[{B.~J. {Fulton} {et~al.}(2017){Fulton}, {Petigura}, {Howard},
   {et~al.}}]{Fulton2017}
-{Fulton}, B.~J., {Petigura}, E.~A., {Howard}, A.~W., {et~al.} 2017, AJ, 154,
-  109, \dodoi{10.3847/1538-3881/aa80eb}
+{Fulton}, B.~J., {Petigura}, E.~A., {Howard}, A.~W., {et~al.} 2017,
+  \bibinfo{title}{{The California-Kepler Survey. III. A Gap in the Radius
+  Distribution of Small Planets},} AJ, 154, 109,
+  \dodoi{10.3847/1538-3881/aa80eb}
 
-\bibitem[{{Gaia Collaboration} {et~al.}(2016){Gaia Collaboration}, {Prusti},
+% type= article
+\bibitem[{ {Gaia Collaboration} {et~al.}(2016){Gaia Collaboration}, {Prusti},
   {de Bruijne}, {et~al.}}]{Gaia2016}
 {Gaia Collaboration}, {Prusti}, T., {de Bruijne}, J.~H.~J., {et~al.} 2016,
-  A\&A, 595, A1, \dodoi{10.1051/0004-6361/201629272}
+  \bibinfo{title}{{The Gaia mission},} A\&A, 595, A1,
+  \dodoi{10.1051/0004-6361/201629272}
 
-\bibitem[{{Gaia Collaboration} {et~al.}(2023){Gaia Collaboration}, {Vallenari},
-  {Brown}, {et~al.}}]{GaiaDR3}
-{Gaia Collaboration}, {Vallenari}, A., {Brown}, A.~G.~A., {et~al.} 2023, A\&A,
-  674, A1, \dodoi{10.1051/0004-6361/202243940}
+% type= article
+\bibitem[{ {Gaia Collaboration} {et~al.}(2023){Gaia Collaboration},
+  {Vallenari}, {Brown}, {et~al.}}]{GaiaDR3}
+{Gaia Collaboration}, {Vallenari}, A., {Brown}, A.~G.~A., {et~al.} 2023,
+  \bibinfo{title}{{Gaia Data Release 3. Summary of the content and survey
+  properties},} A\&A, 674, A1, \dodoi{10.1051/0004-6361/202243940}
 
-\bibitem[{{Giacalone} \& {Dressing}(2020)}]{Giacalone2020}
+% type= misc
+\bibitem[{S. {Giacalone} \& C.~D. {Dressing}(2020){Giacalone} \&
+  {Dressing}}]{Giacalone2020}
 {Giacalone}, S., \& {Dressing}, C.~D. 2020, {triceratops: Candidate exoplanet
-  rating tool}, Astrophysics Source Code Library, record ascl:2002.004
+  rating tool},, Astrophysics Source Code Library, record ascl:2002.004
 
-\bibitem[{{Giacalone} {et~al.}(2021){Giacalone}, {Dressing}, {Jensen},
+% type= article
+\bibitem[{S. {Giacalone} {et~al.}(2021){Giacalone}, {Dressing}, {Jensen},
   {et~al.}}]{Giacalone2021}
-{Giacalone}, S., {Dressing}, C.~D., {Jensen}, E.~L.~N., {et~al.} 2021, AJ, 161,
-  24, \dodoi{10.3847/1538-3881/abc6af}
+{Giacalone}, S., {Dressing}, C.~D., {Jensen}, E.~L.~N., {et~al.} 2021,
+  \bibinfo{title}{{Vetting of 384 TESS Objects of Interest with TRICERATOPS and
+  Statistical Validation of 12 Planets},} AJ, 161, 24,
+  \dodoi{10.3847/1538-3881/abc6af}
 
-\bibitem[{{Goodman} \& {Weare}(2010)}]{Goodman2010}
-{Goodman}, J., \& {Weare}, J. 2010, Communications in Applied Mathematics and
-  Computational Science, 5, 65, \dodoi{10.2140/camcos.2010.5.65}
+% type= article
+\bibitem[{J. {Goodman} \& J. {Weare}(2010){Goodman} \& {Weare}}]{Goodman2010}
+{Goodman}, J., \& {Weare}, J. 2010, \bibinfo{title}{{Ensemble samplers with
+  affine invariance},} Communications in Applied Mathematics and Computational
+  Science, 5, 65, \dodoi{10.2140/camcos.2010.5.65}
 
-\bibitem[{{Guerrero} {et~al.}(2021){Guerrero}, {Seager}, {Huang},
+% type= article
+\bibitem[{N.~M. {Guerrero} {et~al.}(2021){Guerrero}, {Seager}, {Huang},
   {et~al.}}]{Guerrero2021}
-{Guerrero}, N.~M., {Seager}, S., {Huang}, C.~X., {et~al.} 2021, ApJS, 254, 39,
-  \dodoi{10.3847/1538-4365/abefe1}
+{Guerrero}, N.~M., {Seager}, S., {Huang}, C.~X., {et~al.} 2021,
+  \bibinfo{title}{{The TESS Objects of Interest Catalog from the TESS Prime
+  Mission},} ApJS, 254, 39, \dodoi{10.3847/1538-4365/abefe1}
 
-\bibitem[{{Harris} {et~al.}(2020){Harris}, {Millman}, {van der Walt},
+% type= article
+\bibitem[{T. {Han} \& T.~D. {Brandt}(2023){Han} \& {Brandt}}]{Han2023}
+{Han}, T., \& {Brandt}, T.~D. 2023, \bibinfo{title}{{TESS-Gaia Light Curve: A
+  PSF-based TESS FFI Light-curve Product},} AJ, 165, 71,
+  \dodoi{10.3847/1538-3881/acaaa7}
+
+% type= article
+\bibitem[{C.~R. {Harris} {et~al.}(2020){Harris}, {Millman}, {van der Walt},
   {et~al.}}]{Harris2020}
 {Harris}, C.~R., {Millman}, K.~J., {van der Walt}, S.~J., {et~al.} 2020,
-  Nature, 585, 357, \dodoi{10.1038/s41586-020-2649-2}
+  \bibinfo{title}{{Array programming with NumPy},} Nature, 585, 357,
+  \dodoi{10.1038/s41586-020-2649-2}
 
-\bibitem[{{Huang} {et~al.}(2020{\natexlab{a}}){Huang}, {Vanderburg}, {P{\'a}l},
-  {et~al.}}]{Huang2020a}
+% type= article
+\bibitem[{C.~X. {Huang} {et~al.}(2020{\natexlab{a}}){Huang}, {Vanderburg},
+  {P{\'a}l}, {et~al.}}]{Huang2020a}
 {Huang}, C.~X., {Vanderburg}, A., {P{\'a}l}, A., {et~al.} 2020{\natexlab{a}},
-  Research Notes of the AAS, 4, 204, \dodoi{10.3847/2515-5172/abca2e}
+  \bibinfo{title}{{Photometry of 10 Million Stars from the First Two Years of
+  TESS Full Frame Images: Part I},} Research Notes of the AAS, 4, 204,
+  \dodoi{10.3847/2515-5172/abca2e}
 
-\bibitem[{{Huang} {et~al.}(2020{\natexlab{b}}){Huang}, {Vanderburg}, {P{\'a}l},
-  {et~al.}}]{Huang2020b}
----. 2020{\natexlab{b}}, Research Notes of the AAS, 4, 206,
+% type= article
+\bibitem[{C.~X. {Huang} {et~al.}(2020{\natexlab{b}}){Huang}, {Vanderburg},
+  {P{\'a}l}, {et~al.}}]{Huang2020b}
+{Huang}, C.~X., {Vanderburg}, A., {P{\'a}l}, A., {et~al.} 2020{\natexlab{b}},
+  \bibinfo{title}{{Photometry of 10 Million Stars from the First Two Years of
+  TESS Full Frame Images: Part II},} Research Notes of the AAS, 4, 206,
   \dodoi{10.3847/2515-5172/abca2d}
 
-\bibitem[{{Huang} {et~al.}(2020{\natexlab{c}})}]{QLPdata}
+% type= misc
+\bibitem[{C.~X. {Huang} {et~al.}(2020{\natexlab{c}}){Huang} {et~al.}}]{QLPdata}
 {Huang}, C.~X., {et~al.} 2020{\natexlab{c}}, {TESS Lightcurves From The MIT
-  Quick-Look Pipeline (``QLP'')}, STScI/MAST, \dodoi{10.17909/t9-r086-e880}
+  Quick-Look Pipeline (``QLP'')},, STScI/MAST \dodoi{10.17909/t9-r086-e880}
 
-\bibitem[{{Hunter}(2007)}]{Hunter2007}
-{Hunter}, J.~D. 2007, Computing in Science and Engineering, 9, 90,
-  \dodoi{10.1109/MCSE.2007.55}
+% type= article
+\bibitem[{J.~D. {Hunter}(2007){Hunter}}]{Hunter2007}
+{Hunter}, J.~D. 2007, \bibinfo{title}{{Matplotlib: A 2D Graphics Environment},}
+  Computing in Science and Engineering, 9, 90, \dodoi{10.1109/MCSE.2007.55}
 
-\bibitem[{{Jenkins} {et~al.}(2016){Jenkins}, {Twicken}, {McCauliff},
+% type= inproceedings
+\bibitem[{J.~M. {Jenkins} {et~al.}(2016){Jenkins}, {Twicken}, {McCauliff},
   {et~al.}}]{Jenkins2016}
-{Jenkins}, J.~M., {Twicken}, J.~D., {McCauliff}, S., {et~al.} 2016, in Proc.
+{Jenkins}, J.~M., {Twicken}, J.~D., {McCauliff}, S., {et~al.} 2016,
+  \bibinfo{title}{{The TESS science processing operations center},} in Proc.
   SPIE, Vol. 9913, Software and Cyberinfrastructure for Astronomy IV, 99133E,
   \dodoi{10.1117/12.2233418}
 
-\bibitem[{{Kipping}(2013)}]{Kipping2013}
-{Kipping}, D.~M. 2013, MNRAS, 435, 2152, \dodoi{10.1093/mnras/stt1435}
+% type= article
+\bibitem[{D.~M. {Kipping}(2013){Kipping}}]{Kipping2013}
+{Kipping}, D.~M. 2013, \bibinfo{title}{Efficient, uninformative sampling of
+  limb darkening coefficients for two-parameter laws,} MNRAS, 435, 2152,
+  \dodoi{10.1093/mnras/stt1435}
 
-\bibitem[{{Kov{\'a}cs} {et~al.}(2002){Kov{\'a}cs}, {Zucker}, \&
+% type= article
+\bibitem[{G. {Kov{\'a}cs} {et~al.}(2002){Kov{\'a}cs}, {Zucker}, \&
   {Mazeh}}]{Kovacs2002}
-{Kov{\'a}cs}, G., {Zucker}, S., \& {Mazeh}, T. 2002, A\&A, 391, 369,
+{Kov{\'a}cs}, G., {Zucker}, S., \& {Mazeh}, T. 2002, \bibinfo{title}{A
+  box-fitting algorithm in the search for periodic transits,} A\&A, 391, 369,
   \dodoi{10.1051/0004-6361:20020802}
 
-\bibitem[{{Kreidberg}(2015)}]{Kreidberg2015}
-{Kreidberg}, L. 2015, PASP, 127, 1161, \dodoi{10.1086/683602}
+% type= article
+\bibitem[{L. {Kreidberg}(2015){Kreidberg}}]{Kreidberg2015}
+{Kreidberg}, L. 2015, \bibinfo{title}{{batman: BAsic Transit Model cAlculatioN
+  in Python},} PASP, 127, 1161, \dodoi{10.1086/683602}
 
-\bibitem[{{Lightkurve Collaboration}(2018)}]{Lightkurve2018}
+% type= misc
+\bibitem[{ {Lightkurve Collaboration}(2018){Lightkurve
+  Collaboration}}]{Lightkurve2018}
 {Lightkurve Collaboration}. 2018, {Lightkurve: Kepler and TESS time series
-  analysis in Python}, Astrophysics Source Code Library, record ascl:1812.013
+  analysis in Python},, Astrophysics Source Code Library, record ascl:1812.013
 
-\bibitem[{{Lindegren} {et~al.}(2021){Lindegren}, {Klioner}, {Hern{\'a}ndez},
+% type= article
+\bibitem[{L. {Lindegren} {et~al.}(2021){Lindegren}, {Klioner}, {Hern{\'a}ndez},
   {et~al.}}]{Lindegren2021}
-{Lindegren}, L., {Klioner}, S.~A., {Hern{\'a}ndez}, J., {et~al.} 2021, A\&A,
+{Lindegren}, L., {Klioner}, S.~A., {Hern{\'a}ndez}, J., {et~al.} 2021,
+  \bibinfo{title}{{Gaia Early Data Release 3. The astrometric solution},} A\&A,
   649, A2, \dodoi{10.1051/0004-6361/202039709}
 
-\bibitem[{{Pont} {et~al.}(2006){Pont}, {Zucker}, \& {Queloz}}]{Pont2006}
-{Pont}, F., {Zucker}, S., \& {Queloz}, D. 2006, MNRAS, 373, 231,
+% type= article
+\bibitem[{F. {Pont} {et~al.}(2006){Pont}, {Zucker}, \& {Queloz}}]{Pont2006}
+{Pont}, F., {Zucker}, S., \& {Queloz}, D. 2006, \bibinfo{title}{{The effect of
+  red noise on planetary transit detection},} MNRAS, 373, 231,
   \dodoi{10.1111/j.1365-2966.2006.11012.x}
 
-\bibitem[{{Ricker} {et~al.}(2015){Ricker}, {Winn}, {Vanderspek},
+% type= article
+\bibitem[{G.~R. {Ricker} {et~al.}(2015){Ricker}, {Winn}, {Vanderspek},
   {et~al.}}]{Ricker2015}
-{Ricker}, G.~R., {Winn}, J.~N., {Vanderspek}, R., {et~al.} 2015, Journal of
+{Ricker}, G.~R., {Winn}, J.~N., {Vanderspek}, R., {et~al.} 2015,
+  \bibinfo{title}{{Transiting Exoplanet Survey Satellite (TESS)},} Journal of
   Astronomical Telescopes, Instruments, and Systems, 1, 014003,
   \dodoi{10.1117/1.JATIS.1.1.014003}
 
-\bibitem[{{Seager} \& {Mall{\'e}n-Ornelas}(2003)}]{Seager2003}
-{Seager}, S., \& {Mall{\'e}n-Ornelas}, G. 2003, ApJ, 585, 1038,
-  \dodoi{10.1086/346105}
+% type= article
+\bibitem[{S. {Seager} \& G. {Mall{\'e}n-Ornelas}(2003){Seager} \&
+  {Mall{\'e}n-Ornelas}}]{Seager2003}
+{Seager}, S., \& {Mall{\'e}n-Ornelas}, G. 2003, \bibinfo{title}{{A Unique
+  Solution of Planet and Star Parameters from an Extrasolar Planet Transit
+  Light Curve},} ApJ, 585, 1038, \dodoi{10.1086/346105}
 
-\bibitem[{{Stassun} {et~al.}(2019){Stassun}, {Oelkers}, {Paegert},
+% type= article
+\bibitem[{K.~G. {Stassun} {et~al.}(2019){Stassun}, {Oelkers}, {Paegert},
   {et~al.}}]{Stassun2019}
-{Stassun}, K.~G., {Oelkers}, R.~J., {Paegert}, M., {et~al.} 2019, AJ, 158, 138,
-  \dodoi{10.3847/1538-3881/ab3467}
+{Stassun}, K.~G., {Oelkers}, R.~J., {Paegert}, M., {et~al.} 2019,
+  \bibinfo{title}{{The Revised TESS Input Catalog and Candidate Target List},}
+  AJ, 158, 138, \dodoi{10.3847/1538-3881/ab3467}
 
-\bibitem[{{Twicken} {et~al.}(2018){Twicken}, {Catanzarite}, {Clarke},
+% type= misc
+\bibitem[{ {TESS Team}(2022){TESS Team}}]{TESSFFI}
+{TESS Team}. 2022, {TESS Calibrated Full Frame Images: All Sectors},,
+  STScI/MAST \dodoi{10.17909/0cp4-2j79}
+
+% type= article
+\bibitem[{J.~D. {Twicken} {et~al.}(2018){Twicken}, {Catanzarite}, {Clarke},
   {et~al.}}]{Twicken2018}
-{Twicken}, J.~D., {Catanzarite}, J.~H., {Clarke}, B.~D., {et~al.} 2018, PASP,
-  130, 064502, \dodoi{10.1088/1538-3873/aab694}
+{Twicken}, J.~D., {Catanzarite}, J.~H., {Clarke}, B.~D., {et~al.} 2018,
+  \bibinfo{title}{{Kepler Data Validation I---Architecture, Diagnostic Tests,
+  and Data Products for Vetting Transiting Planet Candidates},} PASP, 130,
+  064502, \dodoi{10.1088/1538-3873/aab694}
 
-\bibitem[{{Virtanen} {et~al.}(2020){Virtanen}, {Gommers}, {Oliphant},
+% type= article
+\bibitem[{P. {Virtanen} {et~al.}(2020){Virtanen}, {Gommers}, {Oliphant},
   {et~al.}}]{Virtanen2020}
-{Virtanen}, P., {Gommers}, R., {Oliphant}, T.~E., {et~al.} 2020, Nature
-  Methods, 17, 261, \dodoi{10.1038/s41592-019-0686-2}
+{Virtanen}, P., {Gommers}, R., {Oliphant}, T.~E., {et~al.} 2020,
+  \bibinfo{title}{{SciPy 1.0: Fundamental Algorithms for Scientific Computing
+  in Python},} Nature Methods, 17, 261, \dodoi{10.1038/s41592-019-0686-2}
 
-\bibitem[{{Vora}(2026{\natexlab{a}})}]{DataRecord}
+% type= misc
+\bibitem[{R. {Vora}(2026{\natexlab{a}}){Vora}}]{DataRecord}
 {Vora}, R. 2026{\natexlab{a}}, {TIC 402710280.01: data products and analysis
-  code}, Zenodo, \dodoi{10.5281/zenodo.23390273}
+  code},, Zenodo \dodoi{10.5281/zenodo.23390273}
 
-\bibitem[{{Vora}(2026{\natexlab{b}})}]{PreReg}
----. 2026{\natexlab{b}}, {A Pre-registered Test of the Transiting Planet
-  Candidate TIC 402710280.01 at Its Predicted Transits of 2027}, Zenodo,
+% type= misc
+\bibitem[{R. {Vora}(2026{\natexlab{b}}){Vora}}]{PreReg}
+{Vora}, R. 2026{\natexlab{b}}, {A Pre-registered Test of the Transiting Planet
+  Candidate TIC 402710280.01 at Its Predicted Transits of 2027},, Zenodo
   \dodoi{10.5281/zenodo.23390325}
 
-\bibitem[{{Winn} {et~al.}(2008){Winn}, {Holman}, {Torres}, {et~al.}}]{Winn2008}
-{Winn}, J.~N., {Holman}, M.~J., {Torres}, G., {et~al.} 2008, ApJ, 683, 1076,
-  \dodoi{10.1086/589737}
+% type= article
+\bibitem[{J.~N. {Winn} {et~al.}(2008){Winn}, {Holman}, {Torres},
+  {et~al.}}]{Winn2008}
+{Winn}, J.~N., {Holman}, M.~J., {Torres}, G., {et~al.} 2008,
+  \bibinfo{title}{{The Transit Light Curve Project. IX. Evidence for a Smaller
+  Radius of the Exoplanet XO-3b},} ApJ, 683, 1076, \dodoi{10.1086/589737}
 
 \end{thebibliography}

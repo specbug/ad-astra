@@ -87,7 +87,7 @@ def main():
         "A_AU_SHORT": f"{a_au:.3f}", "S": f"{s:.1f} \\pm {es:.1f}", "TEQ": f"{teq:.0f} \\pm {eteq:.0f}",
         "B95": f"{f['b_95']:.2f}", "NTAU": f"{int(f['chain_summary']['steps_over_tau'] // 10 * 10)}",
         "REDCHI2": f"{f['chi2_min'] / f['n_points']:.2f}", "NPTS": f"{f['n_points']}",
-        "OC_LIST": ", ".join(f"${x:+.1f}$" for x in oc[:-1]) + f" and ${oc[-1]:+.1f}$",
+        "OC_LIST": ", ".join(f"${x:+.1f}$" for x in oc[:-1]) + f", and ${oc[-1]:+.1f}$",
         "ERR_RANGE": f"{min(errs):.1f}--{max(errs):.1f}", "EPH_CHI2": f"{f['ephemeris_chi2'][0]:.0f}",
         "INTERVAL_EXCESS": f"{((s102 - s100) - P) * 1440:.1f}",
         "TIMES_ROWS": "\n".join(rows), "PRED_ROWS": "\n".join(preds),
@@ -104,7 +104,8 @@ def main():
     rep["N_P2"] = words.get(len(sig_of["P/2"]), str(len(sig_of["P/2"])))
     rep["N_P3"] = words.get(len(sig_of["P/3"]), str(len(sig_of["P/3"])))
     rep["N_P45"] = str(len(sig_of["P/4"]) + len(sig_of["P/5"]))
-    rep["P2_SECTORS"] = ", ".join(p2_secs[:-1]) + (" and~" if len(p2_secs) > 1 else "") + p2_secs[-1]
+    rep["P2_SECTORS"] = (", ".join(p2_secs[:-1]) + ("," if len(p2_secs) > 2 else "") + (" and~" if len(p2_secs) > 1 else "")
+                         + p2_secs[-1])
     sec = list(csv.DictReader(open(rel / "secondary_eclipse.csv")))
     d_ = np.array([float(r["depth_ppm"]) for r in sec])
     e_ = np.array([float(r["err_ppm"]) for r in sec])
@@ -119,7 +120,7 @@ def main():
     rep["S66_FIRST_H"] = f"{-s66['first_quality0_rel_mid_h']:.1f}"
     rep["S66_PRE_INGRESS_H"] = f"{-s66['first_quality0_rel_ingress_h']:.1f}"
     r10 = lambda x: f"{10 * round(x / 10):.0f}"   # depths and errors of ~100 ppm: nearest 10 ppm
-    rep["S66_DEPTHS"] = ", ".join(r10(fb[b]["depth_ppm"]) for b in ("constant", "linear")) + f" and {r10(fb['quadratic']['depth_ppm'])}"
+    rep["S66_DEPTHS"] = ", ".join(r10(fb[b]["depth_ppm"]) for b in ("constant", "linear")) + f", and {r10(fb['quadratic']['depth_ppm'])}"
     rep["S66_DERR"] = f"{r10(min(v['depth_err_ppm'] for v in fb.values()))}--{r10(max(v['depth_err_ppm'] for v in fb.values()))}"
     ocs = [fb[b]["o_c_min"] for b in ("constant", "linear", "quadratic")]
     rep["S66_OC_RANGE"] = f"${min(ocs):+.0f}$ to ${max(ocs):+.0f}$"
@@ -137,6 +138,11 @@ def main():
     assert q100["depth_minus_published_sigma"] < 0 and q102["depth_minus_published_sigma"] < 0
     rep["QLP_DSIG100"], rep["QLP_DSIG102"] = f"{-q100['depth_minus_published_sigma']:.1f}", f"{-q102['depth_minus_published_sigma']:.1f}"
     rep["OWN_MAX"] = f"{max(abs(v['minus_published_min']) for v in qc['own_control'].values()):.1f}"
+    tb = json.load(open(RESULTS / "candidates" / "qlp_timebase_402710280.json"))
+    lin = max(tb[k]["departure_from_line_s"]["range"] for k in ("100", "102"))
+    rep["QLP_LIN"] = f"{math.ceil(lin * 100) / 100:.2f}"
+    rep["QLP_SLOPES"] = f"${tb['100']['offset_drift_s_per_d']:.1f}$ and ${tb['102']['offset_drift_s_per_d']:.1f}$"
+    rep["BARY_RATES"] = f"{tb['100']['bary_rate_s_per_d']:.1f} and {tb['102']['bary_rate_s_per_d']:.1f}"
     fl = json.load(open(RESULTS / "candidates" / "shape_free.json"))
     rep["K_FREELD"] = "$" + pm(fl["rp_rs"], 4) + "$"
     rep["B_FREELD"] = "$" + pm(fl["b"], 2) + "$"
@@ -154,7 +160,7 @@ def main():
     rep["SS_SEC"] = f"{sc[0]:.0f} \\pm {sc[1]:.0f}"
     rep["SS_NEIGH"] = f"{ss['neighbour']['required_eclipse_depth'] * 100:.0f}"
     rep["SS_SECTOR_CHI2"] = f"{np.sum(((dd - mw) / de) ** 2):.1f}"
-    rep["SS_FIT"] = (f"$R_p/R_\\star = {pm(sf['rp_rs'], 4)}$, $b = {pm(sf['b'], 2)}$ and "
+    rep["SS_FIT"] = (f"$R_p/R_\\star = {pm(sf['rp_rs'], 4)}$, $b = {pm(sf['b'], 2)}$, and "
                      f"$\\rho_\\star = {pm(sf['rho_solar'], 1)}\\,\\rho_\\odot$")
     rr = ss["radius_earth_if_on_target"]
     chs = np.load(RESULTS / "candidates" / "second_signal_chain.npy")

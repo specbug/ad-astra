@@ -26,11 +26,12 @@ from env import RESULTS  # noqa: E402
 
 ROOT = RESULTS.parent
 OUT = ROOT / "paper" / "figures"
-plt.rcParams.update({"font.family": "serif", "font.serif": ["DejaVu Serif"], "mathtext.fontset": "dejavuserif",
+plt.rcParams.update({"font.family": "serif", "font.serif": ["STIXGeneral"], "mathtext.fontset": "stix",
                      "font.size": 8, "axes.labelsize": 8, "axes.titlesize": 8, "xtick.labelsize": 7,
                      "ytick.labelsize": 7, "legend.fontsize": 7, "axes.linewidth": 0.6, "xtick.direction": "in",
                      "ytick.direction": "in", "xtick.top": True, "ytick.right": True, "xtick.major.width": 0.6,
-                     "ytick.major.width": 0.6, "savefig.bbox": "tight", "savefig.pad_inches": 0.02})
+                     "ytick.major.width": 0.6, "savefig.bbox": "tight", "savefig.pad_inches": 0.02,
+                     "pdf.fonttype": 42, "ps.fonttype": 42})
 INK, DATA, MODEL, GREY = "#1a1a1a", "#3b5b92", "#b0413e", "#9a9a9a"
 COL1, COL2 = 3.4, 7.1
 
@@ -90,7 +91,7 @@ def fig1(fit, lcs):
         if not used:
             for a in (ax, rx_):
                 a.axvline(-3.18, color=INK, lw=0.5, ls=":")
-            ax.text(-3.0, 1700, "good data\nbegin", fontsize=5.5, va="top")
+            ax.text(-3.5, -2300, "good data\nbegin", fontsize=5.5, ha="right", va="top")
     axes[0, 0].set_ylim(-3600, 2200)
     axes[1, 0].set_ylim(-900, 900)
     axes[1, 0].set_yticks([-500, 0, 500])
@@ -115,16 +116,16 @@ def fig2():
     sl = (q & 4096) > 0
     ref_s, ref_p = np.nanmedian(sap[q0 & (h > 10)]), np.nanmedian(pdc[q0 & (h > 10)])
     fig, ax = plt.subplots(3, 1, figsize=(COL1, 3.6), sharex=True)
-    ax[0].plot(h[sl], (sap[sl] / ref_s - 1) * 1e6, ".", ms=1, color="#c9c9c9", label="scattered-light flag")
-    ax[0].plot(h[~q0 & ~sl], (sap[~q0 & ~sl] / ref_s - 1) * 1e6, ".", ms=1, color="#e3a3a1", label="manual-exclude flag")
-    ax[0].plot(h[q0], (sap[q0] / ref_s - 1) * 1e6, ".", ms=1, color=INK, label="quality = 0")
+    ax[0].plot(h[sl], (sap[sl] / ref_s - 1) * 1e6, ".", ms=1, color="#c9c9c9", label="scattered light (4096)")
+    ax[0].plot(h[~q0 & ~sl], (sap[~q0 & ~sl] / ref_s - 1) * 1e6, ".", ms=1, color="#e3a3a1", label="manual exclude (128)")
+    ax[0].plot(h[q0], (sap[q0] / ref_s - 1) * 1e6, ".", ms=1, color=INK, label="quality 0")
     ax[0].set_ylabel("SAP (ppm)")
     ax[0].legend(loc="lower left", bbox_to_anchor=(0, 1.0), ncol=3, frameon=False, markerscale=4, fontsize=6,
                  handletextpad=0.1, columnspacing=0.8)
     ax[1].plot(h[q0], (pdc[q0] / ref_p - 1) * 1e6, ".", ms=1, color=INK)
     ax[1].set_ylabel("PDCSAP (ppm)")
     ax[2].plot(h, bkg / 1e3, "-", lw=0.8, color=MODEL)
-    ax[2].set_ylabel(r"Background ($10^3$ e$^-$ s$^{-1}$)")
+    ax[2].set_ylabel(r"Bkg. ($10^3$ e$^-$ s$^{-1}$)")
     ax[2].set_xlabel("Hours from predicted mid-transit (BTJD 3111.40)")
     for a in ax:
         a.axvspan(-2.64, 2.64, color=DATA, alpha=0.10, lw=0)
@@ -139,7 +140,7 @@ def fig3(fit, ex):
     eP, eT = f["period_d"][1], f["tref_btjd"][1]
     rms = math.sqrt(np.mean([t["o_c_min"] ** 2 for t in f["times"]]))
     fig, ax = plt.subplots(figsize=(COL1, 2.2))
-    n = np.linspace(-5, 62, 300)
+    n = np.linspace(-5, 64, 300)
     band = np.sqrt(eT ** 2 + ((n - ref) * eP) ** 2) * 1440
     ax.fill_between(n, -band, band, color=DATA, alpha=0.18, lw=0, label="ephemeris, 1σ")
     tot = np.sqrt(band ** 2 + rms ** 2)
@@ -149,11 +150,12 @@ def fig3(fit, ex):
         mk = {"tspoc": "s", "qlp": "D", "ffi": "o"}[t["product"]]
         ax.errorbar(t["epoch"], t["o_c_min"], t["err_min"], fmt=mk, ms=3.5, color=INK, lw=0.7, mfc="white" if t["product"] == "ffi" else INK)
         ax.annotate(f"S{t['sector']}", (t["epoch"], t["o_c_min"]), textcoords="offset points", xytext=(4, 3), fontsize=6)
-    for e, lab in ((57, "S114"), (59, "La Silla")):
+    for e in (57, 59):
         ax.axvline(e, color=MODEL, lw=0.6, ls="--")
-        ax.text(e - 0.6, 52, lab, fontsize=5.5, color=MODEL, ha="right", va="top", rotation=90)
+    ax.text(57 - 0.8, -56, "S114", fontsize=5.5, color=MODEL, ha="right", va="bottom", rotation=90)
+    ax.text(59 + 0.9, -56, "La Silla", fontsize=5.5, color=MODEL, ha="left", va="bottom", rotation=90)
     ax.axhline(0, color=GREY, lw=0.5)
-    ax.set_xlim(-5, 62)
+    ax.set_xlim(-5, 64)
     ax.set_ylim(-60, 60)
     ax.set_xlabel("Epoch (cycles from sector 39)")
     ax.set_ylabel("O − C (min)")
@@ -241,7 +243,8 @@ def fig5(fit):
     a.set_xlabel(r"$\Delta\alpha\cos\delta$ (arcsec, east to the left)")
     a.set_ylabel(r"$\Delta\delta$ (arcsec)")
     a.set_title("Difference-image centroids", fontsize=6.8)
-    a.legend(loc="lower left", frameon=False, fontsize=5.3, handletextpad=0.3)
+    a.legend(loc="upper center", bbox_to_anchor=(0.5, -0.24), frameon=False, fontsize=5.3, handletextpad=0.3,
+             ncol=1)
     save(fig, "fig5")
     return res
 

@@ -70,7 +70,7 @@ def alias_and_secondary(lcs, P, T0, D, depth_ppm, known):
 
 PAPER_SCRIPTS = ("ffi_new", "centroid_vet", "audit_402710280", "fit_new", "shape_chains", "timing_diagnostics_402710280",
                  "secondary_scan_402710280", "blend_shape_402710280", "fpp_triceratops", "second_signal_402710280",
-                 "fpp_second_signal", "qlp_recheck_402710280", "paper_figures", "paper_numbers", "build_release",
+                 "fpp_second_signal", "qlp_recheck_402710280", "qlp_timebase_402710280", "paper_figures", "paper_numbers", "build_release",
                  "build_prereg")
 
 
@@ -153,7 +153,8 @@ def main():
                      ("second_signal_402710280.json", "signal_3.78d.json"),
                      ("fpp_tic402710280_3.78d.json", "triceratops_3.78d.json"),
                      ("paper_numbers.json", "paper_numbers.json"),
-                     ("qlp_recheck_402710280.json", "qlp_comparison.json")):
+                     ("qlp_recheck_402710280.json", "qlp_comparison.json"),
+                     ("qlp_timebase_402710280.json", "qlp_timebase.json")):
         if (C / src).exists():
             shutil.copy(C / src, res / dst)
     np.save(res / "shape_chain.npy", np.load(C / "shape_chain_fixed.npy"))
@@ -172,7 +173,7 @@ def main():
     shutil.copy(ROOT / "requirements.txt", REL / "code" / "requirements.txt")
     man = REL / "manuscript"
     man.mkdir()
-    for f in ("tic402710280.tex", "refs.bib", "tic402710280.pdf"):
+    for f in ("tic402710280.tex", "refs.bib", "tic402710280.pdf", "aastex701.cls", "aasjournalv7.bst"):
         shutil.copy(ROOT / "paper" / f, man / f)
     shutil.copytree(ROOT / "paper" / "figures", man / "figures")
     (REL / "LICENSE-DATA").write_text(
@@ -205,10 +206,10 @@ def main():
 
 README = """# TIC 402710280.01: data products and analysis code
 
-Supporting record for the preprint *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280*
-(R. Vora, 2026).
+Supporting record for the article *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280*
+(R. Vora, 2026), submitted to the Astronomical Journal.
 
-Version 2. DOIs (all versions): this record 10.5281/zenodo.23390273; the preprint 10.5281/zenodo.23390316. Version 1 of this
+Version 3. DOIs (all versions): this record 10.5281/zenodo.23390273; the preprint 10.5281/zenodo.23390316. Version 1 of this
 record is 10.5281/zenodo.23390274 and of the preprint 10.5281/zenodo.23390317. The pre-registered test of the 2027 transits,
 10.5281/zenodo.23390325, has one version and will not be revised before the 2027 data are analysed.
 
@@ -236,8 +237,9 @@ Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJ
 | `data/results/paper_numbers.json` | Every number filled into the manuscript template by `paper_numbers.py`. |
 | `data/results/sector66_diagnostics.json` | Quality-flag and coverage summary of the Sector 66 window. |
 | `data/results/qlp_comparison.json` | Version 2: the Sector 100 and 102 transits timed in the QLP light curves, with the QLP time-stamp offsets measured against the full-frame image headers; our photometry of the Sector 39 and 93 transits as a control; and the Sector 66 event fitted with the final shape for three baselines (`qlp_recheck_402710280.py`). |
+| `data/results/qlp_timebase.json` | Version 3: for each QLP light curve, the departure of TIME from a straight line in cadence number, the drift of the QLP offset, and the rate of change of the target's barycentric correction at the transit (`qlp_timebase_402710280.py`). |
 | `code/pipeline/` | The scripts that reproduce this paper and everything they import (Python), from git commit `{commit}` of the author's analysis repository. |
-| `manuscript/` | LaTeX source, bibliography, figures and PDF of the preprint. |
+| `manuscript/` | LaTeX source (AASTeX 7.0.1 class and bibliography style included), bibliography, figures and PDF of the submitted article. |
 
 ## Reproducing the paper
 
@@ -252,7 +254,8 @@ With the packages in `code/requirements.txt` (and TRICERATOPS 1.1 for the false-
 4. `timing_diagnostics_402710280.py`, `secondary_scan_402710280.py`, `blend_shape_402710280.py` and
    `fpp_triceratops.py` run the timing, secondary-eclipse, blend and TRICERATOPS tests;
    `second_signal_402710280.py` and `fpp_second_signal.py` characterise the 3.78-day signal.
-5. `qlp_recheck_402710280.py` makes the version 2 comparison with the QLP light curves and the Sector 66 refit.
+5. `qlp_recheck_402710280.py` makes the comparison with the QLP light curves and the Sector 66 refit;
+   `qlp_timebase_402710280.py` tests how the QLP time stamps were corrected to the barycenter.
 6. `paper_numbers.py` fills the manuscript from the result files, `paper_figures.py` makes the figures, and
    `build_release.py` and `build_prereg.py` build this record and the pre-registration.
 
@@ -266,6 +269,10 @@ pixel files and calibrated full-frame images).
 
 ## Versions
 
+- Version 3: adds `data/results/qlp_timebase.json` and `qlp_timebase_402710280.py` (the QLP times of Sectors 100
+  and 102 carry one barycentric correction per sector, which accounts for their offset and its drift), regenerated
+  figures (embedded TrueType fonts), and the manuscript as submitted to the Astronomical Journal. The light curves,
+  transit times, fits, ephemeris and predictions are unchanged.
 - Version 2 (2026 October 19): adds `data/results/qlp_comparison.json` and `qlp_recheck_402710280.py` (the QLP light
   curves of Sectors 100 and 102 reproduce the timing excess between those transits; their time stamps are 121 and
   139 s early at the transits), the Sector 66 refit, and the version 2 manuscript. The light curves, transit times,
