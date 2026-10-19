@@ -23,7 +23,8 @@ and the old files. Then:
 3. Append to the description: *Version 2 adds a comparison with the QLP light curves of Sectors 100 and 102
    (`data/results/qlp_comparison.json`, `qlp_recheck_402710280.py`) and the version 2 manuscript. Data products,
    transit times, fits and predictions are unchanged from version 1.*
-4. Leave the related identifiers as they are, and publish.
+4. Related identifiers: change "is supplement to" 10.5281/zenodo.23390317 to 10.5281/zenodo.23390316 (the preprint, all
+   versions), keep the rest, and publish.
 
 **B, preprint** (opened from https://doi.org/10.5281/zenodo.23390317)
 1. Delete the old PDF and upload `paper/tic402710280.pdf`.
