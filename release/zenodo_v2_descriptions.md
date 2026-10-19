@@ -1,0 +1,13 @@
+# Zenodo version 2: description fields (plain Unicode, no LaTeX)
+
+## Record B, preprint (replace the whole description)
+
+We report a transiting sub-Neptune candidate with a period of 36.34 days around TIC 402710280 (TYC 9041-03677-1), a K dwarf of TESS magnitude 9.24 at 66.8 pc that the Transiting Exoplanet Survey Satellite (TESS) has observed only in full-frame images. Four transits, recorded between 2021 and 2026 in Sectors 39, 93, 100 and 102 and reduced by three independent pipelines, share a depth of 2092 ± 47 ppm and a duration of 5.27 ± 0.05 h. Two of them fall on consecutive cycles, and every shorter period predicts transits in covered data that are absent at ≥ 18.6σ; the period is P = 36.33986 ± 0.00051 d. A transit model gives Rp/R★ = 0.0421 (+0.0007/−0.0005) and a stellar density consistent with the host's. The candidate has a radius of 3.75 ± 0.22 R⊕ and an equilibrium temperature of 498 ± 21 K. Difference-image centroids place the signal 1.5″ ± 1.3″ from the target. The only catalogued star close enough to contribute, a background star 3.5″ away, would have to host an eclipsing binary whose eclipse shape is disfavoured for any main-sequence pair (Δχ² ≥ 142). No secondary eclipse is detected, and TRICERATOPS gives a false-positive probability of 0.003 ± 0.004. No high-resolution imaging exists, so companions within about 1″ are constrained only by Gaia astrometry. The mid-times scatter about a linear ephemeris by 21.8 min (rms). Quick-Look Pipeline light curves of the 2026 sectors reproduce the largest excess, which therefore does not arise in our photometry; we report the scatter without choosing between an instrumental and a dynamical origin. The light curve also contains a 407 ± 26 ppm signal with a period of 3.78 days whose source, the target or the background star, the present data cannot identify. We give predicted transit times, including a transit in TESS Sector 114 on 2027 February 19.
+
+Version 2 (19 October 2026) corrects a statement of version 1: QLP light curves of Sectors 100–103 do exist at MAST. It adds a check of the transit times against them and refits the Sector 66 window. The ephemeris, parameters and predicted transits are unchanged.
+
+Data and code: doi:10.5281/zenodo.23390273. Pre-registered test of the 2027 transits: doi:10.5281/zenodo.23390325.
+
+## Record A, data and code (append to the existing description)
+
+Version 2 (19 October 2026) adds a comparison with the QLP light curves of Sectors 100 and 102 (data/results/qlp_comparison.json, qlp_recheck_402710280.py) and the version 2 manuscript. Data products, transit times, fits and predictions are unchanged from version 1. Preprint: doi:10.5281/zenodo.23390316.
