@@ -7,7 +7,7 @@ Submit **version 2** of the preprint, the same PDF that goes to Zenodo as versio
 - `tic402710280_arxiv_v2.tar.gz`: `tic402710280.tex`, `tic402710280.bbl` and `figures/fig1-6.pdf`. It was tested by
   compiling it in an empty directory with `pdflatex` alone, which is what arXiv does (arXiv does not run BibTeX, so
   the `.bbl` is included). The output is 10 pages, and its text is identical to `paper/tic402710280.pdf`.
-- `abstract.txt`: the abstract for the arXiv form, 1898 characters (arXiv's limit is 1920).
+- `abstract.txt`: the abstract for the arXiv form, 1900 characters (arXiv's limit is 1920).
 
 ## Form fields
 

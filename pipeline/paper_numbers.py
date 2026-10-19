@@ -118,8 +118,9 @@ def main():
     assert not any(v["at_grid_edge"] for v in fb.values())
     rep["S66_FIRST_H"] = f"{-s66['first_quality0_rel_mid_h']:.1f}"
     rep["S66_PRE_INGRESS_H"] = f"{-s66['first_quality0_rel_ingress_h']:.1f}"
-    rep["S66_DEPTHS"] = ", ".join(f"{fb[b]['depth_ppm']:.0f}" for b in ("constant", "linear")) + f" and {fb['quadratic']['depth_ppm']:.0f}"
-    rep["S66_DERR"] = f"{min(v['depth_err_ppm'] for v in fb.values()):.0f}--{max(v['depth_err_ppm'] for v in fb.values()):.0f}"
+    r10 = lambda x: f"{10 * round(x / 10):.0f}"   # depths and errors of ~100 ppm: nearest 10 ppm
+    rep["S66_DEPTHS"] = ", ".join(r10(fb[b]["depth_ppm"]) for b in ("constant", "linear")) + f" and {r10(fb['quadratic']['depth_ppm'])}"
+    rep["S66_DERR"] = f"{r10(min(v['depth_err_ppm'] for v in fb.values()))}--{r10(max(v['depth_err_ppm'] for v in fb.values()))}"
     ocs = [fb[b]["o_c_min"] for b in ("constant", "linear", "quadratic")]
     rep["S66_OC_RANGE"] = f"${min(ocs):+.0f}$ to ${max(ocs):+.0f}$"
     rq = qc["retime_qlp"]
