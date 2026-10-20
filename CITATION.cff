@@ -10,6 +10,12 @@ authors:
 license: MIT
 identifiers:
   - type: doi
+    value: "10.48550/arXiv.2610.26056"
+    description: "Preprint, arXiv:2610.26056"
+  - type: doi
+    value: "10.5281/zenodo.23390316"
+    description: "Preprint, all versions (Zenodo)"
+  - type: doi
     value: "10.5281/zenodo.23390273"
     description: "Data and code record, all versions (Zenodo)"
   - type: doi
@@ -26,6 +32,6 @@ preferred-citation:
       orcid: "https://orcid.org/0009-0003-8778-9883"
   year: 2026
   status: preprint
-  publisher:
-    name: Zenodo
-  doi: "10.5281/zenodo.23390316"
+  repository: arXiv
+  doi: "10.48550/arXiv.2610.26056"
+  url: "https://arxiv.org/abs/2610.26056"

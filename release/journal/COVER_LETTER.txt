@@ -16,7 +16,7 @@ QLP light curves of Sectors 100 and 102 carry a single barycentric correction pe
 I have reported this to the QLP team. The next transit, on 2027 February 19, falls in TESS Sector 114; the test of that
 prediction is pre-registered on Zenodo (doi:10.5281/zenodo.23390325).
 
-The preprint is on arXiv (arXiv:[ID]) and Zenodo (doi:10.5281/zenodo.23390316); the data and code that reproduce every
+The preprint is on arXiv (arXiv:2610.26056) and Zenodo (doi:10.5281/zenodo.23390316); the data and code that reproduce every
 number are archived at doi:10.5281/zenodo.23390273. The use of a large language model in preparing the work is
 disclosed in the acknowledgments. The manuscript is not under consideration elsewhere, and I have no competing interests.
 

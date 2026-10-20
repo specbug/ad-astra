@@ -12,7 +12,7 @@ Editor makes the final assignment.
 | `tic402710280_AJ_source.zip` | Flat LaTeX source: `tic402710280.tex`, `.bbl`, `refs.bib`, `aastex701.cls`, `aasjournalv7.bst`, `fig1.pdf`–`fig6.pdf`. Compiles with pdflatex alone. The portal cannot read folders, so upload the files individually. |
 | `tic402710280_AJ.pdf` | The compiled manuscript (AASTeX 7.0.1, line numbers on), for checking against the PDF the portal builds. |
 | `abstract_plain.txt` | The abstract in plain Unicode for the form (236 words; the limit is 250). |
-| `COVER_LETTER.txt` | Paste into the cover-letter field. Fill in the arXiv ID first. |
+| `COVER_LETTER.txt` | Paste into the cover-letter field. |
 
 ## Before you submit
 
@@ -23,7 +23,6 @@ Editor makes the final assignment.
 3. **Publish version 3 of the data record** (10.5281/zenodo.23390273) so the referee can run the new
    `qlp_timebase_402710280.py`. Also submit the record to the AAS Journals community on Zenodo, which the AAS
    Data Editors curate.
-4. **arXiv ID:** put it into the cover letter once the paper is announced.
 
 ## The portal: https://aas.msubmit.net
 
