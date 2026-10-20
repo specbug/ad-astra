@@ -210,9 +210,9 @@ Supporting record for the article *A 36.34-day Sub-Neptune Candidate Transiting 
 (R. Vora, 2026), submitted to the Astronomical Journal.
 
 Version 3. DOIs (all versions): this record 10.5281/zenodo.23390273; the preprint 10.5281/zenodo.23390316
-(arXiv:2610.26056). Version 1 of this
-record is 10.5281/zenodo.23390274 and of the preprint 10.5281/zenodo.23390317. The pre-registered test of the 2027 transits,
-10.5281/zenodo.23390325, has one version and will not be revised before the 2027 data are analysed.
+(arXiv:2610.26056). Earlier versions: this record 10.5281/zenodo.23390274 (v1) and 10.5281/zenodo.23466491 (v2);
+the preprint 10.5281/zenodo.23390317 (v1) and 10.5281/zenodo.23466634 (v2). The pre-registered test of the 2027
+transits, 10.5281/zenodo.23390325, has one version and will not be revised before the 2027 data are analysed.
 
 Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJD_TDB.
 
