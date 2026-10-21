@@ -11,7 +11,7 @@ Editor makes the final assignment.
 |---|---|
 | `tic402710280_AJ_source.zip` | Flat LaTeX source: `tic402710280.tex`, `.bbl`, `refs.bib`, `aastex701.cls`, `aasjournalv7.bst`, `fig1.pdf`–`fig6.pdf`. Compiles with pdflatex alone. The portal cannot read folders, so upload the files individually. |
 | `tic402710280_AJ.pdf` | The compiled manuscript (AASTeX 7.0.1, line numbers on), for checking against the PDF the portal builds. |
-| `abstract_plain.txt` | The abstract in plain Unicode for the form (236 words; the limit is 250). |
+| `abstract_plain.txt` | The abstract in plain Unicode for the form (237 words; the limit is 250). |
 | `COVER_LETTER.txt` | Paste into the cover-letter field. |
 | `SUPPORT_FUND.txt` | Justification for the AAS Publication Support Fund request. |
 
@@ -32,7 +32,7 @@ AAS Journals community on Zenodo, which the AAS Data Editors curate.
    corresponding.
 5. **Dual anonymous review:** opt out. The preprint is already public on arXiv and Zenodo.
 6. **Ethics:** read and accept the Professional and Ethical Standards.
-7. **Digital assets:** none in the article. Give the Zenodo data record (10.5281/zenodo.23390273) as data stored in a
+7. **Digital assets:** none in the article. Give the Zenodo data record (version 3, 10.5281/zenodo.23538511) as data stored in a
    repository.
 8. **Datasets in astronomy archives:** yes, MAST.
    - TESS-SPOC light curves: 10.17909/t9-wpz1-8s54

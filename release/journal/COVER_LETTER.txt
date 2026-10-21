@@ -3,22 +3,24 @@ Dear Editor,
 I submit "A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280" for consideration in the
 Astronomical Journal, in the corridor The Solar System, Exoplanets, and Astrobiology.
 
-The paper reports a new transiting sub-Neptune candidate (3.75 Earth radii, equilibrium temperature 500 K) around a
-V = 10.0 K dwarf at 67 pc. TESS has observed the star only in full-frame images, and it is not a TOI or a community TOI.
-Four transits between 2021 and 2026 have consistent depths in three independent reductions; two fall on consecutive
-cycles, which fixes the period at 36.34 days. Difference-image centroids place the signal 1.5" +/- 1.3" from the target,
-eclipses of the one nearby Gaia source are disfavored for any main-sequence pair, and TRICERATOPS gives a false-positive
-probability of 0.003; without high-resolution imaging I classify the object as a candidate.
+The paper reports a new transiting sub-Neptune candidate, 3.75 Earth radii across with an equilibrium temperature of
+500 K, around a V = 10.0 K dwarf at 67 pc. TESS has observed the star only in full-frame images, and it is neither a TOI
+nor a community TOI. Four transits recorded between 2021 and 2026 have consistent depths in three independent
+reductions, and two fall in consecutive orbits, which fixes the period at 36.34 days. Difference-image centroids place
+the signal 1.5" +/- 1.3" from the target, eclipse models of the one nearby Gaia source fit worse than the planet model
+for every main-sequence pair, and TRICERATOPS gives a false-positive probability of 0.003. Without high-resolution
+imaging, I classify the object as a candidate.
 
 The transit times scatter about a linear ephemeris by 22 minutes. The paper tests the instrumental explanations it can
-and reports the scatter without choosing between instrumental and dynamical origins. While checking it, I found that the
-QLP light curves of Sectors 100 and 102 apply one barycentric correction to every cadence in each sector, which shifts
-their time stamps by about two minutes; I have reported this to the QLP team. The next transit, on 2027 February 19, falls in TESS Sector 114; the test of that
-prediction is pre-registered on Zenodo (doi:10.5281/zenodo.23390325).
+and reports the scatter without choosing between an instrumental and a dynamical origin. In checking the timing, I found
+that the QLP time stamps of Sectors 100 and 102 appear to use a single barycentric correction for each sector, which
+offsets them by about two minutes at the transits; I have reported this to the QLP team. A transit is predicted in
+TESS Sector 114 on 2027 February 19, and the test of that prediction is pre-registered on Zenodo
+(doi:10.5281/zenodo.23390325).
 
-The preprint is on arXiv (arXiv:2610.26056) and Zenodo (doi:10.5281/zenodo.23390316); the data and code that reproduce every
-number are archived at doi:10.5281/zenodo.23390273. The use of a large language model in preparing the work is
-disclosed in the acknowledgments. The manuscript is not under consideration elsewhere, and I have no competing interests.
+The preprint is on arXiv (arXiv:2610.26056), and the data and code that reproduce the results are archived on Zenodo
+(doi:10.5281/zenodo.23538511). The acknowledgments disclose the use of a large language model in preparing the work.
+The manuscript is not under consideration elsewhere, and I have no competing interests.
 
 I am an independent researcher without grant funding and request support from the AAS Publication Support Fund.
 

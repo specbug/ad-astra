@@ -20,16 +20,18 @@ from qlp_recheck_402710280 import qlp_raw
 RA, DEC = 248.5236, -63.5497
 
 
-def bary_rate(t_btjd):
-    """d(light-travel time to the barycentre)/dt for the target, in s per day, at BTJD t."""
+def ltt(t_btjd):
+    """Light-travel time to the barycentre for the target, in s, at BTJD t (geocentric observer)."""
     import astropy.units as u
     from astropy.coordinates import EarthLocation, SkyCoord
     from astropy.time import Time
-    c = SkyCoord(RA, DEC, unit="deg")
-    loc = EarthLocation.from_geocentric(0, 0, 0, unit="m")
-    ltt = [Time(t + 2457000, format="jd", scale="tdb", location=loc).light_travel_time(c, "barycentric").to(u.s).value
-           for t in (t_btjd - 0.5, t_btjd + 0.5)]
-    return float(ltt[1] - ltt[0])
+    return float(Time(t_btjd + 2457000, format="jd", scale="tdb", location=EarthLocation.from_geocentric(0, 0, 0, unit="m"))
+                 .light_travel_time(SkyCoord(RA, DEC, unit="deg"), "barycentric").to(u.s).value)
+
+
+def bary_rate(t_btjd):
+    """d(light-travel time to the barycentre)/dt for the target, in s per day, at BTJD t."""
+    return ltt(t_btjd + 0.5) - ltt(t_btjd - 0.5)
 
 
 def main():

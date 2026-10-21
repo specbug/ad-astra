@@ -155,6 +155,14 @@
   \dodoi{10.1038/s41586-020-2649-2}
 
 % type= article
+\bibitem[{C. {Hedges} {et~al.}(2021){Hedges}, {Hughes}, {Zhou},
+  {et~al.}}]{Hedges2021}
+{Hedges}, C., {Hughes}, A., {Zhou}, G., {et~al.} 2021,
+  \bibinfo{title}{{TOI-2076 and TOI-1807: Two Young, Comoving Planetary Systems
+  within 50 pc Identified by TESS that are Ideal Candidates for Further Follow
+  Up},} AJ, 162, 54, \dodoi{10.3847/1538-3881/ac06cd}
+
+% type= article
 \bibitem[{C.~X. {Huang} {et~al.}(2020{\natexlab{a}}){Huang}, {Vanderburg},
   {P{\'a}l}, {et~al.}}]{Huang2020a}
 {Huang}, C.~X., {Vanderburg}, A., {P{\'a}l}, A., {et~al.} 2020{\natexlab{a}},
@@ -189,6 +197,14 @@
   \dodoi{10.1117/12.2233418}
 
 % type= article
+\bibitem[{E.~M.-R. {Kempton} {et~al.}(2018){Kempton}, {Bean}, {Louie},
+  {et~al.}}]{Kempton2018}
+{Kempton}, E.~M.-R., {Bean}, J.~L., {Louie}, D.~R., {et~al.} 2018,
+  \bibinfo{title}{{A Framework for Prioritizing the TESS Planetary Candidates
+  Most Amenable to Atmospheric Characterization},} PASP, 130, 114401,
+  \dodoi{10.1088/1538-3873/aadf6f}
+
+% type= article
 \bibitem[{D.~M. {Kipping}(2013){Kipping}}]{Kipping2013}
 {Kipping}, D.~M. 2013, \bibinfo{title}{Efficient, uninformative sampling of
   limb darkening coefficients for two-parameter laws,} MNRAS, 435, 2152,
@@ -219,6 +235,19 @@
   \bibinfo{title}{{Gaia Early Data Release 3. The astrometric solution},} A\&A,
   649, A2, \dodoi{10.1051/0004-6361/202039709}
 
+% type= misc
+\bibitem[{ {NASA Exoplanet Science Institute}(2020){NASA Exoplanet Science
+  Institute}}]{NEAcomp}
+{NASA Exoplanet Science Institute}. 2020, {Planetary Systems Composite Table},,
+  IPAC \dodoi{10.26133/NEA13}
+
+% type= article
+\bibitem[{G. {Petitpas} {et~al.}(2026){Petitpas}, {Haviland}, {Han},
+  {et~al.}}]{Petitpas2026}
+{Petitpas}, G., {Haviland}, J., {Han}, T., {et~al.} 2026, \bibinfo{title}{{QLP
+  Data Release Notes 004: TESS-Gaia Light Curve Photometry Implementation},}
+  RNAAS, 10, 69, \dodoi{10.3847/2515-5172/ae5790}
+
 % type= article
 \bibitem[{F. {Pont} {et~al.}(2006){Pont}, {Zucker}, \& {Queloz}}]{Pont2006}
 {Pont}, F., {Zucker}, S., \& {Queloz}, D. 2006, \bibinfo{title}{{The effect of
@@ -248,6 +277,11 @@
   AJ, 158, 138, \dodoi{10.3847/1538-3881/ab3467}
 
 % type= misc
+\bibitem[{ {TESS Team}(2021){TESS Team}}]{TESSLC}
+{TESS Team}. 2021, {TESS Light Curves - All Sectors},, STScI/MAST
+  \dodoi{10.17909/t9-nmc8-f686}
+
+% type= misc
 \bibitem[{ {TESS Team}(2022){TESS Team}}]{TESSFFI}
 {TESS Team}. 2022, {TESS Calibrated Full Frame Images: All Sectors},,
   STScI/MAST \dodoi{10.17909/0cp4-2j79}
@@ -270,7 +304,7 @@
 % type= misc
 \bibitem[{R. {Vora}(2026{\natexlab{a}}){Vora}}]{DataRecord}
 {Vora}, R. 2026{\natexlab{a}}, {TIC 402710280.01: data products and analysis
-  code},, Zenodo \dodoi{10.5281/zenodo.23390273}
+  code},, Zenodo, version 3.0 \dodoi{10.5281/zenodo.23538511}
 
 % type= misc
 \bibitem[{R. {Vora}(2026{\natexlab{b}}){Vora}}]{PreReg}

@@ -25,6 +25,7 @@ NUM = RESULTS / "candidates" / "paper_numbers.json"
 R_STAR, E_R = 0.817, 0.047
 M_STAR, E_M = 0.88, 0.11
 TEFF, E_T = 5182.0, 121.0
+J_MAG = 8.528  # 2MASS J of TIC 402710280, from TIC v8.2
 RMS_EPOCHS = (57, 58, 59)
 PRODUCT = {"tspoc": "TESS-SPOC", "qlp": "QLP", "ffi": "This work"}
 CADENCE = {39: 600, 93: 200, 100: 200, 102: 200}
@@ -78,7 +79,7 @@ def main():
         assert abs(x["btjd"] + 2457000 - tc) < 1e-4, "extras.json predates the current ephemeris"
         y, mo, d = x["utc"][:10].split("-")
         mon = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."][int(mo) - 1]
-        preds.append(f"{e} & {tc:.3f} & {sp:.0f} & {y} {mon} {int(d)}, {x['utc'][11:]} & {notes[e]} \\\\")
+        preds.append(f"{e} & {tc:.4f} & {sp:.0f} & {y} {mon} {int(d)}, {x['utc'][11:]} & {notes[e]} \\\\")
     rep = {
         "P": f"{P:.5f} \\pm {eP:.5f}", "T0": f"{T0:.4f} \\pm {eT:.4f}", "RMS": f"{rms:.1f}",
         "DEPTH": f"{dep:.0f} \\pm {edep:.0f}", "DEPTH_CHI2": f"{f['depth_chi2'][0]:.1f}",
@@ -91,7 +92,11 @@ def main():
         "ERR_RANGE": f"{min(errs):.1f}--{max(errs):.1f}", "EPH_CHI2": f"{f['ephemeris_chi2'][0]:.0f}",
         "INTERVAL_EXCESS": f"{((s102 - s100) - P) * 1440:.1f}",
         "TIMES_ROWS": "\n".join(rows), "PRED_ROWS": "\n".join(preds),
+        "DEP93": f"{by[93]['depth_ppm']:.0f} \\pm {by[93]['depth_err_ppm']:.0f}",
     }
+    # transmission spectroscopy metric (Kempton et al. 2018; scale factor 1.28 for 2.75-4 Earth radii), with the
+    # Chen & Kipping (2017) mass of about 14 Earth masses quoted in the Discussion and the 2MASS J magnitude from the TIC
+    rep["TSM"] = f"{round(1.28 * rp ** 3 * teq / (14 * R_STAR ** 2) * 10 ** (-J_MAG / 5), -1):.0f}"
     rel = ROOT / "release" / "tic402710280_zenodo" / "data" / "results"
     import csv
     al = list(csv.DictReader(open(rel / "alias_test.csv")))
@@ -139,6 +144,17 @@ def main():
     rep["QLP_DSIG100"], rep["QLP_DSIG102"] = f"{-q100['depth_minus_published_sigma']:.1f}", f"{-q102['depth_minus_published_sigma']:.1f}"
     rep["OWN_MAX"] = f"{max(abs(v['minus_published_min']) for v in qc['own_control'].values()):.1f}"
     tb = json.load(open(RESULTS / "candidates" / "qlp_timebase_402710280.json"))
+    # epoch at which the target's own barycentric correction equals the single correction QLP applied to the sector:
+    # QLP - true = C - ltt(t), and C = ltt(tc) + offset at the transit
+    from qlp_timebase_402710280 import ltt
+    zero = []
+    for s_ in ("100", "102"):
+        q = qc["retime_qlp"][s_]
+        c = ltt(q["tc"]) + q["time_offset"]["offset_at_transit_s"]
+        grid = np.arange(q["tc"] - 40, q["tc"] + 0.01, 0.05)
+        lt = np.array([ltt(t) for t in grid])
+        zero.append(grid[np.argmin(np.abs(lt - c))])
+    rep["QLP_ZERO"] = f"BTJD~{zero[0]:.0f} and {zero[1]:.0f}"
     lin = max(tb[k]["departure_from_line_s"]["range"] for k in ("100", "102"))
     rep["QLP_LIN"] = f"{math.ceil(lin * 100) / 100:.2f}"
     rep["QLP_SLOPES"] = f"${tb['100']['offset_drift_s_per_d']:.1f}$ and ${tb['102']['offset_drift_s_per_d']:.1f}$"
@@ -174,9 +190,9 @@ def main():
         for r in d["runs"]:
             pl += sum(v for k_, v in r["scenarios"].items() if k_.split("@")[0] in ("TP", "PTP", "STP")) / len(d["runs"])
         rep["SS_FPP"] = (f"\\texttt{{TRICERATOPS}}, applied as in \\S\\ref{{sec:fpp}}, assigns {100 * pl:.0f}\\% of the "
-                         f"probability to a planet around the target or an unresolved companion, but gives "
+                         f"probability to a planet around the target or an unresolved companion but gives "
                          f"${{\\rm FPP}} = {d['FPP_mean']:.2f} \\pm {d['FPP_std']:.2f}$ and ${{\\rm NFPP}} = "
-                         f"{d['NFPP_mean']:.3f} \\pm {d['NFPP_std']:.3f}$, above the limit of 0.001 below which "
+                         f"{d['NFPP_mean']:.3f} \\pm {d['NFPP_std']:.3f}$, above the NFPP limit of 0.001 below which "
                          f"\\citet{{Giacalone2021}} consider nearby false positives excluded.")
     else:
         rep["SS_FPP"] = ""
@@ -194,10 +210,9 @@ def main():
 
 
 SS_INTERP = ("On the target, the signal would correspond to a planet of ${rp:.2f} \\pm {erp:.2f}\\,\\rearth$ on an inner "
-             "orbit. The fitted density, ${rho}\\,\\rho_\\odot$, exceeds the target's $1.61 \\pm 0.38\\,\\rho_\\odot$: "
+             "orbit. The fitted density, ${rho}\\,\\rho_\\odot$, exceeds the target's $1.61 \\pm 0.38\\,\\rho_\\odot$. Only "
              "{frac:.0f}\\% of the posterior lies below $2.37\\,\\rho_\\odot$ (the target's value plus $2\\sigma$), almost all of "
-             "it at $b > {bmin:.2f}$, so a transit across the target is consistent with the short duration only if it is "
-             "nearly grazing.")
+             "it at $b > {bmin:.2f}$, so a transit of the target matches the short duration only if it is nearly grazing.")
 
 
 if __name__ == "__main__":
