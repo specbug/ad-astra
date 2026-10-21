@@ -154,7 +154,7 @@ def main():
         grid = np.arange(q["tc"] - 40, q["tc"] + 0.01, 0.05)
         lt = np.array([ltt(t) for t in grid])
         zero.append(grid[np.argmin(np.abs(lt - c))])
-    rep["QLP_ZERO"] = f"BTJD~{zero[0]:.0f} and {zero[1]:.0f}"
+    rep["QLP_ZERO100"], rep["QLP_ZERO102"] = f"{zero[0]:.0f}", f"{zero[1]:.0f}"
     lin = max(tb[k]["departure_from_line_s"]["range"] for k in ("100", "102"))
     rep["QLP_LIN"] = f"{math.ceil(lin * 100) / 100:.2f}"
     rep["QLP_SLOPES"] = f"${tb['100']['offset_drift_s_per_d']:.1f}$ and ${tb['102']['offset_drift_s_per_d']:.1f}$"
