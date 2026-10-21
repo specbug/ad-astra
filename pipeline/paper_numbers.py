@@ -17,6 +17,7 @@ import env  # noqa: F401
 import numpy as np
 
 import transit_fit as tf
+from scipy.optimize import brentq
 
 from env import RESULTS
 
@@ -26,11 +27,27 @@ OUT = ROOT / "paper" / "tic402710280.tex"
 NUM = RESULTS / "candidates" / "paper_numbers.json"
 R_STAR, E_R = 0.817, 0.047
 M_STAR, E_M = 0.88, 0.11
+RHO_TIC, E_RHO = 1.61, 0.38  # solar units, from the TIC mass and radius (Section 5.2)
 TEFF, E_T = 5182.0, 121.0
 J_MAG = 8.528  # 2MASS J of TIC 402710280, from TIC v8.2
 RMS_EPOCHS = (57, 58, 59)
 PRODUCT = {"tspoc": "TESS-SPOC", "qlp": "QLP", "ffi": "This work"}
 CADENCE = {39: 600, 93: 200, 100: 200, 102: 200}
+
+
+def longest_transit_h(rho_sun, period_d, k, q=None):
+    """Longest transit (b = 0) of a planet with radius ratio k on a period_d orbit around a star of density rho_sun:
+    centred at apastron of an eccentric orbit with periastron at q stellar radii, or circular if q is None."""
+    a_r = (6.674e-11 * rho_sun * 1408.9 * (period_d * 86400) ** 2 / (3 * math.pi)) ** (1 / 3)
+    e = 0.0 if q is None else max(0.0, 1 - q / a_r)
+    mean_anom = np.linspace(math.pi - 1.5, math.pi + 1.5, 300001)
+    ecc = mean_anom.copy()
+    for _ in range(60):
+        ecc -= (ecc - e * np.sin(ecc) - mean_anom) / (1 - e * np.cos(ecc))
+    r = a_r * (1 - e * np.cos(ecc))
+    nu = 2 * np.arctan2(math.sqrt(1 + e) * np.sin(ecc / 2), math.sqrt(1 - e) * np.cos(ecc / 2))
+    x = np.abs(r * np.sin(nu - math.pi))                 # sky-projected distance from the star's centre, apastron at 0
+    return float(np.sum(x < 1 + k) * (mean_anom[1] - mean_anom[0]) * period_d * 24 / (2 * math.pi))
 
 
 def pm(v, digits, sym_tol=0.15):
@@ -129,6 +146,15 @@ def main():
     rep["ALIAS_KMAX"], rep["ALIAS_PMIN"] = str(kmax), f"{P / kmax:.1f}"
     rep["ALIAS_HI_N"] = f"{min(v[0] for v in hi.values())} to {max(v[0] for v in hi.values())}"
     rep["ALIAS_HI_SIG"] = f"{math.floor(min(v[1] for v in hi.values()))}"
+    # periods below the last tested fraction: the longest transit they allow, against the observed duration
+    p_sub, t14 = P / (kmax + 1), f["t14_h"][0]
+    rep["SUB_TCIRC"] = f"{longest_transit_h(RHO_TIC, p_sub, k[0]):.1f}"
+    rep["SUB_TMAX"] = f"{longest_transit_h(RHO_TIC, p_sub, k[0], q=1.0):.1f}"
+    rho_lim = brentq(lambda r_: longest_transit_h(r_, p_sub, k[0], q=1.0) - t14, 0.1, RHO_TIC)
+    rep["SUB_RHO"], rep["SUB_RHO_SIG"] = f"{rho_lim:.2f}", f"{(RHO_TIC - rho_lim) / E_RHO:.1f}"
+    rep["SUB_RHO3"] = f"{RHO_TIC - 3 * E_RHO:.2f}"
+    rep["SUB_TMAX15"] = f"{longest_transit_h(RHO_TIC - 3 * E_RHO, p_sub, k[0], q=1.5):.1f}"
+    rep["BETA_MAX"] = f"{max(t['beta'] for t in f['times']):.1f}"
     p2_secs = [r["sector"] for r in al if r["alias"] == "P/2"]
     rep["ALIAS_MIN"] = f"{min(min(v) for v in sig_of.values()):.1f}"   # P/2 to P/5, every window individually
     rep["P2_MIN"], rep["P3_MIN"] = f"{min(sig_of['P/2']):.1f}", f"{min(sig_of['P/3']):.1f}"

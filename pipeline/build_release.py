@@ -267,8 +267,8 @@ Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJ
 ## Reproducing the paper
 
 **From this record alone.** With the packages in `code/requirements.txt`, run `python paper_numbers.py` in
-`code/pipeline/`. It reads `code/results/` and writes `code/paper/tic402710280.tex`, the manuscript with every number
-filled in, which matches `manuscript/tic402710280.tex`. No network access is needed.
+`code/pipeline/`. It reads `code/results/` and writes `code/paper/tic402710280.tex`, the manuscript with the computed
+values filled in, which matches `manuscript/tic402710280.tex`. No network access is needed.
 
 **From the TESS data.** With the packages in `code/requirements.txt` (and TRICERATOPS 1.1 for the false-positive calculation), from
 `code/pipeline/`:
