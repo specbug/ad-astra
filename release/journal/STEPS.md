@@ -1,17 +1,17 @@
 # TIC 402710280.01: what to do, in order
 
-## 1. Zenodo: data record version 3 (`1_zenodo_data_v3/`)
+## 1. Zenodo: data record version 4 (`1_zenodo_data_v4/`)
 
-1. Open doi:10.5281/zenodo.23390273 → **New version**.
-2. Files: delete the version 2 zip; upload `tic402710280_zenodo.zip` (md5 16019ae7f82a1a381cfe5e600be81216).
-3. Version: `3.0`. Publication date: today.
-4. Description: append the paragraph in `zenodo_v3_data.md`.
-5. Related works: add `arXiv:2610.26056`, relation **Is supplement to**.
-6. Communities: request **AAS Journals**. Publish.
+1. Open doi:10.5281/zenodo.23390273 → **New version** → **Get a DOI now**. Send me the reserved DOI; I put it in the
+   manuscript and rebuild the zip and the AJ files.
+2. Files: delete the version 3 zip; upload the rebuilt `tic402710280_zenodo.zip`.
+3. Version: `4.0`. Publication date: today.
+4. Description: append the paragraph in `zenodo_v4_data.md`. Related works and the AAS Journals request carry over.
+5. Publish.
 
-Do not touch the preprint record or the pre-registration.
+Do not touch the pre-registration.
 
-## 2. Zenodo: preprint record, metadata only (no new version)
+## 2. Zenodo: preprint record, metadata only (skip if already done)
 
 Edit the latest version of doi:10.5281/zenodo.23390316 → Related works: add `arXiv:2610.26056`, relation
 **Is identical to**. Save.
@@ -41,5 +41,7 @@ Field by field in `3_aj_form/SUBMISSION_DETAILS.md`. In short:
 
 - Acknowledgments for Keshav and Pascal go in at revision, once they say how they want to appear.
 - Revision tests prepared in parallel: the Sector 100/102 image-clock check and the Sector 102 systematics spread.
-- Leave arXiv and Zenodo unchanged until acceptance; then update both to the accepted text, add the journal reference
+- The journal version differs from arXiv v1 in the prediction uncertainties (34 instead of 30 min) and the extended
+  alias test. Replace the arXiv version at acceptance, or earlier if you want the preprint to match the submission.
+- Leave Zenodo unchanged until acceptance; then update both to the accepted text, add the journal reference
   on arXiv, and submit the community TOI at ExoFOP.

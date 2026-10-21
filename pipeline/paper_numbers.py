@@ -16,6 +16,8 @@ import re
 import env  # noqa: F401
 import numpy as np
 
+import transit_fit as tf
+
 from env import RESULTS
 
 ROOT = RESULTS.parent
@@ -74,7 +76,7 @@ def main():
     for e in RMS_EPOCHS:
         n = e - ref
         tc = T0 + n * P
-        sp = math.sqrt(eT ** 2 + (n * eP) ** 2 + (rms / 1440) ** 2) * 1440
+        sp = tf.sigma_pred_min(f, e, rms)   # with the T0-P covariance
         x = nxt[e]
         assert abs(x["btjd"] + 2457000 - tc) < 1e-4, "extras.json predates the current ephemeris"
         y, mo, d = x["utc"][:10].split("-")
@@ -97,13 +99,38 @@ def main():
     # transmission spectroscopy metric (Kempton et al. 2018; scale factor 1.28 for 2.75-4 Earth radii), with the
     # Chen & Kipping (2017) mass of about 14 Earth masses quoted in the Discussion and the 2MASS J magnitude from the TIC
     rep["TSM"] = f"{round(1.28 * rp ** 3 * teq / (14 * R_STAR ** 2) * 10 ** (-J_MAG / 5), -1):.0f}"
-    rel = ROOT / "release" / "tic402710280_zenodo" / "data" / "results"
+    # the T0-P correlation of the linear ephemeris (reference epoch 40; the weighted mean epoch is earlier)
+    _, _, cov = tf.ephemeris(f)
+    w_ep = 1 / np.square(errs)
+    rep["EPOCH_WMEAN"] = f"{np.sum(w_ep * np.array([t['epoch'] for t in f['times']])) / w_ep.sum():.0f}"
+    rep["T0P_CORR"] = f"{cov[0, 1] / math.sqrt(cov[0, 0] * cov[1, 1]):.2f}"
+    # the registered test (doi:10.5281/zenodo.23390325; a copy of its predictions.json) searches +-3 sigma_pred, with
+    # sigma_pred computed without the T0-P covariance
+    reg = json.load(open(RESULTS / "candidates" / "prereg_predictions.json"))
+    s_reg = next(x["sigma_pred_min"] for x in reg["predictions"] if x["epoch"] == 57)
+    s_now = tf.sigma_pred_min(f, 57, rms)
+    rep["PREREG_SIG57"], rep["SIG57"], rep["PREREG_NSIG"] = f"{s_reg:.1f}", f"{s_now:.1f}", f"{3 * s_reg / s_now:.1f}"
+    rel = RESULTS / "candidates"            # written there by build_release.py
     import csv
     al = list(csv.DictReader(open(rel / "alias_test.csv")))
     assert abs(float(al[0]["period_d"]) - P / 2) < 1e-4, "alias_test.csv predates the current ephemeris"
     sig_of = {a: [float(r["exclusion_sigma"]) for r in al if r["alias"] == a] for a in ("P/2", "P/3", "P/4", "P/5")}
+    # P/6 to P/36: each alias, all its covered windows combined
+    hi = {}
+    for a in sorted({r["alias"] for r in al}, key=lambda x: int(x[2:])):
+        if int(a[2:]) < 6:
+            continue
+        rows = [r for r in al if r["alias"] == a]
+        dd = np.array([float(r["depth_ppm"]) for r in rows])
+        ee = np.array([float(r["err_ppm"]) for r in rows])
+        ww = 1 / ee ** 2
+        hi[a] = (len(rows), (dep - np.sum(ww * dd) / ww.sum()) / math.hypot(1 / math.sqrt(ww.sum()), edep))
+    kmax = max(int(a[2:]) for a in hi)
+    rep["ALIAS_KMAX"], rep["ALIAS_PMIN"] = str(kmax), f"{P / kmax:.1f}"
+    rep["ALIAS_HI_N"] = f"{min(v[0] for v in hi.values())} to {max(v[0] for v in hi.values())}"
+    rep["ALIAS_HI_SIG"] = f"{math.floor(min(v[1] for v in hi.values()))}"
     p2_secs = [r["sector"] for r in al if r["alias"] == "P/2"]
-    rep["ALIAS_MIN"] = f"{min(min(v) for v in sig_of.values()):.1f}"
+    rep["ALIAS_MIN"] = f"{min(min(v) for v in sig_of.values()):.1f}"   # P/2 to P/5, every window individually
     rep["P2_MIN"], rep["P3_MIN"] = f"{min(sig_of['P/2']):.1f}", f"{min(sig_of['P/3']):.1f}"
     words = {2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten"}
     rep["N_P2"] = words.get(len(sig_of["P/2"]), str(len(sig_of["P/2"])))
@@ -143,6 +170,38 @@ def main():
     assert q100["depth_minus_published_sigma"] < 0 and q102["depth_minus_published_sigma"] < 0
     rep["QLP_DSIG100"], rep["QLP_DSIG102"] = f"{-q100['depth_minus_published_sigma']:.1f}", f"{-q102['depth_minus_published_sigma']:.1f}"
     rep["OWN_MAX"] = f"{max(abs(v['minus_published_min']) for v in qc['own_control'].values()):.1f}"
+    # sensitivity of the depth, radius, period and timing scatter to adopting the QLP measurements of Sectors 100 and 102
+    q_ = qc["retime_qlp"]
+    dd_ = {s_: (by[s_]["depth_ppm"], by[s_]["depth_err_ppm"]) for s_ in (39, 93)}
+    dd_.update({s_: (q_[str(s_)]["depth_ppm"], q_[str(s_)]["depth_err_ppm"]) for s_ in (100, 102)})
+    v_ = np.array([x[0] for x in dd_.values()])
+    w_ = 1 / np.array([x[1] for x in dd_.values()]) ** 2
+    mq = float(np.sum(w_ * v_) / w_.sum())
+    rep["QMIX_DEPTH"] = f"{mq:.0f} \\pm {1 / math.sqrt(w_.sum()):.0f}"
+    rep["QMIX_CHI2"] = f"{float(np.sum(w_ * (v_ - mq) ** 2)):.0f}"
+    rep["QMIX_RP"] = f"{rp * math.sqrt(mq / dep):.2f}"
+    ep_ = np.array([by[s_]["epoch"] for s_ in (39, 93, 100, 102)], float) - ref
+    tt_ = np.array([by[39]["tc"], by[93]["tc"], q_["100"]["tc"], q_["102"]["tc"]])
+    st_ = np.array([by[39]["err_min"], by[93]["err_min"], q_["100"]["err_min"], q_["102"]["err_min"]]) / 1440
+    A_ = np.vstack([np.ones(4), ep_]).T
+    W_ = np.diag(1 / st_ ** 2)
+    pq = np.linalg.solve(A_.T @ W_ @ A_, A_.T @ W_ @ tt_)
+    rep["QMIX_DP"] = f"{abs(pq[1] - P) * 86400:.0f}"
+    rep["QMIX_RMS"] = f"{math.sqrt(np.mean(((tt_ - A_ @ pq) * 1440) ** 2)):.1f}"
+    fv2 = json.load(open(RESULTS / "candidates" / "fpp_tic402710280_v2.json"))
+    runs = [r_["FPP"] for r_ in fv2["runs"]]
+    rep["FPP_RANGE"] = f"{min(runs):.3f}--{max(runs):.3f}"
+    rep["FPP_BOX5"] = f"{json.load(open(RESULTS / 'candidates' / 'fpp_tic402710280_v2_box5.json'))['FPP_mean']:.3f}"
+    rep["FPP_LINFOLD"] = f"{json.load(open(RESULTS / 'candidates' / 'fpp_tic402710280.json'))['FPP_mean']:.3f}"
+    from archive_comparison import load as load_archive
+    adate, arows = load_archive()
+    words_ = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"}
+    longp = [x for x in arows if float(x["pl_orbper"]) > 30]
+    assert len(longp) == 1 and longp[0]["pl_name"] == "TOI-2076 d", "the introduction names TOI-2076 d"
+    rep["ARCH_N"] = words_.get(len(arows), str(len(arows)))
+    rep["ARCH_P"] = f"{float(longp[0]['pl_orbper']):.1f}"
+    y, m, d = (int(x) for x in adate.split("-"))
+    rep["ARCH_DATE"] = f"{y} {['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][m - 1]}~{d}"
     tb = json.load(open(RESULTS / "candidates" / "qlp_timebase_402710280.json"))
     # epoch at which the target's own barycentric correction equals the single correction QLP applied to the sector:
     # QLP - true = C - ltt(t), and C = ltt(tc) + offset at the transit

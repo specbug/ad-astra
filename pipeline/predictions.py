@@ -6,6 +6,8 @@ import math
 import env  # noqa: F401
 import numpy as np
 
+import transit_fit as tf
+
 G = 6.674e-11
 RHO_SUN = 1408.0
 AU_RSUN = 215.032
@@ -67,7 +69,7 @@ def periodic(fit, key, M, R, Teff, ra, dec, dv_check=None, now=4323.0, n_show=8)
     n0 = int(math.ceil((now - T) / P)) + ref
     for n in range(n0, n0 + 40):
         tc = T + (n - ref) * P
-        sig = math.hypot(Te, (n - ref) * Pe) * 1440
+        sig = tf.sigma_pred_min(f, n)   # ephemeris only, with the T0-P covariance
         frac, sun_sep = observability(tc, f["t14_h"][0], ra, dec, LA_SILLA)
         site_utc = site_time(tc, ra, dec)[0].utc.datetime
         note = ("full transit at night" if frac > 0.95 else f"{frac:.0%} of the transit at night" if frac > 0.05

@@ -24,6 +24,32 @@ G = 6.674e-11
 RHO_SUN = 1408.0  # kg m^-3
 
 
+def ephemeris(fit):
+    """(T0, P, cov) of the weighted linear ephemeris of a fit_new result: the fit of fit_new.py redone from the stored
+    mid-times, with the covariance scaled by chi2/nu as there. T0 and P are correlated because the reference epoch is
+    not the weighted mean epoch; propagate with var(T0 + n P) = cov[0,0] + n^2 cov[1,1] + 2 n cov[0,1]."""
+    ref = fit["ref_epoch"]
+    n = np.array([t["epoch"] for t in fit["times"]], float) - ref
+    tt = np.array([t["tc"] for t in fit["times"]])
+    st = np.array([t["err_min"] for t in fit["times"]]) / 1440
+    A = np.vstack([np.ones_like(n), n]).T
+    W = np.diag(1 / st ** 2)
+    cov = np.linalg.inv(A.T @ W @ A)
+    p = cov @ A.T @ W @ tt
+    chi2 = float(np.sum(((tt - A @ p) / st) ** 2))
+    cov = cov * max(chi2 / (len(tt) - 2), 1.0)
+    assert abs(np.sqrt(cov[1, 1]) - fit["period_d"][1]) < 1e-9 and abs(np.sqrt(cov[0, 0]) - fit["tref_btjd"][1]) < 1e-9
+    return float(p[0]), float(p[1]), cov
+
+
+def sigma_pred_min(fit, epoch, rms_min=0.0):
+    """1-sigma uncertainty, in minutes, of the transit time at an epoch, with the T0-P covariance and an optional
+    per-transit scatter added in quadrature."""
+    _, _, cov = ephemeris(fit)
+    m = epoch - fit["ref_epoch"]
+    return float(np.sqrt(cov[0, 0] + m * m * cov[1, 1] + 2 * m * cov[0, 1] + (rms_min / 1440) ** 2) * 1440)
+
+
 def convergence(sampler, nstep, names):
     """emcee autocorrelation times per parameter, and the chain length in units of the longest one (Foreman-Mackey
     et al. 2013 suggest > 50); the first third of each chain is discarded as burn-in."""

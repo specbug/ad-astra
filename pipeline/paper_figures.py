@@ -137,11 +137,11 @@ def fig2():
 def fig3(fit, ex):
     f = fit["TIC402710280"]
     ref = f["ref_epoch"]
-    eP, eT = f["period_d"][1], f["tref_btjd"][1]
     rms = math.sqrt(np.mean([t["o_c_min"] ** 2 for t in f["times"]]))
     fig, ax = plt.subplots(figsize=(COL1, 2.2))
     n = np.linspace(-5, 64, 300)
-    band = np.sqrt(eT ** 2 + ((n - ref) * eP) ** 2) * 1440
+    _, _, cov = tf.ephemeris(f)                     # with the covariance of T0 and P
+    band = np.sqrt(cov[0, 0] + (n - ref) ** 2 * cov[1, 1] + 2 * (n - ref) * cov[0, 1]) * 1440
     ax.fill_between(n, -band, band, color=DATA, alpha=0.18, lw=0, label="ephemeris, 1σ")
     tot = np.sqrt(band ** 2 + rms ** 2)
     ax.plot(n, tot, ":", color=DATA, lw=0.7, label="incl. observed scatter")
@@ -163,7 +163,7 @@ def fig3(fit, ex):
     save(fig, "fig3")
 
 
-def fig4():
+def fig5():
     bl = json.load(open(RESULTS / "candidates" / "blend_shape_402710280.json"))
     ks = sorted({r["k"] for r in bl["eb"]})
     lo = [min(r["dchi2"] for r in bl["eb"] if r["k"] == k) for k in ks]
@@ -182,10 +182,10 @@ def fig4():
     ax.set_xlabel(r"Radius ratio of the eclipsing companion, $k$")
     ax.set_ylabel(r"$\Delta\chi^2$ (EB $-$ planet)")
     ax.legend(frameon=False, fontsize=6, loc="upper right")
-    save(fig, "fig4")
+    save(fig, "fig5")
 
 
-def fig5(fit):
+def fig4(fit):
     """Difference image of the sector-39 transit (the highest signal-to-noise one) and the centroid offsets."""
     import pixels
     from matplotlib.patches import Circle
@@ -245,7 +245,7 @@ def fig5(fit):
     a.set_title("Difference-image centroids", fontsize=6.8)
     a.legend(loc="upper center", bbox_to_anchor=(0.5, -0.24), frameon=False, fontsize=5.3, handletextpad=0.3,
              ncol=1)
-    save(fig, "fig5")
+    save(fig, "fig4")
     return res
 
 
@@ -292,8 +292,8 @@ def main():
     fig1(fit, lcs)
     fig2()
     fig3(fit, ex)
-    fig4()
-    fig5(fit)
+    fig4(fit)
+    fig5()
     fig6()
     print("figures written to", OUT)
 

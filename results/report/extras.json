@@ -5304,7 +5304,7 @@
     "btjd": 4455.978468510689,
     "utc": "2027-02-19 11:29",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 21.23512462112501,
+    "sigma_min": 25.55727788301017,
     "night_frac": 0.16,
     "sun_sep": 77.03216318449992,
     "note": "16% of the transit at night"
@@ -5314,7 +5314,7 @@
     "btjd": 4528.65819378764,
     "utc": "2027-05-03 03:41",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 22.13244476874276,
+    "sigma_min": 26.75597971832241,
     "night_frac": 0.96,
     "sun_sep": 127.93892318136005,
     "note": "full transit at night"
@@ -5324,7 +5324,7 @@
     "btjd": 4564.998056426116,
     "utc": "2027-06-08 11:49",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 22.6036247033914,
+    "sigma_min": 27.36526796951141,
     "night_frac": 0.08,
     "sun_sep": 138.95606294316204,
     "note": "8% of the transit at night"
@@ -5334,7 +5334,7 @@
     "btjd": 4637.677781703068,
     "utc": "2027-08-20 04:12",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 23.586526008004974,
+    "sigma_min": 28.601602307717595,
     "night_frac": 0.6,
     "sun_sep": 105.64852085847822,
     "note": "60% of the transit at night"
@@ -5344,7 +5344,7 @@
     "btjd": 4855.716957533924,
     "utc": "2028-03-25 05:09",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 26.80425991929346,
+    "sigma_min": 32.42801269977863,
     "night_frac": 0.76,
     "sun_sep": 102.8635409646518,
     "note": "76% of the transit at night"
@@ -5354,7 +5354,7 @@
     "btjd": 4928.396682810876,
     "utc": "2028-06-05 21:23",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 27.949312768349255,
+    "sigma_min": 33.735221152233656,
     "night_frac": 0.2,
     "sun_sep": 138.909208528842,
     "note": "20% of the transit at night"
@@ -5364,7 +5364,7 @@
     "btjd": 4964.736545449352,
     "utc": "2028-07-12 05:34",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 28.533022847762602,
+    "sigma_min": 34.3937662500578,
     "night_frac": 0.84,
     "sun_sep": 129.5107840654851,
     "note": "84% of the transit at night"
@@ -5374,7 +5374,7 @@
     "btjd": 5037.416270726304,
     "utc": "2028-09-22 21:59",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 29.720613938152443,
+    "sigma_min": 35.7198272815605,
     "night_frac": 0.24,
     "sun_sep": 80.60521885346455,
     "note": "24% of the transit at night"
@@ -5386,7 +5386,7 @@
     "btjd": 4346.958880595261,
     "utc": "2026-11-02 11:04",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 20.016638930133553,
+    "sigma_min": 23.816373841903793,
     "night_frac": 0.0,
     "sun_sep": 53.447082036102564,
     "note": "daytime or too low"
@@ -5396,7 +5396,7 @@
     "btjd": 4383.298743233737,
     "utc": "2026-12-08 19:15",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 20.40440559437668,
+    "sigma_min": 24.388322997766398,
     "night_frac": 0.0,
     "sun_sep": 41.05595430647735,
     "note": "too close to the Sun"
@@ -5406,7 +5406,7 @@
     "btjd": 4419.638605872213,
     "utc": "2027-01-14 03:23",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 20.81092650984784,
+    "sigma_min": 24.96881845917841,
     "night_frac": 0.0,
     "sun_sep": 52.299985324444165,
     "note": "daytime or too low"
@@ -5416,7 +5416,7 @@
     "btjd": 4455.978468510689,
     "utc": "2027-02-19 11:29",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 21.23512462112501,
+    "sigma_min": 25.55727788301017,
     "night_frac": 0.16,
     "sun_sep": 77.03216318449992,
     "note": "16% of the transit at night"
@@ -5426,7 +5426,7 @@
     "btjd": 4492.318331149165,
     "utc": "2027-03-27 19:35",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 21.675962126030225,
+    "sigma_min": 26.153163695227352,
     "night_frac": 0.0,
     "sun_sep": 104.2197200058499,
     "note": "daytime or too low"
@@ -5436,7 +5436,7 @@
     "btjd": 4528.65819378764,
     "utc": "2027-05-03 03:41",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 22.13244476874276,
+    "sigma_min": 26.75597971832241,
     "night_frac": 0.96,
     "sun_sep": 127.93892318136005,
     "note": "full transit at night"
@@ -5446,7 +5446,7 @@
     "btjd": 4564.998056426116,
     "utc": "2027-06-08 11:49",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 22.6036247033914,
+    "sigma_min": 27.36526796951141,
     "night_frac": 0.08,
     "sun_sep": 138.95606294316204,
     "note": "8% of the transit at night"
@@ -5456,7 +5456,7 @@
     "btjd": 4601.337919064592,
     "utc": "2027-07-14 20:00",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 23.08860214391612,
+    "sigma_min": 27.980605646358327,
     "night_frac": 0.0,
     "sun_sep": 128.56104886280136,
     "note": "daytime or too low"
@@ -5466,7 +5466,7 @@
     "btjd": 4637.677781703068,
     "utc": "2027-08-20 04:12",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 23.586526008004974,
+    "sigma_min": 28.601602307717595,
     "night_frac": 0.6,
     "sun_sep": 105.64852085847822,
     "note": "60% of the transit at night"
@@ -5476,7 +5476,7 @@
     "btjd": 4674.017644341544,
     "utc": "2027-09-25 12:25",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 24.09659374746786,
+    "sigma_min": 29.227897251403814,
     "night_frac": 0.0,
     "sun_sep": 79.25162156936591,
     "note": "daytime or too low"
@@ -5486,7 +5486,7 @@
     "btjd": 4710.35750698002,
     "utc": "2027-10-31 20:38",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 24.618050537617393,
+    "sigma_min": 29.859157085329212,
     "night_frac": 0.0,
     "sun_sep": 54.53205341283512,
     "note": "daytime or too low"
@@ -5496,7 +5496,7 @@
     "btjd": 4746.697369618496,
     "utc": "2027-12-07 04:49",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 25.150187976490873,
+    "sigma_min": 30.495073485598915,
     "night_frac": 0.0,
     "sun_sep": 41.136400915022215,
     "note": "too close to the Sun"
@@ -5506,7 +5506,7 @@
     "btjd": 4783.037232256972,
     "utc": "2028-01-12 12:57",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 25.692342422810206,
+    "sigma_min": 31.13536113289446,
     "night_frac": 0.0,
     "sun_sep": 51.25989363571087,
     "note": "daytime or too low"
@@ -5516,7 +5516,7 @@
     "btjd": 4819.377094895448,
     "utc": "2028-02-17 21:03",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 26.243893080619824,
+    "sigma_min": 31.779755817145556,
     "night_frac": 0.0,
     "sun_sep": 75.64829071024882,
     "note": "daytime or too low"
@@ -5526,7 +5526,7 @@
     "btjd": 4855.716957533924,
     "utc": "2028-03-25 05:09",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 26.80425991929346,
+    "sigma_min": 32.42801269977863,
     "night_frac": 0.76,
     "sun_sep": 102.8635409646518,
     "note": "76% of the transit at night"
@@ -5536,7 +5536,7 @@
     "btjd": 4892.0568201724,
     "utc": "2028-04-30 13:15",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 27.372901500444627,
+    "sigma_min": 33.07990472257403,
     "night_frac": 0.0,
     "sun_sep": 126.92581835067116,
     "note": "daytime or too low"
@@ -5546,7 +5546,7 @@
     "btjd": 4928.396682810876,
     "utc": "2028-06-05 21:23",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 27.949312768349255,
+    "sigma_min": 33.735221152233656,
     "night_frac": 0.2,
     "sun_sep": 138.909208528842,
     "note": "20% of the transit at night"
@@ -5556,7 +5556,7 @@
     "btjd": 4964.736545449352,
     "utc": "2028-07-12 05:34",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 28.533022847762602,
+    "sigma_min": 34.3937662500578,
     "night_frac": 0.84,
     "sun_sep": 129.5107840654851,
     "note": "84% of the transit at night"
@@ -5566,7 +5566,7 @@
     "btjd": 5001.076408087828,
     "utc": "2028-08-17 13:46",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 29.123592882349513,
+    "sigma_min": 35.05535805658076,
     "night_frac": 0.0,
     "sun_sep": 106.95390686623283,
     "note": "daytime or too low"
@@ -5576,7 +5576,7 @@
     "btjd": 5037.416270726304,
     "utc": "2028-09-22 21:59",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 29.720613938152443,
+    "sigma_min": 35.7198272815605,
     "night_frac": 0.24,
     "sun_sep": 80.60521885346455,
     "note": "24% of the transit at night"
@@ -5586,7 +5586,7 @@
     "btjd": 5073.75613336478,
     "utc": "2028-10-29 06:12",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 30.32370498937305,
+    "sigma_min": 36.38701629031859,
     "night_frac": 0.0,
     "sun_sep": 55.64279304017796,
     "note": "daytime or too low"
@@ -5596,7 +5596,7 @@
     "btjd": 5110.095996003256,
     "utc": "2028-12-04 14:23",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 30.93251099801501,
+    "sigma_min": 37.05677817805094,
     "night_frac": 0.0,
     "sun_sep": 41.28706743531318,
     "note": "too close to the Sun"
@@ -5606,7 +5606,7 @@
     "btjd": 5146.435858641731,
     "utc": "2029-01-09 22:31",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 31.54670109441043,
+    "sigma_min": 37.728975924355524,
     "night_frac": 0.0,
     "sun_sep": 50.257730989981575,
     "note": "daytime or too low"
@@ -5616,7 +5616,7 @@
     "btjd": 5182.775721280208,
     "utc": "2029-02-15 06:38",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 32.16596686213237,
+    "sigma_min": 38.40348162083603,
     "night_frac": 0.56,
     "sun_sep": 74.27623097441824,
     "note": "56% of the transit at night"
@@ -5626,7 +5626,7 @@
     "btjd": 5219.115583918683,
     "utc": "2029-03-23 14:43",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 32.79002072810392,
+    "sigma_min": 39.08017576522843,
     "night_frac": 0.0,
     "sun_sep": 101.50025343387588,
     "note": "daytime or too low"
@@ -5636,7 +5636,7 @@
     "btjd": 5255.455446557159,
     "utc": "2029-04-28 22:49",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 33.418594456696354,
+    "sigma_min": 39.75894661605573,
     "night_frac": 0.04,
     "sun_sep": 125.87993779645016,
     "note": "daytime or too low"
@@ -5646,7 +5646,7 @@
     "btjd": 5291.795309195635,
     "utc": "2029-06-04 06:57",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 34.051437745134244,
+    "sigma_min": 40.439689602339385,
     "night_frac": 1.0,
     "sun_sep": 138.7993421927041,
     "note": "full transit at night"
@@ -5656,7 +5656,7 @@
     "btjd": 5328.135171834111,
     "utc": "2029-07-10 15:08",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 34.688316916482634,
+    "sigma_min": 41.12230678338349,
     "night_frac": 0.0,
     "sun_sep": 130.42406031014593,
     "note": "daytime or too low"
@@ -5666,7 +5666,7 @@
     "btjd": 5364.475034472587,
     "utc": "2029-08-15 23:20",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 35.32901370578978,
+    "sigma_min": 41.80670635409856,
     "night_frac": 0.52,
     "sun_sep": 108.24760412835134,
     "note": "52% of the transit at night"
@@ -5676,7 +5676,7 @@
     "btjd": 5400.814897111063,
     "utc": "2029-09-21 07:33",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 35.973324134522144,
+    "sigma_min": 42.49280219174662,
     "night_frac": 0.0,
     "sun_sep": 81.96618117129483,
     "note": "daytime or too low"
@@ -5686,7 +5686,7 @@
     "btjd": 5437.154759749539,
     "utc": "2029-10-27 15:46",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 36.621057468195396,
+    "sigma_min": 43.18051344036975,
     "night_frac": 0.0,
     "sun_sep": 56.78299315924056,
     "note": "daytime or too low"
@@ -5696,7 +5696,7 @@
     "btjd": 5473.494622388015,
     "utc": "2029-12-02 23:57",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 37.27203525202657,
+    "sigma_min": 43.869764129511395,
     "night_frac": 0.0,
     "sun_sep": 41.50787311994969,
     "note": "too close to the Sun"
@@ -5706,7 +5706,7 @@
     "btjd": 5509.834485026491,
     "utc": "2030-01-08 08:05",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 37.926090419468736,
+    "sigma_min": 44.56048282415644,
     "night_frac": 0.04,
     "sun_sep": 49.29312091462009,
     "note": "too close to the Sun"
@@ -5716,7 +5716,7 @@
     "btjd": 5546.174347664967,
     "utc": "2030-02-13 16:12",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 38.58306646860886,
+    "sigma_min": 45.252602303103885,
     "night_frac": 0.0,
     "sun_sep": 72.90816941515666,
     "note": "daytime or too low"
@@ -5726,7 +5726,7 @@
     "btjd": 5582.514210303443,
     "utc": "2030-03-22 00:17",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 39.2428167015879,
+    "sigma_min": 45.94605926324683,
     "night_frac": 0.0,
     "sun_sep": 100.12817135492901,
     "note": "daytime or too low"
@@ -5736,7 +5736,7 @@
     "btjd": 5618.854072941919,
     "utc": "2030-04-27 08:23",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 39.90520352241957,
+    "sigma_min": 46.64079404747159,
     "night_frac": 0.84,
     "sun_sep": 124.80989327088284,
     "note": "84% of the transit at night"
@@ -5746,7 +5746,7 @@
     "btjd": 5655.193935580395,
     "utc": "2030-06-02 16:31",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 40.5700977888271,
+    "sigma_min": 47.3367503941018,
     "night_frac": 0.0,
     "sun_sep": 138.62734734953762,
     "note": "daytime or too low"
@@ -5756,7 +5756,7 @@
     "btjd": 5691.533798218871,
     "utc": "2030-07-09 00:41",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 41.23737821397264,
+    "sigma_min": 48.03387520600747,
     "night_frac": 0.84,
     "sun_sep": 131.2981708731867,
     "note": "84% of the transit at night"
@@ -5766,7 +5766,7 @@
     "btjd": 5727.873660857347,
     "utc": "2030-08-14 08:54",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 41.90693081421522,
+    "sigma_min": 48.73211833767403,
     "night_frac": 0.0,
     "sun_sep": 109.5303223018153,
     "note": "daytime or too low"
@@ -5776,7 +5776,7 @@
     "btjd": 5764.213523495822,
     "utc": "2030-09-19 17:07",
     "utc_note": "UTC at La Silla (light-travel time and TDB-UTC removed)",
-    "sigma_min": 42.57864839929261,
+    "sigma_min": 49.43143239868532,
     "night_frac": 0.0,
     "sun_sep": 83.32689441570655,
     "note": "daytime or too low"

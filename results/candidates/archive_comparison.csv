@@ -1,0 +1,8 @@
+# NASA Exoplanet Archive TAP, 2026-10-21: select pl_name, pl_orbper, pl_rade, sy_vmag, st_teff, disc_refname from pscomppars where tran_flag = 1 and pl_rade >= 3 and pl_rade <= 4 and sy_vmag < 10.5 and st_teff >= 3900 and st_teff <= 5300 order by pl_orbper
+pl_name,pl_orbper,pl_rade,sy_vmag,st_teff,disc_refname
+TOI-682.01,6.83923880000,3.74186000,9.9690000,5085.00,<a refstr=GIACALONE_ET_AL_2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161...24G/abstract target=ref>Giacalone et al. 2021</a>
+TOI-220 b,10.69526400000,3.03000000,10.4660000,5298.00,<a refstr=HOYER_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021MNRAS.505.3361H/abstract target=ref>Hoyer et al. 2021</a>
+TOI-431 d,12.46103000000,3.29000000,9.1200000,4850.00,<a refstr=OSBORN_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021MNRAS.507.2782O/abstract target=ref>Osborn et al. 2021</a>
+TOI-469.01,13.63082050000,3.41000000,9.4900000,5289.00,<a refstr=GIACALONE_ET_AL_2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161...24G/abstract target=ref>Giacalone et al. 2021</a>
+TOI-2076 c,21.01447000000,3.54000000,9.1390000,5187.00,<a refstr=HEDGES_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....162...54H/abstract target=ref>Hedges et al. 2021</a>
+TOI-2076 d,35.12803000000,3.27000000,9.1390000,5187.00,<a refstr=HEDGES_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....162...54H/abstract target=ref>Hedges et al. 2021</a>

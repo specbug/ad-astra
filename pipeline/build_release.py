@@ -41,11 +41,11 @@ def write_csv(path, header, rows):
         w.writerows(rows)
 
 
-def alias_and_secondary(lcs, P, T0, D, depth_ppm, known):
+def alias_and_secondary(lcs, P, T0, D, depth_ppm, depth_err_ppm, known):
     from transit_fit import box_depth
     alias_rows, sec_rows = [], []
     use = [lc for lc in lcs if lc["meta"]["sector"] != 66]
-    for k in (2, 3, 4, 5):
+    for k in range(2, 37):                   # every integer fraction of P down to 1.0 d
         Pa = P / k
         for lc in use:
             t = lc["time"]
@@ -57,7 +57,7 @@ def alias_and_secondary(lcs, P, T0, D, depth_ppm, known):
                 if b and b["coverage"] >= 0.6:
                     alias_rows.append([f"P/{k}", f"{Pa:.5f}", lc["meta"]["sector"], f"{tc + 2457000:.4f}",
                                        f"{b['depth'] * 1e6:.0f}", f"{b['err'] * 1e6:.0f}",
-                                       f"{(depth_ppm - b['depth'] * 1e6) / (b['err'] * 1e6):.1f}"])
+                                       f"{(depth_ppm - b['depth'] * 1e6) / math.hypot(b['err'] * 1e6, depth_err_ppm):.1f}"])
     for lc in use:
         t = lc["time"]
         for n in range(math.ceil((t.min() - T0 - P / 2) / P), math.floor((t.max() - T0 - P / 2) / P) + 1):
@@ -68,10 +68,16 @@ def alias_and_secondary(lcs, P, T0, D, depth_ppm, known):
     return alias_rows, sec_rows
 
 
+INTERMEDIATE = ("audit_402710280.json", "qlp_recheck_402710280.json", "qlp_timebase_402710280.json", "shape_free.json",
+                "second_signal_402710280.json", "second_signal_chain.npy", "fpp_tic402710280.json",
+                "fpp_tic402710280_v2.json", "fpp_tic402710280_v2_box5.json", "fpp_tic402710280_3.78d.json",
+                "alias_test.csv", "secondary_eclipse.csv", "archive_comparison.csv",
+                "prereg_predictions.json")
+
 PAPER_SCRIPTS = ("ffi_new", "centroid_vet", "audit_402710280", "fit_new", "shape_chains", "timing_diagnostics_402710280",
                  "secondary_scan_402710280", "blend_shape_402710280", "fpp_triceratops", "second_signal_402710280",
-                 "fpp_second_signal", "qlp_recheck_402710280", "qlp_timebase_402710280", "paper_figures", "paper_numbers", "build_release",
-                 "build_prereg")
+                 "fpp_second_signal", "qlp_recheck_402710280", "qlp_timebase_402710280", "archive_comparison", "paper_figures",
+                 "paper_numbers", "build_release", "build_prereg")
 
 
 def paper_modules():
@@ -142,9 +148,12 @@ def main():
               [[x["epoch"], f"{x['btjd'] + 2457000:.4f}", f"{x['sigma_min']:.1f}", f"{math.hypot(x['sigma_min'], rms):.1f}",
                 x["utc"], f"{x['night_frac']:.2f}"] for x in ex["all_next"][:30]])
     D = fit["t14_h"][0] / 24
-    al, sec = alias_and_secondary(lcs, P, T0, D, fit["depth_transits_ppm"][0], [t["tc"] for t in fit["times"]])
+    al, sec = alias_and_secondary(lcs, P, T0, D, *fit["depth_transits_ppm"], [t["tc"] for t in fit["times"]])
     write_csv(res / "alias_test.csv", ["alias", "period_d", "sector", "predicted_bjd_tdb", "depth_ppm", "err_ppm", "exclusion_sigma"], al)
     write_csv(res / "secondary_eclipse.csv", ["sector", "phase_half_bjd_tdb", "depth_ppm", "err_ppm"], sec)
+    for name in ("alias_test.csv", "secondary_eclipse.csv"):       # paper_numbers.py reads them from results/candidates
+        shutil.copy(res / name, C / name)
+    shutil.copy(C / "archive_comparison.csv", res / "archive_comparison.csv")
     for src, dst in (("blend_shape_402710280.json", "blend_test.json"), ("fpp_tic402710280_v2.json", "triceratops.json"),
                      ("fpp_tic402710280_v2_box5.json", "triceratops_5x5_apertures.json"),
                      ("shape_free.json", "shape_free_limb_darkening.json"),
@@ -171,6 +180,17 @@ def main():
     shutil.copy(ROOT / "pipeline" / "prereg_protocol.template.tex", REL / "code" / "pipeline" / "prereg_protocol.template.tex")
     print(len(mods), "modules in code/pipeline:", " ".join(mods))
     shutil.copy(ROOT / "requirements.txt", REL / "code" / "requirements.txt")
+    # the intermediate results the manuscript is filled from, so that paper_numbers.py runs from this record alone
+    inter = REL / "code" / "results"
+    (inter / "report").mkdir(parents=True)
+    (inter / "candidates").mkdir()
+    for name in ("transit_fits.json", "extras.json"):
+        json.dump({"TIC402710280": json.load(open(RESULTS / "report" / name))["TIC402710280"]},
+                  open(inter / "report" / name, "w"), indent=1, default=float)
+    for name in INTERMEDIATE:
+        shutil.copy(C / name, inter / "candidates" / name)
+    (REL / "code" / "paper").mkdir()
+    shutil.copy(ROOT / "paper" / "tic402710280.template.tex", REL / "code" / "paper" / "tic402710280.template.tex")
     man = REL / "manuscript"
     man.mkdir()
     for f in ("tic402710280.tex", "refs.bib", "tic402710280.pdf", "aastex701.cls", "aasjournalv7.bst"):
@@ -209,9 +229,9 @@ README = """# TIC 402710280.01: data products and analysis code
 Supporting record for the article *A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280*
 (R. Vora, 2026), submitted to the Astronomical Journal.
 
-Version 3. DOIs (all versions): this record 10.5281/zenodo.23390273; the preprint 10.5281/zenodo.23390316
-(arXiv:2610.26056). Earlier versions: this record 10.5281/zenodo.23390274 (v1) and 10.5281/zenodo.23466491 (v2);
-the preprint 10.5281/zenodo.23390317 (v1) and 10.5281/zenodo.23466634 (v2). The pre-registered test of the 2027
+Version 4. DOIs (all versions): this record 10.5281/zenodo.23390273; the preprint 10.5281/zenodo.23390316
+(arXiv:2610.26056). Earlier versions: this record 10.5281/zenodo.23390274 (v1), 10.5281/zenodo.23466491 (v2) and
+10.5281/zenodo.23538511 (v3); the preprint 10.5281/zenodo.23390317 (v1) and 10.5281/zenodo.23466634 (v2). The pre-registered test of the 2027
 transits, 10.5281/zenodo.23390325, has one version and will not be revised before the 2027 data are analysed.
 
 Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJD_TDB.
@@ -224,8 +244,9 @@ Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJ
 | `data/ffi_photometry/` | Our light curves of Sectors 100-103 from the calibrated TESS full-frame images (quality-flagged cadences removed; times barycentric for the target), with per-sector extraction metadata (camera, CCD, circular aperture radius in pixels around the target's position, scatter). QLP light curves of these sectors exist at MAST (released 2026 March-July) but are absent from the AWS copy of the archive that the pipeline reads; version 1 stated wrongly that none existed. |
 | `data/results/transit_times.csv` | Individual mid-times, uncertainties (red-noise scaled), O-C and depths (Table 2 of the paper). |
 | `data/results/parameters.json` | Ephemeris and transit-shape posterior summaries, convergence diagnostics and derived quantities (Table 3). |
-| `data/results/predicted_transits.csv` | The next 30 predicted transits, with ephemeris-only and total (including the observed timing scatter) uncertainties, and topocentric UTC and visibility at La Silla (Table 4). |
-| `data/results/alias_test.csv` | Every transit predicted by P/2-P/5 inside the data, with the measured flux and the exclusion significance. |
+| `data/results/predicted_transits.csv` | The next 30 predicted transits, with ephemeris-only and total (including the observed timing scatter) uncertainties, both including the covariance of T0 and P, and topocentric UTC and visibility at La Silla (Table 4). |
+| `data/results/alias_test.csv` | Every transit predicted by the integer fractions P/2 to P/36 inside the data, with the measured depth and the exclusion significance: the observed depth minus the measured one, divided by the two uncertainties in quadrature. |
+| `data/results/archive_comparison.csv` | The NASA Exoplanet Archive comparison sample of the introduction, with the query and its date in the header (`archive_comparison.py`). |
 | `data/results/secondary_eclipse.csv` | Flux at orbital phase 0.5. |
 | `data/results/blend_test.json` | Diluted-eclipse fits for Gaia DR3 5828441289812582656 (Figure 4). |
 | `data/results/triceratops*.json` | TRICERATOPS runs with the photometric apertures and with 5x5-pixel apertures. |
@@ -239,12 +260,17 @@ Ephemeris: P = {P:.5f} d, T0 = {T0:.4f} BJD_TDB. All times in this record are BJ
 | `data/results/sector66_diagnostics.json` | Quality-flag and coverage summary of the Sector 66 window. |
 | `data/results/qlp_comparison.json` | Version 2: the Sector 100 and 102 transits timed in the QLP light curves, with the QLP time-stamp offsets measured against the full-frame image headers; our photometry of the Sector 39 and 93 transits as a control; and the Sector 66 event fitted with the final shape for three baselines (`qlp_recheck_402710280.py`). |
 | `data/results/qlp_timebase.json` | Version 3: for each QLP light curve, the departure of TIME from a straight line in cadence number, the drift of the QLP offset, and the rate of change of the target's barycentric correction at the transit (`qlp_timebase_402710280.py`). |
+| `code/results/`, `code/paper/` | The intermediate results the manuscript is filled from and the manuscript template, so that `paper_numbers.py` runs from this record alone. |
 | `code/pipeline/` | The scripts that reproduce this paper and everything they import (Python), from git commit `{commit}` of the author's analysis repository. |
 | `manuscript/` | LaTeX source (AASTeX 7.0.1 class and bibliography style included), bibliography, figures and PDF of the submitted article. |
 
 ## Reproducing the paper
 
-With the packages in `code/requirements.txt` (and TRICERATOPS 1.1 for the false-positive calculation), from
+**From this record alone.** With the packages in `code/requirements.txt`, run `python paper_numbers.py` in
+`code/pipeline/`. It reads `code/results/` and writes `code/paper/tic402710280.tex`, the manuscript with every number
+filled in, which matches `manuscript/tic402710280.tex`. No network access is needed.
+
+**From the TESS data.** With the packages in `code/requirements.txt` (and TRICERATOPS 1.1 for the false-positive calculation), from
 `code/pipeline/`:
 
 1. `ffi_new.py` builds the Sector 100-103 light curves from the calibrated full-frame images on the MAST AWS bucket.
@@ -270,6 +296,12 @@ pixel files and calibrated full-frame images).
 
 ## Versions
 
+- Version 4: the manuscript as submitted to the Astronomical Journal. The uncertainties of predicted transit times
+  now include the covariance of T0 and P (correlation 0.47; 34 instead of 30 minutes at epoch 57). The alias test
+  covers every integer fraction of the period down to 1.0 d (P/2 to P/36), and its exclusion significances include
+  the uncertainty of the observed depth. Adds the Exoplanet Archive comparison sample (`archive_comparison.py`) and
+  the intermediate results under `code/results/`, from which `paper_numbers.py` regenerates the manuscript without
+  network access. The light curves, transit times, fits and ephemeris are unchanged.
 - Version 3: adds `qlp_timebase_402710280.py` and its output, `data/results/qlp_timebase.json`. They show that QLP
   applied one barycentric correction to all cadences of Sectors 100 and 102 instead of computing it for each cadence,
   which explains the offset in the QLP time stamps and its drift. Also adds the manuscript submitted to the

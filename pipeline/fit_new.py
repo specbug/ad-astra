@@ -84,6 +84,7 @@ def main():
     eT, eP = float(np.sqrt(cov[0, 0]) * sc), float(np.sqrt(cov[1, 1]) * sc)
     out["tref_btjd"] = [float(p[0]), eT, eT]
     out["period_d"] = [float(p[1]), eP, eP]
+    out["t0_period_cov_d2"] = float(cov[0, 1] * sc ** 2)
     out["ephemeris_chi2"] = [chi2, 2]
     out["times"] = [{"sector": s, "epoch": ep_of[s], "tc": meas[s]["tc"], "err_min": meas[s]["err_min"],
                      "depth_ppm": meas[s]["depth_ppm"], "depth_err_ppm": meas[s]["depth_err_ppm"],
@@ -103,6 +104,12 @@ def main():
     fresh = json.load(open(FITS))           # other fits may have been written to the file meanwhile
     fresh["TIC402710280"] = fits["TIC402710280"]
     json.dump(fresh, open(FITS, "w"), indent=1, default=float)
+    write_extras()
+
+
+def write_extras():
+    """Orbit, derived quantities and upcoming transits (results/report/extras.json) from the stored fit."""
+    fresh = json.load(open(FITS))
     ex = json.load(open(EXTRAS))
     ex["TIC402710280"] = predictions.periodic(fresh, "TIC402710280", 0.88, 0.817, 5182.0, 248.524, -63.55, now=4325.5)
     json.dump(ex, open(EXTRAS, "w"), indent=1, default=float)
