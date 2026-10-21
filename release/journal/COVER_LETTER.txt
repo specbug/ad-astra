@@ -12,8 +12,8 @@ probability of 0.003; without high-resolution imaging I classify the object as a
 
 The transit times scatter about a linear ephemeris by 22 minutes. The paper tests the instrumental explanations it can
 and reports the scatter without choosing between instrumental and dynamical origins. While checking it, I found that the
-QLP light curves of Sectors 100 and 102 carry a single barycentric correction per sector, an offset of about two minutes;
-I have reported this to the QLP team. The next transit, on 2027 February 19, falls in TESS Sector 114; the test of that
+QLP light curves of Sectors 100 and 102 apply one barycentric correction to every cadence in each sector, which shifts
+their time stamps by about two minutes; I have reported this to the QLP team. The next transit, on 2027 February 19, falls in TESS Sector 114; the test of that
 prediction is pre-registered on Zenodo (doi:10.5281/zenodo.23390325).
 
 The preprint is on arXiv (arXiv:2610.26056) and Zenodo (doi:10.5281/zenodo.23390316); the data and code that reproduce every

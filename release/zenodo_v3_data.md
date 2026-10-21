@@ -8,11 +8,11 @@ doi:10.5281/zenodo.23390273. The preprint record and the pre-registration are no
 - **Files:** remove the version 2 zip; upload the new one.
 - **Description:** append this paragraph.
 
-> Version 3 (October 2026) adds a test of how the QLP time stamps of Sectors 100 and 102 were corrected to the
-> barycenter (data/results/qlp_timebase.json, qlp_timebase_402710280.py): they carry one correction per sector, which
-> accounts for their offset and its drift. It also contains the manuscript as submitted to the Astronomical Journal
-> and figures regenerated with embedded fonts. Light curves, transit times, fits, the ephemeris and predictions are
-> byte-identical to version 2. Preprint: arXiv:2610.26056 (doi:10.48550/arXiv.2610.26056).
+> Version 3 adds qlp_timebase_402710280.py and its output, data/results/qlp_timebase.json. They show that QLP
+> applied one barycentric correction to all cadences of Sectors 100 and 102 instead of computing it for each cadence,
+> which explains the offset in the QLP time stamps and its drift of about 6 s per day. This version also includes the
+> manuscript submitted to the Astronomical Journal and the figures with embedded fonts. The light curves, transit
+> times, fits, ephemeris and predictions are unchanged from version 2. Preprint: arXiv:2610.26056.
 
 - **Related works:** add `arXiv:2610.26056`, relation *Is supplement to*, resource type *Publication / Preprint*.
 - **Communities:** request inclusion in the *AAS Journals* community.

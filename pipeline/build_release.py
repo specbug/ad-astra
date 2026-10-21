@@ -270,10 +270,11 @@ pixel files and calibrated full-frame images).
 
 ## Versions
 
-- Version 3: adds `data/results/qlp_timebase.json` and `qlp_timebase_402710280.py` (the QLP times of Sectors 100
-  and 102 carry one barycentric correction per sector, which accounts for their offset and its drift), regenerated
-  figures (embedded TrueType fonts), and the manuscript as submitted to the Astronomical Journal. The light curves,
-  transit times, fits, ephemeris and predictions are unchanged.
+- Version 3: adds `qlp_timebase_402710280.py` and its output, `data/results/qlp_timebase.json`. They show that QLP
+  applied one barycentric correction to all cadences of Sectors 100 and 102 instead of computing it for each cadence,
+  which explains the offset in the QLP time stamps and its drift. Also adds the manuscript submitted to the
+  Astronomical Journal and the figures with embedded fonts. The light curves, transit times, fits, ephemeris and
+  predictions are unchanged.
 - Version 2 (2026 October 19): adds `data/results/qlp_comparison.json` and `qlp_recheck_402710280.py` (the QLP light
   curves of Sectors 100 and 102 reproduce the timing excess between those transits; their time stamps are 121 and
   139 s early at the transits), the Sector 66 refit, and the version 2 manuscript. The light curves, transit times,
