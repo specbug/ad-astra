@@ -1,6 +1,6 @@
 # Zenodo data record, version 3 (record A only)
 
-Upload `release/tic402710280_zenodo.zip` (md5 a5236eae7ba99107d7d83296bf726a60) as a new version of
+Upload `release/tic402710280_zenodo.zip` (md5 16019ae7f82a1a381cfe5e600be81216) as a new version of
 doi:10.5281/zenodo.23390273. The preprint record and the pre-registration are not changed.
 
 - **Version:** 3.0

@@ -3,7 +3,7 @@
 ## 1. Zenodo: data record version 3 (`1_zenodo_data_v3/`)
 
 1. Open doi:10.5281/zenodo.23390273 → **New version**.
-2. Files: delete the version 2 zip; upload `tic402710280_zenodo.zip` (md5 a5236eae7ba99107d7d83296bf726a60).
+2. Files: delete the version 2 zip; upload `tic402710280_zenodo.zip` (md5 16019ae7f82a1a381cfe5e600be81216).
 3. Version: `3.0`. Publication date: today.
 4. Description: append the paragraph in `zenodo_v3_data.md`.
 5. Related works: add `arXiv:2610.26056`, relation **Is supplement to**.
