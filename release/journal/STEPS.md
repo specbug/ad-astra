@@ -23,7 +23,7 @@ Field by field in `3_aj_form/SUBMISSION_DETAILS.md`. In short:
 1. Account: link ORCID; enter your full postal address in the profile (not shown in the paper).
 2. Journal **AJ**; corridor **The Solar System, Exoplanets, and Astrobiology**.
 3. Upload every file in `2_aj_upload_files/` individually: `tic402710280.tex` as the manuscript, `fig1.pdf`–`fig6.pdf`
-   as figures, the rest as supporting LaTeX files. Compare the built PDF with `tic402710280_AJ.pdf` (10 pages).
+   as figures, the rest as supporting LaTeX files. Compare the built PDF with `tic402710280_AJ.pdf` (11 pages).
 4. Abstract: paste `3_aj_form/abstract_plain.txt`.
 5. Dual anonymous review: opt out.
 6. Datasets: MAST DOIs listed in the details file. LLM use: yes, paste the disclosure paragraph from the acknowledgments.

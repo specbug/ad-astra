@@ -27,7 +27,7 @@ AAS Journals community on Zenodo, which the AAS Data Editors curate.
 2. **Submit a manuscript** → journal **AJ**, corridor **The Solar System, Exoplanets, and Astrobiology**.
 3. **Files:** upload `tic402710280.tex` as the manuscript; `fig1.pdf`–`fig6.pdf` as figures; `refs.bib`,
    `tic402710280.bbl`, `aastex701.cls`, `aasjournalv7.bst` as supporting LaTeX files. Check the PDF the portal builds
-   against `tic402710280_AJ.pdf`: 10 pages, six figures, four tables, line numbers.
+   against `tic402710280_AJ.pdf`: 11 pages, six figures, four tables, line numbers.
 4. **Title, abstract, authors:** the title as in the manuscript; paste `abstract_plain.txt`; one author, Rishit Vora,
    corresponding.
 5. **Dual anonymous review:** opt out. The preprint is already public on arXiv and Zenodo.
