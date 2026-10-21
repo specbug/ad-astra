@@ -38,7 +38,8 @@ AAS Journals community on Zenodo, which the AAS Data Editors curate.
    - TESS-SPOC light curves: 10.17909/t9-wpz1-8s54
    - QLP light curves: 10.17909/t9-r086-e880
    - TESS calibrated full-frame images: 10.17909/0cp4-2j79
-   - TESS two-minute light curves (used in the search): 10.17909/t9-nmc8-f686
+   - TESS two-minute light curves (Sectors 99–107, used in the search): 10.17909/t9-nmc8-f686
+   - TESS Input Catalog: 10.17909/fwdt-2x66
 9. **LLM use:** answer yes, and paste the disclosure paragraph from the acknowledgments.
 10. **Financial:** request support from the **AAS Publication Support Fund**, with 100% of charges allocated to you.
     Answer the questions it asks (career stage, grant funding) truthfully, and paste `SUPPORT_FUND.txt` where it
