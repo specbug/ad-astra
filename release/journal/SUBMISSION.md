@@ -13,16 +13,13 @@ Editor makes the final assignment.
 | `tic402710280_AJ.pdf` | The compiled manuscript (AASTeX 7.0.1, line numbers on), for checking against the PDF the portal builds. |
 | `abstract_plain.txt` | The abstract in plain Unicode for the form (236 words; the limit is 250). |
 | `COVER_LETTER.txt` | Paste into the cover-letter field. |
+| `SUPPORT_FUND.txt` | Justification for the AAS Publication Support Fund request. |
 
 ## Before you submit
 
-1. **Postal address.** AAS requires one complete postal address for every author. Add it to `\affiliation{}` in the
-   manuscript (e.g. `Independent Researcher, <City>, <Country>`) and in your portal profile.
-2. **Read the AI disclosure** at the end of the acknowledgments and confirm it describes how the work was done. It is
-   your declaration. AAS requires the tool and its uses; you may add the model version.
-3. **Publish version 3 of the data record** (10.5281/zenodo.23390273) so the referee can run the new
-   `qlp_timebase_402710280.py`. Also submit the record to the AAS Journals community on Zenodo, which the AAS
-   Data Editors curate.
+**Publish version 3 of the data record** (10.5281/zenodo.23390273; files and fields in `release/zenodo_v3_data.md`).
+The journal manuscript quotes numbers from `qlp_timebase_402710280.py`, which only version 3 contains. Also request the
+AAS Journals community on Zenodo, which the AAS Data Editors curate.
 
 ## The portal: https://aas.msubmit.net
 
@@ -43,8 +40,9 @@ Editor makes the final assignment.
    - TESS calibrated full-frame images: 10.17909/0cp4-2j79
    - TESS two-minute light curves (used in the search): 10.17909/t9-nmc8-f686
 9. **LLM use:** answer yes, and paste the disclosure paragraph from the acknowledgments.
-10. **Financial:** request support from the **AAS Publication Support Fund** (independent researcher, no grant),
-    with 100% of charges allocated to you. At 2026 rates the article falls in Tier 1 (≤ 30 quanta: about 12 for text,
+10. **Financial:** request support from the **AAS Publication Support Fund**, with 100% of charges allocated to you.
+    Answer the questions it asks (career stage, grant funding) truthfully, and paste `SUPPORT_FUND.txt` where it
+    asks for a justification. At 2026 rates the article falls in Tier 1 (≤ 30 quanta: about 12 for text,
     6 figures, 4 tables), $1,425 before support.
 11. **Funding:** none.
 12. **UAT concepts:** Exoplanets (498); Transit photometry (1709); Mini Neptunes (1063); K dwarf stars (876).

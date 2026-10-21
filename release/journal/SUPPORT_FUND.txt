@@ -1,0 +1,5 @@
+I request full support from the AAS Publication Support Fund for this article.
+
+I am an independent researcher with no institutional affiliation. The work was done without a grant, an employer, or
+any other funding, and no source is available to me to pay article publication charges. The analysis uses only public
+TESS and Gaia data, and the data and code are openly archived on Zenodo (doi:10.5281/zenodo.23390273).
