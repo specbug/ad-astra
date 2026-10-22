@@ -13,7 +13,6 @@ Editor makes the final assignment.
 | `tic402710280_AJ.pdf` (top level) | The compiled merged PDF (AASTeX 7.0.1, line numbers on). Upload it with the source as a Manuscript file. |
 | `4_aj_form/abstract_plain.txt` | The abstract in plain Unicode for the form (226 words; the limit is 250). |
 | `4_aj_form/COVER_LETTER.txt` | Paste into the cover-letter field. |
-| `4_aj_form/SUPPORT_FUND.txt` | Justification for the AAS Publication Support Fund request. |
 
 The data record version 4 (10.5281/zenodo.23553448), which the manuscript cites, is published.
 
@@ -43,11 +42,8 @@ The data record version 4 (10.5281/zenodo.23553448), which the manuscript cites,
    - NASA Exoplanet Archive, Planetary Systems Composite table: 10.26133/NEA13
    - ExoFOP: 10.26134/ExoFOP5
 9. **LLM use:** answer yes, and paste the disclosure paragraph from the acknowledgments.
-10. **Financial:** you are responsible for the charges. Request support from the **AAS Publication Support Fund**
-    for the part you cannot pay: you contribute USD 500 and request USD 925 of the Tier 1 charge (≤ 30 quanta:
-    about 12 for text, 6 figures, 4 tables; USD 1,425 at 2026 rates). Answer the fund's questions (career stage,
-    grant funding) truthfully, and paste `SUPPORT_FUND.txt` where it asks for a justification. Approval is at the
-    AAS's discretion.
+10. **Financial:** you pay the full charge (Tier 1, ≤ 30 quanta: about 15 for text, 6 figures, 4 tables; USD 1,425
+    at 2026 rates). Allocate 100% to yourself and do not request the AAS Publication Support Fund.
 11. **Funding:** none.
 12. **UAT concepts:** Exoplanets (498); Transit photometry (1709); Mini Neptunes (1063); K dwarf stars (876).
 13. **Cover letter:** paste `COVER_LETTER.txt`.

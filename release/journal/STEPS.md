@@ -20,8 +20,7 @@ Field by field in `4_aj_form/SUBMISSION_DETAILS.md`. In short:
 4. Abstract: paste `4_aj_form/abstract_plain.txt`.
 5. Dual anonymous review: opt out.
 6. Datasets: MAST yes (five DOIs) and IPAC yes (10.26133/NEA13, 10.26134/ExoFOP5), as listed in the details file. LLM use: yes, paste the disclosure paragraph from the acknowledgments.
-7. Financial: request the **AAS Publication Support Fund** for USD 925; you pay USD 500. Paste
-   `4_aj_form/SUPPORT_FUND.txt`. Answer its questions (career stage, funding) truthfully.
+7. Financial: 100% paid by you; no Publication Support Fund request.
 8. Cover letter: paste `4_aj_form/COVER_LETTER.txt`. Submit.
 
 ## 3. arXiv v2 and Zenodo preprint version 3 (`2_arxiv_and_preprint/`)
