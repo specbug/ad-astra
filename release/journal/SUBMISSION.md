@@ -10,7 +10,7 @@ Editor makes the final assignment.
 | File | Use |
 |---|---|
 | `3_aj_upload_files/` | Flat LaTeX source: `tic402710280.tex`, `.bbl`, `refs.bib`, `aastex701.cls`, `aasjournalv7.bst`, `fig1.pdf`–`fig6.pdf`. Compiles with pdflatex alone. The portal cannot read folders, so upload the files individually. |
-| `tic402710280_AJ.pdf` (top level) | The compiled manuscript (AASTeX 7.0.1, line numbers on), for checking against the PDF the portal builds. |
+| `tic402710280_AJ.pdf` (top level) | The compiled merged PDF (AASTeX 7.0.1, line numbers on). Upload it with the source as a Manuscript file. |
 | `4_aj_form/abstract_plain.txt` | The abstract in plain Unicode for the form (226 words; the limit is 250). |
 | `4_aj_form/COVER_LETTER.txt` | Paste into the cover-letter field. |
 | `4_aj_form/SUPPORT_FUND.txt` | Justification for the AAS Publication Support Fund request. |
@@ -21,8 +21,10 @@ The data record version 4 (10.5281/zenodo.23553448), which the manuscript cites,
 
 1. Create an account, link your ORCID, and enter your postal address.
 2. **Submit a manuscript** → journal **AJ**, corridor **The Solar System, Exoplanets, and Astrobiology**.
-3. **Files:** upload `tic402710280.tex` as the manuscript; `fig1.pdf`–`fig6.pdf` as figures; `refs.bib`,
-   `tic402710280.bbl`, `aastex701.cls`, `aasjournalv7.bst` as supporting LaTeX files. Check the PDF the portal builds
+3. **Files:** upload `tic402710280.tex`, `tic402710280.bbl`, `refs.bib`, `aastex701.cls`, `aasjournalv7.bst` and
+   `fig1.pdf`–`fig6.pdf` from `3_aj_upload_files/`, plus `tic402710280_AJ.pdf` as the compiled merged PDF. Then set
+   each File Type: the `.tex` and `tic402710280_AJ.pdf` as **Manuscript file** (not Figure file), `fig1`–`fig6` as
+   figures, the rest as supporting LaTeX files. The portal also builds its own merged PDF from the source; check it
    against `tic402710280_AJ.pdf`: 11 pages, six figures, four tables, line numbers.
 4. **Title, abstract, authors:** the title as in the manuscript; paste `abstract_plain.txt`; one author, Rishit Vora,
    corresponding.
