@@ -652,7 +652,7 @@ FUNCTION {format.title}
 FUNCTION {format.title.misc}
 { title empty$
     { "" }
-    { title  add.comma remove.irrelevant.period.comma }
+    { title remove.irrelevant.period.comma }  % the next output adds the comma
   if$
 }
 
@@ -1596,7 +1596,7 @@ INTEGERS { labnameptr }
 FUNCTION {format.lab.names}
 { 's :=
   #1 'labnameptr :=
-  s labnameptr forname.format.string format.name$ add.blank%first.initial 
+  s labnameptr forname.format.string format.name$ duplicate$ empty$ 'skip$ 'add.blank if$ %first.initial; no blank for corporate authors 
   s labnameptr surname.format.string format.name$  *   
   s num.names$ duplicate$
   #2 >
@@ -1611,7 +1611,7 @@ FUNCTION {format.lab.names}
             }
             { " \& " * 
 	      #2 'labnameptr :=
-	      s labnameptr forname.format.string format.name$ add.blank%first.initial  
+	      s labnameptr forname.format.string format.name$ duplicate$ empty$ 'skip$ 'add.blank if$ %first.initial; no blank for corporate authors  
 	      s labnameptr surname.format.string format.name$  *  
               * }
           if$

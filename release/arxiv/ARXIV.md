@@ -1,7 +1,8 @@
 # Replacing arXiv:2610.26056 with the journal version (v2)
 
-The files here are built (`python build_journal.py` in `pipeline/`) from the final manuscript, which cites data record
-version 4 (doi:10.5281/zenodo.23553448). Upload them as they are.
+Submit to AJ first: the comment below says the paper is submitted. The files here are built
+(`python build_journal.py` in `pipeline/`) from the final manuscript, which cites data record version 4
+(doi:10.5281/zenodo.23553448). Upload them as they are.
 
 ## Files
 

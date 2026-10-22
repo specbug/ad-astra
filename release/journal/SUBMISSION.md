@@ -5,21 +5,17 @@ observational exoplanet papers to AJ: in the corridor *The Solar System, Exoplan
 between AJ and ApJ primarily depends on whether the content is primarily observational or theoretical". The Lead
 Editor makes the final assignment.
 
-## Files in this folder
+## Files (folders of the submission bundle)
 
 | File | Use |
 |---|---|
-| `tic402710280_AJ_source.zip` | Flat LaTeX source: `tic402710280.tex`, `.bbl`, `refs.bib`, `aastex701.cls`, `aasjournalv7.bst`, `fig1.pdf`–`fig6.pdf`. Compiles with pdflatex alone. The portal cannot read folders, so upload the files individually. |
-| `tic402710280_AJ.pdf` | The compiled manuscript (AASTeX 7.0.1, line numbers on), for checking against the PDF the portal builds. |
-| `abstract_plain.txt` | The abstract in plain Unicode for the form (220 words; the limit is 250). |
-| `COVER_LETTER.txt` | Paste into the cover-letter field. |
-| `SUPPORT_FUND.txt` | Justification for the AAS Publication Support Fund request. |
+| `3_aj_upload_files/` | Flat LaTeX source: `tic402710280.tex`, `.bbl`, `refs.bib`, `aastex701.cls`, `aasjournalv7.bst`, `fig1.pdf`–`fig6.pdf`. Compiles with pdflatex alone. The portal cannot read folders, so upload the files individually. |
+| `tic402710280_AJ.pdf` (top level) | The compiled manuscript (AASTeX 7.0.1, line numbers on), for checking against the PDF the portal builds. |
+| `4_aj_form/abstract_plain.txt` | The abstract in plain Unicode for the form (220 words; the limit is 250). |
+| `4_aj_form/COVER_LETTER.txt` | Paste into the cover-letter field. |
+| `4_aj_form/SUPPORT_FUND.txt` | Justification for the AAS Publication Support Fund request. |
 
-## Before you submit
-
-**Publish version 4 of the data record** (10.5281/zenodo.23390273; steps in `release/zenodo_v4_data.md`). The
-journal manuscript quotes the archive comparison, the extended alias test and the predictions with the T0–P
-covariance, which only version 4 contains.
+The data record version 4 (10.5281/zenodo.23553448), which the manuscript cites, is published.
 
 ## The portal: https://aas.msubmit.net
 
@@ -54,6 +50,6 @@ covariance, which only version 4 contains.
 
 - Expect the referee report within several weeks. Revisions use the `trackchanges` class option and
   `\added{}`/`\deleted{}` markup, with a response letter.
-- On acceptance: replace the arXiv version (arXiv v2) with the accepted text and add the journal reference and DOI;
-  publish the accepted version as version 3 of the Zenodo preprint record; then submit the community TOI at ExoFOP,
-  which requires the refereed paper.
+- On acceptance: replace the arXiv version with the accepted text (it becomes v3) and add the journal reference and
+  DOI; publish the accepted text as a new version of the Zenodo preprint record (version 4) and of the data record
+  (version 5); then submit the community TOI at ExoFOP, which requires the refereed paper.

@@ -1,4 +1,6 @@
-# Zenodo data record, version 4 (record A only)
+# Zenodo data record, version 4 (record A only): published as 10.5281/zenodo.23553448
+
+Kept for the record; nothing here remains to be done.
 
 Upload `release/tic402710280_zenodo.zip` as a new version of doi:10.5281/zenodo.23390273. This step changes only the
 data record; the pre-registration is never changed.

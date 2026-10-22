@@ -21,7 +21,7 @@
   \dodoi{10.1051/0004-6361/202243462}
 
 % type= article
-\bibitem[{ {Astropy Collaboration} {et~al.}(2022){Astropy Collaboration},
+\bibitem[{{Astropy Collaboration} {et~al.}(2022){Astropy Collaboration},
   {Price-Whelan}, {Lim}, {et~al.}}]{Astropy2022}
 {Astropy Collaboration}, {Price-Whelan}, A.~M., {Lim}, P.~L., {et~al.} 2022,
   \bibinfo{title}{{The Astropy Project: Sustaining and Growing a
@@ -32,7 +32,7 @@
 \bibitem[{C.~E. {Brasseur} {et~al.}(2019){Brasseur}, {Phillip}, {Fleming},
   {Mullally}, \& {White}}]{Brasseur2019}
 {Brasseur}, C.~E., {Phillip}, C., {Fleming}, S.~W., {Mullally}, S.~E., \&
-  {White}, R.~L. 2019, {Astrocut: Tools for creating cutouts of TESS images},,
+  {White}, R.~L. 2019, {Astrocut: Tools for creating cutouts of TESS images},
   Astrophysics Source Code Library, record ascl:1905.007
 
 % type= article
@@ -46,7 +46,7 @@
 \bibitem[{C.~J. {Burke} {et~al.}(2020){Burke}, {Levine}, {Fausnaugh},
   {et~al.}}]{Burke2020}
 {Burke}, C.~J., {Levine}, A., {Fausnaugh}, M., {et~al.} 2020, {TESS-Point: High
-  precision TESS pointing tool},, Astrophysics Source Code Library, record
+  precision TESS pointing tool}, Astrophysics Source Code Library, record
   ascl:2003.001
 
 % type= article
@@ -61,7 +61,7 @@
 \bibitem[{D.~A. {Caldwell} {et~al.}(2020{\natexlab{b}}){Caldwell}
   {et~al.}}]{TESSSPOC}
 {Caldwell}, D.~A., {et~al.} 2020{\natexlab{b}}, {TESS Light Curves From Full
-  Frame Images (``TESS-SPOC'')},, STScI/MAST \dodoi{10.17909/t9-wpz1-8s54}
+  Frame Images (``TESS-SPOC'')}, STScI/MAST \dodoi{10.17909/t9-wpz1-8s54}
 
 % type= article
 \bibitem[{J. {Chen} \& D. {Kipping}(2017){Chen} \& {Kipping}}]{ChenKipping2017}
@@ -100,15 +100,15 @@
   \dodoi{10.3847/1538-3881/aa80eb}
 
 % type= article
-\bibitem[{ {Gaia Collaboration} {et~al.}(2016){Gaia Collaboration}, {Prusti},
+\bibitem[{{Gaia Collaboration} {et~al.}(2016){Gaia Collaboration}, {Prusti},
   {de Bruijne}, {et~al.}}]{Gaia2016}
 {Gaia Collaboration}, {Prusti}, T., {de Bruijne}, J.~H.~J., {et~al.} 2016,
   \bibinfo{title}{{The Gaia mission},} A\&A, 595, A1,
   \dodoi{10.1051/0004-6361/201629272}
 
 % type= article
-\bibitem[{ {Gaia Collaboration} {et~al.}(2023){Gaia Collaboration},
-  {Vallenari}, {Brown}, {et~al.}}]{GaiaDR3}
+\bibitem[{{Gaia Collaboration} {et~al.}(2023){Gaia Collaboration}, {Vallenari},
+  {Brown}, {et~al.}}]{GaiaDR3}
 {Gaia Collaboration}, {Vallenari}, A., {Brown}, A.~G.~A., {et~al.} 2023,
   \bibinfo{title}{{Gaia Data Release 3. Summary of the content and survey
   properties},} A\&A, 674, A1, \dodoi{10.1051/0004-6361/202243940}
@@ -117,7 +117,7 @@
 \bibitem[{S. {Giacalone} \& C.~D. {Dressing}(2020){Giacalone} \&
   {Dressing}}]{Giacalone2020}
 {Giacalone}, S., \& {Dressing}, C.~D. 2020, {triceratops: Candidate exoplanet
-  rating tool},, Astrophysics Source Code Library, record ascl:2002.004
+  rating tool}, Astrophysics Source Code Library, record ascl:2002.004
 
 % type= article
 \bibitem[{S. {Giacalone} {et~al.}(2021){Giacalone}, {Dressing}, {Jensen},
@@ -180,7 +180,7 @@
 % type= misc
 \bibitem[{C.~X. {Huang} {et~al.}(2020{\natexlab{c}}){Huang} {et~al.}}]{QLPdata}
 {Huang}, C.~X., {et~al.} 2020{\natexlab{c}}, {TESS Lightcurves From The MIT
-  Quick-Look Pipeline (``QLP'')},, STScI/MAST \dodoi{10.17909/t9-r086-e880}
+  Quick-Look Pipeline (``QLP'')}, STScI/MAST \dodoi{10.17909/t9-r086-e880}
 
 % type= article
 \bibitem[{J.~D. {Hunter}(2007){Hunter}}]{Hunter2007}
@@ -222,10 +222,9 @@
   in Python},} PASP, 127, 1161, \dodoi{10.1086/683602}
 
 % type= misc
-\bibitem[{ {Lightkurve Collaboration}(2018){Lightkurve
-  Collaboration}}]{Lightkurve2018}
+\bibitem[{{Lightkurve Collaboration}(2018)}]{Lightkurve2018}
 {Lightkurve Collaboration}. 2018, {Lightkurve: Kepler and TESS time series
-  analysis in Python},, Astrophysics Source Code Library, record ascl:1812.013
+  analysis in Python}, Astrophysics Source Code Library, record ascl:1812.013
 
 % type= article
 \bibitem[{L. {Lindegren} {et~al.}(2021){Lindegren}, {Klioner}, {Hern{\'a}ndez},
@@ -235,9 +234,8 @@
   649, A2, \dodoi{10.1051/0004-6361/202039709}
 
 % type= misc
-\bibitem[{ {NASA Exoplanet Science Institute}(2020){NASA Exoplanet Science
-  Institute}}]{NEAcomp}
-{NASA Exoplanet Science Institute}. 2020, {Planetary Systems Composite Table},,
+\bibitem[{{NASA Exoplanet Science Institute}(2020)}]{NEAcomp}
+{NASA Exoplanet Science Institute}. 2020, {Planetary Systems Composite Table},
   IPAC \dodoi{10.26133/NEA13}
 
 % type= article
@@ -276,14 +274,14 @@
   AJ, 158, 138, \dodoi{10.3847/1538-3881/ab3467}
 
 % type= misc
-\bibitem[{ {TESS Team}(2021){TESS Team}}]{TESSLC}
-{TESS Team}. 2021, {TESS Light Curves - All Sectors},, STScI/MAST
+\bibitem[{{TESS Team}(2021)}]{TESSLC}
+{TESS Team}. 2021, {TESS Light Curves - All Sectors}, STScI/MAST
   \dodoi{10.17909/t9-nmc8-f686}
 
 % type= misc
-\bibitem[{ {TESS Team}(2022){TESS Team}}]{TESSFFI}
-{TESS Team}. 2022, {TESS Calibrated Full Frame Images: All Sectors},,
-  STScI/MAST \dodoi{10.17909/0cp4-2j79}
+\bibitem[{{TESS Team}(2022)}]{TESSFFI}
+{TESS Team}. 2022, {TESS Calibrated Full Frame Images: All Sectors}, STScI/MAST
+  \dodoi{10.17909/0cp4-2j79}
 
 % type= article
 \bibitem[{J.~D. {Twicken} {et~al.}(2018){Twicken}, {Catanzarite}, {Clarke},
@@ -303,12 +301,12 @@
 % type= misc
 \bibitem[{R. {Vora}(2026{\natexlab{a}}){Vora}}]{DataRecord}
 {Vora}, R. 2026{\natexlab{a}}, {TIC 402710280.01: data products and analysis
-  code},, Zenodo, version 4.0 \dodoi{10.5281/zenodo.23553448}
+  code}, Zenodo, version 4.0 \dodoi{10.5281/zenodo.23553448}
 
 % type= misc
 \bibitem[{R. {Vora}(2026{\natexlab{b}}){Vora}}]{PreReg}
 {Vora}, R. 2026{\natexlab{b}}, {A Pre-registered Test of the Transiting Planet
-  Candidate TIC 402710280.01 at Its Predicted Transits of 2027},, Zenodo
+  Candidate TIC 402710280.01 at Its Predicted Transits of 2027}, Zenodo
   \dodoi{10.5281/zenodo.23390325}
 
 % type= article

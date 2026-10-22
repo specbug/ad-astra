@@ -158,7 +158,9 @@ def main():
     words = {2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten"}
     rep["N_P2"] = words.get(len(sig_of["P/2"]), str(len(sig_of["P/2"])))
     rep["N_P3"] = words.get(len(sig_of["P/3"]), str(len(sig_of["P/3"])))
-    rep["N_P45"] = str(len(sig_of["P/4"]) + len(sig_of["P/5"]))
+    # every P/2 epoch is also a P/4 epoch: count only the windows not already tested at P/2
+    p2_times = {r["predicted_bjd_tdb"] for r in al if r["alias"] == "P/2"}
+    rep["N_P45"] = str(sum(1 for r in al if r["alias"] in ("P/4", "P/5") and r["predicted_bjd_tdb"] not in p2_times))
     rep["P2_SECTORS"] = (", ".join(p2_secs[:-1]) + ("," if len(p2_secs) > 2 else "") + (" and~" if len(p2_secs) > 1 else "")
                          + p2_secs[-1])
     sec = list(csv.DictReader(open(rel / "secondary_eclipse.csv")))
@@ -215,7 +217,6 @@ def main():
     runs = [r_["FPP"] for r_ in fv2["runs"]]
     rep["FPP_RANGE"] = f"{min(runs):.3f}--{max(runs):.3f}"
     rep["FPP_BOX5"] = f"{json.load(open(RESULTS / 'candidates' / 'fpp_tic402710280_v2_box5.json'))['FPP_mean']:.3f}"
-    rep["FPP_LINFOLD"] = f"{json.load(open(RESULTS / 'candidates' / 'fpp_tic402710280.json'))['FPP_mean']:.3f}"
     from archive_comparison import load as load_archive
     adate, arows = load_archive()
     words_ = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"}
@@ -271,7 +272,7 @@ def main():
         pl = 0.0
         for r in d["runs"]:
             pl += sum(v for k_, v in r["scenarios"].items() if k_.split("@")[0] in ("TP", "PTP", "STP")) / len(d["runs"])
-        rep["SS_FPP"] = (f"\\texttt{{TRICERATOPS}}, applied as in \\S\\ref{{sec:fpp}}, assigns {100 * pl:.0f}\\% of the "
+        rep["SS_FPP"] = (f"\\texttt{{TRICERATOPS}}, applied as in \\S\\ref{{sec:fpp}} but with the 3-pixel QLP aperture in Sector~93, assigns {100 * pl:.0f}\\% of the "
                          f"probability to a planet around the target or an unresolved companion but gives "
                          f"${{\\rm FPP}} = {d['FPP_mean']:.2f} \\pm {d['FPP_std']:.2f}$ and ${{\\rm NFPP}} = "
                          f"{d['NFPP_mean']:.3f} \\pm {d['NFPP_std']:.3f}$, above the NFPP limit of 0.001 below which "

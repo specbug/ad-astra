@@ -1,22 +1,13 @@
 # TIC 402710280.01: what to do, in order
 
-## 1. Zenodo: data record version 4 (`1_zenodo_data_v4/`)
+## 1. Zenodo data record version 4: done
 
-1. Open the version 4 draft of doi:10.5281/zenodo.23390273 (reserved DOI 10.5281/zenodo.23553448).
-2. Files: delete the version 3 zip; upload the rebuilt `tic402710280_zenodo.zip`.
-3. Version: `4.0`. Publication date: today.
-4. Description: append the paragraph in `zenodo_v4_data.md`. Related works and the AAS Journals request carry over.
-5. Publish.
+Published as 10.5281/zenodo.23553448 (md5 2d64942bb2af548adef4e9c786248d22). Nothing more to do; do not create a
+version 5 now. The pre-registration (10.5281/zenodo.23390325) is never changed.
 
-Do not touch the pre-registration.
+## 2. AJ submission at https://aas.msubmit.net
 
-## 2. arXiv v2 and Zenodo preprint version 3 (`2_arxiv_and_preprint/`)
-
-After step 1: replace arXiv:2610.26056 with the journal version and publish the same PDF as version 3
-of the Zenodo preprint record. Steps in `ARXIV.md`.
-
-## 3. AJ submission at https://aas.msubmit.net
-
+Do this before step 3: the arXiv comment and the Zenodo preprint description say "submitted to AJ".
 Field by field in `4_aj_form/SUBMISSION_DETAILS.md`. In short:
 
 1. Account: link ORCID; enter your full postal address in the profile (not shown in the paper).
@@ -29,6 +20,12 @@ Field by field in `4_aj_form/SUBMISSION_DETAILS.md`. In short:
 7. Financial: request the **AAS Publication Support Fund**, 100% to you; paste `4_aj_form/SUPPORT_FUND.txt`. Answer its
    questions (career stage, funding) truthfully.
 8. Cover letter: paste `4_aj_form/COVER_LETTER.txt`. Submit.
+
+## 3. arXiv v2 and Zenodo preprint version 3 (`2_arxiv_and_preprint/`)
+
+The replacement already sent to arXiv carries the earlier files. If it is not yet announced, unsubmit it, replace the
+files with `tic402710280_arxiv.tar.gz` from this bundle, and resubmit. Then publish `tic402710280.pdf` from the same
+folder as version 3 of the Zenodo preprint record. Steps in `ARXIV.md`.
 
 ## 4. Indexing (any time)
 
