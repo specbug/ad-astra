@@ -25,6 +25,6 @@ New version → remove the old PDF, upload `tic402710280.pdf` → Version `3.0` 
 
 > Version 3 is the manuscript submitted to the Astronomical Journal, identical to arXiv:2610.26056v2. The predicted
 > transit times now carry the covariance of T0 and P, the alias test covers every integer fraction of the period
-> down to one day, and the acknowledgments thank K. Aggarwal and P. S. D'Andrea.
+> down to one day, and the acknowledgments thank Keshav Aggarwal and Pascal S. D'Andrea.
 
 Publish.
