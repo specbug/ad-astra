@@ -37,10 +37,11 @@ The data record version 4 (10.5281/zenodo.23553448), which the manuscript cites,
    - TESS two-minute light curves (Sectors 99–107, used in the search): 10.17909/t9-nmc8-f686
    - TESS Input Catalog: 10.17909/fwdt-2x66
 9. **LLM use:** answer yes, and paste the disclosure paragraph from the acknowledgments.
-10. **Financial:** request support from the **AAS Publication Support Fund**, with 100% of charges allocated to you.
-    Answer the questions it asks (career stage, grant funding) truthfully, and paste `SUPPORT_FUND.txt` where it
-    asks for a justification. At 2026 rates the article falls in Tier 1 (≤ 30 quanta: about 12 for text,
-    6 figures, 4 tables), $1,425 before support.
+10. **Financial:** you are responsible for the charges. Request support from the **AAS Publication Support Fund**
+    for the part you cannot pay: you contribute USD 500 and request USD 925 of the Tier 1 charge (≤ 30 quanta:
+    about 12 for text, 6 figures, 4 tables; USD 1,425 at 2026 rates). Answer the fund's questions (career stage,
+    grant funding) truthfully, and paste `SUPPORT_FUND.txt` where it asks for a justification. Approval is at the
+    AAS's discretion.
 11. **Funding:** none.
 12. **UAT concepts:** Exoplanets (498); Transit photometry (1709); Mini Neptunes (1063); K dwarf stars (876).
 13. **Cover letter:** paste `COVER_LETTER.txt`.

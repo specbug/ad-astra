@@ -23,7 +23,8 @@ The preprint is on arXiv (arXiv:2610.26056), and the data and code that reproduc
 (doi:10.5281/zenodo.23553448). The acknowledgments disclose the use of a large language model in preparing the work.
 The manuscript is not under consideration elsewhere, and I have no competing interests.
 
-I am an independent researcher without grant funding and request support from the AAS Publication Support Fund.
+I am an independent researcher without grant funding. I can pay USD 500 of the publication charge and request
+support for the remainder from the AAS Publication Support Fund.
 
 Sincerely,
 Rishit Vora

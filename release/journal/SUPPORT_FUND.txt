@@ -1,5 +1,6 @@
-I request full support from the AAS Publication Support Fund for this article.
+I request partial support from the AAS Publication Support Fund for this article.
 
-I am an independent researcher with no institutional affiliation. The work was done without a grant, an employer, or
-any other funding, and no source is available to me to pay article publication charges. The analysis uses only public
-TESS and Gaia data, and the data and code are openly archived on Zenodo (doi:10.5281/zenodo.23390273).
+I am an independent researcher with no institutional affiliation. The work was done without a grant, an employer's
+support, or any other funding. I can pay USD 500 of the article charge myself and request support for the remainder
+(USD 925 of the USD 1,425 Tier 1 charge). The analysis uses only public TESS and Gaia data, and the data and code are
+openly archived on Zenodo (doi:10.5281/zenodo.23390273).
