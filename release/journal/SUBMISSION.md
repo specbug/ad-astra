@@ -32,7 +32,7 @@ covariance, which only version 4 contains.
    corresponding.
 5. **Dual anonymous review:** opt out. The preprint is already public on arXiv and Zenodo.
 6. **Ethics:** read and accept the Professional and Ethical Standards.
-7. **Digital assets:** none in the article. Give the Zenodo data record (version 4, the DOI reserved in step 1) as data stored in a
+7. **Digital assets:** none in the article. Give the Zenodo data record (version 4, 10.5281/zenodo.23553448) as data stored in a
    repository.
 8. **Datasets in astronomy archives:** yes, MAST.
    - TESS-SPOC light curves: 10.17909/t9-wpz1-8s54

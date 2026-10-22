@@ -20,7 +20,7 @@ TESS Sector 114 on 2027 February 19, and the test of that prediction is pre-regi
 (doi:10.5281/zenodo.23390325).
 
 The preprint is on arXiv (arXiv:2610.26056), and the data and code that reproduce the results are archived on Zenodo
-(doi:10.5281/zenodo.23390273). The acknowledgments disclose the use of a large language model in preparing the work.
+(doi:10.5281/zenodo.23553448). The acknowledgments disclose the use of a large language model in preparing the work.
 The manuscript is not under consideration elsewhere, and I have no competing interests.
 
 I am an independent researcher without grant funding and request support from the AAS Publication Support Fund.

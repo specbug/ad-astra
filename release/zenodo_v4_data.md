@@ -1,12 +1,10 @@
 # Zenodo data record, version 4 (record A only)
 
-Upload `release/tic402710280_zenodo.zip` as a new version of doi:10.5281/zenodo.23390273. The preprint record and the
-pre-registration are not changed.
+Upload `release/tic402710280_zenodo.zip` as a new version of doi:10.5281/zenodo.23390273. This step changes only the
+data record; the pre-registration is never changed.
 
-1. Open the record → **New version**. Before uploading, click **Get a DOI now** (Reserve DOI) and send me the DOI. The
-   manuscript inside the zip cites this record, and I rebuild the zip with the reserved DOI (about two minutes). If you
-   skip this, the manuscript cites the all-versions DOI, which is valid but less precise.
-2. **Files:** remove the version 3 zip; upload the rebuilt one (I will give its md5).
+1. Open the draft of version 4 (reserved DOI 10.5281/zenodo.23553448).
+2. **Files:** remove the version 3 zip; upload `tic402710280_zenodo.zip` (md5 2d64942bb2af548adef4e9c786248d22).
 3. **Version:** 4.0. **Publication date:** the day you publish.
 4. **Description:** append this paragraph.
 

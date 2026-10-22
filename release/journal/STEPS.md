@@ -2,8 +2,7 @@
 
 ## 1. Zenodo: data record version 4 (`1_zenodo_data_v4/`)
 
-1. Open doi:10.5281/zenodo.23390273 → **New version** → **Get a DOI now**. Send me the reserved DOI; I put it in the
-   manuscript and rebuild the zip and the AJ files.
+1. Open the version 4 draft of doi:10.5281/zenodo.23390273 (reserved DOI 10.5281/zenodo.23553448).
 2. Files: delete the version 3 zip; upload the rebuilt `tic402710280_zenodo.zip`.
 3. Version: `4.0`. Publication date: today.
 4. Description: append the paragraph in `zenodo_v4_data.md`. Related works and the AAS Journals request carry over.
@@ -13,7 +12,7 @@ Do not touch the pre-registration.
 
 ## 2. arXiv v2 and Zenodo preprint version 3 (`2_arxiv_and_preprint/`)
 
-After step 1 and my rebuild: replace arXiv:2610.26056 with the journal version and publish the same PDF as version 3
+After step 1: replace arXiv:2610.26056 with the journal version and publish the same PDF as version 3
 of the Zenodo preprint record. Steps in `ARXIV.md`.
 
 ## 3. AJ submission at https://aas.msubmit.net
