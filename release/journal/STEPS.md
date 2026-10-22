@@ -38,5 +38,7 @@ folder as version 3 of the Zenodo preprint record. Steps in `ARXIV.md`.
 ## 5. While under review
 
 - Revision tests prepared in parallel: the Sector 100/102 image-clock check and the Sector 102 systematics spread.
+- At revision: add ExoFOP (doi:10.26134/ExoFOP5) as a reference entry, not only in the acknowledgments, and cite it
+  where §1 uses it (AAS guide §2.14.6 asks for third-party DOIs in the bibliography).
 - Leave arXiv and Zenodo unchanged until acceptance; then update both to the accepted text, add the journal reference
   on arXiv, and submit the community TOI at ExoFOP.
