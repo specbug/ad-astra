@@ -34,8 +34,8 @@ carefully before the final click.
    - 11 pages, no line numbers;
    - acknowledgments begin "The author thanks Keshav Aggarwal (student visitor, Space Physics Laboratory, Vikram
      Sarabhai Space Centre, India)";
-   - §6.4 says "a circle of 2 pixels radius in Sector 93", and its footnote ends with the 5 × 5-pixel result (no
-     "FPP = 0.015" sentence);
+   - §6.4 says "a circle of 2 pixels radius in Sector 93", and its footnote ends with "NFPP = 6 × 10⁻⁷." (no
+     sentence about stacking on the linear ephemeris);
    - references read "(Gaia Collaboration et al. 2016, 2023)" with no space after the parenthesis, and no ",,".
 8. **Submit.** The status changes to *submitted*; v2 is announced on the next announcement day and v1 stays
    available.
