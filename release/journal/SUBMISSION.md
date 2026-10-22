@@ -38,6 +38,10 @@ The data record version 4 (10.5281/zenodo.23553448), which the manuscript cites,
    - TESS calibrated full-frame images: 10.17909/0cp4-2j79
    - TESS two-minute light curves (Sectors 99–107, used in the search): 10.17909/t9-nmc8-f686
    - TESS Input Catalog: 10.17909/fwdt-2x66
+   **IPAC data:** yes. The introduction's comparison sample comes from the NASA Exoplanet Archive and the novelty
+   check uses ExoFOP:
+   - NASA Exoplanet Archive, Planetary Systems Composite table: 10.26133/NEA13
+   - ExoFOP: 10.26134/ExoFOP5
 9. **LLM use:** answer yes, and paste the disclosure paragraph from the acknowledgments.
 10. **Financial:** you are responsible for the charges. Request support from the **AAS Publication Support Fund**
     for the part you cannot pay: you contribute USD 500 and request USD 925 of the Tier 1 charge (≤ 30 quanta:

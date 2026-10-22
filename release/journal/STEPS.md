@@ -19,7 +19,7 @@ Field by field in `4_aj_form/SUBMISSION_DETAILS.md`. In short:
    LaTeX files. Compare the portal's own merged PDF with `tic402710280_AJ.pdf` (11 pages).
 4. Abstract: paste `4_aj_form/abstract_plain.txt`.
 5. Dual anonymous review: opt out.
-6. Datasets: MAST DOIs listed in the details file. LLM use: yes, paste the disclosure paragraph from the acknowledgments.
+6. Datasets: MAST yes (five DOIs) and IPAC yes (10.26133/NEA13, 10.26134/ExoFOP5), as listed in the details file. LLM use: yes, paste the disclosure paragraph from the acknowledgments.
 7. Financial: request the **AAS Publication Support Fund** for USD 925; you pay USD 500. Paste
    `4_aj_form/SUPPORT_FUND.txt`. Answer its questions (career stage, funding) truthfully.
 8. Cover letter: paste `4_aj_form/COVER_LETTER.txt`. Submit.
