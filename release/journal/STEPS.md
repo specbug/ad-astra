@@ -1,9 +1,11 @@
 # TIC 402710280.01: what to do, in order
 
-## 1. Zenodo data record version 4: done
+## 1. Zenodo data record version 4: published; add one note
 
-Published as 10.5281/zenodo.23553448 (md5 2d64942bb2af548adef4e9c786248d22). Nothing more to do; do not create a
-version 5 now. The pre-registration (10.5281/zenodo.23390325) is never changed.
+Published as 10.5281/zenodo.23553448 (md5 2d64942bb2af548adef4e9c786248d22). Its manuscript copy is a
+pre-submission snapshot, so open the record → **Edit** → append the note at the end of
+`1_zenodo_data_v4/zenodo_v4_data.md` to the description → **Publish**. This edits metadata only and creates no new
+version; do not upload files. The pre-registration (10.5281/zenodo.23390325) is never changed.
 
 ## 2. AJ submission at https://aas.msubmit.net
 
