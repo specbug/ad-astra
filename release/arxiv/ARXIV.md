@@ -1,7 +1,7 @@
 # Replacing arXiv:2610.26056 with the journal version (v2)
 
-Build the files with `python build_journal.py` (in `pipeline/`) after the manuscript is final. Do this after the Zenodo
-data record version 4 is published, because the manuscript cites it.
+The files here are built (`python build_journal.py` in `pipeline/`) from the final manuscript, which cites data record
+version 4 (doi:10.5281/zenodo.23553448). Upload them as they are.
 
 ## Files
 
