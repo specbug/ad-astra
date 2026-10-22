@@ -60,9 +60,8 @@
 % type= misc
 \bibitem[{D.~A. {Caldwell} {et~al.}(2020{\natexlab{b}}){Caldwell}
   {et~al.}}]{TESSSPOC}
-{Caldwell}, D.~A., {et~al.} 2020{\natexlab{b}}, {TESS Science Processing
-  Operations Center FFI Target List Products},, STScI/MAST
-  \dodoi{10.17909/t9-wpz1-8s54}
+{Caldwell}, D.~A., {et~al.} 2020{\natexlab{b}}, {TESS Light Curves From Full
+  Frame Images (``TESS-SPOC'')},, STScI/MAST \dodoi{10.17909/t9-wpz1-8s54}
 
 % type= article
 \bibitem[{J. {Chen} \& D. {Kipping}(2017){Chen} \& {Kipping}}]{ChenKipping2017}
