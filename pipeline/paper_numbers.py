@@ -148,12 +148,9 @@ def main():
     rep["ALIAS_HI_SIG"] = f"{math.floor(min(v[1] for v in hi.values()))}"
     # periods below the last tested fraction: the longest transit they allow, against the observed duration
     p_sub, t14 = P / (kmax + 1), f["t14_h"][0]
-    rep["SUB_TCIRC"] = f"{longest_transit_h(RHO_TIC, p_sub, k[0]):.1f}"
     rep["SUB_TMAX"] = f"{longest_transit_h(RHO_TIC, p_sub, k[0], q=1.0):.1f}"
     rho_lim = brentq(lambda r_: longest_transit_h(r_, p_sub, k[0], q=1.0) - t14, 0.1, RHO_TIC)
-    rep["SUB_RHO"], rep["SUB_RHO_SIG"] = f"{rho_lim:.2f}", f"{(RHO_TIC - rho_lim) / E_RHO:.1f}"
-    rep["SUB_RHO3"] = f"{RHO_TIC - 3 * E_RHO:.2f}"
-    rep["SUB_TMAX15"] = f"{longest_transit_h(RHO_TIC - 3 * E_RHO, p_sub, k[0], q=1.5):.1f}"
+    rep["SUB_RHO_SIG"] = f"{(RHO_TIC - rho_lim) / E_RHO:.1f}"
     rep["BETA_MAX"] = f"{max(t['beta'] for t in f['times']):.1f}"
     p2_secs = [r["sector"] for r in al if r["alias"] == "P/2"]
     rep["ALIAS_MIN"] = f"{min(min(v) for v in sig_of.values()):.1f}"   # P/2 to P/5, every window individually

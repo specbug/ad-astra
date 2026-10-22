@@ -11,7 +11,7 @@ Editor makes the final assignment.
 |---|---|
 | `tic402710280_AJ_source.zip` | Flat LaTeX source: `tic402710280.tex`, `.bbl`, `refs.bib`, `aastex701.cls`, `aasjournalv7.bst`, `fig1.pdf`–`fig6.pdf`. Compiles with pdflatex alone. The portal cannot read folders, so upload the files individually. |
 | `tic402710280_AJ.pdf` | The compiled manuscript (AASTeX 7.0.1, line numbers on), for checking against the PDF the portal builds. |
-| `abstract_plain.txt` | The abstract in plain Unicode for the form (219 words; the limit is 250). |
+| `abstract_plain.txt` | The abstract in plain Unicode for the form (220 words; the limit is 250). |
 | `COVER_LETTER.txt` | Paste into the cover-letter field. |
 | `SUPPORT_FUND.txt` | Justification for the AAS Publication Support Fund request. |
 
