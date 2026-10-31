@@ -7,7 +7,11 @@ pre-submission snapshot, so open the record → **Edit** → append the note at 
 `1_zenodo_data_v4/zenodo_v4_data.md` to the description → **Publish**. This edits metadata only and creates no new
 version; do not upload files. The pre-registration (10.5281/zenodo.23390325) is never changed.
 
-## 2. AJ submission at https://aas.msubmit.net
+## 2. AJ submission at https://aas.msubmit.net: done
+
+Submitted 2026 October 22; manuscript AAS82673, Lead Editor Michael Endl (michael.endl@aas.org). Quote the
+manuscript number in all correspondence, which goes to the editor until the paper is accepted or resolved.
+
 
 Do this before step 3: the arXiv comment and the Zenodo preprint description say "submitted to AJ".
 Field by field in `4_aj_form/SUBMISSION_DETAILS.md`. In short:
