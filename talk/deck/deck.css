@@ -1,0 +1,127 @@
+/* Two grounds. Sky: what the telescope saw, dark, full-bleed. Desk: what was worked out, paper and ink.
+   Pigments keep one meaning each: viridian = computed or fitted, ochre = a mark made by hand,
+   ultramarine = current position, cinnabar = something to follow.
+   Type: Google Sans throughout, at its four named weights (400, 500, 600, 700), so an export to
+   Google Slides or PowerPoint finds the same face and weights. */
+section {
+  --ground: #FAF9F7;
+  --ink: #110F0E;
+  --ink-2: #575552;
+  --rule: #D5D4D1;
+  --cinnabar: #D02E1E;
+  --ochre: #CE871B;
+  --viridian: #0B6E58;
+  --ultramarine: #2256BB;
+  background: #FAF9F7;
+  color: #110F0E;
+  padding: 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-family: 'Google Sans', Arial, sans-serif;
+}
+.dark { background: #131110; color: #E6E4E2; }
+
+/* type scale: 132 / 88 / 72 / 44 / 32 / 26 */
+.title { font-size: 132px; font-weight: 500; line-height: 1.04; letter-spacing: -3px; }
+.head-lg { font-size: 88px; font-weight: 500; line-height: 1.06; letter-spacing: -1.7px; }
+.head { font-size: 72px; font-weight: 500; line-height: 1.1; letter-spacing: -1.3px; }
+.sub { font-size: 44px; font-weight: 600; line-height: 1.2; letter-spacing: -0.6px; }
+.lead { font-size: 44px; font-weight: 400; line-height: 1.3; letter-spacing: -0.4px; }
+.body { font-size: 32px; font-weight: 400; line-height: 1.4; color: #575552; }
+.label { font-size: 26px; font-weight: 400; line-height: 1.3; color: #575552; }
+.soft { color: #575552; }
+.name { color: #110F0E; font-weight: 500; }
+.grow { flex: 1; }
+.dark .lead { color: #E6E4E2; }
+.dark .soft { color: #A09E9C; }
+.dark .label { color: #A09E9C; }
+
+/* large numerals, with their units beside them on one baseline */
+.numrow { display: flex; align-items: baseline; gap: 24px; }
+.num { font-size: 176px; font-weight: 500; line-height: 1; letter-spacing: -3px; }
+.num-xl { font-size: 346px; letter-spacing: -9px; }
+.num-md { font-size: 132px; letter-spacing: -2.5px; }
+.num-date { font-size: 116px; letter-spacing: -2px; }
+.unit { font-size: 104px; font-weight: 500; line-height: 1; letter-spacing: -2px; }
+.unit-md { font-size: 80px; letter-spacing: -1.5px; }
+.figrow { display: flex; align-items: baseline; gap: 14px; }
+.fig { font-size: 64px; font-weight: 500; line-height: 1.1; letter-spacing: -0.5px; font-variant-numeric: tabular-nums; }
+.fig-unit { font-size: 52px; font-weight: 500; line-height: 1.1; letter-spacing: -0.6px; }
+.readout { display: flex; flex-direction: column; gap: 8px; }
+
+/* cover */
+.cover { gap: 28px; }
+.cover-curve { position: absolute; left: 128px; top: 640px; width: 1664px; height: 300px; }
+.foot { position: absolute; left: 128px; bottom: 64px; width: 1664px; font-size: 24px; line-height: 1.3; color: #575552; }
+
+/* sky: the real TESS image edge to edge, text over a scrim on the left */
+.backdrop { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.scrim { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: linear-gradient(to right, rgba(19, 17, 16, 0.9) 0, rgba(19, 17, 16, 0.84) 42%, rgba(19, 17, 16, 0) 62%); }
+.scrim-wide { background: linear-gradient(to right, rgba(19, 17, 16, 0.9) 0, rgba(19, 17, 16, 0.86) 54%, rgba(19, 17, 16, 0) 66%); }
+.ticks { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.star-name { position: absolute; left: 1436px; top: 493px; width: 360px; font-size: 24px; line-height: 1.3; color: #E6E4E2; }
+.over { position: relative; flex: 1; width: 1010px; display: flex; flex-direction: column; gap: 28px; }
+
+/* one transit, large */
+.split { display: flex; gap: 64px; align-items: center; }
+.plot { position: relative; width: 960px; height: 624px; }
+.plot-img { width: 960px; height: 624px; object-fit: contain; }
+.mark { position: absolute; left: 0; top: 0; width: 960px; height: 624px; }
+.side { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+.side-wide { gap: 56px; }
+
+/* transit diagram */
+.diagram-host { position: relative; width: 900px; height: 600px; }
+.diagram { width: 900px; height: 600px; }
+.axis-note { position: absolute; left: 50px; top: 452px; width: 300px; font-size: 24px; color: #575552; }
+
+/* who did what */
+.two { display: grid; grid-template-columns: repeat(2, 1fr); gap: 96px; }
+.col { display: flex; flex-direction: column; gap: 20px; border-top: 1px solid #D5D4D1; padding-top: 28px; }
+.lines { font-size: 40px; font-weight: 400; line-height: 1.5; padding-left: 44px; }
+
+/* timeline: 27.5px per orbit, first transit at x = 40 */
+.tl { position: relative; width: 1664px; height: 500px; }
+.tl-axis { position: absolute; left: 0; top: 0; width: 1664px; height: 500px; }
+.flag { position: absolute; width: 292px; height: 250px; display: flex; flex-direction: column; gap: 8px; box-sizing: border-box; }
+.flag-img { width: 280px; height: 182px; object-fit: contain; }
+.flag-up { top: 0; }
+.flag-down { top: 250px; padding-top: 24px; }
+.flag-right { border-left: 2px solid #110F0E; padding-left: 12px; }
+.flag-left { border-right: 2px solid #110F0E; padding-right: 12px; text-align: right; }
+.f0 { left: 39px; }
+.f40 { left: 849px; }
+.f47 { left: 1041px; }
+.f48 { left: 1359px; }
+.period { position: absolute; left: 40px; top: 306px; width: 940px; }
+.fragment { opacity: 0; transition: opacity 0.45s ease; }
+.fragment.visible { opacity: 1; }
+
+/* planet sizes */
+.scale-host { position: relative; width: 1664px; height: 440px; }
+.scale { width: 1664px; height: 360px; }
+.cap { position: absolute; top: 372px; width: 400px; text-align: center; font-size: 26px; line-height: 1.3; color: #575552; }
+.cap-earth { left: 100px; }
+.cap-planet { left: 632px; }
+.cap-neptune { left: 1164px; }
+.facts { display: flex; gap: 112px; }
+.fact { display: flex; flex-direction: column; gap: 8px; }
+
+/* checks */
+.checks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; }
+.check { display: flex; flex-direction: column; gap: 16px; border-top: 1px solid #D5D4D1; padding-top: 28px; }
+
+/* the odds, and the tool's full name with its initials picked out */
+.acro { width: 1000px; }
+.acro b { color: #110F0E; font-weight: 700; }
+.dino { width: 620px; height: 358px; }
+.side-odds { gap: 12px; }
+.gap { height: 44px; }
+
+/* addresses: plain text, red pencil underneath */
+.links { display: flex; gap: 96px; align-items: flex-start; }
+.link { display: flex; flex-direction: column; gap: 2px; }
+.link-text { font-size: 36px; font-weight: 400; line-height: 1.3; color: #E6E4E2; }
+.pencil-blog { width: 520px; height: 14px; }
+.pencil-paper { width: 290px; height: 14px; }

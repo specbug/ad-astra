@@ -1,0 +1,18 @@
+{
+  "v": 5,
+  "createdOnFiles": {"v": 1, "at": "2026-11-18T08:20:39Z"},
+  "lists": "css",
+  "format": {"v": 1, "shared": ["project/deck.css"]},
+  "title": "Discovering an exoplanet",
+  "cover": "cover",
+  "order": ["cover", "light", "dimmed", "transit", "archive", "claude", "timeline", "planet", "impostors", "triceratops", "next"],
+  "sections": {
+    "s1": {"description": "A star's light, a five-hour dimming and what causes it.", "start": "cover"},
+    "s2": {"description": "The search of NASA's archive with Claude, and the three dips that followed.", "start": "archive"},
+    "s3": {"description": "The planet, the doubt, the odds from TRICERATOPS and the prediction for 2027.", "start": "planet"}
+  },
+  "faces": {
+    "google-sans": {"family": "Google Sans", "href": "https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..700&display=swap"}
+  },
+  "designSystems": []
+}

@@ -44,5 +44,8 @@ folder as version 3 of the Zenodo preprint record. Steps in `ARXIV.md`.
 - Revision tests prepared in parallel: the Sector 100/102 image-clock check and the Sector 102 systematics spread.
 - At revision: add ExoFOP (doi:10.26134/ExoFOP5) as a reference entry, not only in the acknowledgments, and cite it
   where §1 uses it (AAS guide §2.14.6 asks for third-party DOIs in the bibliography).
+- At revision: state in the prediction section that the Sector 114 transit will be observed at two-minute cadence
+  under TESS DDT 106, approved by 2026 November 20 (`proposals/tess-ddt/`), and acknowledge the DDT program.
+- Still to record here: the DOI of version 3 of the Zenodo preprint record (concept doi:10.5281/zenodo.23390316).
 - Leave arXiv and Zenodo unchanged until acceptance; then update both to the accepted text, add the journal reference
   on arXiv, and submit the community TOI at ExoFOP.
