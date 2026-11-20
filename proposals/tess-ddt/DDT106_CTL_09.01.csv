@@ -1,0 +1,15 @@
+# DDT PI: Rishit Vora
+# Cadence: 2m
+# Subject: Observations of the 36.3-day sub-Neptune candidate TIC 402710280
+# DDT: 106
+#
+# Original filename: Vora_DDT_TIC402710280_S113-114_targets.csv
+# Created by: Rishit Vora
+# Created on: 2026-10-18
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+402710280,1.0,TIC 402710280;TYC 9041-03677-1;sub-Neptune candidate;pre-registered transit;DDT106

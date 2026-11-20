@@ -39,6 +39,18 @@ This is a Director's Discretionary Targets (DDT) proposal for two-minute cadence
 > Rishit Vora
 > Independent researcher · rishitv@protonmail.com · ORCID 0009-0003-8778-9883
 
+## Outcome: approved as DDT 106
+
+The request was sent on 2026-10-18. On 2026-11-20 the TESS DDT pages listed it as **DDT 106** (PI Rishit Vora, "Observations of the 36.3-day sub-Neptune candidate TIC 402710280", two-minute cadence, one target, active).
+
+| File | What it is |
+|---|---|
+| `DDT106_listed_2026-11-20.png` | The entry on <https://tess.mit.edu/science/ddt/>, captured 2026-11-20. |
+| `DDT106_full_list_2026-11-20.png` | The entry on <https://tess.mit.edu/public/DDTs/DDT_list.html>, captured 2026-11-20. |
+| `DDT106_CTL_09.01.csv` | The target list as the TESS Science Office published it. It is the submitted list with the keyword `DDT106` added. |
+
+The pages name no sectors for any DDT. The published target list keeps the submitted file name, which names Sectors 113–114. The DDT page states that DDTs do not renew automatically and must be re-proposed every year.
+
 ## After submission
 
 - The review team assigns a DDT number and emails the proposer. Approved targets appear at <https://tess.mit.edu/public/DDTs/DDT_list.html>.
